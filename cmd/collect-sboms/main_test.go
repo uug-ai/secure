@@ -36,33 +36,66 @@ func testRepository(name string) repository {
 	}
 }
 
-func TestCollectsSBOMAndExcludesSecureRepository(t *testing.T) {
+func TestCollectsOnlyTargetRepositories(t *testing.T) {
 	client := &fakeGitHubClient{
-		repositories: []repository{testRepository("secure"), testRepository("vault")},
+		repositories: []repository{
+			testRepository("secure"),
+			testRepository("cli"),
+			testRepository("factory"),
+			testRepository("hub-api"),
+			testRepository("vault"),
+		},
 		sboms: map[string]json.RawMessage{
-			"vault": json.RawMessage(`{"spdxVersion":"SPDX-2.3","packages":[]}`),
+			"factory": json.RawMessage(`{"spdxVersion":"SPDX-2.3","packages":[]}`),
+			"hub-api": json.RawMessage(`{"spdxVersion":"SPDX-2.3","packages":[]}`),
+			"vault":   json.RawMessage(`{"spdxVersion":"SPDX-2.3","packages":[]}`),
 		},
 		errors: map[string]error{},
 	}
 	output := t.TempDir()
+	if err := os.Mkdir(filepath.Join(output, "cli"), 0o755); err != nil {
+		t.Fatal(err)
+	}
+	if err := os.WriteFile(filepath.Join(output, "cli", "sbom.spdx.json"), []byte("{}\n"), 0o644); err != nil {
+		t.Fatal(err)
+	}
 
 	index, err := collectSBOMs(client, "uug-ai", output, stringSet{"secure": true}, "2026-08-13T10:00:00Z")
 	if err != nil {
 		t.Fatal(err)
 	}
-	if index.Totals.Repositories != 1 || index.Repositories[0].Status != "collected" {
+	if index.Totals.Repositories != 3 {
 		t.Fatalf("unexpected index: %+v", index)
 	}
-	data, err := os.ReadFile(filepath.Join(output, "vault", "sbom.spdx.json"))
-	if err != nil {
-		t.Fatal(err)
+	for indexPosition, expectedName := range []string{"factory", "hub-api", "vault"} {
+		entry := index.Repositories[indexPosition]
+		if entry.Name != expectedName || entry.Status != "collected" {
+			t.Fatalf("unexpected entry at %d: %+v", indexPosition, entry)
+		}
+		if _, err := os.Stat(filepath.Join(output, expectedName, "sbom.spdx.json")); err != nil {
+			t.Fatal(err)
+		}
 	}
-	var document map[string]any
-	if err := json.Unmarshal(data, &document); err != nil {
-		t.Fatal(err)
+	if _, err := os.Stat(filepath.Join(output, "cli")); !errors.Is(err, os.ErrNotExist) {
+		t.Fatalf("non-target repository directory was not removed: %v", err)
 	}
-	if document["spdxVersion"] != "SPDX-2.3" {
-		t.Fatalf("unexpected SPDX version: %v", document["spdxVersion"])
+}
+
+func TestTargetRepositoryScope(t *testing.T) {
+	tests := map[string]bool{
+		"factory":      true,
+		"hub":          true,
+		"hub-api":      true,
+		"Hub-Frontend": true,
+		"vault":        true,
+		"agent":        false,
+		"secure":       false,
+		"website":      false,
+	}
+	for repository, expected := range tests {
+		if actual := isTargetRepository(repository); actual != expected {
+			t.Errorf("isTargetRepository(%q) = %t, want %t", repository, actual, expected)
+		}
 	}
 }
 

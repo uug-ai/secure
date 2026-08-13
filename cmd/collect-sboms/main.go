@@ -241,6 +241,11 @@ func percentage(count, total int) int {
 	return (count*100 + total/2) / total
 }
 
+func isTargetRepository(name string) bool {
+	name = strings.ToLower(name)
+	return strings.HasPrefix(name, "hub") || name == "factory" || name == "vault"
+}
+
 func assessSBOM(data []byte) (sbomQuality, error) {
 	var document spdxDocument
 	if err := json.Unmarshal(data, &document); err != nil {
@@ -428,7 +433,7 @@ func collectSBOMs(client githubAPI, organization, outputDirectory string, exclud
 	entries := make([]indexEntry, 0, len(repositories))
 	activeNames := make(map[string]bool, len(repositories))
 	for _, repository := range repositories {
-		if excluded[repository.Name] {
+		if excluded[repository.Name] || !isTargetRepository(repository.Name) {
 			continue
 		}
 		if repository.Name == "" || filepath.Base(repository.Name) != repository.Name {
