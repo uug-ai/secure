@@ -52,12 +52,17 @@ type indexEntry struct {
 }
 
 type sbomQuality struct {
-	LicensedPercent  int    `json:"licensedPercent"`
-	PackageCount     int    `json:"packageCount"`
-	PURLPercent      int    `json:"purlPercent"`
-	Rating           string `json:"rating"`
-	Score            int    `json:"score"`
-	VersionedPercent int    `json:"versionedPercent"`
+	ConcludedLicensePercent int      `json:"concludedLicensePercent"`
+	DeclaredLicensePercent  int      `json:"declaredLicensePercent"`
+	DownloadPercent         int      `json:"downloadPercent"`
+	Improvements            []string `json:"improvements,omitempty"`
+	LicensedPercent         int      `json:"licensedPercent"`
+	PackageCount            int      `json:"packageCount"`
+	PURLPercent             int      `json:"purlPercent"`
+	Rating                  string   `json:"rating"`
+	Score                   int      `json:"score"`
+	SupplierPercent         int      `json:"supplierPercent"`
+	VersionedPercent        int      `json:"versionedPercent"`
 }
 
 type spdxDocument struct {
@@ -219,6 +224,18 @@ func loadPreviousIndex(path string) map[string]indexEntry {
 	return entries
 }
 
+func loadIndex(path string) (sbomIndex, error) {
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return sbomIndex{}, err
+	}
+	var index sbomIndex
+	if err := json.Unmarshal(data, &index); err != nil {
+		return sbomIndex{}, err
+	}
+	return index, nil
+}
+
 func writeJSON(path string, value any) error {
 	data, err := json.MarshalIndent(value, "", "  ")
 	if err != nil {
@@ -244,6 +261,39 @@ func percentage(count, total int) int {
 func isTargetRepository(name string) bool {
 	name = strings.ToLower(name)
 	return strings.HasPrefix(name, "hub") || name == "factory" || name == "vault"
+}
+
+func defaultExcludedRepositories() stringSet {
+	return stringSet{
+		"secure":                            true,
+		"hub-background-notifcation-digest": true,
+		"hub-license":                       true,
+		"hub-mobile":                        true,
+		"hub-pipeline":                      true,
+		"hub-pipeline-classifier-yolov3":    true,
+		"hub-pipeline-licenseplate":         true,
+	}
+}
+
+type qualityGap struct {
+	label      string
+	percentage int
+	score      int
+	maximum    int
+}
+
+func qualityImprovements(gaps []qualityGap) []string {
+	sort.SliceStable(gaps, func(left, right int) bool {
+		return gaps[left].maximum-gaps[left].score > gaps[right].maximum-gaps[right].score
+	})
+	improvements := make([]string, 0, len(gaps))
+	for _, gap := range gaps {
+		missing := gap.maximum - gap.score
+		if missing > 0 {
+			improvements = append(improvements, fmt.Sprintf("%s %d%% (+%d)", gap.label, gap.percentage, missing))
+		}
+	}
+	return improvements
 }
 
 func assessSBOM(data []byte) (sbomQuality, error) {
@@ -303,21 +353,43 @@ func assessSBOM(data []byte) (sbomQuality, error) {
 	versionedPercent := percentage(versions, packageCount)
 	licensedPercent := percentage(licensed, packageCount)
 	purlPercent := percentage(purls, packageCount)
-	score := documentScore
-	score += percentage(names, packageCount) * 5 / 100
-	score += percentage(identifiers, packageCount) * 5 / 100
-	score += versionedPercent * 10 / 100
-	score += purlPercent * 10 / 100
-	score += percentage(declared, packageCount) * 10 / 100
-	score += percentage(concluded, packageCount) * 10 / 100
-	score += percentage(suppliers, packageCount) * 7 / 100
-	score += percentage(downloads, packageCount) * 8 / 100
+	declaredLicensePercent := percentage(declared, packageCount)
+	concludedLicensePercent := percentage(concluded, packageCount)
+	supplierPercent := percentage(suppliers, packageCount)
+	downloadPercent := percentage(downloads, packageCount)
+	nameScore := percentage(names, packageCount) * 5 / 100
+	identifierScore := percentage(identifiers, packageCount) * 5 / 100
+	versionScore := versionedPercent * 10 / 100
+	purlScore := purlPercent * 10 / 100
+	declaredLicenseScore := declaredLicensePercent * 10 / 100
+	concludedLicenseScore := concludedLicensePercent * 10 / 100
+	supplierScore := supplierPercent * 7 / 100
+	downloadScore := downloadPercent * 8 / 100
+	describesScore := 0
 	if len(document.DocumentDescribes) > 0 {
-		score += 5
+		describesScore = 5
 	}
+	relationshipScore := 0
 	if len(document.Relationships) > 0 {
-		score += 10
+		relationshipScore = 10
 	}
+	score := documentScore + nameScore + identifierScore + versionScore + purlScore +
+		declaredLicenseScore + concludedLicenseScore + supplierScore + downloadScore +
+		describesScore + relationshipScore
+
+	improvements := qualityImprovements([]qualityGap{
+		{label: "document metadata", percentage: documentScore * 100 / 20, score: documentScore, maximum: 20},
+		{label: "package names", percentage: percentage(names, packageCount), score: nameScore, maximum: 5},
+		{label: "package SPDX IDs", percentage: percentage(identifiers, packageCount), score: identifierScore, maximum: 5},
+		{label: "versions", percentage: versionedPercent, score: versionScore, maximum: 10},
+		{label: "PURLs", percentage: purlPercent, score: purlScore, maximum: 10},
+		{label: "declared licenses", percentage: declaredLicensePercent, score: declaredLicenseScore, maximum: 10},
+		{label: "concluded licenses", percentage: concludedLicensePercent, score: concludedLicenseScore, maximum: 10},
+		{label: "suppliers", percentage: supplierPercent, score: supplierScore, maximum: 7},
+		{label: "download locations", percentage: downloadPercent, score: downloadScore, maximum: 8},
+		{label: "document describes", percentage: describesScore * 100 / 5, score: describesScore, maximum: 5},
+		{label: "relationships", percentage: relationshipScore * 100 / 10, score: relationshipScore, maximum: 10},
+	})
 
 	rating := "Poor"
 	switch {
@@ -329,12 +401,17 @@ func assessSBOM(data []byte) (sbomQuality, error) {
 		rating = "Needs work"
 	}
 	return sbomQuality{
-		LicensedPercent:  licensedPercent,
-		PackageCount:     packageCount,
-		PURLPercent:      purlPercent,
-		Rating:           rating,
-		Score:            score,
-		VersionedPercent: versionedPercent,
+		ConcludedLicensePercent: concludedLicensePercent,
+		DeclaredLicensePercent:  declaredLicensePercent,
+		DownloadPercent:         downloadPercent,
+		Improvements:            improvements,
+		LicensedPercent:         licensedPercent,
+		PackageCount:            packageCount,
+		PURLPercent:             purlPercent,
+		Rating:                  rating,
+		Score:                   score,
+		SupplierPercent:         supplierPercent,
+		VersionedPercent:        versionedPercent,
 	}, nil
 }
 
@@ -364,21 +441,25 @@ func renderQualitySection(index sbomIndex) string {
 	builder.WriteString(qualityStartMarker + "\n")
 	builder.WriteString("## SBOM quality overview\n\n")
 	fmt.Fprintf(&builder, "Generated at `%s`. Quality combines document metadata (20%%), package identity (30%%), licensing (20%%), provenance (15%%), and relationships (15%%).\n\n", index.GeneratedAt)
-	builder.WriteString("Legend: \U0001F7E2 85-100, \U0001F7E1 70-84, \U0001F7E0 50-69, \U0001F534 0-49 or unavailable.\n\n")
-	builder.WriteString("| Repository | Collection | Quality | Score | Packages | Versioned | Licensed | PURL | SBOM |\n")
-	builder.WriteString("| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- |\n")
+	builder.WriteString("Legend: \U0001F7E2 85-100, \U0001F7E1 70-84, \U0001F7E0 50-69, \U0001F534 0-49 or unavailable. This measures SBOM completeness, not vulnerability severity. The Improve column shows missing SPDX fields and the maximum points each can recover.\n\n")
+	builder.WriteString("| Repository | Collection | Quality | Score | Packages | Versioned | Licensed | PURL | Improve | SBOM |\n")
+	builder.WriteString("| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- | --- |\n")
 	for _, entry := range index.Repositories {
 		repository := entry.Name
 		if entry.RepositoryURL != "" {
 			repository = fmt.Sprintf("[%s](%s)", entry.Name, entry.RepositoryURL)
 		}
-		score, packages, versioned, licensed, purl := "0/100", "0", "0%", "0%", "0%"
+		score, packages, versioned, licensed, purl, improvements := "0/100", "0", "0%", "0%", "0%", "Collection unavailable"
 		if entry.Quality != nil {
 			score = fmt.Sprintf("%d/100", entry.Quality.Score)
 			packages = fmt.Sprintf("%d", entry.Quality.PackageCount)
 			versioned = fmt.Sprintf("%d%%", entry.Quality.VersionedPercent)
 			licensed = fmt.Sprintf("%d%%", entry.Quality.LicensedPercent)
 			purl = fmt.Sprintf("%d%%", entry.Quality.PURLPercent)
+			improvements = "None"
+			if len(entry.Quality.Improvements) > 0 {
+				improvements = strings.Join(entry.Quality.Improvements, "; ")
+			}
 		}
 		sbomLink := "-"
 		if entry.Path != "" {
@@ -386,7 +467,7 @@ func renderQualitySection(index sbomIndex) string {
 		}
 		fmt.Fprintf(
 			&builder,
-			"| %s | %s | %s | %s | %s | %s | %s | %s | %s |\n",
+			"| %s | %s | %s | %s | %s | %s | %s | %s | %s | %s |\n",
 			repository,
 			entry.Status,
 			qualityIndicator(entry.Quality),
@@ -395,6 +476,7 @@ func renderQualitySection(index sbomIndex) string {
 			versioned,
 			licensed,
 			purl,
+			improvements,
 			sbomLink,
 		)
 	}
@@ -418,6 +500,67 @@ func updateREADME(path string, index sbomIndex) error {
 		content = strings.TrimRight(content, "\n") + "\n\n" + section + "\n"
 	}
 	return os.WriteFile(path, []byte(content), 0o644)
+}
+
+func refreshExistingSBOMs(outputDirectory string, excluded stringSet) (sbomIndex, error) {
+	indexPath := filepath.Join(outputDirectory, "index.json")
+	index, err := loadIndex(indexPath)
+	if err != nil {
+		return sbomIndex{}, fmt.Errorf("read SBOM index: %w", err)
+	}
+
+	entries := make([]indexEntry, 0, len(index.Repositories))
+	activeNames := make(map[string]bool, len(index.Repositories))
+	for _, entry := range index.Repositories {
+		if excluded[entry.Name] || !isTargetRepository(entry.Name) {
+			continue
+		}
+		activeNames[entry.Name] = true
+		if entry.Path != "" {
+			data, err := os.ReadFile(filepath.Join(outputDirectory, filepath.FromSlash(entry.Path)))
+			if err != nil {
+				return sbomIndex{}, fmt.Errorf("read %s SBOM: %w", entry.Name, err)
+			}
+			quality, err := assessSBOM(data)
+			if err != nil {
+				return sbomIndex{}, fmt.Errorf("assess %s SBOM: %w", entry.Name, err)
+			}
+			entry.Quality = &quality
+		}
+		if err := writeJSON(filepath.Join(outputDirectory, entry.Name, "status.json"), entry); err != nil {
+			return sbomIndex{}, fmt.Errorf("write %s status: %w", entry.Name, err)
+		}
+		entries = append(entries, entry)
+	}
+
+	directories, err := os.ReadDir(outputDirectory)
+	if err != nil {
+		return sbomIndex{}, fmt.Errorf("read output directory: %w", err)
+	}
+	for _, directory := range directories {
+		if directory.IsDir() && !activeNames[directory.Name()] {
+			if err := os.RemoveAll(filepath.Join(outputDirectory, directory.Name())); err != nil {
+				return sbomIndex{}, fmt.Errorf("remove obsolete SBOM directory: %w", err)
+			}
+		}
+	}
+
+	index.Repositories = entries
+	index.Totals = totals{Repositories: len(entries)}
+	for _, entry := range entries {
+		switch entry.Status {
+		case "collected":
+			index.Totals.Collected++
+		case "stale":
+			index.Totals.Stale++
+		case "unavailable":
+			index.Totals.Unavailable++
+		}
+	}
+	if err := writeJSON(indexPath, index); err != nil {
+		return sbomIndex{}, fmt.Errorf("write SBOM index: %w", err)
+	}
+	return index, nil
 }
 
 func collectSBOMs(client githubAPI, organization, outputDirectory string, excluded stringSet, collectedAt string) (sbomIndex, error) {
@@ -541,9 +684,24 @@ func main() {
 	organization := flag.String("organization", "uug-ai", "GitHub organization to collect")
 	output := flag.String("output", "sboms", "output directory")
 	readme := flag.String("readme", "README.md", "README file to update with the quality table")
-	excluded := stringSet{"secure": true}
+	refreshExisting := flag.Bool("refresh-existing", false, "re-score existing SBOMs without calling GitHub")
+	excluded := defaultExcludedRepositories()
 	flag.Var(excluded, "exclude", "repository to exclude (repeatable)")
 	flag.Parse()
+	if *refreshExisting {
+		index, err := refreshExistingSBOMs(*output, excluded)
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "SBOM refresh failed: %v\n", err)
+			os.Exit(1)
+		}
+		if err := updateREADME(*readme, index); err != nil {
+			fmt.Fprintf(os.Stderr, "README update failed: %v\n", err)
+			os.Exit(1)
+		}
+		summary, _ := json.Marshal(index.Totals)
+		fmt.Println(string(summary))
+		return
+	}
 
 	token := os.Getenv("GH_TOKEN")
 	if token == "" {

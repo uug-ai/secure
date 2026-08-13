@@ -43,6 +43,7 @@ func TestCollectsOnlyTargetRepositories(t *testing.T) {
 			testRepository("cli"),
 			testRepository("factory"),
 			testRepository("hub-api"),
+			testRepository("hub-mobile"),
 			testRepository("vault"),
 		},
 		sboms: map[string]json.RawMessage{
@@ -60,7 +61,7 @@ func TestCollectsOnlyTargetRepositories(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	index, err := collectSBOMs(client, "uug-ai", output, stringSet{"secure": true}, "2026-08-13T10:00:00Z")
+	index, err := collectSBOMs(client, "uug-ai", output, defaultExcludedRepositories(), "2026-08-13T10:00:00Z")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -79,6 +80,9 @@ func TestCollectsOnlyTargetRepositories(t *testing.T) {
 	if _, err := os.Stat(filepath.Join(output, "cli")); !errors.Is(err, os.ErrNotExist) {
 		t.Fatalf("non-target repository directory was not removed: %v", err)
 	}
+	if _, err := os.Stat(filepath.Join(output, "hub-mobile")); !errors.Is(err, os.ErrNotExist) {
+		t.Fatalf("excluded repository directory was not removed: %v", err)
+	}
 }
 
 func TestTargetRepositoryScope(t *testing.T) {
@@ -95,6 +99,22 @@ func TestTargetRepositoryScope(t *testing.T) {
 	for repository, expected := range tests {
 		if actual := isTargetRepository(repository); actual != expected {
 			t.Errorf("isTargetRepository(%q) = %t, want %t", repository, actual, expected)
+		}
+	}
+}
+
+func TestDefaultExcludedRepositories(t *testing.T) {
+	excluded := defaultExcludedRepositories()
+	for _, repository := range []string{
+		"hub-background-notifcation-digest",
+		"hub-license",
+		"hub-mobile",
+		"hub-pipeline",
+		"hub-pipeline-classifier-yolov3",
+		"hub-pipeline-licenseplate",
+	} {
+		if !excluded[repository] {
+			t.Errorf("default exclusions do not contain %q", repository)
 		}
 	}
 }
@@ -191,6 +211,40 @@ func TestAssessSBOMQuality(t *testing.T) {
 	if quality.VersionedPercent != 100 || quality.LicensedPercent != 100 || quality.PURLPercent != 100 {
 		t.Fatalf("unexpected package coverage: %+v", quality)
 	}
+	if len(quality.Improvements) != 0 {
+		t.Fatalf("complete SBOM has improvements: %+v", quality.Improvements)
+	}
+}
+
+func TestAssessSBOMExplainsQualityImprovements(t *testing.T) {
+	document := []byte(`{
+		"spdxVersion":"SPDX-2.3",
+		"dataLicense":"CC0-1.0",
+		"documentNamespace":"https://example.com/vault",
+		"creationInfo":{"created":"2026-08-13T10:00:00Z","creators":["Tool: test"]},
+		"relationships":[{"relationshipType":"DEPENDS_ON"}],
+		"packages":[{
+			"name":"module",
+			"SPDXID":"SPDXRef-Package",
+			"versionInfo":"v1.0.0",
+			"licenseDeclared":"MIT",
+			"externalRefs":[{"referenceType":"purl"}]
+		}]
+	}`)
+
+	quality, err := assessSBOM(document)
+	if err != nil {
+		t.Fatal(err)
+	}
+	expected := []string{
+		"concluded licenses 0% (+10)",
+		"download locations 0% (+8)",
+		"suppliers 0% (+7)",
+		"document describes 0% (+5)",
+	}
+	if strings.Join(quality.Improvements, ",") != strings.Join(expected, ",") {
+		t.Fatalf("unexpected improvements: %+v", quality.Improvements)
+	}
 }
 
 func TestQualityIndicatorColors(t *testing.T) {
@@ -216,7 +270,7 @@ func TestUpdateREADMECreatesAndReplacesQualityTable(t *testing.T) {
 	if err := os.WriteFile(path, []byte("# Secure\n\nManual content.\n"), 0o644); err != nil {
 		t.Fatal(err)
 	}
-	quality := &sbomQuality{Score: 90, Rating: "Excellent", PackageCount: 4, VersionedPercent: 100, LicensedPercent: 75, PURLPercent: 100}
+	quality := &sbomQuality{Score: 90, Rating: "Excellent", PackageCount: 4, VersionedPercent: 100, LicensedPercent: 75, PURLPercent: 100, Improvements: []string{"concluded licenses 0% (+10)"}}
 	index := sbomIndex{
 		GeneratedAt: "2026-08-13T10:00:00Z",
 		Repositories: []indexEntry{{
@@ -239,9 +293,54 @@ func TestUpdateREADMECreatesAndReplacesQualityTable(t *testing.T) {
 	if strings.Count(content, qualityStartMarker) != 1 || strings.Count(content, qualityEndMarker) != 1 {
 		t.Fatalf("quality markers were duplicated:\n%s", content)
 	}
-	for _, expected := range []string{"Manual content.", "🟢 Excellent", "90/100", "[SPDX](sboms/vault/sbom.spdx.json)", "2026-08-14T10:00:00Z"} {
+	for _, expected := range []string{"Manual content.", "🟢 Excellent", "90/100", "concluded licenses 0% (+10)", "[SPDX](sboms/vault/sbom.spdx.json)", "2026-08-14T10:00:00Z"} {
 		if !strings.Contains(content, expected) {
 			t.Fatalf("README does not contain %q:\n%s", expected, content)
 		}
+	}
+}
+
+func TestRefreshExistingSBOMsReassessesAndRemovesExcludedRepositories(t *testing.T) {
+	output := t.TempDir()
+	document := map[string]any{
+		"spdxVersion":       "SPDX-2.3",
+		"dataLicense":       "CC0-1.0",
+		"documentNamespace": "https://example.com/vault",
+		"creationInfo": map[string]any{
+			"created":  "2026-08-13T10:00:00Z",
+			"creators": []string{"Tool: test"},
+		},
+		"packages": []any{},
+	}
+	if err := writeJSON(filepath.Join(output, "vault", "sbom.spdx.json"), document); err != nil {
+		t.Fatal(err)
+	}
+	if err := writeJSON(filepath.Join(output, "hub-mobile", "sbom.spdx.json"), document); err != nil {
+		t.Fatal(err)
+	}
+	index := sbomIndex{
+		GeneratedAt:  "2026-08-13T10:00:00Z",
+		Organization: "uug-ai",
+		Repositories: []indexEntry{
+			{Name: "hub-mobile", Path: "hub-mobile/sbom.spdx.json", Status: "collected"},
+			{Name: "vault", Path: "vault/sbom.spdx.json", Status: "collected"},
+		},
+	}
+	if err := writeJSON(filepath.Join(output, "index.json"), index); err != nil {
+		t.Fatal(err)
+	}
+
+	refreshed, err := refreshExistingSBOMs(output, defaultExcludedRepositories())
+	if err != nil {
+		t.Fatal(err)
+	}
+	if refreshed.GeneratedAt != index.GeneratedAt || refreshed.Totals.Repositories != 1 || refreshed.Repositories[0].Name != "vault" {
+		t.Fatalf("unexpected refreshed index: %+v", refreshed)
+	}
+	if refreshed.Repositories[0].Quality == nil || len(refreshed.Repositories[0].Quality.Improvements) == 0 {
+		t.Fatalf("SBOM quality was not reassessed: %+v", refreshed.Repositories[0])
+	}
+	if _, err := os.Stat(filepath.Join(output, "hub-mobile")); !errors.Is(err, os.ErrNotExist) {
+		t.Fatalf("excluded SBOM directory was not removed: %v", err)
 	}
 }
