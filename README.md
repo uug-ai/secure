@@ -1,4 +1,4 @@
-# UUG.AI Security Evidence
+# Secure
 
 This repository is the central, auditable inventory of security evidence for
 the `uug-ai` organization. It gives security officers and engineering teams one
