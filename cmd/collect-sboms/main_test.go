@@ -5,6 +5,7 @@ import (
 	"errors"
 	"os"
 	"path/filepath"
+	"strings"
 	"testing"
 )
 
@@ -109,5 +110,92 @@ func TestMarksFirstCollectionFailureAsUnavailable(t *testing.T) {
 	}
 	if index.Repositories[0].Status != "unavailable" || index.Totals.Unavailable != 1 {
 		t.Fatalf("unexpected unavailable entry: %+v", index)
+	}
+}
+
+func TestAssessSBOMQuality(t *testing.T) {
+	document := []byte(`{
+		"spdxVersion":"SPDX-2.3",
+		"dataLicense":"CC0-1.0",
+		"SPDXID":"SPDXRef-DOCUMENT",
+		"name":"vault",
+		"documentNamespace":"https://example.com/vault",
+		"creationInfo":{"created":"2026-08-13T10:00:00Z","creators":["Tool: test"]},
+		"documentDescribes":["SPDXRef-Package"],
+		"relationships":[{"relationshipType":"DESCRIBES"}],
+		"packages":[{
+			"name":"module",
+			"SPDXID":"SPDXRef-Package",
+			"versionInfo":"v1.0.0",
+			"licenseDeclared":"MIT",
+			"licenseConcluded":"MIT",
+			"supplier":"Organization: UUG.AI",
+			"downloadLocation":"https://github.com/uug-ai/vault",
+			"externalRefs":[{"referenceType":"purl"}]
+		}]
+	}`)
+
+	quality, err := assessSBOM(document)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if quality.Score != 100 || quality.Rating != "Excellent" {
+		t.Fatalf("unexpected quality: %+v", quality)
+	}
+	if quality.VersionedPercent != 100 || quality.LicensedPercent != 100 || quality.PURLPercent != 100 {
+		t.Fatalf("unexpected package coverage: %+v", quality)
+	}
+}
+
+func TestQualityIndicatorColors(t *testing.T) {
+	tests := []struct {
+		quality  *sbomQuality
+		expected string
+	}{
+		{quality: nil, expected: "🔴 Unavailable"},
+		{quality: &sbomQuality{Rating: "Poor"}, expected: "🔴 Poor"},
+		{quality: &sbomQuality{Rating: "Needs work"}, expected: "🟠 Needs work"},
+		{quality: &sbomQuality{Rating: "Good"}, expected: "🟡 Good"},
+		{quality: &sbomQuality{Rating: "Excellent"}, expected: "🟢 Excellent"},
+	}
+	for _, test := range tests {
+		if actual := qualityIndicator(test.quality); actual != test.expected {
+			t.Errorf("qualityIndicator(%+v) = %q, want %q", test.quality, actual, test.expected)
+		}
+	}
+}
+
+func TestUpdateREADMECreatesAndReplacesQualityTable(t *testing.T) {
+	path := filepath.Join(t.TempDir(), "README.md")
+	if err := os.WriteFile(path, []byte("# Secure\n\nManual content.\n"), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	quality := &sbomQuality{Score: 90, Rating: "Excellent", PackageCount: 4, VersionedPercent: 100, LicensedPercent: 75, PURLPercent: 100}
+	index := sbomIndex{
+		GeneratedAt: "2026-08-13T10:00:00Z",
+		Repositories: []indexEntry{{
+			Name: "vault", RepositoryURL: "https://github.com/uug-ai/vault", Status: "collected", Path: "vault/sbom.spdx.json", Quality: quality,
+		}},
+	}
+
+	if err := updateREADME(path, index); err != nil {
+		t.Fatal(err)
+	}
+	index.GeneratedAt = "2026-08-14T10:00:00Z"
+	if err := updateREADME(path, index); err != nil {
+		t.Fatal(err)
+	}
+	data, err := os.ReadFile(path)
+	if err != nil {
+		t.Fatal(err)
+	}
+	content := string(data)
+	if strings.Count(content, qualityStartMarker) != 1 || strings.Count(content, qualityEndMarker) != 1 {
+		t.Fatalf("quality markers were duplicated:\n%s", content)
+	}
+	for _, expected := range []string{"Manual content.", "🟢 Excellent", "90/100", "[SPDX](sboms/vault/sbom.spdx.json)", "2026-08-14T10:00:00Z"} {
+		if !strings.Contains(content, expected) {
+			t.Fatalf("README does not contain %q:\n%s", expected, content)
+		}
 	}
 }

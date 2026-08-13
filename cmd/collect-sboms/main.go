@@ -38,16 +38,54 @@ type repository struct {
 }
 
 type indexEntry struct {
-	Archived      bool   `json:"archived"`
-	CollectedAt   string `json:"collectedAt,omitempty"`
-	DefaultBranch string `json:"defaultBranch,omitempty"`
-	Error         string `json:"error,omitempty"`
-	Name          string `json:"name"`
-	Path          string `json:"path,omitempty"`
-	RepositoryURL string `json:"repositoryUrl,omitempty"`
-	SourceURL     string `json:"sourceUrl"`
-	Status        string `json:"status"`
-	Visibility    string `json:"visibility"`
+	Archived      bool         `json:"archived"`
+	CollectedAt   string       `json:"collectedAt,omitempty"`
+	DefaultBranch string       `json:"defaultBranch,omitempty"`
+	Error         string       `json:"error,omitempty"`
+	Name          string       `json:"name"`
+	Path          string       `json:"path,omitempty"`
+	Quality       *sbomQuality `json:"quality,omitempty"`
+	RepositoryURL string       `json:"repositoryUrl,omitempty"`
+	SourceURL     string       `json:"sourceUrl"`
+	Status        string       `json:"status"`
+	Visibility    string       `json:"visibility"`
+}
+
+type sbomQuality struct {
+	LicensedPercent  int    `json:"licensedPercent"`
+	PackageCount     int    `json:"packageCount"`
+	PURLPercent      int    `json:"purlPercent"`
+	Rating           string `json:"rating"`
+	Score            int    `json:"score"`
+	VersionedPercent int    `json:"versionedPercent"`
+}
+
+type spdxDocument struct {
+	CreationInfo struct {
+		Created  string   `json:"created"`
+		Creators []string `json:"creators"`
+	} `json:"creationInfo"`
+	DataLicense       string        `json:"dataLicense"`
+	DocumentDescribes []string      `json:"documentDescribes"`
+	DocumentNamespace string        `json:"documentNamespace"`
+	Name              string        `json:"name"`
+	Packages          []spdxPackage `json:"packages"`
+	Relationships     []any         `json:"relationships"`
+	SPDXID            string        `json:"SPDXID"`
+	SPDXVersion       string        `json:"spdxVersion"`
+}
+
+type spdxPackage struct {
+	DownloadLocation string `json:"downloadLocation"`
+	ExternalRefs     []struct {
+		ReferenceType string `json:"referenceType"`
+	} `json:"externalRefs"`
+	LicenseConcluded string `json:"licenseConcluded"`
+	LicenseDeclared  string `json:"licenseDeclared"`
+	Name             string `json:"name"`
+	SPDXID           string `json:"SPDXID"`
+	Supplier         string `json:"supplier"`
+	VersionInfo      string `json:"versionInfo"`
 }
 
 type totals struct {
@@ -192,6 +230,191 @@ func writeJSON(path string, value any) error {
 	return os.WriteFile(path, append(data, '\n'), 0o644)
 }
 
+func asserted(value string) bool {
+	return value != "" && value != "NOASSERTION" && value != "NONE"
+}
+
+func percentage(count, total int) int {
+	if total == 0 {
+		return 0
+	}
+	return (count*100 + total/2) / total
+}
+
+func assessSBOM(data []byte) (sbomQuality, error) {
+	var document spdxDocument
+	if err := json.Unmarshal(data, &document); err != nil {
+		return sbomQuality{}, err
+	}
+
+	documentScore := 0
+	for _, present := range []bool{
+		document.SPDXVersion != "",
+		document.DataLicense != "",
+		document.DocumentNamespace != "",
+		document.CreationInfo.Created != "",
+		len(document.CreationInfo.Creators) > 0,
+	} {
+		if present {
+			documentScore += 4
+		}
+	}
+
+	var names, identifiers, versions, purls, licensed, declared, concluded, suppliers, downloads int
+	for _, pkg := range document.Packages {
+		if pkg.Name != "" {
+			names++
+		}
+		if pkg.SPDXID != "" {
+			identifiers++
+		}
+		if asserted(pkg.VersionInfo) {
+			versions++
+		}
+		if asserted(pkg.LicenseDeclared) {
+			declared++
+		}
+		if asserted(pkg.LicenseConcluded) {
+			concluded++
+		}
+		if asserted(pkg.LicenseDeclared) || asserted(pkg.LicenseConcluded) {
+			licensed++
+		}
+		if asserted(pkg.Supplier) {
+			suppliers++
+		}
+		if asserted(pkg.DownloadLocation) {
+			downloads++
+		}
+		for _, reference := range pkg.ExternalRefs {
+			if strings.Contains(strings.ToLower(reference.ReferenceType), "purl") {
+				purls++
+				break
+			}
+		}
+	}
+
+	packageCount := len(document.Packages)
+	versionedPercent := percentage(versions, packageCount)
+	licensedPercent := percentage(licensed, packageCount)
+	purlPercent := percentage(purls, packageCount)
+	score := documentScore
+	score += percentage(names, packageCount) * 5 / 100
+	score += percentage(identifiers, packageCount) * 5 / 100
+	score += versionedPercent * 10 / 100
+	score += purlPercent * 10 / 100
+	score += percentage(declared, packageCount) * 10 / 100
+	score += percentage(concluded, packageCount) * 10 / 100
+	score += percentage(suppliers, packageCount) * 7 / 100
+	score += percentage(downloads, packageCount) * 8 / 100
+	if len(document.DocumentDescribes) > 0 {
+		score += 5
+	}
+	if len(document.Relationships) > 0 {
+		score += 10
+	}
+
+	rating := "Poor"
+	switch {
+	case score >= 85:
+		rating = "Excellent"
+	case score >= 70:
+		rating = "Good"
+	case score >= 50:
+		rating = "Needs work"
+	}
+	return sbomQuality{
+		LicensedPercent:  licensedPercent,
+		PackageCount:     packageCount,
+		PURLPercent:      purlPercent,
+		Rating:           rating,
+		Score:            score,
+		VersionedPercent: versionedPercent,
+	}, nil
+}
+
+const (
+	qualityStartMarker = "<!-- SBOM_QUALITY_START -->"
+	qualityEndMarker   = "<!-- SBOM_QUALITY_END -->"
+)
+
+func qualityIndicator(quality *sbomQuality) string {
+	if quality == nil {
+		return "\U0001F534 Unavailable"
+	}
+	switch quality.Rating {
+	case "Excellent":
+		return "\U0001F7E2 Excellent"
+	case "Good":
+		return "\U0001F7E1 Good"
+	case "Needs work":
+		return "\U0001F7E0 Needs work"
+	default:
+		return "\U0001F534 Poor"
+	}
+}
+
+func renderQualitySection(index sbomIndex) string {
+	var builder strings.Builder
+	builder.WriteString(qualityStartMarker + "\n")
+	builder.WriteString("## SBOM quality overview\n\n")
+	fmt.Fprintf(&builder, "Generated at `%s`. Quality combines document metadata (20%%), package identity (30%%), licensing (20%%), provenance (15%%), and relationships (15%%).\n\n", index.GeneratedAt)
+	builder.WriteString("Legend: \U0001F7E2 85-100, \U0001F7E1 70-84, \U0001F7E0 50-69, \U0001F534 0-49 or unavailable.\n\n")
+	builder.WriteString("| Repository | Collection | Quality | Score | Packages | Versioned | Licensed | PURL | SBOM |\n")
+	builder.WriteString("| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- |\n")
+	for _, entry := range index.Repositories {
+		repository := entry.Name
+		if entry.RepositoryURL != "" {
+			repository = fmt.Sprintf("[%s](%s)", entry.Name, entry.RepositoryURL)
+		}
+		score, packages, versioned, licensed, purl := "0/100", "0", "0%", "0%", "0%"
+		if entry.Quality != nil {
+			score = fmt.Sprintf("%d/100", entry.Quality.Score)
+			packages = fmt.Sprintf("%d", entry.Quality.PackageCount)
+			versioned = fmt.Sprintf("%d%%", entry.Quality.VersionedPercent)
+			licensed = fmt.Sprintf("%d%%", entry.Quality.LicensedPercent)
+			purl = fmt.Sprintf("%d%%", entry.Quality.PURLPercent)
+		}
+		sbomLink := "-"
+		if entry.Path != "" {
+			sbomLink = fmt.Sprintf("[SPDX](sboms/%s)", entry.Path)
+		}
+		fmt.Fprintf(
+			&builder,
+			"| %s | %s | %s | %s | %s | %s | %s | %s | %s |\n",
+			repository,
+			entry.Status,
+			qualityIndicator(entry.Quality),
+			score,
+			packages,
+			versioned,
+			licensed,
+			purl,
+			sbomLink,
+		)
+	}
+	builder.WriteString(qualityEndMarker)
+	return builder.String()
+}
+
+func updateREADME(path string, index sbomIndex) error {
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return err
+	}
+	content := string(data)
+	section := renderQualitySection(index)
+	start := strings.Index(content, qualityStartMarker)
+	end := strings.Index(content, qualityEndMarker)
+	if start >= 0 && end >= start {
+		end += len(qualityEndMarker)
+		content = content[:start] + section + content[end:]
+	} else {
+		content = strings.TrimRight(content, "\n") + "\n\n" + section + "\n"
+	}
+	return os.WriteFile(path, []byte(content), 0o644)
+}
+
 func collectSBOMs(client githubAPI, organization, outputDirectory string, excluded stringSet, collectedAt string) (sbomIndex, error) {
 	previous := loadPreviousIndex(filepath.Join(outputDirectory, "index.json"))
 	repositories, err := client.ListOrganizationRepositories(organization)
@@ -241,13 +464,25 @@ func collectSBOMs(client githubAPI, organization, outputDirectory string, exclud
 			if err := json.Unmarshal(sbom, &document); err != nil {
 				return sbomIndex{}, fmt.Errorf("decode %s SBOM: %w", repository.Name, err)
 			}
+			quality, err := assessSBOM(sbom)
+			if err != nil {
+				return sbomIndex{}, fmt.Errorf("assess %s SBOM: %w", repository.Name, err)
+			}
 			if err := writeJSON(destination, document); err != nil {
 				return sbomIndex{}, fmt.Errorf("write %s SBOM: %w", repository.Name, err)
 			}
 			entry.CollectedAt = collectedAt
 			entry.Path = relativePath
+			entry.Quality = &quality
 			entry.Status = "collected"
 		} else if _, err := os.Stat(destination); err == nil {
+			data, readErr := os.ReadFile(destination)
+			if readErr == nil {
+				quality, assessErr := assessSBOM(data)
+				if assessErr == nil {
+					entry.Quality = &quality
+				}
+			}
 			entry.CollectedAt = previous[repository.Name].CollectedAt
 			entry.Error = collectionErr.Error()
 			entry.Path = relativePath
@@ -297,6 +532,7 @@ func collectSBOMs(client githubAPI, organization, outputDirectory string, exclud
 func main() {
 	organization := flag.String("organization", "uug-ai", "GitHub organization to collect")
 	output := flag.String("output", "sboms", "output directory")
+	readme := flag.String("readme", "README.md", "README file to update with the quality table")
 	excluded := stringSet{"secure": true}
 	flag.Var(excluded, "exclude", "repository to exclude (repeatable)")
 	flag.Parse()
@@ -319,6 +555,10 @@ func main() {
 	index, err := collectSBOMs(client, *organization, *output, excluded, collectedAt)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "SBOM collection failed: %v\n", err)
+		os.Exit(1)
+	}
+	if err := updateREADME(*readme, index); err != nil {
+		fmt.Fprintf(os.Stderr, "README update failed: %v\n", err)
 		os.Exit(1)
 	}
 	summary, _ := json.Marshal(index.Totals)
