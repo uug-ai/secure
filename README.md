@@ -37,7 +37,8 @@ runs daily at 02:17 UTC and can also be started manually. It:
    names beginning with `hub` plus the exact `factory` and `vault` repositories.
 2. Downloads each selected repository's SPDX SBOM from GitHub's Dependency
    Graph API.
-3. Writes the document to `sboms/<repository>/sbom.spdx.json`.
+3. Writes collection metadata to `sboms/<repository>/status.json` and, when
+   available, the document to `sboms/<repository>/sbom.spdx.json`.
 4. Scores document metadata, package identity, licensing, provenance, and SPDX
    relationships, then updates the quality table above.
 5. Updates `sboms/index.json` with collection status, quality metrics, and

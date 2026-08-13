@@ -136,13 +136,26 @@ func TestMarksFirstCollectionFailureAsUnavailable(t *testing.T) {
 		sboms:        map[string]json.RawMessage{},
 		errors:       map[string]error{"vault": errors.New("dependency graph disabled")},
 	}
+	output := t.TempDir()
 
-	index, err := collectSBOMs(client, "uug-ai", t.TempDir(), stringSet{"secure": true}, "2026-08-13T10:00:00Z")
+	index, err := collectSBOMs(client, "uug-ai", output, stringSet{"secure": true}, "2026-08-13T10:00:00Z")
 	if err != nil {
 		t.Fatal(err)
 	}
 	if index.Repositories[0].Status != "unavailable" || index.Totals.Unavailable != 1 {
 		t.Fatalf("unexpected unavailable entry: %+v", index)
+	}
+	statusPath := filepath.Join(output, "vault", "status.json")
+	data, err := os.ReadFile(statusPath)
+	if err != nil {
+		t.Fatal(err)
+	}
+	var status indexEntry
+	if err := json.Unmarshal(data, &status); err != nil {
+		t.Fatal(err)
+	}
+	if status.Name != "vault" || status.Status != "unavailable" || status.Error == "" {
+		t.Fatalf("unexpected persisted status: %+v", status)
 	}
 }
 

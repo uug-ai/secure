@@ -496,6 +496,9 @@ func collectSBOMs(client githubAPI, organization, outputDirectory string, exclud
 			entry.Error = collectionErr.Error()
 			entry.Status = "unavailable"
 		}
+		if err := writeJSON(filepath.Join(outputDirectory, repository.Name, "status.json"), entry); err != nil {
+			return sbomIndex{}, fmt.Errorf("write %s status: %w", repository.Name, err)
+		}
 		entries = append(entries, entry)
 	}
 

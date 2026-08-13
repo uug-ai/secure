@@ -8,7 +8,8 @@ repositories. Other organization repositories are outside the inventory scope.
 sboms/
   index.json
   <repository>/
-    sbom.spdx.json
+    status.json
+    sbom.spdx.json  # Present after a successful collection
 ```
 
 `index.json` is the authoritative coverage inventory. Repository status values
@@ -17,6 +18,10 @@ are:
 - `collected`: the document was refreshed in the current run.
 - `stale`: refresh failed and the last successful document was retained.
 - `unavailable`: no document has been collected yet.
+
+Every target repository has a `status.json`, including repositories whose SBOM
+is unavailable. This keeps coverage gaps visible in the repository tree without
+publishing a misleading empty SPDX document.
 
 Directories for repositories that no longer match the target scope are removed
 by the next successful collection.
