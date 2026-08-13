@@ -1,7 +1,8 @@
 # Software Bills of Materials
 
-This directory contains the latest SPDX document collected for each `uug-ai`
-repository.
+This directory contains the latest SPDX document collected for `uug-ai`
+repositories whose names begin with `hub`, plus the exact `factory` and `vault`
+repositories. Other organization repositories are outside the inventory scope.
 
 ```text
 sboms/
@@ -16,6 +17,9 @@ are:
 - `collected`: the document was refreshed in the current run.
 - `stale`: refresh failed and the last successful document was retained.
 - `unavailable`: no document has been collected yet.
+
+Directories for repositories that no longer match the target scope are removed
+by the next successful collection.
 
 Each collected or stale entry also contains a quality score and component
 coverage metrics. The score is weighted as follows:

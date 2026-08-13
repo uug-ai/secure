@@ -30,11 +30,13 @@ Run the workflow once to populate it.
 
 ## SBOM collection
 
-The [Collect organization SBOMs](.github/workflows/collect-sboms.yml) workflow
+The [Collect product SBOMs](.github/workflows/collect-sboms.yml) workflow
 runs daily at 02:17 UTC and can also be started manually. It:
 
-1. Lists all repositories visible to the read-only organization token.
-2. Downloads each repository's SPDX SBOM from GitHub's Dependency Graph API.
+1. Lists repositories visible to the read-only organization token and selects
+   names beginning with `hub` plus the exact `factory` and `vault` repositories.
+2. Downloads each selected repository's SPDX SBOM from GitHub's Dependency
+   Graph API.
 3. Writes the document to `sboms/<repository>/sbom.spdx.json`.
 4. Scores document metadata, package identity, licensing, provenance, and SPDX
    relationships, then updates the quality table above.
@@ -46,10 +48,12 @@ runs daily at 02:17 UTC and can also be started manually. It:
    Rejected non-fast-forward pushes are rebased onto the latest `main` and
    retried up to three times.
 
-The `secure` repository itself is excluded to avoid collecting the collector.
-The collector publishes every repository visible to the token, including
-archived and private repositories. Grant the token access to a private source
-repository only when its name and SBOM are approved for public disclosure.
+The collector ignores every repository outside `hub*`, `factory`, and `vault`.
+When the scope changes, generated directories and index entries that are no
+longer selected are removed during the next successful collection. Archived or
+private target repositories are included when visible to the token, so grant
+private access only when the repository name and SBOM are approved for public
+disclosure.
 
 ### Required setup
 
@@ -57,8 +61,8 @@ Grant the existing `TOKEN` organization secret to this repository. The workflow
 uses it only to read organization repositories and their SBOMs. The token should
 ideally be owned by a dedicated automation account and limited to:
 
-- Repository access to all `uug-ai` repositories whose SBOMs are approved for
-   public disclosure.
+- Repository access to the `hub*`, `factory`, and `vault` repositories whose
+   SBOMs are approved for public disclosure.
 - `Contents: read` repository permission; metadata read access is implicit.
 - No write permissions.
 
@@ -70,9 +74,9 @@ the workflow can push refreshed evidence. If `main` is protected against direct
 pushes, grant the security bot an appropriate bypass or change the final step to
 open a pull request.
 
-GitHub Dependency Graph must be enabled for each source repository. Repositories
-where it is disabled or inaccessible remain visible in the index as
-`unavailable` rather than silently disappearing.
+GitHub Dependency Graph must be enabled for each target repository. Target
+repositories where it is disabled or inaccessible remain visible in the index
+as `unavailable` rather than silently disappearing.
 
 ## Trust model
 

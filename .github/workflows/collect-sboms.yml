@@ -1,4 +1,4 @@
-name: Collect organization SBOMs
+name: Collect product SBOMs
 
 on:
   schedule:
@@ -30,7 +30,7 @@ jobs:
       - name: Test collector
         run: GOWORK=off go test ./...
 
-      - name: Collect organization SBOMs
+      - name: Collect target SBOMs
         id: collect
         env:
           GH_TOKEN: ${{ secrets.TOKEN }}
@@ -40,7 +40,7 @@ jobs:
             -output sboms)
           echo "summary=$summary" >> "$GITHUB_OUTPUT"
           {
-            echo '## SBOM collection'
+            echo '## Product SBOM collection'
             echo
             echo '```json'
             echo "$summary"
