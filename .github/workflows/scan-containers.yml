@@ -1,0 +1,110 @@
+name: Scan product container images
+
+on:
+  schedule:
+    - cron: '47 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  packages: read
+
+concurrency:
+  group: scan-organization-containers
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    name: Scan newest GHCR images
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    steps:
+      - name: Checkout secure repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Set up Go
+        uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6
+        with:
+          go-version-file: go.mod
+          cache: false
+
+      - name: Test collectors
+        run: GOWORK=off go test ./...
+
+      - name: Install Trivy
+        env:
+          TRIVY_VERSION: 0.65.0
+        run: |
+          archive="trivy_${TRIVY_VERSION}_Linux-64bit.tar.gz"
+          checksums="trivy_${TRIVY_VERSION}_checksums.txt"
+          release="https://github.com/aquasecurity/trivy/releases/download/v${TRIVY_VERSION}"
+          mkdir -p "$RUNNER_TEMP/trivy"
+          cd "$RUNNER_TEMP/trivy"
+          curl --fail --location --silent --show-error --remote-name "$release/$archive"
+          curl --fail --location --silent --show-error --remote-name "$release/$checksums"
+          grep " $archive$" "$checksums" | sha256sum --check --strict -
+          tar --extract --gzip --file "$archive" trivy
+          echo "$RUNNER_TEMP/trivy" >> "$GITHUB_PATH"
+
+      - name: Resolve registry identity
+        env:
+          GH_TOKEN: ${{ secrets.TOKEN }}
+        run: |
+          username=$(curl --fail --silent --show-error \
+            --header "Authorization: Bearer $GH_TOKEN" \
+            --header 'X-GitHub-Api-Version: 2022-11-28' \
+            https://api.github.com/user | jq --raw-output '.login')
+          if [[ -z "$username" || "$username" == 'null' ]]; then
+            echo 'Unable to resolve the TOKEN owner for GHCR authentication.' >&2
+            exit 1
+          fi
+          echo "TRIVY_USERNAME=$username" >> "$GITHUB_ENV"
+
+      - name: Scan container images
+        id: scan
+        env:
+          GH_TOKEN: ${{ secrets.TOKEN }}
+          TRIVY_PASSWORD: ${{ secrets.TOKEN }}
+        run: |
+          summary=$(GOWORK=off go run ./cmd/scan-containers \
+            -organization uug-ai \
+            -inventory sboms/index.json \
+            -output containers)
+          echo "summary=$summary" >> "$GITHUB_OUTPUT"
+          {
+            echo '## Product container scan'
+            echo
+            echo '```json'
+            echo "$summary"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit container scan evidence
+        env:
+          SCAN_SUMMARY: ${{ steps.scan.outputs.summary }}
+        run: |
+          git config user.name 'uug-ai-security-bot'
+          git config user.email 'security-bot@users.noreply.github.com'
+          git add containers README.md
+          if git diff --cached --quiet; then
+            echo 'No container scan changes detected.'
+            exit 0
+          fi
+          git commit -m 'chore(containers): refresh vulnerability scans' \
+            -m "$SCAN_SUMMARY"
+
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            if [[ "$attempt" == '3' ]]; then
+              break
+            fi
+
+            echo "Push rejected; rebasing onto the latest main (attempt $attempt of 3)."
+            git fetch origin main
+            git rebase -X theirs origin/main
+          done
+
+          echo 'Unable to push container scan updates after 3 attempts.' >&2
+          exit 1

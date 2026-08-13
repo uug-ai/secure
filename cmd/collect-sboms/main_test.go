@@ -211,12 +211,12 @@ func TestAssessSBOMQuality(t *testing.T) {
 	if quality.VersionedPercent != 100 || quality.LicensedPercent != 100 || quality.PURLPercent != 100 {
 		t.Fatalf("unexpected package coverage: %+v", quality)
 	}
-	if len(quality.Improvements) != 0 {
-		t.Fatalf("complete SBOM has improvements: %+v", quality.Improvements)
+	if len(quality.Checks) != 11 {
+		t.Fatalf("unexpected quality checks: %+v", quality.Checks)
 	}
 }
 
-func TestAssessSBOMExplainsQualityImprovements(t *testing.T) {
+func TestAssessSBOMRecordsQualityChecks(t *testing.T) {
 	document := []byte(`{
 		"spdxVersion":"SPDX-2.3",
 		"dataLicense":"CC0-1.0",
@@ -236,14 +236,20 @@ func TestAssessSBOMExplainsQualityImprovements(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	expected := []string{
-		"concluded licenses 0% (+10)",
-		"download locations 0% (+8)",
-		"suppliers 0% (+7)",
-		"document describes 0% (+5)",
+	checks := make(map[string]sbomQualityCheck, len(quality.Checks))
+	for _, check := range quality.Checks {
+		checks[check.Field] = check
 	}
-	if strings.Join(quality.Improvements, ",") != strings.Join(expected, ",") {
-		t.Fatalf("unexpected improvements: %+v", quality.Improvements)
+	for field, expectedGap := range map[string]int{
+		"Concluded licenses": 10,
+		"Download locations": 8,
+		"Suppliers":          7,
+		"Document describes": 5,
+	} {
+		check := checks[field]
+		if check.CoveragePercent != 0 || check.MaximumPoints-check.Points != expectedGap {
+			t.Errorf("unexpected %s check: %+v", field, check)
+		}
 	}
 }
 
@@ -270,7 +276,7 @@ func TestUpdateREADMECreatesAndReplacesQualityTable(t *testing.T) {
 	if err := os.WriteFile(path, []byte("# Secure\n\nManual content.\n"), 0o644); err != nil {
 		t.Fatal(err)
 	}
-	quality := &sbomQuality{Score: 90, Rating: "Excellent", PackageCount: 4, VersionedPercent: 100, LicensedPercent: 75, PURLPercent: 100, Improvements: []string{"concluded licenses 0% (+10)"}}
+	quality := &sbomQuality{Score: 90, Rating: "Excellent", PackageCount: 4, VersionedPercent: 100, LicensedPercent: 75, PURLPercent: 100}
 	index := sbomIndex{
 		GeneratedAt: "2026-08-13T10:00:00Z",
 		Repositories: []indexEntry{{
@@ -293,10 +299,13 @@ func TestUpdateREADMECreatesAndReplacesQualityTable(t *testing.T) {
 	if strings.Count(content, qualityStartMarker) != 1 || strings.Count(content, qualityEndMarker) != 1 {
 		t.Fatalf("quality markers were duplicated:\n%s", content)
 	}
-	for _, expected := range []string{"Manual content.", "🟢 Excellent", "90/100", "concluded licenses 0% (+10)", "[SPDX](sboms/vault/sbom.spdx.json)", "2026-08-14T10:00:00Z"} {
+	for _, expected := range []string{"Manual content.", "🟢 Excellent", "90/100", "[Breakdown](sboms/vault/README.md)", "[SPDX](sboms/vault/sbom.spdx.json)", "2026-08-14T10:00:00Z"} {
 		if !strings.Contains(content, expected) {
 			t.Fatalf("README does not contain %q:\n%s", expected, content)
 		}
+	}
+	if strings.Contains(content, "Improve") || strings.Contains(content, "concluded licenses") {
+		t.Fatalf("root README contains quality breakdown text:\n%s", content)
 	}
 }
 
@@ -337,8 +346,17 @@ func TestRefreshExistingSBOMsReassessesAndRemovesExcludedRepositories(t *testing
 	if refreshed.GeneratedAt != index.GeneratedAt || refreshed.Totals.Repositories != 1 || refreshed.Repositories[0].Name != "vault" {
 		t.Fatalf("unexpected refreshed index: %+v", refreshed)
 	}
-	if refreshed.Repositories[0].Quality == nil || len(refreshed.Repositories[0].Quality.Improvements) == 0 {
+	if refreshed.Repositories[0].Quality == nil || len(refreshed.Repositories[0].Quality.Checks) == 0 {
 		t.Fatalf("SBOM quality was not reassessed: %+v", refreshed.Repositories[0])
+	}
+	detail, err := os.ReadFile(filepath.Join(output, "vault", "README.md"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, expected := range []string{"# vault SBOM quality", "| Category | Field | Coverage | Points | Gap |", "| Licensing | Declared licenses |"} {
+		if !strings.Contains(string(detail), expected) {
+			t.Fatalf("repository detail README does not contain %q:\n%s", expected, detail)
+		}
 	}
 	if _, err := os.Stat(filepath.Join(output, "hub-mobile")); !errors.Is(err, os.ErrNotExist) {
 		t.Fatalf("excluded SBOM directory was not removed: %v", err)

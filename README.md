@@ -17,46 +17,54 @@ external disclosure.
 | --- | --- | --- |
 | SPDX SBOMs | [`sboms/`](sboms/) | Automated daily |
 | SBOM coverage | [`sboms/index.json`](sboms/index.json) | Automated daily |
-| CVE findings | [`cves/`](cves/) | Planned |
+| Container vulnerability scans | [`containers/`](containers/) | Automated daily |
+| Container scan coverage | [`containers/index.json`](containers/index.json) | Awaiting first scan |
+| Other CVE findings | [`cves/`](cves/) | Planned |
 | Security metrics | [`metrics/`](metrics/) | Planned |
 | Protection controls | [`controls/control-register.md`](controls/control-register.md) | Initial assessment register |
+
+<!-- CONTAINER_SCAN_START -->
+## Container image security overview
+
+No container scan has completed yet. The separate [Scan product container images](.github/workflows/scan-containers.yml) workflow will replace this message with per-project scores and severity counts.
+<!-- CONTAINER_SCAN_END -->
 
 <!-- SBOM_QUALITY_START -->
 ## SBOM quality overview
 
 Generated at `2026-08-13T16:25:58Z`. Quality combines document metadata (20%), package identity (30%), licensing (20%), provenance (15%), and relationships (15%).
 
-Legend: 🟢 85-100, 🟡 70-84, 🟠 50-69, 🔴 0-49 or unavailable. This measures SBOM completeness, not vulnerability severity. The Improve column shows missing SPDX fields and the maximum points each can recover.
+Legend: 🟢 85-100, 🟡 70-84, 🟠 50-69, 🔴 0-49 or unavailable. This measures SBOM completeness, not vulnerability severity.
 
-| Repository | Collection | Quality | Score | Packages | Versioned | Licensed | PURL | Improve | SBOM |
-| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- | --- |
-| [factory](https://github.com/uug-ai/factory) | collected | 🟠 Needs work | 66/100 | 162 | 100% | 64% | 100% | declared licenses 0% (+10); download locations 1% (+8); suppliers 0% (+7); document describes 0% (+5); concluded licenses 64% (+4) | [SPDX](sboms/factory/sbom.spdx.json) |
-| [hub-anpr](https://github.com/uug-ai/hub-anpr) | collected | 🟠 Needs work | 68/100 | 52 | 100% | 85% | 100% | declared licenses 2% (+10); download locations 2% (+8); suppliers 0% (+7); document describes 0% (+5); concluded licenses 83% (+2) | [SPDX](sboms/hub-anpr/sbom.spdx.json) |
-| [hub-api](https://github.com/uug-ai/hub-api) | collected | 🟠 Needs work | 68/100 | 160 | 100% | 89% | 100% | declared licenses 0% (+10); download locations 1% (+8); suppliers 0% (+7); document describes 0% (+5); concluded licenses 89% (+2) | [SPDX](sboms/hub-api/sbom.spdx.json) |
-| [hub-cleanup](https://github.com/uug-ai/hub-cleanup) | collected | 🟠 Needs work | 68/100 | 47 | 100% | 83% | 100% | declared licenses 0% (+10); download locations 2% (+8); suppliers 0% (+7); document describes 0% (+5); concluded licenses 83% (+2) | [SPDX](sboms/hub-cleanup/sbom.spdx.json) |
-| [hub-frontend](https://github.com/uug-ai/hub-frontend) | collected | 🟠 Needs work | 69/100 | 1225 | 100% | 99% | 100% | declared licenses 0% (+10); download locations 0% (+8); suppliers 0% (+7); document describes 0% (+5); concluded licenses 99% (+1) | [SPDX](sboms/hub-frontend/sbom.spdx.json) |
-| [hub-loitering](https://github.com/uug-ai/hub-loitering) | collected | 🟠 Needs work | 68/100 | 49 | 100% | 82% | 100% | declared licenses 2% (+10); download locations 2% (+8); suppliers 0% (+7); document describes 0% (+5); concluded licenses 80% (+2) | [SPDX](sboms/hub-loitering/sbom.spdx.json) |
-| [hub-monitor-device](https://github.com/uug-ai/hub-monitor-device) | collected | 🟠 Needs work | 68/100 | 79 | 100% | 87% | 100% | declared licenses 0% (+10); download locations 1% (+8); suppliers 0% (+7); document describes 0% (+5); concluded licenses 87% (+2) | [SPDX](sboms/hub-monitor-device/sbom.spdx.json) |
-| [hub-objecttracking](https://github.com/uug-ai/hub-objecttracking) | collected | 🟠 Needs work | 67/100 | 35 | 100% | 74% | 100% | declared licenses 3% (+10); download locations 3% (+8); suppliers 0% (+7); document describes 0% (+5); concluded licenses 71% (+3) | [SPDX](sboms/hub-objecttracking/sbom.spdx.json) |
-| [hub-pipeline-analysis](https://github.com/uug-ai/hub-pipeline-analysis) | collected | 🟠 Needs work | 68/100 | 63 | 100% | 83% | 100% | declared licenses 0% (+10); download locations 2% (+8); suppliers 0% (+7); document describes 0% (+5); concluded licenses 83% (+2) | [SPDX](sboms/hub-pipeline-analysis/sbom.spdx.json) |
-| [hub-pipeline-classifier](https://github.com/uug-ai/hub-pipeline-classifier) | collected | 🟠 Needs work | 68/100 | 59 | 100% | 88% | 100% | declared licenses 0% (+10); download locations 2% (+8); suppliers 0% (+7); document describes 0% (+5); concluded licenses 88% (+2) | [SPDX](sboms/hub-pipeline-classifier/sbom.spdx.json) |
-| [hub-pipeline-counting](https://github.com/uug-ai/hub-pipeline-counting) | collected | 🟠 Needs work | 68/100 | 48 | 100% | 81% | 100% | declared licenses 0% (+10); download locations 2% (+8); suppliers 0% (+7); document describes 0% (+5); concluded licenses 81% (+2) | [SPDX](sboms/hub-pipeline-counting/sbom.spdx.json) |
-| [hub-pipeline-dominantcolors](https://github.com/uug-ai/hub-pipeline-dominantcolors) | collected | 🟠 Needs work | 68/100 | 60 | 100% | 88% | 100% | declared licenses 2% (+10); download locations 2% (+8); suppliers 0% (+7); document describes 0% (+5); concluded licenses 87% (+2) | [SPDX](sboms/hub-pipeline-dominantcolors/sbom.spdx.json) |
-| [hub-pipeline-event](https://github.com/uug-ai/hub-pipeline-event) | collected | 🟠 Needs work | 67/100 | 29 | 100% | 79% | 100% | declared licenses 0% (+10); download locations 3% (+8); suppliers 0% (+7); document describes 0% (+5); concluded licenses 79% (+3) | [SPDX](sboms/hub-pipeline-event/sbom.spdx.json) |
-| [hub-pipeline-export](https://github.com/uug-ai/hub-pipeline-export) | collected | 🟠 Needs work | 68/100 | 58 | 100% | 84% | 100% | declared licenses 0% (+10); download locations 2% (+8); suppliers 0% (+7); document describes 0% (+5); concluded licenses 84% (+2) | [SPDX](sboms/hub-pipeline-export/sbom.spdx.json) |
-| [hub-pipeline-monitor](https://github.com/uug-ai/hub-pipeline-monitor) | collected | 🟠 Needs work | 68/100 | 65 | 100% | 86% | 100% | declared licenses 0% (+10); download locations 2% (+8); suppliers 0% (+7); document describes 0% (+5); concluded licenses 86% (+2) | [SPDX](sboms/hub-pipeline-monitor/sbom.spdx.json) |
-| [hub-pipeline-notification](https://github.com/uug-ai/hub-pipeline-notification) | collected | 🟠 Needs work | 68/100 | 95 | 100% | 88% | 100% | declared licenses 0% (+10); download locations 1% (+8); suppliers 0% (+7); document describes 0% (+5); concluded licenses 88% (+2) | [SPDX](sboms/hub-pipeline-notification/sbom.spdx.json) |
-| [hub-pipeline-notification-test](https://github.com/uug-ai/hub-pipeline-notification-test) | collected | 🟠 Needs work | 68/100 | 65 | 100% | 83% | 100% | declared licenses 0% (+10); download locations 2% (+8); suppliers 0% (+7); document describes 0% (+5); concluded licenses 83% (+2) | [SPDX](sboms/hub-pipeline-notification-test/sbom.spdx.json) |
-| [hub-pipeline-redaction](https://github.com/uug-ai/hub-pipeline-redaction) | collected | 🟠 Needs work | 68/100 | 49 | 100% | 86% | 100% | declared licenses 2% (+10); download locations 2% (+8); suppliers 0% (+7); document describes 0% (+5); concluded licenses 84% (+2) | [SPDX](sboms/hub-pipeline-redaction/sbom.spdx.json) |
-| [hub-pipeline-sequence](https://github.com/uug-ai/hub-pipeline-sequence) | collected | 🟠 Needs work | 68/100 | 60 | 100% | 85% | 100% | declared licenses 0% (+10); download locations 2% (+8); suppliers 0% (+7); document describes 0% (+5); concluded licenses 85% (+2) | [SPDX](sboms/hub-pipeline-sequence/sbom.spdx.json) |
-| [hub-pipeline-sprite](https://github.com/uug-ai/hub-pipeline-sprite) | collected | 🟠 Needs work | 68/100 | 58 | 100% | 83% | 100% | declared licenses 0% (+10); download locations 2% (+8); suppliers 0% (+7); document describes 0% (+5); concluded licenses 83% (+2) | [SPDX](sboms/hub-pipeline-sprite/sbom.spdx.json) |
-| [hub-pipeline-throttler](https://github.com/uug-ai/hub-pipeline-throttler) | collected | 🟠 Needs work | 68/100 | 53 | 100% | 83% | 100% | declared licenses 0% (+10); download locations 2% (+8); suppliers 0% (+7); document describes 0% (+5); concluded licenses 83% (+2) | [SPDX](sboms/hub-pipeline-throttler/sbom.spdx.json) |
-| [hub-pipeline-thumbnail](https://github.com/uug-ai/hub-pipeline-thumbnail) | collected | 🟠 Needs work | 68/100 | 61 | 100% | 85% | 100% | declared licenses 0% (+10); download locations 2% (+8); suppliers 0% (+7); document describes 0% (+5); concluded licenses 85% (+2) | [SPDX](sboms/hub-pipeline-thumbnail/sbom.spdx.json) |
-| [hub-proxy](https://github.com/uug-ai/hub-proxy) | collected | 🟠 Needs work | 65/100 | 26 | 100% | 58% | 100% | declared licenses 0% (+10); download locations 4% (+8); suppliers 0% (+7); concluded licenses 58% (+5); document describes 0% (+5) | [SPDX](sboms/hub-proxy/sbom.spdx.json) |
-| [hub-reactivatesubscriptions](https://github.com/uug-ai/hub-reactivatesubscriptions) | collected | 🟠 Needs work | 67/100 | 63 | 100% | 78% | 100% | declared licenses 0% (+10); download locations 2% (+8); suppliers 0% (+7); document describes 0% (+5); concluded licenses 78% (+3) | [SPDX](sboms/hub-reactivatesubscriptions/sbom.spdx.json) |
-| [hub-vault-forwarder](https://github.com/uug-ai/hub-vault-forwarder) | collected | 🟠 Needs work | 69/100 | 8 | 100% | 88% | 100% | declared licenses 0% (+10); suppliers 0% (+7); download locations 13% (+7); document describes 0% (+5); concluded licenses 88% (+2) | [SPDX](sboms/hub-vault-forwarder/sbom.spdx.json) |
-| [hub-workflows](https://github.com/uug-ai/hub-workflows) | collected | 🟠 Needs work | 68/100 | 85 | 100% | 88% | 100% | declared licenses 1% (+10); download locations 1% (+8); suppliers 0% (+7); document describes 0% (+5); concluded licenses 87% (+2) | [SPDX](sboms/hub-workflows/sbom.spdx.json) |
-| [vault](https://github.com/uug-ai/vault) | collected | 🟠 Needs work | 69/100 | 1654 | 100% | 99% | 100% | declared licenses 0% (+10); download locations 0% (+8); suppliers 0% (+7); document describes 0% (+5); concluded licenses 99% (+1) | [SPDX](sboms/vault/sbom.spdx.json) |
+| Repository | Collection | Quality | Score | Packages | Versioned | Licensed | PURL | Details |
+| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- |
+| [factory](https://github.com/uug-ai/factory) | collected | 🟠 Needs work | 66/100 | 162 | 100% | 64% | 100% | [Breakdown](sboms/factory/README.md) · [SPDX](sboms/factory/sbom.spdx.json) |
+| [hub-anpr](https://github.com/uug-ai/hub-anpr) | collected | 🟠 Needs work | 68/100 | 52 | 100% | 85% | 100% | [Breakdown](sboms/hub-anpr/README.md) · [SPDX](sboms/hub-anpr/sbom.spdx.json) |
+| [hub-api](https://github.com/uug-ai/hub-api) | collected | 🟠 Needs work | 68/100 | 160 | 100% | 89% | 100% | [Breakdown](sboms/hub-api/README.md) · [SPDX](sboms/hub-api/sbom.spdx.json) |
+| [hub-cleanup](https://github.com/uug-ai/hub-cleanup) | collected | 🟠 Needs work | 68/100 | 47 | 100% | 83% | 100% | [Breakdown](sboms/hub-cleanup/README.md) · [SPDX](sboms/hub-cleanup/sbom.spdx.json) |
+| [hub-frontend](https://github.com/uug-ai/hub-frontend) | collected | 🟠 Needs work | 69/100 | 1225 | 100% | 99% | 100% | [Breakdown](sboms/hub-frontend/README.md) · [SPDX](sboms/hub-frontend/sbom.spdx.json) |
+| [hub-loitering](https://github.com/uug-ai/hub-loitering) | collected | 🟠 Needs work | 68/100 | 49 | 100% | 82% | 100% | [Breakdown](sboms/hub-loitering/README.md) · [SPDX](sboms/hub-loitering/sbom.spdx.json) |
+| [hub-monitor-device](https://github.com/uug-ai/hub-monitor-device) | collected | 🟠 Needs work | 68/100 | 79 | 100% | 87% | 100% | [Breakdown](sboms/hub-monitor-device/README.md) · [SPDX](sboms/hub-monitor-device/sbom.spdx.json) |
+| [hub-objecttracking](https://github.com/uug-ai/hub-objecttracking) | collected | 🟠 Needs work | 67/100 | 35 | 100% | 74% | 100% | [Breakdown](sboms/hub-objecttracking/README.md) · [SPDX](sboms/hub-objecttracking/sbom.spdx.json) |
+| [hub-pipeline-analysis](https://github.com/uug-ai/hub-pipeline-analysis) | collected | 🟠 Needs work | 68/100 | 63 | 100% | 83% | 100% | [Breakdown](sboms/hub-pipeline-analysis/README.md) · [SPDX](sboms/hub-pipeline-analysis/sbom.spdx.json) |
+| [hub-pipeline-classifier](https://github.com/uug-ai/hub-pipeline-classifier) | collected | 🟠 Needs work | 68/100 | 59 | 100% | 88% | 100% | [Breakdown](sboms/hub-pipeline-classifier/README.md) · [SPDX](sboms/hub-pipeline-classifier/sbom.spdx.json) |
+| [hub-pipeline-counting](https://github.com/uug-ai/hub-pipeline-counting) | collected | 🟠 Needs work | 68/100 | 48 | 100% | 81% | 100% | [Breakdown](sboms/hub-pipeline-counting/README.md) · [SPDX](sboms/hub-pipeline-counting/sbom.spdx.json) |
+| [hub-pipeline-dominantcolors](https://github.com/uug-ai/hub-pipeline-dominantcolors) | collected | 🟠 Needs work | 68/100 | 60 | 100% | 88% | 100% | [Breakdown](sboms/hub-pipeline-dominantcolors/README.md) · [SPDX](sboms/hub-pipeline-dominantcolors/sbom.spdx.json) |
+| [hub-pipeline-event](https://github.com/uug-ai/hub-pipeline-event) | collected | 🟠 Needs work | 67/100 | 29 | 100% | 79% | 100% | [Breakdown](sboms/hub-pipeline-event/README.md) · [SPDX](sboms/hub-pipeline-event/sbom.spdx.json) |
+| [hub-pipeline-export](https://github.com/uug-ai/hub-pipeline-export) | collected | 🟠 Needs work | 68/100 | 58 | 100% | 84% | 100% | [Breakdown](sboms/hub-pipeline-export/README.md) · [SPDX](sboms/hub-pipeline-export/sbom.spdx.json) |
+| [hub-pipeline-monitor](https://github.com/uug-ai/hub-pipeline-monitor) | collected | 🟠 Needs work | 68/100 | 65 | 100% | 86% | 100% | [Breakdown](sboms/hub-pipeline-monitor/README.md) · [SPDX](sboms/hub-pipeline-monitor/sbom.spdx.json) |
+| [hub-pipeline-notification](https://github.com/uug-ai/hub-pipeline-notification) | collected | 🟠 Needs work | 68/100 | 95 | 100% | 88% | 100% | [Breakdown](sboms/hub-pipeline-notification/README.md) · [SPDX](sboms/hub-pipeline-notification/sbom.spdx.json) |
+| [hub-pipeline-notification-test](https://github.com/uug-ai/hub-pipeline-notification-test) | collected | 🟠 Needs work | 68/100 | 65 | 100% | 83% | 100% | [Breakdown](sboms/hub-pipeline-notification-test/README.md) · [SPDX](sboms/hub-pipeline-notification-test/sbom.spdx.json) |
+| [hub-pipeline-redaction](https://github.com/uug-ai/hub-pipeline-redaction) | collected | 🟠 Needs work | 68/100 | 49 | 100% | 86% | 100% | [Breakdown](sboms/hub-pipeline-redaction/README.md) · [SPDX](sboms/hub-pipeline-redaction/sbom.spdx.json) |
+| [hub-pipeline-sequence](https://github.com/uug-ai/hub-pipeline-sequence) | collected | 🟠 Needs work | 68/100 | 60 | 100% | 85% | 100% | [Breakdown](sboms/hub-pipeline-sequence/README.md) · [SPDX](sboms/hub-pipeline-sequence/sbom.spdx.json) |
+| [hub-pipeline-sprite](https://github.com/uug-ai/hub-pipeline-sprite) | collected | 🟠 Needs work | 68/100 | 58 | 100% | 83% | 100% | [Breakdown](sboms/hub-pipeline-sprite/README.md) · [SPDX](sboms/hub-pipeline-sprite/sbom.spdx.json) |
+| [hub-pipeline-throttler](https://github.com/uug-ai/hub-pipeline-throttler) | collected | 🟠 Needs work | 68/100 | 53 | 100% | 83% | 100% | [Breakdown](sboms/hub-pipeline-throttler/README.md) · [SPDX](sboms/hub-pipeline-throttler/sbom.spdx.json) |
+| [hub-pipeline-thumbnail](https://github.com/uug-ai/hub-pipeline-thumbnail) | collected | 🟠 Needs work | 68/100 | 61 | 100% | 85% | 100% | [Breakdown](sboms/hub-pipeline-thumbnail/README.md) · [SPDX](sboms/hub-pipeline-thumbnail/sbom.spdx.json) |
+| [hub-proxy](https://github.com/uug-ai/hub-proxy) | collected | 🟠 Needs work | 65/100 | 26 | 100% | 58% | 100% | [Breakdown](sboms/hub-proxy/README.md) · [SPDX](sboms/hub-proxy/sbom.spdx.json) |
+| [hub-reactivatesubscriptions](https://github.com/uug-ai/hub-reactivatesubscriptions) | collected | 🟠 Needs work | 67/100 | 63 | 100% | 78% | 100% | [Breakdown](sboms/hub-reactivatesubscriptions/README.md) · [SPDX](sboms/hub-reactivatesubscriptions/sbom.spdx.json) |
+| [hub-vault-forwarder](https://github.com/uug-ai/hub-vault-forwarder) | collected | 🟠 Needs work | 69/100 | 8 | 100% | 88% | 100% | [Breakdown](sboms/hub-vault-forwarder/README.md) · [SPDX](sboms/hub-vault-forwarder/sbom.spdx.json) |
+| [hub-workflows](https://github.com/uug-ai/hub-workflows) | collected | 🟠 Needs work | 68/100 | 85 | 100% | 88% | 100% | [Breakdown](sboms/hub-workflows/README.md) · [SPDX](sboms/hub-workflows/sbom.spdx.json) |
+| [vault](https://github.com/uug-ai/vault) | collected | 🟠 Needs work | 69/100 | 1654 | 100% | 99% | 100% | [Breakdown](sboms/vault/README.md) · [SPDX](sboms/vault/sbom.spdx.json) |
 <!-- SBOM_QUALITY_END -->
 
 ## SBOM collection
@@ -90,21 +98,20 @@ the next successful collection. Archived or private target repositories are
 included when visible to the token, so grant private access only when the
 repository name and SBOM are approved for public disclosure.
 
-### Improving an orange score
+## Container image scanning
 
-Orange means the SPDX document is 50-69% complete under this repository's
-quality rubric. It does not indicate known vulnerabilities. The Improve column
-shows current field coverage and the maximum points available, ordered by
-impact. For example, `declared licenses 0% (+10)` means no package has a
-declared license and completing that field can add up to 10 points.
+The [Scan product container images](.github/workflows/scan-containers.yml)
+workflow runs separately each day at 03:47 UTC and can be started manually. It
+uses the approved repositories in `sboms/index.json`, discovers the newest
+tagged `ghcr.io/uug-ai/<repository>` package version, scans its immutable digest
+with Trivy, and writes raw reports plus summary metadata under `containers/`.
 
-Version, PURL, and declared-license gaps can often be improved by committing
-complete supported dependency manifests and lock files and by fixing package
-metadata upstream. Concluded licenses require license analysis or review.
-Supplier, download-location, and document-describes gaps are commonly omitted
-by GitHub's Dependency Graph SBOM endpoint and generally require an enriched
-SPDX generator or a controlled post-processing step; they cannot necessarily
-be fixed in the affected application's source repository.
+Projects without a matching tagged image remain visible as `unavailable`.
+Transient package or scanner failures preserve the last successful report as
+`stale`. The root overview scores the highest detected severity as 100 clean,
+80 low, 60 medium, 30 high, or 0 critical and shows vulnerability and fixable
+critical/high counts. This is a triage score, not a guarantee that an image is
+secure.
 
 ### Required setup
 
@@ -115,6 +122,8 @@ ideally be owned by a dedicated automation account and limited to:
 - Repository access to the `hub*`, `factory`, and `vault` repositories whose
    SBOMs are approved for public disclosure.
 - `Contents: read` repository permission; metadata read access is implicit.
+- `read:packages` scope and access to each GHCR package approved for public
+   vulnerability reporting.
 - No write permissions.
 
 An existing token with broader permissions will work, but reducing it to these
@@ -152,4 +161,8 @@ The collector uses only the Go standard library.
 GOWORK=off go test ./...
 GH_TOKEN=<read-only-token> GOWORK=off go run ./cmd/collect-sboms
 GOWORK=off go run ./cmd/collect-sboms -refresh-existing
+export GH_TOKEN=<read-only-token>
+export TRIVY_USERNAME=<token-owner>
+export TRIVY_PASSWORD="$GH_TOKEN"
+GOWORK=off go run ./cmd/scan-containers
 ```
