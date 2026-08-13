@@ -40,12 +40,16 @@ Archived and private repositories are included when the token can see them.
 
 ### Required setup
 
-Create the `ORG_READ_TOKEN` Actions secret in this repository. Use a fine-grained
-personal access token owned by a dedicated automation account with:
+Grant the existing `TOKEN` organization secret to this repository. The workflow
+uses it only to read organization repositories and their SBOMs. The token should
+ideally be owned by a dedicated automation account and limited to:
 
 - Repository access to all repositories in the `uug-ai` organization.
 - `Contents: read` repository permission; metadata read access is implicit.
 - No write permissions.
+
+An existing token with broader permissions will work, but reducing it to these
+permissions limits the impact of accidental exposure or workflow compromise.
 
 The repository's Actions settings must allow `GITHUB_TOKEN` to write contents so
 the workflow can push refreshed evidence. If `main` is protected against direct
