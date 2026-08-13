@@ -34,6 +34,8 @@ runs daily at 02:17 UTC and can also be started manually. It:
 5. Preserves the last successful document and marks it `stale` when a refresh
    fails.
 6. Commits changed evidence with the repository-scoped GitHub Actions token.
+   Rejected non-fast-forward pushes are rebased onto the latest `main` and
+   retried up to three times.
 
 The `secure` repository itself is excluded to avoid collecting the collector.
 Archived and private repositories are included when the token can see them.

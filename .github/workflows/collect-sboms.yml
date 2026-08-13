@@ -60,4 +60,19 @@ jobs:
           fi
           git commit -m "chore(sbom): refresh organization inventory" \
             -m "$COLLECTION_SUMMARY"
-          git push
+
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            if [[ "$attempt" == '3' ]]; then
+              break
+            fi
+
+            echo "Push rejected; rebasing onto the latest main (attempt $attempt of 3)."
+            git fetch origin main
+            git rebase -X theirs origin/main
+          done
+
+          echo 'Unable to push SBOM updates after 3 attempts.' >&2
+          exit 1
