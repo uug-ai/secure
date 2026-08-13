@@ -24,18 +24,18 @@ external disclosure.
 <!-- SBOM_QUALITY_START -->
 ## SBOM quality overview
 
-Generated at `2026-08-13T14:16:45Z`. Quality combines document metadata (20%), package identity (30%), licensing (20%), provenance (15%), and relationships (15%).
+Generated at `2026-08-13T14:44:46Z`. Quality combines document metadata (20%), package identity (30%), licensing (20%), provenance (15%), and relationships (15%).
 
 Legend: 🟢 85-100, 🟡 70-84, 🟠 50-69, 🔴 0-49 or unavailable.
 
 | Repository | Collection | Quality | Score | Packages | Versioned | Licensed | PURL | SBOM |
 | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- |
-| [factory](https://github.com/uug-ai/factory) | unavailable | 🔴 Unavailable | 0/100 | 0 | 0% | 0% | 0% | - |
+| [factory](https://github.com/uug-ai/factory) | collected | 🟠 Needs work | 66/100 | 162 | 100% | 64% | 100% | [SPDX](sboms/factory/sbom.spdx.json) |
 | [hub-anpr](https://github.com/uug-ai/hub-anpr) | unavailable | 🔴 Unavailable | 0/100 | 0 | 0% | 0% | 0% | - |
 | [hub-api](https://github.com/uug-ai/hub-api) | collected | 🟠 Needs work | 68/100 | 160 | 100% | 89% | 100% | [SPDX](sboms/hub-api/sbom.spdx.json) |
 | [hub-background-notifcation-digest](https://github.com/uug-ai/hub-background-notifcation-digest) | unavailable | 🔴 Unavailable | 0/100 | 0 | 0% | 0% | 0% | - |
 | [hub-cleanup](https://github.com/uug-ai/hub-cleanup) | collected | 🟠 Needs work | 68/100 | 47 | 100% | 83% | 100% | [SPDX](sboms/hub-cleanup/sbom.spdx.json) |
-| [hub-frontend](https://github.com/uug-ai/hub-frontend) | collected | 🟠 Needs work | 69/100 | 1225 | 100% | 99% | 100% | [SPDX](sboms/hub-frontend/sbom.spdx.json) |
+| [hub-frontend](https://github.com/uug-ai/hub-frontend) | stale | 🟠 Needs work | 69/100 | 1225 | 100% | 99% | 100% | [SPDX](sboms/hub-frontend/sbom.spdx.json) |
 | [hub-license](https://github.com/uug-ai/hub-license) | unavailable | 🔴 Unavailable | 0/100 | 0 | 0% | 0% | 0% | - |
 | [hub-loitering](https://github.com/uug-ai/hub-loitering) | unavailable | 🔴 Unavailable | 0/100 | 0 | 0% | 0% | 0% | - |
 | [hub-mobile](https://github.com/uug-ai/hub-mobile) | unavailable | 🔴 Unavailable | 0/100 | 0 | 0% | 0% | 0% | - |
@@ -46,7 +46,7 @@ Legend: 🟢 85-100, 🟡 70-84, 🟠 50-69, 🔴 0-49 or unavailable.
 | [hub-pipeline-classifier](https://github.com/uug-ai/hub-pipeline-classifier) | unavailable | 🔴 Unavailable | 0/100 | 0 | 0% | 0% | 0% | - |
 | [hub-pipeline-classifier-yolov3](https://github.com/uug-ai/hub-pipeline-classifier-yolov3) | unavailable | 🔴 Unavailable | 0/100 | 0 | 0% | 0% | 0% | - |
 | [hub-pipeline-counting](https://github.com/uug-ai/hub-pipeline-counting) | unavailable | 🔴 Unavailable | 0/100 | 0 | 0% | 0% | 0% | - |
-| [hub-pipeline-dominantcolors](https://github.com/uug-ai/hub-pipeline-dominantcolors) | unavailable | 🔴 Unavailable | 0/100 | 0 | 0% | 0% | 0% | - |
+| [hub-pipeline-dominantcolors](https://github.com/uug-ai/hub-pipeline-dominantcolors) | collected | 🟠 Needs work | 68/100 | 60 | 100% | 88% | 100% | [SPDX](sboms/hub-pipeline-dominantcolors/sbom.spdx.json) |
 | [hub-pipeline-event](https://github.com/uug-ai/hub-pipeline-event) | collected | 🟠 Needs work | 67/100 | 29 | 100% | 79% | 100% | [SPDX](sboms/hub-pipeline-event/sbom.spdx.json) |
 | [hub-pipeline-export](https://github.com/uug-ai/hub-pipeline-export) | unavailable | 🔴 Unavailable | 0/100 | 0 | 0% | 0% | 0% | - |
 | [hub-pipeline-licenseplate](https://github.com/uug-ai/hub-pipeline-licenseplate) | unavailable | 🔴 Unavailable | 0/100 | 0 | 0% | 0% | 0% | - |
@@ -62,7 +62,7 @@ Legend: 🟢 85-100, 🟡 70-84, 🟠 50-69, 🔴 0-49 or unavailable.
 | [hub-proxy](https://github.com/uug-ai/hub-proxy) | unavailable | 🔴 Unavailable | 0/100 | 0 | 0% | 0% | 0% | - |
 | [hub-reactivatesubscriptions](https://github.com/uug-ai/hub-reactivatesubscriptions) | collected | 🟠 Needs work | 67/100 | 63 | 100% | 78% | 100% | [SPDX](sboms/hub-reactivatesubscriptions/sbom.spdx.json) |
 | [hub-vault-forwarder](https://github.com/uug-ai/hub-vault-forwarder) | unavailable | 🔴 Unavailable | 0/100 | 0 | 0% | 0% | 0% | - |
-| [hub-workflows](https://github.com/uug-ai/hub-workflows) | unavailable | 🔴 Unavailable | 0/100 | 0 | 0% | 0% | 0% | - |
+| [hub-workflows](https://github.com/uug-ai/hub-workflows) | collected | 🟠 Needs work | 68/100 | 85 | 100% | 87% | 100% | [SPDX](sboms/hub-workflows/sbom.spdx.json) |
 | [vault](https://github.com/uug-ai/vault) | collected | 🟠 Needs work | 69/100 | 1654 | 100% | 99% | 100% | [SPDX](sboms/vault/sbom.spdx.json) |
 <!-- SBOM_QUALITY_END -->
 
