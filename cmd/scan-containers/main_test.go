@@ -101,6 +101,83 @@ func TestAssessReportScoresHighestSeverity(t *testing.T) {
 	}
 }
 
+func TestAggregateCVEsCountsOnlyCriticalAndHighFindings(t *testing.T) {
+	reports := map[string][]byte{
+		"hub-api": testTrivyReport(
+			map[string]string{"VulnerabilityID": "CVE-2026-0002", "Severity": "HIGH", "PkgName": "openssl", "InstalledVersion": "3.0.0", "FixedVersion": "3.0.1"},
+			map[string]string{"VulnerabilityID": "CVE-2026-0001", "Severity": "CRITICAL", "PkgName": "libc", "InstalledVersion": "1.0.0"},
+			map[string]string{"VulnerabilityID": "CVE-2026-0003", "Severity": "MEDIUM", "PkgName": "ignored"},
+		),
+		"vault": testTrivyReport(
+			map[string]string{"VulnerabilityID": "CVE-2026-0002", "Severity": "HIGH", "PkgName": "openssl", "InstalledVersion": "3.0.0"},
+		),
+	}
+
+	index, err := aggregateCVEs(reports, "2026-08-13T20:00:00Z")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if index.Totals != (cveTotals{Critical: 1, Findings: 2, High: 1, Occurrences: 3}) {
+		t.Fatalf("unexpected totals: %+v", index.Totals)
+	}
+	if index.Findings[0].ID != "CVE-2026-0001" || index.Findings[0].Severity != "CRITICAL" {
+		t.Fatalf("critical finding was not ordered first: %+v", index.Findings)
+	}
+	high := index.Findings[1]
+	if high.ID != "CVE-2026-0002" || high.Occurrences != 2 || high.FixableOccurrences != 1 {
+		t.Fatalf("unexpected aggregated high finding: %+v", high)
+	}
+	if strings.Join(high.Repositories, ",") != "hub-api,vault" || strings.Join(high.Packages, ",") != "openssl@3.0.0" {
+		t.Fatalf("unexpected affected scope: %+v", high)
+	}
+}
+
+func TestWriteCVEEvidenceUsesScannedAndStaleReports(t *testing.T) {
+	root := t.TempDir()
+	containerDirectory := filepath.Join(root, "containers")
+	cveDirectory := filepath.Join(root, "cves")
+	for repository, report := range map[string][]byte{
+		"hub-api": testTrivyReport(map[string]string{"VulnerabilityID": "CVE-2026-0001", "Severity": "CRITICAL", "PkgName": "libc", "InstalledVersion": "1.0.0", "PrimaryURL": "https://example.com/CVE-2026-0001"}),
+		"vault":   testTrivyReport(map[string]string{"VulnerabilityID": "CVE-2026-0002", "Severity": "HIGH", "PkgName": "openssl", "InstalledVersion": "3.0.0", "FixedVersion": "3.0.1"}),
+	} {
+		if err := writeJSON(filepath.Join(containerDirectory, repository, "trivy.json"), json.RawMessage(report)); err != nil {
+			t.Fatal(err)
+		}
+	}
+	scan := scanIndex{
+		GeneratedAt: "2026-08-13T20:00:00Z",
+		Repositories: []scanEntry{
+			{Name: "hub-api", ReportPath: "hub-api/trivy.json", Status: "scanned"},
+			{Name: "vault", ReportPath: "vault/trivy.json", Status: "stale"},
+			{Name: "factory", Status: "unavailable"},
+		},
+	}
+
+	index, err := writeCVEEvidence(scan, containerDirectory, cveDirectory)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if index.Totals.Findings != 2 || index.Totals.Occurrences != 2 {
+		t.Fatalf("unexpected CVE index: %+v", index)
+	}
+	readme, err := os.ReadFile(filepath.Join(cveDirectory, "README.md"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, expected := range []string{"2 unique findings", "CVE-2026-0001", "CRITICAL", "CVE-2026-0002", "HIGH", "| 1 |"} {
+		if !strings.Contains(string(readme), expected) {
+			t.Fatalf("CVE README does not contain %q:\n%s", expected, readme)
+		}
+	}
+	var persisted cveIndex
+	if err := loadJSON(filepath.Join(cveDirectory, "index.json"), &persisted); err != nil {
+		t.Fatal(err)
+	}
+	if persisted.Totals != index.Totals {
+		t.Fatalf("persisted totals differ: %+v != %+v", persisted.Totals, index.Totals)
+	}
+}
+
 func TestCollectScansReportsAvailableAndUnavailableImages(t *testing.T) {
 	root := t.TempDir()
 	inventoryPath := writeInventory(t, root, "hub-api", "vault")

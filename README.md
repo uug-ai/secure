@@ -19,7 +19,8 @@ external disclosure.
 | SBOM coverage | [`sboms/index.json`](sboms/index.json) | Automated daily |
 | Container vulnerability scans | [`containers/`](containers/) | Automated daily |
 | Container scan coverage | [`containers/index.json`](containers/index.json) | Awaiting first scan |
-| Other CVE findings | [`cves/`](cves/) | Planned |
+| Critical/high vulnerability aggregate | [`cves/`](cves/) | Automated with container scans |
+| Critical/high occurrence data | [`cves/index.json`](cves/index.json) | Awaiting first scan |
 | Security metrics | [`metrics/`](metrics/) | Planned |
 | Protection controls | [`controls/control-register.md`](controls/control-register.md) | Initial assessment register |
 
@@ -105,6 +106,10 @@ workflow runs separately each day at 03:47 UTC and can be started manually. It
 uses the approved repositories in `sboms/index.json`, discovers the newest
 tagged `ghcr.io/uug-ai/<repository>` package version, scans its immutable digest
 with Trivy, and writes raw reports plus summary metadata under `containers/`.
+It also groups critical and high findings by advisory identifier under `cves/`,
+counting each affected package record as one occurrence and listing the unique
+affected repositories and package versions. Medium and lower findings remain
+available in the raw reports but are not included in the CVE aggregate.
 
 Projects without a matching tagged image remain visible as `unavailable`.
 Transient package or scanner failures preserve the last successful report as

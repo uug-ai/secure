@@ -28,4 +28,6 @@ secure.
 The scanner records all Trivy findings in `trivy.json` and exposes critical,
 high, medium, low, unknown, and fixable counts in `status.json`. Reports reflect
 the vulnerability database available at scan time and can change even when the
-image digest does not.
+image digest does not. Critical and high findings are additionally grouped by
+advisory identifier in [`../cves/`](../cves/), where occurrences count affected
+package records across the latest scanned or stale reports.

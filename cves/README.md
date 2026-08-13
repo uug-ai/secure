@@ -1,21 +1,19 @@
-# Vulnerability Findings
+# Critical and high vulnerability findings
 
-This directory is reserved for normalized CVE and vulnerability findings
-derived from the collected SBOMs and container scans.
-
-The next automation should produce:
+The container scan workflow replaces this page with a normalized aggregate of
+critical and high findings from the latest available Trivy reports.
 
 ```text
 cves/
   index.json
-  <repository>/
-    findings.json
 ```
 
-Each finding should include the repository, package and installed version,
-advisory identifier, severity and scoring source, fix availability, first and
-last observation times, suppression status, and source scanner. Suppressions
-must include an owner, rationale, approval, and expiry date.
+Findings are grouped by advisory identifier. An occurrence is one affected
+package record in one image report, so the same advisory can have multiple
+occurrences within or across repositories. The index also records the number
+of fixable occurrences and the unique affected repositories and package
+versions. Medium, low, and unknown findings remain available only in the raw
+container reports.
 
 Scanner output must be treated as sensitive until reviewed: vulnerability
 details can reveal exploitable versions even when no credentials are present.

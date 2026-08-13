@@ -110,11 +110,42 @@ type scanIndex struct {
 type trivyReport struct {
 	ArtifactName string `json:"ArtifactName"`
 	Results      []struct {
+		Target          string `json:"Target"`
 		Vulnerabilities []struct {
-			FixedVersion string `json:"FixedVersion"`
-			Severity     string `json:"Severity"`
+			FixedVersion     string `json:"FixedVersion"`
+			InstalledVersion string `json:"InstalledVersion"`
+			PackageName      string `json:"PkgName"`
+			PrimaryURL       string `json:"PrimaryURL"`
+			Severity         string `json:"Severity"`
+			Title            string `json:"Title"`
+			VulnerabilityID  string `json:"VulnerabilityID"`
 		} `json:"Vulnerabilities"`
 	} `json:"Results"`
+}
+
+type cveFinding struct {
+	FixableOccurrences int      `json:"fixableOccurrences"`
+	ID                 string   `json:"id"`
+	Occurrences        int      `json:"occurrences"`
+	Packages           []string `json:"packages"`
+	PrimaryURL         string   `json:"primaryUrl,omitempty"`
+	Repositories       []string `json:"repositories"`
+	Severity           string   `json:"severity"`
+	Title              string   `json:"title,omitempty"`
+}
+
+type cveTotals struct {
+	Critical    int `json:"critical"`
+	Findings    int `json:"findings"`
+	High        int `json:"high"`
+	Occurrences int `json:"occurrences"`
+}
+
+type cveIndex struct {
+	Findings    []cveFinding `json:"findings"`
+	GeneratedAt string       `json:"generatedAt"`
+	Source      string       `json:"source"`
+	Totals      cveTotals    `json:"totals"`
 }
 
 func (client *githubClient) ListPackageVersions(organization, name string) ([]packageVersion, error) {
@@ -273,6 +304,174 @@ func assessReport(data []byte) (severityCounts, severityCounts, int, string, err
 		score, rating = 80, "Low"
 	}
 	return vulnerabilities, fixable, score, rating, nil
+}
+
+func aggregateCVEs(reports map[string][]byte, generatedAt string) (cveIndex, error) {
+	type findingState struct {
+		finding      cveFinding
+		packages     map[string]bool
+		repositories map[string]bool
+	}
+	states := make(map[string]*findingState)
+	repositories := make([]string, 0, len(reports))
+	for repository := range reports {
+		repositories = append(repositories, repository)
+	}
+	sort.Strings(repositories)
+	for _, repository := range repositories {
+		data := reports[repository]
+		var report trivyReport
+		if err := json.Unmarshal(data, &report); err != nil {
+			return cveIndex{}, fmt.Errorf("decode %s Trivy report: %w", repository, err)
+		}
+		for _, result := range report.Results {
+			for _, vulnerability := range result.Vulnerabilities {
+				severity := strings.ToUpper(vulnerability.Severity)
+				if (severity != "CRITICAL" && severity != "HIGH") || vulnerability.VulnerabilityID == "" {
+					continue
+				}
+				state := states[vulnerability.VulnerabilityID]
+				if state == nil {
+					state = &findingState{
+						finding: cveFinding{
+							ID:         vulnerability.VulnerabilityID,
+							PrimaryURL: vulnerability.PrimaryURL,
+							Severity:   severity,
+							Title:      vulnerability.Title,
+						},
+						packages:     make(map[string]bool),
+						repositories: make(map[string]bool),
+					}
+					states[vulnerability.VulnerabilityID] = state
+				}
+				if severity == "CRITICAL" {
+					state.finding.Severity = severity
+				}
+				if state.finding.PrimaryURL == "" {
+					state.finding.PrimaryURL = vulnerability.PrimaryURL
+				}
+				if state.finding.Title == "" {
+					state.finding.Title = vulnerability.Title
+				}
+				state.finding.Occurrences++
+				if vulnerability.FixedVersion != "" {
+					state.finding.FixableOccurrences++
+				}
+				state.repositories[repository] = true
+				packageName := vulnerability.PackageName
+				if vulnerability.InstalledVersion != "" {
+					packageName += "@" + vulnerability.InstalledVersion
+				}
+				if packageName != "" {
+					state.packages[packageName] = true
+				}
+			}
+		}
+	}
+
+	index := cveIndex{
+		GeneratedAt: generatedAt,
+		Source:      "trivy-container-scans",
+		Findings:    make([]cveFinding, 0, len(states)),
+	}
+	for _, state := range states {
+		for repository := range state.repositories {
+			state.finding.Repositories = append(state.finding.Repositories, repository)
+		}
+		for packageName := range state.packages {
+			state.finding.Packages = append(state.finding.Packages, packageName)
+		}
+		sort.Strings(state.finding.Repositories)
+		sort.Strings(state.finding.Packages)
+		index.Findings = append(index.Findings, state.finding)
+		index.Totals.Occurrences += state.finding.Occurrences
+		if state.finding.Severity == "CRITICAL" {
+			index.Totals.Critical++
+		} else {
+			index.Totals.High++
+		}
+	}
+	index.Totals.Findings = len(index.Findings)
+	sort.Slice(index.Findings, func(left, right int) bool {
+		if index.Findings[left].Severity != index.Findings[right].Severity {
+			return index.Findings[left].Severity == "CRITICAL"
+		}
+		if index.Findings[left].Occurrences != index.Findings[right].Occurrences {
+			return index.Findings[left].Occurrences > index.Findings[right].Occurrences
+		}
+		return index.Findings[left].ID < index.Findings[right].ID
+	})
+	return index, nil
+}
+
+func loadScanReports(index scanIndex, outputDirectory string) (map[string][]byte, error) {
+	reports := make(map[string][]byte)
+	for _, entry := range index.Repositories {
+		if entry.ReportPath == "" || (entry.Status != "scanned" && entry.Status != "stale") {
+			continue
+		}
+		data, err := os.ReadFile(filepath.Join(outputDirectory, filepath.FromSlash(entry.ReportPath)))
+		if err != nil {
+			return nil, fmt.Errorf("read %s Trivy report: %w", entry.Name, err)
+		}
+		reports[entry.Name] = data
+	}
+	return reports, nil
+}
+
+func markdownCell(value string) string {
+	value = strings.ReplaceAll(value, "|", "\\|")
+	value = strings.ReplaceAll(value, "\r", " ")
+	return strings.ReplaceAll(value, "\n", " ")
+}
+
+func renderCVEREADME(index cveIndex) string {
+	var builder strings.Builder
+	builder.WriteString("# Critical and high vulnerability findings\n\n")
+	fmt.Fprintf(&builder, "Generated at `%s` from the latest available Trivy container reports. Occurrences count every affected package record across scanned images; one advisory can therefore occur more than once in one or more repositories.\n\n", index.GeneratedAt)
+	fmt.Fprintf(&builder, "**%d unique findings**: %d critical and %d high, with %d total occurrences.\n\n", index.Totals.Findings, index.Totals.Critical, index.Totals.High, index.Totals.Occurrences)
+	if len(index.Findings) == 0 {
+		builder.WriteString("No critical or high findings are present in the available reports.\n")
+		return builder.String()
+	}
+	builder.WriteString("| Severity | Advisory | Occurrences | Fixable | Repositories | Packages |\n")
+	builder.WriteString("| --- | --- | ---: | ---: | --- | --- |\n")
+	for _, finding := range index.Findings {
+		advisory := markdownCell(finding.ID)
+		if strings.HasPrefix(finding.PrimaryURL, "https://") || strings.HasPrefix(finding.PrimaryURL, "http://") {
+			advisory = fmt.Sprintf("[%s](%s)", advisory, finding.PrimaryURL)
+		}
+		fmt.Fprintf(&builder, "| %s | %s | %d | %d | %s | %s |\n",
+			finding.Severity,
+			advisory,
+			finding.Occurrences,
+			finding.FixableOccurrences,
+			markdownCell(strings.Join(finding.Repositories, ", ")),
+			markdownCell(strings.Join(finding.Packages, ", ")),
+		)
+	}
+	return builder.String()
+}
+
+func writeCVEEvidence(index scanIndex, containerDirectory, cveDirectory string) (cveIndex, error) {
+	reports, err := loadScanReports(index, containerDirectory)
+	if err != nil {
+		return cveIndex{}, err
+	}
+	cves, err := aggregateCVEs(reports, index.GeneratedAt)
+	if err != nil {
+		return cveIndex{}, err
+	}
+	if err := writeJSON(filepath.Join(cveDirectory, "index.json"), cves); err != nil {
+		return cveIndex{}, fmt.Errorf("write CVE index: %w", err)
+	}
+	if err := os.MkdirAll(cveDirectory, 0o755); err != nil {
+		return cveIndex{}, fmt.Errorf("create CVE directory: %w", err)
+	}
+	if err := os.WriteFile(filepath.Join(cveDirectory, "README.md"), []byte(renderCVEREADME(cves)), 0o644); err != nil {
+		return cveIndex{}, fmt.Errorf("write CVE README: %w", err)
+	}
+	return cves, nil
 }
 
 func imageReference(organization, name, tag, digest string) string {
@@ -538,6 +737,7 @@ func main() {
 	organization := flag.String("organization", "uug-ai", "GitHub organization containing the images")
 	inventoryPath := flag.String("inventory", "sboms/index.json", "approved project inventory")
 	output := flag.String("output", "containers", "container scan output directory")
+	cveOutput := flag.String("cve-output", "cves", "aggregated critical and high CVE output directory")
 	readme := flag.String("readme", "README.md", "README file to update")
 	trivyBinary := flag.String("trivy", "trivy", "Trivy executable")
 	flag.Parse()
@@ -557,6 +757,10 @@ func main() {
 	index, err := collectScans(api, scanner, *inventoryPath, *output, *organization, scannedAt)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "container scan collection failed: %v\n", err)
+		os.Exit(1)
+	}
+	if _, err := writeCVEEvidence(index, *output, *cveOutput); err != nil {
+		fmt.Fprintf(os.Stderr, "CVE evidence update failed: %v\n", err)
 		os.Exit(1)
 	}
 	if err := updateREADME(*readme, index); err != nil {
