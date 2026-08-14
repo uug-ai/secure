@@ -1,6 +1,6 @@
 # hub-loitering SBOM quality
 
-Collection status: `collected`; collected at `2026-08-13T16:25:58Z`.
+Collection status: `collected`; collected at `2026-08-14T03:10:21Z`.
 
 Overall quality: **Needs work**, **68/100** across **49 packages**.
 
@@ -12,7 +12,7 @@ Overall quality: **Needs work**, **68/100** across **49 packages**.
 | Identity | Versions | 100% | 10/10 | +0 |
 | Identity | PURLs | 100% | 10/10 | +0 |
 | Licensing | Declared licenses | 2% | 0/10 | +10 |
-| Licensing | Concluded licenses | 80% | 8/10 | +2 |
+| Licensing | Concluded licenses | 82% | 8/10 | +2 |
 | Provenance | Suppliers | 0% | 0/7 | +7 |
 | Provenance | Download locations | 2% | 0/8 | +8 |
 | Relationships | Document describes | 0% | 0/5 | +5 |

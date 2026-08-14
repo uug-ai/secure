@@ -1,6 +1,6 @@
 # hub-anpr SBOM quality
 
-Collection status: `collected`; collected at `2026-08-13T16:25:58Z`.
+Collection status: `collected`; collected at `2026-08-14T03:10:21Z`.
 
 Overall quality: **Needs work**, **68/100** across **52 packages**.
 
