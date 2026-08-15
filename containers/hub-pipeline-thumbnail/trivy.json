@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:4122ad80c76ca28533d0bc580601fb41ec4d053a85da9f6deac7609e4f8b723b",
   "ArtifactName": "ghcr.io/uug-ai/hub-pipeline-thumbnail@sha256:bcbcc198c3cc575407daa639085e388c35af2e5811222eee6d0e6d044278a2bb",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-08-14T04:26:24.379230815Z",
+  "CreatedAt": "2026-08-15T04:01:01.961446166Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:34884abbe92863fce933ed7c39c0e045631af0ed86d5cc0dfbdf9fdca426ce3c",
@@ -166,7 +166,7 @@
     ],
     "Size": 201837568
   },
-  "ReportID": "019ffe85-6afb-737f-aed7-5880b9897f58",
+  "ReportID": "01a00394-8c09-76ca-96d9-82029bbdaab9",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -5265,7 +5265,58 @@
         }
       ],
       "Target": "ghcr.io/uug-ai/hub-pipeline-thumbnail@sha256:bcbcc198c3cc575407daa639085e388c35af2e5811222eee6d0e6d044278a2bb (alpine 3.24.1)",
-      "Type": "alpine"
+      "Type": "alpine",
+      "Vulnerabilities": [
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 6.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-835",
+            "CWE-400"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "A flaw was found in libssh. A remote authenticated peer can advertise a zero maximum packet size in SSH_MSG_CHANNEL_OPEN, causing later channel writes to loop indefinitely and consume CPU, leading to denial of service.",
+          "Fingerprint": "sha256:d6e5ad3d05f7ee31789a5d622a1a7a03b4fed4562cfb8075bc67f31be7571210",
+          "FixedVersion": "0.12.2-r0",
+          "InstalledVersion": "0.12.1-r0",
+          "LastModifiedDate": "2026-08-12T20:17:45.717Z",
+          "Layer": {
+            "DiffID": "sha256:76956c2cb2407ec6cd3f64ccf021b736270d1c919471b9d7bad16c6cfd98c750",
+            "Digest": "sha256:ff779edd1b58e9b401f23a62339345cc8627a520f7a89483258a0d0aae39ca87"
+          },
+          "PkgID": "libssh@0.12.1-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libssh@0.12.1-r0?arch=x86_64\u0026distro=3.24.1",
+            "UID": "2194161bf9919e61"
+          },
+          "PkgName": "libssh",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-59843",
+          "PublishedDate": "2026-07-21T12:18:57.86Z",
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:42922",
+            "https://access.redhat.com/security/cve/CVE-2026-59843",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2498176",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-59843",
+            "https://www.cve.org/CVERecord?id=CVE-2026-59843"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "libssh: libssh: denial of service via zero advertised channel packet size",
+          "VendorSeverity": {
+            "azure": 2,
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2026-59843"
+        }
+      ]
     },
     {
       "Class": "lang-pkgs",
@@ -6117,7 +6168,7 @@
           "Fingerprint": "sha256:085a074d79762bcdc259f30d18ad249f36f91b50806651211487a8bda50e518d",
           "FixedVersion": "1.43.0",
           "InstalledVersion": "v1.39.0",
-          "LastModifiedDate": "2026-08-13T13:18:44.54Z",
+          "LastModifiedDate": "2026-08-14T13:18:34.567Z",
           "Layer": {
             "DiffID": "sha256:4c0b563c330a48eca193a4f3a5ce761f24ea31f386e0b74fb5cb26df9063d090",
             "Digest": "sha256:0e3246f42f126a5b455f3a90a0d68bf45cddee1ba102fa956000bc96f47f8428"
@@ -6180,7 +6231,7 @@
           "Fingerprint": "sha256:7d7d413b7c0944fa7f0e3b5f6ffc3c648b0b45a6233861abce0171b4712ea232",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-08-13T13:18:38.01Z",
+          "LastModifiedDate": "2026-08-14T13:18:29.05Z",
           "Layer": {
             "DiffID": "sha256:4c0b563c330a48eca193a4f3a5ce761f24ea31f386e0b74fb5cb26df9063d090",
             "Digest": "sha256:0e3246f42f126a5b455f3a90a0d68bf45cddee1ba102fa956000bc96f47f8428"
@@ -6236,6 +6287,7 @@
             "https://access.redhat.com/errata/RHSA-2026:51038",
             "https://access.redhat.com/errata/RHSA-2026:52857",
             "https://access.redhat.com/errata/RHSA-2026:52910",
+            "https://access.redhat.com/errata/RHSA-2026:54531",
             "https://access.redhat.com/security/cve/CVE-2026-39828",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480687",
             "https://go.dev/cl/781621",
@@ -6279,7 +6331,7 @@
           "Fingerprint": "sha256:a522986bde3ed589e56e41411af6b9b13e2fb95998e9034c46481ebc5a58f50e",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-08-13T13:18:39.373Z",
+          "LastModifiedDate": "2026-08-14T13:18:30.59Z",
           "Layer": {
             "DiffID": "sha256:4c0b563c330a48eca193a4f3a5ce761f24ea31f386e0b74fb5cb26df9063d090",
             "Digest": "sha256:0e3246f42f126a5b455f3a90a0d68bf45cddee1ba102fa956000bc96f47f8428"
@@ -6416,7 +6468,7 @@
           "Fingerprint": "sha256:d193c90a5cefae95c60c88ef032c7e3003ac6c79fd27bc900835399c6dc0a722",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-08-13T13:18:40.78Z",
+          "LastModifiedDate": "2026-08-14T13:18:31.917Z",
           "Layer": {
             "DiffID": "sha256:4c0b563c330a48eca193a4f3a5ce761f24ea31f386e0b74fb5cb26df9063d090",
             "Digest": "sha256:0e3246f42f126a5b455f3a90a0d68bf45cddee1ba102fa956000bc96f47f8428"
@@ -6472,6 +6524,7 @@
             "https://access.redhat.com/errata/RHSA-2026:52857",
             "https://access.redhat.com/errata/RHSA-2026:52910",
             "https://access.redhat.com/errata/RHSA-2026:54400",
+            "https://access.redhat.com/errata/RHSA-2026:54531",
             "https://access.redhat.com/security/cve/CVE-2026-39830",
             "https://bugzilla.redhat.com/2445356",
             "https://bugzilla.redhat.com/2456333",
@@ -6603,7 +6656,7 @@
           "Fingerprint": "sha256:1840c195bb8ff2df7dc1e713dfcfb4e8481c4f62c213aa90afa9ff8cd8ae820d",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-08-12T12:19:05.14Z",
+          "LastModifiedDate": "2026-08-14T13:18:33.197Z",
           "Layer": {
             "DiffID": "sha256:4c0b563c330a48eca193a4f3a5ce761f24ea31f386e0b74fb5cb26df9063d090",
             "Digest": "sha256:0e3246f42f126a5b455f3a90a0d68bf45cddee1ba102fa956000bc96f47f8428"
@@ -6707,7 +6760,7 @@
           "Fingerprint": "sha256:8b69d9699b6a3b7e96174deb510c832385eb9b7cb7b9bf6fd21535f82d5c257a",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-08-13T13:18:42.13Z",
+          "LastModifiedDate": "2026-08-14T13:18:34.013Z",
           "Layer": {
             "DiffID": "sha256:4c0b563c330a48eca193a4f3a5ce761f24ea31f386e0b74fb5cb26df9063d090",
             "Digest": "sha256:0e3246f42f126a5b455f3a90a0d68bf45cddee1ba102fa956000bc96f47f8428"
@@ -6820,7 +6873,7 @@
           "Fingerprint": "sha256:8794c20cc6eb428367ce95d489e4b58742c6d0e69ed0ce6c8000ff6a7bd23833",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-08-13T13:18:54.617Z",
+          "LastModifiedDate": "2026-08-14T13:18:48.4Z",
           "Layer": {
             "DiffID": "sha256:4c0b563c330a48eca193a4f3a5ce761f24ea31f386e0b74fb5cb26df9063d090",
             "Digest": "sha256:0e3246f42f126a5b455f3a90a0d68bf45cddee1ba102fa956000bc96f47f8428"
@@ -6910,6 +6963,7 @@
           "Status": "fixed",
           "Title": "golang.org/x/crypto/ssh/knownhosts: golang: golang.org/x/crypto/ssh/knownhosts: Revocation bypass via unchecked SignatureKey",
           "VendorIDs": [
+            "GHSA-5cgq-3rg8-m6cv",
             "GO-2026-5021"
           ],
           "VendorSeverity": {
@@ -6943,7 +6997,7 @@
           "Fingerprint": "sha256:7f63c57fa317efceb0ae0d528f8fb9b1264cc224db10f6cb59b340bdf4d02d56",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-08-12T12:19:32.213Z",
+          "LastModifiedDate": "2026-08-14T13:18:59.073Z",
           "Layer": {
             "DiffID": "sha256:4c0b563c330a48eca193a4f3a5ce761f24ea31f386e0b74fb5cb26df9063d090",
             "Digest": "sha256:0e3246f42f126a5b455f3a90a0d68bf45cddee1ba102fa956000bc96f47f8428"
@@ -6983,6 +7037,7 @@
             "https://access.redhat.com/errata/RHSA-2026:47737",
             "https://access.redhat.com/errata/RHSA-2026:48151",
             "https://access.redhat.com/errata/RHSA-2026:51033",
+            "https://access.redhat.com/errata/RHSA-2026:54531",
             "https://access.redhat.com/security/cve/CVE-2026-46595",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480689",
             "https://github.com/golang/crypto/commit/533fb3f7e4a5ae23f69d1837cd851d35ff5b76ce",
@@ -7506,7 +7561,7 @@
           "Fingerprint": "sha256:db46746d4ca646fa03b466692b80887610f83b0aa828e21f6711a21526f0251f",
           "FixedVersion": "0.55.0",
           "InstalledVersion": "v0.53.0",
-          "LastModifiedDate": "2026-08-13T22:17:19.973Z",
+          "LastModifiedDate": "2026-08-14T13:18:24.667Z",
           "Layer": {
             "DiffID": "sha256:4c0b563c330a48eca193a4f3a5ce761f24ea31f386e0b74fb5cb26df9063d090",
             "Digest": "sha256:0e3246f42f126a5b455f3a90a0d68bf45cddee1ba102fa956000bc96f47f8428"
@@ -7630,6 +7685,8 @@
             "https://access.redhat.com/errata/RHSA-2026:54401",
             "https://access.redhat.com/errata/RHSA-2026:54435",
             "https://access.redhat.com/errata/RHSA-2026:54441",
+            "https://access.redhat.com/errata/RHSA-2026:54531",
+            "https://access.redhat.com/errata/RHSA-2026:54757",
             "https://access.redhat.com/security/cve/CVE-2026-39821",
             "https://bugzilla.redhat.com/2480756",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480756",
@@ -7688,7 +7745,7 @@
           "Fingerprint": "sha256:464c16b82061647b16105de1e365f38b0b84d1185bff1e907e4171b342a14e0d",
           "FixedVersion": "0.56.0",
           "InstalledVersion": "v0.53.0",
-          "LastModifiedDate": "2026-08-13T22:17:21.913Z",
+          "LastModifiedDate": "2026-08-14T16:16:55.673Z",
           "Layer": {
             "DiffID": "sha256:4c0b563c330a48eca193a4f3a5ce761f24ea31f386e0b74fb5cb26df9063d090",
             "Digest": "sha256:0e3246f42f126a5b455f3a90a0d68bf45cddee1ba102fa956000bc96f47f8428"
@@ -7959,7 +8016,7 @@
           "Fingerprint": "sha256:2f624646e2846c86ab3d0328db0674616d66bf94aa6d563779f69cc70fb8baba",
           "FixedVersion": "1.79.3",
           "InstalledVersion": "v1.77.0",
-          "LastModifiedDate": "2026-08-13T13:18:16.617Z",
+          "LastModifiedDate": "2026-08-14T13:17:57.88Z",
           "Layer": {
             "DiffID": "sha256:4c0b563c330a48eca193a4f3a5ce761f24ea31f386e0b74fb5cb26df9063d090",
             "Digest": "sha256:0e3246f42f126a5b455f3a90a0d68bf45cddee1ba102fa956000bc96f47f8428"
@@ -8167,6 +8224,8 @@
             "https://access.redhat.com/errata/RHSA-2026:54191",
             "https://access.redhat.com/errata/RHSA-2026:54274",
             "https://access.redhat.com/errata/RHSA-2026:54286",
+            "https://access.redhat.com/errata/RHSA-2026:54531",
+            "https://access.redhat.com/errata/RHSA-2026:54757",
             "https://access.redhat.com/errata/RHSA-2026:6174",
             "https://access.redhat.com/errata/RHSA-2026:6428",
             "https://access.redhat.com/errata/RHSA-2026:6564",
@@ -8306,7 +8365,7 @@
           "Fingerprint": "sha256:a0f152242f5b707b1a45f239cb9850e3c5534538bb1012cb2f96e16667048e91",
           "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
           "InstalledVersion": "v1.25.12",
-          "LastModifiedDate": "2026-08-13T22:17:19.973Z",
+          "LastModifiedDate": "2026-08-14T13:18:24.667Z",
           "Layer": {
             "DiffID": "sha256:4c0b563c330a48eca193a4f3a5ce761f24ea31f386e0b74fb5cb26df9063d090",
             "Digest": "sha256:0e3246f42f126a5b455f3a90a0d68bf45cddee1ba102fa956000bc96f47f8428"
@@ -8430,6 +8489,8 @@
             "https://access.redhat.com/errata/RHSA-2026:54401",
             "https://access.redhat.com/errata/RHSA-2026:54435",
             "https://access.redhat.com/errata/RHSA-2026:54441",
+            "https://access.redhat.com/errata/RHSA-2026:54531",
+            "https://access.redhat.com/errata/RHSA-2026:54757",
             "https://access.redhat.com/security/cve/CVE-2026-39821",
             "https://bugzilla.redhat.com/2480756",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480756",
@@ -8470,58 +8531,9 @@
           "VulnerabilityID": "CVE-2026-39821"
         },
         {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 7.5,
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
-            }
-          },
           "CweIDs": [
-            "CWE-125"
+            "CWE-400"
           ],
-          "DataSource": {
-            "ID": "govulndb",
-            "Name": "The Go Vulnerability Database",
-            "URL": "https://pkg.go.dev/vuln/"
-          },
-          "Description": "Parsing an invalid SVCB or HTTPS RR can panic when the size of a parameter value overflows the message buffer.",
-          "Fingerprint": "sha256:3630fff67c384487a9322729904427e6d97de4836fc7a4d2bd4a4c989b68b7cc",
-          "FixedVersion": "1.26.6, 1.27.0-rc.3",
-          "InstalledVersion": "v1.25.12",
-          "LastModifiedDate": "2026-08-13T22:17:21.913Z",
-          "Layer": {
-            "DiffID": "sha256:4c0b563c330a48eca193a4f3a5ce761f24ea31f386e0b74fb5cb26df9063d090",
-            "Digest": "sha256:0e3246f42f126a5b455f3a90a0d68bf45cddee1ba102fa956000bc96f47f8428"
-          },
-          "PkgID": "stdlib@v1.25.12",
-          "PkgIdentifier": {
-            "PURL": "pkg:golang/stdlib@v1.25.12",
-            "UID": "fcdb1c94630f522a"
-          },
-          "PkgName": "stdlib",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-46600",
-          "PublishedDate": "2026-07-21T20:17:01.213Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-46600",
-            "https://go.dev/cl/786345",
-            "https://go.dev/issue/79795",
-            "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-46600",
-            "https://pkg.go.dev/vuln/GO-2026-5942",
-            "https://www.cve.org/CVERecord?id=CVE-2026-46600"
-          ],
-          "Severity": "HIGH",
-          "Status": "fixed",
-          "Title": "golang.org/x/net/dns/dnsmessage: golang.org/x/net/dns/dnsmessage: Denial of Service via invalid DNS record parsing",
-          "VendorIDs": [
-            "GO-2026-5942"
-          ],
-          "VendorSeverity": {
-            "redhat": 3
-          },
-          "VulnerabilityID": "CVE-2026-46600"
-        },
-        {
           "DataSource": {
             "ID": "govulndb",
             "Name": "The Go Vulnerability Database",
@@ -8531,7 +8543,7 @@
           "Fingerprint": "sha256:7aa98a3650584b27f1271df9857677872ec16fba3eacdd8a2947118e6d15bb1b",
           "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
           "InstalledVersion": "v1.25.12",
-          "LastModifiedDate": "2026-08-13T22:17:19.84Z",
+          "LastModifiedDate": "2026-08-14T16:16:55.317Z",
           "Layer": {
             "DiffID": "sha256:4c0b563c330a48eca193a4f3a5ce761f24ea31f386e0b74fb5cb26df9063d090",
             "Digest": "sha256:0e3246f42f126a5b455f3a90a0d68bf45cddee1ba102fa956000bc96f47f8428"
@@ -8552,13 +8564,16 @@
           ],
           "Severity": "UNKNOWN",
           "Status": "fixed",
-          "Title": "Enforce maximum recursion depth in encoding/asn1",
+          "Title": "Enforce a recursion limit in Unmarshal to prevent stack exhaustion whe ...",
           "VendorIDs": [
             "GO-2026-5972"
           ],
           "VulnerabilityID": "CVE-2026-33818"
         },
         {
+          "CweIDs": [
+            "CWE-770"
+          ],
           "DataSource": {
             "ID": "govulndb",
             "Name": "The Go Vulnerability Database",
@@ -8568,7 +8583,7 @@
           "Fingerprint": "sha256:fec999bf0b70270f2b05220c50a6817252e5b1464be1ab3a465d1dd3f62a51d3",
           "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
           "InstalledVersion": "v1.25.12",
-          "LastModifiedDate": "2026-08-13T22:17:22.093Z",
+          "LastModifiedDate": "2026-08-14T16:16:57.21Z",
           "Layer": {
             "DiffID": "sha256:4c0b563c330a48eca193a4f3a5ce761f24ea31f386e0b74fb5cb26df9063d090",
             "Digest": "sha256:0e3246f42f126a5b455f3a90a0d68bf45cddee1ba102fa956000bc96f47f8428"
@@ -8589,13 +8604,16 @@
           ],
           "Severity": "UNKNOWN",
           "Status": "fixed",
-          "Title": "Apply ReadHeaderTimeout when doing unencrypted HTTP/2 check in net/http",
+          "Title": "When a server is configured to support unencrypted HTTP/2, it reads a  ...",
           "VendorIDs": [
             "GO-2026-6089"
           ],
           "VulnerabilityID": "CVE-2026-56853"
         },
         {
+          "CweIDs": [
+            "CWE-79"
+          ],
           "DataSource": {
             "ID": "govulndb",
             "Name": "The Go Vulnerability Database",
@@ -8605,7 +8623,7 @@
           "Fingerprint": "sha256:b5418bce3a8ddb27b7ebdcff8393f643ace6f3ace0a381a98ce762a94c5de6e7",
           "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
           "InstalledVersion": "v1.25.12",
-          "LastModifiedDate": "2026-08-13T22:17:22.207Z",
+          "LastModifiedDate": "2026-08-14T16:16:57.367Z",
           "Layer": {
             "DiffID": "sha256:4c0b563c330a48eca193a4f3a5ce761f24ea31f386e0b74fb5cb26df9063d090",
             "Digest": "sha256:0e3246f42f126a5b455f3a90a0d68bf45cddee1ba102fa956000bc96f47f8428"
@@ -8626,13 +8644,16 @@
           ],
           "Severity": "UNKNOWN",
           "Status": "fixed",
-          "Title": "Fix Javascript regexp context tracking in html/template",
+          "Title": "Previously, pathological inputs could close an unescaped '/' early, al ...",
           "VendorIDs": [
             "GO-2026-6091"
           ],
           "VulnerabilityID": "CVE-2026-56858"
         },
         {
+          "CweIDs": [
+            "CWE-770"
+          ],
           "DataSource": {
             "ID": "govulndb",
             "Name": "The Go Vulnerability Database",
@@ -8642,7 +8663,7 @@
           "Fingerprint": "sha256:9d8bd6188b3249e4d4a4ce371519985df4a5832e681430c1065a44a6e52ca79b",
           "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
           "InstalledVersion": "v1.25.12",
-          "LastModifiedDate": "2026-08-13T22:17:22.32Z",
+          "LastModifiedDate": "2026-08-14T16:16:57.523Z",
           "Layer": {
             "DiffID": "sha256:4c0b563c330a48eca193a4f3a5ce761f24ea31f386e0b74fb5cb26df9063d090",
             "Digest": "sha256:0e3246f42f126a5b455f3a90a0d68bf45cddee1ba102fa956000bc96f47f8428"
@@ -8663,13 +8684,16 @@
           ],
           "Severity": "UNKNOWN",
           "Status": "fixed",
-          "Title": "Add recursion depth guard during decode in encoding/xml",
+          "Title": "Previously, DecodeElement would reset the depth counter causing it to  ...",
           "VendorIDs": [
             "GO-2026-6088"
           ],
           "VulnerabilityID": "CVE-2026-56859"
         },
         {
+          "CweIDs": [
+            "CWE-407"
+          ],
           "DataSource": {
             "ID": "govulndb",
             "Name": "The Go Vulnerability Database",
@@ -8679,7 +8703,7 @@
           "Fingerprint": "sha256:756ede86a93f61f3badf34b7ff50ff76eb0d10dd0df4f7a3d0c2b5c6672626f8",
           "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
           "InstalledVersion": "v1.25.12",
-          "LastModifiedDate": "2026-08-13T22:17:22.44Z",
+          "LastModifiedDate": "2026-08-14T17:19:13.91Z",
           "Layer": {
             "DiffID": "sha256:4c0b563c330a48eca193a4f3a5ce761f24ea31f386e0b74fb5cb26df9063d090",
             "Digest": "sha256:0e3246f42f126a5b455f3a90a0d68bf45cddee1ba102fa956000bc96f47f8428"
@@ -8700,13 +8724,16 @@
           ],
           "Severity": "UNKNOWN",
           "Status": "fixed",
-          "Title": "Avoid quadratic complexity in resolvePath in net/url",
+          "Title": "Previously, resolving relative paths containing parent directory ('..' ...",
           "VendorIDs": [
             "GO-2026-6218"
           ],
           "VulnerabilityID": "CVE-2026-56860"
         },
         {
+          "CweIDs": [
+            "CWE-770"
+          ],
           "DataSource": {
             "ID": "govulndb",
             "Name": "The Go Vulnerability Database",
@@ -8716,7 +8743,7 @@
           "Fingerprint": "sha256:85b2ef4dce5a12efb5ff6457ea7eb7b60d06832d72ea6f692161df65cc58c235",
           "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
           "InstalledVersion": "v1.25.12",
-          "LastModifiedDate": "2026-08-13T22:17:22.55Z",
+          "LastModifiedDate": "2026-08-14T16:16:57.717Z",
           "Layer": {
             "DiffID": "sha256:4c0b563c330a48eca193a4f3a5ce761f24ea31f386e0b74fb5cb26df9063d090",
             "Digest": "sha256:0e3246f42f126a5b455f3a90a0d68bf45cddee1ba102fa956000bc96f47f8428"
@@ -8737,7 +8764,7 @@
           ],
           "Severity": "UNKNOWN",
           "Status": "fixed",
-          "Title": "Limit handshake messages we are willing to accept post-handshake in crypto/tls",
+          "Title": "Handshake messages, such as KeyUpdate, are always considered as state- ...",
           "VendorIDs": [
             "GO-2026-6090"
           ],
