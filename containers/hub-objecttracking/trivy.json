@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:72dd959d4f4557c71aaabe74c58bfb27964a304e3069865f038232b3248a795b",
   "ArtifactName": "ghcr.io/uug-ai/hub-objecttracking@sha256:b6a121c8f0c1af73d16aa5424504f415722c2ce70e3dd2a2c4336bb19b5cbbf6",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-08-15T03:59:05.796387915Z",
+  "CreatedAt": "2026-08-16T04:01:46.932151755Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
@@ -492,7 +492,7 @@
     ],
     "Size": 3819322880
   },
-  "ReportID": "01a00392-c644-75e7-a206-fb33a97ba1f2",
+  "ReportID": "01a008bb-97b4-724a-8b08-87ccdc3605bd",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -33915,7 +33915,7 @@
           "Fingerprint": "sha256:6e3bc1aceb6dd93fe277be82b0222de95afefb30d2e469583f17d79008517573",
           "FixedVersion": "1:2.44-1ubuntu0.22.04.3",
           "InstalledVersion": "1:2.44-1ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-10T13:19:48.283Z",
+          "LastModifiedDate": "2026-08-15T21:16:23.77Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -44471,6 +44471,8 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-11822",
           "PublishedDate": "2026-06-09T20:16:32.15Z",
           "References": [
+            "https://linux.oracle.com/cve/CVE-2026-11822.html",
+            "https://linux.oracle.com/errata/ELSA-2026-54530.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-11822",
             "https://sqlite.org/releaselog/3_53_2.html",
             "https://sqlite.org/src/info/061febcf41ca",
@@ -44487,6 +44489,7 @@
             "amazon": 3,
             "azure": 3,
             "bitnami": 3,
+            "oracle-oval": 3,
             "photon": 3,
             "ubuntu": 2
           },
@@ -44525,6 +44528,8 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-11824",
           "PublishedDate": "2026-06-09T20:16:32.3Z",
           "References": [
+            "https://linux.oracle.com/cve/CVE-2026-11824.html",
+            "https://linux.oracle.com/errata/ELSA-2026-54530.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-11824",
             "https://sqlite.org/releaselog/3_53_2.html",
             "https://sqlite.org/src/info/061febcf41ca",
@@ -44541,6 +44546,7 @@
             "amazon": 3,
             "azure": 3,
             "bitnami": 3,
+            "oracle-oval": 3,
             "photon": 3,
             "ubuntu": 2
           },
@@ -58595,7 +58601,7 @@
           "Title": "perl: Perl threads have a working directory race condition where file operations may target unintended paths",
           "VendorSeverity": {
             "alma": 2,
-            "amazon": 2,
+            "amazon": 3,
             "azure": 2,
             "cbl-mariner": 2,
             "oracle-oval": 2,
@@ -61530,6 +61536,58 @@
         },
         {
           "CVSS": {
+            "redhat": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-400"
+          ],
+          "DataSource": {
+            "ID": "govulndb",
+            "Name": "The Go Vulnerability Database",
+            "URL": "https://pkg.go.dev/vuln/"
+          },
+          "Description": "Enforce a recursion limit in Unmarshal to prevent stack exhaustion when parsing deeply-nested, recursive structures.",
+          "Fingerprint": "sha256:61447e5bb1e946c1883db7d273916763881b0a9adf1b276dc5115f404d810927",
+          "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "InstalledVersion": "v1.25.8",
+          "LastModifiedDate": "2026-08-14T16:16:55.317Z",
+          "Layer": {
+            "DiffID": "sha256:b77ee2e6faf3d232629e53d3100644e7825b83a33624a7001e889ac6d7971372",
+            "Digest": "sha256:adcbf7eeeb0e4fd2687a8fa15f33301e5f5c130d7a25f9667c486700b9fb67e3"
+          },
+          "PkgID": "stdlib@v1.25.8",
+          "PkgIdentifier": {
+            "PURL": "pkg:golang/stdlib@v1.25.8",
+            "UID": "fdddb9ee2c5af570"
+          },
+          "PkgName": "stdlib",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-33818",
+          "PublishedDate": "2026-08-13T22:17:19.84Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-33818",
+            "https://go.dev/cl/814980",
+            "https://go.dev/issue/80405",
+            "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-33818",
+            "https://pkg.go.dev/vuln/GO-2026-5972",
+            "https://www.cve.org/CVERecord?id=CVE-2026-33818"
+          ],
+          "Severity": "HIGH",
+          "Status": "fixed",
+          "Title": "encoding/asn1: golang: Go encoding/asn1: Denial of Service via excessive recursion in Unmarshal",
+          "VendorIDs": [
+            "GO-2026-5972"
+          ],
+          "VendorSeverity": {
+            "redhat": 3
+          },
+          "VulnerabilityID": "CVE-2026-33818"
+        },
+        {
+          "CVSS": {
             "bitnami": {
               "V3Score": 7.5,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
@@ -62114,6 +62172,266 @@
         },
         {
           "CVSS": {
+            "redhat": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "DataSource": {
+            "ID": "govulndb",
+            "Name": "The Go Vulnerability Database",
+            "URL": "https://pkg.go.dev/vuln/"
+          },
+          "Description": "When a server is configured to support unencrypted HTTP/2, it reads a few bytes from each new connection to see if they contain the HTTP/2 client preface. ReadHeaderTimeout is unexpectedly not being applied when doing this.",
+          "Fingerprint": "sha256:326629c282a8d3e330e5b031f1b1e96aaaa0f0c5c143f3843abb586bec670f72",
+          "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "InstalledVersion": "v1.25.8",
+          "LastModifiedDate": "2026-08-14T16:16:57.21Z",
+          "Layer": {
+            "DiffID": "sha256:b77ee2e6faf3d232629e53d3100644e7825b83a33624a7001e889ac6d7971372",
+            "Digest": "sha256:adcbf7eeeb0e4fd2687a8fa15f33301e5f5c130d7a25f9667c486700b9fb67e3"
+          },
+          "PkgID": "stdlib@v1.25.8",
+          "PkgIdentifier": {
+            "PURL": "pkg:golang/stdlib@v1.25.8",
+            "UID": "fdddb9ee2c5af570"
+          },
+          "PkgName": "stdlib",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56853",
+          "PublishedDate": "2026-08-13T22:17:22.093Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-56853",
+            "https://go.dev/cl/795540",
+            "https://go.dev/issue/80205",
+            "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-56853",
+            "https://pkg.go.dev/vuln/GO-2026-6089",
+            "https://www.cve.org/CVERecord?id=CVE-2026-56853"
+          ],
+          "Severity": "HIGH",
+          "Status": "fixed",
+          "Title": "net/http: golang: Go net/http: Unencrypted HTTP/2 connections vulnerable to Denial of Service",
+          "VendorIDs": [
+            "GO-2026-6089"
+          ],
+          "VendorSeverity": {
+            "redhat": 3
+          },
+          "VulnerabilityID": "CVE-2026-56853"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 8.1,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-79"
+          ],
+          "DataSource": {
+            "ID": "govulndb",
+            "Name": "The Go Vulnerability Database",
+            "URL": "https://pkg.go.dev/vuln/"
+          },
+          "Description": "Previously, pathological inputs could close an unescaped '/' early, allowing for attack-controlled data to inject arbitrary content, potentially leading to XSS.",
+          "Fingerprint": "sha256:0b64762226b92d5cdf9218ae7ad2523563f8fb4e55861bd3cf4bfb925c7f6ce8",
+          "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "InstalledVersion": "v1.25.8",
+          "LastModifiedDate": "2026-08-14T16:16:57.367Z",
+          "Layer": {
+            "DiffID": "sha256:b77ee2e6faf3d232629e53d3100644e7825b83a33624a7001e889ac6d7971372",
+            "Digest": "sha256:adcbf7eeeb0e4fd2687a8fa15f33301e5f5c130d7a25f9667c486700b9fb67e3"
+          },
+          "PkgID": "stdlib@v1.25.8",
+          "PkgIdentifier": {
+            "PURL": "pkg:golang/stdlib@v1.25.8",
+            "UID": "fdddb9ee2c5af570"
+          },
+          "PkgName": "stdlib",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56858",
+          "PublishedDate": "2026-08-13T22:17:22.207Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-56858",
+            "https://go.dev/cl/807100",
+            "https://go.dev/issue/80435",
+            "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-56858",
+            "https://pkg.go.dev/vuln/GO-2026-6091",
+            "https://www.cve.org/CVERecord?id=CVE-2026-56858"
+          ],
+          "Severity": "HIGH",
+          "Status": "fixed",
+          "Title": "html/template: golang: Go html/template: Cross-Site Scripting via pathological input",
+          "VendorIDs": [
+            "GO-2026-6091"
+          ],
+          "VendorSeverity": {
+            "redhat": 3
+          },
+          "VulnerabilityID": "CVE-2026-56858"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "DataSource": {
+            "ID": "govulndb",
+            "Name": "The Go Vulnerability Database",
+            "URL": "https://pkg.go.dev/vuln/"
+          },
+          "Description": "Previously, DecodeElement would reset the depth counter causing it to never fire; this could lead to stack exhaustion.",
+          "Fingerprint": "sha256:4a7e1066beb31bf3d5d9f71d25a1888e3401628e8bb48015f8f73fe628784d97",
+          "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "InstalledVersion": "v1.25.8",
+          "LastModifiedDate": "2026-08-14T16:16:57.523Z",
+          "Layer": {
+            "DiffID": "sha256:b77ee2e6faf3d232629e53d3100644e7825b83a33624a7001e889ac6d7971372",
+            "Digest": "sha256:adcbf7eeeb0e4fd2687a8fa15f33301e5f5c130d7a25f9667c486700b9fb67e3"
+          },
+          "PkgID": "stdlib@v1.25.8",
+          "PkgIdentifier": {
+            "PURL": "pkg:golang/stdlib@v1.25.8",
+            "UID": "fdddb9ee2c5af570"
+          },
+          "PkgName": "stdlib",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56859",
+          "PublishedDate": "2026-08-13T22:17:22.32Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-56859",
+            "https://go.dev/cl/803320",
+            "https://go.dev/issue/80481",
+            "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-56859",
+            "https://pkg.go.dev/vuln/GO-2026-6088",
+            "https://www.cve.org/CVERecord?id=CVE-2026-56859"
+          ],
+          "Severity": "HIGH",
+          "Status": "fixed",
+          "Title": "encoding/xml: golang: Go: Denial of Service via XML decoding recursion depth issue",
+          "VendorIDs": [
+            "GO-2026-6088"
+          ],
+          "VendorSeverity": {
+            "redhat": 3
+          },
+          "VulnerabilityID": "CVE-2026-56859"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-407"
+          ],
+          "DataSource": {
+            "ID": "govulndb",
+            "Name": "The Go Vulnerability Database",
+            "URL": "https://pkg.go.dev/vuln/"
+          },
+          "Description": "Previously, resolving relative paths containing parent directory ('..') segments performed string conversions and buffer rewrites on each step, resulting in quadratic time complexity and high memory allocation overhead. Now, path resolution operates on a byte buffer using index-based backtracking for '..' segments, eliminating the quadratic time complexity and significantly reducing memory allocations.",
+          "Fingerprint": "sha256:8ffe4bb36f8485c97518c431bd082e3538b76967b03b011f8a134f8eb46958c2",
+          "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "InstalledVersion": "v1.25.8",
+          "LastModifiedDate": "2026-08-14T17:19:13.91Z",
+          "Layer": {
+            "DiffID": "sha256:b77ee2e6faf3d232629e53d3100644e7825b83a33624a7001e889ac6d7971372",
+            "Digest": "sha256:adcbf7eeeb0e4fd2687a8fa15f33301e5f5c130d7a25f9667c486700b9fb67e3"
+          },
+          "PkgID": "stdlib@v1.25.8",
+          "PkgIdentifier": {
+            "PURL": "pkg:golang/stdlib@v1.25.8",
+            "UID": "fdddb9ee2c5af570"
+          },
+          "PkgName": "stdlib",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56860",
+          "PublishedDate": "2026-08-13T22:17:22.44Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-56860",
+            "https://go.dev/cl/803681",
+            "https://go.dev/issue/80494",
+            "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-56860",
+            "https://pkg.go.dev/vuln/GO-2026-6218",
+            "https://www.cve.org/CVERecord?id=CVE-2026-56860"
+          ],
+          "Severity": "HIGH",
+          "Status": "fixed",
+          "Title": "net/url: golang: golang net/url: Denial of Service from quadratic complexity in path resolution",
+          "VendorIDs": [
+            "GO-2026-6218"
+          ],
+          "VendorSeverity": {
+            "redhat": 3
+          },
+          "VulnerabilityID": "CVE-2026-56860"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "DataSource": {
+            "ID": "govulndb",
+            "Name": "The Go Vulnerability Database",
+            "URL": "https://pkg.go.dev/vuln/"
+          },
+          "Description": "Handshake messages, such as KeyUpdate, are always considered as state-advancing, regardless of whether a handshake has been completed or not. As a result, a malicious client can keep sending KeyUpdate messages to force the server to keep performing key derivation operations indefinitely.",
+          "Fingerprint": "sha256:18e0e59f332bf4cf7b6644949bcca658df43fe53be4612a0ab02dd249192f8d0",
+          "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "InstalledVersion": "v1.25.8",
+          "LastModifiedDate": "2026-08-14T16:16:57.717Z",
+          "Layer": {
+            "DiffID": "sha256:b77ee2e6faf3d232629e53d3100644e7825b83a33624a7001e889ac6d7971372",
+            "Digest": "sha256:adcbf7eeeb0e4fd2687a8fa15f33301e5f5c130d7a25f9667c486700b9fb67e3"
+          },
+          "PkgID": "stdlib@v1.25.8",
+          "PkgIdentifier": {
+            "PURL": "pkg:golang/stdlib@v1.25.8",
+            "UID": "fdddb9ee2c5af570"
+          },
+          "PkgName": "stdlib",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56862",
+          "PublishedDate": "2026-08-13T22:17:22.55Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-56862",
+            "https://go.dev/cl/804261",
+            "https://go.dev/issue/80528",
+            "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-56862",
+            "https://pkg.go.dev/vuln/GO-2026-6090",
+            "https://www.cve.org/CVERecord?id=CVE-2026-56862"
+          ],
+          "Severity": "HIGH",
+          "Status": "fixed",
+          "Title": "crypto/tls: golang: Golang crypto/tls: Denial of Service via indefinite KeyUpdate messages",
+          "VendorIDs": [
+            "GO-2026-6090"
+          ],
+          "VendorSeverity": {
+            "redhat": 3
+          },
+          "VulnerabilityID": "CVE-2026-56862"
+        },
+        {
+          "CVSS": {
             "bitnami": {
               "V3Score": 6.4,
               "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H"
@@ -62660,246 +62978,6 @@
             "rocky": 2
           },
           "VulnerabilityID": "CVE-2026-42507"
-        },
-        {
-          "CweIDs": [
-            "CWE-400"
-          ],
-          "DataSource": {
-            "ID": "govulndb",
-            "Name": "The Go Vulnerability Database",
-            "URL": "https://pkg.go.dev/vuln/"
-          },
-          "Description": "Enforce a recursion limit in Unmarshal to prevent stack exhaustion when parsing deeply-nested, recursive structures.",
-          "Fingerprint": "sha256:61447e5bb1e946c1883db7d273916763881b0a9adf1b276dc5115f404d810927",
-          "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
-          "InstalledVersion": "v1.25.8",
-          "LastModifiedDate": "2026-08-14T16:16:55.317Z",
-          "Layer": {
-            "DiffID": "sha256:b77ee2e6faf3d232629e53d3100644e7825b83a33624a7001e889ac6d7971372",
-            "Digest": "sha256:adcbf7eeeb0e4fd2687a8fa15f33301e5f5c130d7a25f9667c486700b9fb67e3"
-          },
-          "PkgID": "stdlib@v1.25.8",
-          "PkgIdentifier": {
-            "PURL": "pkg:golang/stdlib@v1.25.8",
-            "UID": "fdddb9ee2c5af570"
-          },
-          "PkgName": "stdlib",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-33818",
-          "PublishedDate": "2026-08-13T22:17:19.84Z",
-          "References": [
-            "https://go.dev/cl/814980",
-            "https://go.dev/issue/80405",
-            "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
-            "https://pkg.go.dev/vuln/GO-2026-5972"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "Title": "Enforce a recursion limit in Unmarshal to prevent stack exhaustion whe ...",
-          "VendorIDs": [
-            "GO-2026-5972"
-          ],
-          "VulnerabilityID": "CVE-2026-33818"
-        },
-        {
-          "CweIDs": [
-            "CWE-770"
-          ],
-          "DataSource": {
-            "ID": "govulndb",
-            "Name": "The Go Vulnerability Database",
-            "URL": "https://pkg.go.dev/vuln/"
-          },
-          "Description": "When a server is configured to support unencrypted HTTP/2, it reads a few bytes from each new connection to see if they contain the HTTP/2 client preface. ReadHeaderTimeout is unexpectedly not being applied when doing this.",
-          "Fingerprint": "sha256:326629c282a8d3e330e5b031f1b1e96aaaa0f0c5c143f3843abb586bec670f72",
-          "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
-          "InstalledVersion": "v1.25.8",
-          "LastModifiedDate": "2026-08-14T16:16:57.21Z",
-          "Layer": {
-            "DiffID": "sha256:b77ee2e6faf3d232629e53d3100644e7825b83a33624a7001e889ac6d7971372",
-            "Digest": "sha256:adcbf7eeeb0e4fd2687a8fa15f33301e5f5c130d7a25f9667c486700b9fb67e3"
-          },
-          "PkgID": "stdlib@v1.25.8",
-          "PkgIdentifier": {
-            "PURL": "pkg:golang/stdlib@v1.25.8",
-            "UID": "fdddb9ee2c5af570"
-          },
-          "PkgName": "stdlib",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56853",
-          "PublishedDate": "2026-08-13T22:17:22.093Z",
-          "References": [
-            "https://go.dev/cl/795540",
-            "https://go.dev/issue/80205",
-            "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
-            "https://pkg.go.dev/vuln/GO-2026-6089"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "Title": "When a server is configured to support unencrypted HTTP/2, it reads a  ...",
-          "VendorIDs": [
-            "GO-2026-6089"
-          ],
-          "VulnerabilityID": "CVE-2026-56853"
-        },
-        {
-          "CweIDs": [
-            "CWE-79"
-          ],
-          "DataSource": {
-            "ID": "govulndb",
-            "Name": "The Go Vulnerability Database",
-            "URL": "https://pkg.go.dev/vuln/"
-          },
-          "Description": "Previously, pathological inputs could close an unescaped '/' early, allowing for attack-controlled data to inject arbitrary content, potentially leading to XSS.",
-          "Fingerprint": "sha256:0b64762226b92d5cdf9218ae7ad2523563f8fb4e55861bd3cf4bfb925c7f6ce8",
-          "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
-          "InstalledVersion": "v1.25.8",
-          "LastModifiedDate": "2026-08-14T16:16:57.367Z",
-          "Layer": {
-            "DiffID": "sha256:b77ee2e6faf3d232629e53d3100644e7825b83a33624a7001e889ac6d7971372",
-            "Digest": "sha256:adcbf7eeeb0e4fd2687a8fa15f33301e5f5c130d7a25f9667c486700b9fb67e3"
-          },
-          "PkgID": "stdlib@v1.25.8",
-          "PkgIdentifier": {
-            "PURL": "pkg:golang/stdlib@v1.25.8",
-            "UID": "fdddb9ee2c5af570"
-          },
-          "PkgName": "stdlib",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56858",
-          "PublishedDate": "2026-08-13T22:17:22.207Z",
-          "References": [
-            "https://go.dev/cl/807100",
-            "https://go.dev/issue/80435",
-            "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
-            "https://pkg.go.dev/vuln/GO-2026-6091"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "Title": "Previously, pathological inputs could close an unescaped '/' early, al ...",
-          "VendorIDs": [
-            "GO-2026-6091"
-          ],
-          "VulnerabilityID": "CVE-2026-56858"
-        },
-        {
-          "CweIDs": [
-            "CWE-770"
-          ],
-          "DataSource": {
-            "ID": "govulndb",
-            "Name": "The Go Vulnerability Database",
-            "URL": "https://pkg.go.dev/vuln/"
-          },
-          "Description": "Previously, DecodeElement would reset the depth counter causing it to never fire; this could lead to stack exhaustion.",
-          "Fingerprint": "sha256:4a7e1066beb31bf3d5d9f71d25a1888e3401628e8bb48015f8f73fe628784d97",
-          "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
-          "InstalledVersion": "v1.25.8",
-          "LastModifiedDate": "2026-08-14T16:16:57.523Z",
-          "Layer": {
-            "DiffID": "sha256:b77ee2e6faf3d232629e53d3100644e7825b83a33624a7001e889ac6d7971372",
-            "Digest": "sha256:adcbf7eeeb0e4fd2687a8fa15f33301e5f5c130d7a25f9667c486700b9fb67e3"
-          },
-          "PkgID": "stdlib@v1.25.8",
-          "PkgIdentifier": {
-            "PURL": "pkg:golang/stdlib@v1.25.8",
-            "UID": "fdddb9ee2c5af570"
-          },
-          "PkgName": "stdlib",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56859",
-          "PublishedDate": "2026-08-13T22:17:22.32Z",
-          "References": [
-            "https://go.dev/cl/803320",
-            "https://go.dev/issue/80481",
-            "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
-            "https://pkg.go.dev/vuln/GO-2026-6088"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "Title": "Previously, DecodeElement would reset the depth counter causing it to  ...",
-          "VendorIDs": [
-            "GO-2026-6088"
-          ],
-          "VulnerabilityID": "CVE-2026-56859"
-        },
-        {
-          "CweIDs": [
-            "CWE-407"
-          ],
-          "DataSource": {
-            "ID": "govulndb",
-            "Name": "The Go Vulnerability Database",
-            "URL": "https://pkg.go.dev/vuln/"
-          },
-          "Description": "Previously, resolving relative paths containing parent directory ('..') segments performed string conversions and buffer rewrites on each step, resulting in quadratic time complexity and high memory allocation overhead. Now, path resolution operates on a byte buffer using index-based backtracking for '..' segments, eliminating the quadratic time complexity and significantly reducing memory allocations.",
-          "Fingerprint": "sha256:8ffe4bb36f8485c97518c431bd082e3538b76967b03b011f8a134f8eb46958c2",
-          "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
-          "InstalledVersion": "v1.25.8",
-          "LastModifiedDate": "2026-08-14T17:19:13.91Z",
-          "Layer": {
-            "DiffID": "sha256:b77ee2e6faf3d232629e53d3100644e7825b83a33624a7001e889ac6d7971372",
-            "Digest": "sha256:adcbf7eeeb0e4fd2687a8fa15f33301e5f5c130d7a25f9667c486700b9fb67e3"
-          },
-          "PkgID": "stdlib@v1.25.8",
-          "PkgIdentifier": {
-            "PURL": "pkg:golang/stdlib@v1.25.8",
-            "UID": "fdddb9ee2c5af570"
-          },
-          "PkgName": "stdlib",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56860",
-          "PublishedDate": "2026-08-13T22:17:22.44Z",
-          "References": [
-            "https://go.dev/cl/803681",
-            "https://go.dev/issue/80494",
-            "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
-            "https://pkg.go.dev/vuln/GO-2026-6218"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "Title": "Previously, resolving relative paths containing parent directory ('..' ...",
-          "VendorIDs": [
-            "GO-2026-6218"
-          ],
-          "VulnerabilityID": "CVE-2026-56860"
-        },
-        {
-          "CweIDs": [
-            "CWE-770"
-          ],
-          "DataSource": {
-            "ID": "govulndb",
-            "Name": "The Go Vulnerability Database",
-            "URL": "https://pkg.go.dev/vuln/"
-          },
-          "Description": "Handshake messages, such as KeyUpdate, are always considered as state-advancing, regardless of whether a handshake has been completed or not. As a result, a malicious client can keep sending KeyUpdate messages to force the server to keep performing key derivation operations indefinitely.",
-          "Fingerprint": "sha256:18e0e59f332bf4cf7b6644949bcca658df43fe53be4612a0ab02dd249192f8d0",
-          "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
-          "InstalledVersion": "v1.25.8",
-          "LastModifiedDate": "2026-08-14T16:16:57.717Z",
-          "Layer": {
-            "DiffID": "sha256:b77ee2e6faf3d232629e53d3100644e7825b83a33624a7001e889ac6d7971372",
-            "Digest": "sha256:adcbf7eeeb0e4fd2687a8fa15f33301e5f5c130d7a25f9667c486700b9fb67e3"
-          },
-          "PkgID": "stdlib@v1.25.8",
-          "PkgIdentifier": {
-            "PURL": "pkg:golang/stdlib@v1.25.8",
-            "UID": "fdddb9ee2c5af570"
-          },
-          "PkgName": "stdlib",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56862",
-          "PublishedDate": "2026-08-13T22:17:22.55Z",
-          "References": [
-            "https://go.dev/cl/804261",
-            "https://go.dev/issue/80528",
-            "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
-            "https://pkg.go.dev/vuln/GO-2026-6090"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "Title": "Handshake messages, such as KeyUpdate, are always considered as state- ...",
-          "VendorIDs": [
-            "GO-2026-6090"
-          ],
-          "VulnerabilityID": "CVE-2026-56862"
         }
       ]
     }
