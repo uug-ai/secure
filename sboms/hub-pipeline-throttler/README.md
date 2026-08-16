@@ -1,6 +1,6 @@
 # hub-pipeline-throttler SBOM quality
 
-Collection status: `collected`; collected at `2026-08-15T02:37:53Z`.
+Collection status: `collected`; collected at `2026-08-16T02:43:27Z`.
 
 Overall quality: **Needs work**, **68/100** across **53 packages**.
 
