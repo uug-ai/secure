@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:0b1307e864c42a62e135872e2c0c40d97f179c706e250c0a2b1ce98cd79d81cd",
   "ArtifactName": "ghcr.io/uug-ai/hub-anpr@sha256:da3236de7cbc610a1177d38f33018e674f199ab5e306f483bffb0cbcfb32c2cb",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-08-16T04:01:12.935960607Z",
+  "CreatedAt": "2026-08-17T04:02:30.042796245Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:66462cc862fe2053b9863fefa3866e07bb5dfb06f6b3ce3177cc096e4021aabe",
@@ -207,7 +207,7 @@
     ],
     "Size": 669437952
   },
-  "ReportID": "01a008bb-12e7-7ea2-8307-2d2ecc996530",
+  "ReportID": "01a00de2-9c1a-7c1e-b1d1-80c37ef14391",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -19176,7 +19176,7 @@
           "Description": "A flaw was found in GNU Coreutils. The sort utility's begfield() function is vulnerable to a heap buffer under-read. The program may access memory outside the allocated buffer if a user runs a crafted command using the traditional key format. A malicious input could lead to a crash or leak sensitive data.",
           "Fingerprint": "sha256:5bc107bb6b3733614168edb8b9c368d762c4f8dd63bc06a7198c8236a64efb82",
           "InstalledVersion": "9.1-1",
-          "LastModifiedDate": "2026-08-15T23:16:20.653Z",
+          "LastModifiedDate": "2026-08-16T14:16:54.133Z",
           "Layer": {
             "DiffID": "sha256:66462cc862fe2053b9863fefa3866e07bb5dfb06f6b3ce3177cc096e4021aabe",
             "Digest": "sha256:e4376313f4ed09af5cb5e63d27312153c9adce82fc4c8f8edb966f0ed6e49db5"
@@ -35198,6 +35198,52 @@
         },
         {
           "CVSS": {
+            "redhat": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-706"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "cJSON versions 1.5.0 through 1.7.19 contain an incorrectly-resolved name or reference vulnerability in the decode_pointer_inplace() function within cJSON_Utils.c that allows unauthenticated attackers to cause JSON Patch operations to target wrong object keys by supplying crafted JSON Pointer escape sequences (~0 or ~1) in patch paths. Attackers can submit malicious RFC 6902 JSON Patch input to applications using cJSONUtils_ApplyPatches() or cJSONUtils_ApplyPatchesCaseSensitive() to silently corrupt data or delete unintended keys, potentially bypassing authorization controls in applications that rely on JSON Patch for access-controlled data modification.",
+          "Fingerprint": "sha256:366affd3ad03af541b3d0a0b68bfde6ca442b1efd292bee4838593f69c2047fa",
+          "InstalledVersion": "1.7.15-1+deb12u4",
+          "LastModifiedDate": "2026-08-13T16:18:04.78Z",
+          "Layer": {
+            "DiffID": "sha256:5d2df3e1b91f02855b7c9900e2a90ce6e582e911373e5cacc7fd6d58454c1609",
+            "Digest": "sha256:4f42dc9cef59e8208bd3c692886dd1202a6b8617352335d3a408ca56870e630d"
+          },
+          "PkgID": "libcjson1@1.7.15-1+deb12u4",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libcjson1@1.7.15-1%2Bdeb12u4?arch=amd64\u0026distro=debian-12.15",
+            "UID": "2964162759c39c15"
+          },
+          "PkgName": "libcjson1",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-29036",
+          "PublishedDate": "2026-08-11T22:17:22.257Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-29036",
+            "https://github.com/DaveGamble/cJSON",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-29036",
+            "https://www.cve.org/CVERecord?id=CVE-2026-29036",
+            "https://www.vulncheck.com/advisories/cjson-wrong-key-modification-via-json-pointer-escape-decoding"
+          ],
+          "Severity": "HIGH",
+          "Status": "affected",
+          "Title": "cJSON: cJSON: Data corruption and unauthorized modification via JSON Pointer escape decoding",
+          "VendorSeverity": {
+            "redhat": 3
+          },
+          "VulnerabilityID": "CVE-2026-29036"
+        },
+        {
+          "CVSS": {
             "nvd": {
               "V3Score": 7.5,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
@@ -45945,7 +45991,11 @@
             "https://access.redhat.com/errata/RHSA-2026:54662",
             "https://access.redhat.com/security/cve/CVE-2026-58055",
             "https://bugzilla.redhat.com/2493954",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2493954",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-58055",
             "https://errata.almalinux.org/9/ALSA-2026-54662.html",
+            "https://errata.rockylinux.org/RLSA-2026:54662",
             "https://github.com/advisories/GHSA-xrr7-82jr-v58x",
             "https://github.com/bikini/exploitarium/tree/main/nghttp2-nghttpx-upgrade-queue-poison-poc",
             "https://github.com/nghttp2/nghttp2/commit/ab28105c4a0197da24f8bfc414bc116055249e1e",
@@ -45965,6 +46015,7 @@
             "julia": 2,
             "oracle-oval": 2,
             "redhat": 2,
+            "rocky": 2,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-58055"
@@ -51448,6 +51499,47 @@
             "redhat": 2
           },
           "VulnerabilityID": "CVE-2026-66034"
+        },
+        {
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "Issue summary: When an OpenSSL QUIC server (Listener SSL object) processes\nvalid QUIC Initial packets for unknown destination connection IDs, it\ncan allocate and queue new incoming channels without enforcing any limit.\n\nImpact summary: A remote peer that can make many Initial packets reach the\nserver listener faster than the application accepts connections, can cause the\nmemory allocated to store the per-channel state to grow without any limits,\npotentially making the QUIC listener unavailable and causing Denial of Service.\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: The function that handles inbound QUIC packets uses\nConnection-Id from the packet header to find an existing connection\n(QUIC channel). If no existing connection is found and the packet\ntype is INITIAL, the function treats the packet as a new connection. It\nallocates a new channel object and inserts it into a queue where it\nwaits to be accepted by the local application with SSL_accept(3ossl).\nThe memory occupied by these initial channel objects may grow\nwithout bounds if the application is not able to call SSL_accept()\nfrequently enough to serve these inbound connection requests.\n\nThe issue is present since OpenSSL 3.5 when the QUIC server implementation\nwas added.\n\nThe fix introduces a limit for pending connections. The default limit is set\nto 256 pending connections (waiting to be accepted by the local application).\nApplications may change the default by calling SSL_set_value_uint(3ossl).\n\nFIPS impact: no\nThe FIPS module is not affected as the QUIC implementation is outside of\nthe OpenSSL FIPS module boundary.",
+          "Fingerprint": "sha256:4eb0348d157c4c5b3ab3eae69dc7182ade052fa56627d2f5a93994be4079d892",
+          "InstalledVersion": "3.0.20-1~deb12u2",
+          "LastModifiedDate": "2026-08-13T18:17:18.367Z",
+          "Layer": {
+            "DiffID": "sha256:5d2df3e1b91f02855b7c9900e2a90ce6e582e911373e5cacc7fd6d58454c1609",
+            "Digest": "sha256:4f42dc9cef59e8208bd3c692886dd1202a6b8617352335d3a408ca56870e630d"
+          },
+          "PkgID": "libssl3@3.0.20-1~deb12u2",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libssl3@3.0.20-1~deb12u2?arch=amd64\u0026distro=debian-12.15",
+            "UID": "2291278c434e08b5"
+          },
+          "PkgName": "libssl3",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-14456",
+          "PublishedDate": "2026-08-13T15:19:31.82Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/08/13/4",
+            "https://github.com/openssl/openssl/commit/08e7756c3900bcfd77a720e7b74e27d6e4ed01a9",
+            "https://github.com/openssl/openssl/commit/4084152e040329ca0194c4c1750b9b46d00a5b6b",
+            "https://github.com/openssl/openssl/commit/f2f1465f2d2e5c61dfeac4d20fd093797d821139",
+            "https://openssl-library.org/news/secadv/20260813.txt",
+            "https://www.cve.org/CVERecord?id=CVE-2026-14456"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "affected",
+          "Title": "Issue summary: When an OpenSSL QUIC server (Listener SSL object) proce ...",
+          "VendorSeverity": {
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-14456"
         },
         {
           "CweIDs": [
@@ -58875,6 +58967,47 @@
         },
         {
           "CweIDs": [
+            "CWE-770"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "Issue summary: When an OpenSSL QUIC server (Listener SSL object) processes\nvalid QUIC Initial packets for unknown destination connection IDs, it\ncan allocate and queue new incoming channels without enforcing any limit.\n\nImpact summary: A remote peer that can make many Initial packets reach the\nserver listener faster than the application accepts connections, can cause the\nmemory allocated to store the per-channel state to grow without any limits,\npotentially making the QUIC listener unavailable and causing Denial of Service.\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: The function that handles inbound QUIC packets uses\nConnection-Id from the packet header to find an existing connection\n(QUIC channel). If no existing connection is found and the packet\ntype is INITIAL, the function treats the packet as a new connection. It\nallocates a new channel object and inserts it into a queue where it\nwaits to be accepted by the local application with SSL_accept(3ossl).\nThe memory occupied by these initial channel objects may grow\nwithout bounds if the application is not able to call SSL_accept()\nfrequently enough to serve these inbound connection requests.\n\nThe issue is present since OpenSSL 3.5 when the QUIC server implementation\nwas added.\n\nThe fix introduces a limit for pending connections. The default limit is set\nto 256 pending connections (waiting to be accepted by the local application).\nApplications may change the default by calling SSL_set_value_uint(3ossl).\n\nFIPS impact: no\nThe FIPS module is not affected as the QUIC implementation is outside of\nthe OpenSSL FIPS module boundary.",
+          "Fingerprint": "sha256:1a7394ab2525354793b7cf3090767056132e358786328120690715e798119ceb",
+          "InstalledVersion": "3.0.20-1~deb12u2",
+          "LastModifiedDate": "2026-08-13T18:17:18.367Z",
+          "Layer": {
+            "DiffID": "sha256:5d2df3e1b91f02855b7c9900e2a90ce6e582e911373e5cacc7fd6d58454c1609",
+            "Digest": "sha256:4f42dc9cef59e8208bd3c692886dd1202a6b8617352335d3a408ca56870e630d"
+          },
+          "PkgID": "openssl@3.0.20-1~deb12u2",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/openssl@3.0.20-1~deb12u2?arch=amd64\u0026distro=debian-12.15",
+            "UID": "a0263937aada4eab"
+          },
+          "PkgName": "openssl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-14456",
+          "PublishedDate": "2026-08-13T15:19:31.82Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/08/13/4",
+            "https://github.com/openssl/openssl/commit/08e7756c3900bcfd77a720e7b74e27d6e4ed01a9",
+            "https://github.com/openssl/openssl/commit/4084152e040329ca0194c4c1750b9b46d00a5b6b",
+            "https://github.com/openssl/openssl/commit/f2f1465f2d2e5c61dfeac4d20fd093797d821139",
+            "https://openssl-library.org/news/secadv/20260813.txt",
+            "https://www.cve.org/CVERecord?id=CVE-2026-14456"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "affected",
+          "Title": "Issue summary: When an OpenSSL QUIC server (Listener SSL object) proce ...",
+          "VendorSeverity": {
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-14456"
+        },
+        {
+          "CweIDs": [
             "CWE-385"
           ],
           "DataSource": {
@@ -63220,7 +63353,7 @@
           ],
           "Severity": "UNKNOWN",
           "Status": "fixed",
-          "Title": "Excessive memory allocation during VP8L decoding in golang.org/x/image",
+          "Title": "VP8L decoding in golang.org/x/image/vp8l can allocate an excessive amo ...",
           "VendorIDs": [
             "GO-2026-6222"
           ],

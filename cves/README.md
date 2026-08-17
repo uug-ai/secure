@@ -1,8 +1,8 @@
 # Critical and high vulnerability findings
 
-Generated at `2026-08-16T04:01:01Z` from the latest available Trivy container reports. Occurrences count every affected package record across scanned images; one advisory can therefore occur more than once in one or more repositories.
+Generated at `2026-08-17T04:02:17Z` from the latest available Trivy container reports. Occurrences count every affected package record across scanned images; one advisory can therefore occur more than once in one or more repositories.
 
-**305 unique findings**: 16 critical and 289 high, with 1043 total occurrences.
+**306 unique findings**: 16 critical and 290 high, with 1044 total occurrences.
 
 | Severity | Advisory | Occurrences | Fixable | Repositories | Packages |
 | --- | --- | ---: | ---: | --- | --- |
@@ -217,6 +217,7 @@ Generated at `2026-08-16T04:01:01Z` from the latest available Trivy container re
 | HIGH | [CVE-2026-25679](https://avd.aquasec.com/nvd/cve-2026-25679) | 1 | 1 | hub-pipeline-throttler | stdlib@v1.24.5 |
 | HIGH | [CVE-2026-25835](https://avd.aquasec.com/nvd/cve-2026-25835) | 1 | 0 | hub-anpr | libmbedcrypto7@2.28.3-1 |
 | HIGH | [CVE-2026-25990](https://avd.aquasec.com/nvd/cve-2026-25990) | 1 | 1 | hub-pipeline-classifier | pillow@10.3.0 |
+| HIGH | [CVE-2026-29036](https://avd.aquasec.com/nvd/cve-2026-29036) | 1 | 0 | hub-anpr | libcjson1@1.7.15-1+deb12u4 |
 | HIGH | [CVE-2026-31419](https://avd.aquasec.com/nvd/cve-2026-31419) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.180-1 |
 | HIGH | [CVE-2026-31432](https://avd.aquasec.com/nvd/cve-2026-31432) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.180-1 |
 | HIGH | [CVE-2026-31493](https://avd.aquasec.com/nvd/cve-2026-31493) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.180-1 |

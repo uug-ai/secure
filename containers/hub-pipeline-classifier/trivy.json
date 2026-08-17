@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:afb3b1eccd57c222f327038aa633a8b402c38a8fc4e683b6fa9bdb44f976c475",
   "ArtifactName": "ghcr.io/uug-ai/hub-pipeline-classifier@sha256:218ed67b1a393f15c7a8918b85dead4c701bfc772ba485748d70536990385b7f",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-08-16T04:02:54.059257752Z",
+  "CreatedAt": "2026-08-17T04:04:23.013395946Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:66462cc862fe2053b9863fefa3866e07bb5dfb06f6b3ce3177cc096e4021aabe",
@@ -507,7 +507,7 @@
     ],
     "Size": 6340269568
   },
-  "ReportID": "01a008bc-9deb-73e7-ab92-e76a9a2492a4",
+  "ReportID": "01a00de4-5565-7601-8fe7-30c9d52819d7",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -33823,7 +33823,7 @@
           "Description": "A flaw was found in GNU Coreutils. The sort utility's begfield() function is vulnerable to a heap buffer under-read. The program may access memory outside the allocated buffer if a user runs a crafted command using the traditional key format. A malicious input could lead to a crash or leak sensitive data.",
           "Fingerprint": "sha256:2d7b2ddf9e4af3200b11bc42432d6e72dc85584adbed4022b31dd4f6628b8b9c",
           "InstalledVersion": "9.1-1",
-          "LastModifiedDate": "2026-08-15T23:16:20.653Z",
+          "LastModifiedDate": "2026-08-16T14:16:54.133Z",
           "Layer": {
             "DiffID": "sha256:66462cc862fe2053b9863fefa3866e07bb5dfb06f6b3ce3177cc096e4021aabe",
             "Digest": "sha256:e4376313f4ed09af5cb5e63d27312153c9adce82fc4c8f8edb966f0ed6e49db5"
@@ -67095,7 +67095,11 @@
             "https://access.redhat.com/errata/RHSA-2026:54662",
             "https://access.redhat.com/security/cve/CVE-2026-58055",
             "https://bugzilla.redhat.com/2493954",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2493954",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-58055",
             "https://errata.almalinux.org/9/ALSA-2026-54662.html",
+            "https://errata.rockylinux.org/RLSA-2026:54662",
             "https://github.com/advisories/GHSA-xrr7-82jr-v58x",
             "https://github.com/bikini/exploitarium/tree/main/nghttp2-nghttpx-upgrade-queue-poison-poc",
             "https://github.com/nghttp2/nghttp2/commit/ab28105c4a0197da24f8bfc414bc116055249e1e",
@@ -67115,6 +67119,7 @@
             "julia": 2,
             "oracle-oval": 2,
             "redhat": 2,
+            "rocky": 2,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-58055"
@@ -75294,6 +75299,47 @@
             "redhat": 2
           },
           "VulnerabilityID": "CVE-2026-66034"
+        },
+        {
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "Issue summary: When an OpenSSL QUIC server (Listener SSL object) processes\nvalid QUIC Initial packets for unknown destination connection IDs, it\ncan allocate and queue new incoming channels without enforcing any limit.\n\nImpact summary: A remote peer that can make many Initial packets reach the\nserver listener faster than the application accepts connections, can cause the\nmemory allocated to store the per-channel state to grow without any limits,\npotentially making the QUIC listener unavailable and causing Denial of Service.\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: The function that handles inbound QUIC packets uses\nConnection-Id from the packet header to find an existing connection\n(QUIC channel). If no existing connection is found and the packet\ntype is INITIAL, the function treats the packet as a new connection. It\nallocates a new channel object and inserts it into a queue where it\nwaits to be accepted by the local application with SSL_accept(3ossl).\nThe memory occupied by these initial channel objects may grow\nwithout bounds if the application is not able to call SSL_accept()\nfrequently enough to serve these inbound connection requests.\n\nThe issue is present since OpenSSL 3.5 when the QUIC server implementation\nwas added.\n\nThe fix introduces a limit for pending connections. The default limit is set\nto 256 pending connections (waiting to be accepted by the local application).\nApplications may change the default by calling SSL_set_value_uint(3ossl).\n\nFIPS impact: no\nThe FIPS module is not affected as the QUIC implementation is outside of\nthe OpenSSL FIPS module boundary.",
+          "Fingerprint": "sha256:619ba0070266c0145825338f5d1ea9506129faafff0c5242061d17da43b2ff1d",
+          "InstalledVersion": "3.0.20-1~deb12u2",
+          "LastModifiedDate": "2026-08-13T18:17:18.367Z",
+          "Layer": {
+            "DiffID": "sha256:bbbb19fa59e928e9d2412742b476b97f157cd95304b1f9fd3a82d221f661acde",
+            "Digest": "sha256:e8e392f3681c10ad9c2b19ab6614fd158f6d5a03e0f71694aea9429d38813dbd"
+          },
+          "PkgID": "libssl3@3.0.20-1~deb12u2",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libssl3@3.0.20-1~deb12u2?arch=amd64\u0026distro=debian-12.15",
+            "UID": "888f63f9f82fa365"
+          },
+          "PkgName": "libssl3",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-14456",
+          "PublishedDate": "2026-08-13T15:19:31.82Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/08/13/4",
+            "https://github.com/openssl/openssl/commit/08e7756c3900bcfd77a720e7b74e27d6e4ed01a9",
+            "https://github.com/openssl/openssl/commit/4084152e040329ca0194c4c1750b9b46d00a5b6b",
+            "https://github.com/openssl/openssl/commit/f2f1465f2d2e5c61dfeac4d20fd093797d821139",
+            "https://openssl-library.org/news/secadv/20260813.txt",
+            "https://www.cve.org/CVERecord?id=CVE-2026-14456"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "affected",
+          "Title": "Issue summary: When an OpenSSL QUIC server (Listener SSL object) proce ...",
+          "VendorSeverity": {
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-14456"
         },
         {
           "CweIDs": [
@@ -87862,7 +87908,7 @@
           "Title": "kernel: Input: mms114 - reject an oversized device packet size",
           "VendorSeverity": {
             "nvd": 3,
-            "photon": 2,
+            "photon": 3,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-64270"
@@ -87916,7 +87962,7 @@
           "Title": "kernel: Input: mms114 - fix touch indexing for MMS134S and MMS136",
           "VendorSeverity": {
             "nvd": 3,
-            "photon": 2,
+            "photon": 3,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-64272"
@@ -88175,7 +88221,7 @@
           "Title": "kernel: openvswitch: fix GSO userspace truncation underflow",
           "VendorSeverity": {
             "azure": 2,
-            "photon": 3,
+            "photon": 4,
             "redhat": 3,
             "ubuntu": 2
           },
@@ -88223,7 +88269,7 @@
           "Status": "affected",
           "Title": "kernel: net: gro: fix double aggregation of flush-marked skbs",
           "VendorSeverity": {
-            "photon": 2,
+            "photon": 4,
             "redhat": 3,
             "ubuntu": 2
           },
@@ -88323,7 +88369,7 @@
           "Title": "kernel: Linux kernel Phonet: Memory corruption vulnerability in pep_get_sb() function",
           "VendorSeverity": {
             "azure": 4,
-            "photon": 3,
+            "photon": 4,
             "redhat": 3,
             "ubuntu": 2
           },
@@ -88417,7 +88463,7 @@
           "Title": "kernel: ceph: fix pre-auth out-of-bounds read on snaptrace in ceph_handle_caps()",
           "VendorSeverity": {
             "azure": 4,
-            "photon": 2,
+            "photon": 4,
             "redhat": 3,
             "ubuntu": 2
           },
@@ -88516,7 +88562,7 @@
           "Title": "kernel: ALSA: seq: close a re-opened queue timer in the destructor",
           "VendorSeverity": {
             "azure": 2,
-            "photon": 2,
+            "photon": 3,
             "redhat": 3,
             "ubuntu": 2
           },
@@ -88566,7 +88612,7 @@
           "Title": "kernel: drm/amd/display: set new_stream to NULL after release",
           "VendorSeverity": {
             "azure": 4,
-            "photon": 2,
+            "photon": 3,
             "redhat": 3,
             "ubuntu": 2
           },
@@ -88616,7 +88662,7 @@
           "Title": "kernel: net: qrtr: restrict socket creation to the initial network namespace",
           "VendorSeverity": {
             "azure": 2,
-            "photon": 2,
+            "photon": 3,
             "redhat": 3,
             "ubuntu": 2
           },
@@ -88666,7 +88712,7 @@
           "Title": "kernel: Linux kernel: Out-of-bounds read in wifi driver due to length underflow",
           "VendorSeverity": {
             "azure": 2,
-            "photon": 2,
+            "photon": 3,
             "redhat": 3,
             "ubuntu": 2
           },
@@ -88908,7 +88954,7 @@
           "Title": "kernel: vxlan: require CAP_NET_ADMIN in the device netns for changelink",
           "VendorSeverity": {
             "azure": 2,
-            "photon": 2,
+            "photon": 3,
             "redhat": 3,
             "ubuntu": 2
           },
@@ -143055,7 +143101,7 @@
           "Status": "affected",
           "Title": "kernel: ksmbd: fix path resolution in ksmbd_vfs_kern_path_create",
           "VendorSeverity": {
-            "photon": 3,
+            "photon": 4,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -143103,7 +143149,7 @@
           "Status": "affected",
           "Title": "kernel: Bluetooth: hci_uart: clear HCI_UART_SENDING when write_work is canceled",
           "VendorSeverity": {
-            "photon": 2,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -143247,7 +143293,7 @@
           "Title": "kernel: audit: fix recursive locking deadlock in audit_dupe_exe()",
           "VendorSeverity": {
             "azure": 2,
-            "photon": 2,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -143338,7 +143384,7 @@
           "Title": "kernel: ksmbd: bound DACL dedup walk to copied ACEs",
           "VendorSeverity": {
             "azure": 2,
-            "photon": 2,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -143388,7 +143434,7 @@
           "Title": "kernel: ksmbd: validate num_subauth when copying ACE in set_ntacl_dacl",
           "VendorSeverity": {
             "azure": 2,
-            "photon": 2,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -143438,7 +143484,7 @@
           "Title": "kernel: drm/amdgpu: invoke pm_genpd_remove() before freeing genpd",
           "VendorSeverity": {
             "azure": 2,
-            "photon": 2,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -143488,7 +143534,7 @@
           "Title": "kernel: drm/amdgpu: fix division by zero with invalid uvd dimensions",
           "VendorSeverity": {
             "azure": 2,
-            "photon": 2,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -143780,7 +143826,7 @@
           "Title": "kernel: tipc: clear sock-\u003esk on the failed-insert path in tipc_sk_create()",
           "VendorSeverity": {
             "azure": 1,
-            "photon": 3,
+            "photon": 4,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -143920,7 +143966,7 @@
           "Title": "kernel: mctp: serial: handle zero-length frames to prevent rx buffer overflow",
           "VendorSeverity": {
             "azure": 3,
-            "photon": 2,
+            "photon": 4,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-68124"
@@ -143969,7 +144015,7 @@
           "Title": "kernel: mac802154: llsec: reject frames shorter than the authentication tag",
           "VendorSeverity": {
             "azure": 2,
-            "photon": 2,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -144019,7 +144065,7 @@
           "Title": "kernel: ila: reload IPv6 header after pskb_may_pull in checksum adjust",
           "VendorSeverity": {
             "azure": 4,
-            "photon": 3,
+            "photon": 4,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -144068,7 +144114,7 @@
           "Status": "affected",
           "Title": "kernel: gve: fix Rx queue stall on alloc failure",
           "VendorSeverity": {
-            "photon": 2,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -144168,7 +144214,7 @@
           "Title": "kernel: rbd: Reset positive result codes to zero in object map update path",
           "VendorSeverity": {
             "azure": 4,
-            "photon": 2,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -144268,7 +144314,7 @@
           "Title": "kernel: net/x25: fix use-after-free in x25_kill_by_neigh()",
           "VendorSeverity": {
             "azure": 2,
-            "photon": 3,
+            "photon": 4,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -144413,7 +144459,7 @@
           "Title": "kernel: geneve: require CAP_NET_ADMIN in the device netns for changelink",
           "VendorSeverity": {
             "azure": 4,
-            "photon": 2,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -144804,7 +144850,7 @@
           "Title": "kernel: libceph: reject zero bucket types in crush_decode",
           "VendorSeverity": {
             "azure": 2,
-            "photon": 3,
+            "photon": 4,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -144903,7 +144949,7 @@
           "Title": "kernel: libceph: refresh auth-\u003eauthorizer_buf{,_len} after authorizer update",
           "VendorSeverity": {
             "azure": 2,
-            "photon": 3,
+            "photon": 4,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -145003,7 +145049,7 @@
           "Title": "kernel: libceph: Fix multiplication overflow in decode_new_up_state_weight()",
           "VendorSeverity": {
             "azure": 2,
-            "photon": 2,
+            "photon": 4,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -145052,7 +145098,7 @@
           "Status": "affected",
           "Title": "kernel: sctp: close UDP tunnel sockets during netns teardown",
           "VendorSeverity": {
-            "photon": 3,
+            "photon": 4,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -145102,7 +145148,7 @@
           "Status": "affected",
           "Title": "kernel: sctp: avoid auth_enable sysctl UAF during netns teardown",
           "VendorSeverity": {
-            "photon": 2,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -145734,7 +145780,7 @@
           "Title": "In the Linux kernel, the following vulnerability has been resolved:  w ...",
           "VendorSeverity": {
             "azure": 2,
-            "photon": 2,
+            "photon": 3,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-68192"
@@ -146067,7 +146113,7 @@
           "Title": "kernel: media: vivid: check for vb2_is_busy() when toggling caps",
           "VendorSeverity": {
             "azure": 2,
-            "photon": 1,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -146166,7 +146212,7 @@
           "Title": "kernel: media: v4l2-ctrls: validate HEVC active reference counts",
           "VendorSeverity": {
             "azure": 2,
-            "photon": 2,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -146266,7 +146312,7 @@
           "Title": "kernel: media: sun4i-csi: Return queued buffers on start_streaming() failure",
           "VendorSeverity": {
             "azure": 1,
-            "photon": 2,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -146316,7 +146362,7 @@
           "Title": "kernel: media: stm32: dcmi: unregister notifier on probe failure",
           "VendorSeverity": {
             "azure": 4,
-            "photon": 1,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -146409,7 +146455,7 @@
           "Status": "affected",
           "Title": "kernel: media: rtl2832_sdr: Return queued buffers on start_streaming() failure",
           "VendorSeverity": {
-            "photon": 2,
+            "photon": 3,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-68213"
@@ -146558,7 +146604,7 @@
           "Title": "kernel: media: msi2500: Return queued buffers on start_streaming() failure",
           "VendorSeverity": {
             "azure": 2,
-            "photon": 1,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -146651,7 +146697,7 @@
           "Title": "kernel: media: cedrus: skip invalid H.264 reference list entries",
           "VendorSeverity": {
             "azure": 1,
-            "photon": 2,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -147186,7 +147232,7 @@
           "Title": "kernel: drm/virtio: bound EDID block reads to the response buffer",
           "VendorSeverity": {
             "azure": 2,
-            "photon": 2,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -147854,7 +147900,7 @@
           "Status": "affected",
           "Title": "kernel: net/mlx5: Fix MCIA register buffer overflow on 32 dword reads",
           "VendorSeverity": {
-            "photon": 2,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -147904,7 +147950,7 @@
           "Title": "kernel: tipc: fix u16 MTU truncation in media and bearer MTU validation",
           "VendorSeverity": {
             "azure": 2,
-            "photon": 2,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -148004,7 +148050,7 @@
           "Title": "kernel: sctp: auth: verify auth requirement when auth_chunk is NULL",
           "VendorSeverity": {
             "azure": 2,
-            "photon": 3,
+            "photon": 4,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -148048,7 +148094,7 @@
           "Title": "kernel: amt: re-read skb header pointers after every pull",
           "VendorSeverity": {
             "azure": 1,
-            "photon": 3,
+            "photon": 4,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-68302"
@@ -148667,7 +148713,7 @@
           "Title": "kernel: iommu/amd: Wait for completion instead of returning early in iommu_completion_wait()",
           "VendorSeverity": {
             "azure": 2,
-            "photon": 2,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -148767,7 +148813,7 @@
           "Title": "kernel: net/packet: avoid fanout hook re-registration after unregister",
           "VendorSeverity": {
             "azure": 2,
-            "photon": 2,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -148811,7 +148857,7 @@
           "Title": "kernel: hwmon: occ: validate poll response sensor blocks",
           "VendorSeverity": {
             "azure": 4,
-            "photon": 2,
+            "photon": 3,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-68340"
@@ -148860,7 +148906,7 @@
           "Title": "kernel: smb: client: validate DFS referral PathConsumed",
           "VendorSeverity": {
             "azure": 2,
-            "photon": 3,
+            "photon": 4,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -149158,7 +149204,7 @@
           "Title": "kernel: wifi: ath6kl: fix OOB read from firmware num_msg in TX complete handler",
           "VendorSeverity": {
             "azure": 2,
-            "photon": 2,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -149208,7 +149254,7 @@
           "Title": "kernel: firewire: net: Fix fragmented datagram reassembly",
           "VendorSeverity": {
             "azure": 4,
-            "photon": 2,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -149930,7 +149976,7 @@
           "Status": "affected",
           "Title": "kernel: usb: musb: omap2430: Do not put borrowed of_node in probe",
           "VendorSeverity": {
-            "photon": 1,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -149978,7 +150024,7 @@
           "Status": "affected",
           "Title": "kernel: usb: core: sysfs: add lock to bos_descriptors_read()",
           "VendorSeverity": {
-            "photon": 1,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -150078,7 +150124,7 @@
           "Title": "kernel: smb/client: handle overlapping allocated ranges in fallocate",
           "VendorSeverity": {
             "azure": 2,
-            "photon": 1,
+            "photon": 4,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -150467,7 +150513,7 @@
           "Title": "kernel: Linux kernel: Wi-Fi subsystem out-of-bounds read via crafted frames",
           "VendorSeverity": {
             "azure": 4,
-            "photon": 2,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -150712,7 +150758,7 @@
           "Title": "kernel: RDMA/siw: publish QP after initialization",
           "VendorSeverity": {
             "azure": 1,
-            "photon": 2,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -150956,7 +151002,7 @@
           "Title": "kernel: libceph: bound get_version reply decode to front len",
           "VendorSeverity": {
             "azure": 1,
-            "photon": 1,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -151147,7 +151193,7 @@
           "Title": "kernel: drm/vc4: Prevent shader BO mappings from becoming writable",
           "VendorSeverity": {
             "azure": 2,
-            "photon": 2,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -151197,7 +151243,7 @@
           "Title": "kernel: drm/vmwgfx: Validate vmw_surface_metadata::array_size",
           "VendorSeverity": {
             "azure": 1,
-            "photon": 2,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -151385,6 +151431,7 @@
           "Status": "affected",
           "Title": "kernel: s390/zcrypt: Validate length for CCA ECC private key requests",
           "VendorSeverity": {
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -151433,6 +151480,7 @@
           "Status": "affected",
           "Title": "kernel: s390/zcrypt: Validate length for CCA AES cipher key requests",
           "VendorSeverity": {
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -158568,7 +158616,7 @@
           "Title": "kernel: media: pwc: Return queued buffers on start_streaming() failure",
           "VendorSeverity": {
             "azure": 2,
-            "photon": 1,
+            "photon": 3,
             "redhat": 1,
             "ubuntu": 2
           },
@@ -169408,6 +169456,47 @@
             "redhat": 1
           },
           "VulnerabilityID": "CVE-2025-6141"
+        },
+        {
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "Issue summary: When an OpenSSL QUIC server (Listener SSL object) processes\nvalid QUIC Initial packets for unknown destination connection IDs, it\ncan allocate and queue new incoming channels without enforcing any limit.\n\nImpact summary: A remote peer that can make many Initial packets reach the\nserver listener faster than the application accepts connections, can cause the\nmemory allocated to store the per-channel state to grow without any limits,\npotentially making the QUIC listener unavailable and causing Denial of Service.\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: The function that handles inbound QUIC packets uses\nConnection-Id from the packet header to find an existing connection\n(QUIC channel). If no existing connection is found and the packet\ntype is INITIAL, the function treats the packet as a new connection. It\nallocates a new channel object and inserts it into a queue where it\nwaits to be accepted by the local application with SSL_accept(3ossl).\nThe memory occupied by these initial channel objects may grow\nwithout bounds if the application is not able to call SSL_accept()\nfrequently enough to serve these inbound connection requests.\n\nThe issue is present since OpenSSL 3.5 when the QUIC server implementation\nwas added.\n\nThe fix introduces a limit for pending connections. The default limit is set\nto 256 pending connections (waiting to be accepted by the local application).\nApplications may change the default by calling SSL_set_value_uint(3ossl).\n\nFIPS impact: no\nThe FIPS module is not affected as the QUIC implementation is outside of\nthe OpenSSL FIPS module boundary.",
+          "Fingerprint": "sha256:78b159fc8b0e954da7fe5eeb759c7884b7f2080000ad01d2d0819a1df596e0a2",
+          "InstalledVersion": "3.0.20-1~deb12u2",
+          "LastModifiedDate": "2026-08-13T18:17:18.367Z",
+          "Layer": {
+            "DiffID": "sha256:bbbb19fa59e928e9d2412742b476b97f157cd95304b1f9fd3a82d221f661acde",
+            "Digest": "sha256:e8e392f3681c10ad9c2b19ab6614fd158f6d5a03e0f71694aea9429d38813dbd"
+          },
+          "PkgID": "openssl@3.0.20-1~deb12u2",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/openssl@3.0.20-1~deb12u2?arch=amd64\u0026distro=debian-12.15",
+            "UID": "8228395ae3c0d59f"
+          },
+          "PkgName": "openssl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-14456",
+          "PublishedDate": "2026-08-13T15:19:31.82Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/08/13/4",
+            "https://github.com/openssl/openssl/commit/08e7756c3900bcfd77a720e7b74e27d6e4ed01a9",
+            "https://github.com/openssl/openssl/commit/4084152e040329ca0194c4c1750b9b46d00a5b6b",
+            "https://github.com/openssl/openssl/commit/f2f1465f2d2e5c61dfeac4d20fd093797d821139",
+            "https://openssl-library.org/news/secadv/20260813.txt",
+            "https://www.cve.org/CVERecord?id=CVE-2026-14456"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "affected",
+          "Title": "Issue summary: When an OpenSSL QUIC server (Listener SSL object) proce ...",
+          "VendorSeverity": {
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-14456"
         },
         {
           "CweIDs": [
