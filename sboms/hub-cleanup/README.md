@@ -1,6 +1,6 @@
 # hub-cleanup SBOM quality
 
-Collection status: `collected`; collected at `2026-08-16T02:43:27Z`.
+Collection status: `collected`; collected at `2026-08-17T02:43:18Z`.
 
 Overall quality: **Needs work**, **68/100** across **47 packages**.
 
