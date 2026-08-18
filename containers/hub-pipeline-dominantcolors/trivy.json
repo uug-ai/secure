@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:1fcb0257d0ad3fd43f5502612605731b312870c97d298823418654ae50de984b",
   "ArtifactName": "ghcr.io/uug-ai/hub-pipeline-dominantcolors@sha256:cf5d8b32163816d6d17366f3adedd982e8264eca788591bd1fe2c9854076281d",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-08-17T04:04:26.284836295Z",
+  "CreatedAt": "2026-08-18T04:03:48.670517849Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:34884abbe92863fce933ed7c39c0e045631af0ed86d5cc0dfbdf9fdca426ce3c",
@@ -166,7 +166,7 @@
     ],
     "Size": 202697728
   },
-  "ReportID": "01a00de4-622c-7cbe-b375-aaf1aad9371b",
+  "ReportID": "01a0130a-2b3e-77e1-b27b-6c0d5f64cc32",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -5265,7 +5265,59 @@
         }
       ],
       "Target": "ghcr.io/uug-ai/hub-pipeline-dominantcolors@sha256:cf5d8b32163816d6d17366f3adedd982e8264eca788591bd1fe2c9854076281d (alpine 3.24.1)",
-      "Type": "alpine"
+      "Type": "alpine",
+      "Vulnerabilities": [
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 6.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-835",
+            "CWE-400"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "A flaw was found in libssh. A remote authenticated peer can advertise a zero maximum packet size in SSH_MSG_CHANNEL_OPEN, causing later channel writes to loop indefinitely and consume CPU, leading to denial of service.",
+          "Fingerprint": "sha256:996da9dd6db6bd72821d7cd3a0bc5e7db7f19c405fe3e8480dfdeb07b0621b65",
+          "FixedVersion": "0.12.2-r0",
+          "InstalledVersion": "0.12.1-r0",
+          "LastModifiedDate": "2026-08-17T22:17:15.123Z",
+          "Layer": {
+            "DiffID": "sha256:c733dc33101000d59ea2c39b96698802f98715be70dcb3e508328a2b98510b75",
+            "Digest": "sha256:ec1aa2807c99f075b8dd1fc3b0f43af54f404ef45a8bde84e30560fb240affcf"
+          },
+          "PkgID": "libssh@0.12.1-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libssh@0.12.1-r0?arch=x86_64\u0026distro=3.24.1",
+            "UID": "2194161bf9919e61"
+          },
+          "PkgName": "libssh",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-59843",
+          "PublishedDate": "2026-07-21T12:18:57.86Z",
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:42922",
+            "https://access.redhat.com/errata/RHSA-2026:55855",
+            "https://access.redhat.com/security/cve/CVE-2026-59843",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2498176",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-59843",
+            "https://www.cve.org/CVERecord?id=CVE-2026-59843"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "libssh: libssh: denial of service via zero advertised channel packet size",
+          "VendorSeverity": {
+            "azure": 2,
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2026-59843"
+        }
+      ]
     },
     {
       "Class": "lang-pkgs",
@@ -5975,7 +6027,7 @@
           "Fingerprint": "sha256:9d0bf83d3331950e1cd76cc1241225822278ecef0cbb5ee2ae2da352aa062471",
           "FixedVersion": "1.41.0",
           "InstalledVersion": "v1.39.0",
-          "LastModifiedDate": "2026-08-12T12:18:24.937Z",
+          "LastModifiedDate": "2026-08-17T12:17:46.85Z",
           "Layer": {
             "DiffID": "sha256:caeb7d3ef152a3c1e6d402a1fac47533726939edf95a99e32b219b76c7ce4ef8",
             "Digest": "sha256:d2de5614fea5eb22d343d836b622dd90d2a3f6913b66cd9d9256b89272f90e2a"
@@ -6225,7 +6277,7 @@
           "Fingerprint": "sha256:b23c8845426c5f17046523b4b05fb33b868520be5dd2a769e7b9acbe4e4b0b84",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-08-14T13:18:29.05Z",
+          "LastModifiedDate": "2026-08-17T12:18:18.58Z",
           "Layer": {
             "DiffID": "sha256:caeb7d3ef152a3c1e6d402a1fac47533726939edf95a99e32b219b76c7ce4ef8",
             "Digest": "sha256:d2de5614fea5eb22d343d836b622dd90d2a3f6913b66cd9d9256b89272f90e2a"
@@ -6325,7 +6377,7 @@
           "Fingerprint": "sha256:a727e0a06c9ee6a8fb870f4d54429edb15e2d8c59efa79eaf33acf116bc86a14",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-08-14T13:18:30.59Z",
+          "LastModifiedDate": "2026-08-17T12:18:19.75Z",
           "Layer": {
             "DiffID": "sha256:caeb7d3ef152a3c1e6d402a1fac47533726939edf95a99e32b219b76c7ce4ef8",
             "Digest": "sha256:d2de5614fea5eb22d343d836b622dd90d2a3f6913b66cd9d9256b89272f90e2a"
@@ -6398,23 +6450,19 @@
             "https://bugzilla.redhat.com/2480757",
             "https://bugzilla.redhat.com/2480761",
             "https://bugzilla.redhat.com/2493620",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2480680",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2455470",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480681",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480684",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480688",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2480757",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2480761",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2493620",
             "https://creativecommons.org/licenses/by/4.0/",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-25681",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27136",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-34986",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39829",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39830",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39832",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39835",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42508",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-57231",
             "https://errata.almalinux.org/9/ALSA-2026-37123.html",
-            "https://errata.rockylinux.org/RLSA-2026:37123",
+            "https://errata.rockylinux.org/RLSA-2026:35833",
             "https://go.dev/cl/781641",
             "https://go.dev/cl/781661",
             "https://go.dev/issue/79565",
@@ -6462,7 +6510,7 @@
           "Fingerprint": "sha256:3a0521f1551f6ae0bb131152afe8799ba9c2561fa21511c1efa30572b4426959",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-08-14T13:18:31.917Z",
+          "LastModifiedDate": "2026-08-17T12:18:21.023Z",
           "Layer": {
             "DiffID": "sha256:caeb7d3ef152a3c1e6d402a1fac47533726939edf95a99e32b219b76c7ce4ef8",
             "Digest": "sha256:d2de5614fea5eb22d343d836b622dd90d2a3f6913b66cd9d9256b89272f90e2a"
@@ -6526,21 +6574,19 @@
             "https://bugzilla.redhat.com/2456339",
             "https://bugzilla.redhat.com/2480681",
             "https://bugzilla.redhat.com/2480684",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2445356",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2456333",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2456338",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2456339",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2455470",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480681",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480684",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480688",
             "https://creativecommons.org/licenses/by/4.0/",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-25679",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32280",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32281",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32283",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-34986",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39829",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39830",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39832",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42508",
             "https://errata.almalinux.org/9/ALSA-2026-29455.html",
-            "https://errata.rockylinux.org/RLSA-2026:29455",
+            "https://errata.rockylinux.org/RLSA-2026:35833",
             "https://github.com/golang/crypto/commit/4e7a7384ecbc8d519f6f4c11b36fa9d761fc8946",
             "https://go.dev/cl/781640",
             "https://go.dev/cl/781664",
@@ -6650,7 +6696,7 @@
           "Fingerprint": "sha256:59e85d28bffa3c7c881cfdf3abffd2278649a763ba014aad4cb9920e87e949c8",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-08-14T13:18:33.197Z",
+          "LastModifiedDate": "2026-08-17T12:18:22.177Z",
           "Layer": {
             "DiffID": "sha256:caeb7d3ef152a3c1e6d402a1fac47533726939edf95a99e32b219b76c7ce4ef8",
             "Digest": "sha256:d2de5614fea5eb22d343d836b622dd90d2a3f6913b66cd9d9256b89272f90e2a"
@@ -6695,13 +6741,19 @@
             "https://access.redhat.com/security/cve/CVE-2026-39832",
             "https://bugzilla.redhat.com/2480680",
             "https://bugzilla.redhat.com/2480685",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2480680",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2455470",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480681",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480684",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480688",
             "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-34986",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39829",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39830",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39832",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39835",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42508",
             "https://errata.almalinux.org/9/ALSA-2026-37410.html",
-            "https://errata.rockylinux.org/RLSA-2026:37410",
+            "https://errata.rockylinux.org/RLSA-2026:35833",
             "https://github.com/golang/crypto/commit/e3d1254f1e7e60baa086142c46174bf6d8d0fe50",
             "https://go.dev/cl/778640",
             "https://go.dev/cl/778641",
@@ -6754,7 +6806,7 @@
           "Fingerprint": "sha256:e5d36b4d3f33778a4ec1cbf26537b6394c3ca52f9e0318687c581bfb3ab65de0",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-08-14T13:18:34.013Z",
+          "LastModifiedDate": "2026-08-17T12:18:22.92Z",
           "Layer": {
             "DiffID": "sha256:caeb7d3ef152a3c1e6d402a1fac47533726939edf95a99e32b219b76c7ce4ef8",
             "Digest": "sha256:d2de5614fea5eb22d343d836b622dd90d2a3f6913b66cd9d9256b89272f90e2a"
@@ -6815,13 +6867,15 @@
             "https://access.redhat.com/security/cve/CVE-2026-39835",
             "https://bugzilla.redhat.com/2480680",
             "https://bugzilla.redhat.com/2480685",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2467822",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480680",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2493620",
             "https://creativecommons.org/licenses/by/4.0/",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39832",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-33811",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39835",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-57231",
             "https://errata.almalinux.org/9/ALSA-2026-37410.html",
-            "https://errata.rockylinux.org/RLSA-2026:37410",
+            "https://errata.rockylinux.org/RLSA-2026:38504",
             "https://go.dev/cl/781660",
             "https://go.dev/issue/79563",
             "https://groups.google.com/g/golang-announce/c/a082jnz-LvI",
@@ -6867,7 +6921,7 @@
           "Fingerprint": "sha256:9beb6ca859f2d2ee4fd26ed726523784ac3d3fe6b87d13a04737fcc0840d7244",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-08-14T13:18:48.4Z",
+          "LastModifiedDate": "2026-08-17T12:18:35.773Z",
           "Layer": {
             "DiffID": "sha256:caeb7d3ef152a3c1e6d402a1fac47533726939edf95a99e32b219b76c7ce4ef8",
             "Digest": "sha256:d2de5614fea5eb22d343d836b622dd90d2a3f6913b66cd9d9256b89272f90e2a"
@@ -6923,23 +6977,19 @@
             "https://bugzilla.redhat.com/2480757",
             "https://bugzilla.redhat.com/2480761",
             "https://bugzilla.redhat.com/2493620",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2480680",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2455470",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480681",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480684",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480688",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2480757",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2480761",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2493620",
             "https://creativecommons.org/licenses/by/4.0/",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-25681",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27136",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-34986",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39829",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39830",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39832",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39835",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42508",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-57231",
             "https://errata.almalinux.org/9/ALSA-2026-37123.html",
-            "https://errata.rockylinux.org/RLSA-2026:37123",
+            "https://errata.rockylinux.org/RLSA-2026:35833",
             "https://github.com/golang/crypto/commit/f717e29698a271c548239ed56bf5dd9516d6f7e8",
             "https://go.dev/cl/781220",
             "https://go.dev/issue/79568",
@@ -6991,7 +7041,7 @@
           "Fingerprint": "sha256:2cee081a7604f56bba6412102ffd15189669bc7622674e007f28db639a07e4d7",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-08-14T13:18:59.073Z",
+          "LastModifiedDate": "2026-08-17T12:18:47.417Z",
           "Layer": {
             "DiffID": "sha256:caeb7d3ef152a3c1e6d402a1fac47533726939edf95a99e32b219b76c7ce4ef8",
             "Digest": "sha256:d2de5614fea5eb22d343d836b622dd90d2a3f6913b66cd9d9256b89272f90e2a"
@@ -7401,6 +7451,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-25681",
           "PublishedDate": "2026-05-22T16:16:19.863Z",
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:37072",
             "https://access.redhat.com/errata/RHSA-2026:37123",
             "https://access.redhat.com/security/cve/CVE-2026-25681",
             "https://bugzilla.redhat.com/2480680",
@@ -7412,6 +7463,7 @@
             "https://bugzilla.redhat.com/2493620",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480680",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480681",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480684",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480688",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480757",
@@ -7421,12 +7473,13 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-25681",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27136",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39829",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39830",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39832",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39835",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42508",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-57231",
             "https://errata.almalinux.org/9/ALSA-2026-37123.html",
-            "https://errata.rockylinux.org/RLSA-2026:37123",
+            "https://errata.rockylinux.org/RLSA-2026:37072",
             "https://go.dev/cl/781703",
             "https://go.dev/issue/79574",
             "https://groups.google.com/g/golang-announce/c/iI-mYSI0lu8",
@@ -7485,6 +7538,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-27136",
           "PublishedDate": "2026-05-22T16:16:20.087Z",
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:37072",
             "https://access.redhat.com/errata/RHSA-2026:37123",
             "https://access.redhat.com/security/cve/CVE-2026-27136",
             "https://bugzilla.redhat.com/2480680",
@@ -7496,6 +7550,7 @@
             "https://bugzilla.redhat.com/2493620",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480680",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480681",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480684",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480688",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480757",
@@ -7505,12 +7560,13 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-25681",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27136",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39829",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39830",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39832",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39835",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42508",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-57231",
             "https://errata.almalinux.org/9/ALSA-2026-37123.html",
-            "https://errata.rockylinux.org/RLSA-2026:37123",
+            "https://errata.rockylinux.org/RLSA-2026:37072",
             "https://go.dev/cl/781685",
             "https://go.dev/issue/79575",
             "https://groups.google.com/g/golang-announce/c/iI-mYSI0lu8",
@@ -7555,7 +7611,7 @@
           "Fingerprint": "sha256:5054d47a8532f99c355af83beeda5335e1b42495e94e703db41d956e992f145a",
           "FixedVersion": "0.55.0",
           "InstalledVersion": "v0.53.0",
-          "LastModifiedDate": "2026-08-14T13:18:24.667Z",
+          "LastModifiedDate": "2026-08-17T12:18:16.93Z",
           "Layer": {
             "DiffID": "sha256:caeb7d3ef152a3c1e6d402a1fac47533726939edf95a99e32b219b76c7ce4ef8",
             "Digest": "sha256:d2de5614fea5eb22d343d836b622dd90d2a3f6913b66cd9d9256b89272f90e2a"
@@ -7684,12 +7740,14 @@
             "https://access.redhat.com/security/cve/CVE-2026-39821",
             "https://bugzilla.redhat.com/2480756",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480756",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2484207",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2498152",
             "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27145",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39821",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39822",
             "https://errata.almalinux.org/9/ALSA-2026-37435.html",
-            "https://errata.rockylinux.org/RLSA-2026:37435",
+            "https://errata.rockylinux.org/RLSA-2026:38995",
             "https://github.com/golang/go/issues/78760",
             "https://go.dev/cl/767220",
             "https://go.dev/issue/78760",
@@ -7722,6 +7780,10 @@
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
             "redhat": {
               "V3Score": 7.5,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
@@ -7768,6 +7830,7 @@
             "GO-2026-5942"
           ],
           "VendorSeverity": {
+            "bitnami": 3,
             "redhat": 3
           },
           "VulnerabilityID": "CVE-2026-46600"
@@ -8010,7 +8073,7 @@
           "Fingerprint": "sha256:b6db8c65d79d366d659436379ea6def861a6404b333f0c9c6139c0c094ddfd83",
           "FixedVersion": "1.79.3",
           "InstalledVersion": "v1.77.0",
-          "LastModifiedDate": "2026-08-14T13:17:57.88Z",
+          "LastModifiedDate": "2026-08-17T12:17:55.053Z",
           "Layer": {
             "DiffID": "sha256:caeb7d3ef152a3c1e6d402a1fac47533726939edf95a99e32b219b76c7ce4ef8",
             "Digest": "sha256:d2de5614fea5eb22d343d836b622dd90d2a3f6913b66cd9d9256b89272f90e2a"
@@ -8251,25 +8314,19 @@
             "https://bugzilla.redhat.com/2456336",
             "https://bugzilla.redhat.com/2456338",
             "https://bugzilla.redhat.com/2456339",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2434432",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2437111",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2445345",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2445356",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2449833",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2455470",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2456336",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2456338",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2456339",
             "https://creativecommons.org/licenses/by/4.0/",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-61726",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-68121",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-25679",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27137",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32280",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32282",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32283",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-33186",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-34986",
             "https://errata.almalinux.org/9/ALSA-2026-19353.html",
-            "https://errata.rockylinux.org/RLSA-2026:23228",
+            "https://errata.rockylinux.org/RLSA-2026:48790",
             "https://github.com/grpc/grpc-go",
             "https://github.com/grpc/grpc-go/security/advisories/GHSA-p77j-4mvh-x3m3",
             "https://linux.oracle.com/cve/CVE-2026-33186.html",
@@ -8411,7 +8468,7 @@
           "Fingerprint": "sha256:3e91ea82962d0ec2a1c52643ed7a62cd7c41191f73a88e5dcfad2d9df7a95ecf",
           "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
           "InstalledVersion": "v1.25.12",
-          "LastModifiedDate": "2026-08-14T13:18:24.667Z",
+          "LastModifiedDate": "2026-08-17T12:18:16.93Z",
           "Layer": {
             "DiffID": "sha256:caeb7d3ef152a3c1e6d402a1fac47533726939edf95a99e32b219b76c7ce4ef8",
             "Digest": "sha256:d2de5614fea5eb22d343d836b622dd90d2a3f6913b66cd9d9256b89272f90e2a"
@@ -8540,12 +8597,14 @@
             "https://access.redhat.com/security/cve/CVE-2026-39821",
             "https://bugzilla.redhat.com/2480756",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480756",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2484207",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2498152",
             "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27145",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39821",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39822",
             "https://errata.almalinux.org/9/ALSA-2026-37435.html",
-            "https://errata.rockylinux.org/RLSA-2026:37435",
+            "https://errata.rockylinux.org/RLSA-2026:38995",
             "https://github.com/golang/go/issues/78760",
             "https://go.dev/cl/767220",
             "https://go.dev/issue/78760",
