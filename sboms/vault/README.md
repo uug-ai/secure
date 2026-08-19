@@ -1,6 +1,6 @@
 # vault SBOM quality
 
-Collection status: `collected`; collected at `2026-08-18T02:40:25Z`.
+Collection status: `collected`; collected at `2026-08-19T02:42:31Z`.
 
 Overall quality: **Needs work**, **69/100** across **1654 packages**.
 
