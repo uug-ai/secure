@@ -63,7 +63,7 @@ Generated at `2026-08-19T04:01:09Z` from the newest tagged GHCR image available 
 <!-- SBOM_QUALITY_START -->
 ## SBOM quality overview
 
-Generated at `2026-08-19T02:42:31Z`. Quality combines document metadata (20%), package identity (30%), licensing (20%), provenance (15%), and relationships (15%).
+Generated at `2026-08-20T02:41:34Z`. Quality combines document metadata (20%), package identity (30%), licensing (20%), provenance (15%), and relationships (15%).
 
 Legend: 🟢 85-100, 🟡 70-84, 🟠 50-69, 🔴 0-49 or unavailable. This measures SBOM completeness, not vulnerability severity.
 
@@ -71,13 +71,13 @@ Legend: 🟢 85-100, 🟡 70-84, 🟠 50-69, 🔴 0-49 or unavailable. This meas
 | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- |
 | [factory](https://github.com/uug-ai/factory) | collected | 🟠 Needs work | 66/100 | 162 | 100% | 64% | 100% | [Breakdown](sboms/factory/README.md) · [SPDX](sboms/factory/sbom.spdx.json) |
 | [hub-anpr](https://github.com/uug-ai/hub-anpr) | collected | 🟠 Needs work | 68/100 | 52 | 100% | 85% | 100% | [Breakdown](sboms/hub-anpr/README.md) · [SPDX](sboms/hub-anpr/sbom.spdx.json) |
-| [hub-api](https://github.com/uug-ai/hub-api) | collected | 🟠 Needs work | 68/100 | 160 | 100% | 89% | 100% | [Breakdown](sboms/hub-api/README.md) · [SPDX](sboms/hub-api/sbom.spdx.json) |
+| [hub-api](https://github.com/uug-ai/hub-api) | collected | 🟠 Needs work | 69/100 | 160 | 100% | 90% | 100% | [Breakdown](sboms/hub-api/README.md) · [SPDX](sboms/hub-api/sbom.spdx.json) |
 | [hub-cleanup](https://github.com/uug-ai/hub-cleanup) | collected | 🟠 Needs work | 68/100 | 47 | 100% | 83% | 100% | [Breakdown](sboms/hub-cleanup/README.md) · [SPDX](sboms/hub-cleanup/sbom.spdx.json) |
-| [hub-frontend](https://github.com/uug-ai/hub-frontend) | collected | 🟠 Needs work | 69/100 | 1224 | 100% | 99% | 100% | [Breakdown](sboms/hub-frontend/README.md) · [SPDX](sboms/hub-frontend/sbom.spdx.json) |
+| [hub-frontend](https://github.com/uug-ai/hub-frontend) | collected | 🟠 Needs work | 69/100 | 1315 | 100% | 99% | 100% | [Breakdown](sboms/hub-frontend/README.md) · [SPDX](sboms/hub-frontend/sbom.spdx.json) |
 | [hub-loitering](https://github.com/uug-ai/hub-loitering) | collected | 🟠 Needs work | 68/100 | 49 | 100% | 84% | 100% | [Breakdown](sboms/hub-loitering/README.md) · [SPDX](sboms/hub-loitering/sbom.spdx.json) |
 | [hub-monitor-device](https://github.com/uug-ai/hub-monitor-device) | collected | 🟠 Needs work | 68/100 | 79 | 100% | 87% | 100% | [Breakdown](sboms/hub-monitor-device/README.md) · [SPDX](sboms/hub-monitor-device/sbom.spdx.json) |
 | [hub-objecttracking](https://github.com/uug-ai/hub-objecttracking) | collected | 🟠 Needs work | 67/100 | 35 | 100% | 74% | 100% | [Breakdown](sboms/hub-objecttracking/README.md) · [SPDX](sboms/hub-objecttracking/sbom.spdx.json) |
-| [hub-pipeline-analysis](https://github.com/uug-ai/hub-pipeline-analysis) | collected | 🟠 Needs work | 68/100 | 63 | 100% | 83% | 100% | [Breakdown](sboms/hub-pipeline-analysis/README.md) · [SPDX](sboms/hub-pipeline-analysis/sbom.spdx.json) |
+| [hub-pipeline-analysis](https://github.com/uug-ai/hub-pipeline-analysis) | collected | 🟠 Needs work | 68/100 | 62 | 100% | 82% | 100% | [Breakdown](sboms/hub-pipeline-analysis/README.md) · [SPDX](sboms/hub-pipeline-analysis/sbom.spdx.json) |
 | [hub-pipeline-classifier](https://github.com/uug-ai/hub-pipeline-classifier) | collected | 🟠 Needs work | 68/100 | 59 | 100% | 88% | 100% | [Breakdown](sboms/hub-pipeline-classifier/README.md) · [SPDX](sboms/hub-pipeline-classifier/sbom.spdx.json) |
 | [hub-pipeline-counting](https://github.com/uug-ai/hub-pipeline-counting) | collected | 🟠 Needs work | 68/100 | 48 | 100% | 81% | 100% | [Breakdown](sboms/hub-pipeline-counting/README.md) · [SPDX](sboms/hub-pipeline-counting/sbom.spdx.json) |
 | [hub-pipeline-dominantcolors](https://github.com/uug-ai/hub-pipeline-dominantcolors) | collected | 🟠 Needs work | 68/100 | 60 | 100% | 88% | 100% | [Breakdown](sboms/hub-pipeline-dominantcolors/README.md) · [SPDX](sboms/hub-pipeline-dominantcolors/sbom.spdx.json) |
