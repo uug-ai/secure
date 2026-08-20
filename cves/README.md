@@ -1,8 +1,8 @@
 # Critical and high vulnerability findings
 
-Generated at `2026-08-19T04:01:09Z` from the latest available Trivy container reports. Occurrences count every affected package record across scanned images; one advisory can therefore occur more than once in one or more repositories.
+Generated at `2026-08-20T04:00:47Z` from the latest available Trivy container reports. Occurrences count every affected package record across scanned images; one advisory can therefore occur more than once in one or more repositories.
 
-**303 unique findings**: 15 critical and 288 high, with 1033 total occurrences.
+**308 unique findings**: 15 critical and 293 high, with 1042 total occurrences.
 
 | Severity | Advisory | Occurrences | Fixable | Repositories | Packages |
 | --- | --- | ---: | ---: | --- | --- |
@@ -84,6 +84,8 @@ Generated at `2026-08-19T04:01:09Z` from the latest available Trivy container re
 | HIGH | [CVE-2026-25210](https://avd.aquasec.com/nvd/cve-2026-25210) | 3 | 0 | hub-anpr, hub-pipeline-classifier | libexpat1-dev@2.5.0-1+deb12u2, libexpat1@2.5.0-1+deb12u2 |
 | HIGH | [CVE-2026-45186](https://avd.aquasec.com/nvd/cve-2026-45186) | 3 | 0 | hub-anpr, hub-pipeline-classifier | libexpat1-dev@2.5.0-1+deb12u2, libexpat1@2.5.0-1+deb12u2 |
 | HIGH | [CVE-2026-56408](https://avd.aquasec.com/nvd/cve-2026-56408) | 3 | 0 | hub-anpr, hub-pipeline-classifier | libexpat1-dev@2.5.0-1+deb12u2, libexpat1@2.5.0-1+deb12u2 |
+| HIGH | [CVE-2026-56864](https://avd.aquasec.com/nvd/cve-2026-56864) | 3 | 3 | factory, hub-api, vault | golang.org/x/mod@v0.33.0, golang.org/x/mod@v0.36.0 |
+| HIGH | [CVE-2026-56865](https://avd.aquasec.com/nvd/cve-2026-56865) | 3 | 3 | factory, hub-api, vault | golang.org/x/mod@v0.33.0, golang.org/x/mod@v0.36.0 |
 | HIGH | [CVE-2023-2953](https://avd.aquasec.com/nvd/cve-2023-2953) | 2 | 0 | hub-anpr, hub-pipeline-classifier | libldap-2.5-0@2.5.13+dfsg-5 |
 | HIGH | [CVE-2024-37298](https://avd.aquasec.com/nvd/cve-2024-37298) | 2 | 2 | hub-api, hub-pipeline-notification | github.com/gorilla/schema@v1.1.0 |
 | HIGH | [CVE-2025-47273](https://avd.aquasec.com/nvd/cve-2025-47273) | 2 | 2 | hub-pipeline-classifier | setuptools@70.0.0, setuptools@70.3.0 |
@@ -308,4 +310,7 @@ Generated at `2026-08-19T04:01:09Z` from the latest available Trivy container re
 | HIGH | [CVE-2026-68470](https://avd.aquasec.com/nvd/cve-2026-68470) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.180-1 |
 | HIGH | [CVE-2026-68480](https://avd.aquasec.com/nvd/cve-2026-68480) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.180-1 |
 | HIGH | [CVE-2026-72042](https://avd.aquasec.com/nvd/cve-2026-72042) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.180-1 |
+| HIGH | [CVE-2026-72262](https://avd.aquasec.com/nvd/cve-2026-72262) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.180-1 |
+| HIGH | [CVE-2026-72320](https://avd.aquasec.com/nvd/cve-2026-72320) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.180-1 |
+| HIGH | [CVE-2026-72323](https://avd.aquasec.com/nvd/cve-2026-72323) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.180-1 |
 | HIGH | [GHSA-6v7p-g79w-8964](https://github.com/advisories/GHSA-6v7p-g79w-8964) | 1 | 1 | hub-pipeline-classifier | msgpack@1.1.2 |
