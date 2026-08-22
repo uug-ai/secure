@@ -63,7 +63,7 @@ Generated at `2026-08-21T04:01:45Z` from the newest tagged GHCR image available 
 <!-- SBOM_QUALITY_START -->
 ## SBOM quality overview
 
-Generated at `2026-08-21T02:44:13Z`. Quality combines document metadata (20%), package identity (30%), licensing (20%), provenance (15%), and relationships (15%).
+Generated at `2026-08-22T02:39:47Z`. Quality combines document metadata (20%), package identity (30%), licensing (20%), provenance (15%), and relationships (15%).
 
 Legend: 🟢 85-100, 🟡 70-84, 🟠 50-69, 🔴 0-49 or unavailable. This measures SBOM completeness, not vulnerability severity.
 
@@ -89,7 +89,7 @@ Legend: 🟢 85-100, 🟡 70-84, 🟠 50-69, 🔴 0-49 or unavailable. This meas
 | [hub-pipeline-redaction](https://github.com/uug-ai/hub-pipeline-redaction) | collected | 🟠 Needs work | 68/100 | 49 | 100% | 86% | 100% | [Breakdown](sboms/hub-pipeline-redaction/README.md) · [SPDX](sboms/hub-pipeline-redaction/sbom.spdx.json) |
 | [hub-pipeline-sequence](https://github.com/uug-ai/hub-pipeline-sequence) | collected | 🟠 Needs work | 68/100 | 58 | 100% | 84% | 100% | [Breakdown](sboms/hub-pipeline-sequence/README.md) · [SPDX](sboms/hub-pipeline-sequence/sbom.spdx.json) |
 | [hub-pipeline-sprite](https://github.com/uug-ai/hub-pipeline-sprite) | collected | 🟠 Needs work | 68/100 | 58 | 100% | 83% | 100% | [Breakdown](sboms/hub-pipeline-sprite/README.md) · [SPDX](sboms/hub-pipeline-sprite/sbom.spdx.json) |
-| [hub-pipeline-throttler](https://github.com/uug-ai/hub-pipeline-throttler) | collected | 🟠 Needs work | 68/100 | 53 | 100% | 83% | 100% | [Breakdown](sboms/hub-pipeline-throttler/README.md) · [SPDX](sboms/hub-pipeline-throttler/sbom.spdx.json) |
+| [hub-pipeline-throttler](https://github.com/uug-ai/hub-pipeline-throttler) | collected | 🟠 Needs work | 68/100 | 59 | 100% | 83% | 100% | [Breakdown](sboms/hub-pipeline-throttler/README.md) · [SPDX](sboms/hub-pipeline-throttler/sbom.spdx.json) |
 | [hub-pipeline-thumbnail](https://github.com/uug-ai/hub-pipeline-thumbnail) | collected | 🟠 Needs work | 68/100 | 61 | 100% | 85% | 100% | [Breakdown](sboms/hub-pipeline-thumbnail/README.md) · [SPDX](sboms/hub-pipeline-thumbnail/sbom.spdx.json) |
 | [hub-proxy](https://github.com/uug-ai/hub-proxy) | collected | 🟠 Needs work | 66/100 | 23 | 100% | 65% | 100% | [Breakdown](sboms/hub-proxy/README.md) · [SPDX](sboms/hub-proxy/sbom.spdx.json) |
 | [hub-reactivatesubscriptions](https://github.com/uug-ai/hub-reactivatesubscriptions) | collected | 🟠 Needs work | 68/100 | 60 | 100% | 82% | 100% | [Breakdown](sboms/hub-reactivatesubscriptions/README.md) · [SPDX](sboms/hub-reactivatesubscriptions/sbom.spdx.json) |
