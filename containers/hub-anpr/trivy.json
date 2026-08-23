@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:0b1307e864c42a62e135872e2c0c40d97f179c706e250c0a2b1ce98cd79d81cd",
   "ArtifactName": "ghcr.io/uug-ai/hub-anpr@sha256:da3236de7cbc610a1177d38f33018e674f199ab5e306f483bffb0cbcfb32c2cb",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-08-22T03:59:53.511579975Z",
+  "CreatedAt": "2026-08-23T04:01:51.939777202Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:66462cc862fe2053b9863fefa3866e07bb5dfb06f6b3ce3177cc096e4021aabe",
@@ -207,7 +207,7 @@
     ],
     "Size": 669437952
   },
-  "ReportID": "01a027a0-04a7-78d3-a3d8-c6f477266ce6",
+  "ReportID": "01a02cc8-2f43-7bd6-ac73-aaeb3c79e04d",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -36621,6 +36621,54 @@
         },
         {
           "CVSS": {
+            "redhat": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-674"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "cJSON through 1.7.19 is vulnerable to uncontrolled recursion leading to stack exhaustion when an untrusted RFC 6902 JSON Patch is applied via cJSONUtils_ApplyPatches() or cJSONUtils_ApplyPatchesCaseSensitive(). A patch containing add and copy operations grafts duplicated subtrees to amplify document depth beyond the parser's nesting limit: cJSON_Delete() recurses with no depth bound, and the cJSON_Duplicate() guard CJSON_CIRCULAR_LIMIT is set to 10000, ten times the parser's 1000-level nesting limit and high enough to overflow a default thread stack. An attacker who can supply the patch document can crash the process, resulting in denial of service.",
+          "Fingerprint": "sha256:3fa9f021bf5aaf40ac097866146e073f6cf8c70962273955a00b46f1d4731588",
+          "InstalledVersion": "1.7.15-1+deb12u4",
+          "LastModifiedDate": "2026-08-04T15:09:26.327Z",
+          "Layer": {
+            "DiffID": "sha256:5d2df3e1b91f02855b7c9900e2a90ce6e582e911373e5cacc7fd6d58454c1609",
+            "Digest": "sha256:4f42dc9cef59e8208bd3c692886dd1202a6b8617352335d3a408ca56870e630d"
+          },
+          "PkgID": "libcjson1@1.7.15-1+deb12u4",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libcjson1@1.7.15-1%2Bdeb12u4?arch=amd64\u0026distro=debian-12.15",
+            "UID": "2964162759c39c15"
+          },
+          "PkgName": "libcjson1",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-67215",
+          "PublishedDate": "2026-07-29T14:16:35.187Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-67215",
+            "https://github.com/DaveGamble/cJSON/blob/v1.7.19/cJSON.c#L253-L261",
+            "https://github.com/DaveGamble/cJSON/blob/v1.7.19/cJSON_Utils.c#L906-L940",
+            "https://joshua.hu/cjson-json-parser-cve-vulnerabilities",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-67215",
+            "https://www.cve.org/CVERecord?id=CVE-2026-67215",
+            "https://www.vulncheck.com/advisories/cjson-json-patch-copy-add-uncontrolled-recursion-stack-exhaustion"
+          ],
+          "Severity": "HIGH",
+          "Status": "affected",
+          "Title": "cJSON: cJSON: Denial of Service via uncontrolled recursion in JSON Patch application",
+          "VendorSeverity": {
+            "redhat": 3
+          },
+          "VulnerabilityID": "CVE-2026-67215"
+        },
+        {
+          "CVSS": {
             "nvd": {
               "V3Score": 7.5,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
@@ -36721,42 +36769,12 @@
           "VulnerabilityID": "CVE-2026-16554"
         },
         {
-          "CweIDs": [
-            "CWE-674"
-          ],
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          "CVSS": {
+            "redhat": {
+              "V3Score": 5.3,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
+            }
           },
-          "Description": "cJSON through 1.7.19 is vulnerable to uncontrolled recursion leading to stack exhaustion when an untrusted RFC 6902 JSON Patch is applied via cJSONUtils_ApplyPatches() or cJSONUtils_ApplyPatchesCaseSensitive(). A patch containing add and copy operations grafts duplicated subtrees to amplify document depth beyond the parser's nesting limit: cJSON_Delete() recurses with no depth bound, and the cJSON_Duplicate() guard CJSON_CIRCULAR_LIMIT is set to 10000, ten times the parser's 1000-level nesting limit and high enough to overflow a default thread stack. An attacker who can supply the patch document can crash the process, resulting in denial of service.",
-          "Fingerprint": "sha256:3fa9f021bf5aaf40ac097866146e073f6cf8c70962273955a00b46f1d4731588",
-          "InstalledVersion": "1.7.15-1+deb12u4",
-          "LastModifiedDate": "2026-08-04T15:09:26.327Z",
-          "Layer": {
-            "DiffID": "sha256:5d2df3e1b91f02855b7c9900e2a90ce6e582e911373e5cacc7fd6d58454c1609",
-            "Digest": "sha256:4f42dc9cef59e8208bd3c692886dd1202a6b8617352335d3a408ca56870e630d"
-          },
-          "PkgID": "libcjson1@1.7.15-1+deb12u4",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libcjson1@1.7.15-1%2Bdeb12u4?arch=amd64\u0026distro=debian-12.15",
-            "UID": "2964162759c39c15"
-          },
-          "PkgName": "libcjson1",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-67215",
-          "PublishedDate": "2026-07-29T14:16:35.187Z",
-          "References": [
-            "https://github.com/DaveGamble/cJSON/blob/v1.7.19/cJSON.c#L253-L261",
-            "https://github.com/DaveGamble/cJSON/blob/v1.7.19/cJSON_Utils.c#L906-L940",
-            "https://joshua.hu/cjson-json-parser-cve-vulnerabilities",
-            "https://www.vulncheck.com/advisories/cjson-json-patch-copy-add-uncontrolled-recursion-stack-exhaustion"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "affected",
-          "Title": "cJSON through 1.7.19 is vulnerable to uncontrolled recursion leading t ...",
-          "VulnerabilityID": "CVE-2026-67215"
-        },
-        {
           "CweIDs": [
             "CWE-696"
           ],
@@ -36782,13 +36800,19 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-67217",
           "PublishedDate": "2026-07-29T14:16:35.477Z",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-67217",
             "https://github.com/DaveGamble/cJSON/blob/v1.7.19/cJSON_Utils.c#L887-L948",
             "https://joshua.hu/cjson-json-parser-cve-vulnerabilities",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-67217",
+            "https://www.cve.org/CVERecord?id=CVE-2026-67217",
             "https://www.vulncheck.com/advisories/cjson-json-patch-non-atomic-application-destroys-data-before-validation"
           ],
-          "Severity": "UNKNOWN",
+          "Severity": "MEDIUM",
           "Status": "affected",
-          "Title": "cJSON through 1.7.19 applies RFC 6902 JSON Patch operations non-atomic ...",
+          "Title": "cJSON: cJSON: Data destruction due to non-atomic JSON Patch application",
+          "VendorSeverity": {
+            "redhat": 2
+          },
           "VulnerabilityID": "CVE-2026-67217"
         },
         {
@@ -46351,7 +46375,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "Description Not Available",
+          "Description": "[Unknown description]",
           "Fingerprint": "sha256:3c05e0c5af72a2eedfd07ec93e68107e6f19a76f9e45a01bdae9a2c78b83d1ee",
           "InstalledVersion": "2.28.3-1",
           "Layer": {
@@ -46367,7 +46391,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-49300",
           "Severity": "UNKNOWN",
           "Status": "end_of_life",
-          "Title": "Title Not Available",
+          "Title": "[Unknown description]",
           "VulnerabilityID": "CVE-2026-49300"
         },
         {
@@ -46376,7 +46400,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "[Unknown description]",
+          "Description": "Description Not Available",
           "Fingerprint": "sha256:c29e5ce93dd14528199bbe5826aa362ecf0f2b9af1aeea9d4b398f4426d316b6",
           "InstalledVersion": "2.28.3-1",
           "Layer": {
@@ -46392,7 +46416,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-50579",
           "Severity": "UNKNOWN",
           "Status": "end_of_life",
-          "Title": "[Unknown description]",
+          "Title": "Title Not Available",
           "VulnerabilityID": "CVE-2026-50579"
         },
         {
@@ -46426,7 +46450,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "Description Not Available",
+          "Description": "[Unknown description]",
           "Fingerprint": "sha256:3813fa3edb66b68d2453cfee2a5af67a70295350c248b92c87dedb3812c54d6b",
           "InstalledVersion": "2.28.3-1",
           "Layer": {
@@ -46442,7 +46466,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-50581",
           "Severity": "UNKNOWN",
           "Status": "end_of_life",
-          "Title": "Title Not Available",
+          "Title": "[Unknown description]",
           "VulnerabilityID": "CVE-2026-50581"
         },
         {
@@ -46451,7 +46475,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "Description Not Available",
+          "Description": "[Unknown description]",
           "Fingerprint": "sha256:f9bf641fba22ab479964db3bff533abe8fd8a612c648603ed5171448c4ea858c",
           "InstalledVersion": "2.28.3-1",
           "Layer": {
@@ -46467,7 +46491,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-50583",
           "Severity": "UNKNOWN",
           "Status": "end_of_life",
-          "Title": "Title Not Available",
+          "Title": "[Unknown description]",
           "VulnerabilityID": "CVE-2026-50583"
         },
         {
@@ -46501,7 +46525,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "[Unknown description]",
+          "Description": "Description Not Available",
           "Fingerprint": "sha256:516a889ab339669088db076714edcb57c4f50c701aea126a1b1d3d53d8be3fa0",
           "InstalledVersion": "2.28.3-1",
           "Layer": {
@@ -46517,7 +46541,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-50585",
           "Severity": "UNKNOWN",
           "Status": "end_of_life",
-          "Title": "[Unknown description]",
+          "Title": "Title Not Available",
           "VulnerabilityID": "CVE-2026-50585"
         },
         {
@@ -46576,7 +46600,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "Description Not Available",
+          "Description": "[Unknown description]",
           "Fingerprint": "sha256:6bf9e928d93ffaa24814f110bb5a2d0e54ae0b9459b627f8a6f5af676aae3746",
           "InstalledVersion": "2.28.3-1",
           "Layer": {
@@ -46592,7 +46616,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-50588",
           "Severity": "UNKNOWN",
           "Status": "end_of_life",
-          "Title": "Title Not Available",
+          "Title": "[Unknown description]",
           "VulnerabilityID": "CVE-2026-50588"
         },
         {
@@ -46651,7 +46675,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "[Unknown description]",
+          "Description": "Description Not Available",
           "Fingerprint": "sha256:5c7dd8d38e56dbd3c233ee377833f141bc278210fff356166411e6840234ae3b",
           "InstalledVersion": "2.28.3-1",
           "Layer": {
@@ -46667,7 +46691,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-54435",
           "Severity": "UNKNOWN",
           "Status": "end_of_life",
-          "Title": "[Unknown description]",
+          "Title": "Title Not Available",
           "VulnerabilityID": "CVE-2026-54435"
         },
         {
@@ -53897,6 +53921,7 @@
           "Status": "affected",
           "Title": "openssl: OpenSSL: Denial of Service via unbounded memory growth in QUIC server",
           "VendorSeverity": {
+            "photon": 3,
             "redhat": 3
           },
           "VulnerabilityID": "CVE-2026-14456"
@@ -61994,6 +62019,7 @@
           "Status": "affected",
           "Title": "openssl: OpenSSL: Denial of Service via unbounded memory growth in QUIC server",
           "VendorSeverity": {
+            "photon": 3,
             "redhat": 3
           },
           "VulnerabilityID": "CVE-2026-14456"
@@ -62449,44 +62475,6 @@
           "VulnerabilityID": "CVE-2026-42496"
         },
         {
-          "CweIDs": [
-            "CWE-190"
-          ],
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Description": "Storable versions before 3.41 for Perl have a signed integer overflow when deserializing a crafted SX_HOOK record.\n\nretrieve_hook_common reads a signed 32-bit item count from an SX_HOOK record and calls av_extend with that count plus one. A count of I32_MAX wraps the addition to a negative value.\n\nA crafted blob passed to thaw or retrieve triggers the overflow; av_extend receives the negative count and dies with a panic, terminating the deserialization.",
-          "Fingerprint": "sha256:be2f844ca38446f18500ede060efe2f73b1c256af54f667204d6591f35c13729",
-          "InstalledVersion": "5.36.0-7+deb12u3",
-          "LastModifiedDate": "2026-07-14T17:47:20.473Z",
-          "Layer": {
-            "DiffID": "sha256:66462cc862fe2053b9863fefa3866e07bb5dfb06f6b3ce3177cc096e4021aabe",
-            "Digest": "sha256:e4376313f4ed09af5cb5e63d27312153c9adce82fc4c8f8edb966f0ed6e49db5"
-          },
-          "PkgID": "perl-base@5.36.0-7+deb12u3",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/perl-base@5.36.0-7%2Bdeb12u3?arch=amd64\u0026distro=debian-12.15",
-            "UID": "4d96814618e564ec"
-          },
-          "PkgName": "perl-base",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-57433",
-          "PublishedDate": "2026-07-13T17:17:55.783Z",
-          "References": [
-            "http://www.openwall.com/lists/oss-security/2026/07/13/7",
-            "https://github.com/Perl/perl5/commit/e4f681784bcdeaa91ff02a2fa4cdcae5c46779d7.patch",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-57433"
-          ],
-          "Severity": "CRITICAL",
-          "Status": "affected",
-          "Title": "Storable versions before 3.41 for Perl have a signed integer overflow  ...",
-          "VendorSeverity": {
-            "azure": 4
-          },
-          "VulnerabilityID": "CVE-2026-57433"
-        },
-        {
           "CVSS": {
             "nvd": {
               "V3Score": 9.8,
@@ -62730,6 +62718,53 @@
             "redhat": 2
           },
           "VulnerabilityID": "CVE-2026-57432"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-190"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "Storable versions before 3.41 for Perl have a signed integer overflow when deserializing a crafted SX_HOOK record.\n\nretrieve_hook_common reads a signed 32-bit item count from an SX_HOOK record and calls av_extend with that count plus one. A count of I32_MAX wraps the addition to a negative value.\n\nA crafted blob passed to thaw or retrieve triggers the overflow; av_extend receives the negative count and dies with a panic, terminating the deserialization.",
+          "Fingerprint": "sha256:be2f844ca38446f18500ede060efe2f73b1c256af54f667204d6591f35c13729",
+          "InstalledVersion": "5.36.0-7+deb12u3",
+          "LastModifiedDate": "2026-07-14T17:47:20.473Z",
+          "Layer": {
+            "DiffID": "sha256:66462cc862fe2053b9863fefa3866e07bb5dfb06f6b3ce3177cc096e4021aabe",
+            "Digest": "sha256:e4376313f4ed09af5cb5e63d27312153c9adce82fc4c8f8edb966f0ed6e49db5"
+          },
+          "PkgID": "perl-base@5.36.0-7+deb12u3",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/perl-base@5.36.0-7%2Bdeb12u3?arch=amd64\u0026distro=debian-12.15",
+            "UID": "4d96814618e564ec"
+          },
+          "PkgName": "perl-base",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-57433",
+          "PublishedDate": "2026-07-13T17:17:55.783Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/07/13/7",
+            "https://access.redhat.com/security/cve/CVE-2026-57433",
+            "https://github.com/Perl/perl5/commit/e4f681784bcdeaa91ff02a2fa4cdcae5c46779d7.patch",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-57433",
+            "https://www.cve.org/CVERecord?id=CVE-2026-57433"
+          ],
+          "Severity": "HIGH",
+          "Status": "affected",
+          "Title": "Storable: Storable: Denial of Service via signed integer overflow in deserialization",
+          "VendorSeverity": {
+            "azure": 4,
+            "redhat": 3
+          },
+          "VulnerabilityID": "CVE-2026-57433"
         },
         {
           "CVSS": {
