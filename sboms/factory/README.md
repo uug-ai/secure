@@ -1,6 +1,6 @@
 # factory SBOM quality
 
-Collection status: `collected`; collected at `2026-08-22T02:39:47Z`.
+Collection status: `collected`; collected at `2026-08-23T02:44:08Z`.
 
 Overall quality: **Needs work**, **66/100** across **162 packages**.
 
