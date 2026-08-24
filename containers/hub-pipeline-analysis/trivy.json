@@ -1,16 +1,16 @@
 {
-  "ArtifactID": "sha256:f8296449ccac23cdaffcab5ea6428db424880a3f9623052233983455e28b08c7",
-  "ArtifactName": "ghcr.io/uug-ai/hub-pipeline-analysis@sha256:93fdad0910e71f975e923dc468147e022e5623e10bbe348a164add18c4b55760",
+  "ArtifactID": "sha256:9c9901c81fb4ec6bb767bb71821dcb9b25fb3de8f3d2b0b84b92cddcb2d656cd",
+  "ArtifactName": "ghcr.io/uug-ai/hub-pipeline-analysis@sha256:04db77af649e9f7a1aafc0e7d506c925be12eec87e7811f8bdbb903511b32bd5",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-08-23T04:02:57.938552357Z",
+  "CreatedAt": "2026-08-24T04:04:53.099788963Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:34884abbe92863fce933ed7c39c0e045631af0ed86d5cc0dfbdf9fdca426ce3c",
-      "sha256:f014bc65f38d049a5651db1f35976d3ebe5933383d6447d60f5165d54a4d925d",
-      "sha256:6d1d2308a3193d6ded7f59546941e4500e6e584e0da1d1da3b1344540336ef7d",
-      "sha256:6e0811bf5b737cf5028c01cfaf7e01360ea379c54872542ac49750c51c43f912",
-      "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-      "sha256:41b5ad9e7489137dc151ca91e44f09d1c9fadc3899634e514fced62bce955ead",
+      "sha256:46cca66d1ccc83207124c389bc6f8a68acd2b82f576984bdb0a68a9dc7b18e34",
+      "sha256:06fb31d99650d99a162c90bcec81da2e99184b1aa4f6511582e3aca23e960cd1",
+      "sha256:c5710f3fb3eaa3539bf0b801414454c40109e28e0bb5b3080e56971f5122545a",
+      "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+      "sha256:7a785200c7d3dce0d5d7bf23e968a8686ca994731a73c6ab7376ce9d4dba98ec",
       "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
     ],
     "ImageConfig": {
@@ -30,7 +30,7 @@
         "User": "hub-pipeline-analysis",
         "WorkingDir": "/home/hub-pipeline-analysis"
       },
-      "created": "2026-08-21T15:48:35.291308378Z",
+      "created": "2026-08-23T09:52:13.373956295Z",
       "history": [
         {
           "comment": "buildkit.dockerfile.v0",
@@ -45,61 +45,61 @@
         },
         {
           "comment": "buildkit.dockerfile.v0",
-          "created": "2026-08-21T15:47:06.564143019Z",
+          "created": "2026-08-23T09:50:44.78054503Z",
           "created_by": "LABEL org.opencontainers.image.source=https://github.com/uug-ai/hub-pipeline-analysis",
           "empty_layer": true
         },
         {
           "comment": "buildkit.dockerfile.v0",
-          "created": "2026-08-21T15:47:06.564143019Z",
+          "created": "2026-08-23T09:50:44.78054503Z",
           "created_by": "LABEL AUTHOR=uug-ai",
           "empty_layer": true
         },
         {
           "comment": "buildkit.dockerfile.v0",
-          "created": "2026-08-21T15:47:06.564143019Z",
+          "created": "2026-08-23T09:50:44.78054503Z",
           "created_by": "ARG project=hub-pipeline-analysis",
           "empty_layer": true
         },
         {
           "comment": "buildkit.dockerfile.v0",
-          "created": "2026-08-21T15:47:06.564143019Z",
+          "created": "2026-08-23T09:50:44.78054503Z",
           "created_by": "RUN |1 project=hub-pipeline-analysis /bin/sh -c addgroup -S ${project} \u0026\u0026 adduser -S ${project} -G ${project} # buildkit"
         },
         {
           "comment": "buildkit.dockerfile.v0",
-          "created": "2026-08-21T15:48:32.995501902Z",
+          "created": "2026-08-23T09:52:11.020079799Z",
           "created_by": "COPY --chown=0:0 /dist / # buildkit"
         },
         {
           "comment": "buildkit.dockerfile.v0",
-          "created": "2026-08-21T15:48:34.441745952Z",
+          "created": "2026-08-23T09:52:12.368768478Z",
           "created_by": "RUN |1 project=hub-pipeline-analysis /bin/sh -c apk update \u0026\u0026 apk add ca-certificates curl libstdc++ libc6-compat --no-cache \u0026\u0026 rm -rf /var/cache/apk/* # buildkit"
         },
         {
           "comment": "buildkit.dockerfile.v0",
-          "created": "2026-08-21T15:48:34.650971401Z",
+          "created": "2026-08-23T09:52:12.567268952Z",
           "created_by": "RUN |1 project=hub-pipeline-analysis /bin/sh -c mv /${project}/* /home/${project}/ # buildkit"
         },
         {
           "comment": "buildkit.dockerfile.v0",
-          "created": "2026-08-21T15:48:35.265138272Z",
+          "created": "2026-08-23T09:52:13.344262481Z",
           "created_by": "RUN |1 project=hub-pipeline-analysis /bin/sh -c apk add libcap \u0026\u0026 setcap 'cap_net_bind_service=+ep' /home/${project}/main # buildkit"
         },
         {
           "comment": "buildkit.dockerfile.v0",
-          "created": "2026-08-21T15:48:35.265138272Z",
+          "created": "2026-08-23T09:52:13.344262481Z",
           "created_by": "USER hub-pipeline-analysis",
           "empty_layer": true
         },
         {
           "comment": "buildkit.dockerfile.v0",
-          "created": "2026-08-21T15:48:35.291308378Z",
+          "created": "2026-08-23T09:52:13.373956295Z",
           "created_by": "WORKDIR /home/hub-pipeline-analysis"
         },
         {
           "comment": "buildkit.dockerfile.v0",
-          "created": "2026-08-21T15:48:35.291308378Z",
+          "created": "2026-08-23T09:52:13.373956295Z",
           "created_by": "CMD [\"./main\"]",
           "empty_layer": true
         }
@@ -108,17 +108,17 @@
       "rootfs": {
         "diff_ids": [
           "sha256:34884abbe92863fce933ed7c39c0e045631af0ed86d5cc0dfbdf9fdca426ce3c",
-          "sha256:f014bc65f38d049a5651db1f35976d3ebe5933383d6447d60f5165d54a4d925d",
-          "sha256:6d1d2308a3193d6ded7f59546941e4500e6e584e0da1d1da3b1344540336ef7d",
-          "sha256:6e0811bf5b737cf5028c01cfaf7e01360ea379c54872542ac49750c51c43f912",
-          "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-          "sha256:41b5ad9e7489137dc151ca91e44f09d1c9fadc3899634e514fced62bce955ead",
+          "sha256:46cca66d1ccc83207124c389bc6f8a68acd2b82f576984bdb0a68a9dc7b18e34",
+          "sha256:06fb31d99650d99a162c90bcec81da2e99184b1aa4f6511582e3aca23e960cd1",
+          "sha256:c5710f3fb3eaa3539bf0b801414454c40109e28e0bb5b3080e56971f5122545a",
+          "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+          "sha256:7a785200c7d3dce0d5d7bf23e968a8686ca994731a73c6ab7376ce9d4dba98ec",
           "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
         ],
         "type": "layers"
       }
     },
-    "ImageID": "sha256:14a9f98c83bb2858bc14f2c4ec12fccd9d56858c56dd053633c2da4776662170",
+    "ImageID": "sha256:818e3ef9008186ac75aa5d753e073e7372ee84ad8cabea447aba0d725fa4b04f",
     "Layers": [
       {
         "DiffID": "sha256:34884abbe92863fce933ed7c39c0e045631af0ed86d5cc0dfbdf9fdca426ce3c",
@@ -126,29 +126,29 @@
         "Size": 8697856
       },
       {
-        "DiffID": "sha256:f014bc65f38d049a5651db1f35976d3ebe5933383d6447d60f5165d54a4d925d",
-        "Digest": "sha256:1f0394078a254145162bcb541b14915cc5bc757919bf4ed1ad27fbb1da8f85f3",
+        "DiffID": "sha256:46cca66d1ccc83207124c389bc6f8a68acd2b82f576984bdb0a68a9dc7b18e34",
+        "Digest": "sha256:705df7e00fbf9afdb11c65bfa0e746c2ee4ed5b03f097bcda189062ce483b3ed",
         "Size": 10752
       },
       {
-        "DiffID": "sha256:6d1d2308a3193d6ded7f59546941e4500e6e584e0da1d1da3b1344540336ef7d",
-        "Digest": "sha256:3f738f77d74615f45ea153c52f7a4403156f9e21df3c17b974362c7fd130df8b",
-        "Size": 20670976
+        "DiffID": "sha256:06fb31d99650d99a162c90bcec81da2e99184b1aa4f6511582e3aca23e960cd1",
+        "Digest": "sha256:e98e0e310edc5ff58dc8731e173340f026378627ef7386ecb3d2b940fce8aafe",
+        "Size": 20675072
       },
       {
-        "DiffID": "sha256:6e0811bf5b737cf5028c01cfaf7e01360ea379c54872542ac49750c51c43f912",
-        "Digest": "sha256:210c4661ee4f767115e1a5b44d42288638c0f915dc72f561539784bc094f1a61",
+        "DiffID": "sha256:c5710f3fb3eaa3539bf0b801414454c40109e28e0bb5b3080e56971f5122545a",
+        "Digest": "sha256:a8e0ff38101e58288311db86f15a0947b7c1b50aa1e1cd7ce263d1cb7b3f548f",
         "Size": 9069056
       },
       {
-        "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-        "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584",
-        "Size": 20672512
+        "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+        "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18",
+        "Size": 20676608
       },
       {
-        "DiffID": "sha256:41b5ad9e7489137dc151ca91e44f09d1c9fadc3899634e514fced62bce955ead",
-        "Digest": "sha256:b1f8c4cbbbbaee09f058a6d1a4a8d9a21c160a9a793cdc7958993819d98768f5",
-        "Size": 23912448
+        "DiffID": "sha256:7a785200c7d3dce0d5d7bf23e968a8686ca994731a73c6ab7376ce9d4dba98ec",
+        "Digest": "sha256:0a201cb4dfed02e0ed0fea623a3b23a3a0808c32764e735b8524e537405a1b16",
+        "Size": 23916544
       },
       {
         "DiffID": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
@@ -160,13 +160,13 @@
       "Family": "alpine",
       "Name": "3.24.1"
     },
-    "Reference": "ghcr.io/uug-ai/hub-pipeline-analysis@sha256:93fdad0910e71f975e923dc468147e022e5623e10bbe348a164add18c4b55760",
+    "Reference": "ghcr.io/uug-ai/hub-pipeline-analysis@sha256:04db77af649e9f7a1aafc0e7d506c925be12eec87e7811f8bdbb903511b32bd5",
     "RepoDigests": [
-      "ghcr.io/uug-ai/hub-pipeline-analysis@sha256:93fdad0910e71f975e923dc468147e022e5623e10bbe348a164add18c4b55760"
+      "ghcr.io/uug-ai/hub-pipeline-analysis@sha256:04db77af649e9f7a1aafc0e7d506c925be12eec87e7811f8bdbb903511b32bd5"
     ],
-    "Size": 83034624
+    "Size": 83046912
   },
-  "ReportID": "01a02cc9-3112-7869-83ec-c39b88ee0f7a",
+  "ReportID": "01a031f1-4eeb-7c05-b3a8-fac75675e49d",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -401,8 +401,8 @@
             "usr/lib/libbrotlienc.so.1.2.0"
           ],
           "Layer": {
-            "DiffID": "sha256:6e0811bf5b737cf5028c01cfaf7e01360ea379c54872542ac49750c51c43f912",
-            "Digest": "sha256:210c4661ee4f767115e1a5b44d42288638c0f915dc72f561539784bc094f1a61"
+            "DiffID": "sha256:c5710f3fb3eaa3539bf0b801414454c40109e28e0bb5b3080e56971f5122545a",
+            "Digest": "sha256:a8e0ff38101e58288311db86f15a0947b7c1b50aa1e1cd7ce263d1cb7b3f548f"
           },
           "Licenses": [
             "MIT"
@@ -492,8 +492,8 @@
             "usr/lib/libcares.so.2.19.7"
           ],
           "Layer": {
-            "DiffID": "sha256:6e0811bf5b737cf5028c01cfaf7e01360ea379c54872542ac49750c51c43f912",
-            "Digest": "sha256:210c4661ee4f767115e1a5b44d42288638c0f915dc72f561539784bc094f1a61"
+            "DiffID": "sha256:c5710f3fb3eaa3539bf0b801414454c40109e28e0bb5b3080e56971f5122545a",
+            "Digest": "sha256:a8e0ff38101e58288311db86f15a0947b7c1b50aa1e1cd7ce263d1cb7b3f548f"
           },
           "Licenses": [
             "MIT"
@@ -645,8 +645,8 @@
             "usr/share/ca-certificates/mozilla/vTrus_Root_CA.crt"
           ],
           "Layer": {
-            "DiffID": "sha256:6e0811bf5b737cf5028c01cfaf7e01360ea379c54872542ac49750c51c43f912",
-            "Digest": "sha256:210c4661ee4f767115e1a5b44d42288638c0f915dc72f561539784bc094f1a61"
+            "DiffID": "sha256:c5710f3fb3eaa3539bf0b801414454c40109e28e0bb5b3080e56971f5122545a",
+            "Digest": "sha256:a8e0ff38101e58288311db86f15a0947b7c1b50aa1e1cd7ce263d1cb7b3f548f"
           },
           "Licenses": [
             "MPL-2.0",
@@ -706,8 +706,8 @@
             "usr/bin/wcurl"
           ],
           "Layer": {
-            "DiffID": "sha256:6e0811bf5b737cf5028c01cfaf7e01360ea379c54872542ac49750c51c43f912",
-            "Digest": "sha256:210c4661ee4f767115e1a5b44d42288638c0f915dc72f561539784bc094f1a61"
+            "DiffID": "sha256:c5710f3fb3eaa3539bf0b801414454c40109e28e0bb5b3080e56971f5122545a",
+            "Digest": "sha256:a8e0ff38101e58288311db86f15a0947b7c1b50aa1e1cd7ce263d1cb7b3f548f"
           },
           "Licenses": [
             "curl"
@@ -745,8 +745,8 @@
             "lib64/ld-linux-x86-64.so.2"
           ],
           "Layer": {
-            "DiffID": "sha256:6e0811bf5b737cf5028c01cfaf7e01360ea379c54872542ac49750c51c43f912",
-            "Digest": "sha256:210c4661ee4f767115e1a5b44d42288638c0f915dc72f561539784bc094f1a61"
+            "DiffID": "sha256:c5710f3fb3eaa3539bf0b801414454c40109e28e0bb5b3080e56971f5122545a",
+            "Digest": "sha256:a8e0ff38101e58288311db86f15a0947b7c1b50aa1e1cd7ce263d1cb7b3f548f"
           },
           "Licenses": [
             "NCSA"
@@ -802,8 +802,8 @@
             "UID": "6edc9f5878d2e7c"
           },
           "Layer": {
-            "DiffID": "sha256:41b5ad9e7489137dc151ca91e44f09d1c9fadc3899634e514fced62bce955ead",
-            "Digest": "sha256:b1f8c4cbbbbaee09f058a6d1a4a8d9a21c160a9a793cdc7958993819d98768f5"
+            "DiffID": "sha256:7a785200c7d3dce0d5d7bf23e968a8686ca994731a73c6ab7376ce9d4dba98ec",
+            "Digest": "sha256:0a201cb4dfed02e0ed0fea623a3b23a3a0808c32764e735b8524e537405a1b16"
           },
           "Licenses": [
             "BSD-3-Clause",
@@ -832,8 +832,8 @@
             "usr/sbin/getcap"
           ],
           "Layer": {
-            "DiffID": "sha256:41b5ad9e7489137dc151ca91e44f09d1c9fadc3899634e514fced62bce955ead",
-            "Digest": "sha256:b1f8c4cbbbbaee09f058a6d1a4a8d9a21c160a9a793cdc7958993819d98768f5"
+            "DiffID": "sha256:7a785200c7d3dce0d5d7bf23e968a8686ca994731a73c6ab7376ce9d4dba98ec",
+            "Digest": "sha256:0a201cb4dfed02e0ed0fea623a3b23a3a0808c32764e735b8524e537405a1b16"
           },
           "Licenses": [
             "BSD-3-Clause",
@@ -862,8 +862,8 @@
             "usr/sbin/setcap"
           ],
           "Layer": {
-            "DiffID": "sha256:41b5ad9e7489137dc151ca91e44f09d1c9fadc3899634e514fced62bce955ead",
-            "Digest": "sha256:b1f8c4cbbbbaee09f058a6d1a4a8d9a21c160a9a793cdc7958993819d98768f5"
+            "DiffID": "sha256:7a785200c7d3dce0d5d7bf23e968a8686ca994731a73c6ab7376ce9d4dba98ec",
+            "Digest": "sha256:0a201cb4dfed02e0ed0fea623a3b23a3a0808c32764e735b8524e537405a1b16"
           },
           "Licenses": [
             "BSD-3-Clause",
@@ -895,8 +895,8 @@
             "usr/sbin/getpcaps"
           ],
           "Layer": {
-            "DiffID": "sha256:41b5ad9e7489137dc151ca91e44f09d1c9fadc3899634e514fced62bce955ead",
-            "Digest": "sha256:b1f8c4cbbbbaee09f058a6d1a4a8d9a21c160a9a793cdc7958993819d98768f5"
+            "DiffID": "sha256:7a785200c7d3dce0d5d7bf23e968a8686ca994731a73c6ab7376ce9d4dba98ec",
+            "Digest": "sha256:0a201cb4dfed02e0ed0fea623a3b23a3a0808c32764e735b8524e537405a1b16"
           },
           "Licenses": [
             "BSD-3-Clause",
@@ -927,8 +927,8 @@
             "usr/lib/libpsx.so.2.78"
           ],
           "Layer": {
-            "DiffID": "sha256:41b5ad9e7489137dc151ca91e44f09d1c9fadc3899634e514fced62bce955ead",
-            "Digest": "sha256:b1f8c4cbbbbaee09f058a6d1a4a8d9a21c160a9a793cdc7958993819d98768f5"
+            "DiffID": "sha256:7a785200c7d3dce0d5d7bf23e968a8686ca994731a73c6ab7376ce9d4dba98ec",
+            "Digest": "sha256:0a201cb4dfed02e0ed0fea623a3b23a3a0808c32764e735b8524e537405a1b16"
           },
           "Licenses": [
             "BSD-3-Clause",
@@ -1004,8 +1004,8 @@
             "usr/lib/libcurl.so.4.8.0"
           ],
           "Layer": {
-            "DiffID": "sha256:6e0811bf5b737cf5028c01cfaf7e01360ea379c54872542ac49750c51c43f912",
-            "Digest": "sha256:210c4661ee4f767115e1a5b44d42288638c0f915dc72f561539784bc094f1a61"
+            "DiffID": "sha256:c5710f3fb3eaa3539bf0b801414454c40109e28e0bb5b3080e56971f5122545a",
+            "Digest": "sha256:a8e0ff38101e58288311db86f15a0947b7c1b50aa1e1cd7ce263d1cb7b3f548f"
           },
           "Licenses": [
             "curl"
@@ -1032,8 +1032,8 @@
             "usr/lib/libgcc_s.so.1"
           ],
           "Layer": {
-            "DiffID": "sha256:6e0811bf5b737cf5028c01cfaf7e01360ea379c54872542ac49750c51c43f912",
-            "Digest": "sha256:210c4661ee4f767115e1a5b44d42288638c0f915dc72f561539784bc094f1a61"
+            "DiffID": "sha256:c5710f3fb3eaa3539bf0b801414454c40109e28e0bb5b3080e56971f5122545a",
+            "Digest": "sha256:a8e0ff38101e58288311db86f15a0947b7c1b50aa1e1cd7ce263d1cb7b3f548f"
           },
           "Licenses": [
             "GPL-2.0-or-later",
@@ -1063,8 +1063,8 @@
             "usr/lib/libidn2.so.0.4.0"
           ],
           "Layer": {
-            "DiffID": "sha256:6e0811bf5b737cf5028c01cfaf7e01360ea379c54872542ac49750c51c43f912",
-            "Digest": "sha256:210c4661ee4f767115e1a5b44d42288638c0f915dc72f561539784bc094f1a61"
+            "DiffID": "sha256:c5710f3fb3eaa3539bf0b801414454c40109e28e0bb5b3080e56971f5122545a",
+            "Digest": "sha256:a8e0ff38101e58288311db86f15a0947b7c1b50aa1e1cd7ce263d1cb7b3f548f"
           },
           "Licenses": [
             "GPL-2.0-or-later",
@@ -1095,8 +1095,8 @@
             "usr/lib/libpsl.so.5.3.5"
           ],
           "Layer": {
-            "DiffID": "sha256:6e0811bf5b737cf5028c01cfaf7e01360ea379c54872542ac49750c51c43f912",
-            "Digest": "sha256:210c4661ee4f767115e1a5b44d42288638c0f915dc72f561539784bc094f1a61"
+            "DiffID": "sha256:c5710f3fb3eaa3539bf0b801414454c40109e28e0bb5b3080e56971f5122545a",
+            "Digest": "sha256:a8e0ff38101e58288311db86f15a0947b7c1b50aa1e1cd7ce263d1cb7b3f548f"
           },
           "Licenses": [
             "MIT"
@@ -1154,8 +1154,8 @@
             "usr/lib/libstdc++.so.6.0.34"
           ],
           "Layer": {
-            "DiffID": "sha256:6e0811bf5b737cf5028c01cfaf7e01360ea379c54872542ac49750c51c43f912",
-            "Digest": "sha256:210c4661ee4f767115e1a5b44d42288638c0f915dc72f561539784bc094f1a61"
+            "DiffID": "sha256:c5710f3fb3eaa3539bf0b801414454c40109e28e0bb5b3080e56971f5122545a",
+            "Digest": "sha256:a8e0ff38101e58288311db86f15a0947b7c1b50aa1e1cd7ce263d1cb7b3f548f"
           },
           "Licenses": [
             "GPL-2.0-or-later",
@@ -1184,8 +1184,8 @@
             "usr/lib/libucontext_posix.so.1"
           ],
           "Layer": {
-            "DiffID": "sha256:6e0811bf5b737cf5028c01cfaf7e01360ea379c54872542ac49750c51c43f912",
-            "Digest": "sha256:210c4661ee4f767115e1a5b44d42288638c0f915dc72f561539784bc094f1a61"
+            "DiffID": "sha256:c5710f3fb3eaa3539bf0b801414454c40109e28e0bb5b3080e56971f5122545a",
+            "Digest": "sha256:a8e0ff38101e58288311db86f15a0947b7c1b50aa1e1cd7ce263d1cb7b3f548f"
           },
           "Licenses": [
             "ISC"
@@ -1213,8 +1213,8 @@
             "usr/lib/libunistring.so.5.2.1"
           ],
           "Layer": {
-            "DiffID": "sha256:6e0811bf5b737cf5028c01cfaf7e01360ea379c54872542ac49750c51c43f912",
-            "Digest": "sha256:210c4661ee4f767115e1a5b44d42288638c0f915dc72f561539784bc094f1a61"
+            "DiffID": "sha256:c5710f3fb3eaa3539bf0b801414454c40109e28e0bb5b3080e56971f5122545a",
+            "Digest": "sha256:a8e0ff38101e58288311db86f15a0947b7c1b50aa1e1cd7ce263d1cb7b3f548f"
           },
           "Licenses": [
             "GPL-2.0-or-later",
@@ -1269,8 +1269,8 @@
             "usr/lib/libobstack.so.1.0.0"
           ],
           "Layer": {
-            "DiffID": "sha256:6e0811bf5b737cf5028c01cfaf7e01360ea379c54872542ac49750c51c43f912",
-            "Digest": "sha256:210c4661ee4f767115e1a5b44d42288638c0f915dc72f561539784bc094f1a61"
+            "DiffID": "sha256:c5710f3fb3eaa3539bf0b801414454c40109e28e0bb5b3080e56971f5122545a",
+            "Digest": "sha256:a8e0ff38101e58288311db86f15a0947b7c1b50aa1e1cd7ce263d1cb7b3f548f"
           },
           "Licenses": [
             "GPL-2.0-or-later"
@@ -1333,8 +1333,8 @@
             "usr/lib/libnghttp2.so.14.29.4"
           ],
           "Layer": {
-            "DiffID": "sha256:6e0811bf5b737cf5028c01cfaf7e01360ea379c54872542ac49750c51c43f912",
-            "Digest": "sha256:210c4661ee4f767115e1a5b44d42288638c0f915dc72f561539784bc094f1a61"
+            "DiffID": "sha256:c5710f3fb3eaa3539bf0b801414454c40109e28e0bb5b3080e56971f5122545a",
+            "Digest": "sha256:a8e0ff38101e58288311db86f15a0947b7c1b50aa1e1cd7ce263d1cb7b3f548f"
           },
           "Licenses": [
             "MIT"
@@ -1449,8 +1449,8 @@
             "usr/lib/libzstd.so.1.5.7"
           ],
           "Layer": {
-            "DiffID": "sha256:6e0811bf5b737cf5028c01cfaf7e01360ea379c54872542ac49750c51c43f912",
-            "Digest": "sha256:210c4661ee4f767115e1a5b44d42288638c0f915dc72f561539784bc094f1a61"
+            "DiffID": "sha256:c5710f3fb3eaa3539bf0b801414454c40109e28e0bb5b3080e56971f5122545a",
+            "Digest": "sha256:a8e0ff38101e58288311db86f15a0947b7c1b50aa1e1cd7ce263d1cb7b3f548f"
           },
           "Licenses": [
             "BSD-3-Clause",
@@ -1463,7 +1463,7 @@
           "Version": "1.5.7-r2"
         }
       ],
-      "Target": "ghcr.io/uug-ai/hub-pipeline-analysis@sha256:93fdad0910e71f975e923dc468147e022e5623e10bbe348a164add18c4b55760 (alpine 3.24.1)",
+      "Target": "ghcr.io/uug-ai/hub-pipeline-analysis@sha256:04db77af649e9f7a1aafc0e7d506c925be12eec87e7811f8bdbb903511b32bd5 (alpine 3.24.1)",
       "Type": "alpine"
     },
     {
@@ -1525,18 +1525,18 @@
             "google.golang.org/protobuf@v1.36.11",
             "stdlib@v1.25.12"
           ],
-          "ID": "github.com/uug-ai/hub-pipeline-analysis@v1.8.8",
+          "ID": "github.com/uug-ai/hub-pipeline-analysis@v1.8.9",
           "Identifier": {
-            "PURL": "pkg:golang/github.com/uug-ai/hub-pipeline-analysis@v1.8.8",
-            "UID": "f57cca1d9efbd4ad"
+            "PURL": "pkg:golang/github.com/uug-ai/hub-pipeline-analysis@v1.8.9",
+            "UID": "d563c84bc009a154"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "github.com/uug-ai/hub-pipeline-analysis",
           "Relationship": "root",
-          "Version": "v1.8.8"
+          "Version": "v1.8.9"
         },
         {
           "AnalyzedBy": "gobinary",
@@ -1546,8 +1546,8 @@
             "UID": "a245a63c78af4cf5"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "stdlib",
           "Relationship": "direct",
@@ -1561,8 +1561,8 @@
             "UID": "d060cd7e1b33eeb"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "github.com/beorn7/perks",
           "Version": "v1.0.1"
@@ -1575,8 +1575,8 @@
             "UID": "85d27551e5071a84"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "github.com/cenkalti/backoff/v5",
           "Version": "v5.0.3"
@@ -1589,8 +1589,8 @@
             "UID": "8cdf414a1f7cf276"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "github.com/cespare/xxhash/v2",
           "Version": "v2.3.0"
@@ -1603,8 +1603,8 @@
             "UID": "4d67073175961bc5"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "github.com/gabriel-vasile/mimetype",
           "Version": "v1.4.13"
@@ -1617,8 +1617,8 @@
             "UID": "17ccbda5e1d6d664"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "github.com/go-logr/logr",
           "Version": "v1.4.3"
@@ -1631,8 +1631,8 @@
             "UID": "37c62ee506cdd4a3"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "github.com/go-logr/stdr",
           "Version": "v1.2.2"
@@ -1645,8 +1645,8 @@
             "UID": "8497918bd712d72c"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "github.com/go-playground/locales",
           "Version": "v0.14.1"
@@ -1659,8 +1659,8 @@
             "UID": "8ad7a623945a884a"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "github.com/go-playground/universal-translator",
           "Version": "v0.18.1"
@@ -1673,8 +1673,8 @@
             "UID": "126d1d475a6857bf"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "github.com/go-playground/validator/v10",
           "Version": "v10.30.2"
@@ -1687,8 +1687,8 @@
             "UID": "e5c8d19ffb32c498"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "github.com/golang/snappy",
           "Version": "v1.0.0"
@@ -1701,8 +1701,8 @@
             "UID": "355f00b1b36b8e35"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "github.com/google/uuid",
           "Version": "v1.6.0"
@@ -1715,8 +1715,8 @@
             "UID": "ddbd92757c798a41"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "github.com/grpc-ecosystem/grpc-gateway/v2",
           "Version": "v2.28.0"
@@ -1729,8 +1729,8 @@
             "UID": "b4b3e27c18cf8664"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "github.com/klauspost/compress",
           "Version": "v1.18.5"
@@ -1743,8 +1743,8 @@
             "UID": "c8ebee4929ee42a2"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "github.com/leodido/go-urn",
           "Version": "v1.4.0"
@@ -1757,8 +1757,8 @@
             "UID": "261c38540f36d300"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "github.com/montanaflynn/stats",
           "Version": "v0.9.0"
@@ -1771,8 +1771,8 @@
             "UID": "5eaacdf08b84d70f"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "github.com/munnerz/goautoneg",
           "Version": "v0.0.0-20191010083416-a7dc8b61c822"
@@ -1785,8 +1785,8 @@
             "UID": "25783782dc2a55da"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "github.com/prometheus/client_golang",
           "Version": "v1.23.2"
@@ -1799,8 +1799,8 @@
             "UID": "e27de3747b279ddf"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "github.com/prometheus/client_model",
           "Version": "v0.6.2"
@@ -1813,8 +1813,8 @@
             "UID": "95bfe04e1c7d1fe4"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "github.com/prometheus/common",
           "Version": "v0.66.1"
@@ -1827,8 +1827,8 @@
             "UID": "734b5b1786d6ed50"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "github.com/prometheus/procfs",
           "Version": "v0.16.1"
@@ -1841,8 +1841,8 @@
             "UID": "b37760936653d0dd"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "github.com/rabbitmq/amqp091-go",
           "Version": "v1.10.0"
@@ -1855,8 +1855,8 @@
             "UID": "41a21808a4261e09"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "github.com/sirupsen/logrus",
           "Version": "v1.9.4"
@@ -1869,8 +1869,8 @@
             "UID": "5693ed28a61de22e"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "github.com/uug-ai/database",
           "Version": "v1.5.8"
@@ -1883,8 +1883,8 @@
             "UID": "4edb70a20cf8efbc"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "github.com/uug-ai/ingest",
           "Version": "v1.0.10"
@@ -1897,8 +1897,8 @@
             "UID": "4cbbb7e123ef5604"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "github.com/uug-ai/models",
           "Version": "v1.7.20"
@@ -1911,8 +1911,8 @@
             "UID": "394070304f9dd022"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "github.com/uug-ai/queue",
           "Version": "v1.3.9"
@@ -1925,8 +1925,8 @@
             "UID": "dc800953ef708d9"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "github.com/uug-ai/trace",
           "Version": "v1.1.0"
@@ -1939,8 +1939,8 @@
             "UID": "1da8faa22cc6331a"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "github.com/uug-ai/utils",
           "Version": "v1.1.0"
@@ -1953,8 +1953,8 @@
             "UID": "e2c6c3ea505324c0"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "github.com/xdg-go/scram",
           "Version": "v1.2.0"
@@ -1967,8 +1967,8 @@
             "UID": "ad9739f3a74bcb02"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "github.com/xdg-go/stringprep",
           "Version": "v1.0.4"
@@ -1981,8 +1981,8 @@
             "UID": "a607a9ae7f77df2b"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "github.com/youmark/pkcs8",
           "Version": "v0.0.0-20240726163527-a2c0da244d78"
@@ -1995,8 +1995,8 @@
             "UID": "a548e3242431a6f4"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "go.mongodb.org/mongo-driver",
           "Version": "v1.17.9"
@@ -2009,8 +2009,8 @@
             "UID": "16b06044ab774c3"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "go.opentelemetry.io/auto/sdk",
           "Version": "v1.2.1"
@@ -2023,8 +2023,8 @@
             "UID": "6b897530eff7cd52"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "go.opentelemetry.io/contrib/instrumentation/go.mongodb.org/mongo-driver/mongo/otelmongo",
           "Version": "v0.68.0"
@@ -2037,8 +2037,8 @@
             "UID": "6d3ec2b6e5ff6a93"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "go.opentelemetry.io/otel",
           "Version": "v1.43.0"
@@ -2051,8 +2051,8 @@
             "UID": "c19f27bc67b10db8"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "go.opentelemetry.io/otel/exporters/otlp/otlptrace",
           "Version": "v1.43.0"
@@ -2065,8 +2065,8 @@
             "UID": "918a0c5593ba5866"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp",
           "Version": "v1.43.0"
@@ -2079,8 +2079,8 @@
             "UID": "8a3660aa2d2595a9"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "go.opentelemetry.io/otel/metric",
           "Version": "v1.43.0"
@@ -2093,8 +2093,8 @@
             "UID": "e2e371c98f81797e"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "go.opentelemetry.io/otel/sdk",
           "Version": "v1.43.0"
@@ -2107,8 +2107,8 @@
             "UID": "210172da2cbf71fd"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "go.opentelemetry.io/otel/trace",
           "Version": "v1.43.0"
@@ -2121,8 +2121,8 @@
             "UID": "a8da55b614fd50c8"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "go.opentelemetry.io/proto/otlp",
           "Version": "v1.10.0"
@@ -2135,8 +2135,8 @@
             "UID": "e53c0b61eaa52f11"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "go.yaml.in/yaml/v2",
           "Version": "v2.4.3"
@@ -2149,8 +2149,8 @@
             "UID": "cddd46d5eb6d8907"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "golang.org/x/crypto",
           "Version": "v0.51.0"
@@ -2163,8 +2163,8 @@
             "UID": "d604fe14685044ec"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "golang.org/x/net",
           "Version": "v0.54.0"
@@ -2177,8 +2177,8 @@
             "UID": "744bffa73b247bb3"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "golang.org/x/sync",
           "Version": "v0.21.0"
@@ -2191,8 +2191,8 @@
             "UID": "4b3de3a7ccfc5c91"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "golang.org/x/sys",
           "Version": "v0.44.0"
@@ -2205,8 +2205,8 @@
             "UID": "68234fdbb357799"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "golang.org/x/text",
           "Version": "v0.38.0"
@@ -2219,8 +2219,8 @@
             "UID": "6d864263c021e05b"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "google.golang.org/genproto/googleapis/api",
           "Version": "v0.0.0-20260401024825-9d38bb4040a9"
@@ -2233,8 +2233,8 @@
             "UID": "25040bb367ef5fc8"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "google.golang.org/genproto/googleapis/rpc",
           "Version": "v0.0.0-20260401024825-9d38bb4040a9"
@@ -2247,8 +2247,8 @@
             "UID": "43daa9fb18170c3e"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "google.golang.org/grpc",
           "Version": "v1.80.0"
@@ -2261,8 +2261,8 @@
             "UID": "130f4f31d2efd5a7"
           },
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "Name": "google.golang.org/protobuf",
           "Version": "v1.36.11"
@@ -2288,13 +2288,13 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Description": "When an SSH server authentication callback returned PartialSuccessError with non-nil Permissions, those permissions were silently discarded, potentially dropping certificate restrictions such as force-command after a second factor succeeded. Returning non-nil Permissions with PartialSuccessError now results in a connection error.",
-          "Fingerprint": "sha256:e5ffc6a932a20dd0f2a86d3f9f60007dd1e40b5fdd645a52b4864aa7e3c6b630",
+          "Fingerprint": "sha256:6f8b4acae0413fb215cdb6d885ad1c3d4e6e51b4aff1af79ba25a3a5b27b9492",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
           "LastModifiedDate": "2026-08-21T13:17:40Z",
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "PkgID": "golang.org/x/crypto@v0.51.0",
           "PkgIdentifier": {
@@ -2390,13 +2390,13 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Description": "The RSA and DSA public key parsers did not enforce size limits on key parameters. A crafted public key with an excessively large modulus or DSA parameter could cause several minutes of CPU consumption during signature verification. This could be triggered by unauthenticated clients during public key authentication. RSA moduli are now limited to 8192 bits, and DSA parameters are validated per FIPS 186-2.",
-          "Fingerprint": "sha256:2cd6f3fb8309f125a1c987dd7dd304e0e417aed74696b1fe5d2147cb8773f8c5",
+          "Fingerprint": "sha256:2a54b947d0ce2a41c56de3a8199e72372c8ec2626682747cec0d2cf6c4185cec",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
           "LastModifiedDate": "2026-08-21T13:17:42.92Z",
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "PkgID": "golang.org/x/crypto@v0.51.0",
           "PkgIdentifier": {
@@ -2461,13 +2461,11 @@
             "https://access.redhat.com/errata/RHSA-2026:57191",
             "https://access.redhat.com/errata/RHSA-2026:57194",
             "https://access.redhat.com/security/cve/CVE-2026-39829",
-            "https://bugzilla.redhat.com/2480680",
+            "https://bugzilla.redhat.com/2455470",
             "https://bugzilla.redhat.com/2480681",
+            "https://bugzilla.redhat.com/2480684",
             "https://bugzilla.redhat.com/2480685",
             "https://bugzilla.redhat.com/2480688",
-            "https://bugzilla.redhat.com/2480757",
-            "https://bugzilla.redhat.com/2480761",
-            "https://bugzilla.redhat.com/2493620",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480680",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480681",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
@@ -2483,7 +2481,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39835",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42508",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-57231",
-            "https://errata.almalinux.org/9/ALSA-2026-37123.html",
+            "https://errata.almalinux.org/8/ALSA-2026-35833.html",
             "https://errata.rockylinux.org/RLSA-2026:37123",
             "https://go.dev/cl/781641",
             "https://go.dev/cl/781661",
@@ -2529,13 +2527,13 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Description": "A malicious SSH peer could send unsolicited global request responses to fill an internal buffer, blocking the connection's read loop. The blocked goroutine could not be released by calling Close(), resulting in a resource leak per connection. Unsolicited global responses are now discarded.",
-          "Fingerprint": "sha256:36d4d9a57b8458833597914925f0cf2f293eed1b87e81104a3eb55de2573ef07",
+          "Fingerprint": "sha256:64ce4db5c73e7ee40ce33a043f3556a95b5fdedbd8751d53d444bf161c667b03",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
           "LastModifiedDate": "2026-08-21T13:17:44.393Z",
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "PkgID": "golang.org/x/crypto@v0.51.0",
           "PkgIdentifier": {
@@ -2591,12 +2589,11 @@
             "https://access.redhat.com/errata/RHSA-2026:54531",
             "https://access.redhat.com/errata/RHSA-2026:57194",
             "https://access.redhat.com/security/cve/CVE-2026-39830",
-            "https://bugzilla.redhat.com/2445356",
-            "https://bugzilla.redhat.com/2456333",
-            "https://bugzilla.redhat.com/2456338",
-            "https://bugzilla.redhat.com/2456339",
+            "https://bugzilla.redhat.com/2455470",
             "https://bugzilla.redhat.com/2480681",
             "https://bugzilla.redhat.com/2480684",
+            "https://bugzilla.redhat.com/2480685",
+            "https://bugzilla.redhat.com/2480688",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2445356",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2456333",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2456338",
@@ -2610,7 +2607,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32283",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39829",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39830",
-            "https://errata.almalinux.org/9/ALSA-2026-29455.html",
+            "https://errata.almalinux.org/8/ALSA-2026-35833.html",
             "https://errata.rockylinux.org/RLSA-2026:29455",
             "https://github.com/golang/crypto/commit/4e7a7384ecbc8d519f6f4c11b36fa9d761fc8946",
             "https://go.dev/cl/781640",
@@ -2660,13 +2657,13 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Description": "The Verify() method for FIDO/U2F security key types (sk-ecdsa-sha2-nistp256@openssh.com, sk-ssh-ed25519@openssh.com) did not check the User Presence flag. Signatures generated without physical touch were accepted, allowing unattended use of a hardware security key. To restore the previous behavior, return a \"no-touch-required\" extension in Permissions.Extensions from PublicKeyCallback.",
-          "Fingerprint": "sha256:f7cab2a13aab2531fcbbfe2fc217c912171b02c398b2c7a22be482a09330933a",
+          "Fingerprint": "sha256:08cdb1d6ac87a0e9204c80eddb8d00ae6ab413b025ee135d7474742310edd1ba",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
           "LastModifiedDate": "2026-07-23T16:10:00.137Z",
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "PkgID": "golang.org/x/crypto@v0.51.0",
           "PkgIdentifier": {
@@ -2718,13 +2715,13 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Description": "When adding a key to a remote agent constraint extensions such as restrict-destination-v00@openssh.com were not serialized in the request. Destination restrictions were silently stripped when forwarding keys, allowing unrestricted use of the key on the remote host. The client now serializes all constraint extensions. Additionally, the in-memory keyring returned by NewKeyring() now rejects keys with unsupported constraint extensions instead of silently ignoring them.",
-          "Fingerprint": "sha256:732dcab38b29eedf2d6565235956d0dbc4bc6dad1b253fc46145dd562e539a17",
+          "Fingerprint": "sha256:c70d80c424d8deb39868b18e09dd30cd6e00c7ca9bc07cbb2183c0583e09eeaf",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
           "LastModifiedDate": "2026-08-20T13:18:20.977Z",
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "PkgID": "golang.org/x/crypto@v0.51.0",
           "PkgIdentifier": {
@@ -2765,14 +2762,17 @@
             "https://access.redhat.com/errata/RHSA-2026:52910",
             "https://access.redhat.com/errata/RHSA-2026:57194",
             "https://access.redhat.com/security/cve/CVE-2026-39832",
-            "https://bugzilla.redhat.com/2480680",
+            "https://bugzilla.redhat.com/2455470",
+            "https://bugzilla.redhat.com/2480681",
+            "https://bugzilla.redhat.com/2480684",
             "https://bugzilla.redhat.com/2480685",
+            "https://bugzilla.redhat.com/2480688",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480680",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39832",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39835",
-            "https://errata.almalinux.org/9/ALSA-2026-37410.html",
+            "https://errata.almalinux.org/8/ALSA-2026-35833.html",
             "https://errata.rockylinux.org/RLSA-2026:37410",
             "https://github.com/golang/crypto/commit/e3d1254f1e7e60baa086142c46174bf6d8d0fe50",
             "https://go.dev/cl/778640",
@@ -2823,13 +2823,13 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Description": "SSH servers which use CertChecker as a public key callback without setting IsUserAuthority or IsHostAuthority could be caused to panic by a client presenting a certificate. CertChecker now returns an error instead of panicking when these callbacks are nil.",
-          "Fingerprint": "sha256:1048630e35fb2556e4780e45d3eb32cc9193a4d0b6d0c6d5026a259d7b92b458",
+          "Fingerprint": "sha256:9db3321b93969956aaec9b402b4fb52faf4ca125f1f30f2b53f47b8fac8a6d21",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
           "LastModifiedDate": "2026-08-21T13:17:45.613Z",
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "PkgID": "golang.org/x/crypto@v0.51.0",
           "PkgIdentifier": {
@@ -2886,14 +2886,15 @@
             "https://access.redhat.com/errata/RHSA-2026:54525",
             "https://access.redhat.com/errata/RHSA-2026:57194",
             "https://access.redhat.com/security/cve/CVE-2026-39835",
+            "https://bugzilla.redhat.com/2467822",
             "https://bugzilla.redhat.com/2480680",
-            "https://bugzilla.redhat.com/2480685",
+            "https://bugzilla.redhat.com/2493620",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480680",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39832",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39835",
-            "https://errata.almalinux.org/9/ALSA-2026-37410.html",
+            "https://errata.almalinux.org/8/ALSA-2026-38504.html",
             "https://errata.rockylinux.org/RLSA-2026:37410",
             "https://go.dev/cl/781660",
             "https://go.dev/issue/79563",
@@ -2937,13 +2938,13 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Description": "Previously, a revoked 'SignatureKey' belonging to a CA was not correctly checked for revocation. Now, both the 'key' and 'key.SignatureKey' are checked for @revoked.",
-          "Fingerprint": "sha256:dbe2998c0b2fdc331eb0d70e941101b29fed9e4668992e8c1b2644d23dff30b4",
+          "Fingerprint": "sha256:8ba3dd10dae2a14bbc93adf7887e6c64ceed60ab7586683afc95251c6f9bfe1c",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
           "LastModifiedDate": "2026-08-20T13:18:33.75Z",
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "PkgID": "golang.org/x/crypto@v0.51.0",
           "PkgIdentifier": {
@@ -2990,13 +2991,11 @@
             "https://access.redhat.com/errata/RHSA-2026:54400",
             "https://access.redhat.com/errata/RHSA-2026:57194",
             "https://access.redhat.com/security/cve/CVE-2026-42508",
-            "https://bugzilla.redhat.com/2480680",
+            "https://bugzilla.redhat.com/2455470",
             "https://bugzilla.redhat.com/2480681",
+            "https://bugzilla.redhat.com/2480684",
             "https://bugzilla.redhat.com/2480685",
             "https://bugzilla.redhat.com/2480688",
-            "https://bugzilla.redhat.com/2480757",
-            "https://bugzilla.redhat.com/2480761",
-            "https://bugzilla.redhat.com/2493620",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480680",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480681",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
@@ -3012,7 +3011,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39835",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42508",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-57231",
-            "https://errata.almalinux.org/9/ALSA-2026-37123.html",
+            "https://errata.almalinux.org/8/ALSA-2026-35833.html",
             "https://errata.rockylinux.org/RLSA-2026:37123",
             "https://github.com/golang/crypto/commit/f717e29698a271c548239ed56bf5dd9516d6f7e8",
             "https://go.dev/cl/781220",
@@ -3062,13 +3061,13 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Description": "Previously, CVE-2024-45337 fixed an authorization bypass for misused ssh server configurations; if any other type of callback is passed other than public key, then the source-address validation would be skipped.",
-          "Fingerprint": "sha256:c3eb0aa8d8c2ae7ff3f22be3e7d48f7d23ef1c46e55a1194d3c0315c6ae12afc",
+          "Fingerprint": "sha256:7443a9b322eb2ea5fe47c8c560178d567a674986ccdf364105ca2f070010727a",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
           "LastModifiedDate": "2026-08-20T13:18:55.07Z",
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "PkgID": "golang.org/x/crypto@v0.51.0",
           "PkgIdentifier": {
@@ -3148,13 +3147,13 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Description": "An incorrectly placed cast from bytes to int allowed for server-side panic in the AES-GCM packet decoder for well-crafted inputs.",
-          "Fingerprint": "sha256:68eb0befa98b7e6b968374bd7620c7619df1be3001f166ece1f78fb9e1b91419",
+          "Fingerprint": "sha256:6b2ac1325a4f8f6cf433fd79bde21be428b59b487bb699e17e594bf0e151a66f",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
           "LastModifiedDate": "2026-07-23T16:10:00.137Z",
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "PkgID": "golang.org/x/crypto@v0.51.0",
           "PkgIdentifier": {
@@ -3202,13 +3201,13 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Description": "An authenticated SSH client that repeatedly opened channels which were rejected by the server caused unbounded memory growth, eventually crashing the server process and affecting all connected users. Rejected channels are now properly removed from the connection's internal state and released for garbage collection.",
-          "Fingerprint": "sha256:457fbd41403d54ce7c2b1bd5489fbb130298fdb930b9b38c6625b3b83c5763a0",
+          "Fingerprint": "sha256:3d45e1e646e3a41c63951ff0a553c6d501f1db22d28775af192c705a57e2ba64",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
           "LastModifiedDate": "2026-07-23T16:10:00.137Z",
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "PkgID": "golang.org/x/crypto@v0.51.0",
           "PkgIdentifier": {
@@ -3256,13 +3255,13 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Description": "The in-memory keyring returned by NewKeyring() silently accepted keys with the ConfirmBeforeUse constraint but never enforced it. The key would sign without any confirmation prompt, with no indication to the caller that the constraint was not in effect. NewKeyring() now returns an error when unsupported constraints are requested.",
-          "Fingerprint": "sha256:b7ab70ab922de09aa4c285fcb5183866f61d86d6960f54b81c755ac411ecd9a4",
+          "Fingerprint": "sha256:d38f6f75a8306bc5433f1dab394e740a9cb5ec4ae21cf688ef78526febe8761f",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
           "LastModifiedDate": "2026-08-11T22:17:25.25Z",
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "PkgID": "golang.org/x/crypto@v0.51.0",
           "PkgIdentifier": {
@@ -3317,13 +3316,13 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Description": "When writing data larger than 4GB in a single Write call on an SSH channel, an integer overflow in the internal payload size calculation caused the write loop to spin indefinitely, sending empty packets without making progress. The size comparison now uses int64 to prevent truncation.",
-          "Fingerprint": "sha256:fb5ddb60da8f4222de14c9635d1ab2f2bcf8f3059f4df1290bb7c72d41c51d33",
+          "Fingerprint": "sha256:1db9ebe842be38fc9845cf926e7e428ec96d5b3bdea52fff8f52905ec75592d2",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
           "LastModifiedDate": "2026-07-23T16:10:00.137Z",
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "PkgID": "golang.org/x/crypto@v0.51.0",
           "PkgIdentifier": {
@@ -3376,13 +3375,13 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Description": "For certain crafted inputs, a 'ed25519.PrivateKey' was created by casting malformed wire bytes, leading to a panic when used.",
-          "Fingerprint": "sha256:aa9755d671c8a5b39fb62c34349444f03db14cc6f4748dd47bbaac5c3136c7f9",
+          "Fingerprint": "sha256:ec616a54b975cf58499128466b8c57fa3bb2b306c39ea2dcb16d9928705a602f",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
           "LastModifiedDate": "2026-07-23T16:10:00.137Z",
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "PkgID": "golang.org/x/crypto@v0.51.0",
           "PkgIdentifier": {
@@ -3421,11 +3420,11 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Description": "The golang.org/x/crypto/openpgp package is unsafe by design, has numerous known security issues, is not maintained, and should not be used.\n\nIf you are required to interoperate with OpenPGP systems and need a maintained package, consider github.com/ProtonMail/go-crypto/openpgp which is a maintained fork that aims to be a drop-in replacement for this package.",
-          "Fingerprint": "sha256:6826ac32dfc6e3eed9c95eeb07d30a4951e07c32069c82c30b25dc9c351c6ceb",
+          "Fingerprint": "sha256:5f11a8d70f23e6a410e72a1b0326d4a33c3b7a7158851e3602ed3dd39fb623a4",
           "InstalledVersion": "v0.51.0",
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "PkgID": "golang.org/x/crypto@v0.51.0",
           "PkgIdentifier": {
@@ -3458,13 +3457,13 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Description": "Parsing arbitrary HTML which is then rendered using Render can result in an unexpected HTML tree. This can be leveraged to execute XSS attacks in applications that attempt to sanitize input HTML before rendering.",
-          "Fingerprint": "sha256:5b768051a84618f6a1c8ea419f4d44cc4e437ec2f9bce8f778ecfd5c4fcd1559",
+          "Fingerprint": "sha256:7734b856607f0a86c0217a31e47acf58d6e42cd674e71e36f3628d37ba38e895",
           "FixedVersion": "0.55.0",
           "InstalledVersion": "v0.54.0",
           "LastModifiedDate": "2026-07-23T16:10:00.137Z",
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "PkgID": "golang.org/x/net@v0.54.0",
           "PkgIdentifier": {
@@ -3475,15 +3474,15 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-25681",
           "PublishedDate": "2026-05-22T16:16:19.863Z",
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:34357",
             "https://access.redhat.com/errata/RHSA-2026:37123",
             "https://access.redhat.com/security/cve/CVE-2026-25681",
-            "https://bugzilla.redhat.com/2480680",
-            "https://bugzilla.redhat.com/2480681",
-            "https://bugzilla.redhat.com/2480685",
-            "https://bugzilla.redhat.com/2480688",
-            "https://bugzilla.redhat.com/2480757",
+            "https://bugzilla.redhat.com/2466505",
+            "https://bugzilla.redhat.com/2466507",
+            "https://bugzilla.redhat.com/2467822",
+            "https://bugzilla.redhat.com/2480756",
             "https://bugzilla.redhat.com/2480761",
-            "https://bugzilla.redhat.com/2493620",
+            "https://bugzilla.redhat.com/2484207",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480680",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480681",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
@@ -3499,7 +3498,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39835",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42508",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-57231",
-            "https://errata.almalinux.org/9/ALSA-2026-37123.html",
+            "https://errata.almalinux.org/10/ALSA-2026-34357.html",
             "https://errata.rockylinux.org/RLSA-2026:37123",
             "https://go.dev/cl/781703",
             "https://go.dev/issue/79574",
@@ -3542,13 +3541,13 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Description": "Parsing arbitrary HTML which is then rendered using Render can result in an unexpected HTML tree. This can be leveraged to execute XSS attacks in applications that attempt to sanitize input HTML before rendering.",
-          "Fingerprint": "sha256:138a3faca02be4c545cf96fff9ba903979d40d7b0a0c2ba745d17c3aee25ff4a",
+          "Fingerprint": "sha256:966e4455b2002492d088add7cf4d3b5b873c6003a8377ac78cb541e9b6fdfdff",
           "FixedVersion": "0.55.0",
           "InstalledVersion": "v0.54.0",
           "LastModifiedDate": "2026-07-23T16:10:00.137Z",
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "PkgID": "golang.org/x/net@v0.54.0",
           "PkgIdentifier": {
@@ -3626,13 +3625,13 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Description": "The ToASCII and ToUnicode functions incorrectly accept Punycode-encoded labels that decode to an ASCII-only label. For example, ToUnicode(\"xn--example-.com\") incorrectly returns the name \"example.com\" rather than an error. This behavior can lead to privilege escalation in programs using the idna package. For example, a program which performs privilege checks on the ASCII hostname may reject \"example.com\" but permit \"xn--example-.com\". If that program subsequently converts the ASCII hostname to Unicode, it will inadvertently permits access to the Unicode name \"example.com\".",
-          "Fingerprint": "sha256:48e4969cf42592c6db0ac3b0584c809045a9bb2f15d94e5b29de872997dd4f4b",
+          "Fingerprint": "sha256:b3817d578d8734c614670c2fd8884f294aa0f379518c494695e88d99942beb9e",
           "FixedVersion": "0.55.0",
           "InstalledVersion": "v0.54.0",
           "LastModifiedDate": "2026-08-21T13:17:38.087Z",
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "PkgID": "golang.org/x/net@v0.54.0",
           "PkgIdentifier": {
@@ -3764,12 +3763,14 @@
             "https://access.redhat.com/errata/RHSA-2026:57541",
             "https://access.redhat.com/security/cve/CVE-2026-39821",
             "https://bugzilla.redhat.com/2480756",
+            "https://bugzilla.redhat.com/2484207",
+            "https://bugzilla.redhat.com/2498152",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480756",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2498152",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39821",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39822",
-            "https://errata.almalinux.org/9/ALSA-2026-37435.html",
+            "https://errata.almalinux.org/8/ALSA-2026-38995.html",
             "https://errata.rockylinux.org/RLSA-2026:37435",
             "https://github.com/golang/go/issues/78760",
             "https://go.dev/cl/767220",
@@ -3821,13 +3822,13 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Description": "Parsing an invalid SVCB or HTTPS RR can panic when the size of a parameter value overflows the message buffer.",
-          "Fingerprint": "sha256:c76369413da3ba7295c93fc276c94f8a2de11fc954ad04f2496a74b61c30aa21",
+          "Fingerprint": "sha256:ab9e28e9bb8148c884a4d742354f42a1c8babc98077493e9f473e695fc2b7916",
           "FixedVersion": "0.56.0",
           "InstalledVersion": "v0.54.0",
           "LastModifiedDate": "2026-08-14T16:16:55.673Z",
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "PkgID": "golang.org/x/net@v0.54.0",
           "PkgIdentifier": {
@@ -3875,13 +3876,13 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Description": "Parsing arbitrary HTML can consume excessive CPU time, possibly leading to denial of service.",
-          "Fingerprint": "sha256:d7e361008b68be54d0219667b6bcfc2e300389941d73d25375722cd2d01a1563",
+          "Fingerprint": "sha256:0ba8a389ec36827fb87f583eb8678c4bb455e7ab10bc33e3cb3c9fcf5846e7b9",
           "FixedVersion": "0.55.0",
           "InstalledVersion": "v0.54.0",
           "LastModifiedDate": "2026-07-23T16:10:00.137Z",
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "PkgID": "golang.org/x/net@v0.54.0",
           "PkgIdentifier": {
@@ -3929,13 +3930,13 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Description": "Parsing arbitrary HTML which is then rendered using Render can result in an unexpected HTML tree. This can be leveraged to execute XSS attacks in applications that attempt to sanitize input HTML before rendering.",
-          "Fingerprint": "sha256:8035152aa947437b25eba3deb52b6349c0bd3120196119e8cf9c663715359f07",
+          "Fingerprint": "sha256:a215867b275b28e6fadf227c30ecfad79f2e65b1c595b0a5f5464b07e492575b",
           "FixedVersion": "0.55.0",
           "InstalledVersion": "v0.54.0",
           "LastModifiedDate": "2026-07-23T16:10:00.137Z",
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "PkgID": "golang.org/x/net@v0.54.0",
           "PkgIdentifier": {
@@ -3983,13 +3984,13 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Description": "Parsing arbitrary HTML which is then rendered using Render can result in an unexpected HTML tree. This can be leveraged to execute XSS attacks in applications that attempt to sanitize input HTML before rendering.",
-          "Fingerprint": "sha256:defe2ddac2bebbc13d1fe45bced82405a2198f4516dea4626cf2cd7712aba160",
+          "Fingerprint": "sha256:646a259777b086eec01dce036cc0df1329ba02150c910846fba49ec9b631d31c",
           "FixedVersion": "0.55.0",
           "InstalledVersion": "v0.54.0",
           "LastModifiedDate": "2026-07-23T16:10:00.137Z",
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "PkgID": "golang.org/x/net@v0.54.0",
           "PkgIdentifier": {
@@ -4037,13 +4038,13 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Description": "A norm.Iter can enter an infinite loop when handling input containing invalid UTF-8 bytes.",
-          "Fingerprint": "sha256:761db3fcb8f156174ac6ed7985f043342149097273ce4a3d4ecccc4a4703ba22",
+          "Fingerprint": "sha256:aa6aaeb5a2002705542955c44b4ebb38b41c7ebabb64f999b6abf2f2d2f4102d",
           "FixedVersion": "0.39.0",
           "InstalledVersion": "v0.38.0",
           "LastModifiedDate": "2026-07-23T18:27:48.877Z",
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "PkgID": "golang.org/x/text@v0.38.0",
           "PkgIdentifier": {
@@ -4087,13 +4088,13 @@
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago"
           },
           "Description": "Multiple security vulnerabilities have been identified and addressed in grpc-go affecting the xDS RBAC authorization engine (internal/xds/rbac) and the HTTP/2 transport server implementation (internal/transport). These vulnerabilities could result in:\n\n- Authorization Bypass (Fail-Open) when translating xDS RBAC policies containing `Metadata` or `RequestedServerName` fields.\n- Denial of Service (High CPU Consumption) due to an HTTP/2 Rapid Reset mitigation bypass during client-initiated stream resets.\n- Denial of Service (Server Panic) when parsing crafted xDS RBAC policies containing `NOT` rules around unsupported fields.\n\n\n### Impact\n_What kind of vulnerability is it? Who is impacted?_\n\n#### xDS RBAC Authorization Bypass via `Metadata` \u0026 `RequestedServerName` matchers\n\n- Affected Component: xDS RBAC \n- Impact: When building policy matchers for gRPC RBAC from xDS configurations, unsupported `permission` and `principal` rules (specifically `Metadata` and `RequestedServerName`) were silently ignored and treated as no-ops.\n  - If an authorization policy relied purely on these matchers for access control, treating those rules as no-ops effectively removed the restrictions.\n- If these unsupported rules were nested inside logical `NOT` rules (`Permission_NotRule` / `Principal_NotId`) or multi-condition `OR/AND` rules, silently dropping them changed the boolean logic flow of the authorization engine.\n\nAs a result, policy evaluation decisions could fail open, allowing unauthorized clients to access protected gRPC services or resources.\n\n#### HTTP/2 Rapid Reset Mitigation Bypass / Denial of Service via Stream Aborts\n\n- Affected Component: HTTP/2 transport\n- Impact: Earlier mitigations in grpc-go for HTTP/2 Rapid Reset only applied threshold checks to items that directly resulted in control frames being written back to the wire, such as `SETTINGS` ACKs or server-initiated `RST_STREAM`s.\n\nWhen a client initiated a rapid flood of stream creation (`HEADERS`) immediately followed by stream termination `RST_STREAM`, items queued up in the control buffer without counting against the transport response frame threshold. An attacker can repeatedly trigger this flood sequence to bypass reader blocking, resulting in high CPU usage, and Denial of Service (DoS).\n\n#### Denial of Service (Panic) in xDS RBAC Engine via Unsupported Fields inside NOT Rules\n\n- Affected Component: xDS RBAC \n- Impact: The xDS RBAC policy translators recursively generate matchers for nested rules. When a `NOT` rule wrapped an unsupported or unhandled field (such as `SourcedMetadata`), the recursive step returned an empty matcher. This could result in a runtime panic when the RBAC engine attempts to authorize an incoming request.\n\nAn attacker or misconfigured/malicious xDS management server delivering an LDS/RDS update containing a `NOT` rule around an unhandled field causes the gRPC server process to crash immediately (CWE-248 / Denial of Service).\n\n### Patches\n_Has the problem been patched? What versions should users upgrade to?_\n\nAll three issues have been fixed in `master` and will be released in 1.82.1 shortly.\n\n### Workarounds\n_Is there a way for users to fix or remediate the vulnerability without upgrading?_\n\nIf upgrading grpc-go immediately is not possible, apply the following workarounds based on your deployment architecture:\n\n* For xDS RBAC Vulnerabilities \u0026 Panics: Ensure that upstream xDS management servers do not push RBAC policies containing `Metadata`, `RequestedServerName`, or `NOT` rules wrapping unsupported fields (such as `SourcedMetadata`) to grpc-go servers.\n* For HTTP/2 Rapid Reset DOS: Configure upstream reverse proxies or load balancers (such as Envoy) with strict HTTP/2 `max_concurrent_streams` limits and active rate limiting on `RST_STREAM` frequency per connection.\n\n### Severity\n\n  | Vulnerability | Qualitative Severity | Approximate CVSS v3.1 Score | Primary Impact |\n  | :--- | :--- | :--- | :--- |\n  | **xDS RBAC Authorization Bypass** | **High** | `8.2` | Unauthorized Access / Fail-Open |\n  | **HTTP/2 Rapid Reset DOS Bypass** | **High** | `7.5` | High CPU Consumption / Denial of Service |\n  | **xDS RBAC Engine Server Panic** | **Medium** | `5.9` | Process Crash / Denial of Service |",
-          "Fingerprint": "sha256:35dadc60cdc559cbb967290989a44b3a521b42c27f22472b9f16e1a72dae88c5",
+          "Fingerprint": "sha256:65e0f9f6b55ee822166e4a288ae3512136e1e5b77899c7f10473c0dff2881624",
           "FixedVersion": "1.82.1",
           "InstalledVersion": "v1.80.0",
           "LastModifiedDate": "2026-07-21T22:03:56Z",
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "PkgID": "google.golang.org/grpc@v1.80.0",
           "PkgIdentifier": {
@@ -4139,13 +4140,13 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Description": "Enforce a recursion limit in Unmarshal to prevent stack exhaustion when parsing deeply-nested, recursive structures.",
-          "Fingerprint": "sha256:422620469c12d46ad16939a7172ffd617fa0e9f4ff49d05c49774c921092e070",
+          "Fingerprint": "sha256:1802ff08d2b60630061b73ed302c1966d8b66ee4f400ad5b88f79bfba10bdf55",
           "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
           "InstalledVersion": "v1.25.12",
           "LastModifiedDate": "2026-08-14T16:16:55.317Z",
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "PkgID": "stdlib@v1.25.12",
           "PkgIdentifier": {
@@ -4192,13 +4193,13 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Description": "The ToASCII and ToUnicode functions incorrectly accept Punycode-encoded labels that decode to an ASCII-only label. For example, ToUnicode(\"xn--example-.com\") incorrectly returns the name \"example.com\" rather than an error. This behavior can lead to privilege escalation in programs using the idna package. For example, a program which performs privilege checks on the ASCII hostname may reject \"example.com\" but permit \"xn--example-.com\". If that program subsequently converts the ASCII hostname to Unicode, it will inadvertently permits access to the Unicode name \"example.com\".",
-          "Fingerprint": "sha256:de69a902a4ab9c2df46ec0575f5f49f58d107d2890423af1100f3570e0edf0c7",
+          "Fingerprint": "sha256:6756c6d1bbbfdb1ea1c2ecd203c5405e5912c7ab6cd34662279ff302728877f1",
           "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
           "InstalledVersion": "v1.25.12",
           "LastModifiedDate": "2026-08-21T13:17:38.087Z",
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "PkgID": "stdlib@v1.25.12",
           "PkgIdentifier": {
@@ -4330,12 +4331,14 @@
             "https://access.redhat.com/errata/RHSA-2026:57541",
             "https://access.redhat.com/security/cve/CVE-2026-39821",
             "https://bugzilla.redhat.com/2480756",
+            "https://bugzilla.redhat.com/2484207",
+            "https://bugzilla.redhat.com/2498152",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480756",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2498152",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39821",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39822",
-            "https://errata.almalinux.org/9/ALSA-2026-37435.html",
+            "https://errata.almalinux.org/8/ALSA-2026-38995.html",
             "https://errata.rockylinux.org/RLSA-2026:37435",
             "https://github.com/golang/go/issues/78760",
             "https://go.dev/cl/767220",
@@ -4387,13 +4390,13 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Description": "When a server is configured to support unencrypted HTTP/2, it reads a few bytes from each new connection to see if they contain the HTTP/2 client preface. ReadHeaderTimeout is unexpectedly not being applied when doing this.",
-          "Fingerprint": "sha256:7b2eacc458872479b8f982b4e11f33f3d7bee3ebda793b436e066999eea24971",
+          "Fingerprint": "sha256:7f4dba879fd64e2fcc3bdd749e542bc5db9e0f12a333fc7ae589a1105b12113b",
           "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
           "InstalledVersion": "v1.25.12",
           "LastModifiedDate": "2026-08-14T16:16:57.21Z",
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "PkgID": "stdlib@v1.25.12",
           "PkgIdentifier": {
@@ -4444,13 +4447,13 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Description": "Previously, pathological inputs could close an unescaped '/' early, allowing for attack-controlled data to inject arbitrary content, potentially leading to XSS.",
-          "Fingerprint": "sha256:e65fd80ae68c8aad2c9d521ec89b44c35627908c2ddd513dd8cfaac760c40b73",
+          "Fingerprint": "sha256:0f1e8aa76664a1430830d4f40bcbe8889c4de0aeb9175720c6be696e1b5fd124",
           "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
           "InstalledVersion": "v1.25.12",
           "LastModifiedDate": "2026-08-14T16:16:57.367Z",
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "PkgID": "stdlib@v1.25.12",
           "PkgIdentifier": {
@@ -4501,13 +4504,13 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Description": "Previously, DecodeElement would reset the depth counter causing it to never fire; this could lead to stack exhaustion.",
-          "Fingerprint": "sha256:ce52e9c878da1c2c7297415c193eece12e72a1859d1f0ec2b5baf501d5876ab5",
+          "Fingerprint": "sha256:f942e40e54e909ff2ff56fe67d36abf5a51f71a4f9677233022be2d075f9e9c8",
           "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
           "InstalledVersion": "v1.25.12",
           "LastModifiedDate": "2026-08-14T16:16:57.523Z",
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "PkgID": "stdlib@v1.25.12",
           "PkgIdentifier": {
@@ -4558,13 +4561,13 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Description": "Previously, resolving relative paths containing parent directory ('..') segments performed string conversions and buffer rewrites on each step, resulting in quadratic time complexity and high memory allocation overhead. Now, path resolution operates on a byte buffer using index-based backtracking for '..' segments, eliminating the quadratic time complexity and significantly reducing memory allocations.",
-          "Fingerprint": "sha256:3982db5fab44825826caa2e00a00ef23407d636242e82cedf19ba7da6093787d",
+          "Fingerprint": "sha256:f741d18227c2eab5a90432fe054ab60fbd00e1d9497ae40709e16352b7e78f8a",
           "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
           "InstalledVersion": "v1.25.12",
           "LastModifiedDate": "2026-08-14T17:19:13.91Z",
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "PkgID": "stdlib@v1.25.12",
           "PkgIdentifier": {
@@ -4615,13 +4618,13 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Description": "Handshake messages, such as KeyUpdate, are always considered as state-advancing, regardless of whether a handshake has been completed or not. As a result, a malicious client can keep sending KeyUpdate messages to force the server to keep performing key derivation operations indefinitely.",
-          "Fingerprint": "sha256:4085e5918084e0aedd8bff4844816e3ad007253bf7770821f4f716c16df04b15",
+          "Fingerprint": "sha256:ec183da47fe7a6455130b54dfc34aea6240aec41c080cd410fe237e7bab2a5cf",
           "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
           "InstalledVersion": "v1.25.12",
           "LastModifiedDate": "2026-08-14T16:16:57.717Z",
           "Layer": {
-            "DiffID": "sha256:f555486d51eddc8f8cb043f4d4f21ca2e1ffe79cfad97053375281eb60a38214",
-            "Digest": "sha256:9708cc3d98039a0dfde62e3f693502c99cbf0720985dda8f5d70edcefc499584"
+            "DiffID": "sha256:26332fed4ffe55cc6ae0d8dcb5286b7d9e5bda136f404e8b1a5a11778ae36ba6",
+            "Digest": "sha256:170e91e626feaf6794e23898a1dc31d91bc38da4dbe2efba82ef4f94ad981d18"
           },
           "PkgID": "stdlib@v1.25.12",
           "PkgIdentifier": {
