@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:406f3edb99bada143d9583b3413416c8ef43be4902bed795240eb6be403f3230",
   "ArtifactName": "ghcr.io/uug-ai/hub-pipeline-redaction@sha256:76f8fda95c5ffcefd5ddbae7d098c6f05fb22c974e0352774aa012b42c133874",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-08-25T04:05:20.3847324Z",
+  "CreatedAt": "2026-08-26T04:04:51.919998503Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:c0359c5b6ede84d4a083d06d35ee77f0b338dfb17423771854d007d89953fb3e",
@@ -228,7 +228,7 @@
     ],
     "Size": 676060160
   },
-  "ReportID": "01a03718-1580-7b25-9154-3cb48f36d579",
+  "ReportID": "01a03c3e-024f-7f36-b189-eb8afdb338c2",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -27293,6 +27293,7 @@
             "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23783",
             "https://github.com/advisories/GHSA-575m-jfmw-q76c",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-66036",
+            "https://ubuntu.com/security/notices/USN-8671-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-66036",
             "https://www.vulncheck.com/advisories/ffmpeg-heap-out-of-bounds-write-in-vf-hqdn3d-filter"
           ],
@@ -27355,6 +27356,7 @@
             "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23626",
             "https://github.com/advisories/GHSA-8mx4-8xfc-qr43",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-66038",
+            "https://ubuntu.com/security/notices/USN-8671-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-66038",
             "https://www.vulncheck.com/advisories/ffmpeg-lcl-zlib-video-decoder-information-disclosure-via-lcldec-c"
           ],
@@ -27418,6 +27420,7 @@
             "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23631",
             "https://github.com/advisories/GHSA-84qc-6h9r-4w33",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-66039",
+            "https://ubuntu.com/security/notices/USN-8671-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-66039",
             "https://www.vulncheck.com/advisories/ffmpeg-mace6-audio-decoder-heap-out-of-bounds-write-via-caf-file"
           ],
@@ -27432,6 +27435,125 @@
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-66039"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V40Score": 8.5,
+              "V40Vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N"
+            },
+            "redhat": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-190",
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "FFmpeg versions from 0.5 up to, but not including, 9.0 contain a signed integer overflow vulnerability in the DVB subtitle parser in libavcodec/dvbsub_parser.c that allows attackers to trigger a heap buffer overflow by supplying a crafted WTV file. The overflow causes the bounds-check guard expression to wrap to INT_MIN, bypassing the PARSE_BUF_SIZE comparison and invoking memcpy() with attacker-controlled data into a heap buffer, resulting in an out-of-bounds heap write and potential memory corruption or code execution.",
+          "Fingerprint": "sha256:93e9eedbe4d6a31038d14cac2fd54ace17ce7cba4a12187e287807bd271ed5d6",
+          "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
+          "LastModifiedDate": "2026-08-07T18:17:21.783Z",
+          "Layer": {
+            "DiffID": "sha256:e9eb69f85aa5e0ab4eef690bd1e8e2e94227082b3eea26a5975a42ea48737778",
+            "Digest": "sha256:eead57862dc1f5ba8517bf7720b8a2b02528faa06a5331796475016d79f8595f"
+          },
+          "PkgID": "ffmpeg@7:4.4.2-0ubuntu0.22.04.1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/ffmpeg@4.4.2-0ubuntu0.22.04.1?arch=amd64\u0026distro=ubuntu-22.04\u0026epoch=7",
+            "UID": "6f403a4c647d80fa"
+          },
+          "PkgName": "ffmpeg",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-70628",
+          "PublishedDate": "2026-08-06T22:18:26.957Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-70628",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/02fc47e13f903768b75f7985a2706a6223ab4506",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/93f2a525ec6c7b467bae68322720d10188fc6e30",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/c6ec28b18cd1eb7d39e6163137367f2d1c62aa7c",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23897",
+            "https://github.com/advisories/GHSA-qw9h-2hhv-hpfr",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-70628",
+            "https://www.cve.org/CVERecord?id=CVE-2026-70628",
+            "https://www.vulncheck.com/advisories/ffmpeg-dvb-subtitle-parser-heap-buffer-overflow-via-wtv-file"
+          ],
+          "Severity": "MEDIUM",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "ffmpeg: FFmpeg: Arbitrary code execution via crafted WTV file in DVB subtitle parser",
+          "VendorSeverity": {
+            "julia": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-70628"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V40Score": 8.5,
+              "V40Vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N"
+            },
+            "redhat": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "FFmpeg versions from 4.4 up to, but not including, 9.0 contain an out-of-bounds heap write vulnerability in the native GoPro CineForm HD (CFHD) decoder that allows remote attackers to corrupt heap memory by supplying a crafted AVI file during stream probing. The cfhd_decode() function fails to enforce the non-Bayer logical output-width invariant in the transform-type-2 reconstruction path, causing horiz_filter_clip() to write oversized 16-bit sample rows far beyond the allocated output frame buffer, which can be escalated to arbitrary code execution via overwrite of a live cleanup callback pointer.",
+          "Fingerprint": "sha256:5cf7366017b67f17846ca1461f57ed023aef84e644e03fce45ea70272befe6d5",
+          "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
+          "LastModifiedDate": "2026-08-07T18:17:22.307Z",
+          "Layer": {
+            "DiffID": "sha256:e9eb69f85aa5e0ab4eef690bd1e8e2e94227082b3eea26a5975a42ea48737778",
+            "Digest": "sha256:eead57862dc1f5ba8517bf7720b8a2b02528faa06a5331796475016d79f8595f"
+          },
+          "PkgID": "ffmpeg@7:4.4.2-0ubuntu0.22.04.1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/ffmpeg@4.4.2-0ubuntu0.22.04.1?arch=amd64\u0026distro=ubuntu-22.04\u0026epoch=7",
+            "UID": "6f403a4c647d80fa"
+          },
+          "PkgName": "ffmpeg",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-70632",
+          "PublishedDate": "2026-08-06T22:18:27.567Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-70632",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/1006a2151236f9235bf02822f263b3fb0532111e",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/16b2049d4d5222db6cd7c031409058571c94f6a9",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/db05df9d135fb56a4babb836d5e9f5c1d984e087",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23898",
+            "https://github.com/advisories/GHSA-q24x-99v6-6hxc",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-70632",
+            "https://www.cve.org/CVERecord?id=CVE-2026-70632",
+            "https://www.vulncheck.com/advisories/ffmpeg-heap-out-of-bounds-write-in-cfhd-decoder-via-avi-demuxing"
+          ],
+          "Severity": "MEDIUM",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "ffmpeg: FFmpeg: Arbitrary Code Execution in CFHD Decoder via Crafted AVI File",
+          "VendorSeverity": {
+            "julia": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-70632"
         },
         {
           "CVSS": {
@@ -30009,6 +30131,7 @@
             "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23783",
             "https://github.com/advisories/GHSA-575m-jfmw-q76c",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-66036",
+            "https://ubuntu.com/security/notices/USN-8671-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-66036",
             "https://www.vulncheck.com/advisories/ffmpeg-heap-out-of-bounds-write-in-vf-hqdn3d-filter"
           ],
@@ -30071,6 +30194,7 @@
             "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23626",
             "https://github.com/advisories/GHSA-8mx4-8xfc-qr43",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-66038",
+            "https://ubuntu.com/security/notices/USN-8671-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-66038",
             "https://www.vulncheck.com/advisories/ffmpeg-lcl-zlib-video-decoder-information-disclosure-via-lcldec-c"
           ],
@@ -30134,6 +30258,7 @@
             "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23631",
             "https://github.com/advisories/GHSA-84qc-6h9r-4w33",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-66039",
+            "https://ubuntu.com/security/notices/USN-8671-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-66039",
             "https://www.vulncheck.com/advisories/ffmpeg-mace6-audio-decoder-heap-out-of-bounds-write-via-caf-file"
           ],
@@ -30148,6 +30273,125 @@
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-66039"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V40Score": 8.5,
+              "V40Vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N"
+            },
+            "redhat": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-190",
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "FFmpeg versions from 0.5 up to, but not including, 9.0 contain a signed integer overflow vulnerability in the DVB subtitle parser in libavcodec/dvbsub_parser.c that allows attackers to trigger a heap buffer overflow by supplying a crafted WTV file. The overflow causes the bounds-check guard expression to wrap to INT_MIN, bypassing the PARSE_BUF_SIZE comparison and invoking memcpy() with attacker-controlled data into a heap buffer, resulting in an out-of-bounds heap write and potential memory corruption or code execution.",
+          "Fingerprint": "sha256:c95bed65e821af33dbbfdb74fb693e335f572da8d977172eae7970bc8c1f3a8c",
+          "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
+          "LastModifiedDate": "2026-08-07T18:17:21.783Z",
+          "Layer": {
+            "DiffID": "sha256:e9eb69f85aa5e0ab4eef690bd1e8e2e94227082b3eea26a5975a42ea48737778",
+            "Digest": "sha256:eead57862dc1f5ba8517bf7720b8a2b02528faa06a5331796475016d79f8595f"
+          },
+          "PkgID": "libavcodec58@7:4.4.2-0ubuntu0.22.04.1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/libavcodec58@4.4.2-0ubuntu0.22.04.1?arch=amd64\u0026distro=ubuntu-22.04\u0026epoch=7",
+            "UID": "2ec9c1c70cd510c9"
+          },
+          "PkgName": "libavcodec58",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-70628",
+          "PublishedDate": "2026-08-06T22:18:26.957Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-70628",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/02fc47e13f903768b75f7985a2706a6223ab4506",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/93f2a525ec6c7b467bae68322720d10188fc6e30",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/c6ec28b18cd1eb7d39e6163137367f2d1c62aa7c",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23897",
+            "https://github.com/advisories/GHSA-qw9h-2hhv-hpfr",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-70628",
+            "https://www.cve.org/CVERecord?id=CVE-2026-70628",
+            "https://www.vulncheck.com/advisories/ffmpeg-dvb-subtitle-parser-heap-buffer-overflow-via-wtv-file"
+          ],
+          "Severity": "MEDIUM",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "ffmpeg: FFmpeg: Arbitrary code execution via crafted WTV file in DVB subtitle parser",
+          "VendorSeverity": {
+            "julia": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-70628"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V40Score": 8.5,
+              "V40Vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N"
+            },
+            "redhat": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "FFmpeg versions from 4.4 up to, but not including, 9.0 contain an out-of-bounds heap write vulnerability in the native GoPro CineForm HD (CFHD) decoder that allows remote attackers to corrupt heap memory by supplying a crafted AVI file during stream probing. The cfhd_decode() function fails to enforce the non-Bayer logical output-width invariant in the transform-type-2 reconstruction path, causing horiz_filter_clip() to write oversized 16-bit sample rows far beyond the allocated output frame buffer, which can be escalated to arbitrary code execution via overwrite of a live cleanup callback pointer.",
+          "Fingerprint": "sha256:7d074036c11b8f552b83f1c4a40a8fe6b5aea4002e347fc66b16cd19240e0b14",
+          "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
+          "LastModifiedDate": "2026-08-07T18:17:22.307Z",
+          "Layer": {
+            "DiffID": "sha256:e9eb69f85aa5e0ab4eef690bd1e8e2e94227082b3eea26a5975a42ea48737778",
+            "Digest": "sha256:eead57862dc1f5ba8517bf7720b8a2b02528faa06a5331796475016d79f8595f"
+          },
+          "PkgID": "libavcodec58@7:4.4.2-0ubuntu0.22.04.1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/libavcodec58@4.4.2-0ubuntu0.22.04.1?arch=amd64\u0026distro=ubuntu-22.04\u0026epoch=7",
+            "UID": "2ec9c1c70cd510c9"
+          },
+          "PkgName": "libavcodec58",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-70632",
+          "PublishedDate": "2026-08-06T22:18:27.567Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-70632",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/1006a2151236f9235bf02822f263b3fb0532111e",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/16b2049d4d5222db6cd7c031409058571c94f6a9",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/db05df9d135fb56a4babb836d5e9f5c1d984e087",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23898",
+            "https://github.com/advisories/GHSA-q24x-99v6-6hxc",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-70632",
+            "https://www.cve.org/CVERecord?id=CVE-2026-70632",
+            "https://www.vulncheck.com/advisories/ffmpeg-heap-out-of-bounds-write-in-cfhd-decoder-via-avi-demuxing"
+          ],
+          "Severity": "MEDIUM",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "ffmpeg: FFmpeg: Arbitrary Code Execution in CFHD Decoder via Crafted AVI File",
+          "VendorSeverity": {
+            "julia": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-70632"
         },
         {
           "CVSS": {
@@ -32077,6 +32321,7 @@
             "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23783",
             "https://github.com/advisories/GHSA-575m-jfmw-q76c",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-66036",
+            "https://ubuntu.com/security/notices/USN-8671-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-66036",
             "https://www.vulncheck.com/advisories/ffmpeg-heap-out-of-bounds-write-in-vf-hqdn3d-filter"
           ],
@@ -32139,6 +32384,7 @@
             "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23626",
             "https://github.com/advisories/GHSA-8mx4-8xfc-qr43",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-66038",
+            "https://ubuntu.com/security/notices/USN-8671-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-66038",
             "https://www.vulncheck.com/advisories/ffmpeg-lcl-zlib-video-decoder-information-disclosure-via-lcldec-c"
           ],
@@ -32202,6 +32448,7 @@
             "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23631",
             "https://github.com/advisories/GHSA-84qc-6h9r-4w33",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-66039",
+            "https://ubuntu.com/security/notices/USN-8671-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-66039",
             "https://www.vulncheck.com/advisories/ffmpeg-mace6-audio-decoder-heap-out-of-bounds-write-via-caf-file"
           ],
@@ -32216,6 +32463,125 @@
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-66039"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V40Score": 8.5,
+              "V40Vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N"
+            },
+            "redhat": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-190",
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "FFmpeg versions from 0.5 up to, but not including, 9.0 contain a signed integer overflow vulnerability in the DVB subtitle parser in libavcodec/dvbsub_parser.c that allows attackers to trigger a heap buffer overflow by supplying a crafted WTV file. The overflow causes the bounds-check guard expression to wrap to INT_MIN, bypassing the PARSE_BUF_SIZE comparison and invoking memcpy() with attacker-controlled data into a heap buffer, resulting in an out-of-bounds heap write and potential memory corruption or code execution.",
+          "Fingerprint": "sha256:ef3790ca164d56e227786a101eee69c5376332dd51f510bac14250a751fd4c1f",
+          "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
+          "LastModifiedDate": "2026-08-07T18:17:21.783Z",
+          "Layer": {
+            "DiffID": "sha256:e9eb69f85aa5e0ab4eef690bd1e8e2e94227082b3eea26a5975a42ea48737778",
+            "Digest": "sha256:eead57862dc1f5ba8517bf7720b8a2b02528faa06a5331796475016d79f8595f"
+          },
+          "PkgID": "libavdevice58@7:4.4.2-0ubuntu0.22.04.1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/libavdevice58@4.4.2-0ubuntu0.22.04.1?arch=amd64\u0026distro=ubuntu-22.04\u0026epoch=7",
+            "UID": "42b829ec77dbd505"
+          },
+          "PkgName": "libavdevice58",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-70628",
+          "PublishedDate": "2026-08-06T22:18:26.957Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-70628",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/02fc47e13f903768b75f7985a2706a6223ab4506",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/93f2a525ec6c7b467bae68322720d10188fc6e30",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/c6ec28b18cd1eb7d39e6163137367f2d1c62aa7c",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23897",
+            "https://github.com/advisories/GHSA-qw9h-2hhv-hpfr",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-70628",
+            "https://www.cve.org/CVERecord?id=CVE-2026-70628",
+            "https://www.vulncheck.com/advisories/ffmpeg-dvb-subtitle-parser-heap-buffer-overflow-via-wtv-file"
+          ],
+          "Severity": "MEDIUM",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "ffmpeg: FFmpeg: Arbitrary code execution via crafted WTV file in DVB subtitle parser",
+          "VendorSeverity": {
+            "julia": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-70628"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V40Score": 8.5,
+              "V40Vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N"
+            },
+            "redhat": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "FFmpeg versions from 4.4 up to, but not including, 9.0 contain an out-of-bounds heap write vulnerability in the native GoPro CineForm HD (CFHD) decoder that allows remote attackers to corrupt heap memory by supplying a crafted AVI file during stream probing. The cfhd_decode() function fails to enforce the non-Bayer logical output-width invariant in the transform-type-2 reconstruction path, causing horiz_filter_clip() to write oversized 16-bit sample rows far beyond the allocated output frame buffer, which can be escalated to arbitrary code execution via overwrite of a live cleanup callback pointer.",
+          "Fingerprint": "sha256:9ea326271a96faa642709fb19ba85c06e2d188924d234b6f01993253a2ecde21",
+          "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
+          "LastModifiedDate": "2026-08-07T18:17:22.307Z",
+          "Layer": {
+            "DiffID": "sha256:e9eb69f85aa5e0ab4eef690bd1e8e2e94227082b3eea26a5975a42ea48737778",
+            "Digest": "sha256:eead57862dc1f5ba8517bf7720b8a2b02528faa06a5331796475016d79f8595f"
+          },
+          "PkgID": "libavdevice58@7:4.4.2-0ubuntu0.22.04.1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/libavdevice58@4.4.2-0ubuntu0.22.04.1?arch=amd64\u0026distro=ubuntu-22.04\u0026epoch=7",
+            "UID": "42b829ec77dbd505"
+          },
+          "PkgName": "libavdevice58",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-70632",
+          "PublishedDate": "2026-08-06T22:18:27.567Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-70632",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/1006a2151236f9235bf02822f263b3fb0532111e",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/16b2049d4d5222db6cd7c031409058571c94f6a9",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/db05df9d135fb56a4babb836d5e9f5c1d984e087",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23898",
+            "https://github.com/advisories/GHSA-q24x-99v6-6hxc",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-70632",
+            "https://www.cve.org/CVERecord?id=CVE-2026-70632",
+            "https://www.vulncheck.com/advisories/ffmpeg-heap-out-of-bounds-write-in-cfhd-decoder-via-avi-demuxing"
+          ],
+          "Severity": "MEDIUM",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "ffmpeg: FFmpeg: Arbitrary Code Execution in CFHD Decoder via Crafted AVI File",
+          "VendorSeverity": {
+            "julia": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-70632"
         },
         {
           "CVSS": {
@@ -34145,6 +34511,7 @@
             "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23783",
             "https://github.com/advisories/GHSA-575m-jfmw-q76c",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-66036",
+            "https://ubuntu.com/security/notices/USN-8671-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-66036",
             "https://www.vulncheck.com/advisories/ffmpeg-heap-out-of-bounds-write-in-vf-hqdn3d-filter"
           ],
@@ -34207,6 +34574,7 @@
             "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23626",
             "https://github.com/advisories/GHSA-8mx4-8xfc-qr43",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-66038",
+            "https://ubuntu.com/security/notices/USN-8671-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-66038",
             "https://www.vulncheck.com/advisories/ffmpeg-lcl-zlib-video-decoder-information-disclosure-via-lcldec-c"
           ],
@@ -34270,6 +34638,7 @@
             "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23631",
             "https://github.com/advisories/GHSA-84qc-6h9r-4w33",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-66039",
+            "https://ubuntu.com/security/notices/USN-8671-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-66039",
             "https://www.vulncheck.com/advisories/ffmpeg-mace6-audio-decoder-heap-out-of-bounds-write-via-caf-file"
           ],
@@ -34284,6 +34653,125 @@
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-66039"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V40Score": 8.5,
+              "V40Vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N"
+            },
+            "redhat": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-190",
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "FFmpeg versions from 0.5 up to, but not including, 9.0 contain a signed integer overflow vulnerability in the DVB subtitle parser in libavcodec/dvbsub_parser.c that allows attackers to trigger a heap buffer overflow by supplying a crafted WTV file. The overflow causes the bounds-check guard expression to wrap to INT_MIN, bypassing the PARSE_BUF_SIZE comparison and invoking memcpy() with attacker-controlled data into a heap buffer, resulting in an out-of-bounds heap write and potential memory corruption or code execution.",
+          "Fingerprint": "sha256:87b6bf1063fd420d6423ac4bada6f9f1dbd17d3d97f45a231c045faabd486372",
+          "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
+          "LastModifiedDate": "2026-08-07T18:17:21.783Z",
+          "Layer": {
+            "DiffID": "sha256:e9eb69f85aa5e0ab4eef690bd1e8e2e94227082b3eea26a5975a42ea48737778",
+            "Digest": "sha256:eead57862dc1f5ba8517bf7720b8a2b02528faa06a5331796475016d79f8595f"
+          },
+          "PkgID": "libavfilter7@7:4.4.2-0ubuntu0.22.04.1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/libavfilter7@4.4.2-0ubuntu0.22.04.1?arch=amd64\u0026distro=ubuntu-22.04\u0026epoch=7",
+            "UID": "56c3b37089de925d"
+          },
+          "PkgName": "libavfilter7",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-70628",
+          "PublishedDate": "2026-08-06T22:18:26.957Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-70628",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/02fc47e13f903768b75f7985a2706a6223ab4506",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/93f2a525ec6c7b467bae68322720d10188fc6e30",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/c6ec28b18cd1eb7d39e6163137367f2d1c62aa7c",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23897",
+            "https://github.com/advisories/GHSA-qw9h-2hhv-hpfr",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-70628",
+            "https://www.cve.org/CVERecord?id=CVE-2026-70628",
+            "https://www.vulncheck.com/advisories/ffmpeg-dvb-subtitle-parser-heap-buffer-overflow-via-wtv-file"
+          ],
+          "Severity": "MEDIUM",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "ffmpeg: FFmpeg: Arbitrary code execution via crafted WTV file in DVB subtitle parser",
+          "VendorSeverity": {
+            "julia": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-70628"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V40Score": 8.5,
+              "V40Vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N"
+            },
+            "redhat": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "FFmpeg versions from 4.4 up to, but not including, 9.0 contain an out-of-bounds heap write vulnerability in the native GoPro CineForm HD (CFHD) decoder that allows remote attackers to corrupt heap memory by supplying a crafted AVI file during stream probing. The cfhd_decode() function fails to enforce the non-Bayer logical output-width invariant in the transform-type-2 reconstruction path, causing horiz_filter_clip() to write oversized 16-bit sample rows far beyond the allocated output frame buffer, which can be escalated to arbitrary code execution via overwrite of a live cleanup callback pointer.",
+          "Fingerprint": "sha256:ba6e8d03fa7b97b193c0683c8602c439d3b200ed12f99775c97c3c2c4b242875",
+          "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
+          "LastModifiedDate": "2026-08-07T18:17:22.307Z",
+          "Layer": {
+            "DiffID": "sha256:e9eb69f85aa5e0ab4eef690bd1e8e2e94227082b3eea26a5975a42ea48737778",
+            "Digest": "sha256:eead57862dc1f5ba8517bf7720b8a2b02528faa06a5331796475016d79f8595f"
+          },
+          "PkgID": "libavfilter7@7:4.4.2-0ubuntu0.22.04.1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/libavfilter7@4.4.2-0ubuntu0.22.04.1?arch=amd64\u0026distro=ubuntu-22.04\u0026epoch=7",
+            "UID": "56c3b37089de925d"
+          },
+          "PkgName": "libavfilter7",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-70632",
+          "PublishedDate": "2026-08-06T22:18:27.567Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-70632",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/1006a2151236f9235bf02822f263b3fb0532111e",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/16b2049d4d5222db6cd7c031409058571c94f6a9",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/db05df9d135fb56a4babb836d5e9f5c1d984e087",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23898",
+            "https://github.com/advisories/GHSA-q24x-99v6-6hxc",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-70632",
+            "https://www.cve.org/CVERecord?id=CVE-2026-70632",
+            "https://www.vulncheck.com/advisories/ffmpeg-heap-out-of-bounds-write-in-cfhd-decoder-via-avi-demuxing"
+          ],
+          "Severity": "MEDIUM",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "ffmpeg: FFmpeg: Arbitrary Code Execution in CFHD Decoder via Crafted AVI File",
+          "VendorSeverity": {
+            "julia": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-70632"
         },
         {
           "CVSS": {
@@ -36213,6 +36701,7 @@
             "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23783",
             "https://github.com/advisories/GHSA-575m-jfmw-q76c",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-66036",
+            "https://ubuntu.com/security/notices/USN-8671-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-66036",
             "https://www.vulncheck.com/advisories/ffmpeg-heap-out-of-bounds-write-in-vf-hqdn3d-filter"
           ],
@@ -36275,6 +36764,7 @@
             "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23626",
             "https://github.com/advisories/GHSA-8mx4-8xfc-qr43",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-66038",
+            "https://ubuntu.com/security/notices/USN-8671-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-66038",
             "https://www.vulncheck.com/advisories/ffmpeg-lcl-zlib-video-decoder-information-disclosure-via-lcldec-c"
           ],
@@ -36338,6 +36828,7 @@
             "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23631",
             "https://github.com/advisories/GHSA-84qc-6h9r-4w33",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-66039",
+            "https://ubuntu.com/security/notices/USN-8671-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-66039",
             "https://www.vulncheck.com/advisories/ffmpeg-mace6-audio-decoder-heap-out-of-bounds-write-via-caf-file"
           ],
@@ -36352,6 +36843,125 @@
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-66039"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V40Score": 8.5,
+              "V40Vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N"
+            },
+            "redhat": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-190",
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "FFmpeg versions from 0.5 up to, but not including, 9.0 contain a signed integer overflow vulnerability in the DVB subtitle parser in libavcodec/dvbsub_parser.c that allows attackers to trigger a heap buffer overflow by supplying a crafted WTV file. The overflow causes the bounds-check guard expression to wrap to INT_MIN, bypassing the PARSE_BUF_SIZE comparison and invoking memcpy() with attacker-controlled data into a heap buffer, resulting in an out-of-bounds heap write and potential memory corruption or code execution.",
+          "Fingerprint": "sha256:88b56b5eac33d6cd0824a2e63bf7769eab9a3b00b5596fca01acff8846aaf052",
+          "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
+          "LastModifiedDate": "2026-08-07T18:17:21.783Z",
+          "Layer": {
+            "DiffID": "sha256:e9eb69f85aa5e0ab4eef690bd1e8e2e94227082b3eea26a5975a42ea48737778",
+            "Digest": "sha256:eead57862dc1f5ba8517bf7720b8a2b02528faa06a5331796475016d79f8595f"
+          },
+          "PkgID": "libavformat58@7:4.4.2-0ubuntu0.22.04.1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/libavformat58@4.4.2-0ubuntu0.22.04.1?arch=amd64\u0026distro=ubuntu-22.04\u0026epoch=7",
+            "UID": "7a2a40819b534d92"
+          },
+          "PkgName": "libavformat58",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-70628",
+          "PublishedDate": "2026-08-06T22:18:26.957Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-70628",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/02fc47e13f903768b75f7985a2706a6223ab4506",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/93f2a525ec6c7b467bae68322720d10188fc6e30",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/c6ec28b18cd1eb7d39e6163137367f2d1c62aa7c",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23897",
+            "https://github.com/advisories/GHSA-qw9h-2hhv-hpfr",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-70628",
+            "https://www.cve.org/CVERecord?id=CVE-2026-70628",
+            "https://www.vulncheck.com/advisories/ffmpeg-dvb-subtitle-parser-heap-buffer-overflow-via-wtv-file"
+          ],
+          "Severity": "MEDIUM",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "ffmpeg: FFmpeg: Arbitrary code execution via crafted WTV file in DVB subtitle parser",
+          "VendorSeverity": {
+            "julia": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-70628"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V40Score": 8.5,
+              "V40Vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N"
+            },
+            "redhat": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "FFmpeg versions from 4.4 up to, but not including, 9.0 contain an out-of-bounds heap write vulnerability in the native GoPro CineForm HD (CFHD) decoder that allows remote attackers to corrupt heap memory by supplying a crafted AVI file during stream probing. The cfhd_decode() function fails to enforce the non-Bayer logical output-width invariant in the transform-type-2 reconstruction path, causing horiz_filter_clip() to write oversized 16-bit sample rows far beyond the allocated output frame buffer, which can be escalated to arbitrary code execution via overwrite of a live cleanup callback pointer.",
+          "Fingerprint": "sha256:26f01109c452484a845b87e7dfc061fb270c8d2e397f005ef209faae51161a80",
+          "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
+          "LastModifiedDate": "2026-08-07T18:17:22.307Z",
+          "Layer": {
+            "DiffID": "sha256:e9eb69f85aa5e0ab4eef690bd1e8e2e94227082b3eea26a5975a42ea48737778",
+            "Digest": "sha256:eead57862dc1f5ba8517bf7720b8a2b02528faa06a5331796475016d79f8595f"
+          },
+          "PkgID": "libavformat58@7:4.4.2-0ubuntu0.22.04.1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/libavformat58@4.4.2-0ubuntu0.22.04.1?arch=amd64\u0026distro=ubuntu-22.04\u0026epoch=7",
+            "UID": "7a2a40819b534d92"
+          },
+          "PkgName": "libavformat58",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-70632",
+          "PublishedDate": "2026-08-06T22:18:27.567Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-70632",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/1006a2151236f9235bf02822f263b3fb0532111e",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/16b2049d4d5222db6cd7c031409058571c94f6a9",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/db05df9d135fb56a4babb836d5e9f5c1d984e087",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23898",
+            "https://github.com/advisories/GHSA-q24x-99v6-6hxc",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-70632",
+            "https://www.cve.org/CVERecord?id=CVE-2026-70632",
+            "https://www.vulncheck.com/advisories/ffmpeg-heap-out-of-bounds-write-in-cfhd-decoder-via-avi-demuxing"
+          ],
+          "Severity": "MEDIUM",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "ffmpeg: FFmpeg: Arbitrary Code Execution in CFHD Decoder via Crafted AVI File",
+          "VendorSeverity": {
+            "julia": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-70632"
         },
         {
           "CVSS": {
@@ -38281,6 +38891,7 @@
             "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23783",
             "https://github.com/advisories/GHSA-575m-jfmw-q76c",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-66036",
+            "https://ubuntu.com/security/notices/USN-8671-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-66036",
             "https://www.vulncheck.com/advisories/ffmpeg-heap-out-of-bounds-write-in-vf-hqdn3d-filter"
           ],
@@ -38343,6 +38954,7 @@
             "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23626",
             "https://github.com/advisories/GHSA-8mx4-8xfc-qr43",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-66038",
+            "https://ubuntu.com/security/notices/USN-8671-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-66038",
             "https://www.vulncheck.com/advisories/ffmpeg-lcl-zlib-video-decoder-information-disclosure-via-lcldec-c"
           ],
@@ -38406,6 +39018,7 @@
             "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23631",
             "https://github.com/advisories/GHSA-84qc-6h9r-4w33",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-66039",
+            "https://ubuntu.com/security/notices/USN-8671-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-66039",
             "https://www.vulncheck.com/advisories/ffmpeg-mace6-audio-decoder-heap-out-of-bounds-write-via-caf-file"
           ],
@@ -38420,6 +39033,125 @@
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-66039"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V40Score": 8.5,
+              "V40Vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N"
+            },
+            "redhat": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-190",
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "FFmpeg versions from 0.5 up to, but not including, 9.0 contain a signed integer overflow vulnerability in the DVB subtitle parser in libavcodec/dvbsub_parser.c that allows attackers to trigger a heap buffer overflow by supplying a crafted WTV file. The overflow causes the bounds-check guard expression to wrap to INT_MIN, bypassing the PARSE_BUF_SIZE comparison and invoking memcpy() with attacker-controlled data into a heap buffer, resulting in an out-of-bounds heap write and potential memory corruption or code execution.",
+          "Fingerprint": "sha256:23aac00efa731dd3aff3e73405c7aaff8a3e54e417444013add0766a04664a87",
+          "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
+          "LastModifiedDate": "2026-08-07T18:17:21.783Z",
+          "Layer": {
+            "DiffID": "sha256:e9eb69f85aa5e0ab4eef690bd1e8e2e94227082b3eea26a5975a42ea48737778",
+            "Digest": "sha256:eead57862dc1f5ba8517bf7720b8a2b02528faa06a5331796475016d79f8595f"
+          },
+          "PkgID": "libavutil56@7:4.4.2-0ubuntu0.22.04.1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/libavutil56@4.4.2-0ubuntu0.22.04.1?arch=amd64\u0026distro=ubuntu-22.04\u0026epoch=7",
+            "UID": "652d3b68fc762576"
+          },
+          "PkgName": "libavutil56",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-70628",
+          "PublishedDate": "2026-08-06T22:18:26.957Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-70628",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/02fc47e13f903768b75f7985a2706a6223ab4506",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/93f2a525ec6c7b467bae68322720d10188fc6e30",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/c6ec28b18cd1eb7d39e6163137367f2d1c62aa7c",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23897",
+            "https://github.com/advisories/GHSA-qw9h-2hhv-hpfr",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-70628",
+            "https://www.cve.org/CVERecord?id=CVE-2026-70628",
+            "https://www.vulncheck.com/advisories/ffmpeg-dvb-subtitle-parser-heap-buffer-overflow-via-wtv-file"
+          ],
+          "Severity": "MEDIUM",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "ffmpeg: FFmpeg: Arbitrary code execution via crafted WTV file in DVB subtitle parser",
+          "VendorSeverity": {
+            "julia": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-70628"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V40Score": 8.5,
+              "V40Vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N"
+            },
+            "redhat": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "FFmpeg versions from 4.4 up to, but not including, 9.0 contain an out-of-bounds heap write vulnerability in the native GoPro CineForm HD (CFHD) decoder that allows remote attackers to corrupt heap memory by supplying a crafted AVI file during stream probing. The cfhd_decode() function fails to enforce the non-Bayer logical output-width invariant in the transform-type-2 reconstruction path, causing horiz_filter_clip() to write oversized 16-bit sample rows far beyond the allocated output frame buffer, which can be escalated to arbitrary code execution via overwrite of a live cleanup callback pointer.",
+          "Fingerprint": "sha256:f4b5ee520c26a3c25a79df0763e726a643ba33106907192cbe3e970a28c195b3",
+          "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
+          "LastModifiedDate": "2026-08-07T18:17:22.307Z",
+          "Layer": {
+            "DiffID": "sha256:e9eb69f85aa5e0ab4eef690bd1e8e2e94227082b3eea26a5975a42ea48737778",
+            "Digest": "sha256:eead57862dc1f5ba8517bf7720b8a2b02528faa06a5331796475016d79f8595f"
+          },
+          "PkgID": "libavutil56@7:4.4.2-0ubuntu0.22.04.1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/libavutil56@4.4.2-0ubuntu0.22.04.1?arch=amd64\u0026distro=ubuntu-22.04\u0026epoch=7",
+            "UID": "652d3b68fc762576"
+          },
+          "PkgName": "libavutil56",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-70632",
+          "PublishedDate": "2026-08-06T22:18:27.567Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-70632",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/1006a2151236f9235bf02822f263b3fb0532111e",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/16b2049d4d5222db6cd7c031409058571c94f6a9",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/db05df9d135fb56a4babb836d5e9f5c1d984e087",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23898",
+            "https://github.com/advisories/GHSA-q24x-99v6-6hxc",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-70632",
+            "https://www.cve.org/CVERecord?id=CVE-2026-70632",
+            "https://www.vulncheck.com/advisories/ffmpeg-heap-out-of-bounds-write-in-cfhd-decoder-via-avi-demuxing"
+          ],
+          "Severity": "MEDIUM",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "ffmpeg: FFmpeg: Arbitrary Code Execution in CFHD Decoder via Crafted AVI File",
+          "VendorSeverity": {
+            "julia": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-70632"
         },
         {
           "CVSS": {
@@ -38938,7 +39670,7 @@
           "Description": "A flaw was found in libdm. A local attacker could craft a malicious Logical Volume Manager (LVM) metadata configuration with deeply nested structures. This could lead to uncontrolled recursion in the libdm configuration file parser, exhausting the stack and causing any LVM command reading the metadata to crash. This vulnerability results in a Denial of Service (DoS) for affected systems.",
           "Fingerprint": "sha256:c5242ff284a7eb24b5221e2c8b42b04c5c02f18f23029638f9e9cb582148aa1a",
           "InstalledVersion": "2:1.02.175-2.1ubuntu5",
-          "LastModifiedDate": "2026-08-14T19:07:46.08Z",
+          "LastModifiedDate": "2026-08-25T15:44:34.69Z",
           "Layer": {
             "DiffID": "sha256:e9eb69f85aa5e0ab4eef690bd1e8e2e94227082b3eea26a5975a42ea48737778",
             "Digest": "sha256:eead57862dc1f5ba8517bf7720b8a2b02528faa06a5331796475016d79f8595f"
@@ -40087,7 +40819,7 @@
           "Description": "A flaw was found in p11-kit. The RPC message attribute parsing functions p11_rpc_message_get_attribute() and p11_rpc_message_get_attribute_array_value() form a mutually-recursive call chain with no recursion depth limit when processing nested CKA_WRAP_TEMPLATE, CKA_UNWRAP_TEMPLATE, and CKA_DERIVE_TEMPLATE attributes. An unauthenticated attacker with local access to the p11-kit RPC Unix domain socket can send a specially crafted request with deeply nested template attributes, causing stack exhaustion and crashing the p11-kit server process and its dependent services.",
           "Fingerprint": "sha256:376933075dc060e98bd5b4521808fd1e2ce71336f08d8784f8d107420bd4b002",
           "InstalledVersion": "0.24.0-6build1",
-          "LastModifiedDate": "2026-08-21T13:16:51.2Z",
+          "LastModifiedDate": "2026-08-25T10:18:03.38Z",
           "Layer": {
             "DiffID": "sha256:c0359c5b6ede84d4a083d06d35ee77f0b338dfb17423771854d007d89953fb3e",
             "Digest": "sha256:1317dd93c0c3b4562b5180bc49726f743cc1622f5fd1327aa883d8d8968012e3"
@@ -40108,12 +40840,13 @@
             "https://access.redhat.com/errata/RHSA-2026:53371",
             "https://access.redhat.com/errata/RHSA-2026:54387",
             "https://access.redhat.com/errata/RHSA-2026:54760",
+            "https://access.redhat.com/errata/RHSA-2026:58981",
             "https://access.redhat.com/security/cve/CVE-2026-13757",
             "https://bugzilla.redhat.com/2494556",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2494556",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-13757",
-            "https://errata.almalinux.org/9/ALSA-2026-49667.html",
+            "https://errata.almalinux.org/10/ALSA-2026-49668.html",
             "https://errata.rockylinux.org/RLSA-2026:49667",
             "https://github.com/advisories/GHSA-p2wm-69qx-x25w",
             "https://linux.oracle.com/cve/CVE-2026-13757.html",
@@ -42223,6 +42956,7 @@
             "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23783",
             "https://github.com/advisories/GHSA-575m-jfmw-q76c",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-66036",
+            "https://ubuntu.com/security/notices/USN-8671-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-66036",
             "https://www.vulncheck.com/advisories/ffmpeg-heap-out-of-bounds-write-in-vf-hqdn3d-filter"
           ],
@@ -42285,6 +43019,7 @@
             "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23626",
             "https://github.com/advisories/GHSA-8mx4-8xfc-qr43",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-66038",
+            "https://ubuntu.com/security/notices/USN-8671-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-66038",
             "https://www.vulncheck.com/advisories/ffmpeg-lcl-zlib-video-decoder-information-disclosure-via-lcldec-c"
           ],
@@ -42348,6 +43083,7 @@
             "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23631",
             "https://github.com/advisories/GHSA-84qc-6h9r-4w33",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-66039",
+            "https://ubuntu.com/security/notices/USN-8671-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-66039",
             "https://www.vulncheck.com/advisories/ffmpeg-mace6-audio-decoder-heap-out-of-bounds-write-via-caf-file"
           ],
@@ -42362,6 +43098,125 @@
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-66039"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V40Score": 8.5,
+              "V40Vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N"
+            },
+            "redhat": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-190",
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "FFmpeg versions from 0.5 up to, but not including, 9.0 contain a signed integer overflow vulnerability in the DVB subtitle parser in libavcodec/dvbsub_parser.c that allows attackers to trigger a heap buffer overflow by supplying a crafted WTV file. The overflow causes the bounds-check guard expression to wrap to INT_MIN, bypassing the PARSE_BUF_SIZE comparison and invoking memcpy() with attacker-controlled data into a heap buffer, resulting in an out-of-bounds heap write and potential memory corruption or code execution.",
+          "Fingerprint": "sha256:0654c3fec1fe1824bed9bbf3d57408d288b45fc51b3508c855cf91bc2dcb3967",
+          "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
+          "LastModifiedDate": "2026-08-07T18:17:21.783Z",
+          "Layer": {
+            "DiffID": "sha256:e9eb69f85aa5e0ab4eef690bd1e8e2e94227082b3eea26a5975a42ea48737778",
+            "Digest": "sha256:eead57862dc1f5ba8517bf7720b8a2b02528faa06a5331796475016d79f8595f"
+          },
+          "PkgID": "libpostproc55@7:4.4.2-0ubuntu0.22.04.1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/libpostproc55@4.4.2-0ubuntu0.22.04.1?arch=amd64\u0026distro=ubuntu-22.04\u0026epoch=7",
+            "UID": "11827c3109a54a95"
+          },
+          "PkgName": "libpostproc55",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-70628",
+          "PublishedDate": "2026-08-06T22:18:26.957Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-70628",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/02fc47e13f903768b75f7985a2706a6223ab4506",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/93f2a525ec6c7b467bae68322720d10188fc6e30",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/c6ec28b18cd1eb7d39e6163137367f2d1c62aa7c",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23897",
+            "https://github.com/advisories/GHSA-qw9h-2hhv-hpfr",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-70628",
+            "https://www.cve.org/CVERecord?id=CVE-2026-70628",
+            "https://www.vulncheck.com/advisories/ffmpeg-dvb-subtitle-parser-heap-buffer-overflow-via-wtv-file"
+          ],
+          "Severity": "MEDIUM",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "ffmpeg: FFmpeg: Arbitrary code execution via crafted WTV file in DVB subtitle parser",
+          "VendorSeverity": {
+            "julia": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-70628"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V40Score": 8.5,
+              "V40Vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N"
+            },
+            "redhat": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "FFmpeg versions from 4.4 up to, but not including, 9.0 contain an out-of-bounds heap write vulnerability in the native GoPro CineForm HD (CFHD) decoder that allows remote attackers to corrupt heap memory by supplying a crafted AVI file during stream probing. The cfhd_decode() function fails to enforce the non-Bayer logical output-width invariant in the transform-type-2 reconstruction path, causing horiz_filter_clip() to write oversized 16-bit sample rows far beyond the allocated output frame buffer, which can be escalated to arbitrary code execution via overwrite of a live cleanup callback pointer.",
+          "Fingerprint": "sha256:6d596603624024d3c4d8aa30b1eb07baf01f29839364e1776a0bb7559d8dbc31",
+          "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
+          "LastModifiedDate": "2026-08-07T18:17:22.307Z",
+          "Layer": {
+            "DiffID": "sha256:e9eb69f85aa5e0ab4eef690bd1e8e2e94227082b3eea26a5975a42ea48737778",
+            "Digest": "sha256:eead57862dc1f5ba8517bf7720b8a2b02528faa06a5331796475016d79f8595f"
+          },
+          "PkgID": "libpostproc55@7:4.4.2-0ubuntu0.22.04.1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/libpostproc55@4.4.2-0ubuntu0.22.04.1?arch=amd64\u0026distro=ubuntu-22.04\u0026epoch=7",
+            "UID": "11827c3109a54a95"
+          },
+          "PkgName": "libpostproc55",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-70632",
+          "PublishedDate": "2026-08-06T22:18:27.567Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-70632",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/1006a2151236f9235bf02822f263b3fb0532111e",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/16b2049d4d5222db6cd7c031409058571c94f6a9",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/db05df9d135fb56a4babb836d5e9f5c1d984e087",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23898",
+            "https://github.com/advisories/GHSA-q24x-99v6-6hxc",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-70632",
+            "https://www.cve.org/CVERecord?id=CVE-2026-70632",
+            "https://www.vulncheck.com/advisories/ffmpeg-heap-out-of-bounds-write-in-cfhd-decoder-via-avi-demuxing"
+          ],
+          "Severity": "MEDIUM",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "ffmpeg: FFmpeg: Arbitrary Code Execution in CFHD Decoder via Crafted AVI File",
+          "VendorSeverity": {
+            "julia": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-70632"
         },
         {
           "CVSS": {
@@ -42648,7 +43503,7 @@
             "https://bugzilla.redhat.com/show_bug.cgi?id=2463856",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-37555",
-            "https://errata.almalinux.org/9/ALSA-2026-19610.html",
+            "https://errata.almalinux.org/10/ALSA-2026-19560.html",
             "https://errata.rockylinux.org/RLSA-2026:19610",
             "https://gist.github.com/sgInnora/a5f5c19e4bf6f4fb74fab7b0ef2bfcc1",
             "https://github.com/libsndfile/libsndfile/commit/9a829113c88a51e57c1e46473e90609e4b7df151",
@@ -44715,6 +45570,7 @@
             "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23783",
             "https://github.com/advisories/GHSA-575m-jfmw-q76c",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-66036",
+            "https://ubuntu.com/security/notices/USN-8671-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-66036",
             "https://www.vulncheck.com/advisories/ffmpeg-heap-out-of-bounds-write-in-vf-hqdn3d-filter"
           ],
@@ -44777,6 +45633,7 @@
             "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23626",
             "https://github.com/advisories/GHSA-8mx4-8xfc-qr43",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-66038",
+            "https://ubuntu.com/security/notices/USN-8671-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-66038",
             "https://www.vulncheck.com/advisories/ffmpeg-lcl-zlib-video-decoder-information-disclosure-via-lcldec-c"
           ],
@@ -44840,6 +45697,7 @@
             "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23631",
             "https://github.com/advisories/GHSA-84qc-6h9r-4w33",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-66039",
+            "https://ubuntu.com/security/notices/USN-8671-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-66039",
             "https://www.vulncheck.com/advisories/ffmpeg-mace6-audio-decoder-heap-out-of-bounds-write-via-caf-file"
           ],
@@ -44854,6 +45712,125 @@
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-66039"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V40Score": 8.5,
+              "V40Vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N"
+            },
+            "redhat": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-190",
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "FFmpeg versions from 0.5 up to, but not including, 9.0 contain a signed integer overflow vulnerability in the DVB subtitle parser in libavcodec/dvbsub_parser.c that allows attackers to trigger a heap buffer overflow by supplying a crafted WTV file. The overflow causes the bounds-check guard expression to wrap to INT_MIN, bypassing the PARSE_BUF_SIZE comparison and invoking memcpy() with attacker-controlled data into a heap buffer, resulting in an out-of-bounds heap write and potential memory corruption or code execution.",
+          "Fingerprint": "sha256:1bcee03d8a539fea3c0691c8c2416140bc474f4e415c28abee3ce018585d80f8",
+          "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
+          "LastModifiedDate": "2026-08-07T18:17:21.783Z",
+          "Layer": {
+            "DiffID": "sha256:e9eb69f85aa5e0ab4eef690bd1e8e2e94227082b3eea26a5975a42ea48737778",
+            "Digest": "sha256:eead57862dc1f5ba8517bf7720b8a2b02528faa06a5331796475016d79f8595f"
+          },
+          "PkgID": "libswresample3@7:4.4.2-0ubuntu0.22.04.1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/libswresample3@4.4.2-0ubuntu0.22.04.1?arch=amd64\u0026distro=ubuntu-22.04\u0026epoch=7",
+            "UID": "a8907732a75e29aa"
+          },
+          "PkgName": "libswresample3",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-70628",
+          "PublishedDate": "2026-08-06T22:18:26.957Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-70628",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/02fc47e13f903768b75f7985a2706a6223ab4506",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/93f2a525ec6c7b467bae68322720d10188fc6e30",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/c6ec28b18cd1eb7d39e6163137367f2d1c62aa7c",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23897",
+            "https://github.com/advisories/GHSA-qw9h-2hhv-hpfr",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-70628",
+            "https://www.cve.org/CVERecord?id=CVE-2026-70628",
+            "https://www.vulncheck.com/advisories/ffmpeg-dvb-subtitle-parser-heap-buffer-overflow-via-wtv-file"
+          ],
+          "Severity": "MEDIUM",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "ffmpeg: FFmpeg: Arbitrary code execution via crafted WTV file in DVB subtitle parser",
+          "VendorSeverity": {
+            "julia": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-70628"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V40Score": 8.5,
+              "V40Vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N"
+            },
+            "redhat": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "FFmpeg versions from 4.4 up to, but not including, 9.0 contain an out-of-bounds heap write vulnerability in the native GoPro CineForm HD (CFHD) decoder that allows remote attackers to corrupt heap memory by supplying a crafted AVI file during stream probing. The cfhd_decode() function fails to enforce the non-Bayer logical output-width invariant in the transform-type-2 reconstruction path, causing horiz_filter_clip() to write oversized 16-bit sample rows far beyond the allocated output frame buffer, which can be escalated to arbitrary code execution via overwrite of a live cleanup callback pointer.",
+          "Fingerprint": "sha256:f3736c399b6d348d6c0541ff6956338b866ab8cf268d66fc106498bbf7e5703b",
+          "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
+          "LastModifiedDate": "2026-08-07T18:17:22.307Z",
+          "Layer": {
+            "DiffID": "sha256:e9eb69f85aa5e0ab4eef690bd1e8e2e94227082b3eea26a5975a42ea48737778",
+            "Digest": "sha256:eead57862dc1f5ba8517bf7720b8a2b02528faa06a5331796475016d79f8595f"
+          },
+          "PkgID": "libswresample3@7:4.4.2-0ubuntu0.22.04.1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/libswresample3@4.4.2-0ubuntu0.22.04.1?arch=amd64\u0026distro=ubuntu-22.04\u0026epoch=7",
+            "UID": "a8907732a75e29aa"
+          },
+          "PkgName": "libswresample3",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-70632",
+          "PublishedDate": "2026-08-06T22:18:27.567Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-70632",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/1006a2151236f9235bf02822f263b3fb0532111e",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/16b2049d4d5222db6cd7c031409058571c94f6a9",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/db05df9d135fb56a4babb836d5e9f5c1d984e087",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23898",
+            "https://github.com/advisories/GHSA-q24x-99v6-6hxc",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-70632",
+            "https://www.cve.org/CVERecord?id=CVE-2026-70632",
+            "https://www.vulncheck.com/advisories/ffmpeg-heap-out-of-bounds-write-in-cfhd-decoder-via-avi-demuxing"
+          ],
+          "Severity": "MEDIUM",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "ffmpeg: FFmpeg: Arbitrary Code Execution in CFHD Decoder via Crafted AVI File",
+          "VendorSeverity": {
+            "julia": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-70632"
         },
         {
           "CVSS": {
@@ -46783,6 +47760,7 @@
             "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23783",
             "https://github.com/advisories/GHSA-575m-jfmw-q76c",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-66036",
+            "https://ubuntu.com/security/notices/USN-8671-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-66036",
             "https://www.vulncheck.com/advisories/ffmpeg-heap-out-of-bounds-write-in-vf-hqdn3d-filter"
           ],
@@ -46845,6 +47823,7 @@
             "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23626",
             "https://github.com/advisories/GHSA-8mx4-8xfc-qr43",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-66038",
+            "https://ubuntu.com/security/notices/USN-8671-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-66038",
             "https://www.vulncheck.com/advisories/ffmpeg-lcl-zlib-video-decoder-information-disclosure-via-lcldec-c"
           ],
@@ -46908,6 +47887,7 @@
             "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23631",
             "https://github.com/advisories/GHSA-84qc-6h9r-4w33",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-66039",
+            "https://ubuntu.com/security/notices/USN-8671-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-66039",
             "https://www.vulncheck.com/advisories/ffmpeg-mace6-audio-decoder-heap-out-of-bounds-write-via-caf-file"
           ],
@@ -46922,6 +47902,125 @@
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-66039"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V40Score": 8.5,
+              "V40Vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N"
+            },
+            "redhat": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-190",
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "FFmpeg versions from 0.5 up to, but not including, 9.0 contain a signed integer overflow vulnerability in the DVB subtitle parser in libavcodec/dvbsub_parser.c that allows attackers to trigger a heap buffer overflow by supplying a crafted WTV file. The overflow causes the bounds-check guard expression to wrap to INT_MIN, bypassing the PARSE_BUF_SIZE comparison and invoking memcpy() with attacker-controlled data into a heap buffer, resulting in an out-of-bounds heap write and potential memory corruption or code execution.",
+          "Fingerprint": "sha256:682ab84bb7b78ccd6f5cb4aff93fcc81de94e780605f3298ce3e0e09b0c470c9",
+          "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
+          "LastModifiedDate": "2026-08-07T18:17:21.783Z",
+          "Layer": {
+            "DiffID": "sha256:e9eb69f85aa5e0ab4eef690bd1e8e2e94227082b3eea26a5975a42ea48737778",
+            "Digest": "sha256:eead57862dc1f5ba8517bf7720b8a2b02528faa06a5331796475016d79f8595f"
+          },
+          "PkgID": "libswscale5@7:4.4.2-0ubuntu0.22.04.1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/libswscale5@4.4.2-0ubuntu0.22.04.1?arch=amd64\u0026distro=ubuntu-22.04\u0026epoch=7",
+            "UID": "51e2ed3296847d49"
+          },
+          "PkgName": "libswscale5",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-70628",
+          "PublishedDate": "2026-08-06T22:18:26.957Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-70628",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/02fc47e13f903768b75f7985a2706a6223ab4506",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/93f2a525ec6c7b467bae68322720d10188fc6e30",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/c6ec28b18cd1eb7d39e6163137367f2d1c62aa7c",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23897",
+            "https://github.com/advisories/GHSA-qw9h-2hhv-hpfr",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-70628",
+            "https://www.cve.org/CVERecord?id=CVE-2026-70628",
+            "https://www.vulncheck.com/advisories/ffmpeg-dvb-subtitle-parser-heap-buffer-overflow-via-wtv-file"
+          ],
+          "Severity": "MEDIUM",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "ffmpeg: FFmpeg: Arbitrary code execution via crafted WTV file in DVB subtitle parser",
+          "VendorSeverity": {
+            "julia": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-70628"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V40Score": 8.5,
+              "V40Vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N"
+            },
+            "redhat": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "FFmpeg versions from 4.4 up to, but not including, 9.0 contain an out-of-bounds heap write vulnerability in the native GoPro CineForm HD (CFHD) decoder that allows remote attackers to corrupt heap memory by supplying a crafted AVI file during stream probing. The cfhd_decode() function fails to enforce the non-Bayer logical output-width invariant in the transform-type-2 reconstruction path, causing horiz_filter_clip() to write oversized 16-bit sample rows far beyond the allocated output frame buffer, which can be escalated to arbitrary code execution via overwrite of a live cleanup callback pointer.",
+          "Fingerprint": "sha256:0e1a6280974a96f9eb99f670385bd4c59a84be87022ef272913e2c23c76d62fb",
+          "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
+          "LastModifiedDate": "2026-08-07T18:17:22.307Z",
+          "Layer": {
+            "DiffID": "sha256:e9eb69f85aa5e0ab4eef690bd1e8e2e94227082b3eea26a5975a42ea48737778",
+            "Digest": "sha256:eead57862dc1f5ba8517bf7720b8a2b02528faa06a5331796475016d79f8595f"
+          },
+          "PkgID": "libswscale5@7:4.4.2-0ubuntu0.22.04.1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/libswscale5@4.4.2-0ubuntu0.22.04.1?arch=amd64\u0026distro=ubuntu-22.04\u0026epoch=7",
+            "UID": "51e2ed3296847d49"
+          },
+          "PkgName": "libswscale5",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-70632",
+          "PublishedDate": "2026-08-06T22:18:27.567Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-70632",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/1006a2151236f9235bf02822f263b3fb0532111e",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/16b2049d4d5222db6cd7c031409058571c94f6a9",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/commit/db05df9d135fb56a4babb836d5e9f5c1d984e087",
+            "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23898",
+            "https://github.com/advisories/GHSA-q24x-99v6-6hxc",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-70632",
+            "https://www.cve.org/CVERecord?id=CVE-2026-70632",
+            "https://www.vulncheck.com/advisories/ffmpeg-heap-out-of-bounds-write-in-cfhd-decoder-via-avi-demuxing"
+          ],
+          "Severity": "MEDIUM",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "ffmpeg: FFmpeg: Arbitrary Code Execution in CFHD Decoder via Crafted AVI File",
+          "VendorSeverity": {
+            "julia": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-70632"
         },
         {
           "CVSS": {
@@ -48540,6 +49639,107 @@
         {
           "CVSS": {
             "julia": {
+              "V3Score": 4.4,
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:N/I:H/A:N"
+            },
+            "redhat": {
+              "V3Score": 4.4,
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:N/I:H/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-367"
+          ],
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "A TOCTOU (Time-of-Check Time-of-Use) vulnerability in GNU tar's incremental dumpdir 'X' rename handling allows a local attacker with write access to a directory being backed up to influence the restore process if the attacker has access to the system where the restore is being performed. During restoration, files or directories may be created, renamed or overwritten outside the intended extraction directory. This could lead to unauthorized file modification or, in some cases, privilege escalation. Exploitation does not require the attacker to modify or craft the archive, and standard backup and restore workflows—including extracting into a newly created directory without using the -P option do not mitigate the issue.",
+          "Fingerprint": "sha256:97d8ce1e110da82577d24be8560f81a3cd8732d2b4fb80cb3b123c2f2af41e41",
+          "InstalledVersion": "1.34+dfsg-1ubuntu0.1.22.04.6",
+          "LastModifiedDate": "2026-08-21T13:16:55.253Z",
+          "Layer": {
+            "DiffID": "sha256:c0359c5b6ede84d4a083d06d35ee77f0b338dfb17423771854d007d89953fb3e",
+            "Digest": "sha256:1317dd93c0c3b4562b5180bc49726f743cc1622f5fd1327aa883d8d8968012e3"
+          },
+          "PkgID": "tar@1.34+dfsg-1ubuntu0.1.22.04.6",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/tar@1.34%2Bdfsg-1ubuntu0.1.22.04.6?arch=amd64\u0026distro=ubuntu-22.04",
+            "UID": "1305a0a40c97d9b7"
+          },
+          "PkgName": "tar",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-18477",
+          "PublishedDate": "2026-08-03T17:16:33.897Z",
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:49361",
+            "https://access.redhat.com/security/cve/CVE-2026-18477",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2509735",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-18477",
+            "https://www.cve.org/CVERecord?id=CVE-2026-18477"
+          ],
+          "Severity": "MEDIUM",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "tar: tar: TOCTOU in incremental dumpdir 'X' rename handling allows restore path escape",
+          "VendorSeverity": {
+            "julia": 2,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-18477"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 4.4,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-59"
+          ],
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "A flaw was found in GNU tar. When extracting an archive with the --one-top-level option, hardlink targets are not confined to the designated top-level directory and may resolve relative to the extraction working directory. A crafted archive can create hardlinks that escape the intended boundary and, when combined with a preexisting symbolic link under the working directory, may allow writing outside that boundary during a single extraction.",
+          "Fingerprint": "sha256:c1120f34462412d4f826f2ee7678c5598a00240ccfbf7ba1d109960833770e55",
+          "InstalledVersion": "1.34+dfsg-1ubuntu0.1.22.04.6",
+          "LastModifiedDate": "2026-08-21T13:16:55.433Z",
+          "Layer": {
+            "DiffID": "sha256:c0359c5b6ede84d4a083d06d35ee77f0b338dfb17423771854d007d89953fb3e",
+            "Digest": "sha256:1317dd93c0c3b4562b5180bc49726f743cc1622f5fd1327aa883d8d8968012e3"
+          },
+          "PkgID": "tar@1.34+dfsg-1ubuntu0.1.22.04.6",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/tar@1.34%2Bdfsg-1ubuntu0.1.22.04.6?arch=amd64\u0026distro=ubuntu-22.04",
+            "UID": "1305a0a40c97d9b7"
+          },
+          "PkgName": "tar",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-18508",
+          "PublishedDate": "2026-08-03T16:16:28.387Z",
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:50807",
+            "https://access.redhat.com/security/cve/CVE-2026-18508",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2509843",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-18508",
+            "https://www.cve.org/CVERecord?id=CVE-2026-18508"
+          ],
+          "Severity": "MEDIUM",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "tar: tar: --one-top-level hardlink targets not confined to top-level directory enabling arbitrary file overwrite",
+          "VendorSeverity": {
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-18508"
+        },
+        {
+          "CVSS": {
+            "julia": {
               "V3Score": 4.7,
               "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N"
             },
@@ -49274,7 +50474,7 @@
           "Fingerprint": "sha256:f0a9da7e07f1c2c4d22752236ad486f71be51d864a49d87c1ae6390d9781959e",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-08-24T13:18:24.287Z",
+          "LastModifiedDate": "2026-08-25T13:18:48.103Z",
           "Layer": {
             "DiffID": "sha256:822ae4b390e226d9b0038fb5bc3c6a4e402aed409475ef702e9b04bb6e38a30c",
             "Digest": "sha256:47cec7bff6a2431a81942a9bfe29a97fe11fcd1dc2b53b2d13375270f8a29c96"
@@ -49376,7 +50576,7 @@
           "Fingerprint": "sha256:2fa515fb473b40387d3ff2196464fd49112f39583a9f820db7df94f2eac34d29",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-08-24T13:18:25.503Z",
+          "LastModifiedDate": "2026-08-25T13:18:49.327Z",
           "Layer": {
             "DiffID": "sha256:822ae4b390e226d9b0038fb5bc3c6a4e402aed409475ef702e9b04bb6e38a30c",
             "Digest": "sha256:47cec7bff6a2431a81942a9bfe29a97fe11fcd1dc2b53b2d13375270f8a29c96"
@@ -49446,11 +50646,8 @@
             "https://access.redhat.com/security/cve/CVE-2026-39829",
             "https://bugzilla.redhat.com/2480680",
             "https://bugzilla.redhat.com/2480681",
+            "https://bugzilla.redhat.com/2480684",
             "https://bugzilla.redhat.com/2480685",
-            "https://bugzilla.redhat.com/2480688",
-            "https://bugzilla.redhat.com/2480757",
-            "https://bugzilla.redhat.com/2480761",
-            "https://bugzilla.redhat.com/2493620",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480680",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480681",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
@@ -49466,7 +50663,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39835",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42508",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-57231",
-            "https://errata.almalinux.org/9/ALSA-2026-37123.html",
+            "https://errata.almalinux.org/10/ALSA-2026-36199.html",
             "https://errata.rockylinux.org/RLSA-2026:37123",
             "https://go.dev/cl/781641",
             "https://go.dev/cl/781661",
@@ -49515,7 +50712,7 @@
           "Fingerprint": "sha256:02eca38cfe8db3e07ff2271da80de9b6e2d56b5d70f1d277995ea649276f713f",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-08-24T13:18:26.707Z",
+          "LastModifiedDate": "2026-08-25T13:18:49.913Z",
           "Layer": {
             "DiffID": "sha256:822ae4b390e226d9b0038fb5bc3c6a4e402aed409475ef702e9b04bb6e38a30c",
             "Digest": "sha256:47cec7bff6a2431a81942a9bfe29a97fe11fcd1dc2b53b2d13375270f8a29c96"
@@ -49574,12 +50771,10 @@
             "https://access.redhat.com/errata/RHSA-2026:54531",
             "https://access.redhat.com/errata/RHSA-2026:57194",
             "https://access.redhat.com/security/cve/CVE-2026-39830",
-            "https://bugzilla.redhat.com/2445356",
-            "https://bugzilla.redhat.com/2456333",
-            "https://bugzilla.redhat.com/2456338",
-            "https://bugzilla.redhat.com/2456339",
+            "https://bugzilla.redhat.com/2480680",
             "https://bugzilla.redhat.com/2480681",
             "https://bugzilla.redhat.com/2480684",
+            "https://bugzilla.redhat.com/2480685",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2445356",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2456333",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2456338",
@@ -49593,7 +50788,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32283",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39829",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39830",
-            "https://errata.almalinux.org/9/ALSA-2026-29455.html",
+            "https://errata.almalinux.org/10/ALSA-2026-36199.html",
             "https://errata.rockylinux.org/RLSA-2026:29455",
             "https://github.com/golang/crypto/commit/4e7a7384ecbc8d519f6f4c11b36fa9d761fc8946",
             "https://go.dev/cl/781640",
@@ -49704,7 +50899,7 @@
           "Fingerprint": "sha256:f55eb49ec67a7a9b297d6ab840ade1534d85668a5849dbe38993cd11e78ffb0d",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-08-24T13:18:27.91Z",
+          "LastModifiedDate": "2026-08-25T13:18:50.517Z",
           "Layer": {
             "DiffID": "sha256:822ae4b390e226d9b0038fb5bc3c6a4e402aed409475ef702e9b04bb6e38a30c",
             "Digest": "sha256:47cec7bff6a2431a81942a9bfe29a97fe11fcd1dc2b53b2d13375270f8a29c96"
@@ -49749,13 +50944,15 @@
             "https://access.redhat.com/errata/RHSA-2026:57194",
             "https://access.redhat.com/security/cve/CVE-2026-39832",
             "https://bugzilla.redhat.com/2480680",
+            "https://bugzilla.redhat.com/2480681",
+            "https://bugzilla.redhat.com/2480684",
             "https://bugzilla.redhat.com/2480685",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480680",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39832",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39835",
-            "https://errata.almalinux.org/9/ALSA-2026-37410.html",
+            "https://errata.almalinux.org/10/ALSA-2026-36199.html",
             "https://errata.rockylinux.org/RLSA-2026:37410",
             "https://github.com/golang/crypto/commit/e3d1254f1e7e60baa086142c46174bf6d8d0fe50",
             "https://go.dev/cl/778640",
@@ -49809,7 +51006,7 @@
           "Fingerprint": "sha256:0cd4e6cd91f882d45b093f312dba35d2be1e08f0d7871b1700282cd8270fa5fc",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-08-24T13:18:28.7Z",
+          "LastModifiedDate": "2026-08-25T13:18:51.383Z",
           "Layer": {
             "DiffID": "sha256:822ae4b390e226d9b0038fb5bc3c6a4e402aed409475ef702e9b04bb6e38a30c",
             "Digest": "sha256:47cec7bff6a2431a81942a9bfe29a97fe11fcd1dc2b53b2d13375270f8a29c96"
@@ -49870,13 +51067,15 @@
             "https://access.redhat.com/errata/RHSA-2026:57194",
             "https://access.redhat.com/security/cve/CVE-2026-39835",
             "https://bugzilla.redhat.com/2480680",
+            "https://bugzilla.redhat.com/2480681",
+            "https://bugzilla.redhat.com/2480684",
             "https://bugzilla.redhat.com/2480685",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480680",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39832",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39835",
-            "https://errata.almalinux.org/9/ALSA-2026-37410.html",
+            "https://errata.almalinux.org/10/ALSA-2026-36199.html",
             "https://errata.rockylinux.org/RLSA-2026:37410",
             "https://go.dev/cl/781660",
             "https://go.dev/issue/79563",
@@ -49923,7 +51122,7 @@
           "Fingerprint": "sha256:795adfc95cd1065de4d96aec28540c0266782809f34addabbfee601df3ce568d",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-08-24T13:18:44.077Z",
+          "LastModifiedDate": "2026-08-25T13:19:02.453Z",
           "Layer": {
             "DiffID": "sha256:822ae4b390e226d9b0038fb5bc3c6a4e402aed409475ef702e9b04bb6e38a30c",
             "Digest": "sha256:47cec7bff6a2431a81942a9bfe29a97fe11fcd1dc2b53b2d13375270f8a29c96"
@@ -50048,7 +51247,7 @@
           "Fingerprint": "sha256:c409852b4d9e5e80c55f427623dd22b341efd645cc2f441b99e40d84d7b9e675",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-08-24T13:19:01.293Z",
+          "LastModifiedDate": "2026-08-25T13:19:16.473Z",
           "Layer": {
             "DiffID": "sha256:822ae4b390e226d9b0038fb5bc3c6a4e402aed409475ef702e9b04bb6e38a30c",
             "Digest": "sha256:47cec7bff6a2431a81942a9bfe29a97fe11fcd1dc2b53b2d13375270f8a29c96"
@@ -50458,15 +51657,15 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-25681",
           "PublishedDate": "2026-05-22T16:16:19.863Z",
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:34357",
             "https://access.redhat.com/errata/RHSA-2026:37123",
             "https://access.redhat.com/security/cve/CVE-2026-25681",
-            "https://bugzilla.redhat.com/2480680",
-            "https://bugzilla.redhat.com/2480681",
-            "https://bugzilla.redhat.com/2480685",
-            "https://bugzilla.redhat.com/2480688",
-            "https://bugzilla.redhat.com/2480757",
+            "https://bugzilla.redhat.com/2466505",
+            "https://bugzilla.redhat.com/2466507",
+            "https://bugzilla.redhat.com/2467822",
+            "https://bugzilla.redhat.com/2480756",
             "https://bugzilla.redhat.com/2480761",
-            "https://bugzilla.redhat.com/2493620",
+            "https://bugzilla.redhat.com/2484207",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480680",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480681",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
@@ -50482,7 +51681,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39835",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42508",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-57231",
-            "https://errata.almalinux.org/9/ALSA-2026-37123.html",
+            "https://errata.almalinux.org/10/ALSA-2026-34357.html",
             "https://errata.rockylinux.org/RLSA-2026:37123",
             "https://go.dev/cl/781703",
             "https://go.dev/issue/79574",
@@ -50612,7 +51811,7 @@
           "Fingerprint": "sha256:852e49e5444cb2fd3783b518c4fed046a88ae91457d783c0cfe52daf5eba7785",
           "FixedVersion": "0.55.0",
           "InstalledVersion": "v0.53.0",
-          "LastModifiedDate": "2026-08-24T13:18:22.547Z",
+          "LastModifiedDate": "2026-08-25T13:18:46.24Z",
           "Layer": {
             "DiffID": "sha256:822ae4b390e226d9b0038fb5bc3c6a4e402aed409475ef702e9b04bb6e38a30c",
             "Digest": "sha256:47cec7bff6a2431a81942a9bfe29a97fe11fcd1dc2b53b2d13375270f8a29c96"
@@ -50747,12 +51946,13 @@
             "https://access.redhat.com/errata/RHSA-2026:57541",
             "https://access.redhat.com/security/cve/CVE-2026-39821",
             "https://bugzilla.redhat.com/2480756",
+            "https://bugzilla.redhat.com/2484207",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480756",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2498152",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39821",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39822",
-            "https://errata.almalinux.org/9/ALSA-2026-37435.html",
+            "https://errata.almalinux.org/10/ALSA-2026-46395.html",
             "https://errata.rockylinux.org/RLSA-2026:37435",
             "https://github.com/golang/go/issues/78760",
             "https://go.dev/cl/767220",
@@ -51125,7 +52325,7 @@
           "Fingerprint": "sha256:e797bf043e8817c4963569c37f8ea273f210b454bdb135ce281a3e1cf1928047",
           "FixedVersion": "1.25.11, 1.26.4",
           "InstalledVersion": "v1.25.8",
-          "LastModifiedDate": "2026-08-24T13:17:50.51Z",
+          "LastModifiedDate": "2026-08-25T13:18:13.163Z",
           "Layer": {
             "DiffID": "sha256:822ae4b390e226d9b0038fb5bc3c6a4e402aed409475ef702e9b04bb6e38a30c",
             "Digest": "sha256:47cec7bff6a2431a81942a9bfe29a97fe11fcd1dc2b53b2d13375270f8a29c96"
@@ -51208,14 +52408,14 @@
             "https://access.redhat.com/errata/RHSA-2026:55899",
             "https://access.redhat.com/errata/RHSA-2026:57194",
             "https://access.redhat.com/security/cve/CVE-2026-27145",
-            "https://bugzilla.redhat.com/2445356",
+            "https://bugzilla.redhat.com/2480756",
             "https://bugzilla.redhat.com/2484207",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2445356",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2484207",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-25679",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27145",
-            "https://errata.almalinux.org/9/ALSA-2026-36317.html",
+            "https://errata.almalinux.org/10/ALSA-2026-46395.html",
             "https://errata.rockylinux.org/RLSA-2026:36317",
             "https://go.dev/cl/783621",
             "https://go.dev/issue/79694",
@@ -51268,7 +52468,7 @@
           "Fingerprint": "sha256:b3fd5b094e763a5a8a58efdecaf84f57abcd083abea02d064e3b0e40e093b091",
           "FixedVersion": "1.25.9, 1.26.2",
           "InstalledVersion": "v1.25.8",
-          "LastModifiedDate": "2026-08-24T13:17:57.91Z",
+          "LastModifiedDate": "2026-08-25T13:18:18.293Z",
           "Layer": {
             "DiffID": "sha256:822ae4b390e226d9b0038fb5bc3c6a4e402aed409475ef702e9b04bb6e38a30c",
             "Digest": "sha256:47cec7bff6a2431a81942a9bfe29a97fe11fcd1dc2b53b2d13375270f8a29c96"
@@ -51457,7 +52657,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32280",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32281",
-            "https://errata.almalinux.org/9/ALSA-2026-49838.html",
+            "https://errata.almalinux.org/10/ALSA-2026-49526.html",
             "https://errata.rockylinux.org/RLSA-2026:49838",
             "https://go.dev/cl/758320",
             "https://go.dev/issue/78282",
@@ -51528,6 +52728,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-32281",
           "PublishedDate": "2026-04-08T02:16:03.35Z",
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:49526",
             "https://access.redhat.com/errata/RHSA-2026:49838",
             "https://access.redhat.com/security/cve/CVE-2026-32281",
             "https://bugzilla.redhat.com/2456333",
@@ -51537,7 +52738,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32280",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32281",
-            "https://errata.almalinux.org/9/ALSA-2026-49838.html",
+            "https://errata.almalinux.org/10/ALSA-2026-49526.html",
             "https://errata.rockylinux.org/RLSA-2026:49838",
             "https://go.dev/cl/758061",
             "https://go.dev/issue/78281",
@@ -51595,7 +52796,7 @@
           "Fingerprint": "sha256:7db4a82ed81b2b9eda7305889c245437e13c9f46af67c973160458898d1fd253",
           "FixedVersion": "1.25.9, 1.26.2",
           "InstalledVersion": "v1.25.8",
-          "LastModifiedDate": "2026-08-24T13:17:59.687Z",
+          "LastModifiedDate": "2026-08-25T13:18:20.29Z",
           "Layer": {
             "DiffID": "sha256:822ae4b390e226d9b0038fb5bc3c6a4e402aed409475ef702e9b04bb6e38a30c",
             "Digest": "sha256:47cec7bff6a2431a81942a9bfe29a97fe11fcd1dc2b53b2d13375270f8a29c96"
@@ -51729,6 +52930,7 @@
             "https://access.redhat.com/errata/RHSA-2026:55901",
             "https://access.redhat.com/errata/RHSA-2026:55902",
             "https://access.redhat.com/errata/RHSA-2026:55903",
+            "https://access.redhat.com/errata/RHSA-2026:57802",
             "https://access.redhat.com/errata/RHSA-2026:7291",
             "https://access.redhat.com/errata/RHSA-2026:7385",
             "https://access.redhat.com/security/cve/CVE-2026-32283",
@@ -51745,7 +52947,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32280",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32281",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32283",
-            "https://errata.almalinux.org/9/ALSA-2026-29703.html",
+            "https://errata.almalinux.org/10/ALSA-2026-29195.html",
             "https://errata.rockylinux.org/RLSA-2026:29703",
             "https://go.dev/cl/763767",
             "https://go.dev/issue/78334",
@@ -51804,7 +53006,7 @@
           "Fingerprint": "sha256:31740d1b24e1b556c4911acb3c764a7be51ffcfaa3755d1f8f4572400451891d",
           "FixedVersion": "1.25.10, 1.26.3",
           "InstalledVersion": "v1.25.8",
-          "LastModifiedDate": "2026-08-24T13:18:11.86Z",
+          "LastModifiedDate": "2026-08-25T13:18:32.36Z",
           "Layer": {
             "DiffID": "sha256:822ae4b390e226d9b0038fb5bc3c6a4e402aed409475ef702e9b04bb6e38a30c",
             "Digest": "sha256:47cec7bff6a2431a81942a9bfe29a97fe11fcd1dc2b53b2d13375270f8a29c96"
@@ -51915,10 +53117,12 @@
             "https://access.redhat.com/errata/RHSA-2026:57194",
             "https://access.redhat.com/security/cve/CVE-2026-33811",
             "https://bugzilla.redhat.com/2467822",
+            "https://bugzilla.redhat.com/2480756",
+            "https://bugzilla.redhat.com/2484207",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2467822",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-33811",
-            "https://errata.almalinux.org/9/ALSA-2026-39319.html",
+            "https://errata.almalinux.org/10/ALSA-2026-39573.html",
             "https://errata.rockylinux.org/RLSA-2026:39319",
             "https://go.dev/cl/767860",
             "https://go.dev/issue/78803",
@@ -51977,7 +53181,7 @@
           "Fingerprint": "sha256:2ace4eb2f11aa6f705e0cf7d3bc742c9e8027375b76ae26dc84a1c3281f9d0c8",
           "FixedVersion": "1.25.10, 1.26.3",
           "InstalledVersion": "v1.25.8",
-          "LastModifiedDate": "2026-08-24T13:18:13.207Z",
+          "LastModifiedDate": "2026-08-25T13:18:33.86Z",
           "Layer": {
             "DiffID": "sha256:822ae4b390e226d9b0038fb5bc3c6a4e402aed409475ef702e9b04bb6e38a30c",
             "Digest": "sha256:47cec7bff6a2431a81942a9bfe29a97fe11fcd1dc2b53b2d13375270f8a29c96"
@@ -52134,7 +53338,7 @@
           "Fingerprint": "sha256:2a8d188b6de7df3b56da52acaaf09a1bd3afc4343b77a48320690f54f3339e0d",
           "FixedVersion": "1.25.10, 1.26.3",
           "InstalledVersion": "v1.25.8",
-          "LastModifiedDate": "2026-08-24T13:18:21.693Z",
+          "LastModifiedDate": "2026-08-25T13:18:45.35Z",
           "Layer": {
             "DiffID": "sha256:822ae4b390e226d9b0038fb5bc3c6a4e402aed409475ef702e9b04bb6e38a30c",
             "Digest": "sha256:47cec7bff6a2431a81942a9bfe29a97fe11fcd1dc2b53b2d13375270f8a29c96"
@@ -52237,7 +53441,7 @@
           "Fingerprint": "sha256:519666d965e4ea94b9704812214a223aae8b3f4aa79c55f33cc8c7242ae40d02",
           "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
           "InstalledVersion": "v1.25.8",
-          "LastModifiedDate": "2026-08-24T13:18:22.547Z",
+          "LastModifiedDate": "2026-08-25T13:18:46.24Z",
           "Layer": {
             "DiffID": "sha256:822ae4b390e226d9b0038fb5bc3c6a4e402aed409475ef702e9b04bb6e38a30c",
             "Digest": "sha256:47cec7bff6a2431a81942a9bfe29a97fe11fcd1dc2b53b2d13375270f8a29c96"
@@ -52372,12 +53576,13 @@
             "https://access.redhat.com/errata/RHSA-2026:57541",
             "https://access.redhat.com/security/cve/CVE-2026-39821",
             "https://bugzilla.redhat.com/2480756",
+            "https://bugzilla.redhat.com/2484207",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480756",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2498152",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39821",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39822",
-            "https://errata.almalinux.org/9/ALSA-2026-37435.html",
+            "https://errata.almalinux.org/10/ALSA-2026-46395.html",
             "https://errata.rockylinux.org/RLSA-2026:37435",
             "https://github.com/golang/go/issues/78760",
             "https://go.dev/cl/767220",
@@ -52446,13 +53651,14 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-39822",
           "PublishedDate": "2026-07-08T17:17:21.31Z",
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:38495",
             "https://access.redhat.com/errata/RHSA-2026:38878",
             "https://access.redhat.com/security/cve/CVE-2026-39822",
             "https://bugzilla.redhat.com/2498152",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2498152",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39822",
-            "https://errata.almalinux.org/9/ALSA-2026-38878.html",
+            "https://errata.almalinux.org/10/ALSA-2026-38495.html",
             "https://errata.rockylinux.org/RLSA-2026:38878",
             "https://go.dev/cl/797880",
             "https://go.dev/issue/79005",
@@ -52571,7 +53777,7 @@
           "Fingerprint": "sha256:aea098cc3f7d24f657ac6fa4c2d9309df53657c3f23fc7909a1ad2d2f0f3ddc4",
           "FixedVersion": "1.25.10, 1.26.3",
           "InstalledVersion": "v1.25.8",
-          "LastModifiedDate": "2026-08-24T13:18:43.233Z",
+          "LastModifiedDate": "2026-08-25T13:19:01.603Z",
           "Layer": {
             "DiffID": "sha256:822ae4b390e226d9b0038fb5bc3c6a4e402aed409475ef702e9b04bb6e38a30c",
             "Digest": "sha256:47cec7bff6a2431a81942a9bfe29a97fe11fcd1dc2b53b2d13375270f8a29c96"
@@ -53037,17 +54243,10 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-32282",
           "PublishedDate": "2026-04-08T02:16:03.467Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:19353",
             "https://access.redhat.com/errata/RHSA-2026:23228",
+            "https://access.redhat.com/errata/RHSA-2026:25999",
             "https://access.redhat.com/security/cve/CVE-2026-32282",
-            "https://bugzilla.redhat.com/2445356",
-            "https://bugzilla.redhat.com/2449833",
-            "https://bugzilla.redhat.com/2455470",
-            "https://bugzilla.redhat.com/2456333",
-            "https://bugzilla.redhat.com/2456335",
             "https://bugzilla.redhat.com/2456336",
-            "https://bugzilla.redhat.com/2456338",
-            "https://bugzilla.redhat.com/2456339",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2434432",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2437111",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2445345",
@@ -53065,7 +54264,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32283",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-33186",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-34986",
-            "https://errata.almalinux.org/9/ALSA-2026-19353.html",
+            "https://errata.almalinux.org/10/ALSA-2026-25999.html",
             "https://errata.rockylinux.org/RLSA-2026:23228",
             "https://go.dev/cl/763761",
             "https://go.dev/issue/78293",
@@ -53084,7 +54283,7 @@
             "GO-2026-4864"
           ],
           "VendorSeverity": {
-            "alma": 3,
+            "alma": 2,
             "amazon": 3,
             "bitnami": 2,
             "nvd": 2,
@@ -53447,10 +54646,10 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-42505",
           "PublishedDate": "2026-07-08T17:17:21.497Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:37435",
+            "https://access.redhat.com/errata/RHSA-2026:37436",
             "https://access.redhat.com/security/cve/CVE-2026-42505",
             "https://bugzilla.redhat.com/2480756",
-            "https://errata.almalinux.org/9/ALSA-2026-37435.html",
+            "https://errata.almalinux.org/10/ALSA-2026-37436.html",
             "https://go.dev/cl/775960",
             "https://go.dev/issue/79282",
             "https://groups.google.com/g/golang-announce/c/OrmQE_Yp5Sc",
@@ -53508,6 +54707,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-42507",
           "PublishedDate": "2026-06-02T23:16:38.027Z",
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:29980",
             "https://access.redhat.com/errata/RHSA-2026:29981",
             "https://access.redhat.com/security/cve/CVE-2026-42507",
             "https://bugzilla.redhat.com/2484205",
@@ -53516,7 +54716,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27145",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42507",
-            "https://errata.almalinux.org/9/ALSA-2026-29981.html",
+            "https://errata.almalinux.org/10/ALSA-2026-29980.html",
             "https://errata.rockylinux.org/RLSA-2026:29981",
             "https://go.dev/cl/777060",
             "https://go.dev/issue/79346",
