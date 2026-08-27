@@ -1,6 +1,8 @@
 # hub-pipeline-notification SBOM quality
 
-Collection status: `collected`; collected at `2026-08-26T02:44:54Z`.
+Collection status: `stale`; collected at `2026-08-26T02:44:54Z`.
+
+Last collection error: `GitHub API returned 500: Failed to generate SBOM: Request timed out.`.
 
 Overall quality: **Needs work**, **68/100** across **95 packages**.
 
