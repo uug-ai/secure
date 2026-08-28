@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:72dd959d4f4557c71aaabe74c58bfb27964a304e3069865f038232b3248a795b",
   "ArtifactName": "ghcr.io/uug-ai/hub-objecttracking@sha256:b6a121c8f0c1af73d16aa5424504f415722c2ce70e3dd2a2c4336bb19b5cbbf6",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-08-27T05:41:38.164308984Z",
+  "CreatedAt": "2026-08-28T06:20:06.055312578Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
@@ -492,7 +492,7 @@
     ],
     "Size": 3819322880
   },
-  "ReportID": "01a041bc-f6f4-74b1-ba59-b7103cfce5ca",
+  "ReportID": "01a04706-8a27-74bf-ac85-9b93a6ecf300",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -17611,6 +17611,56 @@
         },
         {
           "CVSS": {
+            "redhat": {
+              "V3Score": 5.3,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:L"
+            }
+          },
+          "CweIDs": [
+            "CWE-190"
+          ],
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "diff3 tool from GNU diffutils is vulnerable to a heap‑based buffer overflow due to multiple signed integer overflows in line‑mapping calculations. Incorrect arithmetic in mapping line ranges can result in corrupted values being used for memory allocation and loop bounds.\nWhen processing crafted diff output, these overflows may cause the application to allocate insufficient memory and subsequently perform out‑of‑bounds writes during internal processing. \nAn attacker who can control the output of the diff program used by diff3 (e.g. via --diff-program pointing to a malicious script) can trigger out-of-bounds writes, resulting in a crash and potentially remote code execution depending on the environment.\n\n\nThis issue has been fixed in commit 9ff04d5b84743e331e80b589335a52c5480d1815 \n\nNOTE:\nThe project maintainers claim that this is not a security issue. They state that the worst outcome this issue can cause is a crash of diff and that it cannot be used to escalate privileges.",
+          "Fingerprint": "sha256:66d63bacc69516687b2b8833711cd8b867f47f401b02073f6e9f126a6acfd4c1",
+          "InstalledVersion": "1:3.8-0ubuntu2",
+          "LastModifiedDate": "2026-07-27T12:16:45.25Z",
+          "Layer": {
+            "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
+            "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
+          },
+          "PkgID": "diffutils@1:3.8-0ubuntu2",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/diffutils@3.8-0ubuntu2?arch=amd64\u0026distro=ubuntu-22.04\u0026epoch=1",
+            "UID": "c14bf4adf8aeaec2"
+          },
+          "PkgName": "diffutils",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-53910",
+          "PublishedDate": "2026-07-22T14:17:21.03Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-53910",
+            "https://cert.pl/en/posts/2026/07/CVE-2026-53910",
+            "https://cgit.git.savannah.gnu.org/cgit/diffutils.git/commit/?id=73ed7ce85cc78effb94daf028c9af6b4e5252e50",
+            "https://cgit.git.savannah.gnu.org/cgit/diffutils.git/commit/?id=9ff04d5b84743e331e80b589335a52c5480d1815",
+            "https://git.savannah.gnu.org/cgit/diffutils.git/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-53910",
+            "https://www.cve.org/CVERecord?id=CVE-2026-53910"
+          ],
+          "Severity": "MEDIUM",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "diffutils: heap‑based buffer overflow due to multiple signed integer overflows in line‑mapping calculations",
+          "VendorSeverity": {
+            "redhat": 1,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-53910"
+        },
+        {
+          "CVSS": {
             "julia": {
               "V3Score": 7,
               "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
@@ -21857,11 +21907,11 @@
             "Name": "Ubuntu CVE Tracker",
             "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
           },
-          "Description": "GNU gzip contains a global buffer overflow vulnerability in the LZH decompression logic caused by improper reuse of shared global state between different decompression formats within a single execution. GNU gzip maintains a global array that is shared across the LZ77, LZW, and LZH decompression routines and is not reinitialized between files processed in the same invocation.\nBy decompressing a specially crafted LZW file followed by a specially crafted LZH file in a single gzip -d command, an attacker can poison the shared global state and subsequently trigger an out‑of‑bounds read in the LZH decoder. The LZH decompression logic follows stale values left in the shared array, causing reads past the end of the allocated global buffer.\n\nThis issue has been fixed in the commit 63dbf6b3b9e6e781df1a6a64e609b10e23969681",
+          "Description": "GNU gzip contains a global buffer overflow vulnerability in the LZH decompression logic caused by improper reuse of shared global state between different decompression formats within a single execution. GNU gzip maintains a global array that is shared across the LZ77, LZW, and LZH decompression routines and is not reinitialized between files processed in the same invocation.\nBy decompressing a specially crafted LZW file followed by a specially crafted LZH file in a single gzip -d command, an attacker can poison the shared global state and subsequently trigger an out‑of‑bounds read in the LZH decoder. The LZH decompression logic follows stale values left in the shared array, causing reads past the end of the allocated global buffer.\n\nThis issue has been fixed in commits 63dbf6b3b9e6e781df1a6a64e609b10e23969681 and e7378c2d421be6a286922374425680bbe9ad8b7d.",
           "Fingerprint": "sha256:c5ee0c21c321cae029902ee5a61a527d53170e97497b6d40971b1425b4bea6b0",
           "FixedVersion": "1.10-4ubuntu4.2",
           "InstalledVersion": "1.10-4ubuntu4.1",
-          "LastModifiedDate": "2026-08-25T04:18:11.393Z",
+          "LastModifiedDate": "2026-08-27T13:17:57.967Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -21877,9 +21927,11 @@
           "References": [
             "http://www.openwall.com/lists/oss-security/2026/08/23/1",
             "http://www.openwall.com/lists/oss-security/2026/08/25/1",
+            "http://www.openwall.com/lists/oss-security/2026/08/27/2",
             "https://cert.pl/en/posts/2026/04/CVE-2026-41991",
             "https://cert.pl/en/posts/2026/04/CVE-2026-41991/",
             "https://cgit.git.savannah.gnu.org/cgit/gzip.git/commit/?id=63dbf6b3b9e6e781df1a6a64e609b10e23969681",
+            "https://cgit.git.savannah.gnu.org/cgit/gzip.git/commit/?id=e7378c2d421be6a286922374425680bbe9ad8b7d",
             "https://github.com/advisories/GHSA-qxh4-rprf-2mmj",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-41992",
             "https://ubuntu.com/security/notices/USN-8512-1",
@@ -22025,7 +22077,7 @@
           "Description": "attr before version 2.6.0 contains a symlink traversal vulnerability in the getfattr and setfattr utilities that allows local attackers to escalate privileges by replacing a pathname component with a symbolic link during directory hierarchy traversal. Attackers who control a pathname component can redirect getfattr and setfattr operations to arbitrary files by substituting a symlink, leading to local privilege escalation when getfattr or setfattr is invoked by a privileged process over an attacker-controlled path.",
           "Fingerprint": "sha256:a1d342fe30f37f77d52ecdc13b18c5a13160cdcd05954d57dbb926287245debc",
           "InstalledVersion": "1:2.5.1-1build1",
-          "LastModifiedDate": "2026-08-26T13:19:15.67Z",
+          "LastModifiedDate": "2026-08-27T13:18:24.933Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -22042,6 +22094,7 @@
             "https://access.redhat.com/errata/RHSA-2026:34889",
             "https://access.redhat.com/errata/RHSA-2026:56133",
             "https://access.redhat.com/errata/RHSA-2026:59380",
+            "https://access.redhat.com/errata/RHSA-2026:60226",
             "https://access.redhat.com/security/cve/CVE-2026-54371",
             "https://bugzilla.redhat.com/2490283",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2490283",
@@ -22049,10 +22102,10 @@
             "https://cgit.git.savannah.nongnu.org/cgit/attr.git/commit/?id=c440855d6b33446edf4b5eb1a2d892281f15a99b",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54371",
-            "https://errata.almalinux.org/8/ALSA-2026-56133.html",
+            "https://errata.almalinux.org/9/ALSA-2026-60226.html",
             "https://errata.rockylinux.org/RLSA-2026:56133",
             "https://linux.oracle.com/cve/CVE-2026-54371.html",
-            "https://linux.oracle.com/errata/ELSA-2026-59380.html",
+            "https://linux.oracle.com/errata/ELSA-2026-60226-0.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-54371",
             "https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-54371.json",
             "https://www.cve.org/CVERecord?id=CVE-2026-54371",
@@ -37322,7 +37375,7 @@
           "Fingerprint": "sha256:a5a992b0c7c4e2d45d34a8538d14304b4ba814142d905c66145fdf72b6e855a2",
           "FixedVersion": "3.7.3-4ubuntu1.9",
           "InstalledVersion": "3.7.3-4ubuntu1.4",
-          "LastModifiedDate": "2026-08-26T22:16:23.573Z",
+          "LastModifiedDate": "2026-08-27T13:17:39.73Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -37437,7 +37490,7 @@
           "Fingerprint": "sha256:432fe9f447afefa2943500595f0977ab5724097c2bee848cfe1a20e397ee3889",
           "FixedVersion": "3.7.3-4ubuntu1.9",
           "InstalledVersion": "3.7.3-4ubuntu1.4",
-          "LastModifiedDate": "2026-08-26T22:16:24.12Z",
+          "LastModifiedDate": "2026-08-27T13:17:40.457Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -37763,7 +37816,7 @@
           "Fingerprint": "sha256:a8b6c828484c1294137c032fab07bd10f70782f87933d40e8f5fa2a39c6ada98",
           "FixedVersion": "3.7.3-4ubuntu1.9",
           "InstalledVersion": "3.7.3-4ubuntu1.4",
-          "LastModifiedDate": "2026-08-26T17:16:58.303Z",
+          "LastModifiedDate": "2026-08-27T13:17:58.14Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -37885,7 +37938,7 @@
           "Fingerprint": "sha256:6079ce9d9142fb70aa3b5fa1c73499e977f5528c789affd1d16d6666fbe75595",
           "FixedVersion": "3.7.3-4ubuntu1.9",
           "InstalledVersion": "3.7.3-4ubuntu1.4",
-          "LastModifiedDate": "2026-08-26T17:16:59.277Z",
+          "LastModifiedDate": "2026-08-27T13:17:58.8Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -38002,7 +38055,7 @@
           "Fingerprint": "sha256:4409af75a02d4606421e1447d91b980933a316cb13d524b3db8ebca40d1e15c7",
           "FixedVersion": "3.7.3-4ubuntu1.9",
           "InstalledVersion": "3.7.3-4ubuntu1.4",
-          "LastModifiedDate": "2026-08-26T17:17:00.167Z",
+          "LastModifiedDate": "2026-08-27T17:18:23.433Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -43261,6 +43314,7 @@
           },
           "Description": "A flaw was found in p11-kit. The RPC message attribute parsing functions p11_rpc_message_get_attribute() and p11_rpc_message_get_attribute_array_value() form a mutually-recursive call chain with no recursion depth limit when processing nested CKA_WRAP_TEMPLATE, CKA_UNWRAP_TEMPLATE, and CKA_DERIVE_TEMPLATE attributes. An unauthenticated attacker with local access to the p11-kit RPC Unix domain socket can send a specially crafted request with deeply nested template attributes, causing stack exhaustion and crashing the p11-kit server process and its dependent services.",
           "Fingerprint": "sha256:b3705137c3f55c9a66e8f879b87080e30799058a30b3fbbfe268927ba42656dd",
+          "FixedVersion": "0.24.0-6ubuntu0.1",
           "InstalledVersion": "0.24.0-6build1",
           "LastModifiedDate": "2026-08-25T10:18:03.38Z",
           "Layer": {
@@ -43295,11 +43349,12 @@
             "https://linux.oracle.com/cve/CVE-2026-13757.html",
             "https://linux.oracle.com/errata/ELSA-2026-49668.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-13757",
+            "https://ubuntu.com/security/notices/USN-8687-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-13757"
           ],
           "Severity": "MEDIUM",
           "SeveritySource": "ubuntu",
-          "Status": "affected",
+          "Status": "fixed",
           "Title": "p11-kit: Stack exhaustion via unbounded recursion in RPC attribute parsing",
           "VendorSeverity": {
             "alma": 2,
@@ -43310,6 +43365,56 @@
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-13757"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 6.2,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-122"
+          ],
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "A flaw was found in p11-kit. A local attacker, or one with equivalent access to a reachable RPC channel, could exploit an integer overflow vulnerability. By sending specially crafted messages, the attacker can cause the system to miscalculate memory allocation for nested attributes. This leads to a memory corruption issue, specifically a heap out-of-bounds write, which can crash the p11-kit RPC parsing process, resulting in a Denial of Service (DoS). This vulnerability is only exploitable on 32 bit systems.",
+          "Fingerprint": "sha256:db7cc1200b69faf420d587345ea3a99e00c8eebf5516e8a0d2324cdc6f8d9f20",
+          "FixedVersion": "0.24.0-6ubuntu0.1",
+          "InstalledVersion": "0.24.0-6build1",
+          "LastModifiedDate": "2026-08-14T19:07:46.08Z",
+          "Layer": {
+            "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
+            "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
+          },
+          "PkgID": "libp11-kit0@0.24.0-6build1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/libp11-kit0@0.24.0-6build1?arch=amd64\u0026distro=ubuntu-22.04",
+            "UID": "321efb5e9d448b58"
+          },
+          "PkgName": "libp11-kit0",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-18938",
+          "PublishedDate": "2026-08-07T09:16:58.67Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-18938",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2478995",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-18938",
+            "https://ubuntu.com/security/notices/USN-8687-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-18938"
+          ],
+          "Severity": "MEDIUM",
+          "SeveritySource": "ubuntu",
+          "Status": "fixed",
+          "Title": "p11-kit: Integer overflow in RPC attribute-array length calculation can under-allocate nested attribute storage on 32 bit systems",
+          "VendorSeverity": {
+            "azure": 2,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-18938"
         },
         {
           "CVSS": {
@@ -48055,6 +48160,7 @@
             "https://nvd.nist.gov/vuln/detail/CVE-2026-63076",
             "https://openssl-library.org/news/secadv/20260825.txt",
             "https://ubuntu.com/security/notices/USN-8678-1",
+            "https://ubuntu.com/security/notices/USN-8678-2",
             "https://www.cve.org/CVERecord?id=CVE-2026-63076"
           ],
           "Severity": "MEDIUM",
@@ -48704,7 +48810,7 @@
             "https://github.openssl.org/openssl/extended-releases/commit/9947251413065a05189a63c9b7a6c1d4e224c21c",
             "https://github.openssl.org/openssl/extended-releases/commit/b78ec0824da857223486660177d3b1f255c65d87",
             "https://linux.oracle.com/cve/CVE-2024-5535.html",
-            "https://linux.oracle.com/errata/ELSA-2025-1673.html",
+            "https://linux.oracle.com/errata/ELSA-2026-60329-0.html",
             "https://lists.debian.org/debian-lts-announce/2024/10/msg00033.html",
             "https://lists.debian.org/debian-lts-announce/2024/11/msg00000.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2024-5535",
@@ -48732,7 +48838,7 @@
             "azure": 4,
             "cbl-mariner": 4,
             "julia": 4,
-            "oracle-oval": 3,
+            "oracle-oval": 1,
             "photon": 4,
             "redhat": 1,
             "rocky": 1,
@@ -50665,6 +50771,7 @@
             "https://nvd.nist.gov/vuln/detail/CVE-2026-63074",
             "https://openssl-library.org/news/secadv/20260825.txt",
             "https://ubuntu.com/security/notices/USN-8678-1",
+            "https://ubuntu.com/security/notices/USN-8678-2",
             "https://www.cve.org/CVERecord?id=CVE-2026-63074"
           ],
           "Severity": "LOW",
@@ -59089,6 +59196,7 @@
             "https://nvd.nist.gov/vuln/detail/CVE-2026-63076",
             "https://openssl-library.org/news/secadv/20260825.txt",
             "https://ubuntu.com/security/notices/USN-8678-1",
+            "https://ubuntu.com/security/notices/USN-8678-2",
             "https://www.cve.org/CVERecord?id=CVE-2026-63076"
           ],
           "Severity": "MEDIUM",
@@ -59738,7 +59846,7 @@
             "https://github.openssl.org/openssl/extended-releases/commit/9947251413065a05189a63c9b7a6c1d4e224c21c",
             "https://github.openssl.org/openssl/extended-releases/commit/b78ec0824da857223486660177d3b1f255c65d87",
             "https://linux.oracle.com/cve/CVE-2024-5535.html",
-            "https://linux.oracle.com/errata/ELSA-2025-1673.html",
+            "https://linux.oracle.com/errata/ELSA-2026-60329-0.html",
             "https://lists.debian.org/debian-lts-announce/2024/10/msg00033.html",
             "https://lists.debian.org/debian-lts-announce/2024/11/msg00000.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2024-5535",
@@ -59766,7 +59874,7 @@
             "azure": 4,
             "cbl-mariner": 4,
             "julia": 4,
-            "oracle-oval": 3,
+            "oracle-oval": 1,
             "photon": 4,
             "redhat": 1,
             "rocky": 1,
@@ -61699,6 +61807,7 @@
             "https://nvd.nist.gov/vuln/detail/CVE-2026-63074",
             "https://openssl-library.org/news/secadv/20260825.txt",
             "https://ubuntu.com/security/notices/USN-8678-1",
+            "https://ubuntu.com/security/notices/USN-8678-2",
             "https://www.cve.org/CVERecord?id=CVE-2026-63074"
           ],
           "Severity": "LOW",
@@ -62317,6 +62426,7 @@
             "https://metacpan.org/release/PEVANS/Socket-2.041/changes",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-12087",
             "https://ubuntu.com/security/notices/USN-8675-1",
+            "https://ubuntu.com/security/notices/USN-8684-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-12087"
           ],
           "Severity": "MEDIUM",
@@ -62374,6 +62484,7 @@
             "https://lists.security.metacpan.org/cve-announce/msg/41780104/",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-13221",
             "https://ubuntu.com/security/notices/USN-8675-1",
+            "https://ubuntu.com/security/notices/USN-8684-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-13221"
           ],
           "Severity": "MEDIUM",
@@ -62510,6 +62621,7 @@
             "https://lists.security.metacpan.org/cve-announce/msg/41780102/",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-57432",
             "https://ubuntu.com/security/notices/USN-8675-1",
+            "https://ubuntu.com/security/notices/USN-8684-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-57432"
           ],
           "Severity": "MEDIUM",
@@ -62564,6 +62676,7 @@
             "https://lists.security.metacpan.org/cve-announce/msg/41780100/",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-57433",
             "https://ubuntu.com/security/notices/USN-8675-1",
+            "https://ubuntu.com/security/notices/USN-8684-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-57433"
           ],
           "Severity": "MEDIUM",
@@ -64651,7 +64764,7 @@
           "Fingerprint": "sha256:011bd54062ca906762e6265016a32baa892677cb5a2c4ba6a3d6c39698c4f855",
           "FixedVersion": "1.25.11, 1.26.4",
           "InstalledVersion": "v1.25.8",
-          "LastModifiedDate": "2026-08-26T13:18:07.067Z",
+          "LastModifiedDate": "2026-08-27T13:17:16.18Z",
           "Layer": {
             "DiffID": "sha256:b77ee2e6faf3d232629e53d3100644e7825b83a33624a7001e889ac6d7971372",
             "Digest": "sha256:adcbf7eeeb0e4fd2687a8fa15f33301e5f5c130d7a25f9667c486700b9fb67e3"
@@ -64735,6 +64848,8 @@
             "https://access.redhat.com/errata/RHSA-2026:54757",
             "https://access.redhat.com/errata/RHSA-2026:55899",
             "https://access.redhat.com/errata/RHSA-2026:57194",
+            "https://access.redhat.com/errata/RHSA-2026:57482",
+            "https://access.redhat.com/errata/RHSA-2026:57488",
             "https://access.redhat.com/errata/RHSA-2026:57649",
             "https://access.redhat.com/errata/RHSA-2026:59556",
             "https://access.redhat.com/errata/RHSA-2026:59557",
@@ -64742,6 +64857,13 @@
             "https://access.redhat.com/errata/RHSA-2026:59559",
             "https://access.redhat.com/errata/RHSA-2026:59579",
             "https://access.redhat.com/errata/RHSA-2026:59593",
+            "https://access.redhat.com/errata/RHSA-2026:60315",
+            "https://access.redhat.com/errata/RHSA-2026:60354",
+            "https://access.redhat.com/errata/RHSA-2026:60386",
+            "https://access.redhat.com/errata/RHSA-2026:60387",
+            "https://access.redhat.com/errata/RHSA-2026:60388",
+            "https://access.redhat.com/errata/RHSA-2026:60390",
+            "https://access.redhat.com/errata/RHSA-2026:60391",
             "https://access.redhat.com/security/cve/CVE-2026-27145",
             "https://bugzilla.redhat.com/2445356",
             "https://bugzilla.redhat.com/2484207",
@@ -64803,7 +64925,7 @@
           "Fingerprint": "sha256:757ee9a3d1deee707269d14353929a2faa2e7d65f7d25aa1f614c2b7eb643505",
           "FixedVersion": "1.25.9, 1.26.2",
           "InstalledVersion": "v1.25.8",
-          "LastModifiedDate": "2026-08-26T13:18:09.863Z",
+          "LastModifiedDate": "2026-08-27T13:17:18.81Z",
           "Layer": {
             "DiffID": "sha256:b77ee2e6faf3d232629e53d3100644e7825b83a33624a7001e889ac6d7971372",
             "Digest": "sha256:adcbf7eeeb0e4fd2687a8fa15f33301e5f5c130d7a25f9667c486700b9fb67e3"
@@ -64983,7 +65105,16 @@
             "https://access.redhat.com/errata/RHSA-2026:54191",
             "https://access.redhat.com/errata/RHSA-2026:54603",
             "https://access.redhat.com/errata/RHSA-2026:54757",
+            "https://access.redhat.com/errata/RHSA-2026:56785",
             "https://access.redhat.com/errata/RHSA-2026:56789",
+            "https://access.redhat.com/errata/RHSA-2026:56852",
+            "https://access.redhat.com/errata/RHSA-2026:56855",
+            "https://access.redhat.com/errata/RHSA-2026:56910",
+            "https://access.redhat.com/errata/RHSA-2026:56912",
+            "https://access.redhat.com/errata/RHSA-2026:56913",
+            "https://access.redhat.com/errata/RHSA-2026:57409",
+            "https://access.redhat.com/errata/RHSA-2026:57482",
+            "https://access.redhat.com/errata/RHSA-2026:57488",
             "https://access.redhat.com/errata/RHSA-2026:9385",
             "https://access.redhat.com/security/cve/CVE-2026-32280",
             "https://bugzilla.redhat.com/2456333",
@@ -65131,7 +65262,7 @@
           "Fingerprint": "sha256:553fc499b63da45904f577e05d8421185ee124c0ce71330ef83af36c5ac7d84c",
           "FixedVersion": "1.25.9, 1.26.2",
           "InstalledVersion": "v1.25.8",
-          "LastModifiedDate": "2026-08-26T13:18:11.817Z",
+          "LastModifiedDate": "2026-08-27T13:17:21.047Z",
           "Layer": {
             "DiffID": "sha256:b77ee2e6faf3d232629e53d3100644e7825b83a33624a7001e889ac6d7971372",
             "Digest": "sha256:adcbf7eeeb0e4fd2687a8fa15f33301e5f5c130d7a25f9667c486700b9fb67e3"
@@ -65265,6 +65396,8 @@
             "https://access.redhat.com/errata/RHSA-2026:55901",
             "https://access.redhat.com/errata/RHSA-2026:55902",
             "https://access.redhat.com/errata/RHSA-2026:55903",
+            "https://access.redhat.com/errata/RHSA-2026:56910",
+            "https://access.redhat.com/errata/RHSA-2026:57409",
             "https://access.redhat.com/errata/RHSA-2026:57801",
             "https://access.redhat.com/errata/RHSA-2026:57802",
             "https://access.redhat.com/errata/RHSA-2026:7291",
@@ -65342,7 +65475,7 @@
           "Fingerprint": "sha256:8a920fc7d1c596eaf3a02879f1c52ea5afc69e9f792a7c21553ee1a728a6df2b",
           "FixedVersion": "1.25.10, 1.26.3",
           "InstalledVersion": "v1.25.8",
-          "LastModifiedDate": "2026-08-26T13:18:24.027Z",
+          "LastModifiedDate": "2026-08-27T13:17:30.117Z",
           "Layer": {
             "DiffID": "sha256:b77ee2e6faf3d232629e53d3100644e7825b83a33624a7001e889ac6d7971372",
             "Digest": "sha256:adcbf7eeeb0e4fd2687a8fa15f33301e5f5c130d7a25f9667c486700b9fb67e3"
@@ -65454,13 +65587,22 @@
             "https://access.redhat.com/errata/RHSA-2026:54603",
             "https://access.redhat.com/errata/RHSA-2026:54757",
             "https://access.redhat.com/errata/RHSA-2026:56340",
+            "https://access.redhat.com/errata/RHSA-2026:56785",
             "https://access.redhat.com/errata/RHSA-2026:56789",
             "https://access.redhat.com/errata/RHSA-2026:56790",
+            "https://access.redhat.com/errata/RHSA-2026:56852",
+            "https://access.redhat.com/errata/RHSA-2026:56855",
+            "https://access.redhat.com/errata/RHSA-2026:56910",
+            "https://access.redhat.com/errata/RHSA-2026:56912",
+            "https://access.redhat.com/errata/RHSA-2026:56913",
             "https://access.redhat.com/errata/RHSA-2026:57191",
             "https://access.redhat.com/errata/RHSA-2026:57194",
+            "https://access.redhat.com/errata/RHSA-2026:57482",
+            "https://access.redhat.com/errata/RHSA-2026:57488",
             "https://access.redhat.com/errata/RHSA-2026:57649",
             "https://access.redhat.com/errata/RHSA-2026:59467",
             "https://access.redhat.com/errata/RHSA-2026:59559",
+            "https://access.redhat.com/errata/RHSA-2026:60302",
             "https://access.redhat.com/security/cve/CVE-2026-33811",
             "https://bugzilla.redhat.com/2467822",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2467822",
@@ -65525,7 +65667,7 @@
           "Fingerprint": "sha256:5ee59272e24bd95c52ea87c15b684593f89226dea4f73752915058b4a15f0ccc",
           "FixedVersion": "1.25.10, 1.26.3",
           "InstalledVersion": "v1.25.8",
-          "LastModifiedDate": "2026-08-26T13:18:25.463Z",
+          "LastModifiedDate": "2026-08-27T13:17:33.453Z",
           "Layer": {
             "DiffID": "sha256:b77ee2e6faf3d232629e53d3100644e7825b83a33624a7001e889ac6d7971372",
             "Digest": "sha256:adcbf7eeeb0e4fd2687a8fa15f33301e5f5c130d7a25f9667c486700b9fb67e3"
@@ -65561,10 +65703,13 @@
             "https://access.redhat.com/errata/RHSA-2026:54285",
             "https://access.redhat.com/errata/RHSA-2026:54286",
             "https://access.redhat.com/errata/RHSA-2026:54287",
+            "https://access.redhat.com/errata/RHSA-2026:56854",
+            "https://access.redhat.com/errata/RHSA-2026:56912",
             "https://access.redhat.com/errata/RHSA-2026:57191",
             "https://access.redhat.com/errata/RHSA-2026:57194",
             "https://access.redhat.com/errata/RHSA-2026:57365",
             "https://access.redhat.com/errata/RHSA-2026:57367",
+            "https://access.redhat.com/errata/RHSA-2026:57408",
             "https://access.redhat.com/errata/RHSA-2026:57545",
             "https://access.redhat.com/errata/RHSA-2026:57649",
             "https://access.redhat.com/errata/RHSA-2026:57845",
@@ -65668,7 +65813,30 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-33818",
           "PublishedDate": "2026-08-13T22:17:19.84Z",
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:60304",
+            "https://access.redhat.com/errata/RHSA-2026:60305",
             "https://access.redhat.com/security/cve/CVE-2026-33818",
+            "https://bugzilla.redhat.com/2515815",
+            "https://bugzilla.redhat.com/2515820",
+            "https://bugzilla.redhat.com/2515827",
+            "https://bugzilla.redhat.com/2515838",
+            "https://bugzilla.redhat.com/2515839",
+            "https://bugzilla.redhat.com/2515840",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2515815",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2515820",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2515827",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2515838",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2515839",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2515840",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-33818",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56853",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56858",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56859",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56860",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56862",
+            "https://errata.almalinux.org/9/ALSA-2026-60304.html",
+            "https://errata.rockylinux.org/RLSA-2026:60305",
             "https://go.dev/cl/814980",
             "https://go.dev/issue/80405",
             "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
@@ -65683,8 +65851,10 @@
             "GO-2026-5972"
           ],
           "VendorSeverity": {
+            "alma": 3,
             "bitnami": 3,
-            "redhat": 3
+            "redhat": 3,
+            "rocky": 3
           },
           "VulnerabilityID": "CVE-2026-33818"
         },
@@ -65716,7 +65886,7 @@
           "Fingerprint": "sha256:50fb2e4a3d0edb7bd8628084b114fb6bf684d7fb7bff4f20a783f8b698fe535e",
           "FixedVersion": "1.25.10, 1.26.3",
           "InstalledVersion": "v1.25.8",
-          "LastModifiedDate": "2026-08-26T13:18:35.27Z",
+          "LastModifiedDate": "2026-08-27T13:17:47.747Z",
           "Layer": {
             "DiffID": "sha256:b77ee2e6faf3d232629e53d3100644e7825b83a33624a7001e889ac6d7971372",
             "Digest": "sha256:adcbf7eeeb0e4fd2687a8fa15f33301e5f5c130d7a25f9667c486700b9fb67e3"
@@ -65776,7 +65946,12 @@
             "https://access.redhat.com/errata/RHSA-2026:54883",
             "https://access.redhat.com/errata/RHSA-2026:56340",
             "https://access.redhat.com/errata/RHSA-2026:56789",
+            "https://access.redhat.com/errata/RHSA-2026:56852",
+            "https://access.redhat.com/errata/RHSA-2026:56854",
             "https://access.redhat.com/errata/RHSA-2026:57194",
+            "https://access.redhat.com/errata/RHSA-2026:57401",
+            "https://access.redhat.com/errata/RHSA-2026:57482",
+            "https://access.redhat.com/errata/RHSA-2026:57487",
             "https://access.redhat.com/errata/RHSA-2026:57649",
             "https://access.redhat.com/errata/RHSA-2026:57845",
             "https://access.redhat.com/errata/RHSA-2026:57914",
@@ -65853,7 +66028,7 @@
           "Fingerprint": "sha256:62bc201b95c6853c4ab89fa574880b74dcda8ae2c383e41097ca71752ad95e57",
           "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
           "InstalledVersion": "v1.25.8",
-          "LastModifiedDate": "2026-08-26T13:18:36.16Z",
+          "LastModifiedDate": "2026-08-27T13:17:48.777Z",
           "Layer": {
             "DiffID": "sha256:b77ee2e6faf3d232629e53d3100644e7825b83a33624a7001e889ac6d7971372",
             "Digest": "sha256:adcbf7eeeb0e4fd2687a8fa15f33301e5f5c130d7a25f9667c486700b9fb67e3"
@@ -65993,6 +66168,9 @@
             "https://access.redhat.com/errata/RHSA-2026:59546",
             "https://access.redhat.com/errata/RHSA-2026:59549",
             "https://access.redhat.com/errata/RHSA-2026:59562",
+            "https://access.redhat.com/errata/RHSA-2026:60315",
+            "https://access.redhat.com/errata/RHSA-2026:60354",
+            "https://access.redhat.com/errata/RHSA-2026:60387",
             "https://access.redhat.com/security/cve/CVE-2026-39821",
             "https://bugzilla.redhat.com/2480756",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480756",
@@ -66220,7 +66398,7 @@
           "Fingerprint": "sha256:55307f42a1dae71d8dc6beebbbab4c3c4654758b76bd1b1c8332aae7f299fbd7",
           "FixedVersion": "1.25.10, 1.26.3",
           "InstalledVersion": "v1.25.8",
-          "LastModifiedDate": "2026-08-26T13:18:59.643Z",
+          "LastModifiedDate": "2026-08-27T13:18:01.213Z",
           "Layer": {
             "DiffID": "sha256:b77ee2e6faf3d232629e53d3100644e7825b83a33624a7001e889ac6d7971372",
             "Digest": "sha256:adcbf7eeeb0e4fd2687a8fa15f33301e5f5c130d7a25f9667c486700b9fb67e3"
@@ -66277,8 +66455,15 @@
             "https://access.redhat.com/errata/RHSA-2026:54583",
             "https://access.redhat.com/errata/RHSA-2026:54602",
             "https://access.redhat.com/errata/RHSA-2026:56340",
+            "https://access.redhat.com/errata/RHSA-2026:56785",
             "https://access.redhat.com/errata/RHSA-2026:56789",
+            "https://access.redhat.com/errata/RHSA-2026:56852",
+            "https://access.redhat.com/errata/RHSA-2026:56854",
+            "https://access.redhat.com/errata/RHSA-2026:56910",
+            "https://access.redhat.com/errata/RHSA-2026:56912",
             "https://access.redhat.com/errata/RHSA-2026:57194",
+            "https://access.redhat.com/errata/RHSA-2026:57482",
+            "https://access.redhat.com/errata/RHSA-2026:57487",
             "https://access.redhat.com/errata/RHSA-2026:57649",
             "https://access.redhat.com/errata/RHSA-2026:57845",
             "https://access.redhat.com/errata/RHSA-2026:57914",
@@ -66431,7 +66616,30 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56853",
           "PublishedDate": "2026-08-13T22:17:22.093Z",
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:60304",
+            "https://access.redhat.com/errata/RHSA-2026:60305",
             "https://access.redhat.com/security/cve/CVE-2026-56853",
+            "https://bugzilla.redhat.com/2515815",
+            "https://bugzilla.redhat.com/2515820",
+            "https://bugzilla.redhat.com/2515827",
+            "https://bugzilla.redhat.com/2515838",
+            "https://bugzilla.redhat.com/2515839",
+            "https://bugzilla.redhat.com/2515840",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2515815",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2515820",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2515827",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2515838",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2515839",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2515840",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-33818",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56853",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56858",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56859",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56860",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56862",
+            "https://errata.almalinux.org/9/ALSA-2026-60304.html",
+            "https://errata.rockylinux.org/RLSA-2026:60305",
             "https://go.dev/cl/795540",
             "https://go.dev/issue/80205",
             "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
@@ -66446,8 +66654,10 @@
             "GO-2026-6089"
           ],
           "VendorSeverity": {
+            "alma": 3,
             "bitnami": 3,
-            "redhat": 3
+            "redhat": 3,
+            "rocky": 3
           },
           "VulnerabilityID": "CVE-2026-56853"
         },
@@ -66488,7 +66698,30 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56858",
           "PublishedDate": "2026-08-13T22:17:22.207Z",
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:60304",
+            "https://access.redhat.com/errata/RHSA-2026:60305",
             "https://access.redhat.com/security/cve/CVE-2026-56858",
+            "https://bugzilla.redhat.com/2515815",
+            "https://bugzilla.redhat.com/2515820",
+            "https://bugzilla.redhat.com/2515827",
+            "https://bugzilla.redhat.com/2515838",
+            "https://bugzilla.redhat.com/2515839",
+            "https://bugzilla.redhat.com/2515840",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2515815",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2515820",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2515827",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2515838",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2515839",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2515840",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-33818",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56853",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56858",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56859",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56860",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56862",
+            "https://errata.almalinux.org/9/ALSA-2026-60304.html",
+            "https://errata.rockylinux.org/RLSA-2026:60305",
             "https://go.dev/cl/807100",
             "https://go.dev/issue/80435",
             "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
@@ -66503,8 +66736,10 @@
             "GO-2026-6091"
           ],
           "VendorSeverity": {
+            "alma": 3,
             "bitnami": 2,
-            "redhat": 3
+            "redhat": 3,
+            "rocky": 3
           },
           "VulnerabilityID": "CVE-2026-56858"
         },
@@ -66545,7 +66780,30 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56859",
           "PublishedDate": "2026-08-13T22:17:22.32Z",
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:60304",
+            "https://access.redhat.com/errata/RHSA-2026:60305",
             "https://access.redhat.com/security/cve/CVE-2026-56859",
+            "https://bugzilla.redhat.com/2515815",
+            "https://bugzilla.redhat.com/2515820",
+            "https://bugzilla.redhat.com/2515827",
+            "https://bugzilla.redhat.com/2515838",
+            "https://bugzilla.redhat.com/2515839",
+            "https://bugzilla.redhat.com/2515840",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2515815",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2515820",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2515827",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2515838",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2515839",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2515840",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-33818",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56853",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56858",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56859",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56860",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56862",
+            "https://errata.almalinux.org/9/ALSA-2026-60304.html",
+            "https://errata.rockylinux.org/RLSA-2026:60305",
             "https://go.dev/cl/803320",
             "https://go.dev/issue/80481",
             "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
@@ -66560,8 +66818,10 @@
             "GO-2026-6088"
           ],
           "VendorSeverity": {
+            "alma": 3,
             "bitnami": 3,
-            "redhat": 3
+            "redhat": 3,
+            "rocky": 3
           },
           "VulnerabilityID": "CVE-2026-56859"
         },
@@ -66602,7 +66862,30 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56860",
           "PublishedDate": "2026-08-13T22:17:22.44Z",
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:60304",
+            "https://access.redhat.com/errata/RHSA-2026:60305",
             "https://access.redhat.com/security/cve/CVE-2026-56860",
+            "https://bugzilla.redhat.com/2515815",
+            "https://bugzilla.redhat.com/2515820",
+            "https://bugzilla.redhat.com/2515827",
+            "https://bugzilla.redhat.com/2515838",
+            "https://bugzilla.redhat.com/2515839",
+            "https://bugzilla.redhat.com/2515840",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2515815",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2515820",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2515827",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2515838",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2515839",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2515840",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-33818",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56853",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56858",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56859",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56860",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56862",
+            "https://errata.almalinux.org/9/ALSA-2026-60304.html",
+            "https://errata.rockylinux.org/RLSA-2026:60305",
             "https://go.dev/cl/803681",
             "https://go.dev/issue/80494",
             "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
@@ -66617,8 +66900,10 @@
             "GO-2026-6218"
           ],
           "VendorSeverity": {
+            "alma": 3,
             "bitnami": 2,
-            "redhat": 3
+            "redhat": 3,
+            "rocky": 3
           },
           "VulnerabilityID": "CVE-2026-56860"
         },
@@ -66659,7 +66944,30 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56862",
           "PublishedDate": "2026-08-13T22:17:22.55Z",
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:60304",
+            "https://access.redhat.com/errata/RHSA-2026:60305",
             "https://access.redhat.com/security/cve/CVE-2026-56862",
+            "https://bugzilla.redhat.com/2515815",
+            "https://bugzilla.redhat.com/2515820",
+            "https://bugzilla.redhat.com/2515827",
+            "https://bugzilla.redhat.com/2515838",
+            "https://bugzilla.redhat.com/2515839",
+            "https://bugzilla.redhat.com/2515840",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2515815",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2515820",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2515827",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2515838",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2515839",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2515840",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-33818",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56853",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56858",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56859",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56860",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56862",
+            "https://errata.almalinux.org/9/ALSA-2026-60304.html",
+            "https://errata.rockylinux.org/RLSA-2026:60305",
             "https://go.dev/cl/804261",
             "https://go.dev/issue/80528",
             "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
@@ -66674,8 +66982,10 @@
             "GO-2026-6090"
           ],
           "VendorSeverity": {
+            "alma": 3,
             "bitnami": 3,
-            "redhat": 3
+            "redhat": 3,
+            "rocky": 3
           },
           "VulnerabilityID": "CVE-2026-56862"
         },
