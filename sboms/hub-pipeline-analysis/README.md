@@ -1,8 +1,8 @@
 # hub-pipeline-analysis SBOM quality
 
-Collection status: `collected`; collected at `2026-08-28T05:00:24Z`.
+Collection status: `collected`; collected at `2026-08-29T02:30:23Z`.
 
-Overall quality: **Needs work**, **68/100** across **62 packages**.
+Overall quality: **Needs work**, **68/100** across **63 packages**.
 
 | Category | Field | Coverage | Points | Gap |
 | --- | --- | ---: | ---: | ---: |
@@ -12,7 +12,7 @@ Overall quality: **Needs work**, **68/100** across **62 packages**.
 | Identity | Versions | 100% | 10/10 | +0 |
 | Identity | PURLs | 100% | 10/10 | +0 |
 | Licensing | Declared licenses | 0% | 0/10 | +10 |
-| Licensing | Concluded licenses | 82% | 8/10 | +2 |
+| Licensing | Concluded licenses | 83% | 8/10 | +2 |
 | Provenance | Suppliers | 0% | 0/7 | +7 |
 | Provenance | Download locations | 2% | 0/8 | +8 |
 | Relationships | Document describes | 0% | 0/5 | +5 |

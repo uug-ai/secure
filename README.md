@@ -63,7 +63,7 @@ Generated at `2026-08-28T06:18:54Z` from the newest tagged GHCR image available 
 <!-- SBOM_QUALITY_START -->
 ## SBOM quality overview
 
-Generated at `2026-08-28T05:00:24Z`. Quality combines document metadata (20%), package identity (30%), licensing (20%), provenance (15%), and relationships (15%).
+Generated at `2026-08-29T02:30:23Z`. Quality combines document metadata (20%), package identity (30%), licensing (20%), provenance (15%), and relationships (15%).
 
 Legend: 🟢 85-100, 🟡 70-84, 🟠 50-69, 🔴 0-49 or unavailable. This measures SBOM completeness, not vulnerability severity.
 
@@ -77,12 +77,12 @@ Legend: 🟢 85-100, 🟡 70-84, 🟠 50-69, 🔴 0-49 or unavailable. This meas
 | [hub-loitering](https://github.com/uug-ai/hub-loitering) | collected | 🟠 Needs work | 68/100 | 49 | 100% | 84% | 100% | [Breakdown](sboms/hub-loitering/README.md) · [SPDX](sboms/hub-loitering/sbom.spdx.json) |
 | [hub-monitor-device](https://github.com/uug-ai/hub-monitor-device) | collected | 🟠 Needs work | 68/100 | 79 | 100% | 87% | 100% | [Breakdown](sboms/hub-monitor-device/README.md) · [SPDX](sboms/hub-monitor-device/sbom.spdx.json) |
 | [hub-objecttracking](https://github.com/uug-ai/hub-objecttracking) | collected | 🟠 Needs work | 67/100 | 35 | 100% | 74% | 100% | [Breakdown](sboms/hub-objecttracking/README.md) · [SPDX](sboms/hub-objecttracking/sbom.spdx.json) |
-| [hub-pipeline-analysis](https://github.com/uug-ai/hub-pipeline-analysis) | collected | 🟠 Needs work | 68/100 | 62 | 100% | 82% | 100% | [Breakdown](sboms/hub-pipeline-analysis/README.md) · [SPDX](sboms/hub-pipeline-analysis/sbom.spdx.json) |
+| [hub-pipeline-analysis](https://github.com/uug-ai/hub-pipeline-analysis) | collected | 🟠 Needs work | 68/100 | 63 | 100% | 83% | 100% | [Breakdown](sboms/hub-pipeline-analysis/README.md) · [SPDX](sboms/hub-pipeline-analysis/sbom.spdx.json) |
 | [hub-pipeline-classifier](https://github.com/uug-ai/hub-pipeline-classifier) | collected | 🟠 Needs work | 68/100 | 59 | 100% | 88% | 100% | [Breakdown](sboms/hub-pipeline-classifier/README.md) · [SPDX](sboms/hub-pipeline-classifier/sbom.spdx.json) |
 | [hub-pipeline-counting](https://github.com/uug-ai/hub-pipeline-counting) | collected | 🟠 Needs work | 68/100 | 48 | 100% | 81% | 100% | [Breakdown](sboms/hub-pipeline-counting/README.md) · [SPDX](sboms/hub-pipeline-counting/sbom.spdx.json) |
 | [hub-pipeline-dominantcolors](https://github.com/uug-ai/hub-pipeline-dominantcolors) | collected | 🟠 Needs work | 68/100 | 60 | 100% | 88% | 100% | [Breakdown](sboms/hub-pipeline-dominantcolors/README.md) · [SPDX](sboms/hub-pipeline-dominantcolors/sbom.spdx.json) |
 | [hub-pipeline-event](https://github.com/uug-ai/hub-pipeline-event) | collected | 🟠 Needs work | 67/100 | 29 | 100% | 79% | 100% | [Breakdown](sboms/hub-pipeline-event/README.md) · [SPDX](sboms/hub-pipeline-event/sbom.spdx.json) |
-| [hub-pipeline-export](https://github.com/uug-ai/hub-pipeline-export) | collected | 🟠 Needs work | 68/100 | 58 | 100% | 84% | 100% | [Breakdown](sboms/hub-pipeline-export/README.md) · [SPDX](sboms/hub-pipeline-export/sbom.spdx.json) |
+| [hub-pipeline-export](https://github.com/uug-ai/hub-pipeline-export) | collected | 🟠 Needs work | 68/100 | 59 | 100% | 85% | 100% | [Breakdown](sboms/hub-pipeline-export/README.md) · [SPDX](sboms/hub-pipeline-export/sbom.spdx.json) |
 | [hub-pipeline-monitor](https://github.com/uug-ai/hub-pipeline-monitor) | collected | 🟠 Needs work | 68/100 | 65 | 100% | 86% | 100% | [Breakdown](sboms/hub-pipeline-monitor/README.md) · [SPDX](sboms/hub-pipeline-monitor/sbom.spdx.json) |
 | [hub-pipeline-notification](https://github.com/uug-ai/hub-pipeline-notification) | collected | 🟠 Needs work | 68/100 | 95 | 100% | 88% | 100% | [Breakdown](sboms/hub-pipeline-notification/README.md) · [SPDX](sboms/hub-pipeline-notification/sbom.spdx.json) |
 | [hub-pipeline-notification-test](https://github.com/uug-ai/hub-pipeline-notification-test) | collected | 🟠 Needs work | 68/100 | 65 | 100% | 83% | 100% | [Breakdown](sboms/hub-pipeline-notification-test/README.md) · [SPDX](sboms/hub-pipeline-notification-test/sbom.spdx.json) |
