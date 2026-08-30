@@ -1,8 +1,8 @@
 # Critical and high vulnerability findings
 
-Generated at `2026-08-29T03:48:18Z` from the latest available Trivy container reports. Occurrences count every affected package record across scanned images; one advisory can therefore occur more than once in one or more repositories.
+Generated at `2026-08-30T03:48:09Z` from the latest available Trivy container reports. Occurrences count every affected package record across scanned images; one advisory can therefore occur more than once in one or more repositories.
 
-**349 unique findings**: 14 critical and 335 high, with 1038 total occurrences.
+**350 unique findings**: 14 critical and 336 high, with 1040 total occurrences.
 
 | Severity | Advisory | Occurrences | Fixable | Repositories | Packages |
 | --- | --- | ---: | ---: | --- | --- |
@@ -90,6 +90,7 @@ Generated at `2026-08-29T03:48:18Z` from the latest available Trivy container re
 | HIGH | [CVE-2023-2953](https://avd.aquasec.com/nvd/cve-2023-2953) | 2 | 0 | hub-anpr, hub-pipeline-classifier | libldap-2.5-0@2.5.13+dfsg-5 |
 | HIGH | [CVE-2024-37298](https://avd.aquasec.com/nvd/cve-2024-37298) | 2 | 2 | hub-api, hub-pipeline-notification | github.com/gorilla/schema@v1.1.0 |
 | HIGH | [CVE-2025-47273](https://avd.aquasec.com/nvd/cve-2025-47273) | 2 | 2 | hub-pipeline-classifier | setuptools@70.0.0, setuptools@70.3.0 |
+| HIGH | [CVE-2026-26740](https://avd.aquasec.com/nvd/cve-2026-26740) | 2 | 2 | hub-pipeline-notification, hub-pipeline-sprite | giflib@5.2.2-r1 |
 | HIGH | [CVE-2026-27145](https://avd.aquasec.com/nvd/cve-2026-27145) | 2 | 2 | hub-objecttracking, hub-pipeline-redaction | stdlib@v1.25.8 |
 | HIGH | [CVE-2026-32280](https://avd.aquasec.com/nvd/cve-2026-32280) | 2 | 2 | hub-objecttracking, hub-pipeline-redaction | stdlib@v1.25.8 |
 | HIGH | [CVE-2026-32281](https://avd.aquasec.com/nvd/cve-2026-32281) | 2 | 2 | hub-objecttracking, hub-pipeline-redaction | stdlib@v1.25.8 |
