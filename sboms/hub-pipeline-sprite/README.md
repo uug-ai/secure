@@ -1,6 +1,6 @@
 # hub-pipeline-sprite SBOM quality
 
-Collection status: `collected`; collected at `2026-08-30T02:34:36Z`.
+Collection status: `collected`; collected at `2026-08-31T02:37:12Z`.
 
 Overall quality: **Needs work**, **68/100** across **58 packages**.
 
