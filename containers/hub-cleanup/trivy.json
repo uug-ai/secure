@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:39c598ca9033626baee0bf9a77dc3d78f3898645614fe45ccdf5f0bf8542d28d",
   "ArtifactName": "ghcr.io/uug-ai/hub-cleanup@sha256:e8bf09800818b07063b9ca025227f18efa23aa5edaba7cc80152fb9aaac64968",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-08-31T03:50:29.580295785Z",
+  "CreatedAt": "2026-09-01T03:50:48.711333266Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:34884abbe92863fce933ed7c39c0e045631af0ed86d5cc0dfbdf9fdca426ce3c",
@@ -199,7 +199,7 @@
     ],
     "Size": 71067136
   },
-  "ReportID": "01a055f0-a5cc-747e-9cd0-719dc33729d9",
+  "ReportID": "01a05b17-4c87-7512-8812-4f2b7a151b5b",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -1546,6 +1546,7 @@
           "Status": "fixed",
           "Title": "openssl: OpenSSL: Denial of Service via unbounded memory growth in QUIC server",
           "VendorSeverity": {
+            "amazon": 3,
             "photon": 3,
             "redhat": 3,
             "ubuntu": 2
@@ -1836,7 +1837,7 @@
           "Fingerprint": "sha256:23d6d34f403a80e342d83619f570363e4b9f6bb7b4b678727d09c6f846ab6ea8",
           "FixedVersion": "3.5.8-r0",
           "InstalledVersion": "3.5.7-r0",
-          "LastModifiedDate": "2026-08-28T19:46:29.323Z",
+          "LastModifiedDate": "2026-08-31T20:17:07.54Z",
           "Layer": {
             "DiffID": "sha256:34884abbe92863fce933ed7c39c0e045631af0ed86d5cc0dfbdf9fdca426ce3c",
             "Digest": "sha256:55afa1ecc21d2bb5e5045f32dafee56272ffd89860bac26f6c32123439af26a4"
@@ -2009,6 +2010,7 @@
             "https://github.com/openssl/openssl/commit/bf95f5f772e9362f87b25cfa2f8cb15d984865b9",
             "https://openssl-library.org/news/secadv/20260825.txt",
             "https://ubuntu.com/security/notices/USN-8678-1",
+            "https://ubuntu.com/security/notices/USN-8678-3",
             "https://www.cve.org/CVERecord?id=CVE-2026-75803"
           ],
           "Severity": "LOW",
@@ -2066,6 +2068,7 @@
           "Status": "fixed",
           "Title": "openssl: OpenSSL: Denial of Service via unbounded memory growth in QUIC server",
           "VendorSeverity": {
+            "amazon": 3,
             "photon": 3,
             "redhat": 3,
             "ubuntu": 2
@@ -2356,7 +2359,7 @@
           "Fingerprint": "sha256:f97769d3d955f84b0b1c378084a82ea39cac6fec65529a5fbbfb8e654ae8da45",
           "FixedVersion": "3.5.8-r0",
           "InstalledVersion": "3.5.7-r0",
-          "LastModifiedDate": "2026-08-28T19:46:29.323Z",
+          "LastModifiedDate": "2026-08-31T20:17:07.54Z",
           "Layer": {
             "DiffID": "sha256:34884abbe92863fce933ed7c39c0e045631af0ed86d5cc0dfbdf9fdca426ce3c",
             "Digest": "sha256:55afa1ecc21d2bb5e5045f32dafee56272ffd89860bac26f6c32123439af26a4"
@@ -2529,6 +2532,7 @@
             "https://github.com/openssl/openssl/commit/bf95f5f772e9362f87b25cfa2f8cb15d984865b9",
             "https://openssl-library.org/news/secadv/20260825.txt",
             "https://ubuntu.com/security/notices/USN-8678-1",
+            "https://ubuntu.com/security/notices/USN-8678-3",
             "https://www.cve.org/CVERecord?id=CVE-2026-75803"
           ],
           "Severity": "LOW",
@@ -3053,6 +3057,12 @@
       "Type": "gobinary",
       "Vulnerabilities": [
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 9.1,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N"
+            }
+          },
           "CweIDs": [
             "CWE-863"
           ],
@@ -3079,16 +3089,22 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56854",
           "PublishedDate": "2026-08-28T16:18:17.607Z",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-56854",
             "https://go.dev/cl/797040",
             "https://go.dev/issue/80213",
-            "https://pkg.go.dev/vuln/GO-2026-6303"
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-56854",
+            "https://pkg.go.dev/vuln/GO-2026-6303",
+            "https://www.cve.org/CVERecord?id=CVE-2026-56854"
           ],
-          "Severity": "UNKNOWN",
+          "Severity": "CRITICAL",
           "Status": "fixed",
-          "Title": "The source-address critical option in the Permissions returned by an a ...",
+          "Title": "golang.org/x/crypto/ssh: golang.org/x/crypto/ssh: Authentication bypass due to unenforced source-address restrictions",
           "VendorIDs": [
             "GO-2026-6303"
           ],
+          "VendorSeverity": {
+            "redhat": 4
+          },
           "VulnerabilityID": "CVE-2026-56854"
         },
         {
