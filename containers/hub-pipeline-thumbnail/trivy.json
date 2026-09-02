@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:9a0294bfd0b2ec5cc65d126e4020ca87038f4ca3ca9d7561b709c76c70276b37",
   "ArtifactName": "ghcr.io/uug-ai/hub-pipeline-thumbnail@sha256:dd109f149008f98b97b98e273d60af22c37cd1d3ea3b3ca443a87bc550d0a796",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-09-01T03:52:54.784550178Z",
+  "CreatedAt": "2026-09-02T03:51:52.080735912Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:34884abbe92863fce933ed7c39c0e045631af0ed86d5cc0dfbdf9fdca426ce3c",
@@ -166,7 +166,7 @@
     ],
     "Size": 203955200
   },
-  "ReportID": "01a05b19-3900-7860-8f4d-ee9cdca5c208",
+  "ReportID": "01a0603e-a010-7b32-8d27-45ad96d0eed6",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -5757,7 +5757,7 @@
           "Fingerprint": "sha256:fbb02f2528acf68a2bd5ded8dd963f8b60e613d91b95b3bac73879bdd992fc85",
           "FixedVersion": "3.5.8-r0",
           "InstalledVersion": "3.5.7-r0",
-          "LastModifiedDate": "2026-08-28T19:46:29.323Z",
+          "LastModifiedDate": "2026-09-01T19:17:27.543Z",
           "Layer": {
             "DiffID": "sha256:34884abbe92863fce933ed7c39c0e045631af0ed86d5cc0dfbdf9fdca426ce3c",
             "Digest": "sha256:55afa1ecc21d2bb5e5045f32dafee56272ffd89860bac26f6c32123439af26a4"
@@ -5788,6 +5788,183 @@
             "ubuntu": 1
           },
           "VulnerabilityID": "CVE-2026-75803"
+        },
+        {
+          "CweIDs": [
+            "CWE-407"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "Expat through 2.8.3 contains a denial of service vulnerability caused by quadratic algorithmic complexity in the storeAtts() function in xmlparse.c, where processing N specified attributes with non-normalized values triggers an O(N^2) linear scan of elementType-\u003edefaultAtts to determine CDATA status. A remote unauthenticated attacker can supply a single well-formed XML document of a few megabytes to an application parsing untrusted XML to cause excessive CPU consumption, resulting in denial of service without requiring authentication, external entity resolution, or non-default parser options.",
+          "Fingerprint": "sha256:ddf3634f1bfae9d0f1377c4191e7a50c454e2f3402d255a549aa615ecb5695e8",
+          "FixedVersion": "2.8.4-r0",
+          "InstalledVersion": "2.8.3-r0",
+          "LastModifiedDate": "2026-08-20T16:17:40.66Z",
+          "Layer": {
+            "DiffID": "sha256:d789eda87719657315c5dc93f3397cd792df88ea9b4d46d6a2529017044e7abc",
+            "Digest": "sha256:158ecd9abf492ada64c293d01b92dc0dd6e7311205b3cfe21ebdd6796c6ac621"
+          },
+          "PkgID": "libexpat@2.8.3-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libexpat@2.8.3-r0?arch=x86_64\u0026distro=3.24.1",
+            "UID": "ea63034b300f310d"
+          },
+          "PkgName": "libexpat",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-66046",
+          "PublishedDate": "2026-08-18T15:16:57Z",
+          "References": [
+            "https://github.com/libexpat/libexpat/pull/1321",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-66046",
+            "https://www.vulncheck.com/advisories/expat-denial-of-service-via-storeatts-quadratic-complexity"
+          ],
+          "Severity": "HIGH",
+          "Status": "fixed",
+          "Title": "Expat through 2.8.3 contains a denial of service vulnerability caused  ...",
+          "VendorSeverity": {
+            "amazon": 3,
+            "azure": 3
+          },
+          "VulnerabilityID": "CVE-2026-66046"
+        },
+        {
+          "CweIDs": [
+            "CWE-125"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "Expat through 2.8.3 contains an out-of-bounds read vulnerability that allows attackers to trigger memory corruption by processing XML with external entity parsers created via XML_ExternalEntityParserCreate. A struct size mismatch between ELEMENT_TYPE members causes storeAtts to read the attIndex member past allocated memory boundaries, resulting in failure to normalize whitespace in non-CDATA attributes or a wild pointer dereference causing a segfault. This vulnerability was introduced by the fix for CVE-2026-66046.",
+          "Fingerprint": "sha256:7fd3a27f313b8209c659534a6bf93f4092410b3999ad0b0d849104db4e97b6cd",
+          "FixedVersion": "2.8.4-r0",
+          "InstalledVersion": "2.8.3-r0",
+          "LastModifiedDate": "2026-08-20T19:17:04.43Z",
+          "Layer": {
+            "DiffID": "sha256:d789eda87719657315c5dc93f3397cd792df88ea9b4d46d6a2529017044e7abc",
+            "Digest": "sha256:158ecd9abf492ada64c293d01b92dc0dd6e7311205b3cfe21ebdd6796c6ac621"
+          },
+          "PkgID": "libexpat@2.8.3-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libexpat@2.8.3-r0?arch=x86_64\u0026distro=3.24.1",
+            "UID": "ea63034b300f310d"
+          },
+          "PkgName": "libexpat",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-76641",
+          "PublishedDate": "2026-08-20T18:16:51.887Z",
+          "References": [
+            "https://github.com/libexpat/libexpat/commit/98599f6dcc2b460410881fe420f5f55d6bec63bf",
+            "https://github.com/libexpat/libexpat/pull/1331",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-76641",
+            "https://www.vulncheck.com/advisories/expat-out-of-bounds-read-via-dtdcopy"
+          ],
+          "Severity": "HIGH",
+          "Status": "fixed",
+          "Title": "CVE-2026-76641 affecting package expat for versions less than 2.8.3-2",
+          "VendorSeverity": {
+            "azure": 3
+          },
+          "VulnerabilityID": "CVE-2026-76641"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 5.9,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-394"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "In libexpat 2.8.2 and 2.8.3 before 2.8.4, misinterpretation of getentropy's return code leads to insufficient entropy, which results in being vulnerable to hash flooding attacks, causing a denial of service via crafted XML content.",
+          "Fingerprint": "sha256:c1cf97a7f4e6947d8bdcff2c2809312b7725193990afeba946aa0d5cc5425bce",
+          "FixedVersion": "2.8.4-r0",
+          "InstalledVersion": "2.8.3-r0",
+          "LastModifiedDate": "2026-08-20T18:16:52.343Z",
+          "Layer": {
+            "DiffID": "sha256:d789eda87719657315c5dc93f3397cd792df88ea9b4d46d6a2529017044e7abc",
+            "Digest": "sha256:158ecd9abf492ada64c293d01b92dc0dd6e7311205b3cfe21ebdd6796c6ac621"
+          },
+          "PkgID": "libexpat@2.8.3-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libexpat@2.8.3-r0?arch=x86_64\u0026distro=3.24.1",
+            "UID": "ea63034b300f310d"
+          },
+          "PkgName": "libexpat",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-76956",
+          "PublishedDate": "2026-08-20T05:16:29.61Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-76956",
+            "https://github.com/libexpat/libexpat/pull/1326",
+            "https://github.com/libexpat/libexpat/pull/1329",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-76956",
+            "https://www.cve.org/CVERecord?id=CVE-2026-76956"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "libexpat: libexpat: Denial of Service via hash flooding attack with crafted XML",
+          "VendorSeverity": {
+            "azure": 2,
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2026-76956"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 4.9,
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L"
+            }
+          },
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "libexpat before 2.8.4 lacks handler call depth tracking with custom encoding callbacks. Thus, a use-after-free can occur. NOTE: this is similar to CVE-2026-50219, CVE-2026-56131 and CVE-2026-56412.",
+          "Fingerprint": "sha256:0a1e9c22765306849346abf08a169ff56b626f7cd6d1e321af70ee4af00f8ca0",
+          "FixedVersion": "2.8.4-r0",
+          "InstalledVersion": "2.8.3-r0",
+          "LastModifiedDate": "2026-08-20T16:18:30.643Z",
+          "Layer": {
+            "DiffID": "sha256:d789eda87719657315c5dc93f3397cd792df88ea9b4d46d6a2529017044e7abc",
+            "Digest": "sha256:158ecd9abf492ada64c293d01b92dc0dd6e7311205b3cfe21ebdd6796c6ac621"
+          },
+          "PkgID": "libexpat@2.8.3-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libexpat@2.8.3-r0?arch=x86_64\u0026distro=3.24.1",
+            "UID": "ea63034b300f310d"
+          },
+          "PkgName": "libexpat",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-76957",
+          "PublishedDate": "2026-08-20T05:16:29.747Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-76957",
+            "https://github.com/libexpat/libexpat/pull/1322",
+            "https://github.com/libexpat/libexpat/pull/1329",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-76957",
+            "https://www.cve.org/CVERecord?id=CVE-2026-76957"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "libexpat: libexpat: Memory corruption vulnerability allows arbitrary code execution or denial of service",
+          "VendorSeverity": {
+            "amazon": 3,
+            "azure": 2,
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2026-76957"
         },
         {
           "CVSS": {
@@ -6279,7 +6456,7 @@
           "Fingerprint": "sha256:1e6f4591869b41d288966cbacdce8654a6609b8f96d6d39363914834a67127bc",
           "FixedVersion": "3.5.8-r0",
           "InstalledVersion": "3.5.7-r0",
-          "LastModifiedDate": "2026-08-28T19:46:29.323Z",
+          "LastModifiedDate": "2026-09-01T19:17:27.543Z",
           "Layer": {
             "DiffID": "sha256:34884abbe92863fce933ed7c39c0e045631af0ed86d5cc0dfbdf9fdca426ce3c",
             "Digest": "sha256:55afa1ecc21d2bb5e5045f32dafee56272ffd89860bac26f6c32123439af26a4"
@@ -7382,7 +7559,7 @@
           "Fingerprint": "sha256:edff5da74f15000dd035f8764a8b64a556f81d02ff4ac2b0adae120c75417ce8",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-08-31T13:18:09.637Z",
+          "LastModifiedDate": "2026-09-01T13:19:05.697Z",
           "Layer": {
             "DiffID": "sha256:f02117775dc01f95f42c661e95399b3bebaf259b5764895ae2a33a4197e2ef15",
             "Digest": "sha256:94d7182e9f9d80257df430bc845dcec6694cc62b82d9337f4fcb582d7eebcde4"
@@ -7454,26 +7631,34 @@
             "https://access.redhat.com/errata/RHSA-2026:59467",
             "https://access.redhat.com/errata/RHSA-2026:59559",
             "https://access.redhat.com/errata/RHSA-2026:59593",
+            "https://access.redhat.com/errata/RHSA-2026:60477",
             "https://access.redhat.com/errata/RHSA-2026:60520",
             "https://access.redhat.com/errata/RHSA-2026:61314",
             "https://access.redhat.com/security/cve/CVE-2026-39829",
             "https://bugzilla.redhat.com/2480680",
             "https://bugzilla.redhat.com/2480681",
-            "https://bugzilla.redhat.com/2480684",
             "https://bugzilla.redhat.com/2480685",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2455470",
+            "https://bugzilla.redhat.com/2480688",
+            "https://bugzilla.redhat.com/2480757",
+            "https://bugzilla.redhat.com/2480761",
+            "https://bugzilla.redhat.com/2493620",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480680",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480681",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2480684",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480688",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480757",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480761",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2493620",
             "https://creativecommons.org/licenses/by/4.0/",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-34986",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-25681",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27136",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39829",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39830",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39832",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39835",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42508",
-            "https://errata.almalinux.org/10/ALSA-2026-36199.html",
-            "https://errata.rockylinux.org/RLSA-2026:35833",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-57231",
+            "https://errata.almalinux.org/9/ALSA-2026-37123.html",
+            "https://errata.rockylinux.org/RLSA-2026:37123",
             "https://go.dev/cl/781641",
             "https://go.dev/cl/781661",
             "https://go.dev/issue/79565",
@@ -7521,7 +7706,7 @@
           "Fingerprint": "sha256:00f42e55d79c28735c8f51e9b799bc4beb57116cc49f37481fc1bca505201635",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-08-31T13:18:10.903Z",
+          "LastModifiedDate": "2026-09-01T13:19:11.12Z",
           "Layer": {
             "DiffID": "sha256:f02117775dc01f95f42c661e95399b3bebaf259b5764895ae2a33a4197e2ef15",
             "Digest": "sha256:94d7182e9f9d80257df430bc845dcec6694cc62b82d9337f4fcb582d7eebcde4"
@@ -7584,23 +7769,27 @@
             "https://access.redhat.com/errata/RHSA-2026:60520",
             "https://access.redhat.com/errata/RHSA-2026:61314",
             "https://access.redhat.com/security/cve/CVE-2026-39830",
-            "https://bugzilla.redhat.com/2480680",
+            "https://bugzilla.redhat.com/2445356",
+            "https://bugzilla.redhat.com/2456333",
+            "https://bugzilla.redhat.com/2456338",
+            "https://bugzilla.redhat.com/2456339",
             "https://bugzilla.redhat.com/2480681",
             "https://bugzilla.redhat.com/2480684",
-            "https://bugzilla.redhat.com/2480685",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2455470",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2445356",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2456333",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2456338",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2456339",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480681",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480684",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2480688",
             "https://creativecommons.org/licenses/by/4.0/",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-34986",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-25679",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32280",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32281",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32283",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39829",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39830",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39832",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42508",
-            "https://errata.almalinux.org/10/ALSA-2026-36199.html",
-            "https://errata.rockylinux.org/RLSA-2026:35833",
+            "https://errata.almalinux.org/9/ALSA-2026-29455.html",
+            "https://errata.rockylinux.org/RLSA-2026:29455",
             "https://github.com/golang/crypto/commit/4e7a7384ecbc8d519f6f4c11b36fa9d761fc8946",
             "https://go.dev/cl/781640",
             "https://go.dev/cl/781664",
@@ -7757,22 +7946,14 @@
             "https://access.redhat.com/errata/RHSA-2026:61314",
             "https://access.redhat.com/security/cve/CVE-2026-39832",
             "https://bugzilla.redhat.com/2480680",
-            "https://bugzilla.redhat.com/2480681",
-            "https://bugzilla.redhat.com/2480684",
             "https://bugzilla.redhat.com/2480685",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2455470",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2480681",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2480684",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480680",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2480688",
             "https://creativecommons.org/licenses/by/4.0/",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-34986",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39829",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39830",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39832",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42508",
-            "https://errata.almalinux.org/10/ALSA-2026-36199.html",
-            "https://errata.rockylinux.org/RLSA-2026:35833",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39835",
+            "https://errata.almalinux.org/9/ALSA-2026-37410.html",
+            "https://errata.rockylinux.org/RLSA-2026:37410",
             "https://github.com/golang/crypto/commit/e3d1254f1e7e60baa086142c46174bf6d8d0fe50",
             "https://go.dev/cl/778640",
             "https://go.dev/cl/778641",
@@ -7889,18 +8070,14 @@
             "https://access.redhat.com/errata/RHSA-2026:60520",
             "https://access.redhat.com/security/cve/CVE-2026-39835",
             "https://bugzilla.redhat.com/2480680",
-            "https://bugzilla.redhat.com/2480681",
-            "https://bugzilla.redhat.com/2480684",
             "https://bugzilla.redhat.com/2480685",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2467822",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480680",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2493620",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
             "https://creativecommons.org/licenses/by/4.0/",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-33811",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39832",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39835",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-57231",
-            "https://errata.almalinux.org/10/ALSA-2026-36199.html",
-            "https://errata.rockylinux.org/RLSA-2026:38504",
+            "https://errata.almalinux.org/9/ALSA-2026-37410.html",
+            "https://errata.rockylinux.org/RLSA-2026:37410",
             "https://go.dev/cl/781660",
             "https://go.dev/issue/79563",
             "https://groups.google.com/g/golang-announce/c/a082jnz-LvI",
@@ -7946,7 +8123,7 @@
           "Fingerprint": "sha256:97d5f9ae2fb33e92a695f4d6e51d444de6202bf6b7aeee1394c3d269b682e10f",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-08-31T13:18:17.327Z",
+          "LastModifiedDate": "2026-09-01T13:19:28.063Z",
           "Layer": {
             "DiffID": "sha256:f02117775dc01f95f42c661e95399b3bebaf259b5764895ae2a33a4197e2ef15",
             "Digest": "sha256:94d7182e9f9d80257df430bc845dcec6694cc62b82d9337f4fcb582d7eebcde4"
@@ -8006,19 +8183,23 @@
             "https://bugzilla.redhat.com/2480757",
             "https://bugzilla.redhat.com/2480761",
             "https://bugzilla.redhat.com/2493620",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2455470",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480680",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480681",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2480684",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480688",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480757",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480761",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2493620",
             "https://creativecommons.org/licenses/by/4.0/",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-34986",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-25681",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27136",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39829",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39830",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39832",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39835",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42508",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-57231",
             "https://errata.almalinux.org/9/ALSA-2026-37123.html",
-            "https://errata.rockylinux.org/RLSA-2026:35833",
+            "https://errata.rockylinux.org/RLSA-2026:37123",
             "https://github.com/golang/crypto/commit/f717e29698a271c548239ed56bf5dd9516d6f7e8",
             "https://go.dev/cl/781220",
             "https://go.dev/issue/79568",
@@ -8484,18 +8665,17 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-25681",
           "PublishedDate": "2026-05-22T16:16:19.863Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:34357",
-            "https://access.redhat.com/errata/RHSA-2026:37072",
+            "https://access.redhat.com/errata/RHSA-2026:37123",
             "https://access.redhat.com/security/cve/CVE-2026-25681",
-            "https://bugzilla.redhat.com/2466505",
-            "https://bugzilla.redhat.com/2466507",
-            "https://bugzilla.redhat.com/2467822",
-            "https://bugzilla.redhat.com/2480756",
+            "https://bugzilla.redhat.com/2480680",
+            "https://bugzilla.redhat.com/2480681",
+            "https://bugzilla.redhat.com/2480685",
+            "https://bugzilla.redhat.com/2480688",
+            "https://bugzilla.redhat.com/2480757",
             "https://bugzilla.redhat.com/2480761",
-            "https://bugzilla.redhat.com/2484207",
+            "https://bugzilla.redhat.com/2493620",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480680",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480681",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2480684",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480688",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480757",
@@ -8505,13 +8685,12 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-25681",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27136",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39829",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39830",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39832",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39835",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42508",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-57231",
-            "https://errata.almalinux.org/10/ALSA-2026-34357.html",
-            "https://errata.rockylinux.org/RLSA-2026:37072",
+            "https://errata.almalinux.org/9/ALSA-2026-37123.html",
+            "https://errata.rockylinux.org/RLSA-2026:37123",
             "https://go.dev/cl/781703",
             "https://go.dev/issue/79574",
             "https://groups.google.com/g/golang-announce/c/iI-mYSI0lu8",
@@ -8570,7 +8749,6 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-27136",
           "PublishedDate": "2026-05-22T16:16:20.087Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:37072",
             "https://access.redhat.com/errata/RHSA-2026:37123",
             "https://access.redhat.com/security/cve/CVE-2026-27136",
             "https://bugzilla.redhat.com/2480680",
@@ -8582,7 +8760,6 @@
             "https://bugzilla.redhat.com/2493620",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480680",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480681",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2480684",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480688",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480757",
@@ -8592,13 +8769,12 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-25681",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27136",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39829",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39830",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39832",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39835",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42508",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-57231",
             "https://errata.almalinux.org/9/ALSA-2026-37123.html",
-            "https://errata.rockylinux.org/RLSA-2026:37072",
+            "https://errata.rockylinux.org/RLSA-2026:37123",
             "https://go.dev/cl/781685",
             "https://go.dev/issue/79575",
             "https://groups.google.com/g/golang-announce/c/iI-mYSI0lu8",
@@ -8791,16 +8967,13 @@
             "https://access.redhat.com/errata/RHSA-2026:61253",
             "https://access.redhat.com/security/cve/CVE-2026-39821",
             "https://bugzilla.redhat.com/2480756",
-            "https://bugzilla.redhat.com/2484207",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480756",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2484207",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2498152",
             "https://creativecommons.org/licenses/by/4.0/",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27145",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39821",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39822",
-            "https://errata.almalinux.org/10/ALSA-2026-46395.html",
-            "https://errata.rockylinux.org/RLSA-2026:38995",
+            "https://errata.almalinux.org/9/ALSA-2026-37435.html",
+            "https://errata.rockylinux.org/RLSA-2026:37435",
             "https://github.com/golang/go/issues/78760",
             "https://go.dev/cl/767220",
             "https://go.dev/issue/78760",
@@ -9128,7 +9301,7 @@
           "Fingerprint": "sha256:8d65287dd5979628186171b0e965b6674d9721d2ff54c23475270bc487124c88",
           "FixedVersion": "1.79.3",
           "InstalledVersion": "v1.77.0",
-          "LastModifiedDate": "2026-08-31T13:17:37.297Z",
+          "LastModifiedDate": "2026-09-01T13:18:41.597Z",
           "Layer": {
             "DiffID": "sha256:f02117775dc01f95f42c661e95399b3bebaf259b5764895ae2a33a4197e2ef15",
             "Digest": "sha256:94d7182e9f9d80257df430bc845dcec6694cc62b82d9337f4fcb582d7eebcde4"
@@ -9379,19 +9552,25 @@
             "https://bugzilla.redhat.com/2456336",
             "https://bugzilla.redhat.com/2456338",
             "https://bugzilla.redhat.com/2456339",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2434432",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2437111",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2445345",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2445356",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2449833",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2455470",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2456336",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2456338",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2456339",
             "https://creativecommons.org/licenses/by/4.0/",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32280",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-61726",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-68121",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-25679",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27137",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32282",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32283",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-33186",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-34986",
-            "https://errata.almalinux.org/10/ALSA-2026-19135.html",
-            "https://errata.rockylinux.org/RLSA-2026:48790",
+            "https://errata.almalinux.org/9/ALSA-2026-19353.html",
+            "https://errata.rockylinux.org/RLSA-2026:23228",
             "https://github.com/grpc/grpc-go",
             "https://github.com/grpc/grpc-go/security/advisories/GHSA-p77j-4mvh-x3m3",
             "https://linux.oracle.com/cve/CVE-2026-33186.html",
@@ -9416,6 +9595,60 @@
             "rocky": 3
           },
           "VulnerabilityID": "CVE-2026-33186"
+        },
+        {
+          "CVSS": {
+            "ghsa": {
+              "V40Score": 8.7,
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-400"
+          ],
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Go",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago"
+          },
+          "Description": "gRPC-Go is the Go language implementation of gRPC. Prior to 1.83.1, internal/transport/transport.go stores each fragmented HTTP/2 DATA frame as a separate recvMsg in recvBuffer, so millions of one-byte frames can consume disproportionate heap memory even when payload bytes remain within connection and stream flow-control windows. An unauthenticated remote attacker can use concurrent multiplexed streams to exhaust process memory and cause a runtime panic or out-of-memory termination. Receive-buffer compaction is enabled by default and can be controlled temporarily with GRPC_GO_EXPERIMENTAL_ENABLE_RECEIVE_BUFFER_COMPACTION. This issue is fixed in version 1.83.1.",
+          "Fingerprint": "sha256:995b8b3974614a5de5ca2e289f2e77e12a0a8bbd62a97cb9fdd1706637df33d4",
+          "FixedVersion": "1.83.1",
+          "InstalledVersion": "v1.77.0",
+          "LastModifiedDate": "2026-09-01T20:17:24.507Z",
+          "Layer": {
+            "DiffID": "sha256:f02117775dc01f95f42c661e95399b3bebaf259b5764895ae2a33a4197e2ef15",
+            "Digest": "sha256:94d7182e9f9d80257df430bc845dcec6694cc62b82d9337f4fcb582d7eebcde4"
+          },
+          "PkgID": "google.golang.org/grpc@v1.77.0",
+          "PkgIdentifier": {
+            "PURL": "pkg:golang/google.golang.org/grpc@v1.77.0",
+            "UID": "67b1fb09849b8f9a"
+          },
+          "PkgName": "google.golang.org/grpc",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-84304",
+          "PublishedDate": "2026-09-01T19:17:30.743Z",
+          "References": [
+            "https://github.com/grpc/grpc-go",
+            "https://github.com/grpc/grpc-go/commit/7354d9c8debb4bcf2225bf429857078de310c176",
+            "https://github.com/grpc/grpc-go/commit/8cfeca0e1ee5ea0980dcc320e20240fa1079ec77",
+            "https://github.com/grpc/grpc-go/pull/9331",
+            "https://github.com/grpc/grpc-go/pull/9333",
+            "https://github.com/grpc/grpc-go/releases/tag/v1.83.1",
+            "https://github.com/grpc/grpc-go/security/advisories/GHSA-vp52-pcj8-j9qc",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-84304"
+          ],
+          "Severity": "HIGH",
+          "SeveritySource": "ghsa",
+          "Status": "fixed",
+          "Title": "gRPC-Go is the Go language implementation of gRPC. Prior to 1.83.1, in ...",
+          "VendorIDs": [
+            "GHSA-vp52-pcj8-j9qc"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3
+          },
+          "VulnerabilityID": "CVE-2026-84304"
         },
         {
           "CVSS": {
@@ -9499,8 +9732,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-33818",
           "PublishedDate": "2026-08-13T22:17:19.84Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:60305",
-            "https://access.redhat.com/errata/RHSA-2026:60306",
+            "https://access.redhat.com/errata/RHSA-2026:60304",
             "https://access.redhat.com/security/cve/CVE-2026-33818",
             "https://bugzilla.redhat.com/2515815",
             "https://bugzilla.redhat.com/2515820",
@@ -9521,8 +9753,8 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56859",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56860",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56862",
-            "https://errata.almalinux.org/10/ALSA-2026-60306.html",
-            "https://errata.rockylinux.org/RLSA-2026:60305",
+            "https://errata.almalinux.org/9/ALSA-2026-60304.html",
+            "https://errata.rockylinux.org/RLSA-2026:60304",
             "https://go.dev/cl/814980",
             "https://go.dev/issue/80405",
             "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
@@ -9715,16 +9947,13 @@
             "https://access.redhat.com/errata/RHSA-2026:61253",
             "https://access.redhat.com/security/cve/CVE-2026-39821",
             "https://bugzilla.redhat.com/2480756",
-            "https://bugzilla.redhat.com/2484207",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480756",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2484207",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2498152",
             "https://creativecommons.org/licenses/by/4.0/",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27145",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39821",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39822",
-            "https://errata.almalinux.org/10/ALSA-2026-46395.html",
-            "https://errata.rockylinux.org/RLSA-2026:38995",
+            "https://errata.almalinux.org/9/ALSA-2026-37435.html",
+            "https://errata.rockylinux.org/RLSA-2026:37435",
             "https://github.com/golang/go/issues/78760",
             "https://go.dev/cl/767220",
             "https://go.dev/issue/78760",
@@ -9792,8 +10021,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56853",
           "PublishedDate": "2026-08-13T22:17:22.093Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:60305",
-            "https://access.redhat.com/errata/RHSA-2026:60306",
+            "https://access.redhat.com/errata/RHSA-2026:60304",
             "https://access.redhat.com/security/cve/CVE-2026-56853",
             "https://bugzilla.redhat.com/2515815",
             "https://bugzilla.redhat.com/2515820",
@@ -9814,8 +10042,8 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56859",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56860",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56862",
-            "https://errata.almalinux.org/10/ALSA-2026-60306.html",
-            "https://errata.rockylinux.org/RLSA-2026:60305",
+            "https://errata.almalinux.org/9/ALSA-2026-60304.html",
+            "https://errata.rockylinux.org/RLSA-2026:60304",
             "https://go.dev/cl/795540",
             "https://go.dev/issue/80205",
             "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
@@ -9878,8 +10106,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56858",
           "PublishedDate": "2026-08-13T22:17:22.207Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:60305",
-            "https://access.redhat.com/errata/RHSA-2026:60306",
+            "https://access.redhat.com/errata/RHSA-2026:60304",
             "https://access.redhat.com/security/cve/CVE-2026-56858",
             "https://bugzilla.redhat.com/2515815",
             "https://bugzilla.redhat.com/2515820",
@@ -9900,8 +10127,8 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56859",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56860",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56862",
-            "https://errata.almalinux.org/10/ALSA-2026-60306.html",
-            "https://errata.rockylinux.org/RLSA-2026:60305",
+            "https://errata.almalinux.org/9/ALSA-2026-60304.html",
+            "https://errata.rockylinux.org/RLSA-2026:60304",
             "https://go.dev/cl/807100",
             "https://go.dev/issue/80435",
             "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
@@ -9964,8 +10191,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56859",
           "PublishedDate": "2026-08-13T22:17:22.32Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:60305",
-            "https://access.redhat.com/errata/RHSA-2026:60306",
+            "https://access.redhat.com/errata/RHSA-2026:60304",
             "https://access.redhat.com/security/cve/CVE-2026-56859",
             "https://bugzilla.redhat.com/2515815",
             "https://bugzilla.redhat.com/2515820",
@@ -9986,8 +10212,8 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56859",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56860",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56862",
-            "https://errata.almalinux.org/10/ALSA-2026-60306.html",
-            "https://errata.rockylinux.org/RLSA-2026:60305",
+            "https://errata.almalinux.org/9/ALSA-2026-60304.html",
+            "https://errata.rockylinux.org/RLSA-2026:60304",
             "https://go.dev/cl/803320",
             "https://go.dev/issue/80481",
             "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
@@ -10050,8 +10276,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56860",
           "PublishedDate": "2026-08-13T22:17:22.44Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:60305",
-            "https://access.redhat.com/errata/RHSA-2026:60306",
+            "https://access.redhat.com/errata/RHSA-2026:60304",
             "https://access.redhat.com/security/cve/CVE-2026-56860",
             "https://bugzilla.redhat.com/2515815",
             "https://bugzilla.redhat.com/2515820",
@@ -10072,8 +10297,8 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56859",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56860",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56862",
-            "https://errata.almalinux.org/10/ALSA-2026-60306.html",
-            "https://errata.rockylinux.org/RLSA-2026:60305",
+            "https://errata.almalinux.org/9/ALSA-2026-60304.html",
+            "https://errata.rockylinux.org/RLSA-2026:60304",
             "https://go.dev/cl/803681",
             "https://go.dev/issue/80494",
             "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
@@ -10136,8 +10361,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56862",
           "PublishedDate": "2026-08-13T22:17:22.55Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:60305",
-            "https://access.redhat.com/errata/RHSA-2026:60306",
+            "https://access.redhat.com/errata/RHSA-2026:60304",
             "https://access.redhat.com/security/cve/CVE-2026-56862",
             "https://bugzilla.redhat.com/2515815",
             "https://bugzilla.redhat.com/2515820",
@@ -10158,8 +10382,8 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56859",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56860",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56862",
-            "https://errata.almalinux.org/10/ALSA-2026-60306.html",
-            "https://errata.rockylinux.org/RLSA-2026:60305",
+            "https://errata.almalinux.org/9/ALSA-2026-60304.html",
+            "https://errata.rockylinux.org/RLSA-2026:60304",
             "https://go.dev/cl/804261",
             "https://go.dev/issue/80528",
             "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
