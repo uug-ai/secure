@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:afb3b1eccd57c222f327038aa633a8b402c38a8fc4e683b6fa9bdb44f976c475",
   "ArtifactName": "ghcr.io/uug-ai/hub-pipeline-classifier@sha256:218ed67b1a393f15c7a8918b85dead4c701bfc772ba485748d70536990385b7f",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-09-02T03:51:22.916334661Z",
+  "CreatedAt": "2026-09-03T05:09:08.695717223Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:66462cc862fe2053b9863fefa3866e07bb5dfb06f6b3ce3177cc096e4021aabe",
@@ -507,7 +507,7 @@
     ],
     "Size": 6340269568
   },
-  "ReportID": "01a0603e-2e24-7512-864f-825090d9c008",
+  "ReportID": "01a065ab-bbd7-7ae7-8e21-25a58bd59f48",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -25582,7 +25582,7 @@
           "Status": "affected",
           "Title": "binutils: Binutils: Out-of-bounds Write Vulnerability",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "azure": 2,
             "cbl-mariner": 2,
             "debian": 1,
@@ -29259,7 +29259,7 @@
           "Status": "affected",
           "Title": "binutils: Binutils: Out-of-bounds Write Vulnerability",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "azure": 2,
             "cbl-mariner": 2,
             "debian": 1,
@@ -32936,7 +32936,7 @@
           "Status": "affected",
           "Title": "binutils: Binutils: Out-of-bounds Write Vulnerability",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "azure": 2,
             "cbl-mariner": 2,
             "debian": 1,
@@ -35675,6 +35675,131 @@
             "ubuntu": 1
           },
           "VulnerabilityID": "CVE-2026-9547"
+        },
+        {
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "A flaw in the libcurl SASL negotiation for LDAP authentication allows an incomplete handshake sequence to be misinterpreted as a successful cryptographic verification. An attacker executing a Man-in-the-Middle (MITM) attack can inject a premature or shortcut response that bypasses complete peer validation.",
+          "Fingerprint": "sha256:8ed21798ba9596dcac7720095dc2016ab7145f0b7dac249c3ee4082128b514e4",
+          "InstalledVersion": "7.88.1-10+deb12u15",
+          "Layer": {
+            "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
+            "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
+          },
+          "PkgID": "curl@7.88.1-10+deb12u15",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/curl@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
+            "UID": "606544f55e0d2778"
+          },
+          "PkgName": "curl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-13608",
+          "Severity": "UNKNOWN",
+          "Status": "affected",
+          "Title": "OpenLDAP SASL authentication bypass",
+          "VulnerabilityID": "CVE-2026-13608"
+        },
+        {
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "A flaw in libcurl's handling of HTTP/2 Server Push streams, when the parent handle is set to share connections with other handles, can lead to use-after-free in the cleanup process.",
+          "Fingerprint": "sha256:0db88b670234b613efae5015d2efb4f846f6cf03a7eba194e72e62b655d8e86c",
+          "InstalledVersion": "7.88.1-10+deb12u15",
+          "Layer": {
+            "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
+            "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
+          },
+          "PkgID": "curl@7.88.1-10+deb12u15",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/curl@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
+            "UID": "606544f55e0d2778"
+          },
+          "PkgName": "curl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-18924",
+          "Severity": "UNKNOWN",
+          "Status": "affected",
+          "Title": "HTTP/2 server push UAF",
+          "VulnerabilityID": "CVE-2026-18924"
+        },
+        {
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "A flaw in libcurl makes it wrongly reuse an HTTP connection setup for a given hostname using Negotiate authentication, when the initial request is done using empty credentials. This can make user B's request get sent over user A's previously authenticated connection.",
+          "Fingerprint": "sha256:4e9f530ec5aa1259f28bf75a0b1dbb11af3ca07d72b5267e2afbb5344b7acb17",
+          "InstalledVersion": "7.88.1-10+deb12u15",
+          "Layer": {
+            "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
+            "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
+          },
+          "PkgID": "curl@7.88.1-10+deb12u15",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/curl@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
+            "UID": "606544f55e0d2778"
+          },
+          "PkgName": "curl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-19931",
+          "Severity": "UNKNOWN",
+          "Status": "affected",
+          "Title": "Negotiate ambient user conn reuse",
+          "VulnerabilityID": "CVE-2026-19931"
+        },
+        {
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "When `CURLOPT_PINNEDPUBLICKEY` is configured alongside options that disable standard peer verification (`CURLOPT_SSL_VERIFYPEER = 0` and `CURLOPT_SSL_VERIFYHOST = 0`), libcurl fails to enforce public key pinning on connections established without a presented server certificate. Bypassing the pinning check under these disabled-verification conditions allows unauthenticated connections to succeed when they should be rejected.",
+          "Fingerprint": "sha256:fac04ac1daa1fb03c0705feb287632e2eb91cc32ef7f4b8aaa0394e36cd0e1af",
+          "InstalledVersion": "7.88.1-10+deb12u15",
+          "Layer": {
+            "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
+            "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
+          },
+          "PkgID": "curl@7.88.1-10+deb12u15",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/curl@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
+            "UID": "606544f55e0d2778"
+          },
+          "PkgName": "curl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-80230",
+          "Severity": "UNKNOWN",
+          "Status": "affected",
+          "Title": "OpenSSL pinning bypass",
+          "VulnerabilityID": "CVE-2026-80230"
+        },
+        {
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "When libpsl support is enabled, libcurl fails to enforce the Public Suffix List boundary check when processing a `Set-Cookie` header where the `Domain` attribute explicitly matches an origin host that is itself a public suffix (e.g., `Domain=co.uk` set by `co.uk`). Instead of coercing it into a strict host-only cookie, libcurl saves the cookie with wildcard domain scope (`.co.uk`). Consequently, the cookie is inappropriately included in subsequent outbound requests or HTTP redirects to arbitrary sibling subdomains under the same public suffix (e.g., `attacker.co.uk`).",
+          "Fingerprint": "sha256:450ee2bb60e97ec0808fa52f7b72d85ee4e4a6911ce3625e8c1e79697b8503dd",
+          "InstalledVersion": "7.88.1-10+deb12u15",
+          "Layer": {
+            "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
+            "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
+          },
+          "PkgID": "curl@7.88.1-10+deb12u15",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/curl@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
+            "UID": "606544f55e0d2778"
+          },
+          "PkgName": "curl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-82209",
+          "Severity": "UNKNOWN",
+          "Status": "affected",
+          "Title": "domain-scoped PSL domain cookie",
+          "VulnerabilityID": "CVE-2026-82209"
         },
         {
           "CVSS": {
@@ -38921,11 +39046,17 @@
             "https://access.redhat.com/errata/RHSA-2026:61623",
             "https://access.redhat.com/security/cve/CVE-2026-41992",
             "https://bugzilla.redhat.com/2494158",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2494158",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2494159",
             "https://cert.pl/en/posts/2026/04/CVE-2026-41991",
             "https://cert.pl/en/posts/2026/04/CVE-2026-41991/",
             "https://cgit.git.savannah.gnu.org/cgit/gzip.git/commit/?id=63dbf6b3b9e6e781df1a6a64e609b10e23969681",
             "https://cgit.git.savannah.gnu.org/cgit/gzip.git/commit/?id=e7378c2d421be6a286922374425680bbe9ad8b7d",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-41991",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-41992",
             "https://errata.almalinux.org/9/ALSA-2026-61623.html",
+            "https://errata.rockylinux.org/RLSA-2026:61623",
             "https://github.com/advisories/GHSA-qxh4-rprf-2mmj",
             "https://linux.oracle.com/cve/CVE-2026-41992.html",
             "https://linux.oracle.com/errata/ELSA-2026-61623-0.html",
@@ -38947,6 +39078,7 @@
             "oracle-oval": 2,
             "photon": 3,
             "redhat": 1,
+            "rocky": 2,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-41992"
@@ -38996,10 +39128,16 @@
             "https://access.redhat.com/errata/RHSA-2026:61623",
             "https://access.redhat.com/security/cve/CVE-2026-41991",
             "https://bugzilla.redhat.com/2494158",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2494158",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2494159",
             "https://cert.pl/en/posts/2026/04/CVE-2026-41991",
             "https://cert.pl/en/posts/2026/04/CVE-2026-41991/",
             "https://cgit.git.savannah.gnu.org/cgit/gzip.git/commit/?id=4e6f8b24ab823146ab8776f0b7fe486ab34d4269",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-41991",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-41992",
             "https://errata.almalinux.org/9/ALSA-2026-61623.html",
+            "https://errata.rockylinux.org/RLSA-2026:61623",
             "https://github.com/advisories/GHSA-67v8-88jf-4x6q",
             "https://linux.oracle.com/cve/CVE-2026-41991.html",
             "https://linux.oracle.com/errata/ELSA-2026-61623-0.html",
@@ -39020,6 +39158,7 @@
             "oracle-oval": 2,
             "photon": 2,
             "redhat": 2,
+            "rocky": 2,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-41991"
@@ -39357,7 +39496,7 @@
           "Description": "attr before version 2.6.0 contains a symlink traversal vulnerability in the getfattr and setfattr utilities that allows local attackers to escalate privileges by replacing a pathname component with a symbolic link during directory hierarchy traversal. Attackers who control a pathname component can redirect getfattr and setfattr operations to arbitrary files by substituting a symlink, leading to local privilege escalation when getfattr or setfattr is invoked by a privileged process over an attacker-controlled path.",
           "Fingerprint": "sha256:dce2b0281acf042e94cd2f636b20bae055fb3575c2ee35139d29ba460b2b2d45",
           "InstalledVersion": "1:2.5.1-4",
-          "LastModifiedDate": "2026-09-01T13:19:48.13Z",
+          "LastModifiedDate": "2026-09-02T13:18:02.227Z",
           "Layer": {
             "DiffID": "sha256:66462cc862fe2053b9863fefa3866e07bb5dfb06f6b3ce3177cc096e4021aabe",
             "Digest": "sha256:e4376313f4ed09af5cb5e63d27312153c9adce82fc4c8f8edb966f0ed6e49db5"
@@ -42459,7 +42598,7 @@
           "Status": "affected",
           "Title": "binutils: Binutils: Out-of-bounds Write Vulnerability",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "azure": 2,
             "cbl-mariner": 2,
             "debian": 1,
@@ -50484,7 +50623,7 @@
           "Status": "affected",
           "Title": "binutils: Binutils: Out-of-bounds Write Vulnerability",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "azure": 2,
             "cbl-mariner": 2,
             "debian": 1,
@@ -54161,7 +54300,7 @@
           "Status": "affected",
           "Title": "binutils: Binutils: Out-of-bounds Write Vulnerability",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "azure": 2,
             "cbl-mariner": 2,
             "debian": 1,
@@ -56100,6 +56239,131 @@
           "VulnerabilityID": "CVE-2026-9547"
         },
         {
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "A flaw in the libcurl SASL negotiation for LDAP authentication allows an incomplete handshake sequence to be misinterpreted as a successful cryptographic verification. An attacker executing a Man-in-the-Middle (MITM) attack can inject a premature or shortcut response that bypasses complete peer validation.",
+          "Fingerprint": "sha256:9b48cc59266991c98a8f3aa8e2d0214a2dff92fa92b472ddeb5cf2b23870e62d",
+          "InstalledVersion": "7.88.1-10+deb12u15",
+          "Layer": {
+            "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
+            "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
+          },
+          "PkgID": "libcurl3-gnutls@7.88.1-10+deb12u15",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libcurl3-gnutls@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
+            "UID": "6de58fcbf54d5a52"
+          },
+          "PkgName": "libcurl3-gnutls",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-13608",
+          "Severity": "UNKNOWN",
+          "Status": "affected",
+          "Title": "OpenLDAP SASL authentication bypass",
+          "VulnerabilityID": "CVE-2026-13608"
+        },
+        {
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "A flaw in libcurl's handling of HTTP/2 Server Push streams, when the parent handle is set to share connections with other handles, can lead to use-after-free in the cleanup process.",
+          "Fingerprint": "sha256:bbd34e191763fd768e258520f9c15ec19e0ae3afc29324d1c1a5e0c7639d166f",
+          "InstalledVersion": "7.88.1-10+deb12u15",
+          "Layer": {
+            "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
+            "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
+          },
+          "PkgID": "libcurl3-gnutls@7.88.1-10+deb12u15",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libcurl3-gnutls@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
+            "UID": "6de58fcbf54d5a52"
+          },
+          "PkgName": "libcurl3-gnutls",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-18924",
+          "Severity": "UNKNOWN",
+          "Status": "affected",
+          "Title": "HTTP/2 server push UAF",
+          "VulnerabilityID": "CVE-2026-18924"
+        },
+        {
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "A flaw in libcurl makes it wrongly reuse an HTTP connection setup for a given hostname using Negotiate authentication, when the initial request is done using empty credentials. This can make user B's request get sent over user A's previously authenticated connection.",
+          "Fingerprint": "sha256:d8bf1b9e7409d45f936334282622a33bf6d68adaee5467ef00804b82a924565c",
+          "InstalledVersion": "7.88.1-10+deb12u15",
+          "Layer": {
+            "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
+            "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
+          },
+          "PkgID": "libcurl3-gnutls@7.88.1-10+deb12u15",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libcurl3-gnutls@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
+            "UID": "6de58fcbf54d5a52"
+          },
+          "PkgName": "libcurl3-gnutls",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-19931",
+          "Severity": "UNKNOWN",
+          "Status": "affected",
+          "Title": "Negotiate ambient user conn reuse",
+          "VulnerabilityID": "CVE-2026-19931"
+        },
+        {
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "When `CURLOPT_PINNEDPUBLICKEY` is configured alongside options that disable standard peer verification (`CURLOPT_SSL_VERIFYPEER = 0` and `CURLOPT_SSL_VERIFYHOST = 0`), libcurl fails to enforce public key pinning on connections established without a presented server certificate. Bypassing the pinning check under these disabled-verification conditions allows unauthenticated connections to succeed when they should be rejected.",
+          "Fingerprint": "sha256:2a64b235a7cb892088d5fe06455f877f9db35b30fa5d116626789e52f5b5de39",
+          "InstalledVersion": "7.88.1-10+deb12u15",
+          "Layer": {
+            "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
+            "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
+          },
+          "PkgID": "libcurl3-gnutls@7.88.1-10+deb12u15",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libcurl3-gnutls@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
+            "UID": "6de58fcbf54d5a52"
+          },
+          "PkgName": "libcurl3-gnutls",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-80230",
+          "Severity": "UNKNOWN",
+          "Status": "affected",
+          "Title": "OpenSSL pinning bypass",
+          "VulnerabilityID": "CVE-2026-80230"
+        },
+        {
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "When libpsl support is enabled, libcurl fails to enforce the Public Suffix List boundary check when processing a `Set-Cookie` header where the `Domain` attribute explicitly matches an origin host that is itself a public suffix (e.g., `Domain=co.uk` set by `co.uk`). Instead of coercing it into a strict host-only cookie, libcurl saves the cookie with wildcard domain scope (`.co.uk`). Consequently, the cookie is inappropriately included in subsequent outbound requests or HTTP redirects to arbitrary sibling subdomains under the same public suffix (e.g., `attacker.co.uk`).",
+          "Fingerprint": "sha256:7d50d0437fd93d8439bfef7c74e3c782531e8372f9981fc3d478580699e29da0",
+          "InstalledVersion": "7.88.1-10+deb12u15",
+          "Layer": {
+            "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
+            "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
+          },
+          "PkgID": "libcurl3-gnutls@7.88.1-10+deb12u15",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libcurl3-gnutls@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
+            "UID": "6de58fcbf54d5a52"
+          },
+          "PkgName": "libcurl3-gnutls",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-82209",
+          "Severity": "UNKNOWN",
+          "Status": "affected",
+          "Title": "domain-scoped PSL domain cookie",
+          "VulnerabilityID": "CVE-2026-82209"
+        },
+        {
           "CVSS": {
             "julia": {
               "V3Score": 7.5,
@@ -57411,6 +57675,131 @@
             "ubuntu": 1
           },
           "VulnerabilityID": "CVE-2026-9547"
+        },
+        {
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "A flaw in the libcurl SASL negotiation for LDAP authentication allows an incomplete handshake sequence to be misinterpreted as a successful cryptographic verification. An attacker executing a Man-in-the-Middle (MITM) attack can inject a premature or shortcut response that bypasses complete peer validation.",
+          "Fingerprint": "sha256:b473993957fc4636795ec9102f63559130d58736f29e4945742b2e7869306ed1",
+          "InstalledVersion": "7.88.1-10+deb12u15",
+          "Layer": {
+            "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
+            "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
+          },
+          "PkgID": "libcurl4@7.88.1-10+deb12u15",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libcurl4@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
+            "UID": "c1719b3c07f72781"
+          },
+          "PkgName": "libcurl4",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-13608",
+          "Severity": "UNKNOWN",
+          "Status": "affected",
+          "Title": "OpenLDAP SASL authentication bypass",
+          "VulnerabilityID": "CVE-2026-13608"
+        },
+        {
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "A flaw in libcurl's handling of HTTP/2 Server Push streams, when the parent handle is set to share connections with other handles, can lead to use-after-free in the cleanup process.",
+          "Fingerprint": "sha256:e2050b0a14de6fc66be250b3b1866b3c771901c5d257f471fa70f1969c75194a",
+          "InstalledVersion": "7.88.1-10+deb12u15",
+          "Layer": {
+            "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
+            "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
+          },
+          "PkgID": "libcurl4@7.88.1-10+deb12u15",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libcurl4@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
+            "UID": "c1719b3c07f72781"
+          },
+          "PkgName": "libcurl4",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-18924",
+          "Severity": "UNKNOWN",
+          "Status": "affected",
+          "Title": "HTTP/2 server push UAF",
+          "VulnerabilityID": "CVE-2026-18924"
+        },
+        {
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "A flaw in libcurl makes it wrongly reuse an HTTP connection setup for a given hostname using Negotiate authentication, when the initial request is done using empty credentials. This can make user B's request get sent over user A's previously authenticated connection.",
+          "Fingerprint": "sha256:6b9a43a18d11998f895642cbfe44e9a76a3b66b3a8603ee01e25141a86dee69f",
+          "InstalledVersion": "7.88.1-10+deb12u15",
+          "Layer": {
+            "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
+            "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
+          },
+          "PkgID": "libcurl4@7.88.1-10+deb12u15",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libcurl4@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
+            "UID": "c1719b3c07f72781"
+          },
+          "PkgName": "libcurl4",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-19931",
+          "Severity": "UNKNOWN",
+          "Status": "affected",
+          "Title": "Negotiate ambient user conn reuse",
+          "VulnerabilityID": "CVE-2026-19931"
+        },
+        {
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "When `CURLOPT_PINNEDPUBLICKEY` is configured alongside options that disable standard peer verification (`CURLOPT_SSL_VERIFYPEER = 0` and `CURLOPT_SSL_VERIFYHOST = 0`), libcurl fails to enforce public key pinning on connections established without a presented server certificate. Bypassing the pinning check under these disabled-verification conditions allows unauthenticated connections to succeed when they should be rejected.",
+          "Fingerprint": "sha256:48fabe0bf717f8b7208dfc7411cb8b3301ac3a2f155c04995dd30d25da76230c",
+          "InstalledVersion": "7.88.1-10+deb12u15",
+          "Layer": {
+            "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
+            "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
+          },
+          "PkgID": "libcurl4@7.88.1-10+deb12u15",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libcurl4@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
+            "UID": "c1719b3c07f72781"
+          },
+          "PkgName": "libcurl4",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-80230",
+          "Severity": "UNKNOWN",
+          "Status": "affected",
+          "Title": "OpenSSL pinning bypass",
+          "VulnerabilityID": "CVE-2026-80230"
+        },
+        {
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "When libpsl support is enabled, libcurl fails to enforce the Public Suffix List boundary check when processing a `Set-Cookie` header where the `Domain` attribute explicitly matches an origin host that is itself a public suffix (e.g., `Domain=co.uk` set by `co.uk`). Instead of coercing it into a strict host-only cookie, libcurl saves the cookie with wildcard domain scope (`.co.uk`). Consequently, the cookie is inappropriately included in subsequent outbound requests or HTTP redirects to arbitrary sibling subdomains under the same public suffix (e.g., `attacker.co.uk`).",
+          "Fingerprint": "sha256:0d8dc38220daef037860cd019d0f54d2979d087a80b9102e1ce8daffa32807de",
+          "InstalledVersion": "7.88.1-10+deb12u15",
+          "Layer": {
+            "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
+            "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
+          },
+          "PkgID": "libcurl4@7.88.1-10+deb12u15",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libcurl4@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
+            "UID": "c1719b3c07f72781"
+          },
+          "PkgName": "libcurl4",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-82209",
+          "Severity": "UNKNOWN",
+          "Status": "affected",
+          "Title": "domain-scoped PSL domain cookie",
+          "VulnerabilityID": "CVE-2026-82209"
         },
         {
           "CVSS": {
@@ -61900,7 +62289,7 @@
             "https://github.com/advisories/GHSA-m7rp-473c-296x",
             "https://gitlab.gnome.org/GNOME/glib/-/issues/3915",
             "https://linux.oracle.com/cve/CVE-2026-58010.html",
-            "https://linux.oracle.com/errata/ELSA-2026-57015.html",
+            "https://linux.oracle.com/errata/ELSA-2026-61766-0.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-58010",
             "https://www.cve.org/CVERecord?id=CVE-2026-58010"
           ],
@@ -61996,7 +62385,7 @@
             "https://gitlab.gnome.org/GNOME/glib/-/issues/3917",
             "https://gitlab.gnome.org/GNOME/glib/-/work_items/3917",
             "https://linux.oracle.com/cve/CVE-2026-58011.html",
-            "https://linux.oracle.com/errata/ELSA-2026-57015.html",
+            "https://linux.oracle.com/errata/ELSA-2026-61766-0.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-58011",
             "https://www.cve.org/CVERecord?id=CVE-2026-58011"
           ],
@@ -62091,7 +62480,7 @@
             "https://github.com/advisories/GHSA-vwg8-37h9-g38g",
             "https://gitlab.gnome.org/GNOME/glib/-/issues/3918",
             "https://linux.oracle.com/cve/CVE-2026-58012.html",
-            "https://linux.oracle.com/errata/ELSA-2026-57015.html",
+            "https://linux.oracle.com/errata/ELSA-2026-61766-0.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-58012",
             "https://www.cve.org/CVERecord?id=CVE-2026-58012"
           ],
@@ -62186,7 +62575,7 @@
             "https://github.com/advisories/GHSA-4x46-h598-64qr",
             "https://gitlab.gnome.org/GNOME/glib/-/issues/3925",
             "https://linux.oracle.com/cve/CVE-2026-58013.html",
-            "https://linux.oracle.com/errata/ELSA-2026-57015.html",
+            "https://linux.oracle.com/errata/ELSA-2026-61766-0.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-58013",
             "https://www.cve.org/CVERecord?id=CVE-2026-58013"
           ],
@@ -62281,7 +62670,7 @@
             "https://github.com/advisories/GHSA-h88q-m8mm-7243",
             "https://gitlab.gnome.org/GNOME/glib/-/issues/3930",
             "https://linux.oracle.com/cve/CVE-2026-58014.html",
-            "https://linux.oracle.com/errata/ELSA-2026-57015.html",
+            "https://linux.oracle.com/errata/ELSA-2026-61766-0.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-58014",
             "https://www.cve.org/CVERecord?id=CVE-2026-58014"
           ],
@@ -62375,7 +62764,7 @@
             "https://github.com/advisories/GHSA-hmpf-72wc-2r6x",
             "https://gitlab.gnome.org/GNOME/glib/-/issues/3931",
             "https://linux.oracle.com/cve/CVE-2026-58015.html",
-            "https://linux.oracle.com/errata/ELSA-2026-57015.html",
+            "https://linux.oracle.com/errata/ELSA-2026-61766-0.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-58015",
             "https://www.cve.org/CVERecord?id=CVE-2026-58015"
           ],
@@ -62463,7 +62852,7 @@
             "https://errata.rockylinux.org/RLSA-2026:55440",
             "https://gitlab.gnome.org/GNOME/glib/-/issues/3985",
             "https://linux.oracle.com/cve/CVE-2026-15588.html",
-            "https://linux.oracle.com/errata/ELSA-2026-57015.html",
+            "https://linux.oracle.com/errata/ELSA-2026-61766-0.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-15588",
             "https://www.cve.org/CVERecord?id=CVE-2026-15588"
           ],
@@ -66087,7 +66476,7 @@
           "Status": "affected",
           "Title": "binutils: Binutils: Out-of-bounds Write Vulnerability",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "azure": 2,
             "cbl-mariner": 2,
             "debian": 1,
@@ -69628,7 +70017,7 @@
             "https://github.com/linux-pam/linux-pam/blob/master/libpam/include/pam_inline.h",
             "https://github.com/linux-pam/linux-pam/blob/master/modules/pam_userdb/pam_userdb.c#L327",
             "https://linux.oracle.com/cve/CVE-2026-54411.html",
-            "https://linux.oracle.com/errata/ELSA-2026-59379.html",
+            "https://linux.oracle.com/errata/ELSA-2026-60224-0.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-54411",
             "https://ubuntu.com/security/notices/USN-8601-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-54411"
@@ -69754,7 +70143,7 @@
             "https://github.com/linux-pam/linux-pam/blob/master/libpam/include/pam_inline.h",
             "https://github.com/linux-pam/linux-pam/blob/master/modules/pam_userdb/pam_userdb.c#L327",
             "https://linux.oracle.com/cve/CVE-2026-54411.html",
-            "https://linux.oracle.com/errata/ELSA-2026-59379.html",
+            "https://linux.oracle.com/errata/ELSA-2026-60224-0.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-54411",
             "https://ubuntu.com/security/notices/USN-8601-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-54411"
@@ -69880,7 +70269,7 @@
             "https://github.com/linux-pam/linux-pam/blob/master/libpam/include/pam_inline.h",
             "https://github.com/linux-pam/linux-pam/blob/master/modules/pam_userdb/pam_userdb.c#L327",
             "https://linux.oracle.com/cve/CVE-2026-54411.html",
-            "https://linux.oracle.com/errata/ELSA-2026-59379.html",
+            "https://linux.oracle.com/errata/ELSA-2026-60224-0.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-54411",
             "https://ubuntu.com/security/notices/USN-8601-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-54411"
@@ -70006,7 +70395,7 @@
             "https://github.com/linux-pam/linux-pam/blob/master/libpam/include/pam_inline.h",
             "https://github.com/linux-pam/linux-pam/blob/master/modules/pam_userdb/pam_userdb.c#L327",
             "https://linux.oracle.com/cve/CVE-2026-54411.html",
-            "https://linux.oracle.com/errata/ELSA-2026-59379.html",
+            "https://linux.oracle.com/errata/ELSA-2026-60224-0.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-54411",
             "https://ubuntu.com/security/notices/USN-8601-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-54411"
@@ -71503,7 +71892,7 @@
           "Title": "cpython: Incomplete control character validation in http.cookies",
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 2,
+            "amazon": 3,
             "azure": 2,
             "nvd": 3,
             "oracle-oval": 3,
@@ -72041,7 +72430,7 @@
           "Description": "The HTTPPasswordMgr class in the urllib.request module, along with its subclasses HTTPPasswordMgrWithDefaultRealm and HTTPPasswordMgrWithPriorAuth, did not take the URL scheme into account when matching stored credentials against a requested URL. Credentials added for an https:// URL were also used for requests to the same host over http://, so an attacker able to redirect or downgrade a client to plain HTTP (for example, via an HTTPS-to-HTTP redirect or an on-path position) could capture credentials in cleartext. Credentials added for http:// URLs could likewise be sent over https://.\n\nCredential matching is now scoped by URL scheme. Credentials registered with a URL that includes a scheme are only used for requests with the same scheme. Credentials registered with a bare authority (such as example.com or example.com:8080) continue to match any scheme, preserving compatibility with existing code, including proxy authentication.\n\nUsers who cannot upgrade immediately can mitigate by ensuring that applications never make plain http:// requests to hosts for which credentials are registered, for example by not following redirects to http:// URLs.",
           "Fingerprint": "sha256:02392bc6445c4e68fce8136c55fe54f186d0be9fabe10b1336e220b043c11497",
           "InstalledVersion": "3.11.2-6+deb12u8",
-          "LastModifiedDate": "2026-08-28T21:16:15.74Z",
+          "LastModifiedDate": "2026-09-02T01:17:23.35Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -72092,7 +72481,7 @@
           "Description": "The \"stringprep\" module didn't process characters from RFC 3454 tables \nB.2 or B.3 correctly: the latest Unicode codepoint attributes were used \ninstead of the specified Unicode 3.2.0. This behavior would cause \nmismatches when processing domain names using IDNA 2003 (the \"idna\" \ncodec) and the in_table_b2() function of the \"stringprep\" module. This \nonly affects domain names containing characters that were not previously\n registered or had their Unicode attributes such as case-folding \nbehavior updated since Unicode 3.2.0.",
           "Fingerprint": "sha256:b4a6c1154fab8b57aa5bf0885568f1f8510eb652c5870ebe0f94f10ad47b9f92",
           "InstalledVersion": "3.11.2-6+deb12u8",
-          "LastModifiedDate": "2026-08-19T01:16:56.65Z",
+          "LastModifiedDate": "2026-09-02T01:17:23.543Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -72283,7 +72672,7 @@
           "Status": "will_not_fix",
           "Title": "python: Python base64: Incomplete data decoding due to premature stop at padding",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "bitnami": 2,
             "redhat": 2
           },
@@ -72359,7 +72748,7 @@
           "Title": "python: Python: Cross-Site Scripting (XSS) vulnerability in http.cookies module",
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 3,
+            "amazon": 2,
             "bitnami": 1,
             "nvd": 2,
             "oracle-oval": 3,
@@ -72564,7 +72953,7 @@
           "Description": "When decompressing crafted zip files using the bzip/LZMA/Zstandard \n\ncompressions, Python could use an attacker-controlled size to \n\npre-allocate memory, possibly resulting in memory exhaustion.",
           "Fingerprint": "sha256:0605a303958109aafb3459cf1c6fddbeb73535af85690ddc3f6a75b04f6c65c0",
           "InstalledVersion": "3.11.2-6+deb12u8",
-          "LastModifiedDate": "2026-09-01T02:16:56.5Z",
+          "LastModifiedDate": "2026-09-02T01:17:22.82Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -72701,7 +73090,7 @@
           "Status": "affected",
           "Title": "python: Python pkgutil.get_data(): Path Traversal via improper resource argument validation",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "debian": 1,
             "photon": 3,
             "redhat": 1
@@ -73118,7 +73507,7 @@
           "Title": "cpython: Incomplete control character validation in http.cookies",
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 2,
+            "amazon": 3,
             "azure": 2,
             "nvd": 3,
             "oracle-oval": 3,
@@ -73656,7 +74045,7 @@
           "Description": "The HTTPPasswordMgr class in the urllib.request module, along with its subclasses HTTPPasswordMgrWithDefaultRealm and HTTPPasswordMgrWithPriorAuth, did not take the URL scheme into account when matching stored credentials against a requested URL. Credentials added for an https:// URL were also used for requests to the same host over http://, so an attacker able to redirect or downgrade a client to plain HTTP (for example, via an HTTPS-to-HTTP redirect or an on-path position) could capture credentials in cleartext. Credentials added for http:// URLs could likewise be sent over https://.\n\nCredential matching is now scoped by URL scheme. Credentials registered with a URL that includes a scheme are only used for requests with the same scheme. Credentials registered with a bare authority (such as example.com or example.com:8080) continue to match any scheme, preserving compatibility with existing code, including proxy authentication.\n\nUsers who cannot upgrade immediately can mitigate by ensuring that applications never make plain http:// requests to hosts for which credentials are registered, for example by not following redirects to http:// URLs.",
           "Fingerprint": "sha256:7c1d97caca29cc2c78f12846102f6affe2e873df77e2073b4b3a55f661fdc295",
           "InstalledVersion": "3.11.2-6+deb12u8",
-          "LastModifiedDate": "2026-08-28T21:16:15.74Z",
+          "LastModifiedDate": "2026-09-02T01:17:23.35Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -73707,7 +74096,7 @@
           "Description": "The \"stringprep\" module didn't process characters from RFC 3454 tables \nB.2 or B.3 correctly: the latest Unicode codepoint attributes were used \ninstead of the specified Unicode 3.2.0. This behavior would cause \nmismatches when processing domain names using IDNA 2003 (the \"idna\" \ncodec) and the in_table_b2() function of the \"stringprep\" module. This \nonly affects domain names containing characters that were not previously\n registered or had their Unicode attributes such as case-folding \nbehavior updated since Unicode 3.2.0.",
           "Fingerprint": "sha256:374eaca6d42060cd894df3a12b2304f5df2284e1a066cfea99b77c5bbd173214",
           "InstalledVersion": "3.11.2-6+deb12u8",
-          "LastModifiedDate": "2026-08-19T01:16:56.65Z",
+          "LastModifiedDate": "2026-09-02T01:17:23.543Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -73898,7 +74287,7 @@
           "Status": "will_not_fix",
           "Title": "python: Python base64: Incomplete data decoding due to premature stop at padding",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "bitnami": 2,
             "redhat": 2
           },
@@ -73974,7 +74363,7 @@
           "Title": "python: Python: Cross-Site Scripting (XSS) vulnerability in http.cookies module",
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 3,
+            "amazon": 2,
             "bitnami": 1,
             "nvd": 2,
             "oracle-oval": 3,
@@ -74179,7 +74568,7 @@
           "Description": "When decompressing crafted zip files using the bzip/LZMA/Zstandard \n\ncompressions, Python could use an attacker-controlled size to \n\npre-allocate memory, possibly resulting in memory exhaustion.",
           "Fingerprint": "sha256:77a388348697af3ae5992fb7b08839315b440c717ac23c8ed44fbc2eb6123fe7",
           "InstalledVersion": "3.11.2-6+deb12u8",
-          "LastModifiedDate": "2026-09-01T02:16:56.5Z",
+          "LastModifiedDate": "2026-09-02T01:17:22.82Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -74316,7 +74705,7 @@
           "Status": "affected",
           "Title": "python: Python pkgutil.get_data(): Path Traversal via improper resource argument validation",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "debian": 1,
             "photon": 3,
             "redhat": 1
@@ -74733,7 +75122,7 @@
           "Title": "cpython: Incomplete control character validation in http.cookies",
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 2,
+            "amazon": 3,
             "azure": 2,
             "nvd": 3,
             "oracle-oval": 3,
@@ -75271,7 +75660,7 @@
           "Description": "The HTTPPasswordMgr class in the urllib.request module, along with its subclasses HTTPPasswordMgrWithDefaultRealm and HTTPPasswordMgrWithPriorAuth, did not take the URL scheme into account when matching stored credentials against a requested URL. Credentials added for an https:// URL were also used for requests to the same host over http://, so an attacker able to redirect or downgrade a client to plain HTTP (for example, via an HTTPS-to-HTTP redirect or an on-path position) could capture credentials in cleartext. Credentials added for http:// URLs could likewise be sent over https://.\n\nCredential matching is now scoped by URL scheme. Credentials registered with a URL that includes a scheme are only used for requests with the same scheme. Credentials registered with a bare authority (such as example.com or example.com:8080) continue to match any scheme, preserving compatibility with existing code, including proxy authentication.\n\nUsers who cannot upgrade immediately can mitigate by ensuring that applications never make plain http:// requests to hosts for which credentials are registered, for example by not following redirects to http:// URLs.",
           "Fingerprint": "sha256:c46ac8bf5dcf350f7ff8c86cc1441d29737f9170febe1bc97e490d7f5d2fc07e",
           "InstalledVersion": "3.11.2-6+deb12u8",
-          "LastModifiedDate": "2026-08-28T21:16:15.74Z",
+          "LastModifiedDate": "2026-09-02T01:17:23.35Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -75322,7 +75711,7 @@
           "Description": "The \"stringprep\" module didn't process characters from RFC 3454 tables \nB.2 or B.3 correctly: the latest Unicode codepoint attributes were used \ninstead of the specified Unicode 3.2.0. This behavior would cause \nmismatches when processing domain names using IDNA 2003 (the \"idna\" \ncodec) and the in_table_b2() function of the \"stringprep\" module. This \nonly affects domain names containing characters that were not previously\n registered or had their Unicode attributes such as case-folding \nbehavior updated since Unicode 3.2.0.",
           "Fingerprint": "sha256:60a6986e45763f7a4f8eb9230d84a22c2b1fc00021be2b50003379c82c6b9b27",
           "InstalledVersion": "3.11.2-6+deb12u8",
-          "LastModifiedDate": "2026-08-19T01:16:56.65Z",
+          "LastModifiedDate": "2026-09-02T01:17:23.543Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -75513,7 +75902,7 @@
           "Status": "will_not_fix",
           "Title": "python: Python base64: Incomplete data decoding due to premature stop at padding",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "bitnami": 2,
             "redhat": 2
           },
@@ -75589,7 +75978,7 @@
           "Title": "python: Python: Cross-Site Scripting (XSS) vulnerability in http.cookies module",
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 3,
+            "amazon": 2,
             "bitnami": 1,
             "nvd": 2,
             "oracle-oval": 3,
@@ -75794,7 +76183,7 @@
           "Description": "When decompressing crafted zip files using the bzip/LZMA/Zstandard \n\ncompressions, Python could use an attacker-controlled size to \n\npre-allocate memory, possibly resulting in memory exhaustion.",
           "Fingerprint": "sha256:9027a3f2da9c266f0240cf08c6b8fecca7ecf82bf1cf24cb677b15afeffb0665",
           "InstalledVersion": "3.11.2-6+deb12u8",
-          "LastModifiedDate": "2026-09-01T02:16:56.5Z",
+          "LastModifiedDate": "2026-09-02T01:17:22.82Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -75931,7 +76320,7 @@
           "Status": "affected",
           "Title": "python: Python pkgutil.get_data(): Path Traversal via improper resource argument validation",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "debian": 1,
             "photon": 3,
             "redhat": 1
@@ -76348,7 +76737,7 @@
           "Title": "cpython: Incomplete control character validation in http.cookies",
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 2,
+            "amazon": 3,
             "azure": 2,
             "nvd": 3,
             "oracle-oval": 3,
@@ -76886,7 +77275,7 @@
           "Description": "The HTTPPasswordMgr class in the urllib.request module, along with its subclasses HTTPPasswordMgrWithDefaultRealm and HTTPPasswordMgrWithPriorAuth, did not take the URL scheme into account when matching stored credentials against a requested URL. Credentials added for an https:// URL were also used for requests to the same host over http://, so an attacker able to redirect or downgrade a client to plain HTTP (for example, via an HTTPS-to-HTTP redirect or an on-path position) could capture credentials in cleartext. Credentials added for http:// URLs could likewise be sent over https://.\n\nCredential matching is now scoped by URL scheme. Credentials registered with a URL that includes a scheme are only used for requests with the same scheme. Credentials registered with a bare authority (such as example.com or example.com:8080) continue to match any scheme, preserving compatibility with existing code, including proxy authentication.\n\nUsers who cannot upgrade immediately can mitigate by ensuring that applications never make plain http:// requests to hosts for which credentials are registered, for example by not following redirects to http:// URLs.",
           "Fingerprint": "sha256:c5534bb854e37ab8bdcedef7925927c48402cdb79b29e7490c90e4c73fdde2b6",
           "InstalledVersion": "3.11.2-6+deb12u8",
-          "LastModifiedDate": "2026-08-28T21:16:15.74Z",
+          "LastModifiedDate": "2026-09-02T01:17:23.35Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -76937,7 +77326,7 @@
           "Description": "The \"stringprep\" module didn't process characters from RFC 3454 tables \nB.2 or B.3 correctly: the latest Unicode codepoint attributes were used \ninstead of the specified Unicode 3.2.0. This behavior would cause \nmismatches when processing domain names using IDNA 2003 (the \"idna\" \ncodec) and the in_table_b2() function of the \"stringprep\" module. This \nonly affects domain names containing characters that were not previously\n registered or had their Unicode attributes such as case-folding \nbehavior updated since Unicode 3.2.0.",
           "Fingerprint": "sha256:a72967f7fc9ded72a71622d7a28580f53f49404135aaba38d6d9f23f4f7b121c",
           "InstalledVersion": "3.11.2-6+deb12u8",
-          "LastModifiedDate": "2026-08-19T01:16:56.65Z",
+          "LastModifiedDate": "2026-09-02T01:17:23.543Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -77128,7 +77517,7 @@
           "Status": "will_not_fix",
           "Title": "python: Python base64: Incomplete data decoding due to premature stop at padding",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "bitnami": 2,
             "redhat": 2
           },
@@ -77204,7 +77593,7 @@
           "Title": "python: Python: Cross-Site Scripting (XSS) vulnerability in http.cookies module",
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 3,
+            "amazon": 2,
             "bitnami": 1,
             "nvd": 2,
             "oracle-oval": 3,
@@ -77409,7 +77798,7 @@
           "Description": "When decompressing crafted zip files using the bzip/LZMA/Zstandard \n\ncompressions, Python could use an attacker-controlled size to \n\npre-allocate memory, possibly resulting in memory exhaustion.",
           "Fingerprint": "sha256:9122fbd800fbff19961591dc2769e57bc1c9a548d86ff1babb2f34b126947a04",
           "InstalledVersion": "3.11.2-6+deb12u8",
-          "LastModifiedDate": "2026-09-01T02:16:56.5Z",
+          "LastModifiedDate": "2026-09-02T01:17:22.82Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -77546,7 +77935,7 @@
           "Status": "affected",
           "Title": "python: Python pkgutil.get_data(): Path Traversal via improper resource argument validation",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "debian": 1,
             "photon": 3,
             "redhat": 1
@@ -78171,7 +78560,7 @@
             "https://errata.almalinux.org/9/ALSA-2026-58936.html",
             "https://errata.rockylinux.org/RLSA-2026:58936",
             "https://linux.oracle.com/cve/CVE-2026-11822.html",
-            "https://linux.oracle.com/errata/ELSA-2026-58938.html",
+            "https://linux.oracle.com/errata/ELSA-2026-61242-0.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-11822",
             "https://sqlite.org/releaselog/3_53_2.html",
             "https://sqlite.org/src/info/061febcf41ca",
@@ -78998,7 +79387,8 @@
             "amazon": 3,
             "azure": 3,
             "julia": 3,
-            "redhat": 2
+            "redhat": 2,
+            "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-66034"
         },
@@ -79543,6 +79933,54 @@
         {
           "CVSS": {
             "redhat": {
+              "V3Score": 8.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-269",
+            "CWE-347"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "systemd-homed contains a local privilege escalation bug via arbitrary system group addition to a local, logged in, homed-managed user",
+          "Fingerprint": "sha256:16a1130543e6a48e40c61679d65e0e9f237e501fb6aa4d373fa11ba0f5e6f1e0",
+          "InstalledVersion": "252.39-1~deb12u2",
+          "LastModifiedDate": "2026-09-01T20:54:51.287Z",
+          "Layer": {
+            "DiffID": "sha256:66462cc862fe2053b9863fefa3866e07bb5dfb06f6b3ce3177cc096e4021aabe",
+            "Digest": "sha256:e4376313f4ed09af5cb5e63d27312153c9adce82fc4c8f8edb966f0ed6e49db5"
+          },
+          "PkgID": "libsystemd0@252.39-1~deb12u2",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libsystemd0@252.39-1~deb12u2?arch=amd64\u0026distro=debian-12.15",
+            "UID": "39a9ef8237c534db"
+          },
+          "PkgName": "libsystemd0",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-16742",
+          "PublishedDate": "2026-08-10T14:17:21.277Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-16742",
+            "https://github.com/systemd/systemd/security/advisories/GHSA-jm29-p7hh-vjhv",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-16742",
+            "https://ubuntu.com/security/notices/USN-8626-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-16742"
+          ],
+          "Severity": "HIGH",
+          "Status": "affected",
+          "Title": "systemd: systemd-homed: Local privilege escalation via missing home-record signature verification",
+          "VendorSeverity": {
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-16742"
+        },
+        {
+          "CVSS": {
+            "redhat": {
               "V3Score": 5.5,
               "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
             }
@@ -79587,45 +80025,6 @@
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-15059"
-        },
-        {
-          "CweIDs": [
-            "CWE-269",
-            "CWE-347"
-          ],
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Description": "systemd-homed contains a local privilege escalation bug via arbitrary system group addition to a local, logged in, homed-managed user",
-          "Fingerprint": "sha256:16a1130543e6a48e40c61679d65e0e9f237e501fb6aa4d373fa11ba0f5e6f1e0",
-          "InstalledVersion": "252.39-1~deb12u2",
-          "LastModifiedDate": "2026-09-01T20:54:51.287Z",
-          "Layer": {
-            "DiffID": "sha256:66462cc862fe2053b9863fefa3866e07bb5dfb06f6b3ce3177cc096e4021aabe",
-            "Digest": "sha256:e4376313f4ed09af5cb5e63d27312153c9adce82fc4c8f8edb966f0ed6e49db5"
-          },
-          "PkgID": "libsystemd0@252.39-1~deb12u2",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libsystemd0@252.39-1~deb12u2?arch=amd64\u0026distro=debian-12.15",
-            "UID": "39a9ef8237c534db"
-          },
-          "PkgName": "libsystemd0",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-16742",
-          "PublishedDate": "2026-08-10T14:17:21.277Z",
-          "References": [
-            "https://github.com/systemd/systemd/security/advisories/GHSA-jm29-p7hh-vjhv",
-            "https://ubuntu.com/security/notices/USN-8626-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-16742"
-          ],
-          "Severity": "MEDIUM",
-          "Status": "affected",
-          "Title": "systemd-homed contains a local privilege escalation bug via arbitrary  ...",
-          "VendorSeverity": {
-            "ubuntu": 2
-          },
-          "VulnerabilityID": "CVE-2026-16742"
         },
         {
           "CVSS": {
@@ -80278,6 +80677,54 @@
         {
           "CVSS": {
             "redhat": {
+              "V3Score": 8.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-269",
+            "CWE-347"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "systemd-homed contains a local privilege escalation bug via arbitrary system group addition to a local, logged in, homed-managed user",
+          "Fingerprint": "sha256:0441b2471af9a6acb86795a6cadbca8ad863b22181e4bde5f6019ce8c4c424ef",
+          "InstalledVersion": "252.39-1~deb12u2",
+          "LastModifiedDate": "2026-09-01T20:54:51.287Z",
+          "Layer": {
+            "DiffID": "sha256:66462cc862fe2053b9863fefa3866e07bb5dfb06f6b3ce3177cc096e4021aabe",
+            "Digest": "sha256:e4376313f4ed09af5cb5e63d27312153c9adce82fc4c8f8edb966f0ed6e49db5"
+          },
+          "PkgID": "libudev1@252.39-1~deb12u2",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libudev1@252.39-1~deb12u2?arch=amd64\u0026distro=debian-12.15",
+            "UID": "3c4724c0041c8265"
+          },
+          "PkgName": "libudev1",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-16742",
+          "PublishedDate": "2026-08-10T14:17:21.277Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-16742",
+            "https://github.com/systemd/systemd/security/advisories/GHSA-jm29-p7hh-vjhv",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-16742",
+            "https://ubuntu.com/security/notices/USN-8626-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-16742"
+          ],
+          "Severity": "HIGH",
+          "Status": "affected",
+          "Title": "systemd: systemd-homed: Local privilege escalation via missing home-record signature verification",
+          "VendorSeverity": {
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-16742"
+        },
+        {
+          "CVSS": {
+            "redhat": {
               "V3Score": 5.5,
               "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
             }
@@ -80322,45 +80769,6 @@
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-15059"
-        },
-        {
-          "CweIDs": [
-            "CWE-269",
-            "CWE-347"
-          ],
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Description": "systemd-homed contains a local privilege escalation bug via arbitrary system group addition to a local, logged in, homed-managed user",
-          "Fingerprint": "sha256:0441b2471af9a6acb86795a6cadbca8ad863b22181e4bde5f6019ce8c4c424ef",
-          "InstalledVersion": "252.39-1~deb12u2",
-          "LastModifiedDate": "2026-09-01T20:54:51.287Z",
-          "Layer": {
-            "DiffID": "sha256:66462cc862fe2053b9863fefa3866e07bb5dfb06f6b3ce3177cc096e4021aabe",
-            "Digest": "sha256:e4376313f4ed09af5cb5e63d27312153c9adce82fc4c8f8edb966f0ed6e49db5"
-          },
-          "PkgID": "libudev1@252.39-1~deb12u2",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libudev1@252.39-1~deb12u2?arch=amd64\u0026distro=debian-12.15",
-            "UID": "3c4724c0041c8265"
-          },
-          "PkgName": "libudev1",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-16742",
-          "PublishedDate": "2026-08-10T14:17:21.277Z",
-          "References": [
-            "https://github.com/systemd/systemd/security/advisories/GHSA-jm29-p7hh-vjhv",
-            "https://ubuntu.com/security/notices/USN-8626-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-16742"
-          ],
-          "Severity": "MEDIUM",
-          "Status": "affected",
-          "Title": "systemd-homed contains a local privilege escalation bug via arbitrary  ...",
-          "VendorSeverity": {
-            "ubuntu": 2
-          },
-          "VulnerabilityID": "CVE-2026-16742"
         },
         {
           "CVSS": {
@@ -81188,6 +81596,8 @@
             "https://errata.almalinux.org/9/ALSA-2026-61247.html",
             "https://errata.rockylinux.org/RLSA-2026:61247",
             "https://gitlab.gnome.org/GNOME/libxml2/-/work_items/1058",
+            "https://linux.oracle.com/cve/CVE-2026-6653.html",
+            "https://linux.oracle.com/errata/ELSA-2026-61247-0.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-6653",
             "https://ubuntu.com/security/notices/USN-8456-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-6653"
@@ -81201,6 +81611,7 @@
             "amazon": 2,
             "julia": 3,
             "nvd": 4,
+            "oracle-oval": 2,
             "redhat": 2,
             "rocky": 2,
             "ubuntu": 2
@@ -81257,7 +81668,7 @@
             "https://errata.rockylinux.org/RLSA-2026:61247",
             "https://gitlab.gnome.org/GNOME/libxml2/-/commit/c2e233fc1b341685fc99621b2768b503f777a72e",
             "https://linux.oracle.com/cve/CVE-2026-11979.html",
-            "https://linux.oracle.com/errata/ELSA-2026-60394-0.html",
+            "https://linux.oracle.com/errata/ELSA-2026-61247-0.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-11979",
             "https://www.cve.org/CVERecord?id=CVE-2026-11979"
           ],
@@ -85696,7 +86107,7 @@
           "Description": "In the Linux kernel, the following vulnerability has been resolved:\n\nibmvnic: Use kernel helpers for hex dumps\n\nPreviously, when the driver was printing hex dumps, the buffer was cast\nto an 8 byte long and printed using string formatters. If the buffer\nsize was not a multiple of 8 then a read buffer overflow was possible.\n\nTherefore, create a new ibmvnic function that loops over a buffer and\ncalls hex_dump_to_buffer instead.\n\nThis patch address KASAN reports like the one below:\n  ibmvnic 30000003 env3: Login Buffer:\n  ibmvnic 30000003 env3: 01000000af000000\n  \u003c...\u003e\n  ibmvnic 30000003 env3: 2e6d62692e736261\n  ibmvnic 30000003 env3: 65050003006d6f63\n  ==================================================================\n  BUG: KASAN: slab-out-of-bounds in ibmvnic_login+0xacc/0xffc [ibmvnic]\n  Read of size 8 at addr c0000001331a9aa8 by task ip/17681\n  \u003c...\u003e\n  Allocated by task 17681:\n  \u003c...\u003e\n  ibmvnic_login+0x2f0/0xffc [ibmvnic]\n  ibmvnic_open+0x148/0x308 [ibmvnic]\n  __dev_open+0x1ac/0x304\n  \u003c...\u003e\n  The buggy address is located 168 bytes inside of\n                allocated 175-byte region [c0000001331a9a00, c0000001331a9aaf)\n  \u003c...\u003e\n  =================================================================\n  ibmvnic 30000003 env3: 000000000033766e",
           "Fingerprint": "sha256:c38139d3dfc1c481e5207d90def7a5fb24ab83263c6521d7614227d967d73bd6",
           "InstalledVersion": "6.1.180-1",
-          "LastModifiedDate": "2026-06-17T08:45:09.69Z",
+          "LastModifiedDate": "2026-09-02T13:16:48.767Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -85731,6 +86142,9 @@
             "https://errata.almalinux.org/9/ALSA-2025-9302.html",
             "https://errata.rockylinux.org/RLSA-2025:9302",
             "https://git.kernel.org/linus/d93a6caab5d7d9b5ce034d75b1e1e993338e3852%20%286.15-rc1%29",
+            "https://git.kernel.org/stable/c/005fee039dd845122d313ac8f2122b0d09dc5d7b",
+            "https://git.kernel.org/stable/c/19efa170e01207c8ada726f3f6c65b31fcba2a73",
+            "https://git.kernel.org/stable/c/9bc078818ec76344c2e06b81d7aee2df3adecfbf",
             "https://git.kernel.org/stable/c/ae6b1d6c1acee3a2000394d83ec9f1028321e207",
             "https://git.kernel.org/stable/c/d93a6caab5d7d9b5ce034d75b1e1e993338e3852",
             "https://linux.oracle.com/cve/CVE-2025-22104.html",
@@ -86702,7 +87116,7 @@
           "Description": "In the Linux kernel, the following vulnerability has been resolved:\n\nexfat: fix double free in delayed_free\n\nThe double free could happen in the following path.\n\nexfat_create_upcase_table()\n        exfat_create_upcase_table() : return error\n        exfat_free_upcase_table() : free -\u003evol_utbl\n        exfat_load_default_upcase_table : return error\n     exfat_kill_sb()\n           delayed_free()\n                  exfat_free_upcase_table() \u003c--------- double free\nThis patch set -\u003evol_util as NULL after freeing it.",
           "Fingerprint": "sha256:e7a740e397c2b4de9c6c41c424ceca8af1f8a32ee93f1319488cb16cb85bd11e",
           "InstalledVersion": "6.1.180-1",
-          "LastModifiedDate": "2026-07-30T06:22:59.75Z",
+          "LastModifiedDate": "2026-09-02T13:16:49.14Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -86725,8 +87139,11 @@
             "https://git.kernel.org/linus/1f3d9724e16d62c7d42c67d6613b8512f2887c22%20%286.16-rc1%29",
             "https://git.kernel.org/stable/c/13d8de1b6568dcc31a95534ced16bc0c9a67bc15",
             "https://git.kernel.org/stable/c/1f3d9724e16d62c7d42c67d6613b8512f2887c22",
+            "https://git.kernel.org/stable/c/29abaf93357f4a7d083cf399d4306999e20db31d",
             "https://git.kernel.org/stable/c/66e84439ec2af776ce749e8540f8fdd257774152",
+            "https://git.kernel.org/stable/c/ac65f76db9b2ff3fbc9e198c0e9aaf81b111b7d0",
             "https://git.kernel.org/stable/c/d3cef0e7a5c1aa6217c51faa9ce8ecac35d6e1fd",
+            "https://git.kernel.org/stable/c/ea27703eb0efbadcd45b9949526160ed90536a72",
             "https://github.com/bottlerocket-os/bottlerocket-kernel-kit/blob/develop/advisories/4.3.0/BRSA-w4wfwisqfdsj.toml",
             "https://linux.oracle.com/cve/CVE-2025-38206.html",
             "https://linux.oracle.com/errata/ELSA-2026-3275.html",
@@ -91141,7 +91558,7 @@
           "Description": "In the Linux kernel, the following vulnerability has been resolved:\n\nbpf: Fix use-after-free in offloaded map/prog info fill\n\nWhen querying info for an offloaded BPF map or program,\nbpf_map_offload_info_fill_ns() and bpf_prog_offload_info_fill_ns()\nobtain the network namespace with get_net(dev_net(offmap-\u003enetdev)).\nHowever, the associated netdev's netns may be racing with teardown\nduring netns destruction. If the netns refcount has already reached 0,\nget_net() performs a refcount_t increment on 0, triggering:\n\n  refcount_t: addition on 0; use-after-free.\n\nAlthough rtnl_lock and bpf_devs_lock ensure the netdev pointer remains\nvalid, they cannot prevent the netns refcount from reaching zero.\n\nFix this by using maybe_get_net() instead of get_net(). maybe_get_net()\nuses refcount_inc_not_zero() and returns NULL if the refcount is already\nzero, which causes ns_get_path_cb() to fail and the caller to return\n-ENOENT -- the correct behavior when the netns is being destroyed.",
           "Fingerprint": "sha256:d16aa6faa5ace9da03f995efded94a032eec8fc3d88d5c2a1f52bdacf6b5cd81",
           "InstalledVersion": "6.1.180-1",
-          "LastModifiedDate": "2026-07-23T18:35:14.927Z",
+          "LastModifiedDate": "2026-09-02T13:18:00.677Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -91157,8 +91574,14 @@
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-53089",
             "https://git.kernel.org/linus/a0c584fc18056709c8e047a82a6045d6c209f4ce%20%287.1-rc1%29",
+            "https://git.kernel.org/stable/c/1a2dc103e16448d022a77ad5fc3234641436c4b7",
+            "https://git.kernel.org/stable/c/43d6848a2a6c92ccfd614d9f0bb6fd85b95dfa9d",
+            "https://git.kernel.org/stable/c/5662dac41a3442aa378d7c405164903eb109fc05",
+            "https://git.kernel.org/stable/c/642943ae5bdacabc8109dc4a5e0ebb4a6b99ef3e",
+            "https://git.kernel.org/stable/c/85dc711f742b192eb97c0e00b521312f5a7a415e",
             "https://git.kernel.org/stable/c/a0c584fc18056709c8e047a82a6045d6c209f4ce",
             "https://git.kernel.org/stable/c/a51e7fbe94a87e236631a83973d4f558310b2cd2",
+            "https://git.kernel.org/stable/c/fea55b034328feaafef75aee252f305e6f85a991",
             "https://lore.kernel.org/linux-cve-announce/2026062409-CVE-2026-53089-fdd8@gregkh/T",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-53089",
             "https://ubuntu.com/security/notices/USN-8566-1",
@@ -92766,57 +93189,6 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "In the Linux kernel, the following vulnerability has been resolved:\n\nksmbd: restore DACL size on check_add_overflow() to avoid malformed ACL\n\ncheck_add_overflow() unconditionally writes the truncated sum into *d\neven on overflow, per its contract in include/linux/overflow.h.\nThe four check_add_overflow() guards in set_posix_acl_entries_dacl()\nand set_ntacl_dacl() break out of the ACE-building loops on overflow,\nbut the truncated *size is then consumed downstream at the end of\nset_ntacl_dacl():\n\n    pndacl-\u003esize = cpu_to_le16(le16_to_cpu(pndacl-\u003esize) + size);\n\nThis produces an on-wire NT ACL whose pndacl-\u003esize under-reports the\nbytes actually written by the preceding fill_ace_for_sid()/memcpy()\ncalls, yielding a malformed ACL that can trigger out-of-bounds reads\nwhen re-parsed by clients or ksmbd itself.\n\nRestore *size to its pre-addition value on each overflow branch (via\n`*size -= ace_sz` / `size -= nt_ace_size`) so that after the break,\n*size once again holds the cumulative size of the successfully-written\nACEs. The committed ACL is then truncated-but-self-consistent rather\nthan malformed.\n\nThe ksmbd DACL builders are the only check_add_overflow() sites found\nwhere an overflow path breaks out of a loop and the destination value\nis consumed afterward. The other nearby break-style cases either\nreturn -EINVAL on overflow (transport_ipc.c) or break without\nconsuming the overflowed destination value afterward (buildid.c).",
-          "Fingerprint": "sha256:8f83d6d8ad15d16924af39f09f2d04d75eaf637e001ee1035ea79a4c2c8ffbbe",
-          "InstalledVersion": "6.1.180-1",
-          "LastModifiedDate": "2026-08-23T13:16:32.94Z",
-          "Layer": {
-            "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
-            "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
-          },
-          "PkgID": "linux-libc-dev@6.1.180-1",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/linux-libc-dev@6.1.180-1?arch=amd64\u0026distro=debian-12.15",
-            "UID": "ce97b70d303ad24f"
-          },
-          "PkgName": "linux-libc-dev",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-68099",
-          "PublishedDate": "2026-08-10T13:19:54.35Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-68099",
-            "https://git.kernel.org/stable/c/0bf38372821b1526f31538a7d9811844c55c7f38",
-            "https://git.kernel.org/stable/c/847ecd4eb3c117c3d2f13f1e7ab506543aad8183",
-            "https://git.kernel.org/stable/c/8f3a7a499a7d9bb1c0f33fe78c4a4594d7e307f4",
-            "https://git.kernel.org/stable/c/bbf0a8e931204ecdab494a88d43b0a24a04285c5",
-            "https://git.kernel.org/stable/c/bc90144ce8bb7fcf05ad9417c7adb4e9509d9e13",
-            "https://git.kernel.org/stable/c/f4fcd0c1a243d449307b887fafee23921e9db5ab",
-            "https://lore.kernel.org/linux-cve-announce/2026081051-CVE-2026-68099-5605@gregkh/T",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-68099",
-            "https://www.cve.org/CVERecord?id=CVE-2026-68099"
-          ],
-          "Severity": "HIGH",
-          "Status": "affected",
-          "Title": "kernel: ksmbd: restore DACL size on check_add_overflow() to avoid malformed ACL",
-          "VendorSeverity": {
-            "azure": 2,
-            "photon": 3,
-            "redhat": 3,
-            "ubuntu": 2
-          },
-          "VulnerabilityID": "CVE-2026-68099"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 7,
-              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
-            }
-          },
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
           "Description": "In the Linux kernel, the following vulnerability has been resolved:\n\nopenvswitch: fix GSO userspace truncation underflow\n\nOVS_ACTION_ATTR_TRUNC currently stores a delta from the original skb\nlength in OVS_CB(skb)-\u003ecutlen. When a later userspace action segments a\nGSO skb, queue_gso_packets() reuses that delta for each smaller segment.\nA segment can then reach queue_userspace_packet() with cutlen greater\nthan skb-\u003elen, underflowing the length passed to skb_zerocopy().\n\nStore the maximum preserved length instead and bound each consumer\nagainst the current skb length. Use U32_MAX as the no-truncation\nsentinel so the value remains valid if skb geometry changes before a\nconsumer handles it.",
           "Fingerprint": "sha256:af71c9b60f926798d591bc6d571097c151d6c9c34a8ce206620d61ba2a0bbe43",
           "InstalledVersion": "6.1.180-1",
@@ -94045,7 +94417,7 @@
           "Description": "In the Linux kernel, the following vulnerability has been resolved:\n\nipv4: igmp: Fix potential UAF in igmp_gq_start_timer()\n\nA race condition exists between device teardown (inetdev_destroy) and\nincoming IGMP query processing (igmp_rcv), leading to a Use-After-Free\nin the IGMP timer callback.\n\nDuring device destruction, inetdev_destroy() drops the primary reference\nto in_device, which can drop its refcount to 0. The actual freeing of\nin_device memory is deferred via RCU (using call_rcu()).\n\nConcurrently, igmp_rcv() runs under RCU read lock and obtains the\nin_device pointer. Because the memory is RCU-protected, CPU-0 can safely\ndereference in_device even if its refcount has hit 0.\n\nHowever, if CPU-0 calls igmp_gq_start_timer() and re-arms the timer, it\nattempts to acquire a reference using in_dev_hold(). This increments the\nrefcount from 0 to 1, triggering a \"refcount_t: addition on 0\" warning.\nSince the in_device memory is still scheduled to be freed after the RCU\ngrace period (as the free callback does not check the refcount again),\nthe device is freed while the timer is still armed. When the timer\nexpires, it accesses the freed memory, causing a kernel panic.\n\nFix this by using refcount_inc_not_zero() (via a new helper\nin_dev_hold_safe()) to prevent acquiring a reference if the device is\nalready being destroyed. If the refcount is 0, we do not arm the timer.\n\nA similar issue in IPv6 MLD is fixed in a subsequent patch.",
           "Fingerprint": "sha256:2daafde043f052d84f50a7036b4315c552d9a39fcb92f16e7565a159e0b09188",
           "InstalledVersion": "6.1.180-1",
-          "LastModifiedDate": "2026-08-17T06:18:35.827Z",
+          "LastModifiedDate": "2026-09-02T13:18:07.997Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -94063,9 +94435,12 @@
             "https://git.kernel.org/linus/7b19c0f81ed1fdaec6bc522569be367199a9edf3%20%287.2-rc3%29",
             "https://git.kernel.org/stable/c/165258303357e54b75fc19b341ae2a2b7c9e3910",
             "https://git.kernel.org/stable/c/40a1e998cb266ed4cb529a0bb4fee2b0ba732702",
+            "https://git.kernel.org/stable/c/7265c747eec415ca3109a6a14a419f7ae433b780",
+            "https://git.kernel.org/stable/c/74b301f7f197517016befb5f5dfab01f7bc64be5",
             "https://git.kernel.org/stable/c/75e984fe0cb9e7fbde0c8ee838c61ce8573d3ea3",
             "https://git.kernel.org/stable/c/7b19c0f81ed1fdaec6bc522569be367199a9edf3",
             "https://git.kernel.org/stable/c/8d4394ffa40508e0de72f464af351f6ca6a6cdc3",
+            "https://git.kernel.org/stable/c/d107b4c4f8274763b7ea5ab05d45cef78e4b81ba",
             "https://lore.kernel.org/linux-cve-announce/2026081506-CVE-2026-72323-b79f@gregkh/T",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-72323",
             "https://www.cve.org/CVERecord?id=CVE-2026-72323"
@@ -99289,7 +99664,7 @@
           "Description": "In the Linux kernel, the following vulnerability has been resolved:\n\nwifi: ath11k: Add missing hw_ops-\u003eget_ring_selector() for IPQ5018\n\nDuring sending data after clients connected, hw_ops-\u003eget_ring_selector()\nwill be called. But for IPQ5018, this member isn't set, and the\nfollowing NULL pointer exception will be occurred:\n\n\t[   38.840478] 8\u003c--- cut here ---\n\t[   38.840517] Unable to handle kernel NULL pointer dereference at virtual address 00000000\n\t...\n\t[   38.923161] PC is at 0x0\n\t[   38.927930] LR is at ath11k_dp_tx+0x70/0x730 [ath11k]\n\t...\n\t[   39.063264] Process hostapd (pid: 1034, stack limit = 0x801ceb3d)\n\t[   39.068994] Stack: (0x856a9a68 to 0x856aa000)\n\t...\n\t[   39.438467] [\u003c7f323804\u003e] (ath11k_dp_tx [ath11k]) from [\u003c7f314e6c\u003e] (ath11k_mac_op_tx+0x80/0x190 [ath11k])\n\t[   39.446607] [\u003c7f314e6c\u003e] (ath11k_mac_op_tx [ath11k]) from [\u003c7f17dbe0\u003e] (ieee80211_handle_wake_tx_queue+0x7c/0xc0 [mac80211])\n\t[   39.456162] [\u003c7f17dbe0\u003e] (ieee80211_handle_wake_tx_queue [mac80211]) from [\u003c7f174450\u003e] (ieee80211_probereq_get+0x584/0x704 [mac80211])\n\t[   39.467443] [\u003c7f174450\u003e] (ieee80211_probereq_get [mac80211]) from [\u003c7f178c40\u003e] (ieee80211_tx_prepare_skb+0x1f8/0x248 [mac80211])\n\t[   39.479334] [\u003c7f178c40\u003e] (ieee80211_tx_prepare_skb [mac80211]) from [\u003c7f179e28\u003e] (__ieee80211_subif_start_xmit+0x32c/0x3d4 [mac80211])\n\t[   39.491053] [\u003c7f179e28\u003e] (__ieee80211_subif_start_xmit [mac80211]) from [\u003c7f17af08\u003e] (ieee80211_tx_control_port+0x19c/0x288 [mac80211])\n\t[   39.502946] [\u003c7f17af08\u003e] (ieee80211_tx_control_port [mac80211]) from [\u003c7f0fc704\u003e] (nl80211_tx_control_port+0x174/0x1d4 [cfg80211])\n\t[   39.515017] [\u003c7f0fc704\u003e] (nl80211_tx_control_port [cfg80211]) from [\u003c808ceac4\u003e] (genl_rcv_msg+0x154/0x340)\n\t[   39.526814] [\u003c808ceac4\u003e] (genl_rcv_msg) from [\u003c808cdb74\u003e] (netlink_rcv_skb+0xb8/0x11c)\n\t[   39.536446] [\u003c808cdb74\u003e] (netlink_rcv_skb) from [\u003c808ce1d0\u003e] (genl_rcv+0x28/0x34)\n\t[   39.544344] [\u003c808ce1d0\u003e] (genl_rcv) from [\u003c808cd234\u003e] (netlink_unicast+0x174/0x274)\n\t[   39.551895] [\u003c808cd234\u003e] (netlink_unicast) from [\u003c808cd510\u003e] (netlink_sendmsg+0x1dc/0x440)\n\t[   39.559362] [\u003c808cd510\u003e] (netlink_sendmsg) from [\u003c808596e0\u003e] (____sys_sendmsg+0x1a8/0x1fc)\n\t[   39.567697] [\u003c808596e0\u003e] (____sys_sendmsg) from [\u003c8085b1a8\u003e] (___sys_sendmsg+0xa4/0xdc)\n\t[   39.575941] [\u003c8085b1a8\u003e] (___sys_sendmsg) from [\u003c8085b310\u003e] (sys_sendmsg+0x44/0x74)\n\t[   39.583841] [\u003c8085b310\u003e] (sys_sendmsg) from [\u003c80300060\u003e] (ret_fast_syscall+0x0/0x40)\n\t...\n\t[   39.620734] Code: bad PC value\n\t[   39.625869] ---[ end trace 8aef983ad3cbc032 ]---",
           "Fingerprint": "sha256:bc257d842d121d595a164dd853d95399570da58080f8ba46478d7f8d38cd117a",
           "InstalledVersion": "6.1.180-1",
-          "LastModifiedDate": "2026-06-17T06:46:52.62Z",
+          "LastModifiedDate": "2026-09-02T13:16:46.527Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -99307,6 +99682,7 @@
             "https://git.kernel.org/stable/c/c36289e3c5e83286974ef68c20c821fd5b63801c",
             "https://git.kernel.org/stable/c/ce282d8de71f07f0056ea319541141152c65f552",
             "https://git.kernel.org/stable/c/d1992d72a359732f143cc962917104d193705da7",
+            "https://git.kernel.org/stable/c/d49d420e4833fdf6d7c506de23884a0cb9b08e0a",
             "https://lore.kernel.org/linux-cve-announce/2025122423-CVE-2023-54141-86e5@gregkh/T",
             "https://nvd.nist.gov/vuln/detail/CVE-2023-54141",
             "https://www.cve.org/CVERecord?id=CVE-2023-54141"
@@ -99334,7 +99710,7 @@
           "Description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/nouveau/kms/nv50-: init hpd_irq_lock for PIOR DP\n\nFixes OOPS on boards with ANX9805 DP encoders.",
           "Fingerprint": "sha256:9327894fca7c52bb8132649c67a0e5bfc784589643631de182c232f9a01af77a",
           "InstalledVersion": "6.1.180-1",
-          "LastModifiedDate": "2026-06-17T06:47:07.047Z",
+          "LastModifiedDate": "2026-09-02T13:16:47.56Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -99351,6 +99727,7 @@
             "https://access.redhat.com/security/cve/CVE-2023-54263",
             "https://git.kernel.org/linus/ea293f823a8805735d9e00124df81a8f448ed1ae%20%286.5-rc3%29",
             "https://git.kernel.org/stable/c/92d48ce21645267c574268678131cd2b648dad0f",
+            "https://git.kernel.org/stable/c/a63fa556ac5772d004025c1164b7bd5a8b95eaef",
             "https://git.kernel.org/stable/c/ea293f823a8805735d9e00124df81a8f448ed1ae",
             "https://lore.kernel.org/linux-cve-announce/2025123058-CVE-2023-54263-0976@gregkh/T",
             "https://nvd.nist.gov/vuln/detail/CVE-2023-54263",
@@ -99651,7 +100028,7 @@
           "Status": "affected",
           "Title": "hw: Spectre-SRC that is Speculative Race Conditions (SRCs) for synchronization primitives similar like Spectre V1 with possibility to bypass software features (e.g., IPIs, high-precision timers, etc)",
           "VendorSeverity": {
-            "amazon": 2,
+            "amazon": 3,
             "bottlerocket": 2,
             "photon": 2,
             "redhat": 2
@@ -101349,7 +101726,7 @@
           "Description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet/sched: Fix mirred deadlock on device recursion\n\nWhen the mirred action is used on a classful egress qdisc and a packet is\nmirrored or redirected to self we hit a qdisc lock deadlock.\nSee trace below.\n\n[..... other info removed for brevity....]\n[   82.890906]\n[   82.890906] ============================================\n[   82.890906] WARNING: possible recursive locking detected\n[   82.890906] 6.8.0-05205-g77fadd89fe2d-dirty #213 Tainted: G        W\n[   82.890906] --------------------------------------------\n[   82.890906] ping/418 is trying to acquire lock:\n[   82.890906] ffff888006994110 (\u0026sch-\u003eq.lock){+.-.}-{3:3}, at:\n__dev_queue_xmit+0x1778/0x3550\n[   82.890906]\n[   82.890906] but task is already holding lock:\n[   82.890906] ffff888006994110 (\u0026sch-\u003eq.lock){+.-.}-{3:3}, at:\n__dev_queue_xmit+0x1778/0x3550\n[   82.890906]\n[   82.890906] other info that might help us debug this:\n[   82.890906]  Possible unsafe locking scenario:\n[   82.890906]\n[   82.890906]        CPU0\n[   82.890906]        ----\n[   82.890906]   lock(\u0026sch-\u003eq.lock);\n[   82.890906]   lock(\u0026sch-\u003eq.lock);\n[   82.890906]\n[   82.890906]  *** DEADLOCK ***\n[   82.890906]\n[..... other info removed for brevity....]\n\nExample setup (eth0-\u003eeth0) to recreate\ntc qdisc add dev eth0 root handle 1: htb default 30\ntc filter add dev eth0 handle 1: protocol ip prio 2 matchall \\\n     action mirred egress redirect dev eth0\n\nAnother example(eth0-\u003eeth1-\u003eeth0) to recreate\ntc qdisc add dev eth0 root handle 1: htb default 30\ntc filter add dev eth0 handle 1: protocol ip prio 2 matchall \\\n     action mirred egress redirect dev eth1\n\ntc qdisc add dev eth1 root handle 1: htb default 30\ntc filter add dev eth1 handle 1: protocol ip prio 2 matchall \\\n     action mirred egress redirect dev eth0\n\nWe fix this by adding an owner field (CPU id) to struct Qdisc set after\nroot qdisc is entered. When the softirq enters it a second time, if the\nqdisc owner is the same CPU, the packet is dropped to break the loop.",
           "Fingerprint": "sha256:fcca4086ee2c087d9e0cc54a2f44102c6f5c7c58fbbc2fdc6e91748b40a1817a",
           "InstalledVersion": "6.1.180-1",
-          "LastModifiedDate": "2026-06-17T07:18:55.84Z",
+          "LastModifiedDate": "2026-09-02T13:16:47.687Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -101839,6 +102216,7 @@
             "https://errata.rockylinux.org/RLSA-2024:5101",
             "https://git.kernel.org/linus/0f022d32c3eca477fbf79a205243a6123ed0fe11%20%286.9-rc5%29",
             "https://git.kernel.org/stable/c/0f022d32c3eca477fbf79a205243a6123ed0fe11",
+            "https://git.kernel.org/stable/c/524323f52cbfbac4fe3f8a33a8cc405fafba0d33",
             "https://git.kernel.org/stable/c/e6b90468da4dae2281a6e381107f411efb48b0ef",
             "https://linux.oracle.com/cve/CVE-2024-27010.html",
             "https://linux.oracle.com/errata/ELSA-2024-9315.html",
@@ -108736,7 +109114,7 @@
           "Description": "In the Linux kernel, the following vulnerability has been resolved:\n\nbpf: Remove tst_run from lwt_seg6local_prog_ops.\n\nThe syzbot reported that the lwt_seg6 related BPF ops can be invoked\nvia bpf_test_run() without without entering input_action_end_bpf()\nfirst.\n\nMartin KaFai Lau said that self test for BPF_PROG_TYPE_LWT_SEG6LOCAL\nprobably didn't work since it was introduced in commit 04d4b274e2a\n(\"ipv6: sr: Add seg6local action End.BPF\"). The reason is that the\nper-CPU variable seg6_bpf_srh_states::srh is never assigned in the self\ntest case but each BPF function expects it.\n\nRemove test_run for BPF_PROG_TYPE_LWT_SEG6LOCAL.",
           "Fingerprint": "sha256:24e59b3d9fa00072e7c9295ba79a67494366cb2b3e175e6e8bc48d2b9231baab",
           "InstalledVersion": "6.1.180-1",
-          "LastModifiedDate": "2026-08-04T11:20:22.27Z",
+          "LastModifiedDate": "2026-09-02T13:16:48.143Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -108753,7 +109131,11 @@
             "https://access.redhat.com/security/cve/CVE-2024-46754",
             "https://git.kernel.org/linus/c13fda93aca118b8e5cd202e339046728ee7dddb%20%286.11-rc1%29",
             "https://git.kernel.org/stable/c/9cd15511de7c619bbd0f54bb3f28e6e720ded5d6",
+            "https://git.kernel.org/stable/c/a675524cfbe88fd49c05ff8807a08646983e687c",
+            "https://git.kernel.org/stable/c/b05c2e25a5c168dbb46b6f7fcb741fd4e4f3b54a",
             "https://git.kernel.org/stable/c/c13fda93aca118b8e5cd202e339046728ee7dddb",
+            "https://git.kernel.org/stable/c/e217492f6fa2228ad703ee3006d8fc4e5969fbd4",
+            "https://git.kernel.org/stable/c/ea3fae6984ba0f054550e4da22219489c12cd8d4",
             "https://linux.oracle.com/cve/CVE-2024-46754.html",
             "https://linux.oracle.com/errata/ELSA-2025-6966.html",
             "https://lore.kernel.org/linux-cve-announce/2024091840-CVE-2024-46754-7f04@gregkh/T",
@@ -111421,7 +111803,7 @@
           "Status": "affected",
           "Title": "kernel: x86/mm/ident_map: Use gbpages only where full GB page should be mapped.",
           "VendorSeverity": {
-            "amazon": 2,
+            "amazon": 3,
             "azure": 2,
             "nvd": 2,
             "redhat": 2,
@@ -116669,7 +117051,7 @@
           "Description": "In the Linux kernel, the following vulnerability has been resolved:\n\njfs: add check read-only before truncation in jfs_truncate_nolock()\n\nAdded a check for \"read-only\" mode in the `jfs_truncate_nolock`\nfunction to avoid errors related to writing to a read-only\nfilesystem.\n\nCall stack:\n\nblock_write_begin() {\n  jfs_write_failed() {\n    jfs_truncate() {\n      jfs_truncate_nolock() {\n        txEnd() {\n          ...\n          log = JFS_SBI(tblk-\u003esb)-\u003elog;\n          // (log == NULL)\n\nIf the `isReadOnly(ip)` condition is triggered in\n`jfs_truncate_nolock`, the function execution will stop, and no\nfurther data modification will occur. Instead, the `xtTruncate`\nfunction will be called with the \"COMMIT_WMAP\" flag, preventing\nmodifications in \"read-only\" mode.",
           "Fingerprint": "sha256:17f370c53c6ef80e1037353671b87971546dc379e5b1e95b5c1666eb43ac4fc3",
           "InstalledVersion": "6.1.180-1",
-          "LastModifiedDate": "2026-08-04T11:22:39.463Z",
+          "LastModifiedDate": "2026-09-02T13:16:48.343Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -116685,7 +117067,12 @@
           "References": [
             "https://access.redhat.com/security/cve/CVE-2024-58094",
             "https://git.kernel.org/linus/b5799dd77054c1ec49b0088b006c9908e256843b%20%286.15-rc1%29",
+            "https://git.kernel.org/stable/c/1fee021d6cf1d41b3f6e3fd028939be8f5d5c5db",
+            "https://git.kernel.org/stable/c/41da1715cd24e177678f93ee27f737b095fc838b",
+            "https://git.kernel.org/stable/c/77038187890ea82d237b05c8a9c4e08a38b1efcb",
             "https://git.kernel.org/stable/c/b5799dd77054c1ec49b0088b006c9908e256843b",
+            "https://git.kernel.org/stable/c/b57a8983916fc2cf54fd8de3afc733c6b3d1c0e5",
+            "https://git.kernel.org/stable/c/b98506e61e1bb6764c6711198cfab826df8ca952",
             "https://git.kernel.org/stable/c/f605bc3e162f5c6faa9bd3602ce496053d06a4bb",
             "https://lore.kernel.org/linux-cve-announce/2025041652-CVE-2024-58094-b87b@gregkh/T",
             "https://nvd.nist.gov/vuln/detail/CVE-2024-58094",
@@ -116724,7 +117111,7 @@
           "Description": "In the Linux kernel, the following vulnerability has been resolved:\n\njfs: add check read-only before txBeginAnon() call\n\nAdded a read-only check before calling `txBeginAnon` in `extAlloc`\nand `extRecord`. This prevents modification attempts on a read-only\nmounted filesystem, avoiding potential errors or crashes.\n\nCall trace:\n txBeginAnon+0xac/0x154\n extAlloc+0xe8/0xdec fs/jfs/jfs_extent.c:78\n jfs_get_block+0x340/0xb98 fs/jfs/inode.c:248\n __block_write_begin_int+0x580/0x166c fs/buffer.c:2128\n __block_write_begin fs/buffer.c:2177 [inline]\n block_write_begin+0x98/0x11c fs/buffer.c:2236\n jfs_write_begin+0x44/0x88 fs/jfs/inode.c:299",
           "Fingerprint": "sha256:4f8bb092abecf3a701ab4bab00723cc5682a9cf633ab33211ad819ed8de2e1fd",
           "InstalledVersion": "6.1.180-1",
-          "LastModifiedDate": "2026-06-17T08:14:37.427Z",
+          "LastModifiedDate": "2026-09-02T13:16:48.537Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -116742,6 +117129,11 @@
             "https://git.kernel.org/linus/0176e69743ecc02961f2ae1ea42439cd2bf9ed58%20%286.15-rc1%29",
             "https://git.kernel.org/stable/c/0176e69743ecc02961f2ae1ea42439cd2bf9ed58",
             "https://git.kernel.org/stable/c/15469c408af2d7a52fb186a92f2f091b0f13b1fb",
+            "https://git.kernel.org/stable/c/469bd67fc338e77d7585e4f20d4212afd44fefdc",
+            "https://git.kernel.org/stable/c/47a99881ecc50ff2bf4e7a6c3058fe1704073df9",
+            "https://git.kernel.org/stable/c/939dba7a6404d4ac88e2539cb21ac659f5757fd9",
+            "https://git.kernel.org/stable/c/93f11ab37f1c657f4265228ba3c2ff66bbefa24d",
+            "https://git.kernel.org/stable/c/97ac32b08442f5327867ad7d70d6ac6ebaa2a41a",
             "https://lore.kernel.org/linux-cve-announce/2025041653-CVE-2024-58095-9a41@gregkh/T",
             "https://nvd.nist.gov/vuln/detail/CVE-2024-58095",
             "https://ubuntu.com/security/notices/USN-7594-1",
@@ -124301,7 +124693,7 @@
           "Description": "In the Linux kernel, the following vulnerability has been resolved:\n\njfs: Fix null-ptr-deref in jfs_ioc_trim\n\n[ Syzkaller Report ]\n\nOops: general protection fault, probably for non-canonical address\n0xdffffc0000000087: 0000 [#1\nKASAN: null-ptr-deref in range [0x0000000000000438-0x000000000000043f]\nCPU: 2 UID: 0 PID: 10614 Comm: syz-executor.0 Not tainted\n6.13.0-rc6-gfbfd64d25c7a-dirty #1\nHardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS 1.15.0-1 04/01/2014\nSched_ext: serialise (enabled+all), task: runnable_at=-30ms\nRIP: 0010:jfs_ioc_trim+0x34b/0x8f0\nCode: e7 e8 59 a4 87 fe 4d 8b 24 24 4d 8d bc 24 38 04 00 00 48 8d 93\n90 82 fe ff 4c 89 ff 31 f6\nRSP: 0018:ffffc900055f7cd0 EFLAGS: 00010206\nRAX: 0000000000000087 RBX: 00005866a9e67ff8 RCX: 000000000000000a\nRDX: 0000000000000001 RSI: 0000000000000004 RDI: 0000000000000001\nRBP: dffffc0000000000 R08: ffff88807c180003 R09: 1ffff1100f830000\nR10: dffffc0000000000 R11: ffffed100f830001 R12: 0000000000000000\nR13: 0000000000000000 R14: 0000000000000001 R15: 0000000000000438\nFS:  00007fe520225640(0000) GS:ffff8880b7e80000(0000) knlGS:0000000000000000\nCS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033\nCR2: 00005593c91b2c88 CR3: 000000014927c000 CR4: 00000000000006f0\nDR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000\nDR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400\nCall Trace:\n\u003cTASK\u003e\n? __die_body+0x61/0xb0\n? die_addr+0xb1/0xe0\n? exc_general_protection+0x333/0x510\n? asm_exc_general_protection+0x26/0x30\n? jfs_ioc_trim+0x34b/0x8f0\njfs_ioctl+0x3c8/0x4f0\n? __pfx_jfs_ioctl+0x10/0x10\n? __pfx_jfs_ioctl+0x10/0x10\n__se_sys_ioctl+0x269/0x350\n? __pfx___se_sys_ioctl+0x10/0x10\n? do_syscall_64+0xfb/0x210\ndo_syscall_64+0xee/0x210\n? syscall_exit_to_user_mode+0x1e0/0x330\nentry_SYSCALL_64_after_hwframe+0x77/0x7f\nRIP: 0033:0x7fe51f4903ad\nCode: c3 e8 a7 2b 00 00 0f 1f 80 00 00 00 00 f3 0f 1e fa 48 89 f8 48\n89 f7 48 89 d6 48 89 ca 4d\nRSP: 002b:00007fe5202250c8 EFLAGS: 00000246 ORIG_RAX: 0000000000000010\nRAX: ffffffffffffffda RBX: 00007fe51f5cbf80 RCX: 00007fe51f4903ad\nRDX: 0000000020000680 RSI: 00000000c0185879 RDI: 0000000000000005\nRBP: 0000000000000000 R08: 0000000000000000 R09: 0000000000000000\nR10: 0000000000000000 R11: 0000000000000246 R12: 00007fe520225640\nR13: 000000000000000e R14: 00007fe51f44fca0 R15: 00007fe52021d000\n\u003c/TASK\u003e\nModules linked in:\n---[ end trace 0000000000000000 ]---\nRIP: 0010:jfs_ioc_trim+0x34b/0x8f0\nCode: e7 e8 59 a4 87 fe 4d 8b 24 24 4d 8d bc 24 38 04 00 00 48 8d 93\n90 82 fe ff 4c 89 ff 31 f6\nRSP: 0018:ffffc900055f7cd0 EFLAGS: 00010206\nRAX: 0000000000000087 RBX: 00005866a9e67ff8 RCX: 000000000000000a\nRDX: 0000000000000001 RSI: 0000000000000004 RDI: 0000000000000001\nRBP: dffffc0000000000 R08: ffff88807c180003 R09: 1ffff1100f830000\nR10: dffffc0000000000 R11: ffffed100f830001 R12: 0000000000000000\nR13: 0000000000000000 R14: 0000000000000001 R15: 0000000000000438\nFS:  00007fe520225640(0000) GS:ffff8880b7e80000(0000) knlGS:0000000000000000\nCS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033\nCR2: 00005593c91b2c88 CR3: 000000014927c000 CR4: 00000000000006f0\nDR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000\nDR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400\nKernel panic - not syncing: Fatal exception\n\n[ Analysis ]\n\nWe believe that we have found a concurrency bug in the `fs/jfs` module\nthat results in a null pointer dereference. There is a closely related\nissue which has been fixed:\n\nhttps://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=d6c1b3599b2feb5c7291f5ac3a36e5fa7cedb234\n\n... but, unfortunately, the accepted patch appears to still be\nsusceptible to a null pointer dereference under some interleavings.\n\nTo trigger the bug, we think that `JFS_SBI(ipbmap-\u003ei_sb)-\u003ebmap` is set\nto NULL in `dbFreeBits` and then dereferenced in `jfs_ioc_trim`. This\nbug manifests quite rarely under normal circumstances, but is\ntriggereable from a syz-program.",
           "Fingerprint": "sha256:677cc8021ddf76ae9594d588135cac930ebf3949f9fdb7ac098384474b05f9bb",
           "InstalledVersion": "6.1.180-1",
-          "LastModifiedDate": "2026-06-17T09:16:22.897Z",
+          "LastModifiedDate": "2026-09-02T13:16:48.92Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -124318,8 +124710,11 @@
             "https://access.redhat.com/security/cve/CVE-2025-38203",
             "https://git.kernel.org/linus/a4685408ff6c3e2af366ad9a7274f45ff3f394ee%20%286.16-rc1%29",
             "https://git.kernel.org/stable/c/0d50231d473f89024158dc62624930de45d13718",
+            "https://git.kernel.org/stable/c/233340626cf1b1887dca181f9f811db60c73f802",
+            "https://git.kernel.org/stable/c/4a2de0f5b8d7f218bea5bd43d30b466e8b272b8d",
             "https://git.kernel.org/stable/c/4a8cb9908b51500a76f5156423bd295df53bff89",
             "https://git.kernel.org/stable/c/9806ae34d7d661c372247cd36f83bfa0523d60ed",
+            "https://git.kernel.org/stable/c/a39f811a9f5edb6d97bede8e6fe730393d3c8537",
             "https://git.kernel.org/stable/c/a4685408ff6c3e2af366ad9a7274f45ff3f394ee",
             "https://git.kernel.org/stable/c/a9d41c925069c950e18160e12a7e10e0f58c56fb",
             "https://lists.debian.org/debian-lts-announce/2025/10/msg00007.html",
@@ -124502,7 +124897,7 @@
           "Description": "In the Linux kernel, the following vulnerability has been resolved:\n\nmedia: platform: exynos4-is: Add hardware sync wait to fimc_is_hw_change_mode()\n\nIn fimc_is_hw_change_mode(), the function changes camera modes without\nwaiting for hardware completion, risking corrupted data or system hangs\nif subsequent operations proceed before the hardware is ready.\n\nAdd fimc_is_hw_wait_intmsr0_intmsd0() after mode configuration, ensuring\nhardware state synchronization and stable interrupt handling.",
           "Fingerprint": "sha256:ddb178790e1f6f293456206c448ddbdccc60b73277ca210f9b7d5537eb3ed00c",
           "InstalledVersion": "6.1.180-1",
-          "LastModifiedDate": "2026-06-17T09:16:27.303Z",
+          "LastModifiedDate": "2026-09-02T13:16:49.333Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -124519,6 +124914,9 @@
             "https://access.redhat.com/security/cve/CVE-2025-38237",
             "https://git.kernel.org/linus/bd9f6ce7d512fa21249415c16af801a4ed5d97b6%20%286.16-rc1%29",
             "https://git.kernel.org/stable/c/14acbb5af101b7bb58c0952949bba4c5fdf0ee7e",
+            "https://git.kernel.org/stable/c/2fbe83fe23f541798bcdd7d6b56a08d4ac205bad",
+            "https://git.kernel.org/stable/c/71209954f1e8ff0f0ba944c8d3b64bbed83d400c",
+            "https://git.kernel.org/stable/c/9b03c3ce32a685f9cb82d33c63fc18bfcee0ba1b",
             "https://git.kernel.org/stable/c/b0d92b94278561f43057003a73a17ce13b7c1a1a",
             "https://git.kernel.org/stable/c/bb97dfab7615fea97322b8a6131546e80f878a69",
             "https://git.kernel.org/stable/c/bd9f6ce7d512fa21249415c16af801a4ed5d97b6",
@@ -127358,7 +127756,7 @@
           "Description": "In the Linux kernel, the following vulnerability has been resolved:\n\nmISDN: hfcpci: Fix warning when deleting uninitialized timer\n\nWith CONFIG_DEBUG_OBJECTS_TIMERS unloading hfcpci module leads\nto the following splat:\n\n[  250.215892] ODEBUG: assert_init not available (active state 0) object: ffffffffc01a3dc0 object type: timer_list hint: 0x0\n[  250.217520] WARNING: CPU: 0 PID: 233 at lib/debugobjects.c:612 debug_print_object+0x1b6/0x2c0\n[  250.218775] Modules linked in: hfcpci(-) mISDN_core\n[  250.219537] CPU: 0 UID: 0 PID: 233 Comm: rmmod Not tainted 6.17.0-rc2-g6f713187ac98 #2 PREEMPT(voluntary)\n[  250.220940] Hardware name: QEMU Ubuntu 24.04 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014\n[  250.222377] RIP: 0010:debug_print_object+0x1b6/0x2c0\n[  250.223131] Code: fc ff df 48 89 fa 48 c1 ea 03 80 3c 02 00 75 4f 41 56 48 8b 14 dd a0 4e 01 9f 48 89 ee 48 c7 c7 20 46 01 9f e8 cb 84d\n[  250.225805] RSP: 0018:ffff888015ea7c08 EFLAGS: 00010286\n[  250.226608] RAX: 0000000000000000 RBX: 0000000000000005 RCX: ffffffff9be93a95\n[  250.227708] RDX: 1ffff1100d945138 RSI: 0000000000000008 RDI: ffff88806ca289c0\n[  250.228993] RBP: ffffffff9f014a00 R08: 0000000000000001 R09: ffffed1002bd4f39\n[  250.230043] R10: ffff888015ea79cf R11: 0000000000000001 R12: 0000000000000001\n[  250.231185] R13: ffffffff9eea0520 R14: 0000000000000000 R15: ffff888015ea7cc8\n[  250.232454] FS:  00007f3208f01540(0000) GS:ffff8880caf5a000(0000) knlGS:0000000000000000\n[  250.233851] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033\n[  250.234856] CR2: 00007f32090a7421 CR3: 0000000004d63000 CR4: 00000000000006f0\n[  250.236117] Call Trace:\n[  250.236599]  \u003cTASK\u003e\n[  250.236967]  ? trace_irq_enable.constprop.0+0xd4/0x130\n[  250.237920]  debug_object_assert_init+0x1f6/0x310\n[  250.238762]  ? __pfx_debug_object_assert_init+0x10/0x10\n[  250.239658]  ? __lock_acquire+0xdea/0x1c70\n[  250.240369]  __try_to_del_timer_sync+0x69/0x140\n[  250.241172]  ? __pfx___try_to_del_timer_sync+0x10/0x10\n[  250.242058]  ? __timer_delete_sync+0xc6/0x120\n[  250.242842]  ? lock_acquire+0x30/0x80\n[  250.243474]  ? __timer_delete_sync+0xc6/0x120\n[  250.244262]  __timer_delete_sync+0x98/0x120\n[  250.245015]  HFC_cleanup+0x10/0x20 [hfcpci]\n[  250.245704]  __do_sys_delete_module+0x348/0x510\n[  250.246461]  ? __pfx___do_sys_delete_module+0x10/0x10\n[  250.247338]  do_syscall_64+0xc1/0x360\n[  250.247924]  entry_SYSCALL_64_after_hwframe+0x77/0x7f\n\nFix this by initializing hfc_tl timer with DEFINE_TIMER macro.\nAlso, use mod_timer instead of manual timeout update.",
           "Fingerprint": "sha256:0166d725495f105cc2ac06a55c6af191ac959b3d8443700b54e96bd5203331c1",
           "InstalledVersion": "6.1.180-1",
-          "LastModifiedDate": "2026-06-17T09:18:34.943Z",
+          "LastModifiedDate": "2026-09-02T13:16:49.507Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -127375,7 +127773,10 @@
             "https://access.redhat.com/security/cve/CVE-2025-39833",
             "https://git.kernel.org/linus/97766512a9951b9fd6fc97f1b93211642bb0b220%20%286.17-rc4%29",
             "https://git.kernel.org/stable/c/43fc5da8133badf17f5df250ba03b9d882254845",
+            "https://git.kernel.org/stable/c/544ffd62ddd093c71150e4d4c542f98153fb8e46",
+            "https://git.kernel.org/stable/c/75194165e65018c581b128379b91b0b2d64638d9",
             "https://git.kernel.org/stable/c/97766512a9951b9fd6fc97f1b93211642bb0b220",
+            "https://git.kernel.org/stable/c/d8be1288e398ccda2dc590fdaa0551f192f6a1c6",
             "https://lore.kernel.org/linux-cve-announce/2025091657-CVE-2025-39833-c2ef@gregkh/T",
             "https://nvd.nist.gov/vuln/detail/CVE-2025-39833",
             "https://www.cve.org/CVERecord?id=CVE-2025-39833"
@@ -127674,7 +128075,7 @@
           "Description": "In the Linux kernel, the following vulnerability has been resolved:\n\ncan: j1939: implement NETDEV_UNREGISTER notification handler\n\nsyzbot is reporting\n\n  unregister_netdevice: waiting for vcan0 to become free. Usage count = 2\n\nproblem, for j1939 protocol did not have NETDEV_UNREGISTER notification\nhandler for undoing changes made by j1939_sk_bind().\n\nCommit 25fe97cb7620 (\"can: j1939: move j1939_priv_put() into sk_destruct\ncallback\") expects that a call to j1939_priv_put() can be unconditionally\ndelayed until j1939_sk_sock_destruct() is called. But we need to call\nj1939_priv_put() against an extra ref held by j1939_sk_bind() call\n(as a part of undoing changes made by j1939_sk_bind()) as soon as\nNETDEV_UNREGISTER notification fires (i.e. before j1939_sk_sock_destruct()\nis called via j1939_sk_release()). Otherwise, the extra ref on \"struct\nj1939_priv\" held by j1939_sk_bind() call prevents \"struct net_device\" from\ndropping the usage count to 1; making it impossible for\nunregister_netdevice() to continue.\n\n[mkl: remove space in front of label]",
           "Fingerprint": "sha256:7760dae1481f344cf2f6970bc9d68b228c3fa110724f72a3f677ffbae64bd1ae",
           "InstalledVersion": "6.1.180-1",
-          "LastModifiedDate": "2026-06-17T09:18:50.653Z",
+          "LastModifiedDate": "2026-09-02T13:16:49.733Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -127700,6 +128101,10 @@
             "https://errata.almalinux.org/9/ALSA-2025-22865.html",
             "https://errata.rockylinux.org/RLSA-2025:22865",
             "https://git.kernel.org/linus/7fcbe5b2c6a4b5407bf2241fdb71e0a390f6ab9a%20%286.17-rc6%29",
+            "https://git.kernel.org/stable/c/2c88069fac2c792e228e6a4ae71c9b9b5b9a87a6",
+            "https://git.kernel.org/stable/c/479d8a2aedcc1db16f14c1a8a9c74b5bdf18b9ac",
+            "https://git.kernel.org/stable/c/4e154cb5e7681c2910e2dfa09f05e3469e333745",
+            "https://git.kernel.org/stable/c/76957b618ce729c3bd1e782fbc9d9991af653925",
             "https://git.kernel.org/stable/c/7fcbe5b2c6a4b5407bf2241fdb71e0a390f6ab9a",
             "https://git.kernel.org/stable/c/da9e8f429139928570407e8f90559b5d46c20262",
             "https://linux.oracle.com/cve/CVE-2025-39925.html",
@@ -128443,7 +128848,7 @@
           "Description": "In the Linux kernel, the following vulnerability has been resolved:\n\nsmc: Fix use-after-free in __pnet_find_base_ndev().\n\nsyzbot reported use-after-free of net_device in __pnet_find_base_ndev(),\nwhich was called during connect(). [0]\n\nsmc_pnet_find_ism_resource() fetches sk_dst_get(sk)-\u003edev and passes\ndown to pnet_find_base_ndev(), where RTNL is held.  Then, UAF happened\nat __pnet_find_base_ndev() when the dev is first used.\n\nThis means dev had already been freed before acquiring RTNL in\npnet_find_base_ndev().\n\nWhile dev is going away, dst-\u003edev could be swapped with blackhole_netdev,\nand the dev's refcnt by dst will be released.\n\nWe must hold dev's refcnt before calling smc_pnet_find_ism_resource().\n\nAlso, smc_pnet_find_roce_resource() has the same problem.\n\nLet's use __sk_dst_get() and dst_dev_rcu() in the two functions.\n\n[0]:\nBUG: KASAN: use-after-free in __pnet_find_base_ndev+0x1b1/0x1c0 net/smc/smc_pnet.c:926\nRead of size 1 at addr ffff888036bac33a by task syz.0.3632/18609\n\nCPU: 1 UID: 0 PID: 18609 Comm: syz.0.3632 Not tainted syzkaller #0 PREEMPT(full)\nHardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 08/18/2025\nCall Trace:\n \u003cTASK\u003e\n dump_stack_lvl+0x189/0x250 lib/dump_stack.c:120\n print_address_description mm/kasan/report.c:378 [inline]\n print_report+0xca/0x240 mm/kasan/report.c:482\n kasan_report+0x118/0x150 mm/kasan/report.c:595\n __pnet_find_base_ndev+0x1b1/0x1c0 net/smc/smc_pnet.c:926\n pnet_find_base_ndev net/smc/smc_pnet.c:946 [inline]\n smc_pnet_find_ism_by_pnetid net/smc/smc_pnet.c:1103 [inline]\n smc_pnet_find_ism_resource+0xef/0x390 net/smc/smc_pnet.c:1154\n smc_find_ism_device net/smc/af_smc.c:1030 [inline]\n smc_find_proposal_devices net/smc/af_smc.c:1115 [inline]\n __smc_connect+0x372/0x1890 net/smc/af_smc.c:1545\n smc_connect+0x877/0xd90 net/smc/af_smc.c:1715\n __sys_connect_file net/socket.c:2086 [inline]\n __sys_connect+0x313/0x440 net/socket.c:2105\n __do_sys_connect net/socket.c:2111 [inline]\n __se_sys_connect net/socket.c:2108 [inline]\n __x64_sys_connect+0x7a/0x90 net/socket.c:2108\n do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]\n do_syscall_64+0xfa/0x3b0 arch/x86/entry/syscall_64.c:94\n entry_SYSCALL_64_after_hwframe+0x77/0x7f\nRIP: 0033:0x7f47cbf8eba9\nCode: ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 \u003c48\u003e 3d 01 f0 ff ff 73 01 c3 48 c7 c1 a8 ff ff ff f7 d8 64 89 01 48\nRSP: 002b:00007f47ccdb1038 EFLAGS: 00000246 ORIG_RAX: 000000000000002a\nRAX: ffffffffffffffda RBX: 00007f47cc1d5fa0 RCX: 00007f47cbf8eba9\nRDX: 0000000000000010 RSI: 0000200000000280 RDI: 000000000000000b\nRBP: 00007f47cc011e19 R08: 0000000000000000 R09: 0000000000000000\nR10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000\nR13: 00007f47cc1d6038 R14: 00007f47cc1d5fa0 R15: 00007ffc512f8aa8\n \u003c/TASK\u003e\n\nThe buggy address belongs to the physical page:\npage: refcount:0 mapcount:0 mapping:0000000000000000 index:0xffff888036bacd00 pfn:0x36bac\nflags: 0xfff00000000000(node=0|zone=1|lastcpupid=0x7ff)\nraw: 00fff00000000000 ffffea0001243d08 ffff8880b863fdc0 0000000000000000\nraw: ffff888036bacd00 0000000000000000 00000000ffffffff 0000000000000000\npage dumped because: kasan: bad access detected\npage_owner tracks the page as freed\npage last allocated via order 2, migratetype Unmovable, gfp_mask 0x446dc0(GFP_KERNEL_ACCOUNT|__GFP_ZERO|__GFP_NOWARN|__GFP_RETRY_MAYFAIL|__GFP_COMP), pid 16741, tgid 16741 (syz-executor), ts 343313197788, free_ts 380670750466\n set_page_owner include/linux/page_owner.h:32 [inline]\n post_alloc_hook+0x240/0x2a0 mm/page_alloc.c:1851\n prep_new_page mm/page_alloc.c:1859 [inline]\n get_page_from_freelist+0x21e4/0x22c0 mm/page_alloc.c:3858\n __alloc_frozen_pages_noprof+0x181/0x370 mm/page_alloc.c:5148\n alloc_pages_mpol+0x232/0x4a0 mm/mempolicy.c:2416\n ___kmalloc_large_node+0x5f/0x1b0 mm/slub.c:4317\n __kmalloc_large_node_noprof+0x18/0x90 mm/slub.c:4348\n __do_kmalloc_node mm/slub.c:4364 [inline]\n __kvmalloc_node\n---truncated---",
           "Fingerprint": "sha256:58b7185fe41a201ee321a69a45553682b225fb57f70d66e0327397c4c26093be",
           "InstalledVersion": "6.1.180-1",
-          "LastModifiedDate": "2026-07-30T06:24:09.063Z",
+          "LastModifiedDate": "2026-09-02T13:16:49.977Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -128484,7 +128889,10 @@
             "https://errata.almalinux.org/9/ALSA-2026-2722.html",
             "https://errata.rockylinux.org/RLSA-2026:2722",
             "https://git.kernel.org/linus/3d3466878afd8d43ec0ca2facfbc7f03e40d0f79%20%286.18-rc1%29",
+            "https://git.kernel.org/stable/c/005a7173d8e4710646043a681af36f79ce05a29b",
+            "https://git.kernel.org/stable/c/08aca586482e88aab9616a3e81bc36cad22674a5",
             "https://git.kernel.org/stable/c/233927b645cb7a14bb98d23ac72e4c7243a9f0d9",
+            "https://git.kernel.org/stable/c/302dbed4760bcd19a661cc1c282d91bb7481307e",
             "https://git.kernel.org/stable/c/3d3466878afd8d43ec0ca2facfbc7f03e40d0f79",
             "https://linux.oracle.com/cve/CVE-2025-40064.html",
             "https://linux.oracle.com/errata/ELSA-2026-3083.html",
@@ -128848,7 +129256,7 @@
           "Description": "In the Linux kernel, the following vulnerability has been resolved:\n\nKVM: arm64: Prevent access to vCPU events before init\n\nAnother day, another syzkaller bug. KVM erroneously allows userspace to\npend vCPU events for a vCPU that hasn't been initialized yet, leading to\nKVM interpreting a bunch of uninitialized garbage for routing /\ninjecting the exception.\n\nIn one case the injection code and the hyp disagree on whether the vCPU\nhas a 32bit EL1 and put the vCPU into an illegal mode for AArch64,\ntripping the BUG() in exception_target_el() during the next injection:\n\n  kernel BUG at arch/arm64/kvm/inject_fault.c:40!\n  Internal error: Oops - BUG: 00000000f2000800 [#1]  SMP\n  CPU: 3 UID: 0 PID: 318 Comm: repro Not tainted 6.17.0-rc4-00104-g10fd0285305d #6 PREEMPT\n  Hardware name: linux,dummy-virt (DT)\n  pstate: 21402009 (nzCv daif +PAN -UAO -TCO +DIT -SSBS BTYPE=--)\n  pc : exception_target_el+0x88/0x8c\n  lr : pend_serror_exception+0x18/0x13c\n  sp : ffff800082f03a10\n  x29: ffff800082f03a10 x28: ffff0000cb132280 x27: 0000000000000000\n  x26: 0000000000000000 x25: ffff0000c2a99c20 x24: 0000000000000000\n  x23: 0000000000008000 x22: 0000000000000002 x21: 0000000000000004\n  x20: 0000000000008000 x19: ffff0000c2a99c20 x18: 0000000000000000\n  x17: 0000000000000000 x16: 0000000000000000 x15: 00000000200000c0\n  x14: 0000000000000000 x13: 0000000000000000 x12: 0000000000000000\n  x11: 0000000000000000 x10: 0000000000000000 x9 : 0000000000000000\n  x8 : ffff800082f03af8 x7 : 0000000000000000 x6 : 0000000000000000\n  x5 : ffff800080f621f0 x4 : 0000000000000000 x3 : 0000000000000000\n  x2 : 000000000040009b x1 : 0000000000000003 x0 : ffff0000c2a99c20\n  Call trace:\n   exception_target_el+0x88/0x8c (P)\n   kvm_inject_serror_esr+0x40/0x3b4\n   __kvm_arm_vcpu_set_events+0xf0/0x100\n   kvm_arch_vcpu_ioctl+0x180/0x9d4\n   kvm_vcpu_ioctl+0x60c/0x9f4\n   __arm64_sys_ioctl+0xac/0x104\n   invoke_syscall+0x48/0x110\n   el0_svc_common.constprop.0+0x40/0xe0\n   do_el0_svc+0x1c/0x28\n   el0_svc+0x34/0xf0\n   el0t_64_sync_handler+0xa0/0xe4\n   el0t_64_sync+0x198/0x19c\n  Code: f946bc01 b4fffe61 9101e020 17fffff2 (d4210000)\n\nReject the ioctls outright as no sane VMM would call these before\nKVM_ARM_VCPU_INIT anyway. Even if it did the exception would've been\nthrown away by the eventual reset of the vCPU's state.",
           "Fingerprint": "sha256:d45c9b57fabaab3872d7cae9377b4f2898bbca8b1373e65a3ae5566af3e40a9a",
           "InstalledVersion": "6.1.180-1",
-          "LastModifiedDate": "2026-06-17T09:21:16.073Z",
+          "LastModifiedDate": "2026-09-02T13:16:50.197Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -128866,6 +129274,11 @@
             "https://git.kernel.org/linus/0aa1b76fe1429629215a7c79820e4b96233ac4a3%20%286.18-rc2%29",
             "https://git.kernel.org/stable/c/0aa1b76fe1429629215a7c79820e4b96233ac4a3",
             "https://git.kernel.org/stable/c/64a04e6320fc5affbadc59dc7024d79f909bfe84",
+            "https://git.kernel.org/stable/c/7b854e68365a84dfa984ee81268e10b9311ac9d2",
+            "https://git.kernel.org/stable/c/b0ab34a9e4cd5b88b522cc156e792cefe3085334",
+            "https://git.kernel.org/stable/c/b498f0da45a388b40195f7198455c62fe366a372",
+            "https://git.kernel.org/stable/c/c0fcd72e7eb50205dc20731033b0b1c67ecbe4dc",
+            "https://git.kernel.org/stable/c/d64461d38972302f0243498ff409b0d54e14e106",
             "https://lore.kernel.org/linux-cve-announce/2025103017-CVE-2025-40102-c7d2@gregkh/T",
             "https://nvd.nist.gov/vuln/detail/CVE-2025-40102",
             "https://ubuntu.com/security/notices/USN-8029-1",
@@ -128999,7 +129412,7 @@
           "Description": "In the Linux kernel, the following vulnerability has been resolved:\n\nsmc: Use __sk_dst_get() and dst_dev_rcu() in in smc_clc_prfx_set().\n\nsmc_clc_prfx_set() is called during connect() and not under RCU\nnor RTNL.\n\nUsing sk_dst_get(sk)-\u003edev could trigger UAF.\n\nLet's use __sk_dst_get() and dev_dst_rcu() under rcu_read_lock()\nafter kernel_getsockname().\n\nNote that the returned value of smc_clc_prfx_set() is not used\nin the caller.\n\nWhile at it, we change the 1st arg of smc_clc_prfx_set[46]_rcu()\nnot to touch dst there.",
           "Fingerprint": "sha256:1b8237f76b326b4ca8fe79571ca8ea96fbf90c38d88edf1385a135679bf4a66a",
           "InstalledVersion": "6.1.180-1",
-          "LastModifiedDate": "2026-07-30T06:24:13.51Z",
+          "LastModifiedDate": "2026-09-02T13:16:50.347Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -129016,7 +129429,10 @@
             "https://access.redhat.com/security/cve/CVE-2025-40139",
             "https://git.kernel.org/linus/935d783e5de9b64587f3adb25641dd8385e64ddb%20%286.18-rc1%29",
             "https://git.kernel.org/stable/c/0736993bfe5c7a9c744ae3fac62d769dfdae54e1",
+            "https://git.kernel.org/stable/c/5a2fccc4b32c13ddde3676f9e15e1a9baa7d6fde",
+            "https://git.kernel.org/stable/c/80d1fd39f4e37d836655e9f7ffccaf78925049bf",
             "https://git.kernel.org/stable/c/935d783e5de9b64587f3adb25641dd8385e64ddb",
+            "https://git.kernel.org/stable/c/956c57daba55cf9ed25d9f2512883b8a1a927599",
             "https://lore.kernel.org/linux-cve-announce/2025111255-CVE-2025-40139-a030@gregkh/T",
             "https://nvd.nist.gov/vuln/detail/CVE-2025-40139",
             "https://ubuntu.com/security/notices/USN-8029-1",
@@ -129273,7 +129689,7 @@
           "Description": "In the Linux kernel, the following vulnerability has been resolved:\n\nsmc: Use __sk_dst_get() and dst_dev_rcu() in smc_clc_prfx_match().\n\nsmc_clc_prfx_match() is called from smc_listen_work() and\nnot under RCU nor RTNL.\n\nUsing sk_dst_get(sk)-\u003edev could trigger UAF.\n\nLet's use __sk_dst_get() and dst_dev_rcu().\n\nNote that the returned value of smc_clc_prfx_match() is not\nused in the caller.",
           "Fingerprint": "sha256:75e90975c097ab604bc59d793ec222686511d688c110daafde71b4e71dc77ea2",
           "InstalledVersion": "6.1.180-1",
-          "LastModifiedDate": "2026-07-30T06:24:15.043Z",
+          "LastModifiedDate": "2026-09-02T13:16:50.5Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -129302,6 +129718,9 @@
             "https://errata.almalinux.org/9/ALSA-2026-3488.html",
             "https://errata.rockylinux.org/RLSA-2026:3488",
             "https://git.kernel.org/stable/c/235f81045c008169cc4e1955b4a64e118eebe61b",
+            "https://git.kernel.org/stable/c/326e5cf301d0bec0a672aa834d8254c4f9df6255",
+            "https://git.kernel.org/stable/c/3f119c37aa293af41400cccb3d89fab8dcf774b0",
+            "https://git.kernel.org/stable/c/4f5f52a5842937f945582a93cb9daed9ea526fee",
             "https://git.kernel.org/stable/c/d26e80f7fb62d77757b67a1b94e4ac756bc9c658",
             "https://linux.oracle.com/cve/CVE-2025-40168.html",
             "https://linux.oracle.com/errata/ELSA-2026-3488.html",
@@ -131235,6 +131654,54 @@
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2025-68768"
+        },
+        {
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "In the Linux kernel, the following vulnerability has been resolved:\n\nusb: phy: fsl-usb: Fix use-after-free in delayed work during device removal\n\nThe delayed work item otg_event is initialized in fsl_otg_conf() and\nscheduled under two conditions:\n1. When a host controller binds to the OTG controller.\n2. When the USB ID pin state changes (cable insertion/removal).\n\nA race condition occurs when the device is removed via fsl_otg_remove():\nthe fsl_otg instance may be freed while the delayed work is still pending\nor executing. This leads to use-after-free when the work function\nfsl_otg_event() accesses the already freed memory.\n\nThe problematic scenario:\n\n(detach thread)            | (delayed work)\nfsl_otg_remove()           |\n  kfree(fsl_otg_dev) //FREE| fsl_otg_event()\n                           |   og = container_of(...) //USE\n                           |   og-\u003e //USE\n\nFix this by calling disable_delayed_work_sync() in fsl_otg_remove()\nbefore deallocating the fsl_otg structure. This ensures the delayed work\nis properly canceled and completes execution prior to memory deallocation.\n\nThis bug was identified through static analysis.",
+          "Fingerprint": "sha256:564216a0c02daade1a71998472047342df0fc5c6d072f0e90023cd14ec72a9ab",
+          "InstalledVersion": "6.1.180-1",
+          "LastModifiedDate": "2026-09-02T13:17:03.09Z",
+          "Layer": {
+            "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
+            "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
+          },
+          "PkgID": "linux-libc-dev@6.1.180-1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/linux-libc-dev@6.1.180-1?arch=amd64\u0026distro=debian-12.15",
+            "UID": "ce97b70d303ad24f"
+          },
+          "PkgName": "linux-libc-dev",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-68781",
+          "PublishedDate": "2026-01-13T16:15:57.773Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2025-68781",
+            "https://git.kernel.org/linus/41ca62e3e21e48c2903b3b45e232cf4f2ff7434f%20%286.19-rc3%29",
+            "https://git.kernel.org/stable/c/2e7c47e2eb3cfeadf78a1ccbac8492c60d508f23",
+            "https://git.kernel.org/stable/c/319f7a85b3c4e34ac2fe083eb146fe129a556317",
+            "https://git.kernel.org/stable/c/41ca62e3e21e48c2903b3b45e232cf4f2ff7434f",
+            "https://git.kernel.org/stable/c/4476c73bbbb09b13a962176fca934b32d3954a2e",
+            "https://git.kernel.org/stable/c/69f9a0701abc3d1f8225074c56c27e6c16a37222",
+            "https://lore.kernel.org/linux-cve-announce/2026011301-CVE-2025-68781-f30f@gregkh/T",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-68781",
+            "https://ubuntu.com/security/notices/USN-8177-1",
+            "https://ubuntu.com/security/notices/USN-8177-2",
+            "https://ubuntu.com/security/notices/USN-8183-1",
+            "https://ubuntu.com/security/notices/USN-8183-2",
+            "https://ubuntu.com/security/notices/USN-8245-1",
+            "https://ubuntu.com/security/notices/USN-8257-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-68781"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "affected",
+          "Title": "kernel: usb: phy: fsl-usb: Fix use-after-free in delayed work during device removal",
+          "VendorSeverity": {
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2025-68781"
         },
         {
           "DataSource": {
@@ -140700,7 +141167,7 @@
           "Description": "In the Linux kernel, the following vulnerability has been resolved:\n\nASoC: nau8821: Cancel delayed work on component remove\n\nAttempting to unload the driver while a jack detection work is pending\nwould likely crash the kernel when it is eventually scheduled for\nexecution:\n\n[ 1984.896308] BUG: unable to handle page fault for address: ffffffffc10c2a20\n[...]\n[ 1984.896388] Hardware name: Valve Jupiter/Jupiter, BIOS F7A0131 01/30/2024\n[ 1984.896396] Workqueue: events nau8821_jdet_work [snd_soc_nau8821]\n[ 1984.896414] RIP: 0010:__mutex_lock+0x9f/0x11d0\n[...]\n[ 1984.896504] Call Trace:\n[ 1984.896511]  \u003cTASK\u003e\n[ 1984.896524]  ? snd_soc_dapm_disable_pin+0x26/0x60 [snd_soc_core]\n[ 1984.896572]  ? snd_soc_dapm_disable_pin+0x26/0x60 [snd_soc_core]\n[ 1984.896596]  snd_soc_dapm_disable_pin+0x26/0x60 [snd_soc_core]\n[ 1984.896622]  nau8821_jdet_work+0xeb/0x1e0 [snd_soc_nau8821]\n[ 1984.896636]  process_one_work+0x211/0x590\n[ 1984.896649]  ? srso_return_thunk+0x5/0x5f\n[ 1984.896670]  worker_thread+0x1cd/0x3a0\n\nCancel unscheduled jdet_work or wait for its execution to finish before\nthe component driver gets removed.",
           "Fingerprint": "sha256:ef6eb4be85f1835aa40172baa7b59f8d40010ed2ff724c24b2c4f1d143110d3a",
           "InstalledVersion": "6.1.180-1",
-          "LastModifiedDate": "2026-06-17T10:52:48.447Z",
+          "LastModifiedDate": "2026-09-02T13:17:55.557Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -140716,7 +141183,11 @@
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-45963",
             "https://git.kernel.org/linus/dbd3fd05cddfdeec1e49b0a66269881c09eebd17%20%287.0-rc1%29",
+            "https://git.kernel.org/stable/c/13d20517bee1c9b69c7750026c61e7ec021080a4",
+            "https://git.kernel.org/stable/c/36fb28fa033f6544d81f1cc056b27d0c0bf26d4f",
             "https://git.kernel.org/stable/c/3955767ec39dcc0358470ffe6535703e2b7fd815",
+            "https://git.kernel.org/stable/c/9210ae708ddead67f55610342ea03fe9d4de6005",
+            "https://git.kernel.org/stable/c/cd6b991de3e0b68560fe98dc739672747d2e4204",
             "https://git.kernel.org/stable/c/dbd3fd05cddfdeec1e49b0a66269881c09eebd17",
             "https://lore.kernel.org/linux-cve-announce/2026052734-CVE-2026-45963-eb3d@gregkh/T",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-45963",
@@ -142681,7 +143152,7 @@
           "Description": "In the Linux kernel, the following vulnerability has been resolved:\n\ninet: RAW sockets using IPPROTO_RAW MUST drop incoming ICMP\n\nYizhou Zhao reported that simply having one RAW socket on protocol\nIPPROTO_RAW (255) was dangerous.\n\n  socket(AF_INET, SOCK_RAW, 255);\n\nA malicious incoming ICMP packet can set the protocol field to 255\nand match this socket, leading to FNHE cache changes.\n\ninner = IP(src=\"192.168.2.1\", dst=\"8.8.8.8\", proto=255)/Raw(\"TEST\")\npkt = IP(src=\"192.168.1.1\", dst=\"192.168.2.1\")/ICMP(type=3, code=4, nexthopmtu=576)/inner\n\n\"man 7 raw\" states:\n\n  A protocol of IPPROTO_RAW implies enabled IP_HDRINCL and is able\n  to send any IP protocol that is specified in the passed header.\n  Receiving of all IP protocols via IPPROTO_RAW is not possible\n  using raw sockets.\n\nMake sure we drop these malicious packets.",
           "Fingerprint": "sha256:0e8e1aa935155fdb762baa9f17f75369345cac6b39e80dd403e2a8a2c362f368",
           "InstalledVersion": "6.1.180-1",
-          "LastModifiedDate": "2026-07-22T20:10:00.127Z",
+          "LastModifiedDate": "2026-09-02T13:17:55.727Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -142698,6 +143169,7 @@
             "https://access.redhat.com/security/cve/CVE-2026-46266",
             "https://git.kernel.org/linus/c89477ad79446867394360b29bb801010fc3ff22%20%287.0-rc1%29",
             "https://git.kernel.org/stable/c/19e42490c89bac9a388f28179e66bebbef350f99",
+            "https://git.kernel.org/stable/c/47276297140ee6712646f9b19fb04fe26daedd01",
             "https://git.kernel.org/stable/c/531c1aec81bfe19d00af13da5531fbb8209e4bd2",
             "https://git.kernel.org/stable/c/719d3932b8f6e3348ce2f0ac58e278301fc17575",
             "https://git.kernel.org/stable/c/c89477ad79446867394360b29bb801010fc3ff22",
@@ -144962,7 +145434,7 @@
           "Description": "In the Linux kernel, the following vulnerability has been resolved:\n\nzram: fix use-after-free in zram_bvec_write_partial()\n\nzram_read_page() picks the sync or async backing device read path based on\nwhether the parent bio is NULL.  zram_bvec_write_partial() passes its\nparent bio down, so for ZRAM_WB slots the read is dispatched\nasynchronously and zram_read_page() returns 0 while the bio is still in\nflight.  The caller then runs memcpy_from_bvec(), zram_write_page() and\n__free_page() on the buffer, leaving the async read to write into a freed\npage.\n\nzram_bvec_read_partial() was switched to NULL in commit 4e3c87b9421d\n(\"zram: fix synchronous reads\") for the same reason; the write_partial\ncounterpart was missed.",
           "Fingerprint": "sha256:2edfaa64269fa512fffb6618fc4b6f4f1c3ecbc50c5cae83f2fa3bc26afd8635",
           "InstalledVersion": "6.1.180-1",
-          "LastModifiedDate": "2026-08-26T13:19:14.913Z",
+          "LastModifiedDate": "2026-09-02T13:18:01.09Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -144977,6 +145449,7 @@
           "PublishedDate": "2026-06-25T09:16:35.92Z",
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:59723",
+            "https://access.redhat.com/errata/RHSA-2026:61887",
             "https://access.redhat.com/security/cve/CVE-2026-53185",
             "https://bugzilla.redhat.com/2422696",
             "https://bugzilla.redhat.com/2432681",
@@ -147710,6 +148183,68 @@
         },
         {
           "CVSS": {
+            "nvd": {
+              "V3Score": 5.5,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+            },
+            "redhat": {
+              "V3Score": 5.5,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-401"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnetfs: Fix leak of request in netfs_write_begin() error handling\n\nFix netfs_write_begin() to not leak our ref on the request in the event\nthat we get an error from netfs_wait_for_read().",
+          "Fingerprint": "sha256:6a8b80c1c2b88b7828e72550cb0155a6396ff6c0e7c1bd27f59f6c74cc80071c",
+          "InstalledVersion": "6.1.180-1",
+          "LastModifiedDate": "2026-09-02T21:12:35.677Z",
+          "Layer": {
+            "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
+            "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
+          },
+          "PkgID": "linux-libc-dev@6.1.180-1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/linux-libc-dev@6.1.180-1?arch=amd64\u0026distro=debian-12.15",
+            "UID": "ce97b70d303ad24f"
+          },
+          "PkgName": "linux-libc-dev",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-64060",
+          "PublishedDate": "2026-07-19T16:17:46.513Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-64060",
+            "https://git.kernel.org/linus/5046a34f0643441f05b0253ea64e1a3af87efe14%20%287.1-rc5%29",
+            "https://git.kernel.org/stable/c/22ae28aae43623be235ff455558cdd13fbe2daeb",
+            "https://git.kernel.org/stable/c/28686d6d8b60dc5bbae9ef6023ab2051d6c66cdf",
+            "https://git.kernel.org/stable/c/5046a34f0643441f05b0253ea64e1a3af87efe14",
+            "https://lore.kernel.org/linux-cve-announce/2026071910-CVE-2026-64060-4633@gregkh/T",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-64060",
+            "https://ubuntu.com/security/notices/USN-8593-1",
+            "https://ubuntu.com/security/notices/USN-8603-1",
+            "https://ubuntu.com/security/notices/USN-8618-1",
+            "https://ubuntu.com/security/notices/USN-8663-1",
+            "https://ubuntu.com/security/notices/USN-8664-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-64060"
+          ],
+          "Severity": "MEDIUM",
+          "SeveritySource": "nvd",
+          "Status": "affected",
+          "Title": "kernel: netfs: Fix leak of request in netfs_write_begin() error handling",
+          "VendorSeverity": {
+            "amazon": 3,
+            "nvd": 2,
+            "redhat": 1,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-64060"
+        },
+        {
+          "CVSS": {
             "redhat": {
               "V3Score": 5.5,
               "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
@@ -147929,7 +148464,7 @@
           "Description": "In the Linux kernel, the following vulnerability has been resolved:\n\nriscv: Fix register corruption from uninitialized cregs on error\n\ncompat_riscv_gpr_set() calls cregs_to_regs() unconditionally, even when\nuser_regset_copyin() fails. Since cregs is an uninitialized stack\nvariable, a copyin failure causes uninitialized stack data to be written\ninto the target task's pt_regs, corrupting its register state and\npotentially leaking kernel stack contents.\n\ncompat_restore_sigcontext() has the same issue: it calls cregs_to_regs()\neven when __copy_from_user() fails, leading to the same corruption of\nthe signal-returning task's register state on error.\n\nOnly call cregs_to_regs() when the user copy succeeds.",
           "Fingerprint": "sha256:2d0b8c7361b996f563b0d17778d0a3488a56bb8afb793825e80231e66fb34e96",
           "InstalledVersion": "6.1.180-1",
-          "LastModifiedDate": "2026-07-30T14:59:47.95Z",
+          "LastModifiedDate": "2026-09-02T13:18:04.227Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -147945,8 +148480,12 @@
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-64082",
             "https://git.kernel.org/linus/6ebcbb53fc9bc30843054ed99fd60b8e542628f4%20%287.1-rc4%29",
+            "https://git.kernel.org/stable/c/0599aa23734c48de9bce36d043a9ec90c23945a1",
+            "https://git.kernel.org/stable/c/2a7d1daf2674fe7d5b1cc99a4e3b5f0f72d5958f",
+            "https://git.kernel.org/stable/c/66dedb6028c3df6c6a3372dd935b823917e150d5",
             "https://git.kernel.org/stable/c/6ebcbb53fc9bc30843054ed99fd60b8e542628f4",
             "https://git.kernel.org/stable/c/9e020156833f1ad0d425a1e3d85b65639f1c1c50",
+            "https://git.kernel.org/stable/c/f2d88b0d7aebfa4643fc58bbae57210c6daff9c6",
             "https://lore.kernel.org/linux-cve-announce/2026071915-CVE-2026-64082-bf76@gregkh/T",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-64082",
             "https://ubuntu.com/security/notices/USN-8593-1",
@@ -150913,6 +151452,57 @@
             "ubuntu": 3
           },
           "VulnerabilityID": "CVE-2026-68098"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 7.1,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H"
+            }
+          },
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "In the Linux kernel, the following vulnerability has been resolved:\n\nksmbd: restore DACL size on check_add_overflow() to avoid malformed ACL\n\ncheck_add_overflow() unconditionally writes the truncated sum into *d\neven on overflow, per its contract in include/linux/overflow.h.\nThe four check_add_overflow() guards in set_posix_acl_entries_dacl()\nand set_ntacl_dacl() break out of the ACE-building loops on overflow,\nbut the truncated *size is then consumed downstream at the end of\nset_ntacl_dacl():\n\n    pndacl-\u003esize = cpu_to_le16(le16_to_cpu(pndacl-\u003esize) + size);\n\nThis produces an on-wire NT ACL whose pndacl-\u003esize under-reports the\nbytes actually written by the preceding fill_ace_for_sid()/memcpy()\ncalls, yielding a malformed ACL that can trigger out-of-bounds reads\nwhen re-parsed by clients or ksmbd itself.\n\nRestore *size to its pre-addition value on each overflow branch (via\n`*size -= ace_sz` / `size -= nt_ace_size`) so that after the break,\n*size once again holds the cumulative size of the successfully-written\nACEs. The committed ACL is then truncated-but-self-consistent rather\nthan malformed.\n\nThe ksmbd DACL builders are the only check_add_overflow() sites found\nwhere an overflow path breaks out of a loop and the destination value\nis consumed afterward. The other nearby break-style cases either\nreturn -EINVAL on overflow (transport_ipc.c) or break without\nconsuming the overflowed destination value afterward (buildid.c).",
+          "Fingerprint": "sha256:8f83d6d8ad15d16924af39f09f2d04d75eaf637e001ee1035ea79a4c2c8ffbbe",
+          "InstalledVersion": "6.1.180-1",
+          "LastModifiedDate": "2026-08-23T13:16:32.94Z",
+          "Layer": {
+            "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
+            "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
+          },
+          "PkgID": "linux-libc-dev@6.1.180-1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/linux-libc-dev@6.1.180-1?arch=amd64\u0026distro=debian-12.15",
+            "UID": "ce97b70d303ad24f"
+          },
+          "PkgName": "linux-libc-dev",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-68099",
+          "PublishedDate": "2026-08-10T13:19:54.35Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-68099",
+            "https://git.kernel.org/stable/c/0bf38372821b1526f31538a7d9811844c55c7f38",
+            "https://git.kernel.org/stable/c/847ecd4eb3c117c3d2f13f1e7ab506543aad8183",
+            "https://git.kernel.org/stable/c/8f3a7a499a7d9bb1c0f33fe78c4a4594d7e307f4",
+            "https://git.kernel.org/stable/c/bbf0a8e931204ecdab494a88d43b0a24a04285c5",
+            "https://git.kernel.org/stable/c/bc90144ce8bb7fcf05ad9417c7adb4e9509d9e13",
+            "https://git.kernel.org/stable/c/f4fcd0c1a243d449307b887fafee23921e9db5ab",
+            "https://lore.kernel.org/linux-cve-announce/2026081051-CVE-2026-68099-5605@gregkh/T",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-68099",
+            "https://www.cve.org/CVERecord?id=CVE-2026-68099"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "affected",
+          "Title": "kernel: ksmbd: restore DACL size on check_add_overflow() to avoid malformed ACL",
+          "VendorSeverity": {
+            "azure": 2,
+            "photon": 3,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-68099"
         },
         {
           "CVSS": {
@@ -159252,7 +159842,7 @@
           "Description": "In the Linux kernel, the following vulnerability has been resolved:\n\nipvs: reload ip header after head reallocation\n\n__ip_vs_get_out_rt() calls skb_ensure_writable() which may\nreallocate skb-\u003ehead.",
           "Fingerprint": "sha256:a656b4398b4f30841d4d9564cb12ec2bb55d76a232fbc88ba1c797182a0153c2",
           "InstalledVersion": "6.1.180-1",
-          "LastModifiedDate": "2026-08-17T06:17:57.07Z",
+          "LastModifiedDate": "2026-09-02T13:18:04.373Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -159268,6 +159858,9 @@
           "References": [
             "https://git.kernel.org/linus/a2f57827bf7c695b8c72dc4511cae8e86582369d%20%287.2-rc4%29",
             "https://git.kernel.org/stable/c/3fb7edd2018bb1ad0a68157383d9b9dac33dd645",
+            "https://git.kernel.org/stable/c/4f2d1151421520d7ae16ca8d367d0ca09f5dfbd7",
+            "https://git.kernel.org/stable/c/657118cad620172dfd8f6ed5717fd75c0d1f7a5a",
+            "https://git.kernel.org/stable/c/a10f5080afbed242640f2984328de25f84557da1",
             "https://git.kernel.org/stable/c/a2f57827bf7c695b8c72dc4511cae8e86582369d",
             "https://git.kernel.org/stable/c/ac6ac3d35bfc0ade9d17d354c84e503a946ebdab",
             "https://git.kernel.org/stable/c/ad1e14710b360bda087ebf9fb82460eb5ef775de",
@@ -161016,7 +161609,7 @@
           "Description": "In the Linux kernel, the following vulnerability has been resolved:\n\nmtd: maps: vmu-flash: fix fault in unaligned fixup\n\nUse kzalloc_obj() / kzalloc_objs() to allocate the memcard structs,\ninstead of kmalloc_obj() / kmalloc_objs() to prevent access to\nuninitialized data.\n\nFixes runtime error: Fault in unaligned fixup: 0000 [#1] at\nmtd_get_fact_prot_info.",
           "Fingerprint": "sha256:70b4c677721d6f61ce6f0731502b0c595762378caedfea6855632463783ade2f",
           "InstalledVersion": "6.1.180-1",
-          "LastModifiedDate": "2026-08-23T13:16:41.27Z",
+          "LastModifiedDate": "2026-09-02T13:18:07.63Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -161035,10 +161628,7 @@
             "https://git.kernel.org/stable/c/01928835d80829e615a492aa66c629b953ec7bef",
             "https://git.kernel.org/stable/c/19360c25135fccb6bbafbee49a5f66baf9a311af",
             "https://git.kernel.org/stable/c/455519f6b70f46ac6cbf41a75ac76ec5e59040f2",
-            "https://git.kernel.org/stable/c/631edc934e476991a04723d3283e6628d077f8c1",
             "https://git.kernel.org/stable/c/79d1661502c6e4b6f626185cef72cf2fa78116e1",
-            "https://git.kernel.org/stable/c/90494884cd9f02c38b4eafb0ed3b0e1a4410e2ac",
-            "https://git.kernel.org/stable/c/f781e80c9f1e52d92535c076573b0cdafab04864",
             "https://lore.kernel.org/linux-cve-announce/2026081537-CVE-2026-72168-4618@gregkh/T",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-72168",
             "https://www.cve.org/CVERecord?id=CVE-2026-72168"
@@ -174225,43 +174815,6 @@
           "VulnerabilityID": "CVE-2026-80602"
         },
         {
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Description": "In the Linux kernel, the following vulnerability has been resolved:\n\nieee802154: Avoid calling WARN_ON() on -ENOMEM in cfg802154_switch_netns()\n\nIt's pointless to call WARN_ON() in case of an allocation failure in\ndev_change_net_namespace() and device_rename(), since it only leads to\nuseless splats caused by deliberate fault injections, so avoid it.\n\nFound by Linux Verification Center (linuxtesting.org) with Syzkaller.",
-          "Fingerprint": "sha256:22b0f7bb33cd2d87f2d6515339f3a81d1a23af4e5dab59dd510c9572a894641d",
-          "InstalledVersion": "6.1.180-1",
-          "LastModifiedDate": "2026-08-28T08:16:45.62Z",
-          "Layer": {
-            "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
-            "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
-          },
-          "PkgID": "linux-libc-dev@6.1.180-1",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/linux-libc-dev@6.1.180-1?arch=amd64\u0026distro=debian-12.15",
-            "UID": "ce97b70d303ad24f"
-          },
-          "PkgName": "linux-libc-dev",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-80616",
-          "PublishedDate": "2026-08-28T08:16:45.62Z",
-          "References": [
-            "https://git.kernel.org/linus/0569f67ed6a7af838e2141da93c68e6b6013f483%20%287.2-rc1%29",
-            "https://git.kernel.org/stable/c/0569f67ed6a7af838e2141da93c68e6b6013f483",
-            "https://git.kernel.org/stable/c/6fcba77571c53f656a2f109259601a7570d4c74a",
-            "https://git.kernel.org/stable/c/f4860dd988b1041d70595f2ed84de80f90cb7ebc",
-            "https://www.cve.org/CVERecord?id=CVE-2026-80616"
-          ],
-          "Severity": "MEDIUM",
-          "Status": "affected",
-          "Title": "In the Linux kernel, the following vulnerability has been resolved:  i ...",
-          "VendorSeverity": {
-            "ubuntu": 2
-          },
-          "VulnerabilityID": "CVE-2026-80616"
-        },
-        {
           "CVSS": {
             "redhat": {
               "V3Score": 5.5,
@@ -181989,59 +182542,6 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnetfs: Fix leak of request in netfs_write_begin() error handling\n\nFix netfs_write_begin() to not leak our ref on the request in the event\nthat we get an error from netfs_wait_for_read().",
-          "Fingerprint": "sha256:6a8b80c1c2b88b7828e72550cb0155a6396ff6c0e7c1bd27f59f6c74cc80071c",
-          "InstalledVersion": "6.1.180-1",
-          "LastModifiedDate": "2026-07-30T14:59:47.95Z",
-          "Layer": {
-            "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
-            "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
-          },
-          "PkgID": "linux-libc-dev@6.1.180-1",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/linux-libc-dev@6.1.180-1?arch=amd64\u0026distro=debian-12.15",
-            "UID": "ce97b70d303ad24f"
-          },
-          "PkgName": "linux-libc-dev",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-64060",
-          "PublishedDate": "2026-07-19T16:17:46.513Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-64060",
-            "https://git.kernel.org/linus/5046a34f0643441f05b0253ea64e1a3af87efe14%20%287.1-rc5%29",
-            "https://git.kernel.org/stable/c/22ae28aae43623be235ff455558cdd13fbe2daeb",
-            "https://git.kernel.org/stable/c/28686d6d8b60dc5bbae9ef6023ab2051d6c66cdf",
-            "https://git.kernel.org/stable/c/5046a34f0643441f05b0253ea64e1a3af87efe14",
-            "https://lore.kernel.org/linux-cve-announce/2026071910-CVE-2026-64060-4633@gregkh/T",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-64060",
-            "https://ubuntu.com/security/notices/USN-8593-1",
-            "https://ubuntu.com/security/notices/USN-8603-1",
-            "https://ubuntu.com/security/notices/USN-8618-1",
-            "https://ubuntu.com/security/notices/USN-8663-1",
-            "https://ubuntu.com/security/notices/USN-8664-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-64060"
-          ],
-          "Severity": "LOW",
-          "Status": "affected",
-          "Title": "kernel: netfs: Fix leak of request in netfs_write_begin() error handling",
-          "VendorSeverity": {
-            "amazon": 3,
-            "redhat": 1,
-            "ubuntu": 2
-          },
-          "VulnerabilityID": "CVE-2026-64060"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 5.5,
-              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
-            }
-          },
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
           "Description": "In the Linux kernel, the following vulnerability has been resolved:\n\nsmb/client: fix chown/chgrp with SMB3 POSIX Extensions\n\nOwnership (chown) and group (chgrp) modifications were being ignored when\nmounting with SMB3 POSIX Extensions unless CIFS_MOUNT_CIFS_ACL or\nCIFS_MOUNT_MODE_FROM_SID were also explicitly set.\n\nFix this by checking for posix_extensions in cifs_setattr_nounix() when\nupdating UID and GID, ensuring that id_mode_to_cifs_acl() is called to map\nand set the ownership/group information on the server.",
           "Fingerprint": "sha256:1abb1c6823dd89415b37f4d18ab40833b942e9185fe91d28580e8509f07684d9",
           "InstalledVersion": "6.1.180-1",
@@ -187019,6 +187519,53 @@
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-80611"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 5.5,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "In the Linux kernel, the following vulnerability has been resolved:\n\nieee802154: Avoid calling WARN_ON() on -ENOMEM in cfg802154_switch_netns()\n\nIt's pointless to call WARN_ON() in case of an allocation failure in\ndev_change_net_namespace() and device_rename(), since it only leads to\nuseless splats caused by deliberate fault injections, so avoid it.\n\nFound by Linux Verification Center (linuxtesting.org) with Syzkaller.",
+          "Fingerprint": "sha256:22b0f7bb33cd2d87f2d6515339f3a81d1a23af4e5dab59dd510c9572a894641d",
+          "InstalledVersion": "6.1.180-1",
+          "LastModifiedDate": "2026-08-28T08:16:45.62Z",
+          "Layer": {
+            "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
+            "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
+          },
+          "PkgID": "linux-libc-dev@6.1.180-1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/linux-libc-dev@6.1.180-1?arch=amd64\u0026distro=debian-12.15",
+            "UID": "ce97b70d303ad24f"
+          },
+          "PkgName": "linux-libc-dev",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-80616",
+          "PublishedDate": "2026-08-28T08:16:45.62Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-80616",
+            "https://git.kernel.org/linus/0569f67ed6a7af838e2141da93c68e6b6013f483%20%287.2-rc1%29",
+            "https://git.kernel.org/stable/c/0569f67ed6a7af838e2141da93c68e6b6013f483",
+            "https://git.kernel.org/stable/c/6fcba77571c53f656a2f109259601a7570d4c74a",
+            "https://git.kernel.org/stable/c/f4860dd988b1041d70595f2ed84de80f90cb7ebc",
+            "https://lore.kernel.org/linux-cve-announce/2026082835-CVE-2026-80616-39d3@gregkh/T",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-80616",
+            "https://www.cve.org/CVERecord?id=CVE-2026-80616"
+          ],
+          "Severity": "LOW",
+          "Status": "affected",
+          "Title": "kernel: ieee802154: Avoid calling WARN_ON() on -ENOMEM in cfg802154_switch_netns()",
+          "VendorSeverity": {
+            "redhat": 1,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-80616"
         },
         {
           "CVSS": {
@@ -192732,7 +193279,7 @@
           "Title": "cpython: Incomplete control character validation in http.cookies",
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 2,
+            "amazon": 3,
             "azure": 2,
             "nvd": 3,
             "oracle-oval": 3,
@@ -193270,7 +193817,7 @@
           "Description": "The HTTPPasswordMgr class in the urllib.request module, along with its subclasses HTTPPasswordMgrWithDefaultRealm and HTTPPasswordMgrWithPriorAuth, did not take the URL scheme into account when matching stored credentials against a requested URL. Credentials added for an https:// URL were also used for requests to the same host over http://, so an attacker able to redirect or downgrade a client to plain HTTP (for example, via an HTTPS-to-HTTP redirect or an on-path position) could capture credentials in cleartext. Credentials added for http:// URLs could likewise be sent over https://.\n\nCredential matching is now scoped by URL scheme. Credentials registered with a URL that includes a scheme are only used for requests with the same scheme. Credentials registered with a bare authority (such as example.com or example.com:8080) continue to match any scheme, preserving compatibility with existing code, including proxy authentication.\n\nUsers who cannot upgrade immediately can mitigate by ensuring that applications never make plain http:// requests to hosts for which credentials are registered, for example by not following redirects to http:// URLs.",
           "Fingerprint": "sha256:1bd3a9b53b2bf3d88e08906dd96fb4ec13151555f7494acab464b7adb92030a0",
           "InstalledVersion": "3.11.2-6+deb12u8",
-          "LastModifiedDate": "2026-08-28T21:16:15.74Z",
+          "LastModifiedDate": "2026-09-02T01:17:23.35Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -193321,7 +193868,7 @@
           "Description": "The \"stringprep\" module didn't process characters from RFC 3454 tables \nB.2 or B.3 correctly: the latest Unicode codepoint attributes were used \ninstead of the specified Unicode 3.2.0. This behavior would cause \nmismatches when processing domain names using IDNA 2003 (the \"idna\" \ncodec) and the in_table_b2() function of the \"stringprep\" module. This \nonly affects domain names containing characters that were not previously\n registered or had their Unicode attributes such as case-folding \nbehavior updated since Unicode 3.2.0.",
           "Fingerprint": "sha256:1aafe50cd023a24aeb38d3b52bee5138cd14f098c64756b70270f30cfb8eb6ac",
           "InstalledVersion": "3.11.2-6+deb12u8",
-          "LastModifiedDate": "2026-08-19T01:16:56.65Z",
+          "LastModifiedDate": "2026-09-02T01:17:23.543Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -193512,7 +194059,7 @@
           "Status": "will_not_fix",
           "Title": "python: Python base64: Incomplete data decoding due to premature stop at padding",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "bitnami": 2,
             "redhat": 2
           },
@@ -193588,7 +194135,7 @@
           "Title": "python: Python: Cross-Site Scripting (XSS) vulnerability in http.cookies module",
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 3,
+            "amazon": 2,
             "bitnami": 1,
             "nvd": 2,
             "oracle-oval": 3,
@@ -193793,7 +194340,7 @@
           "Description": "When decompressing crafted zip files using the bzip/LZMA/Zstandard \n\ncompressions, Python could use an attacker-controlled size to \n\npre-allocate memory, possibly resulting in memory exhaustion.",
           "Fingerprint": "sha256:3b01b3c7c21e14539b4dde3710784c589f58feb4f6b1fc0dce66985c17ca19ef",
           "InstalledVersion": "3.11.2-6+deb12u8",
-          "LastModifiedDate": "2026-09-01T02:16:56.5Z",
+          "LastModifiedDate": "2026-09-02T01:17:22.82Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -193930,7 +194477,7 @@
           "Status": "affected",
           "Title": "python: Python pkgutil.get_data(): Path Traversal via improper resource argument validation",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "debian": 1,
             "photon": 3,
             "redhat": 1
@@ -194347,7 +194894,7 @@
           "Title": "cpython: Incomplete control character validation in http.cookies",
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 2,
+            "amazon": 3,
             "azure": 2,
             "nvd": 3,
             "oracle-oval": 3,
@@ -194885,7 +195432,7 @@
           "Description": "The HTTPPasswordMgr class in the urllib.request module, along with its subclasses HTTPPasswordMgrWithDefaultRealm and HTTPPasswordMgrWithPriorAuth, did not take the URL scheme into account when matching stored credentials against a requested URL. Credentials added for an https:// URL were also used for requests to the same host over http://, so an attacker able to redirect or downgrade a client to plain HTTP (for example, via an HTTPS-to-HTTP redirect or an on-path position) could capture credentials in cleartext. Credentials added for http:// URLs could likewise be sent over https://.\n\nCredential matching is now scoped by URL scheme. Credentials registered with a URL that includes a scheme are only used for requests with the same scheme. Credentials registered with a bare authority (such as example.com or example.com:8080) continue to match any scheme, preserving compatibility with existing code, including proxy authentication.\n\nUsers who cannot upgrade immediately can mitigate by ensuring that applications never make plain http:// requests to hosts for which credentials are registered, for example by not following redirects to http:// URLs.",
           "Fingerprint": "sha256:55e4e1515bd8baa6e7beb61ea488e516181a2599db89f8706dd1d471c216f64a",
           "InstalledVersion": "3.11.2-6+deb12u8",
-          "LastModifiedDate": "2026-08-28T21:16:15.74Z",
+          "LastModifiedDate": "2026-09-02T01:17:23.35Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -194936,7 +195483,7 @@
           "Description": "The \"stringprep\" module didn't process characters from RFC 3454 tables \nB.2 or B.3 correctly: the latest Unicode codepoint attributes were used \ninstead of the specified Unicode 3.2.0. This behavior would cause \nmismatches when processing domain names using IDNA 2003 (the \"idna\" \ncodec) and the in_table_b2() function of the \"stringprep\" module. This \nonly affects domain names containing characters that were not previously\n registered or had their Unicode attributes such as case-folding \nbehavior updated since Unicode 3.2.0.",
           "Fingerprint": "sha256:d448120a6d4aaa82ffc537b7f83a74e4d200fca7b91b4899516e98f926387397",
           "InstalledVersion": "3.11.2-6+deb12u8",
-          "LastModifiedDate": "2026-08-19T01:16:56.65Z",
+          "LastModifiedDate": "2026-09-02T01:17:23.543Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -195127,7 +195674,7 @@
           "Status": "will_not_fix",
           "Title": "python: Python base64: Incomplete data decoding due to premature stop at padding",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "bitnami": 2,
             "redhat": 2
           },
@@ -195203,7 +195750,7 @@
           "Title": "python: Python: Cross-Site Scripting (XSS) vulnerability in http.cookies module",
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 3,
+            "amazon": 2,
             "bitnami": 1,
             "nvd": 2,
             "oracle-oval": 3,
@@ -195408,7 +195955,7 @@
           "Description": "When decompressing crafted zip files using the bzip/LZMA/Zstandard \n\ncompressions, Python could use an attacker-controlled size to \n\npre-allocate memory, possibly resulting in memory exhaustion.",
           "Fingerprint": "sha256:f6dffa9d53420a0c03e2f15af375384373536bd0912395e7acf15ee5957c0576",
           "InstalledVersion": "3.11.2-6+deb12u8",
-          "LastModifiedDate": "2026-09-01T02:16:56.5Z",
+          "LastModifiedDate": "2026-09-02T01:17:22.82Z",
           "Layer": {
             "DiffID": "sha256:2765998c1e413e3e419f8d438e91a1d07b2510aa8df2127fd8a82b320d61a6f2",
             "Digest": "sha256:ca1dd85854c66c4a0138bd2f1d3e1c3a1c76f24d7118ea7d7f8d3437298ff89d"
@@ -195545,7 +196092,7 @@
           "Status": "affected",
           "Title": "python: Python pkgutil.get_data(): Path Traversal via improper resource argument validation",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "debian": 1,
             "photon": 3,
             "redhat": 1
@@ -195685,8 +196232,17 @@
             "https://bugzilla.redhat.com/2455360",
             "https://bugzilla.redhat.com/2509735",
             "https://bugzilla.redhat.com/2509843",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2455360",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2509735",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2509843",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-18477",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-18508",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-5704",
             "https://errata.almalinux.org/9/ALSA-2026-61581.html",
+            "https://errata.rockylinux.org/RLSA-2026:61581",
+            "https://linux.oracle.com/cve/CVE-2026-18477.html",
+            "https://linux.oracle.com/errata/ELSA-2026-61581-0.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-18477",
             "https://www.cve.org/CVERecord?id=CVE-2026-18477"
           ],
@@ -195696,7 +196252,9 @@
           "VendorSeverity": {
             "alma": 2,
             "julia": 2,
+            "oracle-oval": 2,
             "redhat": 2,
+            "rocky": 2,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-18477"
@@ -195741,8 +196299,17 @@
             "https://bugzilla.redhat.com/2455360",
             "https://bugzilla.redhat.com/2509735",
             "https://bugzilla.redhat.com/2509843",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2455360",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2509735",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2509843",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-18477",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-18508",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-5704",
             "https://errata.almalinux.org/9/ALSA-2026-61581.html",
+            "https://errata.rockylinux.org/RLSA-2026:61581",
+            "https://linux.oracle.com/cve/CVE-2026-18508.html",
+            "https://linux.oracle.com/errata/ELSA-2026-61581-0.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-18508",
             "https://www.cve.org/CVERecord?id=CVE-2026-18508"
           ],
@@ -195751,7 +196318,9 @@
           "Title": "tar: tar: --one-top-level hardlink targets not confined to top-level directory enabling arbitrary file overwrite",
           "VendorSeverity": {
             "alma": 2,
+            "oracle-oval": 2,
             "redhat": 2,
+            "rocky": 2,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-18508"
@@ -195803,7 +196372,16 @@
             "https://bugzilla.redhat.com/2509735",
             "https://bugzilla.redhat.com/2509843",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2455360",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2509735",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2509843",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-18477",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-18508",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-5704",
             "https://errata.almalinux.org/9/ALSA-2026-61581.html",
+            "https://errata.rockylinux.org/RLSA-2026:61581",
+            "https://linux.oracle.com/cve/CVE-2026-5704.html",
+            "https://linux.oracle.com/errata/ELSA-2026-61581-0.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-5704",
             "https://ubuntu.com/security/notices/USN-8477-1",
             "https://ubuntu.com/security/notices/USN-8477-2",
@@ -195817,7 +196395,9 @@
           "VendorSeverity": {
             "alma": 2,
             "nvd": 2,
+            "oracle-oval": 2,
             "redhat": 2,
+            "rocky": 2,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-5704"
@@ -201673,7 +202253,7 @@
           ],
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 2,
+            "amazon": 3,
             "azure": 3,
             "cbl-mariner": 3,
             "ghsa": 3,
@@ -201766,7 +202346,7 @@
           ],
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 2,
+            "amazon": 3,
             "azure": 3,
             "cbl-mariner": 3,
             "ghsa": 3,
@@ -201808,7 +202388,7 @@
           "Fingerprint": "sha256:c1feb6038440cc3497ab558b255476617c1adcaeb6d156ebe10960bd6239da12",
           "FixedVersion": "2.6.3",
           "InstalledVersion": "2.2.1",
-          "LastModifiedDate": "2026-09-01T13:18:14.823Z",
+          "LastModifiedDate": "2026-09-02T13:17:07.95Z",
           "Layer": {
             "DiffID": "sha256:befcee42e08a9fa9fc90e86064dde50d02aa04938600bf920b59777af041665f",
             "Digest": "sha256:bf54ec43eafcf79791b9334209b3b451716f230d8751890c77b8082b9eaa2685"
