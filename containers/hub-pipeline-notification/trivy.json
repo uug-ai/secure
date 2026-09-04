@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:c300aae18e2c25e1e5f2637766b2331261adca4e884e0afbb0d3fd2eb77102a3",
   "ArtifactName": "ghcr.io/uug-ai/hub-pipeline-notification@sha256:1d610f8bf6f09675614217fccf29d3c096ba0d1b48057bf6a8c0dda9ea8127f9",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-09-03T05:09:18.477157947Z",
+  "CreatedAt": "2026-09-04T03:51:08.59278248Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:7211d01aba8fa2e9eb71ad34395cd313df5fc51a6b69b92d2dfad32cc37759cb",
@@ -166,7 +166,7 @@
     ],
     "Size": 209142784
   },
-  "ReportID": "01a065ab-e20d-7264-aaae-4817b7ff9862",
+  "ReportID": "01a06a8a-ae30-7bec-b8f1-e18ca2a6d775",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -5314,7 +5314,7 @@
           "Fingerprint": "sha256:ba5e86436e0d10e11e2ce4d0bdb581e51e273a781eef7cd986c9373d9242172c",
           "FixedVersion": "2.8.4-r0",
           "InstalledVersion": "2.8.3-r0",
-          "LastModifiedDate": "2026-08-20T18:16:52.343Z",
+          "LastModifiedDate": "2026-09-03T17:37:43.45Z",
           "Layer": {
             "DiffID": "sha256:18849b781cc95402cbd6da57748b6f2f32a54a7df376e078c18d4542b227f3ee",
             "Digest": "sha256:d971b6975da678e1543f1390aa7536a4892f2192f93c6bd7269ab286b1de770e"
@@ -5362,7 +5362,7 @@
           "Fingerprint": "sha256:ec1789ebed9abbb77b0e46351d5ccbc1b82b0cf1fbb34c7bb84561f725177900",
           "FixedVersion": "2.8.4-r0",
           "InstalledVersion": "2.8.3-r0",
-          "LastModifiedDate": "2026-08-20T16:18:30.643Z",
+          "LastModifiedDate": "2026-09-03T17:37:43.45Z",
           "Layer": {
             "DiffID": "sha256:18849b781cc95402cbd6da57748b6f2f32a54a7df376e078c18d4542b227f3ee",
             "Digest": "sha256:d971b6975da678e1543f1390aa7536a4892f2192f93c6bd7269ab286b1de770e"
@@ -6832,6 +6832,66 @@
         {
           "CVSS": {
             "ghsa": {
+              "V40Score": 8.9,
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:H"
+            },
+            "redhat": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Go",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago"
+          },
+          "Description": "amqp091-go is a Go AMQP 0.9.1 client. Before version 1.13.0, a compromised or malicious AMQP broker can force the client to allocate resources for and process content body frames that exceed the negotiated frame_max limit. This can lead to unexpected memory consumption or application-layer denial of service (DoS), bypassing the protocol's built-in framing constraints. Version 1.13.0 contains a fix. No known workarounds are available.",
+          "Fingerprint": "sha256:cc0cecd0a0ae5e23ad5d83c9da2b687c805e5300ab6a925a27916043112effed",
+          "FixedVersion": "1.13.0",
+          "InstalledVersion": "v1.10.0",
+          "LastModifiedDate": "2026-08-29T03:17:10.49Z",
+          "Layer": {
+            "DiffID": "sha256:2431815dda2b437054220530e897abc15d4205f5859829b0b9481ed28968a33e",
+            "Digest": "sha256:a16b23a556c7844cc1ace281c4db37f711180f005beea4d92d80d3757d27d210"
+          },
+          "PkgID": "github.com/rabbitmq/amqp091-go@v1.10.0",
+          "PkgIdentifier": {
+            "PURL": "pkg:golang/github.com/rabbitmq/amqp091-go@v1.10.0",
+            "UID": "1932abf7a1226af1"
+          },
+          "PkgName": "github.com/rabbitmq/amqp091-go",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-79921",
+          "PublishedDate": "2026-08-26T21:16:41.873Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-79921",
+            "https://github.com/rabbitmq/amqp091-go",
+            "https://github.com/rabbitmq/amqp091-go/commit/6beb7b51f59e46ddcf8066ad498dad32491d3be0",
+            "https://github.com/rabbitmq/amqp091-go/pull/353",
+            "https://github.com/rabbitmq/amqp091-go/releases/tag/v1.13.0",
+            "https://github.com/rabbitmq/amqp091-go/security/advisories/GHSA-6c5v-hqjr-5xxp",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-79921",
+            "https://www.cve.org/CVERecord?id=CVE-2026-79921"
+          ],
+          "Severity": "HIGH",
+          "SeveritySource": "ghsa",
+          "Status": "fixed",
+          "Title": "github.com/rabbitmq/amqp091-go: amqp091-go: Denial of Service via oversized AMQP payloads",
+          "VendorIDs": [
+            "GHSA-6c5v-hqjr-5xxp"
+          ],
+          "VendorSeverity": {
+            "azure": 3,
+            "ghsa": 3,
+            "redhat": 3
+          },
+          "VulnerabilityID": "CVE-2026-79921"
+        },
+        {
+          "CVSS": {
+            "ghsa": {
               "V40Score": 4.8,
               "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:L/VI:H/VA:N/SC:N/SI:N/SA:N/E:U"
             }
@@ -6892,7 +6952,7 @@
           "Fingerprint": "sha256:d9e13fb763c8ac2511ab012e06f6d3e8709ab8a943f175f4d26f93fe18eca863",
           "FixedVersion": "0.55.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-08-28T22:16:52.22Z",
+          "LastModifiedDate": "2026-09-03T16:37:52.17Z",
           "Layer": {
             "DiffID": "sha256:2431815dda2b437054220530e897abc15d4205f5859829b0b9481ed28968a33e",
             "Digest": "sha256:a16b23a556c7844cc1ace281c4db37f711180f005beea4d92d80d3757d27d210"
@@ -7048,7 +7108,7 @@
           "Fingerprint": "sha256:caf4f6bd8bfa911b7982dbb56f331b16c38050dbc0facc3577bbe02fc5c1d27a",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-09-02T13:17:39.643Z",
+          "LastModifiedDate": "2026-09-03T13:05:33.03Z",
           "Layer": {
             "DiffID": "sha256:2431815dda2b437054220530e897abc15d4205f5859829b0b9481ed28968a33e",
             "Digest": "sha256:a16b23a556c7844cc1ace281c4db37f711180f005beea4d92d80d3757d27d210"
@@ -7197,7 +7257,7 @@
           "Fingerprint": "sha256:0d2b294fb8d2414d05c03925b7ae24107280ac050bf1e152223c28a4f2bd6867",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-09-02T13:17:41.037Z",
+          "LastModifiedDate": "2026-09-03T13:05:34.523Z",
           "Layer": {
             "DiffID": "sha256:2431815dda2b437054220530e897abc15d4205f5859829b0b9481ed28968a33e",
             "Digest": "sha256:a16b23a556c7844cc1ace281c4db37f711180f005beea4d92d80d3757d27d210"
@@ -8097,6 +8157,9 @@
           "VulnerabilityID": "CVE-2026-46598"
         },
         {
+          "CweIDs": [
+            "CWE-770"
+          ],
           "DataSource": {
             "ID": "govulndb",
             "Name": "The Go Vulnerability Database",
@@ -8106,7 +8169,7 @@
           "Fingerprint": "sha256:cf6f5d0d573dbad7778450f546a9b390b0313555e6d9acbd616c12afd53e1852",
           "FixedVersion": "0.56.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-09-02T20:17:36.397Z",
+          "LastModifiedDate": "2026-09-03T16:37:52.17Z",
           "Layer": {
             "DiffID": "sha256:2431815dda2b437054220530e897abc15d4205f5859829b0b9481ed28968a33e",
             "Digest": "sha256:a16b23a556c7844cc1ace281c4db37f711180f005beea4d92d80d3757d27d210"
@@ -8127,13 +8190,16 @@
           ],
           "Severity": "UNKNOWN",
           "Status": "fixed",
-          "Title": "Prevent DoS on deadlocked established channel in golang.org/x/crypto/ssh",
+          "Title": "Previously, after a channel has been established, a malicious peer cou ...",
           "VendorIDs": [
             "GO-2026-6355"
           ],
           "VulnerabilityID": "CVE-2026-56855"
         },
         {
+          "CweIDs": [
+            "CWE-770"
+          ],
           "DataSource": {
             "ID": "govulndb",
             "Name": "The Go Vulnerability Database",
@@ -8143,7 +8209,7 @@
           "Fingerprint": "sha256:775ce6582f7903aaf05141be029679e0848cc5f6d837cf64217742a9f704281c",
           "FixedVersion": "0.56.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-09-02T20:17:37.167Z",
+          "LastModifiedDate": "2026-09-03T16:37:52.17Z",
           "Layer": {
             "DiffID": "sha256:2431815dda2b437054220530e897abc15d4205f5859829b0b9481ed28968a33e",
             "Digest": "sha256:a16b23a556c7844cc1ace281c4db37f711180f005beea4d92d80d3757d27d210"
@@ -8164,7 +8230,7 @@
           ],
           "Severity": "UNKNOWN",
           "Status": "fixed",
-          "Title": "Prevent DoS on deadlocked undecided channel in golang.org/x/crypto/ssh",
+          "Title": "Previously, a channel registered in the mux's chanList is not usable u ...",
           "VendorIDs": [
             "GO-2026-6354"
           ],

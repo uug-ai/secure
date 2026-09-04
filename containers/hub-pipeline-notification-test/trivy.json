@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:3ca0c7a928b50a4a9ced8bf1a94f222d82f22eedcbe16cd8761dbdb6c71ee683",
   "ArtifactName": "ghcr.io/uug-ai/hub-pipeline-notification-test@sha256:42aef3fec79b7f9d4d230dca2e70f02354aef61bd0f1480e44f47ee03ecbef6c",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-09-03T05:09:19.708894053Z",
+  "CreatedAt": "2026-09-04T03:51:09.731711293Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:7211d01aba8fa2e9eb71ad34395cd313df5fc51a6b69b92d2dfad32cc37759cb",
@@ -166,7 +166,7 @@
     ],
     "Size": 116270592
   },
-  "ReportID": "01a065ab-e6dc-7da1-bcee-903584b8c166",
+  "ReportID": "01a06a8a-b2a3-7ad7-9617-404ff35c8a5e",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -2537,6 +2537,66 @@
         {
           "CVSS": {
             "ghsa": {
+              "V40Score": 8.9,
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:H"
+            },
+            "redhat": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Go",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago"
+          },
+          "Description": "amqp091-go is a Go AMQP 0.9.1 client. Before version 1.13.0, a compromised or malicious AMQP broker can force the client to allocate resources for and process content body frames that exceed the negotiated frame_max limit. This can lead to unexpected memory consumption or application-layer denial of service (DoS), bypassing the protocol's built-in framing constraints. Version 1.13.0 contains a fix. No known workarounds are available.",
+          "Fingerprint": "sha256:65bf55511a5e0ca2e984aa19d6915be9f98e9f79bb99253ff81662b79c7fce7f",
+          "FixedVersion": "1.13.0",
+          "InstalledVersion": "v1.10.0",
+          "LastModifiedDate": "2026-08-29T03:17:10.49Z",
+          "Layer": {
+            "DiffID": "sha256:c9e6015cee23010e1d6732830e7831ef2a2a4606b7bb12b74b03e8d2c4a84b9c",
+            "Digest": "sha256:0571bc7da06ee696e4b86c2348672fb0bf3b7bb9048e5c24faba00a4c88a0af3"
+          },
+          "PkgID": "github.com/rabbitmq/amqp091-go@v1.10.0",
+          "PkgIdentifier": {
+            "PURL": "pkg:golang/github.com/rabbitmq/amqp091-go@v1.10.0",
+            "UID": "bae6af6e7e94b538"
+          },
+          "PkgName": "github.com/rabbitmq/amqp091-go",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-79921",
+          "PublishedDate": "2026-08-26T21:16:41.873Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-79921",
+            "https://github.com/rabbitmq/amqp091-go",
+            "https://github.com/rabbitmq/amqp091-go/commit/6beb7b51f59e46ddcf8066ad498dad32491d3be0",
+            "https://github.com/rabbitmq/amqp091-go/pull/353",
+            "https://github.com/rabbitmq/amqp091-go/releases/tag/v1.13.0",
+            "https://github.com/rabbitmq/amqp091-go/security/advisories/GHSA-6c5v-hqjr-5xxp",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-79921",
+            "https://www.cve.org/CVERecord?id=CVE-2026-79921"
+          ],
+          "Severity": "HIGH",
+          "SeveritySource": "ghsa",
+          "Status": "fixed",
+          "Title": "github.com/rabbitmq/amqp091-go: amqp091-go: Denial of Service via oversized AMQP payloads",
+          "VendorIDs": [
+            "GHSA-6c5v-hqjr-5xxp"
+          ],
+          "VendorSeverity": {
+            "azure": 3,
+            "ghsa": 3,
+            "redhat": 3
+          },
+          "VulnerabilityID": "CVE-2026-79921"
+        },
+        {
+          "CVSS": {
+            "ghsa": {
               "V40Score": 4.8,
               "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:L/VI:H/VA:N/SC:N/SI:N/SA:N/E:U"
             }
@@ -2650,7 +2710,7 @@
           "Fingerprint": "sha256:efb188a5842facab00be47e728d4b140b198d01f0f7302215a5523f7ce51af6b",
           "FixedVersion": "0.55.0",
           "InstalledVersion": "v0.35.0",
-          "LastModifiedDate": "2026-08-28T22:16:52.22Z",
+          "LastModifiedDate": "2026-09-03T16:37:52.17Z",
           "Layer": {
             "DiffID": "sha256:c9e6015cee23010e1d6732830e7831ef2a2a4606b7bb12b74b03e8d2c4a84b9c",
             "Digest": "sha256:0571bc7da06ee696e4b86c2348672fb0bf3b7bb9048e5c24faba00a4c88a0af3"
@@ -2877,7 +2937,7 @@
           "Fingerprint": "sha256:024a8f3e6219b3fdc8460e4bfc6411958e5f4f322071a980b5f9518589f546a8",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.35.0",
-          "LastModifiedDate": "2026-09-02T13:17:39.643Z",
+          "LastModifiedDate": "2026-09-03T13:05:33.03Z",
           "Layer": {
             "DiffID": "sha256:c9e6015cee23010e1d6732830e7831ef2a2a4606b7bb12b74b03e8d2c4a84b9c",
             "Digest": "sha256:0571bc7da06ee696e4b86c2348672fb0bf3b7bb9048e5c24faba00a4c88a0af3"
@@ -3026,7 +3086,7 @@
           "Fingerprint": "sha256:43af8ce2bd68c7bae257456100c171ab55162df25e789318029ba9939075fd26",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.35.0",
-          "LastModifiedDate": "2026-09-02T13:17:41.037Z",
+          "LastModifiedDate": "2026-09-03T13:05:34.523Z",
           "Layer": {
             "DiffID": "sha256:c9e6015cee23010e1d6732830e7831ef2a2a4606b7bb12b74b03e8d2c4a84b9c",
             "Digest": "sha256:0571bc7da06ee696e4b86c2348672fb0bf3b7bb9048e5c24faba00a4c88a0af3"
@@ -4039,6 +4099,9 @@
           "VulnerabilityID": "CVE-2026-46598"
         },
         {
+          "CweIDs": [
+            "CWE-770"
+          ],
           "DataSource": {
             "ID": "govulndb",
             "Name": "The Go Vulnerability Database",
@@ -4048,7 +4111,7 @@
           "Fingerprint": "sha256:477baa79836f8198bc609ddfa1376a737842367478b627252fc2b415dfa3230f",
           "FixedVersion": "0.56.0",
           "InstalledVersion": "v0.35.0",
-          "LastModifiedDate": "2026-09-02T20:17:36.397Z",
+          "LastModifiedDate": "2026-09-03T16:37:52.17Z",
           "Layer": {
             "DiffID": "sha256:c9e6015cee23010e1d6732830e7831ef2a2a4606b7bb12b74b03e8d2c4a84b9c",
             "Digest": "sha256:0571bc7da06ee696e4b86c2348672fb0bf3b7bb9048e5c24faba00a4c88a0af3"
@@ -4069,13 +4132,16 @@
           ],
           "Severity": "UNKNOWN",
           "Status": "fixed",
-          "Title": "Prevent DoS on deadlocked established channel in golang.org/x/crypto/ssh",
+          "Title": "Previously, after a channel has been established, a malicious peer cou ...",
           "VendorIDs": [
             "GO-2026-6355"
           ],
           "VulnerabilityID": "CVE-2026-56855"
         },
         {
+          "CweIDs": [
+            "CWE-770"
+          ],
           "DataSource": {
             "ID": "govulndb",
             "Name": "The Go Vulnerability Database",
@@ -4085,7 +4151,7 @@
           "Fingerprint": "sha256:422d2b05e12c1a2edbd533384f34d28a411db0280ecdac16f5bc6b7b2332da70",
           "FixedVersion": "0.56.0",
           "InstalledVersion": "v0.35.0",
-          "LastModifiedDate": "2026-09-02T20:17:37.167Z",
+          "LastModifiedDate": "2026-09-03T16:37:52.17Z",
           "Layer": {
             "DiffID": "sha256:c9e6015cee23010e1d6732830e7831ef2a2a4606b7bb12b74b03e8d2c4a84b9c",
             "Digest": "sha256:0571bc7da06ee696e4b86c2348672fb0bf3b7bb9048e5c24faba00a4c88a0af3"
@@ -4106,7 +4172,7 @@
           ],
           "Severity": "UNKNOWN",
           "Status": "fixed",
-          "Title": "Prevent DoS on deadlocked undecided channel in golang.org/x/crypto/ssh",
+          "Title": "Previously, a channel registered in the mux's chanList is not usable u ...",
           "VendorIDs": [
             "GO-2026-6354"
           ],
@@ -4336,7 +4402,7 @@
           "Fingerprint": "sha256:d7c5368012ba57069aa4181060a80b84d6bc2d53aee46735e8af02a3cab31eae",
           "FixedVersion": "0.53.0",
           "InstalledVersion": "v0.36.0",
-          "LastModifiedDate": "2026-09-02T13:17:27.973Z",
+          "LastModifiedDate": "2026-09-03T13:05:20.56Z",
           "Layer": {
             "DiffID": "sha256:c9e6015cee23010e1d6732830e7831ef2a2a4606b7bb12b74b03e8d2c4a84b9c",
             "Digest": "sha256:0571bc7da06ee696e4b86c2348672fb0bf3b7bb9048e5c24faba00a4c88a0af3"
@@ -4382,6 +4448,8 @@
             "https://access.redhat.com/errata/RHSA-2026:57545",
             "https://access.redhat.com/errata/RHSA-2026:57649",
             "https://access.redhat.com/errata/RHSA-2026:57845",
+            "https://access.redhat.com/errata/RHSA-2026:59833",
+            "https://access.redhat.com/errata/RHSA-2026:60025",
             "https://access.redhat.com/errata/RHSA-2026:60441",
             "https://access.redhat.com/errata/RHSA-2026:60442",
             "https://access.redhat.com/errata/RHSA-2026:60446",
@@ -5183,7 +5251,7 @@
           "Fingerprint": "sha256:32d95ad66e541a5eb9acad9126ce13ae69f93bb6ce641dace7440bf2aa3d509b",
           "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
           "InstalledVersion": "v1.25.12",
-          "LastModifiedDate": "2026-08-14T16:16:55.317Z",
+          "LastModifiedDate": "2026-09-03T16:37:52.17Z",
           "Layer": {
             "DiffID": "sha256:c9e6015cee23010e1d6732830e7831ef2a2a4606b7bb12b74b03e8d2c4a84b9c",
             "Digest": "sha256:0571bc7da06ee696e4b86c2348672fb0bf3b7bb9048e5c24faba00a4c88a0af3"
@@ -5224,7 +5292,7 @@
             "https://go.dev/issue/80405",
             "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
             "https://linux.oracle.com/cve/CVE-2026-33818.html",
-            "https://linux.oracle.com/errata/ELSA-2026-60306-0.html",
+            "https://linux.oracle.com/errata/ELSA-2026-62631-0.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-33818",
             "https://pkg.go.dev/vuln/GO-2026-5972",
             "https://www.cve.org/CVERecord?id=CVE-2026-33818"
@@ -5472,7 +5540,7 @@
           "Fingerprint": "sha256:0de15c9a729e83f7594e7cc84612ae249914dada9f74ffe05f3981475e42250f",
           "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
           "InstalledVersion": "v1.25.12",
-          "LastModifiedDate": "2026-08-14T16:16:57.21Z",
+          "LastModifiedDate": "2026-09-03T16:37:52.17Z",
           "Layer": {
             "DiffID": "sha256:c9e6015cee23010e1d6732830e7831ef2a2a4606b7bb12b74b03e8d2c4a84b9c",
             "Digest": "sha256:0571bc7da06ee696e4b86c2348672fb0bf3b7bb9048e5c24faba00a4c88a0af3"
@@ -5513,7 +5581,7 @@
             "https://go.dev/issue/80205",
             "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
             "https://linux.oracle.com/cve/CVE-2026-56853.html",
-            "https://linux.oracle.com/errata/ELSA-2026-60306-0.html",
+            "https://linux.oracle.com/errata/ELSA-2026-62631-0.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-56853",
             "https://pkg.go.dev/vuln/GO-2026-6089",
             "https://www.cve.org/CVERecord?id=CVE-2026-56853"
@@ -5557,7 +5625,7 @@
           "Fingerprint": "sha256:5cc00d47f9b59d42068385ded5131e013d239370994726ee56ee99f86e8a1dbf",
           "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
           "InstalledVersion": "v1.25.12",
-          "LastModifiedDate": "2026-08-14T16:16:57.367Z",
+          "LastModifiedDate": "2026-09-03T16:37:52.17Z",
           "Layer": {
             "DiffID": "sha256:c9e6015cee23010e1d6732830e7831ef2a2a4606b7bb12b74b03e8d2c4a84b9c",
             "Digest": "sha256:0571bc7da06ee696e4b86c2348672fb0bf3b7bb9048e5c24faba00a4c88a0af3"
@@ -5642,7 +5710,7 @@
           "Fingerprint": "sha256:8e9ad43b0e1aaa8ee920598ed0d8d12345b8096e62b5547936108595c8d94a5d",
           "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
           "InstalledVersion": "v1.25.12",
-          "LastModifiedDate": "2026-08-14T16:16:57.523Z",
+          "LastModifiedDate": "2026-09-03T16:37:52.17Z",
           "Layer": {
             "DiffID": "sha256:c9e6015cee23010e1d6732830e7831ef2a2a4606b7bb12b74b03e8d2c4a84b9c",
             "Digest": "sha256:0571bc7da06ee696e4b86c2348672fb0bf3b7bb9048e5c24faba00a4c88a0af3"
@@ -5683,7 +5751,7 @@
             "https://go.dev/issue/80481",
             "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
             "https://linux.oracle.com/cve/CVE-2026-56859.html",
-            "https://linux.oracle.com/errata/ELSA-2026-60306-0.html",
+            "https://linux.oracle.com/errata/ELSA-2026-62631-0.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-56859",
             "https://pkg.go.dev/vuln/GO-2026-6088",
             "https://www.cve.org/CVERecord?id=CVE-2026-56859"
@@ -5727,7 +5795,7 @@
           "Fingerprint": "sha256:aa5fdfdaa57511714efa606cc5cc4c1a5c088b1a847fea8934d4e22000d034d7",
           "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
           "InstalledVersion": "v1.25.12",
-          "LastModifiedDate": "2026-08-14T17:19:13.91Z",
+          "LastModifiedDate": "2026-09-03T16:37:52.17Z",
           "Layer": {
             "DiffID": "sha256:c9e6015cee23010e1d6732830e7831ef2a2a4606b7bb12b74b03e8d2c4a84b9c",
             "Digest": "sha256:0571bc7da06ee696e4b86c2348672fb0bf3b7bb9048e5c24faba00a4c88a0af3"
@@ -5768,7 +5836,7 @@
             "https://go.dev/issue/80494",
             "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
             "https://linux.oracle.com/cve/CVE-2026-56860.html",
-            "https://linux.oracle.com/errata/ELSA-2026-60306-0.html",
+            "https://linux.oracle.com/errata/ELSA-2026-62631-0.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-56860",
             "https://pkg.go.dev/vuln/GO-2026-6218",
             "https://www.cve.org/CVERecord?id=CVE-2026-56860"
@@ -5812,7 +5880,7 @@
           "Fingerprint": "sha256:4dd88bef7b1a219dbe6f428091027caa00f610000f10eaf8b19eb649ceeb0192",
           "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
           "InstalledVersion": "v1.25.12",
-          "LastModifiedDate": "2026-08-14T16:16:57.717Z",
+          "LastModifiedDate": "2026-09-03T16:37:52.17Z",
           "Layer": {
             "DiffID": "sha256:c9e6015cee23010e1d6732830e7831ef2a2a4606b7bb12b74b03e8d2c4a84b9c",
             "Digest": "sha256:0571bc7da06ee696e4b86c2348672fb0bf3b7bb9048e5c24faba00a4c88a0af3"
@@ -5853,7 +5921,7 @@
             "https://go.dev/issue/80528",
             "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
             "https://linux.oracle.com/cve/CVE-2026-56862.html",
-            "https://linux.oracle.com/errata/ELSA-2026-60306-0.html",
+            "https://linux.oracle.com/errata/ELSA-2026-62631-0.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-56862",
             "https://pkg.go.dev/vuln/GO-2026-6090",
             "https://www.cve.org/CVERecord?id=CVE-2026-56862"
