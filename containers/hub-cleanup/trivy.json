@@ -1,17 +1,17 @@
 {
-  "ArtifactID": "sha256:39c598ca9033626baee0bf9a77dc3d78f3898645614fe45ccdf5f0bf8542d28d",
-  "ArtifactName": "ghcr.io/uug-ai/hub-cleanup@sha256:e8bf09800818b07063b9ca025227f18efa23aa5edaba7cc80152fb9aaac64968",
+  "ArtifactID": "sha256:9fadcbcf563685b2674bde6c8b8e6bbf249a5c588be16079882b563428c01425",
+  "ArtifactName": "ghcr.io/uug-ai/hub-cleanup@sha256:66ff7f68a3faec931a4439afe454cfbb4ddf9223f8581b8bb32fd65fcce933d2",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-09-04T03:49:12.807506689Z",
+  "CreatedAt": "2026-09-05T03:48:11.253954474Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:34884abbe92863fce933ed7c39c0e045631af0ed86d5cc0dfbdf9fdca426ce3c",
-      "sha256:b83804f5ad1a5b5e0da848204914af144f34aa275f4732cd37867005d1304bdf",
-      "sha256:f1f5b7fb27043d26b426dc62e2f2a40a541374f825803397c216ebd8f6a6e027",
-      "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-      "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
+      "sha256:d937e065c7232bc8253152c27b30d4d09bd46d8baa5762db42609c5361577725",
+      "sha256:fd434534e81ad3dc967484891b10ed5ed1dca80905080ea08a1ad83cd52ab832",
+      "sha256:4d5084b8c9c04f70db88133f3652a2f3d7c9592be0aae0575e75bba41fbd7a3f",
+      "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
       "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
-      "sha256:c12497c7b3ee991448af6fbc2f0a54ff87b58acf9185a60bf445e82e0201c2ea",
+      "sha256:85dbb720381ce16402a2d24b02d5335c5321531470ce6449e68dddd735f4cec3",
       "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
     ],
     "ImageConfig": {
@@ -40,7 +40,7 @@
         "User": "hub-cleanup",
         "WorkingDir": "/home/hub-cleanup"
       },
-      "created": "2026-08-28T15:17:43.034923909Z",
+      "created": "2026-09-04T14:30:52.498318848Z",
       "history": [
         {
           "comment": "buildkit.dockerfile.v0",
@@ -55,78 +55,78 @@
         },
         {
           "comment": "buildkit.dockerfile.v0",
-          "created": "2026-08-28T15:15:36.835241322Z",
+          "created": "2026-09-04T14:29:12.204493037Z",
           "created_by": "LABEL org.opencontainers.image.source=https://github.com/uug-ai/hub-cleanup",
           "empty_layer": true
         },
         {
           "comment": "buildkit.dockerfile.v0",
-          "created": "2026-08-28T15:15:36.835241322Z",
+          "created": "2026-09-04T14:29:12.204493037Z",
           "created_by": "LABEL AUTHOR=uug-ai",
           "empty_layer": true
         },
         {
           "comment": "buildkit.dockerfile.v0",
-          "created": "2026-08-28T15:15:36.835241322Z",
+          "created": "2026-09-04T14:29:12.204493037Z",
           "created_by": "ARG project=hub-cleanup",
           "empty_layer": true
         },
         {
           "comment": "buildkit.dockerfile.v0",
-          "created": "2026-08-28T15:15:36.835241322Z",
+          "created": "2026-09-04T14:29:12.204493037Z",
           "created_by": "RUN |1 project=hub-cleanup /bin/sh -c addgroup -S ${project} \u0026\u0026 adduser -S ${project} -G ${project} # buildkit"
         },
         {
           "comment": "buildkit.dockerfile.v0",
-          "created": "2026-08-28T15:17:38.708408937Z",
+          "created": "2026-09-04T14:30:49.921342285Z",
           "created_by": "COPY --chown=0:0 /dist / # buildkit"
         },
         {
           "comment": "buildkit.dockerfile.v0",
-          "created": "2026-08-28T15:17:41.233073308Z",
+          "created": "2026-09-04T14:30:51.354198833Z",
           "created_by": "RUN |1 project=hub-cleanup /bin/sh -c apk update \u0026\u0026 apk add ca-certificates curl libstdc++ libc6-compat --no-cache \u0026\u0026 rm -rf /var/cache/apk/* # buildkit"
         },
         {
           "comment": "buildkit.dockerfile.v0",
-          "created": "2026-08-28T15:17:41.937920031Z",
+          "created": "2026-09-04T14:30:51.558195555Z",
           "created_by": "RUN |1 project=hub-cleanup /bin/sh -c mv /${project}/* /home/${project}/ # buildkit"
         },
         {
           "comment": "buildkit.dockerfile.v0",
-          "created": "2026-08-28T15:17:42.081848022Z",
+          "created": "2026-09-04T14:30:51.728253563Z",
           "created_by": "RUN |1 project=hub-cleanup /bin/sh -c /home/${project}/main version # buildkit"
         },
         {
           "comment": "buildkit.dockerfile.v0",
-          "created": "2026-08-28T15:17:42.982824978Z",
+          "created": "2026-09-04T14:30:52.459999927Z",
           "created_by": "RUN |1 project=hub-cleanup /bin/sh -c apk add libcap \u0026\u0026 setcap 'cap_net_bind_service=+ep' /home/${project}/main # buildkit"
         },
         {
           "comment": "buildkit.dockerfile.v0",
-          "created": "2026-08-28T15:17:42.982824978Z",
+          "created": "2026-09-04T14:30:52.459999927Z",
           "created_by": "USER hub-cleanup",
           "empty_layer": true
         },
         {
           "comment": "buildkit.dockerfile.v0",
-          "created": "2026-08-28T15:17:42.982824978Z",
+          "created": "2026-09-04T14:30:52.459999927Z",
           "created_by": "EXPOSE map[8081/tcp:{}]",
           "empty_layer": true
         },
         {
           "comment": "buildkit.dockerfile.v0",
-          "created": "2026-08-28T15:17:42.982824978Z",
+          "created": "2026-09-04T14:30:52.459999927Z",
           "created_by": "HEALTHCHECK \u0026{[\"CMD-SHELL\" \"curl --fail http://localhost:8081 || exit 1\"] \"0s\" \"0s\" \"0s\" \"0s\" '\\x00'}",
           "empty_layer": true
         },
         {
           "comment": "buildkit.dockerfile.v0",
-          "created": "2026-08-28T15:17:43.034923909Z",
+          "created": "2026-09-04T14:30:52.498318848Z",
           "created_by": "WORKDIR /home/hub-cleanup"
         },
         {
           "comment": "buildkit.dockerfile.v0",
-          "created": "2026-08-28T15:17:43.034923909Z",
+          "created": "2026-09-04T14:30:52.498318848Z",
           "created_by": "CMD [\"./main\"]",
           "empty_layer": true
         }
@@ -135,18 +135,18 @@
       "rootfs": {
         "diff_ids": [
           "sha256:34884abbe92863fce933ed7c39c0e045631af0ed86d5cc0dfbdf9fdca426ce3c",
-          "sha256:b83804f5ad1a5b5e0da848204914af144f34aa275f4732cd37867005d1304bdf",
-          "sha256:f1f5b7fb27043d26b426dc62e2f2a40a541374f825803397c216ebd8f6a6e027",
-          "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-          "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
+          "sha256:d937e065c7232bc8253152c27b30d4d09bd46d8baa5762db42609c5361577725",
+          "sha256:fd434534e81ad3dc967484891b10ed5ed1dca80905080ea08a1ad83cd52ab832",
+          "sha256:4d5084b8c9c04f70db88133f3652a2f3d7c9592be0aae0575e75bba41fbd7a3f",
+          "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
           "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
-          "sha256:c12497c7b3ee991448af6fbc2f0a54ff87b58acf9185a60bf445e82e0201c2ea",
+          "sha256:85dbb720381ce16402a2d24b02d5335c5321531470ce6449e68dddd735f4cec3",
           "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
         ],
         "type": "layers"
       }
     },
-    "ImageID": "sha256:32bdf37189eed0b99ced75341c349c16fefe45ab7dd54b7994998e83ba08d00e",
+    "ImageID": "sha256:fdf4e5d39a399d01434e1b928e314826884a9cbd98c1b5700d8808020cbe621f",
     "Layers": [
       {
         "DiffID": "sha256:34884abbe92863fce933ed7c39c0e045631af0ed86d5cc0dfbdf9fdca426ce3c",
@@ -154,23 +154,23 @@
         "Size": 8697856
       },
       {
-        "DiffID": "sha256:b83804f5ad1a5b5e0da848204914af144f34aa275f4732cd37867005d1304bdf",
-        "Digest": "sha256:e62ecede00f7b48233e9052cba5a15f7039c94c4e098e122deebb9f096e78a65",
+        "DiffID": "sha256:d937e065c7232bc8253152c27b30d4d09bd46d8baa5762db42609c5361577725",
+        "Digest": "sha256:8f103b73df00ebcef479022105303365f7c29cbfd625ba21bc9b38484ec27adc",
         "Size": 10752
       },
       {
-        "DiffID": "sha256:f1f5b7fb27043d26b426dc62e2f2a40a541374f825803397c216ebd8f6a6e027",
-        "Digest": "sha256:79e66e438d23f42c471a446605eac638b04271e401dbf72ac0a825927a5e02e2",
+        "DiffID": "sha256:fd434534e81ad3dc967484891b10ed5ed1dca80905080ea08a1ad83cd52ab832",
+        "Digest": "sha256:464c0ee1ee5ca37fd8b1782c722bd4f87a7ccbb4181be47432d6c29aba06f4e7",
         "Size": 16681472
       },
       {
-        "DiffID": "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-        "Digest": "sha256:a78f9cf71d89e8bbcdb418194e78949b1d0a25f7116055b11ad6e2b46238ae9f",
-        "Size": 9069056
+        "DiffID": "sha256:4d5084b8c9c04f70db88133f3652a2f3d7c9592be0aae0575e75bba41fbd7a3f",
+        "Digest": "sha256:a7e4ad482e943c3cfcb4432465dbbc20d2c95144031eeaa7a888b77fcc51aa53",
+        "Size": 9090560
       },
       {
-        "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-        "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e",
+        "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+        "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0",
         "Size": 16683008
       },
       {
@@ -179,9 +179,9 @@
         "Size": 1024
       },
       {
-        "DiffID": "sha256:c12497c7b3ee991448af6fbc2f0a54ff87b58acf9185a60bf445e82e0201c2ea",
-        "Digest": "sha256:d635a25df6e5f485ccaa9bdc3590c3158dcd5b5157ab9e6253f068885ce3b3d5",
-        "Size": 19922944
+        "DiffID": "sha256:85dbb720381ce16402a2d24b02d5335c5321531470ce6449e68dddd735f4cec3",
+        "Digest": "sha256:22e52caae8f2ab32fbadaeb6eb9949c92add7ab144698f2fe7bb614f7c0b857f",
+        "Size": 19923456
       },
       {
         "DiffID": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
@@ -193,13 +193,13 @@
       "Family": "alpine",
       "Name": "3.24.1"
     },
-    "Reference": "ghcr.io/uug-ai/hub-cleanup@sha256:e8bf09800818b07063b9ca025227f18efa23aa5edaba7cc80152fb9aaac64968",
+    "Reference": "ghcr.io/uug-ai/hub-cleanup@sha256:66ff7f68a3faec931a4439afe454cfbb4ddf9223f8581b8bb32fd65fcce933d2",
     "RepoDigests": [
-      "ghcr.io/uug-ai/hub-cleanup@sha256:e8bf09800818b07063b9ca025227f18efa23aa5edaba7cc80152fb9aaac64968"
+      "ghcr.io/uug-ai/hub-cleanup@sha256:66ff7f68a3faec931a4439afe454cfbb4ddf9223f8581b8bb32fd65fcce933d2"
     ],
-    "Size": 71067136
+    "Size": 71089152
   },
-  "ReportID": "01a06a88-e9e7-77b7-b156-6fa45b1a3ca3",
+  "ReportID": "01a06fae-5575-7e8c-bf3a-8f8e4efa1eca",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -434,8 +434,8 @@
             "usr/lib/libbrotlienc.so.1.2.0"
           ],
           "Layer": {
-            "DiffID": "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-            "Digest": "sha256:a78f9cf71d89e8bbcdb418194e78949b1d0a25f7116055b11ad6e2b46238ae9f"
+            "DiffID": "sha256:4d5084b8c9c04f70db88133f3652a2f3d7c9592be0aae0575e75bba41fbd7a3f",
+            "Digest": "sha256:a7e4ad482e943c3cfcb4432465dbbc20d2c95144031eeaa7a888b77fcc51aa53"
           },
           "Licenses": [
             "MIT"
@@ -525,8 +525,8 @@
             "usr/lib/libcares.so.2.19.7"
           ],
           "Layer": {
-            "DiffID": "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-            "Digest": "sha256:a78f9cf71d89e8bbcdb418194e78949b1d0a25f7116055b11ad6e2b46238ae9f"
+            "DiffID": "sha256:4d5084b8c9c04f70db88133f3652a2f3d7c9592be0aae0575e75bba41fbd7a3f",
+            "Digest": "sha256:a7e4ad482e943c3cfcb4432465dbbc20d2c95144031eeaa7a888b77fcc51aa53"
           },
           "Licenses": [
             "MIT"
@@ -678,8 +678,8 @@
             "usr/share/ca-certificates/mozilla/vTrus_Root_CA.crt"
           ],
           "Layer": {
-            "DiffID": "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-            "Digest": "sha256:a78f9cf71d89e8bbcdb418194e78949b1d0a25f7116055b11ad6e2b46238ae9f"
+            "DiffID": "sha256:4d5084b8c9c04f70db88133f3652a2f3d7c9592be0aae0575e75bba41fbd7a3f",
+            "Digest": "sha256:a7e4ad482e943c3cfcb4432465dbbc20d2c95144031eeaa7a888b77fcc51aa53"
           },
           "Licenses": [
             "MPL-2.0",
@@ -724,23 +724,23 @@
           "AnalyzedBy": "apk",
           "Arch": "x86_64",
           "DependsOn": [
-            "libcurl@8.21.0-r0",
+            "libcurl@8.22.0-r0",
             "musl@1.2.6-r2",
             "zlib@1.3.2-r0"
           ],
-          "Digest": "sha1:3a993fcf316241f56cb7db9bae4914bcc27d1b60",
-          "ID": "curl@8.21.0-r0",
+          "Digest": "sha1:cfbb78b38d8f69e33129b7e98863f1759878010d",
+          "ID": "curl@8.22.0-r0",
           "Identifier": {
-            "PURL": "pkg:apk/alpine/curl@8.21.0-r0?arch=x86_64\u0026distro=3.24.1",
-            "UID": "eec4901c65f38f5a"
+            "PURL": "pkg:apk/alpine/curl@8.22.0-r0?arch=x86_64\u0026distro=3.24.1",
+            "UID": "89bec309b4b6afcf"
           },
           "InstalledFiles": [
             "usr/bin/curl",
             "usr/bin/wcurl"
           ],
           "Layer": {
-            "DiffID": "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-            "Digest": "sha256:a78f9cf71d89e8bbcdb418194e78949b1d0a25f7116055b11ad6e2b46238ae9f"
+            "DiffID": "sha256:4d5084b8c9c04f70db88133f3652a2f3d7c9592be0aae0575e75bba41fbd7a3f",
+            "Digest": "sha256:a7e4ad482e943c3cfcb4432465dbbc20d2c95144031eeaa7a888b77fcc51aa53"
           },
           "Licenses": [
             "curl"
@@ -748,8 +748,8 @@
           "Maintainer": "Achill Gilgenast \u003cachill@achill.org\u003e",
           "Name": "curl",
           "SrcName": "curl",
-          "SrcVersion": "8.21.0-r0",
-          "Version": "8.21.0-r0"
+          "SrcVersion": "8.22.0-r0",
+          "Version": "8.22.0-r0"
         },
         {
           "AnalyzedBy": "apk",
@@ -778,8 +778,8 @@
             "lib64/ld-linux-x86-64.so.2"
           ],
           "Layer": {
-            "DiffID": "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-            "Digest": "sha256:a78f9cf71d89e8bbcdb418194e78949b1d0a25f7116055b11ad6e2b46238ae9f"
+            "DiffID": "sha256:4d5084b8c9c04f70db88133f3652a2f3d7c9592be0aae0575e75bba41fbd7a3f",
+            "Digest": "sha256:a7e4ad482e943c3cfcb4432465dbbc20d2c95144031eeaa7a888b77fcc51aa53"
           },
           "Licenses": [
             "NCSA"
@@ -835,8 +835,8 @@
             "UID": "6edc9f5878d2e7c"
           },
           "Layer": {
-            "DiffID": "sha256:c12497c7b3ee991448af6fbc2f0a54ff87b58acf9185a60bf445e82e0201c2ea",
-            "Digest": "sha256:d635a25df6e5f485ccaa9bdc3590c3158dcd5b5157ab9e6253f068885ce3b3d5"
+            "DiffID": "sha256:85dbb720381ce16402a2d24b02d5335c5321531470ce6449e68dddd735f4cec3",
+            "Digest": "sha256:22e52caae8f2ab32fbadaeb6eb9949c92add7ab144698f2fe7bb614f7c0b857f"
           },
           "Licenses": [
             "BSD-3-Clause",
@@ -865,8 +865,8 @@
             "usr/sbin/getcap"
           ],
           "Layer": {
-            "DiffID": "sha256:c12497c7b3ee991448af6fbc2f0a54ff87b58acf9185a60bf445e82e0201c2ea",
-            "Digest": "sha256:d635a25df6e5f485ccaa9bdc3590c3158dcd5b5157ab9e6253f068885ce3b3d5"
+            "DiffID": "sha256:85dbb720381ce16402a2d24b02d5335c5321531470ce6449e68dddd735f4cec3",
+            "Digest": "sha256:22e52caae8f2ab32fbadaeb6eb9949c92add7ab144698f2fe7bb614f7c0b857f"
           },
           "Licenses": [
             "BSD-3-Clause",
@@ -895,8 +895,8 @@
             "usr/sbin/setcap"
           ],
           "Layer": {
-            "DiffID": "sha256:c12497c7b3ee991448af6fbc2f0a54ff87b58acf9185a60bf445e82e0201c2ea",
-            "Digest": "sha256:d635a25df6e5f485ccaa9bdc3590c3158dcd5b5157ab9e6253f068885ce3b3d5"
+            "DiffID": "sha256:85dbb720381ce16402a2d24b02d5335c5321531470ce6449e68dddd735f4cec3",
+            "Digest": "sha256:22e52caae8f2ab32fbadaeb6eb9949c92add7ab144698f2fe7bb614f7c0b857f"
           },
           "Licenses": [
             "BSD-3-Clause",
@@ -928,8 +928,8 @@
             "usr/sbin/getpcaps"
           ],
           "Layer": {
-            "DiffID": "sha256:c12497c7b3ee991448af6fbc2f0a54ff87b58acf9185a60bf445e82e0201c2ea",
-            "Digest": "sha256:d635a25df6e5f485ccaa9bdc3590c3158dcd5b5157ab9e6253f068885ce3b3d5"
+            "DiffID": "sha256:85dbb720381ce16402a2d24b02d5335c5321531470ce6449e68dddd735f4cec3",
+            "Digest": "sha256:22e52caae8f2ab32fbadaeb6eb9949c92add7ab144698f2fe7bb614f7c0b857f"
           },
           "Licenses": [
             "BSD-3-Clause",
@@ -960,8 +960,8 @@
             "usr/lib/libpsx.so.2.78"
           ],
           "Layer": {
-            "DiffID": "sha256:c12497c7b3ee991448af6fbc2f0a54ff87b58acf9185a60bf445e82e0201c2ea",
-            "Digest": "sha256:d635a25df6e5f485ccaa9bdc3590c3158dcd5b5157ab9e6253f068885ce3b3d5"
+            "DiffID": "sha256:85dbb720381ce16402a2d24b02d5335c5321531470ce6449e68dddd735f4cec3",
+            "Digest": "sha256:22e52caae8f2ab32fbadaeb6eb9949c92add7ab144698f2fe7bb614f7c0b857f"
           },
           "Licenses": [
             "BSD-3-Clause",
@@ -1026,19 +1026,19 @@
             "zlib@1.3.2-r0",
             "zstd-libs@1.5.7-r2"
           ],
-          "Digest": "sha1:c59133673bdba0fcc92c897d9de682c2301b5d7f",
-          "ID": "libcurl@8.21.0-r0",
+          "Digest": "sha1:7816006b6af2270ab6e7e85f74adb94c16bdc48b",
+          "ID": "libcurl@8.22.0-r0",
           "Identifier": {
-            "PURL": "pkg:apk/alpine/libcurl@8.21.0-r0?arch=x86_64\u0026distro=3.24.1",
-            "UID": "41bd97351e4e8b71"
+            "PURL": "pkg:apk/alpine/libcurl@8.22.0-r0?arch=x86_64\u0026distro=3.24.1",
+            "UID": "b53659351cc3bae9"
           },
           "InstalledFiles": [
             "usr/lib/libcurl.so.4",
             "usr/lib/libcurl.so.4.8.0"
           ],
           "Layer": {
-            "DiffID": "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-            "Digest": "sha256:a78f9cf71d89e8bbcdb418194e78949b1d0a25f7116055b11ad6e2b46238ae9f"
+            "DiffID": "sha256:4d5084b8c9c04f70db88133f3652a2f3d7c9592be0aae0575e75bba41fbd7a3f",
+            "Digest": "sha256:a7e4ad482e943c3cfcb4432465dbbc20d2c95144031eeaa7a888b77fcc51aa53"
           },
           "Licenses": [
             "curl"
@@ -1046,8 +1046,8 @@
           "Maintainer": "Achill Gilgenast \u003cachill@achill.org\u003e",
           "Name": "libcurl",
           "SrcName": "curl",
-          "SrcVersion": "8.21.0-r0",
-          "Version": "8.21.0-r0"
+          "SrcVersion": "8.22.0-r0",
+          "Version": "8.22.0-r0"
         },
         {
           "AnalyzedBy": "apk",
@@ -1065,8 +1065,8 @@
             "usr/lib/libgcc_s.so.1"
           ],
           "Layer": {
-            "DiffID": "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-            "Digest": "sha256:a78f9cf71d89e8bbcdb418194e78949b1d0a25f7116055b11ad6e2b46238ae9f"
+            "DiffID": "sha256:4d5084b8c9c04f70db88133f3652a2f3d7c9592be0aae0575e75bba41fbd7a3f",
+            "Digest": "sha256:a7e4ad482e943c3cfcb4432465dbbc20d2c95144031eeaa7a888b77fcc51aa53"
           },
           "Licenses": [
             "GPL-2.0-or-later",
@@ -1096,8 +1096,8 @@
             "usr/lib/libidn2.so.0.4.0"
           ],
           "Layer": {
-            "DiffID": "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-            "Digest": "sha256:a78f9cf71d89e8bbcdb418194e78949b1d0a25f7116055b11ad6e2b46238ae9f"
+            "DiffID": "sha256:4d5084b8c9c04f70db88133f3652a2f3d7c9592be0aae0575e75bba41fbd7a3f",
+            "Digest": "sha256:a7e4ad482e943c3cfcb4432465dbbc20d2c95144031eeaa7a888b77fcc51aa53"
           },
           "Licenses": [
             "GPL-2.0-or-later",
@@ -1128,8 +1128,8 @@
             "usr/lib/libpsl.so.5.3.5"
           ],
           "Layer": {
-            "DiffID": "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-            "Digest": "sha256:a78f9cf71d89e8bbcdb418194e78949b1d0a25f7116055b11ad6e2b46238ae9f"
+            "DiffID": "sha256:4d5084b8c9c04f70db88133f3652a2f3d7c9592be0aae0575e75bba41fbd7a3f",
+            "Digest": "sha256:a7e4ad482e943c3cfcb4432465dbbc20d2c95144031eeaa7a888b77fcc51aa53"
           },
           "Licenses": [
             "MIT"
@@ -1187,8 +1187,8 @@
             "usr/lib/libstdc++.so.6.0.34"
           ],
           "Layer": {
-            "DiffID": "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-            "Digest": "sha256:a78f9cf71d89e8bbcdb418194e78949b1d0a25f7116055b11ad6e2b46238ae9f"
+            "DiffID": "sha256:4d5084b8c9c04f70db88133f3652a2f3d7c9592be0aae0575e75bba41fbd7a3f",
+            "Digest": "sha256:a7e4ad482e943c3cfcb4432465dbbc20d2c95144031eeaa7a888b77fcc51aa53"
           },
           "Licenses": [
             "GPL-2.0-or-later",
@@ -1217,8 +1217,8 @@
             "usr/lib/libucontext_posix.so.1"
           ],
           "Layer": {
-            "DiffID": "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-            "Digest": "sha256:a78f9cf71d89e8bbcdb418194e78949b1d0a25f7116055b11ad6e2b46238ae9f"
+            "DiffID": "sha256:4d5084b8c9c04f70db88133f3652a2f3d7c9592be0aae0575e75bba41fbd7a3f",
+            "Digest": "sha256:a7e4ad482e943c3cfcb4432465dbbc20d2c95144031eeaa7a888b77fcc51aa53"
           },
           "Licenses": [
             "ISC"
@@ -1246,8 +1246,8 @@
             "usr/lib/libunistring.so.5.2.1"
           ],
           "Layer": {
-            "DiffID": "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-            "Digest": "sha256:a78f9cf71d89e8bbcdb418194e78949b1d0a25f7116055b11ad6e2b46238ae9f"
+            "DiffID": "sha256:4d5084b8c9c04f70db88133f3652a2f3d7c9592be0aae0575e75bba41fbd7a3f",
+            "Digest": "sha256:a7e4ad482e943c3cfcb4432465dbbc20d2c95144031eeaa7a888b77fcc51aa53"
           },
           "Licenses": [
             "GPL-2.0-or-later",
@@ -1302,8 +1302,8 @@
             "usr/lib/libobstack.so.1.0.0"
           ],
           "Layer": {
-            "DiffID": "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-            "Digest": "sha256:a78f9cf71d89e8bbcdb418194e78949b1d0a25f7116055b11ad6e2b46238ae9f"
+            "DiffID": "sha256:4d5084b8c9c04f70db88133f3652a2f3d7c9592be0aae0575e75bba41fbd7a3f",
+            "Digest": "sha256:a7e4ad482e943c3cfcb4432465dbbc20d2c95144031eeaa7a888b77fcc51aa53"
           },
           "Licenses": [
             "GPL-2.0-or-later"
@@ -1366,8 +1366,8 @@
             "usr/lib/libnghttp2.so.14.29.4"
           ],
           "Layer": {
-            "DiffID": "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-            "Digest": "sha256:a78f9cf71d89e8bbcdb418194e78949b1d0a25f7116055b11ad6e2b46238ae9f"
+            "DiffID": "sha256:4d5084b8c9c04f70db88133f3652a2f3d7c9592be0aae0575e75bba41fbd7a3f",
+            "Digest": "sha256:a7e4ad482e943c3cfcb4432465dbbc20d2c95144031eeaa7a888b77fcc51aa53"
           },
           "Licenses": [
             "MIT"
@@ -1482,8 +1482,8 @@
             "usr/lib/libzstd.so.1.5.7"
           ],
           "Layer": {
-            "DiffID": "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-            "Digest": "sha256:a78f9cf71d89e8bbcdb418194e78949b1d0a25f7116055b11ad6e2b46238ae9f"
+            "DiffID": "sha256:4d5084b8c9c04f70db88133f3652a2f3d7c9592be0aae0575e75bba41fbd7a3f",
+            "Digest": "sha256:a7e4ad482e943c3cfcb4432465dbbc20d2c95144031eeaa7a888b77fcc51aa53"
           },
           "Licenses": [
             "BSD-3-Clause",
@@ -1496,266 +1496,9 @@
           "Version": "1.5.7-r2"
         }
       ],
-      "Target": "ghcr.io/uug-ai/hub-cleanup@sha256:e8bf09800818b07063b9ca025227f18efa23aa5edaba7cc80152fb9aaac64968 (alpine 3.24.1)",
+      "Target": "ghcr.io/uug-ai/hub-cleanup@sha256:66ff7f68a3faec931a4439afe454cfbb4ddf9223f8581b8bb32fd65fcce933d2 (alpine 3.24.1)",
       "Type": "alpine",
       "Vulnerabilities": [
-        {
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "Description Not Available",
-          "Fingerprint": "sha256:b9fd697074ac0f66f1665753593650a817b2eba8191bd88693b58399c0fbf028",
-          "FixedVersion": "8.22.0-r0",
-          "InstalledVersion": "8.21.0-r0",
-          "Layer": {
-            "DiffID": "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-            "Digest": "sha256:a78f9cf71d89e8bbcdb418194e78949b1d0a25f7116055b11ad6e2b46238ae9f"
-          },
-          "PkgID": "curl@8.21.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/curl@8.21.0-r0?arch=x86_64\u0026distro=3.24.1",
-            "UID": "eec4901c65f38f5a"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-13608",
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "Title": "Title Not Available",
-          "VulnerabilityID": "CVE-2026-13608"
-        },
-        {
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "Description Not Available",
-          "Fingerprint": "sha256:99f6a3bc68d5e7f4263ea776b79cac53cb4445c2a5f61d900875c79ac1804f3b",
-          "FixedVersion": "8.22.0-r0",
-          "InstalledVersion": "8.21.0-r0",
-          "Layer": {
-            "DiffID": "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-            "Digest": "sha256:a78f9cf71d89e8bbcdb418194e78949b1d0a25f7116055b11ad6e2b46238ae9f"
-          },
-          "PkgID": "curl@8.21.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/curl@8.21.0-r0?arch=x86_64\u0026distro=3.24.1",
-            "UID": "eec4901c65f38f5a"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-18924",
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "Title": "Title Not Available",
-          "VulnerabilityID": "CVE-2026-18924"
-        },
-        {
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "Description Not Available",
-          "Fingerprint": "sha256:db769c0e19222cd56530c7d4ce7dd5e6bf90e0877045e281ec028a0d45ed8f25",
-          "FixedVersion": "8.22.0-r0",
-          "InstalledVersion": "8.21.0-r0",
-          "Layer": {
-            "DiffID": "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-            "Digest": "sha256:a78f9cf71d89e8bbcdb418194e78949b1d0a25f7116055b11ad6e2b46238ae9f"
-          },
-          "PkgID": "curl@8.21.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/curl@8.21.0-r0?arch=x86_64\u0026distro=3.24.1",
-            "UID": "eec4901c65f38f5a"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-19931",
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "Title": "Title Not Available",
-          "VulnerabilityID": "CVE-2026-19931"
-        },
-        {
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "[Unknown description]",
-          "Fingerprint": "sha256:2e33a25cda1466ebb87514435e758103054fac12b1d0283b9f6358f181adb331",
-          "FixedVersion": "8.22.0-r0",
-          "InstalledVersion": "8.21.0-r0",
-          "Layer": {
-            "DiffID": "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-            "Digest": "sha256:a78f9cf71d89e8bbcdb418194e78949b1d0a25f7116055b11ad6e2b46238ae9f"
-          },
-          "PkgID": "curl@8.21.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/curl@8.21.0-r0?arch=x86_64\u0026distro=3.24.1",
-            "UID": "eec4901c65f38f5a"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-80229",
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "Title": "[Unknown description]",
-          "VulnerabilityID": "CVE-2026-80229"
-        },
-        {
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "[Unknown description]",
-          "Fingerprint": "sha256:162f38808bd832c3633096853a210681245f36e75e983084f08265a76c5c8f56",
-          "FixedVersion": "8.22.0-r0",
-          "InstalledVersion": "8.21.0-r0",
-          "Layer": {
-            "DiffID": "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-            "Digest": "sha256:a78f9cf71d89e8bbcdb418194e78949b1d0a25f7116055b11ad6e2b46238ae9f"
-          },
-          "PkgID": "curl@8.21.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/curl@8.21.0-r0?arch=x86_64\u0026distro=3.24.1",
-            "UID": "eec4901c65f38f5a"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-80230",
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "Title": "[Unknown description]",
-          "VulnerabilityID": "CVE-2026-80230"
-        },
-        {
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "A flaw in libcurl makes it wrongly reuse an existing HTTPS connection setup for a given hostname even when using a different Native CA Store setting (`CURLSSLOPT_NATIVE_CA`) than when the connection was created.",
-          "Fingerprint": "sha256:27148ab57549de658fd3a885bd99e57d482200c70531b1ca0fcd50935e9c6848",
-          "FixedVersion": "8.22.0-r0",
-          "InstalledVersion": "8.21.0-r0",
-          "Layer": {
-            "DiffID": "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-            "Digest": "sha256:a78f9cf71d89e8bbcdb418194e78949b1d0a25f7116055b11ad6e2b46238ae9f"
-          },
-          "PkgID": "curl@8.21.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/curl@8.21.0-r0?arch=x86_64\u0026distro=3.24.1",
-            "UID": "eec4901c65f38f5a"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-80231",
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "Title": "native CA store conn reuse",
-          "VulnerabilityID": "CVE-2026-80231"
-        },
-        {
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "[Unknown description]",
-          "Fingerprint": "sha256:53d543b73d9b9628da08cad861c4b45609945119bc6c9515063f033d89c44274",
-          "FixedVersion": "8.22.0-r0",
-          "InstalledVersion": "8.21.0-r0",
-          "Layer": {
-            "DiffID": "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-            "Digest": "sha256:a78f9cf71d89e8bbcdb418194e78949b1d0a25f7116055b11ad6e2b46238ae9f"
-          },
-          "PkgID": "curl@8.21.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/curl@8.21.0-r0?arch=x86_64\u0026distro=3.24.1",
-            "UID": "eec4901c65f38f5a"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-80255",
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "Title": "[Unknown description]",
-          "VulnerabilityID": "CVE-2026-80255"
-        },
-        {
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Fingerprint": "sha256:9c691352d32991904d71d84603079d677020f723a8d112eda19bba666ccbc0d6",
-          "FixedVersion": "8.22.0-r0",
-          "InstalledVersion": "8.21.0-r0",
-          "Layer": {
-            "DiffID": "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-            "Digest": "sha256:a78f9cf71d89e8bbcdb418194e78949b1d0a25f7116055b11ad6e2b46238ae9f"
-          },
-          "PkgID": "curl@8.21.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/curl@8.21.0-r0?arch=x86_64\u0026distro=3.24.1",
-            "UID": "eec4901c65f38f5a"
-          },
-          "PkgName": "curl",
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "VulnerabilityID": "CVE-2026-80256"
-        },
-        {
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "[Unknown description]",
-          "Fingerprint": "sha256:d862f9c07f2164ecd0c94d8e911f492f96953a12e0203c55ed6c853e5c880752",
-          "FixedVersion": "8.22.0-r0",
-          "InstalledVersion": "8.21.0-r0",
-          "Layer": {
-            "DiffID": "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-            "Digest": "sha256:a78f9cf71d89e8bbcdb418194e78949b1d0a25f7116055b11ad6e2b46238ae9f"
-          },
-          "PkgID": "curl@8.21.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/curl@8.21.0-r0?arch=x86_64\u0026distro=3.24.1",
-            "UID": "eec4901c65f38f5a"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-82208",
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "Title": "[Unknown description]",
-          "VulnerabilityID": "CVE-2026-82208"
-        },
-        {
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "Description Not Available",
-          "Fingerprint": "sha256:53a8587169b62f4f6e11c1f3be00ff048d78516e789f8cebe2a27bc66e2a318d",
-          "FixedVersion": "8.22.0-r0",
-          "InstalledVersion": "8.21.0-r0",
-          "Layer": {
-            "DiffID": "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-            "Digest": "sha256:a78f9cf71d89e8bbcdb418194e78949b1d0a25f7116055b11ad6e2b46238ae9f"
-          },
-          "PkgID": "curl@8.21.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/curl@8.21.0-r0?arch=x86_64\u0026distro=3.24.1",
-            "UID": "eec4901c65f38f5a"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-82209",
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "Title": "Title Not Available",
-          "VulnerabilityID": "CVE-2026-82209"
-        },
         {
           "CVSS": {
             "redhat": {
@@ -1772,7 +1515,7 @@
             "URL": "https://secdb.alpinelinux.org/"
           },
           "Description": "Issue summary: When an OpenSSL QUIC server (Listener SSL object) processes\nvalid QUIC Initial packets for unknown destination connection IDs, it\ncan allocate and queue new incoming channels without enforcing any limit.\n\nImpact summary: A remote peer that can make many Initial packets reach the\nserver listener faster than the application accepts connections, can cause the\nmemory allocated to store the per-channel state to grow without any limits,\npotentially making the QUIC listener unavailable and causing Denial of Service.\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: The function that handles inbound QUIC packets uses\nConnection-Id from the packet header to find an existing connection\n(QUIC channel). If no existing connection is found and the packet\ntype is INITIAL, the function treats the packet as a new connection. It\nallocates a new channel object and inserts it into a queue where it\nwaits to be accepted by the local application with SSL_accept(3ossl).\nThe memory occupied by these initial channel objects may grow\nwithout bounds if the application is not able to call SSL_accept()\nfrequently enough to serve these inbound connection requests.\n\nThe issue is present since OpenSSL 3.5 when the QUIC server implementation\nwas added.\n\nThe fix introduces a limit for pending connections. The default limit is set\nto 256 pending connections (waiting to be accepted by the local application).\nApplications may change the default by calling SSL_set_value_uint(3ossl).\n\nFIPS impact: no\nThe FIPS module is not affected as the QUIC implementation is outside of\nthe OpenSSL FIPS module boundary.",
-          "Fingerprint": "sha256:3ce24a9cd9f4a4e0ed6489dcdf1fec18633089637e58974eb9e50b9984e24e0d",
+          "Fingerprint": "sha256:57270d701a7cb03d3a7a757f624062a0c65e31c96a3f7e33b89b09fecf0265e0",
           "FixedVersion": "3.5.8-r0",
           "InstalledVersion": "3.5.7-r0",
           "LastModifiedDate": "2026-08-28T19:46:29.323Z",
@@ -1826,7 +1569,7 @@
             "URL": "https://secdb.alpinelinux.org/"
           },
           "Description": "Issue summary: QUIC server may double free QRX (QUIC record layer RX) object\nwhen channel creation fails for initial packet.\n\nImpact summary: Double free leads to heap corruption, which typically results in \ntermination of QUIC server process, leading to Denial of Service. There is so\nfar no evidence that this double free is exploitable for remote code execution,\nthus it is considered highly improbable.\n\nCWE: CWE-415: Double Free\n\nDescription: In order to validate initial packet, OpenSSL QUIC stack default\npacket handler (port_default_packet_handler()) creates a so-called QRX object.\nIf the initial packet validates successfully with QRX object, the default packet\nhandler proceeds to channel (connection object) creation. The QRX object used\nfor packet validation is passed to port_bind_channel(), so it becomes part of\nthe newly created connection. If port_bind_channel() fails, then it also frees\nthe QRX object. Once port_bind_channel() returns, the port_default_packet_handler()\ndetects the failure and proceeds to the error branch, where the same QRX object is\nfreed for the second time.\n\nThe failure in port_bind_channel() function can be induced with a relatively\nlow effort by a malformed (non RFC 9000 compliant) INITIAL packet. If the packet\ncarries DCID (destination connection ID) which is shorter than 8 bytes, then\nport_bind_channel() jumps to the error path after ossl_quic_lcidm_enrol_odcid()\ndetects that the DCID has invalid length.\n\nFIPS impact: no\nThe FIPS module is not affected, as the QUIC implementation is outside of\nthe OpenSSL FIPS module boundary.",
-          "Fingerprint": "sha256:534dd4a05bfe1b832901052f8b3a5a9f276b36db51634e221e048b3c46e16e1a",
+          "Fingerprint": "sha256:b4f6d7d64768311f5038925486daf7eb26c7ccd2a23584a3a9be11505c3cb482",
           "FixedVersion": "3.5.8-r0",
           "InstalledVersion": "3.5.7-r0",
           "LastModifiedDate": "2026-08-28T19:46:29.323Z",
@@ -1877,7 +1620,7 @@
             "URL": "https://secdb.alpinelinux.org/"
           },
           "Description": "Issue summary: OpenSSL CMS decryption sizes the key-unwrap output buffer based\non querying the unwrapped key size, but the AES-WRAP-PAD unwrap primitive\ncan write and cleanse more bytes than that query reports, causing an 8-byte\nout-of-bounds heap write.\n\nImpact summary: An attacker who supplies a crafted CMS message can trigger a\ndeterministic 8-byte out-of-bounds heap write when the victim decrypts it\nwith CMS_decrypt(), corrupting the heap and typically resulting in a Denial\nof Service.\n\nCWE: CWE-787: Out-of-bounds Write\n\nDescription: The key-wrap OID is potentially attacker-controlled on the wire.\nCMS unwrapping allows both id-aesNNN-wrap-pad and id-aesNNN-wrap ciphers.\nAn attacker can take a legitimate message and change a single OID byte to\nselect the padded variant while leaving the message otherwise valid. Since\nthe unwrap key is derived from the recipient's private operation (ECDH key\nagreement or ML-KEM decapsulation), the RFC 5649 integrity check cannot\npass, and the decryption fails with integrity failure.\n\nThe write is a fixed-size (8-byte), fixed-value (zero) heap overflow\nimmediately past the allocation, requires no special configuration, and is\nreachable from the public CMS_decrypt() function. The consequence is\na heap corruption leading to a Denial of Service. The fix in the CMS code\nsizes the unwrap output buffer for the worst case so a failed unwrap cannot\nwrite past the allocation.\n\nFIPS impact: no\n\nAs the CMS code lives outside the FIPS module boundary, no FIPS\nmodules are affected by this CVE.",
-          "Fingerprint": "sha256:5c2baa51196a13f80162e37024e830a633c95006515027c8991acd3325f2616a",
+          "Fingerprint": "sha256:ea1c5db656650aa6bb8065b66b47a2b5823ce47fa329043a4b74a0f2f0c47bb3",
           "FixedVersion": "3.5.8-r0",
           "InstalledVersion": "3.5.7-r0",
           "LastModifiedDate": "2026-08-28T19:46:29.323Z",
@@ -1931,7 +1674,7 @@
             "URL": "https://secdb.alpinelinux.org/"
           },
           "Description": "Issue summary: OpenSSL CMP password based protection verification only\nchecks whether the protectionAlg parameter was not NULL and not its\nASN.1 type, before treating it as a PBMParameter. A crafted message can\ncontain a parameter of a different type, which is then dereferenced as an\ninvalid pointer.\n\nImpact summary: A remote, unauthenticated attacker can crash an application\nacting as a CMP server that accepts PBM-protected messages, or a CMP client\ntalking to a malicious or intercepted CMP server, resulting in a Denial of\nService.\n\nCWE: CWE-476: NULL Pointer Dereference\n\nDescription: When verifying the password-based MAC protection of a CMP\nmessage, OpenSSL library reads the protectionAlg algorithm parameter with\nX509_ALGOR_get0(), which returns both the parameter type and its value\npointer. The value is then cast to an ASN1_STRING and treated as the\nexpected PBMParameter after only checking that pointer is not NULL. The\nparameter type returned by X509_ALGOR_get0() was never consulted.\n\nThis happens during protection verification, before any MAC is computed, so\nno knowledge of the PBM shared secret is required; the only precondition is\nthat PBM verification is reachable. On the server side this is reached from\nOSSL_CMP_SRV_process_request() for any application that stands up a CMP\nserver accepting PBM-protected messages, and on the client side from CMP\nresponse validation against a malicious or on-path (MITM) server. The\nreliable consequence is a denial of service; there is no memory disclosure,\nno controlled memory write, and no path to code execution. CMP is a\nspecialized feature that an application must explicitly enable.\n\nFIPS impact: no\nAs the CMP code lives outside the FIPS module boundary, no FIPS modules\nare affected by this CVE.",
-          "Fingerprint": "sha256:78f4f5309de2d1dd02142b9de3aa07c706df7b386511f3d40ccf8508fafc706c",
+          "Fingerprint": "sha256:d1d24955ed863bcadec3c7ab76cbb25a4ed48260b3c92b2ba1c1440ab4b8219d",
           "FixedVersion": "3.5.8-r0",
           "InstalledVersion": "3.5.7-r0",
           "LastModifiedDate": "2026-08-28T19:46:29.323Z",
@@ -1985,7 +1728,7 @@
             "URL": "https://secdb.alpinelinux.org/"
           },
           "Description": "Issue summary: In a server or client configuration with RFC7250 Raw Public Keys (RPKs)\nenabled, and only the private key (with no associated certificate) configured locally,\na NULL pointer dereference may occur when the remote peer solicits raw public keys and\nalso sends the typically omitted \"signature_algorithms_cert\" TLS extension.\n\nImpact summary: The impact is limited to a possible Denial of Service as a result of\nan application abort, no data disclosure or remote command execution are possible.\n\nCWE: CWE-476: NULL Pointer Dereference\n\nDescription: While a passing comment in sample code in the documentation suggests\nthat key-only RPK configurations are supported, the best-practice RPK configuration\nis to always configure a corresponding certificate (possibly self-signed or\nsigned by any convenient CA).\n\nWhen the private key is configured along with a matching certificate, the\n\"signature_algorithms_cert\" extension is handled reliably even without the\nfix, and peer clients or servers that don't support raw public keys may be\nable to complete a TLS connection by pinning or verifying the corresponding\ncertificate or its public key.\n\nDeployments that prefer to configure just a private key with no certificate\nneed to upgrade to an updated release as noted below.\n\nFIPS impact: no\n\nNo FIPS modules are affected by this issue, as the SSL protocol implementation\nis outside the OpenSSL FIPS module boundary.",
-          "Fingerprint": "sha256:b362ee2403070119287379c6232a1667fd25ae9f511ea68df8a1f3aebcddcda0",
+          "Fingerprint": "sha256:a9646690f223a90679212128e52348d18ecd9dc6b5a663e0eb009259b30ff2c8",
           "FixedVersion": "3.5.8-r0",
           "InstalledVersion": "3.5.7-r0",
           "LastModifiedDate": "2026-08-28T19:46:29.323Z",
@@ -2037,7 +1780,7 @@
             "URL": "https://secdb.alpinelinux.org/"
           },
           "Description": "Issue summary: Receiving a DTLS record for a future epoch while a handshake\nis in progress causes OpenSSL to buffer far more memory than the record\nitself requires.\n\nImpact summary: A peer can use a small amount of network traffic to make an\nOpenSSL DTLS endpoint retain a disproportionately large amount of memory,\nwhich may lead to a Denial of Service.\n\nCWE: CWE-405: Asymmetric Resource Consumption (Amplification)\n\nDescription: While a DTLS handshake is in progress, a peer may legitimately\nhave already moved on to the next epoch (for example, having sent its\nChangeCipherSpec and Finished messages) before the local endpoint has\nprocessed the same transition, typically because of reordering on the\nunderlying UDP transport. OpenSSL buffers such early records so that they\ncan be processed once the local endpoint catches up.\n\nBuffering a record currently retains the entire read buffer it arrived in,\nwhich is sized to hold the largest possible DTLS record (around 16\nkilobytes), rather than just the bytes that make up the record itself. Up\nto 100 such records may be buffered per connection. As a result, a peer\nthat sends a stream of small forged records claiming to belong to the next\nepoch can cause an OpenSSL DTLS endpoint to retain around 1.7 megabytes of\nmemory, despite sending only a small fraction of that amount of data over\nthe network.\n\nAn attacker therefore gains a memory amplification factor of around 1200,\nand can multiply the effect across as many associations as it is able to\nopen, making this a remote memory exhaustion Denial of Service risk for\nDTLS servers. Since the memory retained per connection remains bounded,\nand any limit an application already places on the number of concurrent\nassociations also bounds the total exposure, this issue has been assessed\nas Low severity.\n\nFIPS impact: no\n\nNo FIPS modules are affected by this issue as the affected code is outside\nthe OpenSSL FIPS module boundary.\n\nOpenSSL 4.0, 3.6, 3.5, 3.4, 3.0, 1.1.1 and 1.0.2 are vulnerable to this\nissue.\n\nOpenSSL 4.0 users should upgrade to OpenSSL 4.0.2.\nOpenSSL 3.6 users should upgrade to OpenSSL 3.6.4.\nOpenSSL 3.5 users should upgrade to OpenSSL 3.5.8.\nOpenSSL 3.4 users should upgrade to OpenSSL 3.4.7.\nOpenSSL 3.0 users should upgrade to OpenSSL 3.0.22.\n\nPremium support customers only:\nOpenSSL 1.1.1 users should upgrade to OpenSSL 1.1.1zi\nOpenSSL 1.0.2 users should upgrade to OpenSSL 1.0.2zr\n\nThis issue was reported on 18 May 2026 by Amazon Web Services.\nThe fix has been developed by Matt Caswell.\n\n-- cut (non-publishing metadata for internal use) --\nReported by: Amazon Web Services\nFixed by: Matt Caswell",
-          "Fingerprint": "sha256:106fe6c0f9724dc44c5149749333d16efa33379105f15c635a740d3ee31e7631",
+          "Fingerprint": "sha256:cf3441efa44595c9299f411b6c5be58de20758436eedf209ae2111c12a40a88d",
           "FixedVersion": "3.5.8-r0",
           "InstalledVersion": "3.5.7-r0",
           "LastModifiedDate": "2026-08-28T19:46:29.323Z",
@@ -2091,7 +1834,7 @@
             "URL": "https://secdb.alpinelinux.org/"
           },
           "Description": "Issue summary: OpenSSL CMP response validation passed an unexpected response\nsender distinguished name directly as the format string to `ERR_raise_data()`.\n\nImpact summary: A malicious or intercepted CMP endpoint can crash a CMP client\nthat enforces an expected sender or uses a pinned server certificate whose\nsubject becomes the default expected sender.\n\nCWE: CWE-134 (Use of Externally-Controlled Format String)\n\nDescription: When validating a received CMP message, ossl_cmp_msg_check_update()\nconverts the peer-supplied sender distinguished name with X509_NAME_oneline()\nand passes it directly as the format argument to ERR_raise_data(). Percent\ncharacters survive the conversion, so a sender DN such as \"CN=%s%n\" reaches\nBIO_vsnprintf() as an attacker-controlled format string with no matching variadic\narguments. This path is only reached when the caller configures an expected\nsender or pins a server certificate, which is the normal configuration for a\nCMP client validating server responses.\n\nSince the attacker controls the format string but none of the variadic\narguments, such specifiers as %s and %n dereference or write through unrelated\nstack contents and crash the client. The reliable consequence is a denial of\nservice, when the response comes from a malicious or intercepted CMP endpoint.\nThere is no controlled memory write, arbitrary-address read, or reliable path\nto remote code execution.\n\nFIPS impact: no\n\nNo FIPS modules are affected by this issue, as the CMP protocol\nimplementation is outside the OpenSSL FIPS module boundary.",
-          "Fingerprint": "sha256:23d6d34f403a80e342d83619f570363e4b9f6bb7b4b678727d09c6f846ab6ea8",
+          "Fingerprint": "sha256:6f8fcfa0ce0003b869ab5ba94318c73dca2d0bfa0062bc112d47c3eaa4a411ca",
           "FixedVersion": "3.5.8-r0",
           "InstalledVersion": "3.5.7-r0",
           "LastModifiedDate": "2026-08-31T20:17:07.54Z",
@@ -2143,7 +1886,7 @@
             "URL": "https://secdb.alpinelinux.org/"
           },
           "Description": "Issue summary: The OpenSSL Certificate Management Protocol (CMP) caches\nadditional certificates (extraCerts) sent in a CMP message, but never expunges\nthem (for instance if they are invalid).  If a server reuses an OSSL_CMP_CTX\nfrequently, this cache of extraCerts may grow unboundedly, and a malicious\nclient may flood a CMP server with requests driving this growth.\n\nImpact summary: Users utilizing a CMP server that reuses a single OSSL_CMP_CTX\nfor the lifetime of a server process may observe unbounded memory growth in the\nevent a malicious client repeatedly sends requests containing unique extra\ncertificates, which may lead to OOM conditions.\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: If a remote user sends CMP messages to a server with a list of\nextraCerts and the message is rejected, the extraCerts from the message remains\nin the server contexts untrusted certificate stack.  This exposes servers with\nlong lived ctx objects to Denial of Service attacks in which an attacker sends\nmessages intending to be rejected with a large list of additional certificates\nrepeatedly, forcing the server to store them indefinitely.\n   \nThe issue was fixed by removing the added extra certs if the message is\nrejected, using the same method as when the context is configured to not do\ncaching at all.\n\nFIPS impact: no\nAs the CMP code lives outside the FIPS module boundary, no FIPS\nmodules are affected by this CVE.",
-          "Fingerprint": "sha256:a048f50b598679d324259398a6775d3848d9732b2dcf473ce103d07c31886f98",
+          "Fingerprint": "sha256:dad1ae39f8e72b3ba4c3ffc280a816425d740bc514857af1f1940acf949a5be1",
           "FixedVersion": "3.5.8-r0",
           "InstalledVersion": "3.5.7-r0",
           "LastModifiedDate": "2026-08-28T19:46:29.323Z",
@@ -2197,7 +1940,7 @@
             "URL": "https://secdb.alpinelinux.org/"
           },
           "Description": "Issue summary: When OpenSSL processes QUIC traffic from a peer that repeatedly\nsends ack-eliciting packets while not acknowledging ACK-only responses, the\nQUIC stack can retain ACK-only packet metadata for the lifetime of the\nconnection.\n\nImpact summary: A remote peer that can complete a QUIC handshake can\ncause connection-scoped memory growth which may lead to Denial of Service\nthrough memory exhaustion, especially with sustained traffic or many concurrent\nQUIC connections.\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: When the OpenSSL QUIC stack sends an ACK-only packet,\nthere is no requirement by the QUIC protocol that the peer will acknowledge\nthat ACK-only packet (i.e. it is itself not ack-eliciting). However, the OpenSSL\nimplementation stores the metadata about the ACK frames regardless.\nIn and of itself that's ok, but if a malicious peer establishes a connection, and\nthen drives the connection such that ACK-only packets are forced from the \nOpenSSL implementation peer (i.e., by sending numerous PING frames),\nand then withholding any subsequent acks for ack-eliciting data, like\nlegitimate data, said malicious peer can force inappropriate memory growth\non the OpenSSL peer, potentially leading to a Denial of Service.\n\nThe fix is to ensure that we account for the transmission of the ACK-only\npacket in the packet histories high and low watermark without actually storing\nthe ACK-only packet metadata itself.\n\nFIPS impact: no\nThe OpenSSL FIPS module is not affected as the QUIC code is\noutside the FIPS module boundary.",
-          "Fingerprint": "sha256:9d03a960f14476af67a070ff12e0f2345708934433fabc5fb86ccf478dad80c1",
+          "Fingerprint": "sha256:c8e0341074b8fe60214499ab50335bc09334625549daec5caba1384beee16754",
           "FixedVersion": "3.5.8-r0",
           "InstalledVersion": "3.5.7-r0",
           "LastModifiedDate": "2026-08-28T19:46:29.323Z",
@@ -2243,7 +1986,7 @@
             "URL": "https://secdb.alpinelinux.org/"
           },
           "Description": "Issue summary: ChaCha20-Poly1305 and AES-OCB decryption with an empty\nciphertext can report success without verifying the supplied authentication\ntag when the operation is finalized by calling the EVP_Cipher() function.\n\nImpact summary: Applications calling EVP_Cipher() on an empty ciphertext and\nexpecting the call to check the AEAD tag may accept forged messages.\n\nCWE: CWE-354 (Improper Validation of Integrity Check Value)\n\nDescription: The EVP_Cipher() API call for AEAD ciphers behaves like a one\nshot encryption and decryption call. It also verifies the AEAD tag after the\ndecryption operation. However for AES-OCB and ChaCha20-Poly1305 ciphers\nit skipped the AEAD tag verification when an empty ciphertext was passed to\nthe function. The callers of this function might believe that a successful\nreturn indicates a valid AEAD tag for these ciphers, even when that has not\ntruly been validated in this case.\n\nFIPS impact: no\nThe FIPS modules in 4.0, 3.6, 3.5, 3.4, and 3.0 are not affected by this CVE\nas the affected algorithms are not FIPS approved and thus not implemented\nin the FIPS module.",
-          "Fingerprint": "sha256:c568ae20e61d87118013364331c6cdcdda58540ac0c64a5319164cab2029fe38",
+          "Fingerprint": "sha256:65489a856b3a910cd1e99573170884130276ed9934e328bbf750434993d94904",
           "FixedVersion": "3.5.8-r0",
           "InstalledVersion": "3.5.7-r0",
           "LastModifiedDate": "2026-09-01T19:17:27.543Z",
@@ -2279,263 +2022,6 @@
           "VulnerabilityID": "CVE-2026-75803"
         },
         {
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "Description Not Available",
-          "Fingerprint": "sha256:6a0a0dfae93dd0d33e93af9920f78d7aba4384d8f34fb8d340e85677e1dc1339",
-          "FixedVersion": "8.22.0-r0",
-          "InstalledVersion": "8.21.0-r0",
-          "Layer": {
-            "DiffID": "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-            "Digest": "sha256:a78f9cf71d89e8bbcdb418194e78949b1d0a25f7116055b11ad6e2b46238ae9f"
-          },
-          "PkgID": "libcurl@8.21.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libcurl@8.21.0-r0?arch=x86_64\u0026distro=3.24.1",
-            "UID": "41bd97351e4e8b71"
-          },
-          "PkgName": "libcurl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-13608",
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "Title": "Title Not Available",
-          "VulnerabilityID": "CVE-2026-13608"
-        },
-        {
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "Description Not Available",
-          "Fingerprint": "sha256:31990009d363dc161cd7e29331db5af0e5ca82651bbb5d78bb06729d40c3d6fe",
-          "FixedVersion": "8.22.0-r0",
-          "InstalledVersion": "8.21.0-r0",
-          "Layer": {
-            "DiffID": "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-            "Digest": "sha256:a78f9cf71d89e8bbcdb418194e78949b1d0a25f7116055b11ad6e2b46238ae9f"
-          },
-          "PkgID": "libcurl@8.21.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libcurl@8.21.0-r0?arch=x86_64\u0026distro=3.24.1",
-            "UID": "41bd97351e4e8b71"
-          },
-          "PkgName": "libcurl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-18924",
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "Title": "Title Not Available",
-          "VulnerabilityID": "CVE-2026-18924"
-        },
-        {
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "Description Not Available",
-          "Fingerprint": "sha256:db6bd3d4eb24cc33eaecea09f1ccd9e0ea6508298a0621b80ce7000365db894b",
-          "FixedVersion": "8.22.0-r0",
-          "InstalledVersion": "8.21.0-r0",
-          "Layer": {
-            "DiffID": "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-            "Digest": "sha256:a78f9cf71d89e8bbcdb418194e78949b1d0a25f7116055b11ad6e2b46238ae9f"
-          },
-          "PkgID": "libcurl@8.21.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libcurl@8.21.0-r0?arch=x86_64\u0026distro=3.24.1",
-            "UID": "41bd97351e4e8b71"
-          },
-          "PkgName": "libcurl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-19931",
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "Title": "Title Not Available",
-          "VulnerabilityID": "CVE-2026-19931"
-        },
-        {
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "[Unknown description]",
-          "Fingerprint": "sha256:6f0c39b164f8d577afaadf608c0f13185625db4da2079f8185fd8f3ef38b499e",
-          "FixedVersion": "8.22.0-r0",
-          "InstalledVersion": "8.21.0-r0",
-          "Layer": {
-            "DiffID": "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-            "Digest": "sha256:a78f9cf71d89e8bbcdb418194e78949b1d0a25f7116055b11ad6e2b46238ae9f"
-          },
-          "PkgID": "libcurl@8.21.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libcurl@8.21.0-r0?arch=x86_64\u0026distro=3.24.1",
-            "UID": "41bd97351e4e8b71"
-          },
-          "PkgName": "libcurl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-80229",
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "Title": "[Unknown description]",
-          "VulnerabilityID": "CVE-2026-80229"
-        },
-        {
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "[Unknown description]",
-          "Fingerprint": "sha256:0a3f37a9d14243d56d719804fdd3d41d1723b172f6ac6664d89b864b20a61128",
-          "FixedVersion": "8.22.0-r0",
-          "InstalledVersion": "8.21.0-r0",
-          "Layer": {
-            "DiffID": "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-            "Digest": "sha256:a78f9cf71d89e8bbcdb418194e78949b1d0a25f7116055b11ad6e2b46238ae9f"
-          },
-          "PkgID": "libcurl@8.21.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libcurl@8.21.0-r0?arch=x86_64\u0026distro=3.24.1",
-            "UID": "41bd97351e4e8b71"
-          },
-          "PkgName": "libcurl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-80230",
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "Title": "[Unknown description]",
-          "VulnerabilityID": "CVE-2026-80230"
-        },
-        {
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "A flaw in libcurl makes it wrongly reuse an existing HTTPS connection setup for a given hostname even when using a different Native CA Store setting (`CURLSSLOPT_NATIVE_CA`) than when the connection was created.",
-          "Fingerprint": "sha256:9441d2d665a33a6581f02e7aa365bb40e351ff46f9fe4242d73db8870e810ba2",
-          "FixedVersion": "8.22.0-r0",
-          "InstalledVersion": "8.21.0-r0",
-          "Layer": {
-            "DiffID": "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-            "Digest": "sha256:a78f9cf71d89e8bbcdb418194e78949b1d0a25f7116055b11ad6e2b46238ae9f"
-          },
-          "PkgID": "libcurl@8.21.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libcurl@8.21.0-r0?arch=x86_64\u0026distro=3.24.1",
-            "UID": "41bd97351e4e8b71"
-          },
-          "PkgName": "libcurl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-80231",
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "Title": "native CA store conn reuse",
-          "VulnerabilityID": "CVE-2026-80231"
-        },
-        {
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "[Unknown description]",
-          "Fingerprint": "sha256:b8fd5d812dc086bd452cb8357907c9fe27dca420a8a82f734beb3b7ffbcebcd8",
-          "FixedVersion": "8.22.0-r0",
-          "InstalledVersion": "8.21.0-r0",
-          "Layer": {
-            "DiffID": "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-            "Digest": "sha256:a78f9cf71d89e8bbcdb418194e78949b1d0a25f7116055b11ad6e2b46238ae9f"
-          },
-          "PkgID": "libcurl@8.21.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libcurl@8.21.0-r0?arch=x86_64\u0026distro=3.24.1",
-            "UID": "41bd97351e4e8b71"
-          },
-          "PkgName": "libcurl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-80255",
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "Title": "[Unknown description]",
-          "VulnerabilityID": "CVE-2026-80255"
-        },
-        {
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Fingerprint": "sha256:8ddda51a1c21f4d3ab6e7e837afd67235b6c14b199fffda312469473951c3871",
-          "FixedVersion": "8.22.0-r0",
-          "InstalledVersion": "8.21.0-r0",
-          "Layer": {
-            "DiffID": "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-            "Digest": "sha256:a78f9cf71d89e8bbcdb418194e78949b1d0a25f7116055b11ad6e2b46238ae9f"
-          },
-          "PkgID": "libcurl@8.21.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libcurl@8.21.0-r0?arch=x86_64\u0026distro=3.24.1",
-            "UID": "41bd97351e4e8b71"
-          },
-          "PkgName": "libcurl",
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "VulnerabilityID": "CVE-2026-80256"
-        },
-        {
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "[Unknown description]",
-          "Fingerprint": "sha256:a797cf4fdb51ea88fb08de48bb8a105f9b230eee149dfe821b1d9712176886e3",
-          "FixedVersion": "8.22.0-r0",
-          "InstalledVersion": "8.21.0-r0",
-          "Layer": {
-            "DiffID": "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-            "Digest": "sha256:a78f9cf71d89e8bbcdb418194e78949b1d0a25f7116055b11ad6e2b46238ae9f"
-          },
-          "PkgID": "libcurl@8.21.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libcurl@8.21.0-r0?arch=x86_64\u0026distro=3.24.1",
-            "UID": "41bd97351e4e8b71"
-          },
-          "PkgName": "libcurl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-82208",
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "Title": "[Unknown description]",
-          "VulnerabilityID": "CVE-2026-82208"
-        },
-        {
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "Description Not Available",
-          "Fingerprint": "sha256:58ca56659182c15c6307aa7aa713021bf223a526744c6465e8be380797ec2705",
-          "FixedVersion": "8.22.0-r0",
-          "InstalledVersion": "8.21.0-r0",
-          "Layer": {
-            "DiffID": "sha256:1f5e5bd92a81f05babbd90dd78f2dcbcc453b80938619528010e0aa3354be5a2",
-            "Digest": "sha256:a78f9cf71d89e8bbcdb418194e78949b1d0a25f7116055b11ad6e2b46238ae9f"
-          },
-          "PkgID": "libcurl@8.21.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libcurl@8.21.0-r0?arch=x86_64\u0026distro=3.24.1",
-            "UID": "41bd97351e4e8b71"
-          },
-          "PkgName": "libcurl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-82209",
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "Title": "Title Not Available",
-          "VulnerabilityID": "CVE-2026-82209"
-        },
-        {
           "CVSS": {
             "redhat": {
               "V3Score": 7.5,
@@ -2551,7 +2037,7 @@
             "URL": "https://secdb.alpinelinux.org/"
           },
           "Description": "Issue summary: When an OpenSSL QUIC server (Listener SSL object) processes\nvalid QUIC Initial packets for unknown destination connection IDs, it\ncan allocate and queue new incoming channels without enforcing any limit.\n\nImpact summary: A remote peer that can make many Initial packets reach the\nserver listener faster than the application accepts connections, can cause the\nmemory allocated to store the per-channel state to grow without any limits,\npotentially making the QUIC listener unavailable and causing Denial of Service.\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: The function that handles inbound QUIC packets uses\nConnection-Id from the packet header to find an existing connection\n(QUIC channel). If no existing connection is found and the packet\ntype is INITIAL, the function treats the packet as a new connection. It\nallocates a new channel object and inserts it into a queue where it\nwaits to be accepted by the local application with SSL_accept(3ossl).\nThe memory occupied by these initial channel objects may grow\nwithout bounds if the application is not able to call SSL_accept()\nfrequently enough to serve these inbound connection requests.\n\nThe issue is present since OpenSSL 3.5 when the QUIC server implementation\nwas added.\n\nThe fix introduces a limit for pending connections. The default limit is set\nto 256 pending connections (waiting to be accepted by the local application).\nApplications may change the default by calling SSL_set_value_uint(3ossl).\n\nFIPS impact: no\nThe FIPS module is not affected as the QUIC implementation is outside of\nthe OpenSSL FIPS module boundary.",
-          "Fingerprint": "sha256:0a4513f2cffc8384405081eb08407ad518991901fab3c054583e2afa13c903ab",
+          "Fingerprint": "sha256:fba4f6f4de02209579da9afa4dd09bf721bf729fc43d7efb44f39a0622006ba5",
           "FixedVersion": "3.5.8-r0",
           "InstalledVersion": "3.5.7-r0",
           "LastModifiedDate": "2026-08-28T19:46:29.323Z",
@@ -2605,7 +2091,7 @@
             "URL": "https://secdb.alpinelinux.org/"
           },
           "Description": "Issue summary: QUIC server may double free QRX (QUIC record layer RX) object\nwhen channel creation fails for initial packet.\n\nImpact summary: Double free leads to heap corruption, which typically results in \ntermination of QUIC server process, leading to Denial of Service. There is so\nfar no evidence that this double free is exploitable for remote code execution,\nthus it is considered highly improbable.\n\nCWE: CWE-415: Double Free\n\nDescription: In order to validate initial packet, OpenSSL QUIC stack default\npacket handler (port_default_packet_handler()) creates a so-called QRX object.\nIf the initial packet validates successfully with QRX object, the default packet\nhandler proceeds to channel (connection object) creation. The QRX object used\nfor packet validation is passed to port_bind_channel(), so it becomes part of\nthe newly created connection. If port_bind_channel() fails, then it also frees\nthe QRX object. Once port_bind_channel() returns, the port_default_packet_handler()\ndetects the failure and proceeds to the error branch, where the same QRX object is\nfreed for the second time.\n\nThe failure in port_bind_channel() function can be induced with a relatively\nlow effort by a malformed (non RFC 9000 compliant) INITIAL packet. If the packet\ncarries DCID (destination connection ID) which is shorter than 8 bytes, then\nport_bind_channel() jumps to the error path after ossl_quic_lcidm_enrol_odcid()\ndetects that the DCID has invalid length.\n\nFIPS impact: no\nThe FIPS module is not affected, as the QUIC implementation is outside of\nthe OpenSSL FIPS module boundary.",
-          "Fingerprint": "sha256:fffdbf373f2334e6333693aafcda689881fc79b1c53043a188e635c2d04fb736",
+          "Fingerprint": "sha256:b0c7c23c915ad9a9da7ed9ff5449786eeaa788460d0ce689992f961ba2763ad0",
           "FixedVersion": "3.5.8-r0",
           "InstalledVersion": "3.5.7-r0",
           "LastModifiedDate": "2026-08-28T19:46:29.323Z",
@@ -2656,7 +2142,7 @@
             "URL": "https://secdb.alpinelinux.org/"
           },
           "Description": "Issue summary: OpenSSL CMS decryption sizes the key-unwrap output buffer based\non querying the unwrapped key size, but the AES-WRAP-PAD unwrap primitive\ncan write and cleanse more bytes than that query reports, causing an 8-byte\nout-of-bounds heap write.\n\nImpact summary: An attacker who supplies a crafted CMS message can trigger a\ndeterministic 8-byte out-of-bounds heap write when the victim decrypts it\nwith CMS_decrypt(), corrupting the heap and typically resulting in a Denial\nof Service.\n\nCWE: CWE-787: Out-of-bounds Write\n\nDescription: The key-wrap OID is potentially attacker-controlled on the wire.\nCMS unwrapping allows both id-aesNNN-wrap-pad and id-aesNNN-wrap ciphers.\nAn attacker can take a legitimate message and change a single OID byte to\nselect the padded variant while leaving the message otherwise valid. Since\nthe unwrap key is derived from the recipient's private operation (ECDH key\nagreement or ML-KEM decapsulation), the RFC 5649 integrity check cannot\npass, and the decryption fails with integrity failure.\n\nThe write is a fixed-size (8-byte), fixed-value (zero) heap overflow\nimmediately past the allocation, requires no special configuration, and is\nreachable from the public CMS_decrypt() function. The consequence is\na heap corruption leading to a Denial of Service. The fix in the CMS code\nsizes the unwrap output buffer for the worst case so a failed unwrap cannot\nwrite past the allocation.\n\nFIPS impact: no\n\nAs the CMS code lives outside the FIPS module boundary, no FIPS\nmodules are affected by this CVE.",
-          "Fingerprint": "sha256:8a077a10ed441e399c258049631bec37c3a1cb6f9dddd0a5d4d155aefa573f95",
+          "Fingerprint": "sha256:99ec51c1631447f52dbe0bfa8b550d8eafdd722e794ff3d2c68eef7426d41f4b",
           "FixedVersion": "3.5.8-r0",
           "InstalledVersion": "3.5.7-r0",
           "LastModifiedDate": "2026-08-28T19:46:29.323Z",
@@ -2710,7 +2196,7 @@
             "URL": "https://secdb.alpinelinux.org/"
           },
           "Description": "Issue summary: OpenSSL CMP password based protection verification only\nchecks whether the protectionAlg parameter was not NULL and not its\nASN.1 type, before treating it as a PBMParameter. A crafted message can\ncontain a parameter of a different type, which is then dereferenced as an\ninvalid pointer.\n\nImpact summary: A remote, unauthenticated attacker can crash an application\nacting as a CMP server that accepts PBM-protected messages, or a CMP client\ntalking to a malicious or intercepted CMP server, resulting in a Denial of\nService.\n\nCWE: CWE-476: NULL Pointer Dereference\n\nDescription: When verifying the password-based MAC protection of a CMP\nmessage, OpenSSL library reads the protectionAlg algorithm parameter with\nX509_ALGOR_get0(), which returns both the parameter type and its value\npointer. The value is then cast to an ASN1_STRING and treated as the\nexpected PBMParameter after only checking that pointer is not NULL. The\nparameter type returned by X509_ALGOR_get0() was never consulted.\n\nThis happens during protection verification, before any MAC is computed, so\nno knowledge of the PBM shared secret is required; the only precondition is\nthat PBM verification is reachable. On the server side this is reached from\nOSSL_CMP_SRV_process_request() for any application that stands up a CMP\nserver accepting PBM-protected messages, and on the client side from CMP\nresponse validation against a malicious or on-path (MITM) server. The\nreliable consequence is a denial of service; there is no memory disclosure,\nno controlled memory write, and no path to code execution. CMP is a\nspecialized feature that an application must explicitly enable.\n\nFIPS impact: no\nAs the CMP code lives outside the FIPS module boundary, no FIPS modules\nare affected by this CVE.",
-          "Fingerprint": "sha256:26148e3ab836da99953dfc4b8d6aa6ba6f17ce77d711774e8b40589108e02a5d",
+          "Fingerprint": "sha256:4005cdd6fb14fe16ceaefdfcb395fc0d4ac481d30ea1c41de106145c8c4f7f2a",
           "FixedVersion": "3.5.8-r0",
           "InstalledVersion": "3.5.7-r0",
           "LastModifiedDate": "2026-08-28T19:46:29.323Z",
@@ -2764,7 +2250,7 @@
             "URL": "https://secdb.alpinelinux.org/"
           },
           "Description": "Issue summary: In a server or client configuration with RFC7250 Raw Public Keys (RPKs)\nenabled, and only the private key (with no associated certificate) configured locally,\na NULL pointer dereference may occur when the remote peer solicits raw public keys and\nalso sends the typically omitted \"signature_algorithms_cert\" TLS extension.\n\nImpact summary: The impact is limited to a possible Denial of Service as a result of\nan application abort, no data disclosure or remote command execution are possible.\n\nCWE: CWE-476: NULL Pointer Dereference\n\nDescription: While a passing comment in sample code in the documentation suggests\nthat key-only RPK configurations are supported, the best-practice RPK configuration\nis to always configure a corresponding certificate (possibly self-signed or\nsigned by any convenient CA).\n\nWhen the private key is configured along with a matching certificate, the\n\"signature_algorithms_cert\" extension is handled reliably even without the\nfix, and peer clients or servers that don't support raw public keys may be\nable to complete a TLS connection by pinning or verifying the corresponding\ncertificate or its public key.\n\nDeployments that prefer to configure just a private key with no certificate\nneed to upgrade to an updated release as noted below.\n\nFIPS impact: no\n\nNo FIPS modules are affected by this issue, as the SSL protocol implementation\nis outside the OpenSSL FIPS module boundary.",
-          "Fingerprint": "sha256:4ba160f271bb230f03d66c8ac43cb1d65c829361a856666ca5189515f9232cc7",
+          "Fingerprint": "sha256:0a32bbc54c40afe71d875023d6cb12898b71cc9d290ed50e7b68c5cfc44d2eb2",
           "FixedVersion": "3.5.8-r0",
           "InstalledVersion": "3.5.7-r0",
           "LastModifiedDate": "2026-08-28T19:46:29.323Z",
@@ -2816,7 +2302,7 @@
             "URL": "https://secdb.alpinelinux.org/"
           },
           "Description": "Issue summary: Receiving a DTLS record for a future epoch while a handshake\nis in progress causes OpenSSL to buffer far more memory than the record\nitself requires.\n\nImpact summary: A peer can use a small amount of network traffic to make an\nOpenSSL DTLS endpoint retain a disproportionately large amount of memory,\nwhich may lead to a Denial of Service.\n\nCWE: CWE-405: Asymmetric Resource Consumption (Amplification)\n\nDescription: While a DTLS handshake is in progress, a peer may legitimately\nhave already moved on to the next epoch (for example, having sent its\nChangeCipherSpec and Finished messages) before the local endpoint has\nprocessed the same transition, typically because of reordering on the\nunderlying UDP transport. OpenSSL buffers such early records so that they\ncan be processed once the local endpoint catches up.\n\nBuffering a record currently retains the entire read buffer it arrived in,\nwhich is sized to hold the largest possible DTLS record (around 16\nkilobytes), rather than just the bytes that make up the record itself. Up\nto 100 such records may be buffered per connection. As a result, a peer\nthat sends a stream of small forged records claiming to belong to the next\nepoch can cause an OpenSSL DTLS endpoint to retain around 1.7 megabytes of\nmemory, despite sending only a small fraction of that amount of data over\nthe network.\n\nAn attacker therefore gains a memory amplification factor of around 1200,\nand can multiply the effect across as many associations as it is able to\nopen, making this a remote memory exhaustion Denial of Service risk for\nDTLS servers. Since the memory retained per connection remains bounded,\nand any limit an application already places on the number of concurrent\nassociations also bounds the total exposure, this issue has been assessed\nas Low severity.\n\nFIPS impact: no\n\nNo FIPS modules are affected by this issue as the affected code is outside\nthe OpenSSL FIPS module boundary.\n\nOpenSSL 4.0, 3.6, 3.5, 3.4, 3.0, 1.1.1 and 1.0.2 are vulnerable to this\nissue.\n\nOpenSSL 4.0 users should upgrade to OpenSSL 4.0.2.\nOpenSSL 3.6 users should upgrade to OpenSSL 3.6.4.\nOpenSSL 3.5 users should upgrade to OpenSSL 3.5.8.\nOpenSSL 3.4 users should upgrade to OpenSSL 3.4.7.\nOpenSSL 3.0 users should upgrade to OpenSSL 3.0.22.\n\nPremium support customers only:\nOpenSSL 1.1.1 users should upgrade to OpenSSL 1.1.1zi\nOpenSSL 1.0.2 users should upgrade to OpenSSL 1.0.2zr\n\nThis issue was reported on 18 May 2026 by Amazon Web Services.\nThe fix has been developed by Matt Caswell.\n\n-- cut (non-publishing metadata for internal use) --\nReported by: Amazon Web Services\nFixed by: Matt Caswell",
-          "Fingerprint": "sha256:c118de15ead7cd166c3cd671415d97eab6a822a0ebc534acbe28f8e319996cf7",
+          "Fingerprint": "sha256:3e7add189f567733f8cdf6014858e40720ea8c367ffae4830790f0c551be1a2e",
           "FixedVersion": "3.5.8-r0",
           "InstalledVersion": "3.5.7-r0",
           "LastModifiedDate": "2026-08-28T19:46:29.323Z",
@@ -2870,7 +2356,7 @@
             "URL": "https://secdb.alpinelinux.org/"
           },
           "Description": "Issue summary: OpenSSL CMP response validation passed an unexpected response\nsender distinguished name directly as the format string to `ERR_raise_data()`.\n\nImpact summary: A malicious or intercepted CMP endpoint can crash a CMP client\nthat enforces an expected sender or uses a pinned server certificate whose\nsubject becomes the default expected sender.\n\nCWE: CWE-134 (Use of Externally-Controlled Format String)\n\nDescription: When validating a received CMP message, ossl_cmp_msg_check_update()\nconverts the peer-supplied sender distinguished name with X509_NAME_oneline()\nand passes it directly as the format argument to ERR_raise_data(). Percent\ncharacters survive the conversion, so a sender DN such as \"CN=%s%n\" reaches\nBIO_vsnprintf() as an attacker-controlled format string with no matching variadic\narguments. This path is only reached when the caller configures an expected\nsender or pins a server certificate, which is the normal configuration for a\nCMP client validating server responses.\n\nSince the attacker controls the format string but none of the variadic\narguments, such specifiers as %s and %n dereference or write through unrelated\nstack contents and crash the client. The reliable consequence is a denial of\nservice, when the response comes from a malicious or intercepted CMP endpoint.\nThere is no controlled memory write, arbitrary-address read, or reliable path\nto remote code execution.\n\nFIPS impact: no\n\nNo FIPS modules are affected by this issue, as the CMP protocol\nimplementation is outside the OpenSSL FIPS module boundary.",
-          "Fingerprint": "sha256:f97769d3d955f84b0b1c378084a82ea39cac6fec65529a5fbbfb8e654ae8da45",
+          "Fingerprint": "sha256:ac694f49f8be3698509b545dc2bf34ed934468afa0fab282bb6b2f00601f4f7e",
           "FixedVersion": "3.5.8-r0",
           "InstalledVersion": "3.5.7-r0",
           "LastModifiedDate": "2026-08-31T20:17:07.54Z",
@@ -2922,7 +2408,7 @@
             "URL": "https://secdb.alpinelinux.org/"
           },
           "Description": "Issue summary: The OpenSSL Certificate Management Protocol (CMP) caches\nadditional certificates (extraCerts) sent in a CMP message, but never expunges\nthem (for instance if they are invalid).  If a server reuses an OSSL_CMP_CTX\nfrequently, this cache of extraCerts may grow unboundedly, and a malicious\nclient may flood a CMP server with requests driving this growth.\n\nImpact summary: Users utilizing a CMP server that reuses a single OSSL_CMP_CTX\nfor the lifetime of a server process may observe unbounded memory growth in the\nevent a malicious client repeatedly sends requests containing unique extra\ncertificates, which may lead to OOM conditions.\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: If a remote user sends CMP messages to a server with a list of\nextraCerts and the message is rejected, the extraCerts from the message remains\nin the server contexts untrusted certificate stack.  This exposes servers with\nlong lived ctx objects to Denial of Service attacks in which an attacker sends\nmessages intending to be rejected with a large list of additional certificates\nrepeatedly, forcing the server to store them indefinitely.\n   \nThe issue was fixed by removing the added extra certs if the message is\nrejected, using the same method as when the context is configured to not do\ncaching at all.\n\nFIPS impact: no\nAs the CMP code lives outside the FIPS module boundary, no FIPS\nmodules are affected by this CVE.",
-          "Fingerprint": "sha256:346b047fe637d8b314805c45ef67c0171b5494872e3067f944fdddd2d208e7ad",
+          "Fingerprint": "sha256:2ab94a9831a135ed515dc7e82bb57352d991b210d7a80301347ac52c1ae6b0f8",
           "FixedVersion": "3.5.8-r0",
           "InstalledVersion": "3.5.7-r0",
           "LastModifiedDate": "2026-08-28T19:46:29.323Z",
@@ -2976,7 +2462,7 @@
             "URL": "https://secdb.alpinelinux.org/"
           },
           "Description": "Issue summary: When OpenSSL processes QUIC traffic from a peer that repeatedly\nsends ack-eliciting packets while not acknowledging ACK-only responses, the\nQUIC stack can retain ACK-only packet metadata for the lifetime of the\nconnection.\n\nImpact summary: A remote peer that can complete a QUIC handshake can\ncause connection-scoped memory growth which may lead to Denial of Service\nthrough memory exhaustion, especially with sustained traffic or many concurrent\nQUIC connections.\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: When the OpenSSL QUIC stack sends an ACK-only packet,\nthere is no requirement by the QUIC protocol that the peer will acknowledge\nthat ACK-only packet (i.e. it is itself not ack-eliciting). However, the OpenSSL\nimplementation stores the metadata about the ACK frames regardless.\nIn and of itself that's ok, but if a malicious peer establishes a connection, and\nthen drives the connection such that ACK-only packets are forced from the \nOpenSSL implementation peer (i.e., by sending numerous PING frames),\nand then withholding any subsequent acks for ack-eliciting data, like\nlegitimate data, said malicious peer can force inappropriate memory growth\non the OpenSSL peer, potentially leading to a Denial of Service.\n\nThe fix is to ensure that we account for the transmission of the ACK-only\npacket in the packet histories high and low watermark without actually storing\nthe ACK-only packet metadata itself.\n\nFIPS impact: no\nThe OpenSSL FIPS module is not affected as the QUIC code is\noutside the FIPS module boundary.",
-          "Fingerprint": "sha256:16ecc976b2163b1713bc5a34c4f6802e24f06f289e8efac49b37bd5361643848",
+          "Fingerprint": "sha256:68266e9756311439869aef4c4b17c0ee8c51f3727b16fe08d0bb132b96527e9f",
           "FixedVersion": "3.5.8-r0",
           "InstalledVersion": "3.5.7-r0",
           "LastModifiedDate": "2026-08-28T19:46:29.323Z",
@@ -3022,7 +2508,7 @@
             "URL": "https://secdb.alpinelinux.org/"
           },
           "Description": "Issue summary: ChaCha20-Poly1305 and AES-OCB decryption with an empty\nciphertext can report success without verifying the supplied authentication\ntag when the operation is finalized by calling the EVP_Cipher() function.\n\nImpact summary: Applications calling EVP_Cipher() on an empty ciphertext and\nexpecting the call to check the AEAD tag may accept forged messages.\n\nCWE: CWE-354 (Improper Validation of Integrity Check Value)\n\nDescription: The EVP_Cipher() API call for AEAD ciphers behaves like a one\nshot encryption and decryption call. It also verifies the AEAD tag after the\ndecryption operation. However for AES-OCB and ChaCha20-Poly1305 ciphers\nit skipped the AEAD tag verification when an empty ciphertext was passed to\nthe function. The callers of this function might believe that a successful\nreturn indicates a valid AEAD tag for these ciphers, even when that has not\ntruly been validated in this case.\n\nFIPS impact: no\nThe FIPS modules in 4.0, 3.6, 3.5, 3.4, and 3.0 are not affected by this CVE\nas the affected algorithms are not FIPS approved and thus not implemented\nin the FIPS module.",
-          "Fingerprint": "sha256:001efd6e516ba478974521de3d3302d01cbc64403a5b01eb44d50c1b3301808e",
+          "Fingerprint": "sha256:51b1eff3dfb79315dcc67e683742942915a808568319f1fbcd1353fd836e7a90",
           "FixedVersion": "3.5.8-r0",
           "InstalledVersion": "3.5.7-r0",
           "LastModifiedDate": "2026-09-01T19:17:27.543Z",
@@ -3070,8 +2556,8 @@
             "UID": "c551fbba6e8ec453"
           },
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "Name": "stdlib",
           "Relationship": "direct",
@@ -3085,8 +2571,8 @@
             "UID": "c7caab9f0abffc8f"
           },
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "Name": "github.com/beorn7/perks",
           "Version": "v1.0.1"
@@ -3099,8 +2585,8 @@
             "UID": "f9e4d322a1db1732"
           },
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "Name": "github.com/cespare/xxhash/v2",
           "Version": "v2.3.0"
@@ -3113,8 +2599,8 @@
             "UID": "981923faf9c60935"
           },
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "Name": "github.com/gabriel-vasile/mimetype",
           "Version": "v1.4.13"
@@ -3127,8 +2613,8 @@
             "UID": "31f8318192a87d30"
           },
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "Name": "github.com/go-logr/logr",
           "Version": "v1.4.3"
@@ -3141,8 +2627,8 @@
             "UID": "ead8b468034771d3"
           },
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "Name": "github.com/go-logr/stdr",
           "Version": "v1.2.2"
@@ -3155,8 +2641,8 @@
             "UID": "946e5033da6d0290"
           },
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "Name": "github.com/go-playground/locales",
           "Version": "v0.14.1"
@@ -3169,8 +2655,8 @@
             "UID": "bee20efe7568bb8a"
           },
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "Name": "github.com/go-playground/universal-translator",
           "Version": "v0.18.1"
@@ -3183,8 +2669,8 @@
             "UID": "45e6bee5df14a91b"
           },
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "Name": "github.com/go-playground/validator/v10",
           "Version": "v10.30.2"
@@ -3197,8 +2683,8 @@
             "UID": "3d53fb30d024d1d4"
           },
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "Name": "github.com/golang/snappy",
           "Version": "v1.0.0"
@@ -3211,8 +2697,8 @@
             "UID": "41e637e19917f04"
           },
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "Name": "github.com/klauspost/compress",
           "Version": "v1.18.5"
@@ -3225,8 +2711,8 @@
             "UID": "b35ecf44b2f25882"
           },
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "Name": "github.com/leodido/go-urn",
           "Version": "v1.4.0"
@@ -3239,8 +2725,8 @@
             "UID": "e5699284bc075730"
           },
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "Name": "github.com/montanaflynn/stats",
           "Version": "v0.9.0"
@@ -3253,8 +2739,8 @@
             "UID": "bc74b5dd0fdd97e3"
           },
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "Name": "github.com/munnerz/goautoneg",
           "Version": "v0.0.0-20191010083416-a7dc8b61c822"
@@ -3267,8 +2753,8 @@
             "UID": "739c6871af211e16"
           },
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "Name": "github.com/prometheus/client_golang",
           "Version": "v1.23.2"
@@ -3281,8 +2767,8 @@
             "UID": "78d6565696969e43"
           },
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "Name": "github.com/prometheus/client_model",
           "Version": "v0.6.2"
@@ -3295,8 +2781,8 @@
             "UID": "87f32078bed7eb24"
           },
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "Name": "github.com/prometheus/common",
           "Version": "v0.66.1"
@@ -3309,8 +2795,8 @@
             "UID": "a41e09fed087b3bc"
           },
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "Name": "github.com/prometheus/procfs",
           "Version": "v0.16.1"
@@ -3323,8 +2809,8 @@
             "UID": "f9b906c64540a061"
           },
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "Name": "github.com/uug-ai/database",
           "Version": "v1.4.0"
@@ -3337,8 +2823,8 @@
             "UID": "fcf88b2a4c0c8dd6"
           },
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "Name": "github.com/uug-ai/hub-cleanup"
         },
@@ -3350,8 +2836,8 @@
             "UID": "6a50c6f8332ecc98"
           },
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "Name": "github.com/uug-ai/models",
           "Version": "v1.4.43"
@@ -3364,8 +2850,8 @@
             "UID": "caaca734261c1518"
           },
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "Name": "github.com/xdg-go/scram",
           "Version": "v1.2.0"
@@ -3378,8 +2864,8 @@
             "UID": "c85592902085141a"
           },
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "Name": "github.com/xdg-go/stringprep",
           "Version": "v1.0.4"
@@ -3392,8 +2878,8 @@
             "UID": "2f4d4bd557e7f40b"
           },
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "Name": "github.com/youmark/pkcs8",
           "Version": "v0.0.0-20240726163527-a2c0da244d78"
@@ -3406,8 +2892,8 @@
             "UID": "285ccbc159445c2c"
           },
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "Name": "go.mongodb.org/mongo-driver",
           "Version": "v1.17.9"
@@ -3420,8 +2906,8 @@
             "UID": "ec3e7ffff9188c3b"
           },
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "Name": "go.opentelemetry.io/auto/sdk",
           "Version": "v1.2.1"
@@ -3434,8 +2920,8 @@
             "UID": "ef3c8386de29de76"
           },
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "Name": "go.opentelemetry.io/contrib/instrumentation/go.mongodb.org/mongo-driver/mongo/otelmongo",
           "Version": "v0.68.0"
@@ -3448,8 +2934,8 @@
             "UID": "1c0ee013e5c69923"
           },
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "Name": "go.opentelemetry.io/otel",
           "Version": "v1.43.0"
@@ -3462,8 +2948,8 @@
             "UID": "a4e26f399bd20725"
           },
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "Name": "go.opentelemetry.io/otel/metric",
           "Version": "v1.43.0"
@@ -3476,8 +2962,8 @@
             "UID": "f69f11885ed533ad"
           },
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "Name": "go.opentelemetry.io/otel/trace",
           "Version": "v1.43.0"
@@ -3490,8 +2976,8 @@
             "UID": "53ae1df1a93b6974"
           },
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "Name": "go.yaml.in/yaml/v2",
           "Version": "v2.4.2"
@@ -3504,8 +2990,8 @@
             "UID": "d56a7eecf46f1b4"
           },
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "Name": "golang.org/x/crypto",
           "Version": "v0.52.0"
@@ -3518,8 +3004,8 @@
             "UID": "b75f9c6dd8ec5a23"
           },
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "Name": "golang.org/x/sync",
           "Version": "v0.20.0"
@@ -3532,8 +3018,8 @@
             "UID": "ac1e04c469326752"
           },
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "Name": "golang.org/x/sys",
           "Version": "v0.45.0"
@@ -3546,8 +3032,8 @@
             "UID": "9abff66c5b7d684e"
           },
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "Name": "golang.org/x/text",
           "Version": "v0.37.0"
@@ -3560,8 +3046,8 @@
             "UID": "3f6c6654bb250686"
           },
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "Name": "google.golang.org/protobuf",
           "Version": "v1.36.8"
@@ -3586,13 +3072,13 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Description": "The source-address critical option in the Permissions returned by an authentication callback was only enforced for the PublicKeyCallback and VerifiedPublicKeyCallback paths, extending the fix for CVE-2026-46595. Permissions returned by the PasswordCallback, KeyboardInteractiveCallback, NoClientAuthCallback, and GSSAPIWithMICConfig.AllowLogin callbacks were not validated against the client's remote address, so a source-address restriction set by those callbacks was silently ignored. The check is now applied to the Permissions returned by any authentication callback.",
-          "Fingerprint": "sha256:84cfb318190a1ff25d078ef8d2c87be71dcc995aff547dcb1e0358c1cad83deb",
+          "Fingerprint": "sha256:18932f4cc71351370ba4e01e5e4b69c966609f8956bf1dbecefa4cffe0b4afd6",
           "FixedVersion": "0.55.0",
           "InstalledVersion": "v0.52.0",
           "LastModifiedDate": "2026-09-03T16:37:52.17Z",
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "PkgID": "golang.org/x/crypto@v0.52.0",
           "PkgIdentifier": {
@@ -3631,13 +3117,13 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Description": "Previously, after a channel has been established, a malicious peer could send crafted messages that would deadlock the entire connection. Now, we handle all RFC 4254 channel messages; global requests are handled explicitly. Then, treat all other messages as a protocol error and tear the connection down instead of buffering and blocking.",
-          "Fingerprint": "sha256:4c142c36975065f3498bab9789ecc96f76ae5aa7c9f9877fcaa093537b0f3e6b",
+          "Fingerprint": "sha256:5f03c58d7501e0888a396d8a3d3b96b5909e377e085a0f52b8c4d8fa5b85ecc3",
           "FixedVersion": "0.56.0",
           "InstalledVersion": "v0.52.0",
-          "LastModifiedDate": "2026-09-03T16:37:52.17Z",
+          "LastModifiedDate": "2026-09-04T16:34:56.823Z",
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "PkgID": "golang.org/x/crypto@v0.52.0",
           "PkgIdentifier": {
@@ -3671,13 +3157,13 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Description": "Previously, a channel registered in the mux's chanList is not usable until it is established. A malicious peer was able flood the channel's incomingRequests, deadlocking the entire connection. Now, we add an atomic established state, set when a channel becomes usable. Until such a time, handlePacket drops every packet other than the open confirmation/failure, without blocking and without tearing down the connection.",
-          "Fingerprint": "sha256:8c676b5b23db354753ade1915ebca7acfa16829a82e30365c3507374b0536995",
+          "Fingerprint": "sha256:98b9fee4d2f418d08e82a6486b60ece652ae312ea298df1d68f8339a9a2756f0",
           "FixedVersion": "0.56.0",
           "InstalledVersion": "v0.52.0",
-          "LastModifiedDate": "2026-09-03T16:37:52.17Z",
+          "LastModifiedDate": "2026-09-04T16:33:34.057Z",
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "PkgID": "golang.org/x/crypto@v0.52.0",
           "PkgIdentifier": {
@@ -3708,11 +3194,11 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Description": "The golang.org/x/crypto/openpgp package is unsafe by design, has numerous known security issues, is not maintained, and should not be used.\n\nIf you are required to interoperate with OpenPGP systems and need a maintained package, consider github.com/ProtonMail/go-crypto/openpgp which is a maintained fork that aims to be a drop-in replacement for this package.",
-          "Fingerprint": "sha256:3861af80090ba63782577e8277b413761ca234b60253d17d27a7e8a8efbd285e",
+          "Fingerprint": "sha256:e4541244e6624f00b64229e4f7353a79c5510d6676781e2aef6fb96c7fc5f010",
           "InstalledVersion": "v0.52.0",
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "PkgID": "golang.org/x/crypto@v0.52.0",
           "PkgIdentifier": {
@@ -3745,13 +3231,13 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Description": "A norm.Iter can enter an infinite loop when handling input containing invalid UTF-8 bytes.",
-          "Fingerprint": "sha256:502817a9eed0037eae3fb05de7423ccb6ac1b21a386c83b6f6d680d4356f4ae7",
+          "Fingerprint": "sha256:f9a40cc1c06dfebb96f92180de45131baf24708671f174f69175a7f6a90879d3",
           "FixedVersion": "0.39.0",
           "InstalledVersion": "v0.37.0",
           "LastModifiedDate": "2026-07-23T18:27:48.877Z",
           "Layer": {
-            "DiffID": "sha256:d99440abef679444799d76641dc68635918ec78477799a56b27c8b84297db27e",
-            "Digest": "sha256:56fb9bd4a22fe46403d211e7495d4b2ab83f814b2fb3799e1d92acf83082948e"
+            "DiffID": "sha256:6c91c671365bd717b5401be0f6cc3bf656739c126360a1b917e7a658c99322de",
+            "Digest": "sha256:a1023afa9c5962a2b5cd0485f1c972dec4ab3d697d24553cab3805299c8236a0"
           },
           "PkgID": "golang.org/x/text@v0.37.0",
           "PkgIdentifier": {
