@@ -1,6 +1,6 @@
 # Critical and high vulnerability findings
 
-Generated at `2026-09-06T03:48:14Z` from the latest available Trivy container reports. Occurrences count every affected package record across scanned images; one advisory can therefore occur more than once in one or more repositories.
+Generated at `2026-09-07T03:50:34Z` from the latest available Trivy container reports. Occurrences count every affected package record across scanned images; one advisory can therefore occur more than once in one or more repositories.
 
 **382 unique findings**: 15 critical and 367 high, with 1221 total occurrences.
 
@@ -291,10 +291,10 @@ Generated at `2026-09-06T03:48:14Z` from the latest available Trivy container re
 | HIGH | [CVE-2026-54060](https://avd.aquasec.com/nvd/cve-2026-54060) | 1 | 1 | hub-pipeline-classifier | pillow@10.3.0 |
 | HIGH | [CVE-2026-55379](https://avd.aquasec.com/nvd/cve-2026-55379) | 1 | 1 | hub-pipeline-classifier | pillow@10.3.0 |
 | HIGH | [CVE-2026-55380](https://avd.aquasec.com/nvd/cve-2026-55380) | 1 | 1 | hub-pipeline-classifier | pillow@10.3.0 |
-| HIGH | [CVE-2026-56208](https://avd.aquasec.com/nvd/cve-2026-56208) | 1 | 0 | hub-anpr | libaom3@3.6.0-1+deb12u2 |
-| HIGH | [CVE-2026-56209](https://avd.aquasec.com/nvd/cve-2026-56209) | 1 | 0 | hub-anpr | libaom3@3.6.0-1+deb12u2 |
-| HIGH | [CVE-2026-56210](https://avd.aquasec.com/nvd/cve-2026-56210) | 1 | 0 | hub-anpr | libaom3@3.6.0-1+deb12u2 |
-| HIGH | [CVE-2026-56211](https://avd.aquasec.com/nvd/cve-2026-56211) | 1 | 0 | hub-anpr | libaom3@3.6.0-1+deb12u2 |
+| HIGH | [CVE-2026-56208](https://avd.aquasec.com/nvd/cve-2026-56208) | 1 | 1 | hub-anpr | libaom3@3.6.0-1+deb12u2 |
+| HIGH | [CVE-2026-56209](https://avd.aquasec.com/nvd/cve-2026-56209) | 1 | 1 | hub-anpr | libaom3@3.6.0-1+deb12u2 |
+| HIGH | [CVE-2026-56210](https://avd.aquasec.com/nvd/cve-2026-56210) | 1 | 1 | hub-anpr | libaom3@3.6.0-1+deb12u2 |
+| HIGH | [CVE-2026-56211](https://avd.aquasec.com/nvd/cve-2026-56211) | 1 | 1 | hub-anpr | libaom3@3.6.0-1+deb12u2 |
 | HIGH | [CVE-2026-59197](https://avd.aquasec.com/nvd/cve-2026-59197) | 1 | 1 | hub-pipeline-classifier | pillow@10.3.0 |
 | HIGH | [CVE-2026-59199](https://avd.aquasec.com/nvd/cve-2026-59199) | 1 | 1 | hub-pipeline-classifier | pillow@10.3.0 |
 | HIGH | [CVE-2026-59200](https://avd.aquasec.com/nvd/cve-2026-59200) | 1 | 1 | hub-pipeline-classifier | pillow@10.3.0 |

@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:8cd284289ec891230cbab0771d0a8e8e288fddf07ca6203f2d2425a9769f0b79",
   "ArtifactName": "ghcr.io/uug-ai/hub-frontend@sha256:7bda800a0b14ff2250c51e1e9db96c38264679a6d17a20bc58bc59519ee45447",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-09-06T03:48:35.353378353Z",
+  "CreatedAt": "2026-09-07T03:51:00.631078432Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:34884abbe92863fce933ed7c39c0e045631af0ed86d5cc0dfbdf9fdca426ce3c",
@@ -257,7 +257,7 @@
     ],
     "Size": 123159552
   },
-  "ReportID": "01a074d5-0f99-75bd-9ded-5a7cf549f595",
+  "ReportID": "01a079fd-a317-712b-a84d-89b527808c2e",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -3968,6 +3968,67 @@
             "redhat": 3
           },
           "VulnerabilityID": "CVE-2026-78410"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 4.7,
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N"
+            },
+            "redhat": {
+              "V3Score": 4.7,
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-59",
+            "CWE-269",
+            "CWE-367"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "util-linux is a random collection of Linux utilities. Prior to version 2.41.4, a TOCTOU (Time-of-Check-Time-of-Use) vulnerability has been identified in the SUID binary /usr/bin/mount from util-linux. The mount binary, when setting up loop devices, validates the source file path with user privileges via fork() + setuid() + realpath(), but subsequently re-canonicalizes and opens it with root privileges (euid=0) without verifying that the path has not been replaced between both operations. Neither O_NOFOLLOW, nor inode comparison, nor post-open fstat() are employed. This allows a local unprivileged user to replace the source file with a symlink pointing to any root-owned file or device during the race window, causing the SUID binary to open and mount it as root. Exploitation requires an /etc/fstab entry with user,loop options whose path points to a directory where the attacker has write permission, and that /usr/bin/mount has the SUID bit set (the default configuration on virtually all Linux distributions). The impact is unauthorized read access to root-protected files and block devices, including backup images, disk volumes, and any file containing a valid filesystem. This issue has been patched in version 2.41.4.",
+          "Fingerprint": "sha256:c6373295c35988d40cebf72a911f3ac1fbac8bbc1441399e20c0fdd449c03209",
+          "FixedVersion": "2.42.3-r0",
+          "InstalledVersion": "2.42.1-r0",
+          "LastModifiedDate": "2026-07-24T22:10:00.14Z",
+          "Layer": {
+            "DiffID": "sha256:bf413c2718bce32a14274f57ddfa79b3b744a5cb6267cda487f0e1acb2b64fdd",
+            "Digest": "sha256:6636b9fc203ce74d0b07a1d3f48cfa0151b23fa5e787232908e560673a66b553"
+          },
+          "PkgID": "libuuid@2.42.1-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libuuid@2.42.1-r0?arch=x86_64\u0026distro=3.24.1",
+            "UID": "61e289a52fcab6f6"
+          },
+          "PkgName": "libuuid",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-27456",
+          "PublishedDate": "2026-04-03T22:16:25.4Z",
+          "References": [
+            "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27456",
+            "https://access.redhat.com/security/cve/CVE-2026-27456",
+            "https://github.com/bottlerocket-os/bottlerocket-core-kit/blob/develop/advisories/14.5.0/BRSA-jgcxwcxt3sxd.toml",
+            "https://github.com/util-linux/util-linux/commit/5e390467b26a3cf3fecc04e1a0d482dff3162fc4",
+            "https://github.com/util-linux/util-linux/releases/tag/v2.41.4",
+            "https://github.com/util-linux/util-linux/security/advisories/GHSA-qq4x-vfq4-9h9g",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-27456",
+            "https://ubuntu.com/security/notices/USN-8702-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-27456"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "util-linux: TOCTOU in the mount program when setting up loop devices",
+          "VendorSeverity": {
+            "azure": 2,
+            "bottlerocket": 2,
+            "julia": 2,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-27456"
         }
       ]
     }
