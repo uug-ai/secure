@@ -1,8 +1,6 @@
 # hub-pipeline-classifier SBOM quality
 
-Collection status: `stale`; collected at `2026-09-06T02:34:44Z`.
-
-Last collection error: `GitHub API returned 500: Failed to generate SBOM: Request timed out.`.
+Collection status: `collected`; collected at `2026-09-08T02:34:58Z`.
 
 Overall quality: **Needs work**, **68/100** across **59 packages**.
 
