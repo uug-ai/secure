@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:49e1a3bfc1f7612cd442be1bf757184aee2f43a526b4146dd73b6f80cb6e4e58",
   "ArtifactName": "ghcr.io/uug-ai/vault@sha256:0f51b0f20279749f1870e94a6297a9a070275b52b0b630c6cd2a58410949fa8a",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-09-08T03:52:07.50330756Z",
+  "CreatedAt": "2026-09-09T03:52:45.439994112Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:34884abbe92863fce933ed7c39c0e045631af0ed86d5cc0dfbdf9fdca426ce3c",
@@ -183,7 +183,7 @@
     ],
     "Size": 384266240
   },
-  "ReportID": "01a07f25-044f-74ab-a8cf-1713056c74b4",
+  "ReportID": "01a0844b-f47f-7f26-9302-8cc4fafba83b",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -7159,6 +7159,52 @@
           "VulnerabilityID": "CVE-2026-84304"
         },
         {
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Go",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago"
+          },
+          "Description": "A vulnerability exists in gRPC-Go servers configured with `xds.NewGRPCServer()` where a crafted request missing both `:authority` and `Host` headers can cause a server panic, resulting in a Denial of Service (DoS).\n\nServers built with `xds.NewGRPCServer` install an xDS routing interceptor on every RPC. This interceptor looks up the request’s `:authority` header to pick a virtual host. The HTTP/2 server transport previously accepted requests that had neither `:authority` nor `Host`. When this happened, the xDS routing interceptor attempted to access the first element of an empty slice of authorities, leading to an index out of bounds panic. Since the per-RPC goroutine does not recover from panics, the entire server process would terminate.\n\nThis panic occurs in the interceptor pipeline, meaning the transport credentials handshake (TLS, mTLS, or ALTS) and HTTP/2 connection establishment must complete successfully before the crafted request can reach this logic.\n- Insecure/Standard TLS: If the server permits insecure (plaintext) connections or standard credentials (where client certs are not checked), any unauthenticated remote attacker can trigger the crash.\n- mTLS / ALTS: If strict transport-level authentication is enforced at the network edge or transport layer (e.g., requiring a valid client certificate), the attacker must possess valid transport credentials to initiate the stream and trigger the panic.\n\n### Impact\nAn attacker can cause a complete outage of the gRPC server by sending a request missing both `:authority` and `Host` headers, provided they can successfully establish a transport connection.\n\n### Patches\nThe issue has been addressed in `master` (and backported to `1.83.2` and `1.82.2`). The fix updates the HTTP/2 transport layer to reject requests missing both `:authority` and `Host` headers early, maintaining consistency with and other gRPC language implementations.",
+          "Fingerprint": "sha256:6378641ae1bc8861964016b7ad1ffe56977ea11747b6b0d97ba453b8960d34a6",
+          "FixedVersion": "1.82.2, 1.83.2, 1.85.0-dev.0.20260825072537-93e31b48545e",
+          "InstalledVersion": "v1.80.0",
+          "Layer": {
+            "DiffID": "sha256:770595717472d63db612c4e1d1b76375a242077fa5c69cc14cf26fc3d52017ad",
+            "Digest": "sha256:2aee5e19828da05cc3b3aa84adba4982ab5990ac7185e83d8c439a13bc80887f"
+          },
+          "PkgID": "google.golang.org/grpc@v1.80.0",
+          "PkgIdentifier": {
+            "PURL": "pkg:golang/google.golang.org/grpc@v1.80.0",
+            "UID": "af47d6e013be0a3"
+          },
+          "PkgName": "google.golang.org/grpc",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-84445",
+          "References": [
+            "https://github.com/grpc/grpc-go",
+            "https://github.com/grpc/grpc-go/commit/3822494d8ea03b992c089fd2a195f041762fffb7",
+            "https://github.com/grpc/grpc-go/commit/8668b69c167df908b6b3666dcbf40992b9e932a4",
+            "https://github.com/grpc/grpc-go/commit/93e31b48545e2a8aaeb6e06b47fb249f94e6297f",
+            "https://github.com/grpc/grpc-go/issues/9354",
+            "https://github.com/grpc/grpc-go/pull/9365",
+            "https://github.com/grpc/grpc-go/pull/9366",
+            "https://github.com/grpc/grpc-go/pull/9367",
+            "https://github.com/grpc/grpc-go/releases/tag/v1.82.2",
+            "https://github.com/grpc/grpc-go/releases/tag/v1.83.2",
+            "https://github.com/grpc/grpc-go/security/advisories/GHSA-2v4p-qf9q-27wj"
+          ],
+          "Severity": "HIGH",
+          "SeveritySource": "ghsa",
+          "Status": "fixed",
+          "Title": "gRPC-Go xDS servers: Denial of Service (DoS) via crash due to missing `:authority` and `Host` headers",
+          "VendorIDs": [
+            "GHSA-2v4p-qf9q-27wj"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3
+          },
+          "VulnerabilityID": "CVE-2026-84445"
+        },
+        {
           "CVSS": {
             "ghsa": {
               "V40Score": 8.8,
@@ -7202,6 +7248,61 @@
             "ghsa": 3
           },
           "VulnerabilityID": "GHSA-hrxh-6v49-42gf"
+        },
+        {
+          "CVSS": {
+            "ghsa": {
+              "V40Score": 6.3,
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-178",
+            "CWE-863"
+          ],
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Go",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago"
+          },
+          "Description": "gRPC-Go is the Go language implementation of gRPC. Prior to 1.83.1, the xDS RBAC HTTP filter in internal/xds/httpfilter/rbac/rbac.go does not lowercase header matcher names in normalizeHeaderMatcher even though incoming metadata keys are lowercase. A DENY policy using a mixed-case name such as X-Role or User-Agent therefore does not match and fails open, allowing requests that should be rejected. The same case mismatch permits :Scheme or Grpc-Status to evade gRFC A41 validation and prevents Host from being rewritten to :authority. This issue is fixed in version 1.83.1.",
+          "Fingerprint": "sha256:3a8c6004c50ae035e8615cb081fe633d94f5cb1e10352f7e03c1d5dcf7f5aa62",
+          "FixedVersion": "1.83.1",
+          "InstalledVersion": "v1.80.0",
+          "LastModifiedDate": "2026-09-02T20:17:39.667Z",
+          "Layer": {
+            "DiffID": "sha256:770595717472d63db612c4e1d1b76375a242077fa5c69cc14cf26fc3d52017ad",
+            "Digest": "sha256:2aee5e19828da05cc3b3aa84adba4982ab5990ac7185e83d8c439a13bc80887f"
+          },
+          "PkgID": "google.golang.org/grpc@v1.80.0",
+          "PkgIdentifier": {
+            "PURL": "pkg:golang/google.golang.org/grpc@v1.80.0",
+            "UID": "af47d6e013be0a3"
+          },
+          "PkgName": "google.golang.org/grpc",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-84303",
+          "PublishedDate": "2026-09-01T19:17:30.6Z",
+          "References": [
+            "https://github.com/grpc/grpc-go",
+            "https://github.com/grpc/grpc-go/commit/db9482836c298f234c896cf82ab68cafc78237f8",
+            "https://github.com/grpc/grpc-go/commit/ebba6f3f1b206e2b4dc4d1d5a96d18430302c2fe",
+            "https://github.com/grpc/grpc-go/pull/9332",
+            "https://github.com/grpc/grpc-go/pull/9335",
+            "https://github.com/grpc/grpc-go/releases/tag/v1.83.1",
+            "https://github.com/grpc/grpc-go/security/advisories/GHSA-qc2q-p7wx-3px3",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-84303"
+          ],
+          "Severity": "MEDIUM",
+          "SeveritySource": "ghsa",
+          "Status": "fixed",
+          "Title": "gRPC-Go is the Go language implementation of gRPC. Prior to 1.83.1, th ...",
+          "VendorIDs": [
+            "GHSA-qc2q-p7wx-3px3"
+          ],
+          "VendorSeverity": {
+            "ghsa": 2
+          },
+          "VulnerabilityID": "CVE-2026-84303"
         }
       ]
     }
