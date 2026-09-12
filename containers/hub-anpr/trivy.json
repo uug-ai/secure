@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:1d72c5fee27a3e82c05aebcd7cebb908ba63e76dd597638fd01e3c6ae3bd9018",
   "ArtifactName": "ghcr.io/uug-ai/hub-anpr@sha256:41e22ad0bf9f941f1d5c003c91020536d8cb766d70c86857aae596ad52b10e8a",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-09-11T03:49:38.59905942Z",
+  "CreatedAt": "2026-09-12T03:48:54.941838761Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
@@ -207,7 +207,7 @@
     ],
     "Size": 671565824
   },
-  "ReportID": "01a08e95-d2a7-70e0-b1fa-f9f41aee3e34",
+  "ReportID": "01a093bb-841d-7cc8-9605-b665ef2e7dc9",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -19565,12 +19565,17 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56392",
           "PublishedDate": "2026-07-24T09:16:25.147Z",
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:66403",
             "https://access.redhat.com/security/cve/CVE-2026-56392",
+            "https://bugzilla.redhat.com/2506694",
             "https://cert.pl/en/posts/2026/07/CVE-2026-56391",
+            "https://errata.almalinux.org/9/ALSA-2026-66403.html",
             "https://git.savannah.gnu.org/cgit/coreutils.git",
             "https://git.savannah.gnu.org/cgit/coreutils.git/",
             "https://git.savannah.gnu.org/cgit/coreutils.git/commit/?id=b60a159fdc5bfcf9988d3a4cb6f53abe8ad5d35d",
             "https://github.com/advisories/GHSA-g24f-m2hx-pfgx",
+            "https://linux.oracle.com/cve/CVE-2026-56392.html",
+            "https://linux.oracle.com/errata/ELSA-2026-66403-0.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-56392",
             "https://www.cve.org/CVERecord?id=CVE-2026-56392"
           ],
@@ -19579,9 +19584,11 @@
           "Status": "affected",
           "Title": "coreutils: GNU coreutils unexpand: Denial of Service via crafted tab stop values",
           "VendorSeverity": {
+            "alma": 2,
             "debian": 1,
             "julia": 1,
             "nvd": 2,
+            "oracle-oval": 2,
             "photon": 2,
             "redhat": 2
           },
@@ -20033,6 +20040,86 @@
           "VulnerabilityID": "CVE-2026-11856"
         },
         {
+          "CweIDs": [
+            "CWE-923"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "A flaw in the libcurl SASL negotiation for LDAP authentication allows an\nincomplete handshake sequence to be misinterpreted as a successful\ncryptographic verification. An attacker executing a Man-in-the-Middle (MITM)\nattack can inject a premature or shortcut response that bypasses complete peer\nvalidation.",
+          "Fingerprint": "sha256:42fc70ce80be327f55de3c6b7bf3ed6f73e3dae51327e8bcbc82b111bf2ae79d",
+          "InstalledVersion": "7.88.1-10+deb12u15",
+          "LastModifiedDate": "2026-09-11T19:59:55.2Z",
+          "Layer": {
+            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
+            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
+          },
+          "PkgID": "curl@7.88.1-10+deb12u15",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/curl@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
+            "UID": "606544f55e0d2778"
+          },
+          "PkgName": "curl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-13608",
+          "PublishedDate": "2026-09-06T18:17:19.81Z",
+          "References": [
+            "https://curl.se/docs/CVE-2026-13608.html",
+            "https://curl.se/docs/CVE-2026-13608.json",
+            "https://github.com/curl/curl/pull/22213/changes/1a00e2a73675c9521d214aafd6c02b553bfeb022",
+            "https://hackerone.com/reports/3822248",
+            "https://www.cve.org/CVERecord?id=CVE-2026-13608"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fix_deferred",
+          "Title": "A flaw in the libcurl SASL negotiation for LDAP authentication allows  ...",
+          "VendorSeverity": {
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-13608"
+        },
+        {
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "A flaw in libcurl's handling of HTTP/2 Server Push streams, when the parent\nhandle is set to share connections with other handles, can lead to\nuse-after-free in the cleanup process.",
+          "Fingerprint": "sha256:6e902229574e695328ac2b6f28e9c86860774914bdaa9a9ba86db29a90eb9728",
+          "InstalledVersion": "7.88.1-10+deb12u15",
+          "LastModifiedDate": "2026-09-11T20:01:29.6Z",
+          "Layer": {
+            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
+            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
+          },
+          "PkgID": "curl@7.88.1-10+deb12u15",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/curl@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
+            "UID": "606544f55e0d2778"
+          },
+          "PkgName": "curl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-18924",
+          "PublishedDate": "2026-09-06T18:17:20.553Z",
+          "References": [
+            "https://curl.se/docs/CVE-2026-18924.html",
+            "https://curl.se/docs/CVE-2026-18924.json",
+            "https://github.com/curl/curl/commit/90325ff0444cbdff368bda5d26d6",
+            "https://hackerone.com/reports/3916059",
+            "https://www.cve.org/CVERecord?id=CVE-2026-18924"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fix_deferred",
+          "Title": "A flaw in libcurl's handling of HTTP/2 Server Push streams, when the p ...",
+          "VendorSeverity": {
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-18924"
+        },
+        {
           "CVSS": {
             "julia": {
               "V3Score": 6.5,
@@ -20108,6 +20195,46 @@
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-1965"
+        },
+        {
+          "CweIDs": [
+            "CWE-488"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "A flaw in libcurl makes it wrongly reuse an HTTP connection setup for a given\nhostname using Negotiate authentication, when the initial request is done\nusing empty credentials. This can make user B's request get sent over user A's\npreviously authenticated connection.",
+          "Fingerprint": "sha256:694f8eb2bb2e36d802a42fd58b235ffa6372b7a3a96ee6b473effeb1b697bdf8",
+          "InstalledVersion": "7.88.1-10+deb12u15",
+          "LastModifiedDate": "2026-09-11T20:01:46.607Z",
+          "Layer": {
+            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
+            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
+          },
+          "PkgID": "curl@7.88.1-10+deb12u15",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/curl@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
+            "UID": "606544f55e0d2778"
+          },
+          "PkgName": "curl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-19931",
+          "PublishedDate": "2026-09-06T18:17:20.733Z",
+          "References": [
+            "https://curl.se/docs/CVE-2026-19931.html",
+            "https://curl.se/docs/CVE-2026-19931.json",
+            "https://github.com/curl/curl/commit/7103a93b05bc69ea98ed9d",
+            "https://hackerone.com/reports/3923520",
+            "https://www.cve.org/CVERecord?id=CVE-2026-19931"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fix_deferred",
+          "Title": "A flaw in libcurl makes it wrongly reuse an HTTP connection setup for  ...",
+          "VendorSeverity": {
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-19931"
         },
         {
           "CVSS": {
@@ -20342,6 +20469,86 @@
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-6429"
+        },
+        {
+          "CweIDs": [
+            "CWE-295"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "When `CURLOPT_PINNEDPUBLICKEY` is configured alongside options that disable\nstandard peer verification (`CURLOPT_SSL_VERIFYPEER = 0` and\n`CURLOPT_SSL_VERIFYHOST = 0`), libcurl fails to enforce public key pinning on\nconnections established without a presented server certificate. Bypassing the\npinning check under these disabled-verification conditions allows\nunauthenticated connections to succeed when they should be rejected.",
+          "Fingerprint": "sha256:3e984abd18197f488c8e9b7697d83b81484848bc9c8cb7677630f74436965e5b",
+          "InstalledVersion": "7.88.1-10+deb12u15",
+          "LastModifiedDate": "2026-09-11T20:05:56.143Z",
+          "Layer": {
+            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
+            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
+          },
+          "PkgID": "curl@7.88.1-10+deb12u15",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/curl@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
+            "UID": "606544f55e0d2778"
+          },
+          "PkgName": "curl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-80230",
+          "PublishedDate": "2026-09-06T18:17:22.327Z",
+          "References": [
+            "https://curl.se/docs/CVE-2026-80230.html",
+            "https://curl.se/docs/CVE-2026-80230.json",
+            "https://github.com/curl/curl/commit/5267ed859d545534d0c21",
+            "https://hackerone.com/reports/3969300",
+            "https://www.cve.org/CVERecord?id=CVE-2026-80230"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fix_deferred",
+          "Title": "When `CURLOPT_PINNEDPUBLICKEY` is configured alongside options that di ...",
+          "VendorSeverity": {
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-80230"
+        },
+        {
+          "CweIDs": [
+            "CWE-201"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "When libpsl support is enabled, libcurl fails to enforce the Public Suffix\nList boundary check when processing a `Set-Cookie` header where the `Domain`\nattribute explicitly matches an origin host that is itself a public suffix\n(e.g., `Domain=co.uk` set by `co.uk`).\n\nInstead of coercing it into a strict host-only cookie, libcurl saves the\ncookie with wildcard domain scope (`.co.uk`). Consequently, the cookie is\ninappropriately included in subsequent outbound requests or HTTP redirects to\narbitrary sibling subdomains under the same public suffix (e.g.,\n`attacker.co.uk`).",
+          "Fingerprint": "sha256:49cdfa14964f0875b014fc1eaad2bb8d30565e96a6159e72588336851cffc3ee",
+          "InstalledVersion": "7.88.1-10+deb12u15",
+          "LastModifiedDate": "2026-09-11T20:01:57.943Z",
+          "Layer": {
+            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
+            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
+          },
+          "PkgID": "curl@7.88.1-10+deb12u15",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/curl@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
+            "UID": "606544f55e0d2778"
+          },
+          "PkgName": "curl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-82209",
+          "PublishedDate": "2026-09-06T18:17:22.847Z",
+          "References": [
+            "https://curl.se/docs/CVE-2026-82209.html",
+            "https://curl.se/docs/CVE-2026-82209.json",
+            "https://github.com/curl/curl/commit/95c1e8915dce64606bd753fd47f",
+            "https://hackerone.com/reports/3972385",
+            "https://www.cve.org/CVERecord?id=CVE-2026-82209"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fix_deferred",
+          "Title": "When libpsl support is enabled, libcurl fails to enforce the Public Su ...",
+          "VendorSeverity": {
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-82209"
         },
         {
           "CVSS": {
@@ -20900,181 +21107,6 @@
             "ubuntu": 1
           },
           "VulnerabilityID": "CVE-2026-9547"
-        },
-        {
-          "CweIDs": [
-            "CWE-923"
-          ],
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Description": "A flaw in the libcurl SASL negotiation for LDAP authentication allows an\nincomplete handshake sequence to be misinterpreted as a successful\ncryptographic verification. An attacker executing a Man-in-the-Middle (MITM)\nattack can inject a premature or shortcut response that bypasses complete peer\nvalidation.",
-          "Fingerprint": "sha256:42fc70ce80be327f55de3c6b7bf3ed6f73e3dae51327e8bcbc82b111bf2ae79d",
-          "InstalledVersion": "7.88.1-10+deb12u15",
-          "LastModifiedDate": "2026-09-08T16:18:00.317Z",
-          "Layer": {
-            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
-            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
-          },
-          "PkgID": "curl@7.88.1-10+deb12u15",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/curl@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
-            "UID": "606544f55e0d2778"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-13608",
-          "PublishedDate": "2026-09-06T18:17:19.81Z",
-          "References": [
-            "https://curl.se/docs/CVE-2026-13608.html",
-            "https://curl.se/docs/CVE-2026-13608.json",
-            "https://hackerone.com/reports/3822248"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "fix_deferred",
-          "Title": "A flaw in the libcurl SASL negotiation for LDAP authentication allows  ...",
-          "VulnerabilityID": "CVE-2026-13608"
-        },
-        {
-          "CweIDs": [
-            "CWE-416"
-          ],
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Description": "A flaw in libcurl's handling of HTTP/2 Server Push streams, when the parent\nhandle is set to share connections with other handles, can lead to\nuse-after-free in the cleanup process.",
-          "Fingerprint": "sha256:6e902229574e695328ac2b6f28e9c86860774914bdaa9a9ba86db29a90eb9728",
-          "InstalledVersion": "7.88.1-10+deb12u15",
-          "LastModifiedDate": "2026-09-08T16:18:06Z",
-          "Layer": {
-            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
-            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
-          },
-          "PkgID": "curl@7.88.1-10+deb12u15",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/curl@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
-            "UID": "606544f55e0d2778"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-18924",
-          "PublishedDate": "2026-09-06T18:17:20.553Z",
-          "References": [
-            "https://curl.se/docs/CVE-2026-18924.html",
-            "https://curl.se/docs/CVE-2026-18924.json",
-            "https://hackerone.com/reports/3916059"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "fix_deferred",
-          "Title": "A flaw in libcurl's handling of HTTP/2 Server Push streams, when the p ...",
-          "VulnerabilityID": "CVE-2026-18924"
-        },
-        {
-          "CweIDs": [
-            "CWE-488"
-          ],
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Description": "A flaw in libcurl makes it wrongly reuse an HTTP connection setup for a given\nhostname using Negotiate authentication, when the initial request is done\nusing empty credentials. This can make user B's request get sent over user A's\npreviously authenticated connection.",
-          "Fingerprint": "sha256:694f8eb2bb2e36d802a42fd58b235ffa6372b7a3a96ee6b473effeb1b697bdf8",
-          "InstalledVersion": "7.88.1-10+deb12u15",
-          "LastModifiedDate": "2026-09-08T16:18:07.08Z",
-          "Layer": {
-            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
-            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
-          },
-          "PkgID": "curl@7.88.1-10+deb12u15",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/curl@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
-            "UID": "606544f55e0d2778"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-19931",
-          "PublishedDate": "2026-09-06T18:17:20.733Z",
-          "References": [
-            "https://curl.se/docs/CVE-2026-19931.html",
-            "https://curl.se/docs/CVE-2026-19931.json",
-            "https://hackerone.com/reports/3923520"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "fix_deferred",
-          "Title": "A flaw in libcurl makes it wrongly reuse an HTTP connection setup for  ...",
-          "VulnerabilityID": "CVE-2026-19931"
-        },
-        {
-          "CweIDs": [
-            "CWE-295"
-          ],
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Description": "When `CURLOPT_PINNEDPUBLICKEY` is configured alongside options that disable\nstandard peer verification (`CURLOPT_SSL_VERIFYPEER = 0` and\n`CURLOPT_SSL_VERIFYHOST = 0`), libcurl fails to enforce public key pinning on\nconnections established without a presented server certificate. Bypassing the\npinning check under these disabled-verification conditions allows\nunauthenticated connections to succeed when they should be rejected.",
-          "Fingerprint": "sha256:3e984abd18197f488c8e9b7697d83b81484848bc9c8cb7677630f74436965e5b",
-          "InstalledVersion": "7.88.1-10+deb12u15",
-          "LastModifiedDate": "2026-09-08T19:19:54.063Z",
-          "Layer": {
-            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
-            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
-          },
-          "PkgID": "curl@7.88.1-10+deb12u15",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/curl@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
-            "UID": "606544f55e0d2778"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-80230",
-          "PublishedDate": "2026-09-06T18:17:22.327Z",
-          "References": [
-            "https://curl.se/docs/CVE-2026-80230.html",
-            "https://curl.se/docs/CVE-2026-80230.json",
-            "https://hackerone.com/reports/3969300"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "fix_deferred",
-          "Title": "When `CURLOPT_PINNEDPUBLICKEY` is configured alongside options that di ...",
-          "VulnerabilityID": "CVE-2026-80230"
-        },
-        {
-          "CweIDs": [
-            "CWE-201"
-          ],
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Description": "When libpsl support is enabled, libcurl fails to enforce the Public Suffix\nList boundary check when processing a `Set-Cookie` header where the `Domain`\nattribute explicitly matches an origin host that is itself a public suffix\n(e.g., `Domain=co.uk` set by `co.uk`).\n\nInstead of coercing it into a strict host-only cookie, libcurl saves the\ncookie with wildcard domain scope (`.co.uk`). Consequently, the cookie is\ninappropriately included in subsequent outbound requests or HTTP redirects to\narbitrary sibling subdomains under the same public suffix (e.g.,\n`attacker.co.uk`).",
-          "Fingerprint": "sha256:49cdfa14964f0875b014fc1eaad2bb8d30565e96a6159e72588336851cffc3ee",
-          "InstalledVersion": "7.88.1-10+deb12u15",
-          "LastModifiedDate": "2026-09-08T19:20:00.313Z",
-          "Layer": {
-            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
-            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
-          },
-          "PkgID": "curl@7.88.1-10+deb12u15",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/curl@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
-            "UID": "606544f55e0d2778"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-82209",
-          "PublishedDate": "2026-09-06T18:17:22.847Z",
-          "References": [
-            "https://curl.se/docs/CVE-2026-82209.html",
-            "https://curl.se/docs/CVE-2026-82209.json",
-            "https://hackerone.com/reports/3972385"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "fix_deferred",
-          "Title": "When libpsl support is enabled, libcurl fails to enforce the Public Su ...",
-          "VulnerabilityID": "CVE-2026-82209"
         },
         {
           "CVSS": {
@@ -24977,7 +25009,7 @@
           "Description": "attr before version 2.6.0 contains a symlink traversal vulnerability in the getfattr and setfattr utilities that allows local attackers to escalate privileges by replacing a pathname component with a symbolic link during directory hierarchy traversal. Attackers who control a pathname component can redirect getfattr and setfattr operations to arbitrary files by substituting a symlink, leading to local privilege escalation when getfattr or setfattr is invoked by a privileged process over an attacker-controlled path.",
           "Fingerprint": "sha256:dd5e8e55ff2bdc88c539ed6f4cc301609f544cc80bea084af445a1472f863960",
           "InstalledVersion": "1:2.5.1-4",
-          "LastModifiedDate": "2026-09-09T13:20:31.29Z",
+          "LastModifiedDate": "2026-09-11T13:18:15.587Z",
           "Layer": {
             "DiffID": "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
             "Digest": "sha256:dbaa5c62f0ed2acebf15ba5fc565cb938c8495c0b77e1acfab05f5a7354ab1a9"
@@ -24998,6 +25030,7 @@
             "https://access.redhat.com/errata/RHSA-2026:61783",
             "https://access.redhat.com/errata/RHSA-2026:63135",
             "https://access.redhat.com/errata/RHSA-2026:63138",
+            "https://access.redhat.com/errata/RHSA-2026:66018",
             "https://access.redhat.com/security/cve/CVE-2026-54371",
             "https://bugzilla.redhat.com/2490283",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2490283",
@@ -36628,7 +36661,7 @@
             "https://inbox.sourceware.org/libc-alpha/cover.1777546194.git.fweimer@redhat.com/",
             "https://inbox.sourceware.org/libc-announce/7a655d55-276f-41fe-b550-feb3ebb2ce91@redhat.com/T/#u",
             "https://linux.oracle.com/cve/CVE-2026-5435.html",
-            "https://linux.oracle.com/errata/ELSA-2026-500140.html",
+            "https://linux.oracle.com/errata/ELSA-2026-500297.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-5435",
             "https://sourceware.org/bugzilla/show_bug.cgi?id=34033",
             "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0011",
@@ -36760,7 +36793,7 @@
             "https://errata.almalinux.org/9/ALSA-2026-42952.html",
             "https://errata.rockylinux.org/RLSA-2026:42952",
             "https://linux.oracle.com/cve/CVE-2026-5928.html",
-            "https://linux.oracle.com/errata/ELSA-2026-500140.html",
+            "https://linux.oracle.com/errata/ELSA-2026-500297.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-5928",
             "https://sourceware.org/bugzilla/show_bug.cgi?id=33998",
             "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0010",
@@ -36830,7 +36863,7 @@
             "https://inbox.sourceware.org/libc-alpha/cover.1777546194.git.fweimer@redhat.com/",
             "https://inbox.sourceware.org/libc-announce/7a655d55-276f-41fe-b550-feb3ebb2ce91@redhat.com/T/#u",
             "https://linux.oracle.com/cve/CVE-2026-6238.html",
-            "https://linux.oracle.com/errata/ELSA-2026-500140.html",
+            "https://linux.oracle.com/errata/ELSA-2026-500297.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-6238",
             "https://sourceware.org/bugzilla/show_bug.cgi?id=34069",
             "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0012",
@@ -37429,6 +37462,41 @@
           "VulnerabilityID": "CVE-2019-9192"
         },
         {
+          "CweIDs": [
+            "CWE-789"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "The nscd service in the GNU C Library 2.3.4 onwards may crash due to a \nstack overflow when a malicious DNS server returns too large a response \nfor a DNS query, resulting in degraded DNS resolution for the system.\n\n\n\nExploitation of this bug needs a system that has nscd enabled and using \nan untrusted DNS server for name resolution, with the compromised DNS \nserver being capable of processing records large enough to result in a \nstack overflow in an nscd thread stack.  During experimentation, bind 9 \nwas unable to handle large records, but that could change in future or \nwith a different name server.  In typical installations, nscd is \nexecuted in an isolated context as its own user without a shell, due to \nwhich any compromise of that service is isolated.\n\n\n\nThere is a remote possibility of nscd cache corruption if an attacker \nmanages to get the stack pointer into a desired point in the heap, \npotentially resulting in other caches in nscd being overwritten with \ncorrupt data through the stack overflow, until the buggy code path \neventually results in a crash.\n\n\n\nFinally, a crash in nscd may result in performance degradation when \nresolving names, but it does not result in a denial of service.",
+          "Fingerprint": "sha256:1c5b7b08d35ed45bd5a0613d22b2844f72fb486990ba97820889a1effd29d8ba",
+          "InstalledVersion": "2.36-9+deb12u14",
+          "LastModifiedDate": "2026-09-11T18:17:00.23Z",
+          "Layer": {
+            "DiffID": "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+            "Digest": "sha256:dbaa5c62f0ed2acebf15ba5fc565cb938c8495c0b77e1acfab05f5a7354ab1a9"
+          },
+          "PkgID": "libc-bin@2.36-9+deb12u14",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.15",
+            "UID": "fffe74ad3db2b1d6"
+          },
+          "PkgName": "libc-bin",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-89092",
+          "PublishedDate": "2026-09-11T02:18:35.46Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/09/11/2",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=34624",
+            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0016"
+          ],
+          "Severity": "UNKNOWN",
+          "Status": "affected",
+          "Title": "The nscd service in the GNU C Library 2.3.4 onwards may crash due to a ...",
+          "VulnerabilityID": "CVE-2026-89092"
+        },
+        {
           "CVSS": {
             "redhat": {
               "V3Score": 4.9,
@@ -37611,7 +37679,7 @@
             "https://inbox.sourceware.org/libc-alpha/cover.1777546194.git.fweimer@redhat.com/",
             "https://inbox.sourceware.org/libc-announce/7a655d55-276f-41fe-b550-feb3ebb2ce91@redhat.com/T/#u",
             "https://linux.oracle.com/cve/CVE-2026-5435.html",
-            "https://linux.oracle.com/errata/ELSA-2026-500140.html",
+            "https://linux.oracle.com/errata/ELSA-2026-500297.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-5435",
             "https://sourceware.org/bugzilla/show_bug.cgi?id=34033",
             "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0011",
@@ -37743,7 +37811,7 @@
             "https://errata.almalinux.org/9/ALSA-2026-42952.html",
             "https://errata.rockylinux.org/RLSA-2026:42952",
             "https://linux.oracle.com/cve/CVE-2026-5928.html",
-            "https://linux.oracle.com/errata/ELSA-2026-500140.html",
+            "https://linux.oracle.com/errata/ELSA-2026-500297.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-5928",
             "https://sourceware.org/bugzilla/show_bug.cgi?id=33998",
             "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0010",
@@ -37813,7 +37881,7 @@
             "https://inbox.sourceware.org/libc-alpha/cover.1777546194.git.fweimer@redhat.com/",
             "https://inbox.sourceware.org/libc-announce/7a655d55-276f-41fe-b550-feb3ebb2ce91@redhat.com/T/#u",
             "https://linux.oracle.com/cve/CVE-2026-6238.html",
-            "https://linux.oracle.com/errata/ELSA-2026-500140.html",
+            "https://linux.oracle.com/errata/ELSA-2026-500297.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-6238",
             "https://sourceware.org/bugzilla/show_bug.cgi?id=34069",
             "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0012",
@@ -38410,6 +38478,41 @@
             "redhat": 1
           },
           "VulnerabilityID": "CVE-2019-9192"
+        },
+        {
+          "CweIDs": [
+            "CWE-789"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "The nscd service in the GNU C Library 2.3.4 onwards may crash due to a \nstack overflow when a malicious DNS server returns too large a response \nfor a DNS query, resulting in degraded DNS resolution for the system.\n\n\n\nExploitation of this bug needs a system that has nscd enabled and using \nan untrusted DNS server for name resolution, with the compromised DNS \nserver being capable of processing records large enough to result in a \nstack overflow in an nscd thread stack.  During experimentation, bind 9 \nwas unable to handle large records, but that could change in future or \nwith a different name server.  In typical installations, nscd is \nexecuted in an isolated context as its own user without a shell, due to \nwhich any compromise of that service is isolated.\n\n\n\nThere is a remote possibility of nscd cache corruption if an attacker \nmanages to get the stack pointer into a desired point in the heap, \npotentially resulting in other caches in nscd being overwritten with \ncorrupt data through the stack overflow, until the buggy code path \neventually results in a crash.\n\n\n\nFinally, a crash in nscd may result in performance degradation when \nresolving names, but it does not result in a denial of service.",
+          "Fingerprint": "sha256:f82dc81cab66cd070a39d8726b500bde92c2fc908b3af9e4ea5b80f89e57855b",
+          "InstalledVersion": "2.36-9+deb12u14",
+          "LastModifiedDate": "2026-09-11T18:17:00.23Z",
+          "Layer": {
+            "DiffID": "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+            "Digest": "sha256:dbaa5c62f0ed2acebf15ba5fc565cb938c8495c0b77e1acfab05f5a7354ab1a9"
+          },
+          "PkgID": "libc6@2.36-9+deb12u14",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.15",
+            "UID": "348ed513aa2cf7e9"
+          },
+          "PkgName": "libc6",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-89092",
+          "PublishedDate": "2026-09-11T02:18:35.46Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/09/11/2",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=34624",
+            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0016"
+          ],
+          "Severity": "UNKNOWN",
+          "Status": "affected",
+          "Title": "The nscd service in the GNU C Library 2.3.4 onwards may crash due to a ...",
+          "VulnerabilityID": "CVE-2026-89092"
         },
         {
           "CVSS": {
@@ -39834,6 +39937,86 @@
           "VulnerabilityID": "CVE-2026-11856"
         },
         {
+          "CweIDs": [
+            "CWE-923"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "A flaw in the libcurl SASL negotiation for LDAP authentication allows an\nincomplete handshake sequence to be misinterpreted as a successful\ncryptographic verification. An attacker executing a Man-in-the-Middle (MITM)\nattack can inject a premature or shortcut response that bypasses complete peer\nvalidation.",
+          "Fingerprint": "sha256:887252ddc4276a2fcadef36ca03f10464b7f0adfc1ad77a55906c293199bbd16",
+          "InstalledVersion": "7.88.1-10+deb12u15",
+          "LastModifiedDate": "2026-09-11T19:59:55.2Z",
+          "Layer": {
+            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
+            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
+          },
+          "PkgID": "libcurl4@7.88.1-10+deb12u15",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libcurl4@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
+            "UID": "c1719b3c07f72781"
+          },
+          "PkgName": "libcurl4",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-13608",
+          "PublishedDate": "2026-09-06T18:17:19.81Z",
+          "References": [
+            "https://curl.se/docs/CVE-2026-13608.html",
+            "https://curl.se/docs/CVE-2026-13608.json",
+            "https://github.com/curl/curl/pull/22213/changes/1a00e2a73675c9521d214aafd6c02b553bfeb022",
+            "https://hackerone.com/reports/3822248",
+            "https://www.cve.org/CVERecord?id=CVE-2026-13608"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fix_deferred",
+          "Title": "A flaw in the libcurl SASL negotiation for LDAP authentication allows  ...",
+          "VendorSeverity": {
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-13608"
+        },
+        {
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "A flaw in libcurl's handling of HTTP/2 Server Push streams, when the parent\nhandle is set to share connections with other handles, can lead to\nuse-after-free in the cleanup process.",
+          "Fingerprint": "sha256:6f5e74aec69cb23b12feaa1e7fa14b48fb6f762d0ecb5e5a54773e23e8ce60f0",
+          "InstalledVersion": "7.88.1-10+deb12u15",
+          "LastModifiedDate": "2026-09-11T20:01:29.6Z",
+          "Layer": {
+            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
+            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
+          },
+          "PkgID": "libcurl4@7.88.1-10+deb12u15",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libcurl4@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
+            "UID": "c1719b3c07f72781"
+          },
+          "PkgName": "libcurl4",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-18924",
+          "PublishedDate": "2026-09-06T18:17:20.553Z",
+          "References": [
+            "https://curl.se/docs/CVE-2026-18924.html",
+            "https://curl.se/docs/CVE-2026-18924.json",
+            "https://github.com/curl/curl/commit/90325ff0444cbdff368bda5d26d6",
+            "https://hackerone.com/reports/3916059",
+            "https://www.cve.org/CVERecord?id=CVE-2026-18924"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fix_deferred",
+          "Title": "A flaw in libcurl's handling of HTTP/2 Server Push streams, when the p ...",
+          "VendorSeverity": {
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-18924"
+        },
+        {
           "CVSS": {
             "julia": {
               "V3Score": 6.5,
@@ -39909,6 +40092,46 @@
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-1965"
+        },
+        {
+          "CweIDs": [
+            "CWE-488"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "A flaw in libcurl makes it wrongly reuse an HTTP connection setup for a given\nhostname using Negotiate authentication, when the initial request is done\nusing empty credentials. This can make user B's request get sent over user A's\npreviously authenticated connection.",
+          "Fingerprint": "sha256:0e65da69ab32da21ce6fe2e1a42dd56bd0dc1b1fe854eeac0caf9ed4d389c98a",
+          "InstalledVersion": "7.88.1-10+deb12u15",
+          "LastModifiedDate": "2026-09-11T20:01:46.607Z",
+          "Layer": {
+            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
+            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
+          },
+          "PkgID": "libcurl4@7.88.1-10+deb12u15",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libcurl4@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
+            "UID": "c1719b3c07f72781"
+          },
+          "PkgName": "libcurl4",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-19931",
+          "PublishedDate": "2026-09-06T18:17:20.733Z",
+          "References": [
+            "https://curl.se/docs/CVE-2026-19931.html",
+            "https://curl.se/docs/CVE-2026-19931.json",
+            "https://github.com/curl/curl/commit/7103a93b05bc69ea98ed9d",
+            "https://hackerone.com/reports/3923520",
+            "https://www.cve.org/CVERecord?id=CVE-2026-19931"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fix_deferred",
+          "Title": "A flaw in libcurl makes it wrongly reuse an HTTP connection setup for  ...",
+          "VendorSeverity": {
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-19931"
         },
         {
           "CVSS": {
@@ -40143,6 +40366,86 @@
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-6429"
+        },
+        {
+          "CweIDs": [
+            "CWE-295"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "When `CURLOPT_PINNEDPUBLICKEY` is configured alongside options that disable\nstandard peer verification (`CURLOPT_SSL_VERIFYPEER = 0` and\n`CURLOPT_SSL_VERIFYHOST = 0`), libcurl fails to enforce public key pinning on\nconnections established without a presented server certificate. Bypassing the\npinning check under these disabled-verification conditions allows\nunauthenticated connections to succeed when they should be rejected.",
+          "Fingerprint": "sha256:430152c4b2ed8c3d5bdf4a336500932e1dcf51323da3c1280850a3b1dc18b0dc",
+          "InstalledVersion": "7.88.1-10+deb12u15",
+          "LastModifiedDate": "2026-09-11T20:05:56.143Z",
+          "Layer": {
+            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
+            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
+          },
+          "PkgID": "libcurl4@7.88.1-10+deb12u15",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libcurl4@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
+            "UID": "c1719b3c07f72781"
+          },
+          "PkgName": "libcurl4",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-80230",
+          "PublishedDate": "2026-09-06T18:17:22.327Z",
+          "References": [
+            "https://curl.se/docs/CVE-2026-80230.html",
+            "https://curl.se/docs/CVE-2026-80230.json",
+            "https://github.com/curl/curl/commit/5267ed859d545534d0c21",
+            "https://hackerone.com/reports/3969300",
+            "https://www.cve.org/CVERecord?id=CVE-2026-80230"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fix_deferred",
+          "Title": "When `CURLOPT_PINNEDPUBLICKEY` is configured alongside options that di ...",
+          "VendorSeverity": {
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-80230"
+        },
+        {
+          "CweIDs": [
+            "CWE-201"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "When libpsl support is enabled, libcurl fails to enforce the Public Suffix\nList boundary check when processing a `Set-Cookie` header where the `Domain`\nattribute explicitly matches an origin host that is itself a public suffix\n(e.g., `Domain=co.uk` set by `co.uk`).\n\nInstead of coercing it into a strict host-only cookie, libcurl saves the\ncookie with wildcard domain scope (`.co.uk`). Consequently, the cookie is\ninappropriately included in subsequent outbound requests or HTTP redirects to\narbitrary sibling subdomains under the same public suffix (e.g.,\n`attacker.co.uk`).",
+          "Fingerprint": "sha256:781c0a7d9488749d60ea04ca7eaa0b35406a364a15394c09fac60259cb055003",
+          "InstalledVersion": "7.88.1-10+deb12u15",
+          "LastModifiedDate": "2026-09-11T20:01:57.943Z",
+          "Layer": {
+            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
+            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
+          },
+          "PkgID": "libcurl4@7.88.1-10+deb12u15",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libcurl4@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
+            "UID": "c1719b3c07f72781"
+          },
+          "PkgName": "libcurl4",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-82209",
+          "PublishedDate": "2026-09-06T18:17:22.847Z",
+          "References": [
+            "https://curl.se/docs/CVE-2026-82209.html",
+            "https://curl.se/docs/CVE-2026-82209.json",
+            "https://github.com/curl/curl/commit/95c1e8915dce64606bd753fd47f",
+            "https://hackerone.com/reports/3972385",
+            "https://www.cve.org/CVERecord?id=CVE-2026-82209"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fix_deferred",
+          "Title": "When libpsl support is enabled, libcurl fails to enforce the Public Su ...",
+          "VendorSeverity": {
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-82209"
         },
         {
           "CVSS": {
@@ -40701,181 +41004,6 @@
             "ubuntu": 1
           },
           "VulnerabilityID": "CVE-2026-9547"
-        },
-        {
-          "CweIDs": [
-            "CWE-923"
-          ],
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Description": "A flaw in the libcurl SASL negotiation for LDAP authentication allows an\nincomplete handshake sequence to be misinterpreted as a successful\ncryptographic verification. An attacker executing a Man-in-the-Middle (MITM)\nattack can inject a premature or shortcut response that bypasses complete peer\nvalidation.",
-          "Fingerprint": "sha256:887252ddc4276a2fcadef36ca03f10464b7f0adfc1ad77a55906c293199bbd16",
-          "InstalledVersion": "7.88.1-10+deb12u15",
-          "LastModifiedDate": "2026-09-08T16:18:00.317Z",
-          "Layer": {
-            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
-            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
-          },
-          "PkgID": "libcurl4@7.88.1-10+deb12u15",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libcurl4@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
-            "UID": "c1719b3c07f72781"
-          },
-          "PkgName": "libcurl4",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-13608",
-          "PublishedDate": "2026-09-06T18:17:19.81Z",
-          "References": [
-            "https://curl.se/docs/CVE-2026-13608.html",
-            "https://curl.se/docs/CVE-2026-13608.json",
-            "https://hackerone.com/reports/3822248"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "fix_deferred",
-          "Title": "A flaw in the libcurl SASL negotiation for LDAP authentication allows  ...",
-          "VulnerabilityID": "CVE-2026-13608"
-        },
-        {
-          "CweIDs": [
-            "CWE-416"
-          ],
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Description": "A flaw in libcurl's handling of HTTP/2 Server Push streams, when the parent\nhandle is set to share connections with other handles, can lead to\nuse-after-free in the cleanup process.",
-          "Fingerprint": "sha256:6f5e74aec69cb23b12feaa1e7fa14b48fb6f762d0ecb5e5a54773e23e8ce60f0",
-          "InstalledVersion": "7.88.1-10+deb12u15",
-          "LastModifiedDate": "2026-09-08T16:18:06Z",
-          "Layer": {
-            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
-            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
-          },
-          "PkgID": "libcurl4@7.88.1-10+deb12u15",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libcurl4@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
-            "UID": "c1719b3c07f72781"
-          },
-          "PkgName": "libcurl4",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-18924",
-          "PublishedDate": "2026-09-06T18:17:20.553Z",
-          "References": [
-            "https://curl.se/docs/CVE-2026-18924.html",
-            "https://curl.se/docs/CVE-2026-18924.json",
-            "https://hackerone.com/reports/3916059"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "fix_deferred",
-          "Title": "A flaw in libcurl's handling of HTTP/2 Server Push streams, when the p ...",
-          "VulnerabilityID": "CVE-2026-18924"
-        },
-        {
-          "CweIDs": [
-            "CWE-488"
-          ],
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Description": "A flaw in libcurl makes it wrongly reuse an HTTP connection setup for a given\nhostname using Negotiate authentication, when the initial request is done\nusing empty credentials. This can make user B's request get sent over user A's\npreviously authenticated connection.",
-          "Fingerprint": "sha256:0e65da69ab32da21ce6fe2e1a42dd56bd0dc1b1fe854eeac0caf9ed4d389c98a",
-          "InstalledVersion": "7.88.1-10+deb12u15",
-          "LastModifiedDate": "2026-09-08T16:18:07.08Z",
-          "Layer": {
-            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
-            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
-          },
-          "PkgID": "libcurl4@7.88.1-10+deb12u15",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libcurl4@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
-            "UID": "c1719b3c07f72781"
-          },
-          "PkgName": "libcurl4",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-19931",
-          "PublishedDate": "2026-09-06T18:17:20.733Z",
-          "References": [
-            "https://curl.se/docs/CVE-2026-19931.html",
-            "https://curl.se/docs/CVE-2026-19931.json",
-            "https://hackerone.com/reports/3923520"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "fix_deferred",
-          "Title": "A flaw in libcurl makes it wrongly reuse an HTTP connection setup for  ...",
-          "VulnerabilityID": "CVE-2026-19931"
-        },
-        {
-          "CweIDs": [
-            "CWE-295"
-          ],
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Description": "When `CURLOPT_PINNEDPUBLICKEY` is configured alongside options that disable\nstandard peer verification (`CURLOPT_SSL_VERIFYPEER = 0` and\n`CURLOPT_SSL_VERIFYHOST = 0`), libcurl fails to enforce public key pinning on\nconnections established without a presented server certificate. Bypassing the\npinning check under these disabled-verification conditions allows\nunauthenticated connections to succeed when they should be rejected.",
-          "Fingerprint": "sha256:430152c4b2ed8c3d5bdf4a336500932e1dcf51323da3c1280850a3b1dc18b0dc",
-          "InstalledVersion": "7.88.1-10+deb12u15",
-          "LastModifiedDate": "2026-09-08T19:19:54.063Z",
-          "Layer": {
-            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
-            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
-          },
-          "PkgID": "libcurl4@7.88.1-10+deb12u15",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libcurl4@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
-            "UID": "c1719b3c07f72781"
-          },
-          "PkgName": "libcurl4",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-80230",
-          "PublishedDate": "2026-09-06T18:17:22.327Z",
-          "References": [
-            "https://curl.se/docs/CVE-2026-80230.html",
-            "https://curl.se/docs/CVE-2026-80230.json",
-            "https://hackerone.com/reports/3969300"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "fix_deferred",
-          "Title": "When `CURLOPT_PINNEDPUBLICKEY` is configured alongside options that di ...",
-          "VulnerabilityID": "CVE-2026-80230"
-        },
-        {
-          "CweIDs": [
-            "CWE-201"
-          ],
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Description": "When libpsl support is enabled, libcurl fails to enforce the Public Suffix\nList boundary check when processing a `Set-Cookie` header where the `Domain`\nattribute explicitly matches an origin host that is itself a public suffix\n(e.g., `Domain=co.uk` set by `co.uk`).\n\nInstead of coercing it into a strict host-only cookie, libcurl saves the\ncookie with wildcard domain scope (`.co.uk`). Consequently, the cookie is\ninappropriately included in subsequent outbound requests or HTTP redirects to\narbitrary sibling subdomains under the same public suffix (e.g.,\n`attacker.co.uk`).",
-          "Fingerprint": "sha256:781c0a7d9488749d60ea04ca7eaa0b35406a364a15394c09fac60259cb055003",
-          "InstalledVersion": "7.88.1-10+deb12u15",
-          "LastModifiedDate": "2026-09-08T19:20:00.313Z",
-          "Layer": {
-            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
-            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
-          },
-          "PkgID": "libcurl4@7.88.1-10+deb12u15",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libcurl4@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
-            "UID": "c1719b3c07f72781"
-          },
-          "PkgName": "libcurl4",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-82209",
-          "PublishedDate": "2026-09-06T18:17:22.847Z",
-          "References": [
-            "https://curl.se/docs/CVE-2026-82209.html",
-            "https://curl.se/docs/CVE-2026-82209.json",
-            "https://hackerone.com/reports/3972385"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "fix_deferred",
-          "Title": "When libpsl support is enabled, libcurl fails to enforce the Public Su ...",
-          "VulnerabilityID": "CVE-2026-82209"
         },
         {
           "CVSS": {
@@ -43246,7 +43374,7 @@
           "Title": "giflib: Heap-Buffer Overflow during Image Saving in DumpScreen2RGB Function",
           "VendorSeverity": {
             "alma": 2,
-            "amazon": 1,
+            "amazon": 2,
             "azure": 3,
             "cbl-mariner": 3,
             "debian": 1,
@@ -44587,7 +44715,7 @@
           "Description": "A flaw was found in xdgmime. A heap-based buffer overflow can be triggered in _xdg_mime_magic_parse_magic_line() in the xdgmimemagic.c file on little-endian systems when an attacker-controlled MIME magic file in a user-writable XDG data location (e.g., in the $XDG_DATA_HOME/mime/magic path) is parsed by an application performing MIME type detection (e.g., via g_content_type_guess()). When performing byte-swap, incorrect pointer arithmetic on the write side causes an out-of-bounds write of 2 bytes, resulting in an application crash or memory corruption.",
           "Fingerprint": "sha256:9d08bdbdc73530b79c9f2d87e2e86383ef2947e828c46a028aa62b3c27bc9080",
           "InstalledVersion": "2.74.6-2+deb12u9",
-          "LastModifiedDate": "2026-09-08T13:17:17.507Z",
+          "LastModifiedDate": "2026-09-11T10:16:51.15Z",
           "Layer": {
             "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
             "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
@@ -44603,6 +44731,7 @@
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:64799",
             "https://access.redhat.com/errata/RHSA-2026:64800",
+            "https://access.redhat.com/errata/RHSA-2026:66451",
             "https://access.redhat.com/security/cve/CVE-2026-16118",
             "https://bugzilla.redhat.com/2501732",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2501732",
@@ -44613,7 +44742,7 @@
             "https://gitlab.freedesktop.org/xdg/xdgmime/-/work_items/41",
             "https://gitlab.gnome.org/GNOME/glib/-/work_items/3992",
             "https://linux.oracle.com/cve/CVE-2026-16118.html",
-            "https://linux.oracle.com/errata/ELSA-2026-64800-0.html",
+            "https://linux.oracle.com/errata/ELSA-2026-66451-0.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-16118",
             "https://www.cve.org/CVERecord?id=CVE-2026-16118"
           ],
@@ -48718,7 +48847,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "Description Not Available",
+          "Description": "[Unknown description]",
           "Fingerprint": "sha256:418e06093ca06fa15dad2b2d1ebea9a134eace441af8d31413de04c8fb55dc88",
           "InstalledVersion": "2.28.3-1",
           "Layer": {
@@ -48734,7 +48863,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-25832",
           "Severity": "UNKNOWN",
           "Status": "end_of_life",
-          "Title": "Title Not Available",
+          "Title": "[Unknown description]",
           "VulnerabilityID": "CVE-2026-25832"
         },
         {
@@ -48836,7 +48965,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "Description Not Available",
+          "Description": "[Unknown description]",
           "Fingerprint": "sha256:800ff2ae4bb2210938588da5d6b951bc94b4c4492c978a1647b42a21c0c2384d",
           "InstalledVersion": "2.28.3-1",
           "Layer": {
@@ -48852,7 +48981,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-49300",
           "Severity": "UNKNOWN",
           "Status": "end_of_life",
-          "Title": "Title Not Available",
+          "Title": "[Unknown description]",
           "VulnerabilityID": "CVE-2026-49300"
         },
         {
@@ -48936,7 +49065,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "Description Not Available",
+          "Description": "[Unknown description]",
           "Fingerprint": "sha256:87aadd7d7fcb1efe78226cb857e47f8d067cd08af1c0e74c3c5ffa898df10735",
           "InstalledVersion": "2.28.3-1",
           "Layer": {
@@ -48952,7 +49081,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-50583",
           "Severity": "UNKNOWN",
           "Status": "end_of_life",
-          "Title": "Title Not Available",
+          "Title": "[Unknown description]",
           "VulnerabilityID": "CVE-2026-50583"
         },
         {
@@ -48986,7 +49115,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "Description Not Available",
+          "Description": "[Unknown description]",
           "Fingerprint": "sha256:0dea8f397b455c2c3135fcc632166fbf19f233f0b972584d9d108be59a4528f4",
           "InstalledVersion": "2.28.3-1",
           "Layer": {
@@ -49002,7 +49131,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-50585",
           "Severity": "UNKNOWN",
           "Status": "end_of_life",
-          "Title": "Title Not Available",
+          "Title": "[Unknown description]",
           "VulnerabilityID": "CVE-2026-50585"
         },
         {
@@ -49011,7 +49140,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "Description Not Available",
+          "Description": "[Unknown description]",
           "Fingerprint": "sha256:3534087c6f52487df0fa2bc246b420227ef47581c9df1fa1a0173ffa9c0871d7",
           "InstalledVersion": "2.28.3-1",
           "Layer": {
@@ -49027,7 +49156,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-50586",
           "Severity": "UNKNOWN",
           "Status": "end_of_life",
-          "Title": "Title Not Available",
+          "Title": "[Unknown description]",
           "VulnerabilityID": "CVE-2026-50586"
         },
         {
@@ -49036,7 +49165,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "Description Not Available",
+          "Description": "[Unknown description]",
           "Fingerprint": "sha256:10462dd40ec3c25e3bc959d0691d2595c30b4ede499b817d632d977a18913255",
           "InstalledVersion": "2.28.3-1",
           "Layer": {
@@ -49052,7 +49181,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-50587",
           "Severity": "UNKNOWN",
           "Status": "end_of_life",
-          "Title": "Title Not Available",
+          "Title": "[Unknown description]",
           "VulnerabilityID": "CVE-2026-50587"
         },
         {
@@ -51810,14 +51939,19 @@
           "VulnerabilityID": "CVE-2026-86145"
         },
         {
+          "CweIDs": [
+            "CWE-125"
+          ],
           "DataSource": {
             "ID": "debian",
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:2dca9eeb99fefc409fcdbd13c4789115732c3a5b77c31df05da4082534abafdb",
+          "Description": "PCRE2 before 10.48 has a pcre2_match out-of-bounds read after a JIT fallback when an attacker can provide invalid UTF data.",
+          "Fingerprint": "sha256:aa358a133a35a6bb81ec4453a0223239bf6573228dfa05b1b940fc6630f733af",
           "FixedVersion": "10.42-1+deb12u1",
           "InstalledVersion": "10.42-1",
+          "LastModifiedDate": "2026-09-11T14:56:16.913Z",
           "Layer": {
             "DiffID": "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
             "Digest": "sha256:dbaa5c62f0ed2acebf15ba5fc565cb938c8495c0b77e1acfab05f5a7354ab1a9"
@@ -51828,46 +51962,34 @@
             "UID": "ff608de08d24151b"
           },
           "PkgName": "libpcre2-8-0",
-          "PrimaryURL": "https://security-tracker.debian.org/tracker/TEMP-0000000-21C4F8",
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "Title": "[GHSA-9qww-pwc4-77qq: PCRE2: out-of-bounds reads in pcre2_match() when matching invalid UTF subjects with PCRE2_MATCH_INVALID_UTF]",
-          "VulnerabilityID": "TEMP-0000000-21C4F8"
-        },
-        {
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Fingerprint": "sha256:758da30191033edd965d971970f4fc0e5ba5933d66ab51580b25ffe6dfb3f8c7",
-          "FixedVersion": "10.42-1+deb12u1",
-          "InstalledVersion": "10.42-1",
-          "Layer": {
-            "DiffID": "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
-            "Digest": "sha256:dbaa5c62f0ed2acebf15ba5fc565cb938c8495c0b77e1acfab05f5a7354ab1a9"
-          },
-          "PkgID": "libpcre2-8-0@10.42-1",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libpcre2-8-0@10.42-1?arch=amd64\u0026distro=debian-12.15",
-            "UID": "ff608de08d24151b"
-          },
-          "PkgName": "libpcre2-8-0",
-          "PrimaryURL": "https://security-tracker.debian.org/tracker/TEMP-0000000-8188AC",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-89156",
+          "PublishedDate": "2026-09-11T04:18:03.23Z",
+          "References": [
+            "https://github.com/PCRE2Project/pcre2/releases/tag/pcre2-10.48",
+            "https://github.com/PCRE2Project/pcre2/security/advisories/GHSA-2p8c-ff85-vh9x"
+          ],
           "Severity": "UNKNOWN",
           "Status": "fixed",
           "Title": "[GHSA-2p8c-ff85-vh9x: PCRE2: out-of-bounds read in pcre2_match() after JIT fallback with invalid UTF]",
-          "VulnerabilityID": "TEMP-0000000-8188AC"
+          "VendorIDs": [
+            "DLA-4772-1"
+          ],
+          "VulnerabilityID": "CVE-2026-89156"
         },
         {
+          "CweIDs": [
+            "CWE-190"
+          ],
           "DataSource": {
             "ID": "debian",
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:eb3c2027d4d64dca51a7febaa30cc6e4a1ee2f7b56bbcd32a11fb963c752d212",
+          "Description": "PCRE2 before 10.48, on 32-bit platforms, has a pcre2_pattern_convert out-of-bounds write when an attacker can provide a large pattern.",
+          "Fingerprint": "sha256:382a258475aed09addac0029fceabfe34276a60b78c811305a53a742056758c3",
           "FixedVersion": "10.42-1+deb12u1",
           "InstalledVersion": "10.42-1",
+          "LastModifiedDate": "2026-09-11T16:17:49.537Z",
           "Layer": {
             "DiffID": "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
             "Digest": "sha256:dbaa5c62f0ed2acebf15ba5fc565cb938c8495c0b77e1acfab05f5a7354ab1a9"
@@ -51878,21 +52000,34 @@
             "UID": "ff608de08d24151b"
           },
           "PkgName": "libpcre2-8-0",
-          "PrimaryURL": "https://security-tracker.debian.org/tracker/TEMP-0000000-A5518C",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-89157",
+          "PublishedDate": "2026-09-11T04:18:03.753Z",
+          "References": [
+            "https://github.com/PCRE2Project/pcre2/releases/tag/pcre2-10.48",
+            "https://github.com/PCRE2Project/pcre2/security/advisories/GHSA-q8g2-wprr-34m9"
+          ],
           "Severity": "UNKNOWN",
           "Status": "fixed",
           "Title": "[GHSA-q8g2-wprr-34m9: PCRE2: out-of-bounds write in pcre2_pattern_convert() with large patterns on 32-bit systems]",
-          "VulnerabilityID": "TEMP-0000000-A5518C"
+          "VendorIDs": [
+            "DLA-4772-1"
+          ],
+          "VulnerabilityID": "CVE-2026-89157"
         },
         {
+          "CweIDs": [
+            "CWE-190"
+          ],
           "DataSource": {
             "ID": "debian",
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:dd87848c231493108ddf4c109538ce113bae8a6c4c25fd626f594d69a94dd86e",
+          "Description": "PCRE2 before 10.48, on 32-bit platforms, has a pcre2_compile_32 integer overflow and resultant out-of-bounds write.",
+          "Fingerprint": "sha256:d406be80b9b6f75c47c5076e199b45da27a6da31c1ef9e46025aab1d9eb126fd",
           "FixedVersion": "10.42-1+deb12u1",
           "InstalledVersion": "10.42-1",
+          "LastModifiedDate": "2026-09-11T15:17:08.86Z",
           "Layer": {
             "DiffID": "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
             "Digest": "sha256:dbaa5c62f0ed2acebf15ba5fc565cb938c8495c0b77e1acfab05f5a7354ab1a9"
@@ -51903,11 +52038,91 @@
             "UID": "ff608de08d24151b"
           },
           "PkgName": "libpcre2-8-0",
-          "PrimaryURL": "https://security-tracker.debian.org/tracker/TEMP-0000000-B05303",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-89158",
+          "PublishedDate": "2026-09-11T04:18:03.97Z",
+          "References": [
+            "https://github.com/PCRE2Project/pcre2/releases/tag/pcre2-10.48",
+            "https://github.com/PCRE2Project/pcre2/security/advisories/GHSA-fmgr-6ggq-9859"
+          ],
           "Severity": "UNKNOWN",
           "Status": "fixed",
           "Title": "[GHSA-fmgr-6ggq-9859: PCRE2: integer overflow in pcre2_compile_32() causes out-of-bounds write on 32-bit systems]",
-          "VulnerabilityID": "TEMP-0000000-B05303"
+          "VendorIDs": [
+            "DLA-4772-1"
+          ],
+          "VulnerabilityID": "CVE-2026-89158"
+        },
+        {
+          "CweIDs": [
+            "CWE-125"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "PCRE2 before 10.48 has a pcre2_match out-of-bounds read during the PCRE2_MATCH_INVALID_UTF matching of an invalid UTF subject.",
+          "Fingerprint": "sha256:ce847cd1931409a27e49a383e1ff9bed0237a7e332035a4d535b75790fce5140",
+          "FixedVersion": "10.42-1+deb12u1",
+          "InstalledVersion": "10.42-1",
+          "LastModifiedDate": "2026-09-11T14:56:16.913Z",
+          "Layer": {
+            "DiffID": "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+            "Digest": "sha256:dbaa5c62f0ed2acebf15ba5fc565cb938c8495c0b77e1acfab05f5a7354ab1a9"
+          },
+          "PkgID": "libpcre2-8-0@10.42-1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libpcre2-8-0@10.42-1?arch=amd64\u0026distro=debian-12.15",
+            "UID": "ff608de08d24151b"
+          },
+          "PkgName": "libpcre2-8-0",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-89160",
+          "PublishedDate": "2026-09-11T04:18:04.343Z",
+          "References": [
+            "https://github.com/PCRE2Project/pcre2/releases/tag/pcre2-10.48",
+            "https://github.com/PCRE2Project/pcre2/security/advisories/GHSA-9qww-pwc4-77qq"
+          ],
+          "Severity": "UNKNOWN",
+          "Status": "fixed",
+          "Title": "[GHSA-9qww-pwc4-77qq: PCRE2: out-of-bounds reads in pcre2_match() when matching invalid UTF subjects with PCRE2_MATCH_INVALID_UTF]",
+          "VendorIDs": [
+            "DLA-4772-1"
+          ],
+          "VulnerabilityID": "CVE-2026-89160"
+        },
+        {
+          "CweIDs": [
+            "CWE-590"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "In PCRE2 before 10.48, pcre2_jit_match mishandles a previously copied subject being passed in as a context. An incorrect free operation can occur.",
+          "Fingerprint": "sha256:b071a5a3dfb57136b43ef423dfd15ab7efed59671a22a8dc8908759367a81559",
+          "InstalledVersion": "10.42-1",
+          "LastModifiedDate": "2026-09-11T20:19:22.947Z",
+          "Layer": {
+            "DiffID": "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+            "Digest": "sha256:dbaa5c62f0ed2acebf15ba5fc565cb938c8495c0b77e1acfab05f5a7354ab1a9"
+          },
+          "PkgID": "libpcre2-8-0@10.42-1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libpcre2-8-0@10.42-1?arch=amd64\u0026distro=debian-12.15",
+            "UID": "ff608de08d24151b"
+          },
+          "PkgName": "libpcre2-8-0",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-89161",
+          "PublishedDate": "2026-09-11T04:18:04.47Z",
+          "References": [
+            "https://github.com/PCRE2Project/pcre2/pull/937",
+            "https://github.com/PCRE2Project/pcre2/releases/tag/pcre2-10.48"
+          ],
+          "Severity": "UNKNOWN",
+          "Status": "affected",
+          "Title": "In PCRE2 before 10.48, pcre2_jit_match mishandles a previously copied  ...",
+          "VulnerabilityID": "CVE-2026-89161"
         },
         {
           "CVSS": {
@@ -52176,7 +52391,7 @@
           "Title": "libpng: libpng: Heap-based buffer overflow in pnm2png allows information disclosure and denial of service",
           "VendorSeverity": {
             "debian": 1,
-            "photon": 2,
+            "photon": 3,
             "redhat": 2
           },
           "VulnerabilityID": "CVE-2026-3713"
@@ -57064,7 +57279,7 @@
           "Description": "Issue summary: OpenSSL CMS decryption sizes the key-unwrap output buffer based\non querying the unwrapped key size, but the AES-WRAP-PAD unwrap primitive\ncan write and cleanse more bytes than that query reports, causing an 8-byte\nout-of-bounds heap write.\n\nImpact summary: An attacker who supplies a crafted CMS message can trigger a\ndeterministic 8-byte out-of-bounds heap write when the victim decrypts it\nwith CMS_decrypt(), corrupting the heap and typically resulting in a Denial\nof Service.\n\nCWE: CWE-787: Out-of-bounds Write\n\nDescription: The key-wrap OID is potentially attacker-controlled on the wire.\nCMS unwrapping allows both id-aesNNN-wrap-pad and id-aesNNN-wrap ciphers.\nAn attacker can take a legitimate message and change a single OID byte to\nselect the padded variant while leaving the message otherwise valid. Since\nthe unwrap key is derived from the recipient's private operation (ECDH key\nagreement or ML-KEM decapsulation), the RFC 5649 integrity check cannot\npass, and the decryption fails with integrity failure.\n\nThe write is a fixed-size (8-byte), fixed-value (zero) heap overflow\nimmediately past the allocation, requires no special configuration, and is\nreachable from the public CMS_decrypt() function. The consequence is\na heap corruption leading to a Denial of Service. The fix in the CMS code\nsizes the unwrap output buffer for the worst case so a failed unwrap cannot\nwrite past the allocation.\n\nFIPS impact: no\n\nAs the CMS code lives outside the FIPS module boundary, no FIPS\nmodules are affected by this CVE.",
           "Fingerprint": "sha256:2827b315f9b05f72302d961413af5fce6c4c4269478f3d03e03ccc1695c4a61b",
           "InstalledVersion": "3.0.20-1~deb12u2",
-          "LastModifiedDate": "2026-08-28T19:46:29.323Z",
+          "LastModifiedDate": "2026-09-11T21:16:34.287Z",
           "Layer": {
             "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
             "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
@@ -57118,7 +57333,7 @@
           "Description": "Issue summary: OpenSSL CMP password based protection verification only\nchecks whether the protectionAlg parameter was not NULL and not its\nASN.1 type, before treating it as a PBMParameter. A crafted message can\ncontain a parameter of a different type, which is then dereferenced as an\ninvalid pointer.\n\nImpact summary: A remote, unauthenticated attacker can crash an application\nacting as a CMP server that accepts PBM-protected messages, or a CMP client\ntalking to a malicious or intercepted CMP server, resulting in a Denial of\nService.\n\nCWE: CWE-476: NULL Pointer Dereference\n\nDescription: When verifying the password-based MAC protection of a CMP\nmessage, OpenSSL library reads the protectionAlg algorithm parameter with\nX509_ALGOR_get0(), which returns both the parameter type and its value\npointer. The value is then cast to an ASN1_STRING and treated as the\nexpected PBMParameter after only checking that pointer is not NULL. The\nparameter type returned by X509_ALGOR_get0() was never consulted.\n\nThis happens during protection verification, before any MAC is computed, so\nno knowledge of the PBM shared secret is required; the only precondition is\nthat PBM verification is reachable. On the server side this is reached from\nOSSL_CMP_SRV_process_request() for any application that stands up a CMP\nserver accepting PBM-protected messages, and on the client side from CMP\nresponse validation against a malicious or on-path (MITM) server. The\nreliable consequence is a denial of service; there is no memory disclosure,\nno controlled memory write, and no path to code execution. CMP is a\nspecialized feature that an application must explicitly enable.\n\nFIPS impact: no\nAs the CMP code lives outside the FIPS module boundary, no FIPS modules\nare affected by this CVE.",
           "Fingerprint": "sha256:fb35e7f42c19a683f3518ed4ae0465d04d591c883a170ed5031d9ad668679cd8",
           "InstalledVersion": "3.0.20-1~deb12u2",
-          "LastModifiedDate": "2026-08-28T19:46:29.323Z",
+          "LastModifiedDate": "2026-09-11T21:17:12.46Z",
           "Layer": {
             "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
             "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
@@ -57330,7 +57545,7 @@
           "Description": "Issue summary: Receiving a DTLS record for a future epoch while a handshake\nis in progress causes OpenSSL to buffer far more memory than the record\nitself requires.\n\nImpact summary: A peer can use a small amount of network traffic to make an\nOpenSSL DTLS endpoint retain a disproportionately large amount of memory,\nwhich may lead to a Denial of Service.\n\nCWE: CWE-405: Asymmetric Resource Consumption (Amplification)\n\nDescription: While a DTLS handshake is in progress, a peer may legitimately\nhave already moved on to the next epoch (for example, having sent its\nChangeCipherSpec and Finished messages) before the local endpoint has\nprocessed the same transition, typically because of reordering on the\nunderlying UDP transport. OpenSSL buffers such early records so that they\ncan be processed once the local endpoint catches up.\n\nBuffering a record currently retains the entire read buffer it arrived in,\nwhich is sized to hold the largest possible DTLS record (around 16\nkilobytes), rather than just the bytes that make up the record itself. Up\nto 100 such records may be buffered per connection. As a result, a peer\nthat sends a stream of small forged records claiming to belong to the next\nepoch can cause an OpenSSL DTLS endpoint to retain around 1.7 megabytes of\nmemory, despite sending only a small fraction of that amount of data over\nthe network.\n\nAn attacker therefore gains a memory amplification factor of around 1200,\nand can multiply the effect across as many associations as it is able to\nopen, making this a remote memory exhaustion Denial of Service risk for\nDTLS servers. Since the memory retained per connection remains bounded,\nand any limit an application already places on the number of concurrent\nassociations also bounds the total exposure, this issue has been assessed\nas Low severity.\n\nFIPS impact: no\n\nNo FIPS modules are affected by this issue as the affected code is outside\nthe OpenSSL FIPS module boundary.\n\nOpenSSL 4.0, 3.6, 3.5, 3.4, 3.0, 1.1.1 and 1.0.2 are vulnerable to this\nissue.\n\nOpenSSL 4.0 users should upgrade to OpenSSL 4.0.2.\nOpenSSL 3.6 users should upgrade to OpenSSL 3.6.4.\nOpenSSL 3.5 users should upgrade to OpenSSL 3.5.8.\nOpenSSL 3.4 users should upgrade to OpenSSL 3.4.7.\nOpenSSL 3.0 users should upgrade to OpenSSL 3.0.22.\n\nPremium support customers only:\nOpenSSL 1.1.1 users should upgrade to OpenSSL 1.1.1zi\nOpenSSL 1.0.2 users should upgrade to OpenSSL 1.0.2zr\n\nThis issue was reported on 18 May 2026 by Amazon Web Services.\nThe fix has been developed by Matt Caswell.\n\n-- cut (non-publishing metadata for internal use) --\nReported by: Amazon Web Services\nFixed by: Matt Caswell",
           "Fingerprint": "sha256:6ebe86d48a1988b55b949857dcdb25962a14ed184adb4ae09a883fce1a91573e",
           "InstalledVersion": "3.0.20-1~deb12u2",
-          "LastModifiedDate": "2026-08-28T19:46:29.323Z",
+          "LastModifiedDate": "2026-09-11T21:16:28.067Z",
           "Layer": {
             "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
             "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
@@ -57383,7 +57598,7 @@
           "Description": "Issue summary: The OpenSSL Certificate Management Protocol (CMP) caches\nadditional certificates (extraCerts) sent in a CMP message, but never expunges\nthem (for instance if they are invalid).  If a server reuses an OSSL_CMP_CTX\nfrequently, this cache of extraCerts may grow unboundedly, and a malicious\nclient may flood a CMP server with requests driving this growth.\n\nImpact summary: Users utilizing a CMP server that reuses a single OSSL_CMP_CTX\nfor the lifetime of a server process may observe unbounded memory growth in the\nevent a malicious client repeatedly sends requests containing unique extra\ncertificates, which may lead to OOM conditions.\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: If a remote user sends CMP messages to a server with a list of\nextraCerts and the message is rejected, the extraCerts from the message remains\nin the server contexts untrusted certificate stack.  This exposes servers with\nlong lived ctx objects to Denial of Service attacks in which an attacker sends\nmessages intending to be rejected with a large list of additional certificates\nrepeatedly, forcing the server to store them indefinitely.\n   \nThe issue was fixed by removing the added extra certs if the message is\nrejected, using the same method as when the context is configured to not do\ncaching at all.\n\nFIPS impact: no\nAs the CMP code lives outside the FIPS module boundary, no FIPS\nmodules are affected by this CVE.",
           "Fingerprint": "sha256:4895db1d6d54a527c2b7ac25f1003229baa11ab52690c4a511ef5c7cbcf66fa5",
           "InstalledVersion": "3.0.20-1~deb12u2",
-          "LastModifiedDate": "2026-08-28T19:46:29.323Z",
+          "LastModifiedDate": "2026-09-11T21:16:58.127Z",
           "Layer": {
             "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
             "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
@@ -57431,7 +57646,7 @@
           "Description": "Issue summary: ChaCha20-Poly1305 and AES-OCB decryption with an empty\nciphertext can report success without verifying the supplied authentication\ntag when the operation is finalized by calling the EVP_Cipher() function.\n\nImpact summary: Applications calling EVP_Cipher() on an empty ciphertext and\nexpecting the call to check the AEAD tag may accept forged messages.\n\nCWE: CWE-354 (Improper Validation of Integrity Check Value)\n\nDescription: The EVP_Cipher() API call for AEAD ciphers behaves like a one\nshot encryption and decryption call. It also verifies the AEAD tag after the\ndecryption operation. However for AES-OCB and ChaCha20-Poly1305 ciphers\nit skipped the AEAD tag verification when an empty ciphertext was passed to\nthe function. The callers of this function might believe that a successful\nreturn indicates a valid AEAD tag for these ciphers, even when that has not\ntruly been validated in this case.\n\nFIPS impact: no\nThe FIPS modules in 4.0, 3.6, 3.5, 3.4, and 3.0 are not affected by this CVE\nas the affected algorithms are not FIPS approved and thus not implemented\nin the FIPS module.",
           "Fingerprint": "sha256:289e710d3deac79559d0937968eb33bfd01ad2a0b8f2caa0cd890fa923282013",
           "InstalledVersion": "3.0.20-1~deb12u2",
-          "LastModifiedDate": "2026-09-01T19:17:27.543Z",
+          "LastModifiedDate": "2026-09-11T21:17:17.823Z",
           "Layer": {
             "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
             "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
@@ -62304,6 +62519,145 @@
         {
           "CVSS": {
             "redhat": {
+              "V3Score": 8.4,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-121"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "Tesseract is an open source OCR engine. In version 5.5.3 and earlier, Classify::ReadNormProtos in src/classify/normmatch.cpp parses the NORMPROTO component of a .traineddata file and uses std::istream::operator\u003e\u003e(char*) to extract a whitespace-delimited token into a fixed 61-byte stack buffer without setting a stream width. The 100-byte line buffer can carry a token of up to 99 characters, so a token longer than 60 characters writes up to 39 attacker-controlled bytes past the buffer during TessBaseAPI::Init of the legacy engine, causing stack corruption, denial of service, and potentially control-flow hijacking on affected standard-library implementations. Builds using Apple's libc++ C++20 bounded array overload are incidentally protected, while typical libstdc++ builds remain affected. No fixed release is available as of this review.",
+          "Fingerprint": "sha256:aa40fa0184cde28cdd049c16982e3b6bc4e92b7b41ef2375f01d2a48e6aa1fa7",
+          "InstalledVersion": "5.3.0-2",
+          "LastModifiedDate": "2026-09-11T21:17:53.05Z",
+          "Layer": {
+            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
+            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
+          },
+          "PkgID": "libtesseract5@5.3.0-2",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libtesseract5@5.3.0-2?arch=amd64\u0026distro=debian-12.15",
+            "UID": "fafe886f378cdf66"
+          },
+          "PkgName": "libtesseract5",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-88047",
+          "PublishedDate": "2026-09-10T17:17:08.817Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-88047",
+            "https://github.com/tesseract-ocr/tesseract/commit/1bda5079b1c8a7e25f523486837426903d29ce84",
+            "https://github.com/tesseract-ocr/tesseract/security/advisories/GHSA-5j2p-r5vc-q7f3",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-88047",
+            "https://www.cve.org/CVERecord?id=CVE-2026-88047"
+          ],
+          "Severity": "HIGH",
+          "Status": "affected",
+          "Title": "tesseract: Tesseract: Stack buffer overflow via crafted .traineddata file",
+          "VendorSeverity": {
+            "redhat": 3
+          },
+          "VulnerabilityID": "CVE-2026-88047"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-125",
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "Tesseract is an open source OCR engine. In version 5.5.3 and earlier, FullyConnected::DeSerialize in src/lstm/fullyconnected.cpp does not validate the deserialized layer scalars ni_ and no_ against the weight-matrix dimensions. During FullyConnected::Forward, MatrixDotVector in src/lstm/weightmatrix.cpp writes w.dim1() results into temp_line, which is sized from no_, and reads w.dim2() minus one inputs from curr_input, which is sized from ni_. A crafted .traineddata NT_SOFTMAX layer can therefore use inconsistent dimensions to cause a heap out-of-bounds write and read on the default LSTM engine, resulting in heap corruption, a crash, information disclosure, or potentially controlled corruption. No fixed release is available as of this review.",
+          "Fingerprint": "sha256:aab2fb332b1c870a027477ae0eb6bce7370746c491eebde78f16215cca5fef52",
+          "InstalledVersion": "5.3.0-2",
+          "LastModifiedDate": "2026-09-11T16:17:48.273Z",
+          "Layer": {
+            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
+            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
+          },
+          "PkgID": "libtesseract5@5.3.0-2",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libtesseract5@5.3.0-2?arch=amd64\u0026distro=debian-12.15",
+            "UID": "fafe886f378cdf66"
+          },
+          "PkgName": "libtesseract5",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-88048",
+          "PublishedDate": "2026-09-10T17:17:08.953Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-88048",
+            "https://github.com/tesseract-ocr/tesseract/commit/103dc134eb36411ddc6833ec20aa2c76795bd0ff",
+            "https://github.com/tesseract-ocr/tesseract/security/advisories/GHSA-q44c-23p6-5mw6",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-88048",
+            "https://www.cve.org/CVERecord?id=CVE-2026-88048"
+          ],
+          "Severity": "HIGH",
+          "Status": "affected",
+          "Title": "tesseract: Tesseract: Heap out-of-bounds write/read leading to information disclosure via crafted data",
+          "VendorSeverity": {
+            "redhat": 3
+          },
+          "VulnerabilityID": "CVE-2026-88048"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "Tesseract is an open source OCR engine. In version 5.5.3 and earlier, prior .traineddata hardening added bounds checks to NetworkIO::CopyTimeStepGeneral and NetworkIO::Randomize in src/lstm/networkio.cpp but left NetworkIO::WriteTimeStepPart and NetworkIO::AddTimeStepPart unchecked. In LSTM::Forward in src/lstm/lstm.cpp, source_ is sized from the independently deserialized na_ field while the WriteTimeStepPart count is ns_, which comes from the CI gate WeightMatrix dim1() value. A crafted NT_LSTM layer can make ns_ much larger than na_, causing a heap out-of-bounds write during the first recognition step on the default LSTM engine and resulting in heap corruption, a crash, or potentially controlled corruption. No fixed release is available as of this review.",
+          "Fingerprint": "sha256:3407499abad933dab6147c973aaac23879435ae5ad932b9bc29ddb45eabaed06",
+          "InstalledVersion": "5.3.0-2",
+          "LastModifiedDate": "2026-09-10T19:54:25.81Z",
+          "Layer": {
+            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
+            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
+          },
+          "PkgID": "libtesseract5@5.3.0-2",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libtesseract5@5.3.0-2?arch=amd64\u0026distro=debian-12.15",
+            "UID": "fafe886f378cdf66"
+          },
+          "PkgName": "libtesseract5",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-88049",
+          "PublishedDate": "2026-09-10T17:17:09.087Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-88049",
+            "https://github.com/tesseract-ocr/tesseract/commit/b494ac18925f9d9aff9ef5815475de9943ab19bf",
+            "https://github.com/tesseract-ocr/tesseract/security/advisories/GHSA-jgq8-pprg-vc68",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-88049",
+            "https://www.cve.org/CVERecord?id=CVE-2026-88049"
+          ],
+          "Severity": "HIGH",
+          "Status": "affected",
+          "Title": "tesseract: Tesseract: Heap out-of-bounds write allows arbitrary code execution or denial of service",
+          "VendorSeverity": {
+            "redhat": 3
+          },
+          "VulnerabilityID": "CVE-2026-88049"
+        },
+        {
+          "CVSS": {
+            "redhat": {
               "V3Score": 5.5,
               "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
             }
@@ -62350,6 +62704,190 @@
             "redhat": 2
           },
           "VulnerabilityID": "CVE-2026-73067"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 5.5,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "Tesseract is an open source OCR engine. In version 5.5.3 and earlier, RecodedCharID::DeSerialize in src/ccutil/unicharcompress.h validates length_ but accepts negative code_ values from a crafted .traineddata recoder component. UnicharCompress::ComputeCodeRange in src/ccutil/unicharcompress.cpp can consequently produce code_range_ equal to zero, after which SetupDecoder indexes is_valid_start_ with the negative code on a size-zero vector. The resulting out-of-bounds bit write uses a large wrapped index and reliably causes a wild-address crash or allocation failure on the default LSTM engine. No fixed release is available as of this review.",
+          "Fingerprint": "sha256:92cf2651faa4248fcabe8fe6c7c3ab4c7a1414d3681cb047d5cf9713eac6b1e8",
+          "InstalledVersion": "5.3.0-2",
+          "LastModifiedDate": "2026-09-10T19:54:25.81Z",
+          "Layer": {
+            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
+            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
+          },
+          "PkgID": "libtesseract5@5.3.0-2",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libtesseract5@5.3.0-2?arch=amd64\u0026distro=debian-12.15",
+            "UID": "fafe886f378cdf66"
+          },
+          "PkgName": "libtesseract5",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-88050",
+          "PublishedDate": "2026-09-10T17:17:09.223Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-88050",
+            "https://github.com/tesseract-ocr/tesseract/commit/c94a5532ee04db5a4919542832fd94caee5ea58f",
+            "https://github.com/tesseract-ocr/tesseract/security/advisories/GHSA-7v9h-3q3m-w68g",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-88050",
+            "https://www.cve.org/CVERecord?id=CVE-2026-88050"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "affected",
+          "Title": "tesseract: Tesseract: Out-of-bounds write leads to Denial of Service",
+          "VendorSeverity": {
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2026-88050"
+        },
+        {
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "Tesseract is an open source OCR engine. In version 5.5.3 and earlier, the callback form of GenericVector::read in src/ccutil/genericvector.h reads the independent int32 fields reserved and size_used_ from a .traineddata model without a cap or an invariant check. reserve(reserved) allocates the backing array, but the callback loop writes size_used_ elements. A crafted TESSDATA_INTTEMP component with version_id 4 or later can therefore set reserved to a small value and size_used_ to a large value when fontinfo_table_.read(fp, read_info) is called from src/classify/intproto.cpp, causing a heap out-of-bounds write of FontInfo structures, heap corruption, a crash, or potentially controlled corruption. No fixed release is available as of this review.",
+          "Fingerprint": "sha256:eb8a472e6db1344116aade9916713deebc1ffef06c5fa7f943fba7094f322a4d",
+          "InstalledVersion": "5.3.0-2",
+          "LastModifiedDate": "2026-09-10T19:54:25.81Z",
+          "Layer": {
+            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
+            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
+          },
+          "PkgID": "libtesseract5@5.3.0-2",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libtesseract5@5.3.0-2?arch=amd64\u0026distro=debian-12.15",
+            "UID": "fafe886f378cdf66"
+          },
+          "PkgName": "libtesseract5",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-88051",
+          "PublishedDate": "2026-09-10T18:18:14.177Z",
+          "References": [
+            "https://github.com/tesseract-ocr/tesseract/commit/56e09ca12e751623fe796ce1554ce704bffd2ef0",
+            "https://github.com/tesseract-ocr/tesseract/security/advisories/GHSA-88qp-4g94-3rf3"
+          ],
+          "Severity": "UNKNOWN",
+          "Status": "affected",
+          "Title": "Tesseract is an open source OCR engine. In version 5.5.3 and earlier,  ...",
+          "VulnerabilityID": "CVE-2026-88051"
+        },
+        {
+          "CweIDs": [
+            "CWE-129",
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "Tesseract is an open source OCR engine. In version 5.5.3 and earlier, UNICHARSET::load_via_fgets in src/ccutil/unicharset.cpp trusts the declared unichar count as a loop bound and uses id as an unchecked index into the unichars vector. unichar_insert_backwards_compatible can leave the vector unchanged for an empty, duplicate, or already-encodable representation, causing id to become larger than unichars.size(). Subsequent set_* calls and the write to unichars[id].properties.enabled then write UNICHAR_PROPERTIES beyond the vector during initialization in both the default LSTM and legacy engines, causing heap corruption, a crash, or potentially controlled corruption. No fixed release is available as of this review.",
+          "Fingerprint": "sha256:4b90d6de8bd7deaac82622ba7e200078376b8a10100029358734acaba64cd0ad",
+          "InstalledVersion": "5.3.0-2",
+          "LastModifiedDate": "2026-09-11T21:17:53.677Z",
+          "Layer": {
+            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
+            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
+          },
+          "PkgID": "libtesseract5@5.3.0-2",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libtesseract5@5.3.0-2?arch=amd64\u0026distro=debian-12.15",
+            "UID": "fafe886f378cdf66"
+          },
+          "PkgName": "libtesseract5",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-88052",
+          "PublishedDate": "2026-09-10T18:18:14.317Z",
+          "References": [
+            "https://github.com/tesseract-ocr/tesseract/commit/2d04d640db2e8c7e3bab2369d599343b5a8b8443",
+            "https://github.com/tesseract-ocr/tesseract/security/advisories/GHSA-2hm8-q5c7-c373"
+          ],
+          "Severity": "UNKNOWN",
+          "Status": "affected",
+          "Title": "Tesseract is an open source OCR engine. In version 5.5.3 and earlier,  ...",
+          "VulnerabilityID": "CVE-2026-88052"
+        },
+        {
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "Tesseract is an open source OCR engine. In version 5.5.3 and earlier, Classify::ReadIntTemplates in src/classify/intproto.cpp reads NumClassPruners, NumClasses, and NumProtoSets from the TESSDATA_INTTEMP component of a crafted .traineddata file and uses those values as loop bounds without validating them against MAX_NUM_CLASS_PRUNERS, MAX_NUM_CLASSES, and MAX_NUM_PROTO_SETS. The loops store heap pointers into fixed-capacity ClassPruners and ProtoSets arrays in INT_TEMPLATES_STRUCT and INT_CLASS_STRUCT, so an oversized count causes heap out-of-bounds pointer writes during legacy-classifier initialization before OCR begins, resulting in heap corruption, a crash, or potentially controlled corruption. No fixed release is available as of this review.",
+          "Fingerprint": "sha256:809c952a28b2bc3dc29a7eb16b24c4e32e3581358c4209efc63fd2210fb03f8e",
+          "InstalledVersion": "5.3.0-2",
+          "LastModifiedDate": "2026-09-11T16:17:48.39Z",
+          "Layer": {
+            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
+            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
+          },
+          "PkgID": "libtesseract5@5.3.0-2",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libtesseract5@5.3.0-2?arch=amd64\u0026distro=debian-12.15",
+            "UID": "fafe886f378cdf66"
+          },
+          "PkgName": "libtesseract5",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-88053",
+          "PublishedDate": "2026-09-10T18:18:14.46Z",
+          "References": [
+            "https://github.com/tesseract-ocr/tesseract/commit/8b0574680f3b22f246ade6a4c8e3029104255c63",
+            "https://github.com/tesseract-ocr/tesseract/security/advisories/GHSA-rphx-x795-5qjv"
+          ],
+          "Severity": "UNKNOWN",
+          "Status": "affected",
+          "Title": "Tesseract is an open source OCR engine. In version 5.5.3 and earlier,  ...",
+          "VulnerabilityID": "CVE-2026-88053"
+        },
+        {
+          "CweIDs": [
+            "CWE-125",
+            "CWE-824"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "Tesseract is an open source OCR engine. In version 5.5.3 and earlier, Plumbing::DeSerialize in src/lstm/plumbing.cpp rejects excessively large network stacks but accepts a zero-length stack for NT_SERIES, NT_PARALLEL, or NT_REVERSED layers in a crafted .traineddata model. During LSTMRecognizer initialization in src/lstm/lstmrecognizer.cpp, CacheXScaleFactor(XScaleFactor()) reaches Series::CacheXScaleFactor in src/lstm/series.cpp, which dereferences stack_[0] on the empty vector and invokes a virtual method through an invalid Network pointer. This causes a deterministic crash and denial of service at model load. No fixed release is available as of this review.",
+          "Fingerprint": "sha256:d64ad85e042ab2a4788cbacb1b25d7593ccd750a18e912a1e85da2e2a53745d8",
+          "InstalledVersion": "5.3.0-2",
+          "LastModifiedDate": "2026-09-10T19:54:25.81Z",
+          "Layer": {
+            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
+            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
+          },
+          "PkgID": "libtesseract5@5.3.0-2",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libtesseract5@5.3.0-2?arch=amd64\u0026distro=debian-12.15",
+            "UID": "fafe886f378cdf66"
+          },
+          "PkgName": "libtesseract5",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-88054",
+          "PublishedDate": "2026-09-10T18:18:14.6Z",
+          "References": [
+            "https://github.com/tesseract-ocr/tesseract/commit/552771236b0d80cbdb0c7dd856120fa21a4672e5",
+            "https://github.com/tesseract-ocr/tesseract/security/advisories/GHSA-f6h7-cqr4-6fx4"
+          ],
+          "Severity": "UNKNOWN",
+          "Status": "affected",
+          "Title": "Tesseract is an open source OCR engine. In version 5.5.3 and earlier,  ...",
+          "VulnerabilityID": "CVE-2026-88054"
         },
         {
           "CVSS": {
@@ -66920,7 +67458,7 @@
           "Description": "Issue summary: OpenSSL CMS decryption sizes the key-unwrap output buffer based\non querying the unwrapped key size, but the AES-WRAP-PAD unwrap primitive\ncan write and cleanse more bytes than that query reports, causing an 8-byte\nout-of-bounds heap write.\n\nImpact summary: An attacker who supplies a crafted CMS message can trigger a\ndeterministic 8-byte out-of-bounds heap write when the victim decrypts it\nwith CMS_decrypt(), corrupting the heap and typically resulting in a Denial\nof Service.\n\nCWE: CWE-787: Out-of-bounds Write\n\nDescription: The key-wrap OID is potentially attacker-controlled on the wire.\nCMS unwrapping allows both id-aesNNN-wrap-pad and id-aesNNN-wrap ciphers.\nAn attacker can take a legitimate message and change a single OID byte to\nselect the padded variant while leaving the message otherwise valid. Since\nthe unwrap key is derived from the recipient's private operation (ECDH key\nagreement or ML-KEM decapsulation), the RFC 5649 integrity check cannot\npass, and the decryption fails with integrity failure.\n\nThe write is a fixed-size (8-byte), fixed-value (zero) heap overflow\nimmediately past the allocation, requires no special configuration, and is\nreachable from the public CMS_decrypt() function. The consequence is\na heap corruption leading to a Denial of Service. The fix in the CMS code\nsizes the unwrap output buffer for the worst case so a failed unwrap cannot\nwrite past the allocation.\n\nFIPS impact: no\n\nAs the CMS code lives outside the FIPS module boundary, no FIPS\nmodules are affected by this CVE.",
           "Fingerprint": "sha256:1f81f63d21a3279e4a81df79d21a72a27983502b68f2c04a00cc48688b65a8a8",
           "InstalledVersion": "3.0.20-1~deb12u2",
-          "LastModifiedDate": "2026-08-28T19:46:29.323Z",
+          "LastModifiedDate": "2026-09-11T21:16:34.287Z",
           "Layer": {
             "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
             "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
@@ -66974,7 +67512,7 @@
           "Description": "Issue summary: OpenSSL CMP password based protection verification only\nchecks whether the protectionAlg parameter was not NULL and not its\nASN.1 type, before treating it as a PBMParameter. A crafted message can\ncontain a parameter of a different type, which is then dereferenced as an\ninvalid pointer.\n\nImpact summary: A remote, unauthenticated attacker can crash an application\nacting as a CMP server that accepts PBM-protected messages, or a CMP client\ntalking to a malicious or intercepted CMP server, resulting in a Denial of\nService.\n\nCWE: CWE-476: NULL Pointer Dereference\n\nDescription: When verifying the password-based MAC protection of a CMP\nmessage, OpenSSL library reads the protectionAlg algorithm parameter with\nX509_ALGOR_get0(), which returns both the parameter type and its value\npointer. The value is then cast to an ASN1_STRING and treated as the\nexpected PBMParameter after only checking that pointer is not NULL. The\nparameter type returned by X509_ALGOR_get0() was never consulted.\n\nThis happens during protection verification, before any MAC is computed, so\nno knowledge of the PBM shared secret is required; the only precondition is\nthat PBM verification is reachable. On the server side this is reached from\nOSSL_CMP_SRV_process_request() for any application that stands up a CMP\nserver accepting PBM-protected messages, and on the client side from CMP\nresponse validation against a malicious or on-path (MITM) server. The\nreliable consequence is a denial of service; there is no memory disclosure,\nno controlled memory write, and no path to code execution. CMP is a\nspecialized feature that an application must explicitly enable.\n\nFIPS impact: no\nAs the CMP code lives outside the FIPS module boundary, no FIPS modules\nare affected by this CVE.",
           "Fingerprint": "sha256:2ea43d6ca4cf917d2921eb32fc0247c07eb9085b4f644db1d62d2b8c85722739",
           "InstalledVersion": "3.0.20-1~deb12u2",
-          "LastModifiedDate": "2026-08-28T19:46:29.323Z",
+          "LastModifiedDate": "2026-09-11T21:17:12.46Z",
           "Layer": {
             "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
             "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
@@ -67186,7 +67724,7 @@
           "Description": "Issue summary: Receiving a DTLS record for a future epoch while a handshake\nis in progress causes OpenSSL to buffer far more memory than the record\nitself requires.\n\nImpact summary: A peer can use a small amount of network traffic to make an\nOpenSSL DTLS endpoint retain a disproportionately large amount of memory,\nwhich may lead to a Denial of Service.\n\nCWE: CWE-405: Asymmetric Resource Consumption (Amplification)\n\nDescription: While a DTLS handshake is in progress, a peer may legitimately\nhave already moved on to the next epoch (for example, having sent its\nChangeCipherSpec and Finished messages) before the local endpoint has\nprocessed the same transition, typically because of reordering on the\nunderlying UDP transport. OpenSSL buffers such early records so that they\ncan be processed once the local endpoint catches up.\n\nBuffering a record currently retains the entire read buffer it arrived in,\nwhich is sized to hold the largest possible DTLS record (around 16\nkilobytes), rather than just the bytes that make up the record itself. Up\nto 100 such records may be buffered per connection. As a result, a peer\nthat sends a stream of small forged records claiming to belong to the next\nepoch can cause an OpenSSL DTLS endpoint to retain around 1.7 megabytes of\nmemory, despite sending only a small fraction of that amount of data over\nthe network.\n\nAn attacker therefore gains a memory amplification factor of around 1200,\nand can multiply the effect across as many associations as it is able to\nopen, making this a remote memory exhaustion Denial of Service risk for\nDTLS servers. Since the memory retained per connection remains bounded,\nand any limit an application already places on the number of concurrent\nassociations also bounds the total exposure, this issue has been assessed\nas Low severity.\n\nFIPS impact: no\n\nNo FIPS modules are affected by this issue as the affected code is outside\nthe OpenSSL FIPS module boundary.\n\nOpenSSL 4.0, 3.6, 3.5, 3.4, 3.0, 1.1.1 and 1.0.2 are vulnerable to this\nissue.\n\nOpenSSL 4.0 users should upgrade to OpenSSL 4.0.2.\nOpenSSL 3.6 users should upgrade to OpenSSL 3.6.4.\nOpenSSL 3.5 users should upgrade to OpenSSL 3.5.8.\nOpenSSL 3.4 users should upgrade to OpenSSL 3.4.7.\nOpenSSL 3.0 users should upgrade to OpenSSL 3.0.22.\n\nPremium support customers only:\nOpenSSL 1.1.1 users should upgrade to OpenSSL 1.1.1zi\nOpenSSL 1.0.2 users should upgrade to OpenSSL 1.0.2zr\n\nThis issue was reported on 18 May 2026 by Amazon Web Services.\nThe fix has been developed by Matt Caswell.\n\n-- cut (non-publishing metadata for internal use) --\nReported by: Amazon Web Services\nFixed by: Matt Caswell",
           "Fingerprint": "sha256:7e36c2e0fe605bcee29229c63d3d107b4c89662def1320b1a7d7969a69c620dd",
           "InstalledVersion": "3.0.20-1~deb12u2",
-          "LastModifiedDate": "2026-08-28T19:46:29.323Z",
+          "LastModifiedDate": "2026-09-11T21:16:28.067Z",
           "Layer": {
             "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
             "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
@@ -67239,7 +67777,7 @@
           "Description": "Issue summary: The OpenSSL Certificate Management Protocol (CMP) caches\nadditional certificates (extraCerts) sent in a CMP message, but never expunges\nthem (for instance if they are invalid).  If a server reuses an OSSL_CMP_CTX\nfrequently, this cache of extraCerts may grow unboundedly, and a malicious\nclient may flood a CMP server with requests driving this growth.\n\nImpact summary: Users utilizing a CMP server that reuses a single OSSL_CMP_CTX\nfor the lifetime of a server process may observe unbounded memory growth in the\nevent a malicious client repeatedly sends requests containing unique extra\ncertificates, which may lead to OOM conditions.\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: If a remote user sends CMP messages to a server with a list of\nextraCerts and the message is rejected, the extraCerts from the message remains\nin the server contexts untrusted certificate stack.  This exposes servers with\nlong lived ctx objects to Denial of Service attacks in which an attacker sends\nmessages intending to be rejected with a large list of additional certificates\nrepeatedly, forcing the server to store them indefinitely.\n   \nThe issue was fixed by removing the added extra certs if the message is\nrejected, using the same method as when the context is configured to not do\ncaching at all.\n\nFIPS impact: no\nAs the CMP code lives outside the FIPS module boundary, no FIPS\nmodules are affected by this CVE.",
           "Fingerprint": "sha256:364ac6dd4c88ec299cdac4a6dc6294b04ab4f4d8e5f451fe0fdae6436fb50162",
           "InstalledVersion": "3.0.20-1~deb12u2",
-          "LastModifiedDate": "2026-08-28T19:46:29.323Z",
+          "LastModifiedDate": "2026-09-11T21:16:58.127Z",
           "Layer": {
             "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
             "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
@@ -67287,7 +67825,7 @@
           "Description": "Issue summary: ChaCha20-Poly1305 and AES-OCB decryption with an empty\nciphertext can report success without verifying the supplied authentication\ntag when the operation is finalized by calling the EVP_Cipher() function.\n\nImpact summary: Applications calling EVP_Cipher() on an empty ciphertext and\nexpecting the call to check the AEAD tag may accept forged messages.\n\nCWE: CWE-354 (Improper Validation of Integrity Check Value)\n\nDescription: The EVP_Cipher() API call for AEAD ciphers behaves like a one\nshot encryption and decryption call. It also verifies the AEAD tag after the\ndecryption operation. However for AES-OCB and ChaCha20-Poly1305 ciphers\nit skipped the AEAD tag verification when an empty ciphertext was passed to\nthe function. The callers of this function might believe that a successful\nreturn indicates a valid AEAD tag for these ciphers, even when that has not\ntruly been validated in this case.\n\nFIPS impact: no\nThe FIPS modules in 4.0, 3.6, 3.5, 3.4, and 3.0 are not affected by this CVE\nas the affected algorithms are not FIPS approved and thus not implemented\nin the FIPS module.",
           "Fingerprint": "sha256:628c294ec1c6109f7a838af7b3f0b95f2ef6ed85f5225d9452a1629c1bc9f695",
           "InstalledVersion": "3.0.20-1~deb12u2",
-          "LastModifiedDate": "2026-09-01T19:17:27.543Z",
+          "LastModifiedDate": "2026-09-11T21:17:17.823Z",
           "Layer": {
             "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
             "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
@@ -68867,6 +69405,145 @@
         {
           "CVSS": {
             "redhat": {
+              "V3Score": 8.4,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-121"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "Tesseract is an open source OCR engine. In version 5.5.3 and earlier, Classify::ReadNormProtos in src/classify/normmatch.cpp parses the NORMPROTO component of a .traineddata file and uses std::istream::operator\u003e\u003e(char*) to extract a whitespace-delimited token into a fixed 61-byte stack buffer without setting a stream width. The 100-byte line buffer can carry a token of up to 99 characters, so a token longer than 60 characters writes up to 39 attacker-controlled bytes past the buffer during TessBaseAPI::Init of the legacy engine, causing stack corruption, denial of service, and potentially control-flow hijacking on affected standard-library implementations. Builds using Apple's libc++ C++20 bounded array overload are incidentally protected, while typical libstdc++ builds remain affected. No fixed release is available as of this review.",
+          "Fingerprint": "sha256:1bfe76e92c51df482962f17b07c103197d86133608f857a950c92f148e4934ba",
+          "InstalledVersion": "5.3.0-2",
+          "LastModifiedDate": "2026-09-11T21:17:53.05Z",
+          "Layer": {
+            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
+            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
+          },
+          "PkgID": "tesseract-ocr@5.3.0-2",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/tesseract-ocr@5.3.0-2?arch=amd64\u0026distro=debian-12.15",
+            "UID": "bfbfb31dca9fbe96"
+          },
+          "PkgName": "tesseract-ocr",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-88047",
+          "PublishedDate": "2026-09-10T17:17:08.817Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-88047",
+            "https://github.com/tesseract-ocr/tesseract/commit/1bda5079b1c8a7e25f523486837426903d29ce84",
+            "https://github.com/tesseract-ocr/tesseract/security/advisories/GHSA-5j2p-r5vc-q7f3",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-88047",
+            "https://www.cve.org/CVERecord?id=CVE-2026-88047"
+          ],
+          "Severity": "HIGH",
+          "Status": "affected",
+          "Title": "tesseract: Tesseract: Stack buffer overflow via crafted .traineddata file",
+          "VendorSeverity": {
+            "redhat": 3
+          },
+          "VulnerabilityID": "CVE-2026-88047"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-125",
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "Tesseract is an open source OCR engine. In version 5.5.3 and earlier, FullyConnected::DeSerialize in src/lstm/fullyconnected.cpp does not validate the deserialized layer scalars ni_ and no_ against the weight-matrix dimensions. During FullyConnected::Forward, MatrixDotVector in src/lstm/weightmatrix.cpp writes w.dim1() results into temp_line, which is sized from no_, and reads w.dim2() minus one inputs from curr_input, which is sized from ni_. A crafted .traineddata NT_SOFTMAX layer can therefore use inconsistent dimensions to cause a heap out-of-bounds write and read on the default LSTM engine, resulting in heap corruption, a crash, information disclosure, or potentially controlled corruption. No fixed release is available as of this review.",
+          "Fingerprint": "sha256:ae2a66668f736e8504901ef0919cb7abd9a2ad978c08cdb478ea786aa0251357",
+          "InstalledVersion": "5.3.0-2",
+          "LastModifiedDate": "2026-09-11T16:17:48.273Z",
+          "Layer": {
+            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
+            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
+          },
+          "PkgID": "tesseract-ocr@5.3.0-2",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/tesseract-ocr@5.3.0-2?arch=amd64\u0026distro=debian-12.15",
+            "UID": "bfbfb31dca9fbe96"
+          },
+          "PkgName": "tesseract-ocr",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-88048",
+          "PublishedDate": "2026-09-10T17:17:08.953Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-88048",
+            "https://github.com/tesseract-ocr/tesseract/commit/103dc134eb36411ddc6833ec20aa2c76795bd0ff",
+            "https://github.com/tesseract-ocr/tesseract/security/advisories/GHSA-q44c-23p6-5mw6",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-88048",
+            "https://www.cve.org/CVERecord?id=CVE-2026-88048"
+          ],
+          "Severity": "HIGH",
+          "Status": "affected",
+          "Title": "tesseract: Tesseract: Heap out-of-bounds write/read leading to information disclosure via crafted data",
+          "VendorSeverity": {
+            "redhat": 3
+          },
+          "VulnerabilityID": "CVE-2026-88048"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 7.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "Tesseract is an open source OCR engine. In version 5.5.3 and earlier, prior .traineddata hardening added bounds checks to NetworkIO::CopyTimeStepGeneral and NetworkIO::Randomize in src/lstm/networkio.cpp but left NetworkIO::WriteTimeStepPart and NetworkIO::AddTimeStepPart unchecked. In LSTM::Forward in src/lstm/lstm.cpp, source_ is sized from the independently deserialized na_ field while the WriteTimeStepPart count is ns_, which comes from the CI gate WeightMatrix dim1() value. A crafted NT_LSTM layer can make ns_ much larger than na_, causing a heap out-of-bounds write during the first recognition step on the default LSTM engine and resulting in heap corruption, a crash, or potentially controlled corruption. No fixed release is available as of this review.",
+          "Fingerprint": "sha256:bd692684eaf9b70341af18f39c0f6eefc5c3358c9a08c64890fdd368c2586988",
+          "InstalledVersion": "5.3.0-2",
+          "LastModifiedDate": "2026-09-10T19:54:25.81Z",
+          "Layer": {
+            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
+            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
+          },
+          "PkgID": "tesseract-ocr@5.3.0-2",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/tesseract-ocr@5.3.0-2?arch=amd64\u0026distro=debian-12.15",
+            "UID": "bfbfb31dca9fbe96"
+          },
+          "PkgName": "tesseract-ocr",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-88049",
+          "PublishedDate": "2026-09-10T17:17:09.087Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-88049",
+            "https://github.com/tesseract-ocr/tesseract/commit/b494ac18925f9d9aff9ef5815475de9943ab19bf",
+            "https://github.com/tesseract-ocr/tesseract/security/advisories/GHSA-jgq8-pprg-vc68",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-88049",
+            "https://www.cve.org/CVERecord?id=CVE-2026-88049"
+          ],
+          "Severity": "HIGH",
+          "Status": "affected",
+          "Title": "tesseract: Tesseract: Heap out-of-bounds write allows arbitrary code execution or denial of service",
+          "VendorSeverity": {
+            "redhat": 3
+          },
+          "VulnerabilityID": "CVE-2026-88049"
+        },
+        {
+          "CVSS": {
+            "redhat": {
               "V3Score": 5.5,
               "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
             }
@@ -68913,6 +69590,190 @@
             "redhat": 2
           },
           "VulnerabilityID": "CVE-2026-73067"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 5.5,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "Tesseract is an open source OCR engine. In version 5.5.3 and earlier, RecodedCharID::DeSerialize in src/ccutil/unicharcompress.h validates length_ but accepts negative code_ values from a crafted .traineddata recoder component. UnicharCompress::ComputeCodeRange in src/ccutil/unicharcompress.cpp can consequently produce code_range_ equal to zero, after which SetupDecoder indexes is_valid_start_ with the negative code on a size-zero vector. The resulting out-of-bounds bit write uses a large wrapped index and reliably causes a wild-address crash or allocation failure on the default LSTM engine. No fixed release is available as of this review.",
+          "Fingerprint": "sha256:e11d35e210909d0847ca78067ddfbb5ed489ecc72ffd636e332b2a270ac71056",
+          "InstalledVersion": "5.3.0-2",
+          "LastModifiedDate": "2026-09-10T19:54:25.81Z",
+          "Layer": {
+            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
+            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
+          },
+          "PkgID": "tesseract-ocr@5.3.0-2",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/tesseract-ocr@5.3.0-2?arch=amd64\u0026distro=debian-12.15",
+            "UID": "bfbfb31dca9fbe96"
+          },
+          "PkgName": "tesseract-ocr",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-88050",
+          "PublishedDate": "2026-09-10T17:17:09.223Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-88050",
+            "https://github.com/tesseract-ocr/tesseract/commit/c94a5532ee04db5a4919542832fd94caee5ea58f",
+            "https://github.com/tesseract-ocr/tesseract/security/advisories/GHSA-7v9h-3q3m-w68g",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-88050",
+            "https://www.cve.org/CVERecord?id=CVE-2026-88050"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "affected",
+          "Title": "tesseract: Tesseract: Out-of-bounds write leads to Denial of Service",
+          "VendorSeverity": {
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2026-88050"
+        },
+        {
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "Tesseract is an open source OCR engine. In version 5.5.3 and earlier, the callback form of GenericVector::read in src/ccutil/genericvector.h reads the independent int32 fields reserved and size_used_ from a .traineddata model without a cap or an invariant check. reserve(reserved) allocates the backing array, but the callback loop writes size_used_ elements. A crafted TESSDATA_INTTEMP component with version_id 4 or later can therefore set reserved to a small value and size_used_ to a large value when fontinfo_table_.read(fp, read_info) is called from src/classify/intproto.cpp, causing a heap out-of-bounds write of FontInfo structures, heap corruption, a crash, or potentially controlled corruption. No fixed release is available as of this review.",
+          "Fingerprint": "sha256:8e6d1fb513bc46dfbce01041b9a041427f4296ffe6547d46c2f36eea7cc15376",
+          "InstalledVersion": "5.3.0-2",
+          "LastModifiedDate": "2026-09-10T19:54:25.81Z",
+          "Layer": {
+            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
+            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
+          },
+          "PkgID": "tesseract-ocr@5.3.0-2",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/tesseract-ocr@5.3.0-2?arch=amd64\u0026distro=debian-12.15",
+            "UID": "bfbfb31dca9fbe96"
+          },
+          "PkgName": "tesseract-ocr",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-88051",
+          "PublishedDate": "2026-09-10T18:18:14.177Z",
+          "References": [
+            "https://github.com/tesseract-ocr/tesseract/commit/56e09ca12e751623fe796ce1554ce704bffd2ef0",
+            "https://github.com/tesseract-ocr/tesseract/security/advisories/GHSA-88qp-4g94-3rf3"
+          ],
+          "Severity": "UNKNOWN",
+          "Status": "affected",
+          "Title": "Tesseract is an open source OCR engine. In version 5.5.3 and earlier,  ...",
+          "VulnerabilityID": "CVE-2026-88051"
+        },
+        {
+          "CweIDs": [
+            "CWE-129",
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "Tesseract is an open source OCR engine. In version 5.5.3 and earlier, UNICHARSET::load_via_fgets in src/ccutil/unicharset.cpp trusts the declared unichar count as a loop bound and uses id as an unchecked index into the unichars vector. unichar_insert_backwards_compatible can leave the vector unchanged for an empty, duplicate, or already-encodable representation, causing id to become larger than unichars.size(). Subsequent set_* calls and the write to unichars[id].properties.enabled then write UNICHAR_PROPERTIES beyond the vector during initialization in both the default LSTM and legacy engines, causing heap corruption, a crash, or potentially controlled corruption. No fixed release is available as of this review.",
+          "Fingerprint": "sha256:ed7c2d87dc8eea9f3ba9cc5629b805796443914f2b23114bfc6c7bc36c183f33",
+          "InstalledVersion": "5.3.0-2",
+          "LastModifiedDate": "2026-09-11T21:17:53.677Z",
+          "Layer": {
+            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
+            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
+          },
+          "PkgID": "tesseract-ocr@5.3.0-2",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/tesseract-ocr@5.3.0-2?arch=amd64\u0026distro=debian-12.15",
+            "UID": "bfbfb31dca9fbe96"
+          },
+          "PkgName": "tesseract-ocr",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-88052",
+          "PublishedDate": "2026-09-10T18:18:14.317Z",
+          "References": [
+            "https://github.com/tesseract-ocr/tesseract/commit/2d04d640db2e8c7e3bab2369d599343b5a8b8443",
+            "https://github.com/tesseract-ocr/tesseract/security/advisories/GHSA-2hm8-q5c7-c373"
+          ],
+          "Severity": "UNKNOWN",
+          "Status": "affected",
+          "Title": "Tesseract is an open source OCR engine. In version 5.5.3 and earlier,  ...",
+          "VulnerabilityID": "CVE-2026-88052"
+        },
+        {
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "Tesseract is an open source OCR engine. In version 5.5.3 and earlier, Classify::ReadIntTemplates in src/classify/intproto.cpp reads NumClassPruners, NumClasses, and NumProtoSets from the TESSDATA_INTTEMP component of a crafted .traineddata file and uses those values as loop bounds without validating them against MAX_NUM_CLASS_PRUNERS, MAX_NUM_CLASSES, and MAX_NUM_PROTO_SETS. The loops store heap pointers into fixed-capacity ClassPruners and ProtoSets arrays in INT_TEMPLATES_STRUCT and INT_CLASS_STRUCT, so an oversized count causes heap out-of-bounds pointer writes during legacy-classifier initialization before OCR begins, resulting in heap corruption, a crash, or potentially controlled corruption. No fixed release is available as of this review.",
+          "Fingerprint": "sha256:24655a465eb670873964279a392c30eb39815a840cd6253354ed79c589ed86c2",
+          "InstalledVersion": "5.3.0-2",
+          "LastModifiedDate": "2026-09-11T16:17:48.39Z",
+          "Layer": {
+            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
+            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
+          },
+          "PkgID": "tesseract-ocr@5.3.0-2",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/tesseract-ocr@5.3.0-2?arch=amd64\u0026distro=debian-12.15",
+            "UID": "bfbfb31dca9fbe96"
+          },
+          "PkgName": "tesseract-ocr",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-88053",
+          "PublishedDate": "2026-09-10T18:18:14.46Z",
+          "References": [
+            "https://github.com/tesseract-ocr/tesseract/commit/8b0574680f3b22f246ade6a4c8e3029104255c63",
+            "https://github.com/tesseract-ocr/tesseract/security/advisories/GHSA-rphx-x795-5qjv"
+          ],
+          "Severity": "UNKNOWN",
+          "Status": "affected",
+          "Title": "Tesseract is an open source OCR engine. In version 5.5.3 and earlier,  ...",
+          "VulnerabilityID": "CVE-2026-88053"
+        },
+        {
+          "CweIDs": [
+            "CWE-125",
+            "CWE-824"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "Tesseract is an open source OCR engine. In version 5.5.3 and earlier, Plumbing::DeSerialize in src/lstm/plumbing.cpp rejects excessively large network stacks but accepts a zero-length stack for NT_SERIES, NT_PARALLEL, or NT_REVERSED layers in a crafted .traineddata model. During LSTMRecognizer initialization in src/lstm/lstmrecognizer.cpp, CacheXScaleFactor(XScaleFactor()) reaches Series::CacheXScaleFactor in src/lstm/series.cpp, which dereferences stack_[0] on the empty vector and invokes a virtual method through an invalid Network pointer. This causes a deterministic crash and denial of service at model load. No fixed release is available as of this review.",
+          "Fingerprint": "sha256:64213436bf9b1bbb5b531e01441a6f3ca76cb4f03bd2c00ec72d8639c50a4762",
+          "InstalledVersion": "5.3.0-2",
+          "LastModifiedDate": "2026-09-10T19:54:25.81Z",
+          "Layer": {
+            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
+            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
+          },
+          "PkgID": "tesseract-ocr@5.3.0-2",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/tesseract-ocr@5.3.0-2?arch=amd64\u0026distro=debian-12.15",
+            "UID": "bfbfb31dca9fbe96"
+          },
+          "PkgName": "tesseract-ocr",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-88054",
+          "PublishedDate": "2026-09-10T18:18:14.6Z",
+          "References": [
+            "https://github.com/tesseract-ocr/tesseract/commit/552771236b0d80cbdb0c7dd856120fa21a4672e5",
+            "https://github.com/tesseract-ocr/tesseract/security/advisories/GHSA-f6h7-cqr4-6fx4"
+          ],
+          "Severity": "UNKNOWN",
+          "Status": "affected",
+          "Title": "Tesseract is an open source OCR engine. In version 5.5.3 and earlier,  ...",
+          "VulnerabilityID": "CVE-2026-88054"
         },
         {
           "CVSS": {
@@ -70266,7 +71127,6 @@
             "https://gist.github.com/thesmartshadow/e0b9481792afb7c31e86fee1ff084490",
             "https://github.com/madler/zlib",
             "https://github.com/madler/zlib/blob/v1.3.2/gzwrite.c#L393",
-            "https://github.com/madler/zlib/commit/e3dc0a85b7032e98380dec011bc8f2c2ee0d8fca",
             "https://www.cve.org/CVERecord?id=CVE-2026-85091",
             "https://www.vulncheck.com/advisories/zlib-1.3.1.2-through-1.3.2-heap-buffer-overflow-via-gz-vacate"
           ],
@@ -71028,57 +71888,6 @@
         {
           "CVSS": {
             "redhat": {
-              "V3Score": 9.1,
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N"
-            }
-          },
-          "CweIDs": [
-            "CWE-863"
-          ],
-          "DataSource": {
-            "ID": "govulndb",
-            "Name": "The Go Vulnerability Database",
-            "URL": "https://pkg.go.dev/vuln/"
-          },
-          "Description": "The source-address critical option in the Permissions returned by an authentication callback was only enforced for the PublicKeyCallback and VerifiedPublicKeyCallback paths, extending the fix for CVE-2026-46595. Permissions returned by the PasswordCallback, KeyboardInteractiveCallback, NoClientAuthCallback, and GSSAPIWithMICConfig.AllowLogin callbacks were not validated against the client's remote address, so a source-address restriction set by those callbacks was silently ignored. The check is now applied to the Permissions returned by any authentication callback.",
-          "Fingerprint": "sha256:02afbe7daa55ccf7868801fd14a0e640f261f401fb377de367872a639d1399eb",
-          "FixedVersion": "0.55.0",
-          "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-09-03T16:37:52.17Z",
-          "Layer": {
-            "DiffID": "sha256:6394cf242e64ce8f28128ab0733c3e0d32c3c4ef685587c2a38e383b33bd8d7c",
-            "Digest": "sha256:f16a755b67c209221b65c7bdf247d2ad825b3e14aa36becc3e049f7f2d9a5645"
-          },
-          "PkgID": "golang.org/x/crypto@v0.51.0",
-          "PkgIdentifier": {
-            "PURL": "pkg:golang/golang.org/x/crypto@v0.51.0",
-            "UID": "4355f44e502adba6"
-          },
-          "PkgName": "golang.org/x/crypto",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56854",
-          "PublishedDate": "2026-08-28T16:18:17.607Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-56854",
-            "https://go.dev/cl/797040",
-            "https://go.dev/issue/80213",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-56854",
-            "https://pkg.go.dev/vuln/GO-2026-6303",
-            "https://www.cve.org/CVERecord?id=CVE-2026-56854"
-          ],
-          "Severity": "CRITICAL",
-          "Status": "fixed",
-          "Title": "golang.org/x/crypto/ssh: golang.org/x/crypto/ssh: Authentication bypass due to unenforced source-address restrictions",
-          "VendorIDs": [
-            "GO-2026-6303"
-          ],
-          "VendorSeverity": {
-            "redhat": 4
-          },
-          "VulnerabilityID": "CVE-2026-56854"
-        },
-        {
-          "CVSS": {
-            "redhat": {
               "V3Score": 8.8,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
             }
@@ -71096,7 +71905,7 @@
           "Fingerprint": "sha256:db26d48cd30337d01384c10e924adfb19b063bf1974cfaa46bf183ff2660b83e",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-09-10T13:19:52.827Z",
+          "LastModifiedDate": "2026-09-11T13:17:51.26Z",
           "Layer": {
             "DiffID": "sha256:6394cf242e64ce8f28128ab0733c3e0d32c3c4ef685587c2a38e383b33bd8d7c",
             "Digest": "sha256:f16a755b67c209221b65c7bdf247d2ad825b3e14aa36becc3e049f7f2d9a5645"
@@ -71157,6 +71966,8 @@
             "https://access.redhat.com/errata/RHSA-2026:57194",
             "https://access.redhat.com/errata/RHSA-2026:59467",
             "https://access.redhat.com/errata/RHSA-2026:60520",
+            "https://access.redhat.com/errata/RHSA-2026:66022",
+            "https://access.redhat.com/errata/RHSA-2026:66521",
             "https://access.redhat.com/security/cve/CVE-2026-39828",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480687",
             "https://go.dev/cl/781621",
@@ -71200,7 +72011,7 @@
           "Fingerprint": "sha256:cd427b55c57176021fa69bac120995d3633c123cdd8ec4c6eb878a4de0fab534",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-09-10T13:19:55.3Z",
+          "LastModifiedDate": "2026-09-11T13:17:52.607Z",
           "Layer": {
             "DiffID": "sha256:6394cf242e64ce8f28128ab0733c3e0d32c3c4ef685587c2a38e383b33bd8d7c",
             "Digest": "sha256:f16a755b67c209221b65c7bdf247d2ad825b3e14aa36becc3e049f7f2d9a5645"
@@ -71279,6 +72090,7 @@
             "https://access.redhat.com/errata/RHSA-2026:61314",
             "https://access.redhat.com/errata/RHSA-2026:65126",
             "https://access.redhat.com/errata/RHSA-2026:65964",
+            "https://access.redhat.com/errata/RHSA-2026:66022",
             "https://access.redhat.com/security/cve/CVE-2026-39829",
             "https://bugzilla.redhat.com/2480680",
             "https://bugzilla.redhat.com/2480681",
@@ -71351,7 +72163,7 @@
           "Fingerprint": "sha256:04b2a05111b0d6066c2b4d1d96302c0c62e0aacebdcffcfb69b40c34de0065fe",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-09-10T13:19:56.893Z",
+          "LastModifiedDate": "2026-09-11T13:17:53.97Z",
           "Layer": {
             "DiffID": "sha256:6394cf242e64ce8f28128ab0733c3e0d32c3c4ef685587c2a38e383b33bd8d7c",
             "Digest": "sha256:f16a755b67c209221b65c7bdf247d2ad825b3e14aa36becc3e049f7f2d9a5645"
@@ -71414,6 +72226,8 @@
             "https://access.redhat.com/errata/RHSA-2026:60520",
             "https://access.redhat.com/errata/RHSA-2026:61314",
             "https://access.redhat.com/errata/RHSA-2026:65964",
+            "https://access.redhat.com/errata/RHSA-2026:66022",
+            "https://access.redhat.com/errata/RHSA-2026:66521",
             "https://access.redhat.com/security/cve/CVE-2026-39830",
             "https://bugzilla.redhat.com/2445356",
             "https://bugzilla.redhat.com/2456333",
@@ -71545,7 +72359,7 @@
           "Fingerprint": "sha256:fb27bf741d20df40925c10c5d80243185b0811d139f5ea9fc267a737a3cf8d4d",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-09-10T13:19:58.047Z",
+          "LastModifiedDate": "2026-09-11T13:17:55.683Z",
           "Layer": {
             "DiffID": "sha256:6394cf242e64ce8f28128ab0733c3e0d32c3c4ef685587c2a38e383b33bd8d7c",
             "Digest": "sha256:f16a755b67c209221b65c7bdf247d2ad825b3e14aa36becc3e049f7f2d9a5645"
@@ -71590,6 +72404,7 @@
             "https://access.redhat.com/errata/RHSA-2026:57194",
             "https://access.redhat.com/errata/RHSA-2026:59579",
             "https://access.redhat.com/errata/RHSA-2026:61314",
+            "https://access.redhat.com/errata/RHSA-2026:66521",
             "https://access.redhat.com/security/cve/CVE-2026-39832",
             "https://bugzilla.redhat.com/2480680",
             "https://bugzilla.redhat.com/2480685",
@@ -71652,7 +72467,7 @@
           "Fingerprint": "sha256:c0f4585be63dc1c7ba3efd949b1aea27d6bed5c7ddbbf8783fc093ea341cc379",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-09-10T13:19:58.823Z",
+          "LastModifiedDate": "2026-09-11T13:17:56.5Z",
           "Layer": {
             "DiffID": "sha256:6394cf242e64ce8f28128ab0733c3e0d32c3c4ef685587c2a38e383b33bd8d7c",
             "Digest": "sha256:f16a755b67c209221b65c7bdf247d2ad825b3e14aa36becc3e049f7f2d9a5645"
@@ -71716,6 +72531,8 @@
             "https://access.redhat.com/errata/RHSA-2026:60520",
             "https://access.redhat.com/errata/RHSA-2026:62260",
             "https://access.redhat.com/errata/RHSA-2026:65126",
+            "https://access.redhat.com/errata/RHSA-2026:66022",
+            "https://access.redhat.com/errata/RHSA-2026:66521",
             "https://access.redhat.com/security/cve/CVE-2026-39835",
             "https://bugzilla.redhat.com/2480680",
             "https://bugzilla.redhat.com/2480685",
@@ -71771,7 +72588,7 @@
           "Fingerprint": "sha256:b8d84fff7725a4e37aeda9cd807139a14973478f1441bd6387b4b092a5e8b7b8",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-09-10T13:20:08.87Z",
+          "LastModifiedDate": "2026-09-11T13:18:00.947Z",
           "Layer": {
             "DiffID": "sha256:6394cf242e64ce8f28128ab0733c3e0d32c3c4ef685587c2a38e383b33bd8d7c",
             "Digest": "sha256:f16a755b67c209221b65c7bdf247d2ad825b3e14aa36becc3e049f7f2d9a5645"
@@ -71824,6 +72641,8 @@
             "https://access.redhat.com/errata/RHSA-2026:60520",
             "https://access.redhat.com/errata/RHSA-2026:61314",
             "https://access.redhat.com/errata/RHSA-2026:65126",
+            "https://access.redhat.com/errata/RHSA-2026:66022",
+            "https://access.redhat.com/errata/RHSA-2026:66521",
             "https://access.redhat.com/security/cve/CVE-2026-42508",
             "https://bugzilla.redhat.com/2480680",
             "https://bugzilla.redhat.com/2480681",
@@ -71900,7 +72719,7 @@
           "Fingerprint": "sha256:78ab84b25d0c1608031cb65afb9bd40aa67e371a0e8d4ad0b99993dac6b95eab",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-09-07T13:20:12.96Z",
+          "LastModifiedDate": "2026-09-11T13:18:12.367Z",
           "Layer": {
             "DiffID": "sha256:6394cf242e64ce8f28128ab0733c3e0d32c3c4ef685587c2a38e383b33bd8d7c",
             "Digest": "sha256:f16a755b67c209221b65c7bdf247d2ad825b3e14aa36becc3e049f7f2d9a5645"
@@ -71945,6 +72764,8 @@
             "https://access.redhat.com/errata/RHSA-2026:59558",
             "https://access.redhat.com/errata/RHSA-2026:60520",
             "https://access.redhat.com/errata/RHSA-2026:61314",
+            "https://access.redhat.com/errata/RHSA-2026:66022",
+            "https://access.redhat.com/errata/RHSA-2026:66521",
             "https://access.redhat.com/security/cve/CVE-2026-46595",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480689",
             "https://github.com/golang/crypto/commit/533fb3f7e4a5ae23f69d1837cd851d35ff5b76ce",
@@ -72024,6 +72845,57 @@
             "redhat": 3
           },
           "VulnerabilityID": "CVE-2026-46597"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 6.8,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-863"
+          ],
+          "DataSource": {
+            "ID": "govulndb",
+            "Name": "The Go Vulnerability Database",
+            "URL": "https://pkg.go.dev/vuln/"
+          },
+          "Description": "The source-address critical option in the Permissions returned by an authentication callback was only enforced for the PublicKeyCallback and VerifiedPublicKeyCallback paths, extending the fix for CVE-2026-46595. Permissions returned by the PasswordCallback, KeyboardInteractiveCallback, NoClientAuthCallback, and GSSAPIWithMICConfig.AllowLogin callbacks were not validated against the client's remote address, so a source-address restriction set by those callbacks was silently ignored. The check is now applied to the Permissions returned by any authentication callback.",
+          "Fingerprint": "sha256:02afbe7daa55ccf7868801fd14a0e640f261f401fb377de367872a639d1399eb",
+          "FixedVersion": "0.55.0",
+          "InstalledVersion": "v0.51.0",
+          "LastModifiedDate": "2026-09-03T16:37:52.17Z",
+          "Layer": {
+            "DiffID": "sha256:6394cf242e64ce8f28128ab0733c3e0d32c3c4ef685587c2a38e383b33bd8d7c",
+            "Digest": "sha256:f16a755b67c209221b65c7bdf247d2ad825b3e14aa36becc3e049f7f2d9a5645"
+          },
+          "PkgID": "golang.org/x/crypto@v0.51.0",
+          "PkgIdentifier": {
+            "PURL": "pkg:golang/golang.org/x/crypto@v0.51.0",
+            "UID": "4355f44e502adba6"
+          },
+          "PkgName": "golang.org/x/crypto",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56854",
+          "PublishedDate": "2026-08-28T16:18:17.607Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-56854",
+            "https://go.dev/cl/797040",
+            "https://go.dev/issue/80213",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-56854",
+            "https://pkg.go.dev/vuln/GO-2026-6303",
+            "https://www.cve.org/CVERecord?id=CVE-2026-56854"
+          ],
+          "Severity": "HIGH",
+          "Status": "fixed",
+          "Title": "golang.org/x/crypto/ssh: golang.org/x/crypto/ssh: Authentication bypass due to unenforced source-address restrictions",
+          "VendorIDs": [
+            "GO-2026-6303"
+          ],
+          "VendorSeverity": {
+            "redhat": 3
+          },
+          "VulnerabilityID": "CVE-2026-56854"
         },
         {
           "CVSS": {
@@ -72623,7 +73495,7 @@
           "Fingerprint": "sha256:cdcbf5a142f3576543af6f3483384dc81b22ffdd1e77d346c445e594e68bd0eb",
           "FixedVersion": "0.55.0",
           "InstalledVersion": "v0.54.0",
-          "LastModifiedDate": "2026-09-10T13:19:50.873Z",
+          "LastModifiedDate": "2026-09-11T13:17:49.237Z",
           "Layer": {
             "DiffID": "sha256:6394cf242e64ce8f28128ab0733c3e0d32c3c4ef685587c2a38e383b33bd8d7c",
             "Digest": "sha256:f16a755b67c209221b65c7bdf247d2ad825b3e14aa36becc3e049f7f2d9a5645"
@@ -72777,6 +73649,8 @@
             "https://access.redhat.com/errata/RHSA-2026:65534",
             "https://access.redhat.com/errata/RHSA-2026:65886",
             "https://access.redhat.com/errata/RHSA-2026:66016",
+            "https://access.redhat.com/errata/RHSA-2026:66022",
+            "https://access.redhat.com/errata/RHSA-2026:66432",
             "https://access.redhat.com/security/cve/CVE-2026-39821",
             "https://bugzilla.redhat.com/2480756",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2456333",
@@ -72814,7 +73688,7 @@
             "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
             "https://groups.google.com/g/golang-announce/c/iI-mYSI0lu8",
             "https://linux.oracle.com/cve/CVE-2026-39821.html",
-            "https://linux.oracle.com/errata/ELSA-2026-46395.html",
+            "https://linux.oracle.com/errata/ELSA-2026-65886-0.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-39821",
             "https://pkg.go.dev/vuln/GO-2026-5026",
             "https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-39821.json",
