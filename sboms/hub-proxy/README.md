@@ -1,8 +1,6 @@
 # hub-proxy SBOM quality
 
-Collection status: `stale`; collected at `2026-09-11T02:36:10Z`.
-
-Last collection error: `GitHub API returned 500: Failed to generate SBOM: Request timed out.`.
+Collection status: `collected`; collected at `2026-09-13T02:35:23Z`.
 
 Overall quality: **Needs work**, **66/100** across **23 packages**.
 
