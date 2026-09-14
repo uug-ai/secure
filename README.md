@@ -64,7 +64,7 @@ Generated at `2026-09-13T03:49:27Z` from the newest tagged GHCR image available 
 <!-- SBOM_QUALITY_START -->
 ## SBOM quality overview
 
-Generated at `2026-09-13T02:35:23Z`. Quality combines document metadata (20%), package identity (30%), licensing (20%), provenance (15%), and relationships (15%).
+Generated at `2026-09-14T02:39:44Z`. Quality combines document metadata (20%), package identity (30%), licensing (20%), provenance (15%), and relationships (15%).
 
 Legend: 🟢 85-100, 🟡 70-84, 🟠 50-69, 🔴 0-49 or unavailable. This measures SBOM completeness, not vulnerability severity.
 
@@ -97,7 +97,7 @@ Legend: 🟢 85-100, 🟡 70-84, 🟠 50-69, 🔴 0-49 or unavailable. This meas
 | [hub-reactivatesubscriptions](https://github.com/uug-ai/hub-reactivatesubscriptions) | collected | 🟠 Needs work | 68/100 | 60 | 100% | 82% | 100% | [Breakdown](sboms/hub-reactivatesubscriptions/README.md) · [SPDX](sboms/hub-reactivatesubscriptions/sbom.spdx.json) |
 | [hub-vault-forwarder](https://github.com/uug-ai/hub-vault-forwarder) | collected | 🟠 Needs work | 69/100 | 8 | 100% | 88% | 100% | [Breakdown](sboms/hub-vault-forwarder/README.md) · [SPDX](sboms/hub-vault-forwarder/sbom.spdx.json) |
 | [hub-workflows](https://github.com/uug-ai/hub-workflows) | collected | 🟠 Needs work | 68/100 | 102 | 100% | 89% | 100% | [Breakdown](sboms/hub-workflows/README.md) · [SPDX](sboms/hub-workflows/sbom.spdx.json) |
-| [vault](https://github.com/uug-ai/vault) | collected | 🟠 Needs work | 69/100 | 1642 | 100% | 99% | 100% | [Breakdown](sboms/vault/README.md) · [SPDX](sboms/vault/sbom.spdx.json) |
+| [vault](https://github.com/uug-ai/vault) | collected | 🟠 Needs work | 69/100 | 1749 | 100% | 99% | 100% | [Breakdown](sboms/vault/README.md) · [SPDX](sboms/vault/sbom.spdx.json) |
 <!-- SBOM_QUALITY_END -->
 
 ## SBOM collection

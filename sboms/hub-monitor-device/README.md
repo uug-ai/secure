@@ -1,6 +1,6 @@
 # hub-monitor-device SBOM quality
 
-Collection status: `collected`; collected at `2026-09-13T02:35:23Z`.
+Collection status: `collected`; collected at `2026-09-14T02:39:44Z`.
 
 Overall quality: **Needs work**, **68/100** across **79 packages**.
 
