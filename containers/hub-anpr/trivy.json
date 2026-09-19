@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:1d72c5fee27a3e82c05aebcd7cebb908ba63e76dd597638fd01e3c6ae3bd9018",
   "ArtifactName": "ghcr.io/uug-ai/hub-anpr@sha256:41e22ad0bf9f941f1d5c003c91020536d8cb766d70c86857aae596ad52b10e8a",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-09-18T03:50:20.065999916Z",
+  "CreatedAt": "2026-09-19T03:49:17.622431253Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
@@ -207,7 +207,7 @@
     ],
     "Size": 671565824
   },
-  "ReportID": "01a0b2a2-f8a1-7f39-8715-1171349281c1",
+  "ReportID": "01a0b7c8-60b6-768d-9bba-1f31470d0b4b",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -19242,7 +19242,7 @@
             "https://bugzilla.redhat.com/show_bug.cgi?id=2419369",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-14104",
-            "https://errata.almalinux.org/8/ALSA-2026-1852.html",
+            "https://errata.almalinux.org/9/ALSA-2026-1913.html",
             "https://errata.rockylinux.org/RLSA-2026:1913",
             "https://linux.oracle.com/cve/CVE-2025-14104.html",
             "https://linux.oracle.com/errata/ELSA-2026-1913.html",
@@ -19505,8 +19505,14 @@
             "https://access.redhat.com/security/cve/CVE-2026-56391",
             "https://bugzilla.redhat.com/2506691",
             "https://bugzilla.redhat.com/2506694",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2506691",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2506694",
             "https://cert.pl/en/posts/2026/07/CVE-2026-56391",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56391",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56392",
             "https://errata.almalinux.org/10/ALSA-2026-67886.html",
+            "https://errata.rockylinux.org/RLSA-2026:67886",
             "https://git.savannah.gnu.org/cgit/coreutils.git",
             "https://git.savannah.gnu.org/cgit/coreutils.git/",
             "https://git.savannah.gnu.org/cgit/coreutils.git/commit/?id=d64e35a8a4c0e4608321433e0d84d917e4e36371",
@@ -19529,6 +19535,7 @@
             "nvd": 2,
             "oracle-oval": 2,
             "redhat": 2,
+            "rocky": 2,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-56391"
@@ -19774,8 +19781,10 @@
           "PublishedDate": "2026-07-03T07:16:24.453Z",
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:55439",
-            "https://access.redhat.com/errata/RHSA-2026:57462",
             "https://access.redhat.com/security/cve/CVE-2026-8286",
+            "https://bugzilla.redhat.com/2446448",
+            "https://bugzilla.redhat.com/2446450",
+            "https://bugzilla.redhat.com/2496758",
             "https://bugzilla.redhat.com/2496763",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2446448",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2446450",
@@ -19789,7 +19798,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-3783",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-8286",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-9547",
-            "https://errata.almalinux.org/8/ALSA-2026-57462.html",
+            "https://errata.almalinux.org/9/ALSA-2026-55439.html",
             "https://errata.rockylinux.org/RLSA-2026:55439",
             "https://github.com/advisories/GHSA-32xh-3x3c-6g6h",
             "https://hackerone.com/reports/3718195",
@@ -20508,46 +20517,6 @@
           "VulnerabilityID": "CVE-2026-80230"
         },
         {
-          "CweIDs": [
-            "CWE-201"
-          ],
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Description": "When libpsl support is enabled, libcurl fails to enforce the Public Suffix\nList boundary check when processing a `Set-Cookie` header where the `Domain`\nattribute explicitly matches an origin host that is itself a public suffix\n(e.g., `Domain=co.uk` set by `co.uk`).\n\nInstead of coercing it into a strict host-only cookie, libcurl saves the\ncookie with wildcard domain scope (`.co.uk`). Consequently, the cookie is\ninappropriately included in subsequent outbound requests or HTTP redirects to\narbitrary sibling subdomains under the same public suffix (e.g.,\n`attacker.co.uk`).",
-          "Fingerprint": "sha256:49cdfa14964f0875b014fc1eaad2bb8d30565e96a6159e72588336851cffc3ee",
-          "InstalledVersion": "7.88.1-10+deb12u15",
-          "LastModifiedDate": "2026-09-15T07:16:31.233Z",
-          "Layer": {
-            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
-            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
-          },
-          "PkgID": "curl@7.88.1-10+deb12u15",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/curl@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
-            "UID": "606544f55e0d2778"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-82209",
-          "PublishedDate": "2026-09-06T18:17:22.847Z",
-          "References": [
-            "https://curl.se/docs/CVE-2026-82209.html",
-            "https://curl.se/docs/CVE-2026-82209.json",
-            "https://github.com/curl/curl/commit/95c1e8915dce64606bd753fd47f",
-            "https://hackerone.com/reports/3972385",
-            "https://www.cve.org/CVERecord?id=CVE-2026-82209"
-          ],
-          "Severity": "MEDIUM",
-          "Status": "fix_deferred",
-          "Title": "When libpsl support is enabled, libcurl fails to enforce the Public Su ...",
-          "VendorSeverity": {
-            "ubuntu": 2
-          },
-          "VulnerabilityID": "CVE-2026-82209"
-        },
-        {
           "CVSS": {
             "julia": {
               "V3Score": 9.1,
@@ -21090,6 +21059,55 @@
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-18924"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 3.1,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:N/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-201"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "When libpsl support is enabled, libcurl fails to enforce the Public Suffix\nList boundary check when processing a `Set-Cookie` header where the `Domain`\nattribute explicitly matches an origin host that is itself a public suffix\n(e.g., `Domain=co.uk` set by `co.uk`).\n\nInstead of coercing it into a strict host-only cookie, libcurl saves the\ncookie with wildcard domain scope (`.co.uk`). Consequently, the cookie is\ninappropriately included in subsequent outbound requests or HTTP redirects to\narbitrary sibling subdomains under the same public suffix (e.g.,\n`attacker.co.uk`).",
+          "Fingerprint": "sha256:49cdfa14964f0875b014fc1eaad2bb8d30565e96a6159e72588336851cffc3ee",
+          "InstalledVersion": "7.88.1-10+deb12u15",
+          "LastModifiedDate": "2026-09-15T07:16:31.233Z",
+          "Layer": {
+            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
+            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
+          },
+          "PkgID": "curl@7.88.1-10+deb12u15",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/curl@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
+            "UID": "606544f55e0d2778"
+          },
+          "PkgName": "curl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-82209",
+          "PublishedDate": "2026-09-06T18:17:22.847Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-82209",
+            "https://curl.se/docs/CVE-2026-82209.html",
+            "https://curl.se/docs/CVE-2026-82209.json",
+            "https://github.com/curl/curl/commit/95c1e8915dce64606bd753fd47f",
+            "https://hackerone.com/reports/3972385",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-82209",
+            "https://www.cve.org/CVERecord?id=CVE-2026-82209"
+          ],
+          "Severity": "LOW",
+          "Status": "fix_deferred",
+          "Title": "curl: libcurl: Information disclosure via improper Public Suffix List boundary check",
+          "VendorSeverity": {
+            "redhat": 1,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-82209"
         },
         {
           "CVSS": {
@@ -23825,7 +23843,7 @@
             "http://www.openwall.com/lists/oss-security/2026/08/25/1",
             "http://www.openwall.com/lists/oss-security/2026/08/27/2",
             "https://access.redhat.com/errata/RHSA-2026:61623",
-            "https://access.redhat.com/errata/RHSA-2026:65998",
+            "https://access.redhat.com/errata/RHSA-2026:61625",
             "https://access.redhat.com/security/cve/CVE-2026-41992",
             "https://bugzilla.redhat.com/2494158",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2494158",
@@ -23837,7 +23855,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-41991",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-41992",
-            "https://errata.almalinux.org/8/ALSA-2026-65998.html",
+            "https://errata.almalinux.org/10/ALSA-2026-61625.html",
             "https://errata.rockylinux.org/RLSA-2026:61623",
             "https://github.com/advisories/GHSA-qxh4-rprf-2mmj",
             "https://linux.oracle.com/cve/CVE-2026-41992.html",
@@ -23909,7 +23927,7 @@
           "PublishedDate": "2026-06-29T12:16:29.77Z",
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:61623",
-            "https://access.redhat.com/errata/RHSA-2026:65998",
+            "https://access.redhat.com/errata/RHSA-2026:61625",
             "https://access.redhat.com/security/cve/CVE-2026-41991",
             "https://bugzilla.redhat.com/2494158",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2494158",
@@ -23920,7 +23938,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-41991",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-41992",
-            "https://errata.almalinux.org/8/ALSA-2026-65998.html",
+            "https://errata.almalinux.org/10/ALSA-2026-61625.html",
             "https://errata.rockylinux.org/RLSA-2026:61623",
             "https://github.com/advisories/GHSA-67v8-88jf-4x6q",
             "https://linux.oracle.com/cve/CVE-2026-41991.html",
@@ -24004,7 +24022,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54369",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54370",
-            "https://errata.almalinux.org/8/ALSA-2026-43420.html",
+            "https://errata.almalinux.org/10/ALSA-2026-42739.html",
             "https://errata.rockylinux.org/RLSA-2026:42736",
             "https://linux.oracle.com/cve/CVE-2026-54369.html",
             "https://linux.oracle.com/errata/ELSA-2026-43420.html",
@@ -24060,7 +24078,7 @@
           "PublishedDate": "2026-06-29T14:16:57.67Z",
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:42736",
-            "https://access.redhat.com/errata/RHSA-2026:43420",
+            "https://access.redhat.com/errata/RHSA-2026:42739",
             "https://access.redhat.com/security/cve/CVE-2026-54370",
             "https://bugzilla.redhat.com/2490277",
             "https://bugzilla.redhat.com/2490279",
@@ -24071,7 +24089,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54369",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54370",
-            "https://errata.almalinux.org/8/ALSA-2026-43420.html",
+            "https://errata.almalinux.org/10/ALSA-2026-42739.html",
             "https://errata.rockylinux.org/RLSA-2026:42736",
             "https://linux.oracle.com/cve/CVE-2026-54370.html",
             "https://linux.oracle.com/errata/ELSA-2026-43420.html",
@@ -24344,7 +24362,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-16405",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-16412",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56208",
-            "https://errata.almalinux.org/8/ALSA-2026-47105.html",
+            "https://errata.almalinux.org/9/ALSA-2026-47104.html",
             "https://errata.rockylinux.org/RLSA-2026:47104",
             "https://issues.chromium.org/issues/504317456",
             "https://linux.oracle.com/cve/CVE-2026-56208.html",
@@ -25023,7 +25041,7 @@
             "https://www.vulncheck.com/advisories/alsa-lib-through-1.2.16.1-off-by-one-stack-buffer-overflow-in-snd-ctl-ascii-elem-id-parse"
           ],
           "Severity": "MEDIUM",
-          "Status": "affected",
+          "Status": "fix_deferred",
           "Title": "alsa-lib: alsa-lib: Denial of Service via off-by-one stack buffer overflow",
           "VendorSeverity": {
             "redhat": 2
@@ -25181,7 +25199,7 @@
             "https://www.vulncheck.com/advisories/alsa-lib-through-1.2.16.1-off-by-one-stack-buffer-overflow-in-snd-ctl-ascii-elem-id-parse"
           ],
           "Severity": "MEDIUM",
-          "Status": "affected",
+          "Status": "fix_deferred",
           "Title": "alsa-lib: alsa-lib: Denial of Service via off-by-one stack buffer overflow",
           "VendorSeverity": {
             "redhat": 2
@@ -25327,7 +25345,7 @@
             "https://cgit.git.savannah.nongnu.org/cgit/attr.git/commit/?id=c440855d6b33446edf4b5eb1a2d892281f15a99b",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54371",
-            "https://errata.almalinux.org/8/ALSA-2026-56133.html",
+            "https://errata.almalinux.org/10/ALSA-2026-59380.html",
             "https://errata.rockylinux.org/RLSA-2026:60226",
             "https://linux.oracle.com/cve/CVE-2026-54371.html",
             "https://linux.oracle.com/errata/ELSA-2026-60226-0.html",
@@ -37193,7 +37211,7 @@
             "https://bugzilla.redhat.com/show_bug.cgi?id=2419369",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-14104",
-            "https://errata.almalinux.org/8/ALSA-2026-1852.html",
+            "https://errata.almalinux.org/9/ALSA-2026-1913.html",
             "https://errata.rockylinux.org/RLSA-2026:1913",
             "https://linux.oracle.com/cve/CVE-2025-14104.html",
             "https://linux.oracle.com/errata/ELSA-2026-1913.html",
@@ -37334,7 +37352,7 @@
           "Description": "Calling strfmon and strfmon_l in the GNU C Library version 2.38 to 2.44 can write past the end of the caller-supplied output buffer when a conversion uses right-justified width padding.\n\nExploitation requires an application code path that calls strfmon or strfmon_l with right-justified width padding into a destination buffer that is large enough for the padding to succeed but too small for the internal memmove call. The field width or format may be attacker-influenced or a fixed susceptible pattern in the caller.\n\nAt the time of publication, no network-facing application impact is known.",
           "Fingerprint": "sha256:e7012fb4b580b608a5d44e96e783e8c844a794fad8a1eea1398c085eb4ac0579",
           "InstalledVersion": "2.36-9+deb12u14",
-          "LastModifiedDate": "2026-09-14T20:16:43.25Z",
+          "LastModifiedDate": "2026-09-18T18:17:47.257Z",
           "Layer": {
             "DiffID": "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
             "Digest": "sha256:dbaa5c62f0ed2acebf15ba5fc565cb938c8495c0b77e1acfab05f5a7354ab1a9"
@@ -37383,7 +37401,7 @@
           "Description": "Calling tdelete on a sufficiently deep tree in the GNU C Library version 2.1 to 2.44 may write one pointer past the end of an alloca-allocated array on the stack, which may crash the application.\n\nThe tdelete implementation keeps an explicit stack of parent nodes for rebalancing, which is grown as needed while descending the tree.  Two rebalancing branches push an additional entry without checking the capacity, and write past the array when the stack is exactly full. Triggering this requires a node at a depth of exactly 40 (or 40 plus a multiple of 20), which implies a tree with at least a million nodes, so an attacker must drive a large number of insertions and deletions through an application that uses tsearch and tdelete.  The written value is a pointer into a tree node and is not directly attacker controlled.  No affected application in common distributions has been identified.",
           "Fingerprint": "sha256:56a9ad29c1f3187c03a5f0521f840134262f4322dee5e2ee9ff7d19f6411ba0a",
           "InstalledVersion": "2.36-9+deb12u14",
-          "LastModifiedDate": "2026-09-14T20:16:43.363Z",
+          "LastModifiedDate": "2026-09-18T18:17:47.257Z",
           "Layer": {
             "DiffID": "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
             "Digest": "sha256:dbaa5c62f0ed2acebf15ba5fc565cb938c8495c0b77e1acfab05f5a7354ab1a9"
@@ -37446,7 +37464,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-5435",
           "PublishedDate": "2026-04-28T13:19:22.29Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:42733",
+            "https://access.redhat.com/errata/RHSA-2026:42694",
             "https://access.redhat.com/errata/RHSA-2026:42952",
             "https://access.redhat.com/security/cve/CVE-2026-5435",
             "https://bugzilla.redhat.com/2459854",
@@ -37460,7 +37478,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-5435",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-5928",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-6238",
-            "https://errata.almalinux.org/8/ALSA-2026-42733.html",
+            "https://errata.almalinux.org/10/ALSA-2026-42694.html",
             "https://errata.rockylinux.org/RLSA-2026:42952",
             "https://inbox.sourceware.org/libc-alpha/cover.1777546194.git.fweimer@redhat.com/",
             "https://inbox.sourceware.org/libc-announce/7a655d55-276f-41fe-b550-feb3ebb2ce91@redhat.com/T/#u",
@@ -37517,7 +37535,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-5450",
           "PublishedDate": "2026-04-20T21:16:36.85Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:33126",
+            "https://access.redhat.com/errata/RHSA-2026:33092",
             "https://access.redhat.com/errata/RHSA-2026:33226",
             "https://access.redhat.com/security/cve/CVE-2026-5450",
             "https://bugzilla.redhat.com/2459853",
@@ -37525,7 +37543,7 @@
             "https://cert-portal.siemens.com/productcert/html/ssa-082556.html",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-5450",
-            "https://errata.almalinux.org/8/ALSA-2026-33126.html",
+            "https://errata.almalinux.org/10/ALSA-2026-33092.html",
             "https://errata.rockylinux.org/RLSA-2026:33226",
             "https://inbox.sourceware.org/libc-announce/b11f0003-6ec1-4bd6-b9de-9e38a4efeca3@redhat.com/T/#u",
             "https://linux.oracle.com/cve/CVE-2026-5450.html",
@@ -37582,7 +37600,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-5928",
           "PublishedDate": "2026-04-20T21:16:36.963Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:42733",
+            "https://access.redhat.com/errata/RHSA-2026:42694",
             "https://access.redhat.com/errata/RHSA-2026:42952",
             "https://access.redhat.com/security/cve/CVE-2026-5928",
             "https://bugzilla.redhat.com/2459854",
@@ -37596,7 +37614,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-5435",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-5928",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-6238",
-            "https://errata.almalinux.org/8/ALSA-2026-42733.html",
+            "https://errata.almalinux.org/10/ALSA-2026-42694.html",
             "https://errata.rockylinux.org/RLSA-2026:42952",
             "https://linux.oracle.com/cve/CVE-2026-5928.html",
             "https://linux.oracle.com/errata/ELSA-2026-500297.html",
@@ -37651,7 +37669,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-6238",
           "PublishedDate": "2026-04-28T19:37:47.523Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:42733",
+            "https://access.redhat.com/errata/RHSA-2026:42694",
             "https://access.redhat.com/errata/RHSA-2026:42952",
             "https://access.redhat.com/security/cve/CVE-2026-6238",
             "https://bugzilla.redhat.com/2459854",
@@ -37665,7 +37683,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-5435",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-5928",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-6238",
-            "https://errata.almalinux.org/8/ALSA-2026-42733.html",
+            "https://errata.almalinux.org/10/ALSA-2026-42694.html",
             "https://errata.rockylinux.org/RLSA-2026:42952",
             "https://inbox.sourceware.org/libc-alpha/cover.1777546194.git.fweimer@redhat.com/",
             "https://inbox.sourceware.org/libc-announce/7a655d55-276f-41fe-b550-feb3ebb2ce91@redhat.com/T/#u",
@@ -37806,7 +37824,7 @@
           "Description": "Converting crafted SHIFT_JISX0213 input to UCS-4 or the internal wide character encoding, for example with iconv, in the GNU C Library version 2.3 to 2.44 may result in the converter making no progress, causing the calling application to hang.\n\nSome SHIFT_JISX0213 sequences decode to two code points.  If the output buffer has room for only the first one, the converter stores the second in the conversion state and returns E2BIG, but it never clears that pending character after emitting it on the next call.  The converter then keeps emitting the pending character without consuming further input, so an application that retries the conversion loops forever. The input must be attacker controlled and the application must convert it with an output buffer small enough to split the two code points. Only the SHIFT_JISX0213 character set is affected, which is not commonly used.  The related defect in the EUC_JISX0213 converter is tracked separately as CVE-2026-80489.",
           "Fingerprint": "sha256:1edbd80c4f6c5330cbe05bc51d4e6541bd17f6d2247c77e2dd5e1e50a3d05132",
           "InstalledVersion": "2.36-9+deb12u14",
-          "LastModifiedDate": "2026-09-15T13:16:43.34Z",
+          "LastModifiedDate": "2026-09-18T18:17:47.257Z",
           "Layer": {
             "DiffID": "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
             "Digest": "sha256:dbaa5c62f0ed2acebf15ba5fc565cb938c8495c0b77e1acfab05f5a7354ab1a9"
@@ -37855,7 +37873,7 @@
           "Description": "Converting crafted EUC_JISX0213 input to UCS-4 or the internal wide character encoding, for example with iconv, in the GNU C Library version 2.3 to 2.44 may result in the converter making no progress, causing the calling application to hang.\n\nSome EUC_JISX0213 sequences decode to two code points.  If the output buffer has room for only the first one, the converter stores the second in the conversion state and returns E2BIG, but it never clears that pending character after emitting it on the next call.  The converter then keeps emitting the pending character without consuming further input, so an application that retries the conversion loops forever. The input must be attacker controlled and the application must convert it with an output buffer small enough to split the two code points. Only the EUC_JISX0213 character set is affected, which is not commonly used.  The related defect in SHIFT_JISX0213 converter is tracked separately as CVE-2026-77117.",
           "Fingerprint": "sha256:1232bf7c1090248d16897ee83fe72cf73fc61f7f98181cbe5ef9f177a1d80580",
           "InstalledVersion": "2.36-9+deb12u14",
-          "LastModifiedDate": "2026-09-15T13:16:43.463Z",
+          "LastModifiedDate": "2026-09-18T18:17:47.257Z",
           "Layer": {
             "DiffID": "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
             "Digest": "sha256:dbaa5c62f0ed2acebf15ba5fc565cb938c8495c0b77e1acfab05f5a7354ab1a9"
@@ -37885,6 +37903,55 @@
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-80489"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 5.3,
+              "V3Vector": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-617"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "Initializing the DNS stub resolver from an /etc/resolv.conf file, or a LOCALDOMAIN environment variable, whose search list contains a domain of roughly 200 characters or more in the GNU C Library version 2.26 to 2.44 results in an assertion failure which aborts the process.\n\nThe resolver truncates the search list when copying it into the fixed-size _res.defdname buffer, then asserts that the copy is consistent with the full configuration.  The consistency check compared against the wrong size and did not handle a first entry that does not fit, so a correctly truncated list failed the assertion.  Any process that resolves names through the library is affected, including long-running processes that reload /etc/resolv.conf on the next query after it changes.  Search domains are commonly written to /etc/resolv.conf from data received over DHCP or from a VPN server, so an attacker on the local network may be able to trigger this without privileges on the target system, subject to validation by the network configuration software.",
+          "Fingerprint": "sha256:207c16510f33b0eb9d51e1f10ba01c0a26aae92b57b5c0c5d8a0368789b7b5ac",
+          "InstalledVersion": "2.36-9+deb12u14",
+          "LastModifiedDate": "2026-09-18T18:17:47.257Z",
+          "Layer": {
+            "DiffID": "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+            "Digest": "sha256:dbaa5c62f0ed2acebf15ba5fc565cb938c8495c0b77e1acfab05f5a7354ab1a9"
+          },
+          "PkgID": "libc-bin@2.36-9+deb12u14",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.15",
+            "UID": "fffe74ad3db2b1d6"
+          },
+          "PkgName": "libc-bin",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-8674",
+          "PublishedDate": "2026-09-17T17:16:53.22Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/09/17/4",
+            "https://access.redhat.com/security/cve/CVE-2026-8674",
+            "https://joshua.hu/fuzzing-glibc-libresolv",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-8674",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=31026",
+            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0021",
+            "https://sourceware.org/git/?p=glibc.git;a=commit;h=506ea57086bfb9ce3daff1c14246a1cb532aba0a",
+            "https://www.cve.org/CVERecord?id=CVE-2026-8674"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fix_deferred",
+          "Title": "glibc: glibc DNS stub resolver: Denial of Service via long search domain in configuration",
+          "VendorSeverity": {
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2026-8674"
         },
         {
           "CVSS": {
@@ -37926,7 +37993,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-89092"
           ],
           "Severity": "MEDIUM",
-          "Status": "affected",
+          "Status": "fix_deferred",
           "Title": "glibc: nscd stack overflow leads to degraded DNS resolution",
           "VendorSeverity": {
             "redhat": 2
@@ -38330,43 +38397,6 @@
           "VulnerabilityID": "CVE-2019-9192"
         },
         {
-          "CweIDs": [
-            "CWE-617"
-          ],
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Description": "Initializing the DNS stub resolver from an /etc/resolv.conf file, or a LOCALDOMAIN environment variable, whose search list contains a domain of roughly 200 characters or more in the GNU C Library version 2.26 to 2.44 results in an assertion failure which aborts the process.\n\nThe resolver truncates the search list when copying it into the fixed-size _res.defdname buffer, then asserts that the copy is consistent with the full configuration.  The consistency check compared against the wrong size and did not handle a first entry that does not fit, so a correctly truncated list failed the assertion.  Any process that resolves names through the library is affected, including long-running processes that reload /etc/resolv.conf on the next query after it changes.  Search domains are commonly written to /etc/resolv.conf from data received over DHCP or from a VPN server, so an attacker on the local network may be able to trigger this without privileges on the target system, subject to validation by the network configuration software.",
-          "Fingerprint": "sha256:207c16510f33b0eb9d51e1f10ba01c0a26aae92b57b5c0c5d8a0368789b7b5ac",
-          "InstalledVersion": "2.36-9+deb12u14",
-          "LastModifiedDate": "2026-09-17T19:17:06.427Z",
-          "Layer": {
-            "DiffID": "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
-            "Digest": "sha256:dbaa5c62f0ed2acebf15ba5fc565cb938c8495c0b77e1acfab05f5a7354ab1a9"
-          },
-          "PkgID": "libc-bin@2.36-9+deb12u14",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.15",
-            "UID": "fffe74ad3db2b1d6"
-          },
-          "PkgName": "libc-bin",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-8674",
-          "PublishedDate": "2026-09-17T17:16:53.22Z",
-          "References": [
-            "http://www.openwall.com/lists/oss-security/2026/09/17/4",
-            "https://joshua.hu/fuzzing-glibc-libresolv",
-            "https://sourceware.org/bugzilla/show_bug.cgi?id=31026",
-            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0021",
-            "https://sourceware.org/git/?p=glibc.git;a=commit;h=506ea57086bfb9ce3daff1c14246a1cb532aba0a"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "affected",
-          "Title": "Initializing the DNS stub resolver from an /etc/resolv.conf file, or a ...",
-          "VulnerabilityID": "CVE-2026-8674"
-        },
-        {
           "CVSS": {
             "redhat": {
               "V3Score": 4.9,
@@ -38433,7 +38463,7 @@
           "Description": "Calling strfmon and strfmon_l in the GNU C Library version 2.38 to 2.44 can write past the end of the caller-supplied output buffer when a conversion uses right-justified width padding.\n\nExploitation requires an application code path that calls strfmon or strfmon_l with right-justified width padding into a destination buffer that is large enough for the padding to succeed but too small for the internal memmove call. The field width or format may be attacker-influenced or a fixed susceptible pattern in the caller.\n\nAt the time of publication, no network-facing application impact is known.",
           "Fingerprint": "sha256:642e6c38df309d0a7445558e934388acae5905a3047dd3c77da610040b55e91c",
           "InstalledVersion": "2.36-9+deb12u14",
-          "LastModifiedDate": "2026-09-14T20:16:43.25Z",
+          "LastModifiedDate": "2026-09-18T18:17:47.257Z",
           "Layer": {
             "DiffID": "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
             "Digest": "sha256:dbaa5c62f0ed2acebf15ba5fc565cb938c8495c0b77e1acfab05f5a7354ab1a9"
@@ -38482,7 +38512,7 @@
           "Description": "Calling tdelete on a sufficiently deep tree in the GNU C Library version 2.1 to 2.44 may write one pointer past the end of an alloca-allocated array on the stack, which may crash the application.\n\nThe tdelete implementation keeps an explicit stack of parent nodes for rebalancing, which is grown as needed while descending the tree.  Two rebalancing branches push an additional entry without checking the capacity, and write past the array when the stack is exactly full. Triggering this requires a node at a depth of exactly 40 (or 40 plus a multiple of 20), which implies a tree with at least a million nodes, so an attacker must drive a large number of insertions and deletions through an application that uses tsearch and tdelete.  The written value is a pointer into a tree node and is not directly attacker controlled.  No affected application in common distributions has been identified.",
           "Fingerprint": "sha256:cb889ea16060329cfb730077321f69ff45fee0e3c9753e10ee066e53d42482aa",
           "InstalledVersion": "2.36-9+deb12u14",
-          "LastModifiedDate": "2026-09-14T20:16:43.363Z",
+          "LastModifiedDate": "2026-09-18T18:17:47.257Z",
           "Layer": {
             "DiffID": "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
             "Digest": "sha256:dbaa5c62f0ed2acebf15ba5fc565cb938c8495c0b77e1acfab05f5a7354ab1a9"
@@ -38545,7 +38575,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-5435",
           "PublishedDate": "2026-04-28T13:19:22.29Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:42733",
+            "https://access.redhat.com/errata/RHSA-2026:42694",
             "https://access.redhat.com/errata/RHSA-2026:42952",
             "https://access.redhat.com/security/cve/CVE-2026-5435",
             "https://bugzilla.redhat.com/2459854",
@@ -38559,7 +38589,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-5435",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-5928",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-6238",
-            "https://errata.almalinux.org/8/ALSA-2026-42733.html",
+            "https://errata.almalinux.org/10/ALSA-2026-42694.html",
             "https://errata.rockylinux.org/RLSA-2026:42952",
             "https://inbox.sourceware.org/libc-alpha/cover.1777546194.git.fweimer@redhat.com/",
             "https://inbox.sourceware.org/libc-announce/7a655d55-276f-41fe-b550-feb3ebb2ce91@redhat.com/T/#u",
@@ -38616,7 +38646,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-5450",
           "PublishedDate": "2026-04-20T21:16:36.85Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:33126",
+            "https://access.redhat.com/errata/RHSA-2026:33092",
             "https://access.redhat.com/errata/RHSA-2026:33226",
             "https://access.redhat.com/security/cve/CVE-2026-5450",
             "https://bugzilla.redhat.com/2459853",
@@ -38624,7 +38654,7 @@
             "https://cert-portal.siemens.com/productcert/html/ssa-082556.html",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-5450",
-            "https://errata.almalinux.org/8/ALSA-2026-33126.html",
+            "https://errata.almalinux.org/10/ALSA-2026-33092.html",
             "https://errata.rockylinux.org/RLSA-2026:33226",
             "https://inbox.sourceware.org/libc-announce/b11f0003-6ec1-4bd6-b9de-9e38a4efeca3@redhat.com/T/#u",
             "https://linux.oracle.com/cve/CVE-2026-5450.html",
@@ -38681,7 +38711,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-5928",
           "PublishedDate": "2026-04-20T21:16:36.963Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:42733",
+            "https://access.redhat.com/errata/RHSA-2026:42694",
             "https://access.redhat.com/errata/RHSA-2026:42952",
             "https://access.redhat.com/security/cve/CVE-2026-5928",
             "https://bugzilla.redhat.com/2459854",
@@ -38695,7 +38725,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-5435",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-5928",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-6238",
-            "https://errata.almalinux.org/8/ALSA-2026-42733.html",
+            "https://errata.almalinux.org/10/ALSA-2026-42694.html",
             "https://errata.rockylinux.org/RLSA-2026:42952",
             "https://linux.oracle.com/cve/CVE-2026-5928.html",
             "https://linux.oracle.com/errata/ELSA-2026-500297.html",
@@ -38750,7 +38780,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-6238",
           "PublishedDate": "2026-04-28T19:37:47.523Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:42733",
+            "https://access.redhat.com/errata/RHSA-2026:42694",
             "https://access.redhat.com/errata/RHSA-2026:42952",
             "https://access.redhat.com/security/cve/CVE-2026-6238",
             "https://bugzilla.redhat.com/2459854",
@@ -38764,7 +38794,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-5435",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-5928",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-6238",
-            "https://errata.almalinux.org/8/ALSA-2026-42733.html",
+            "https://errata.almalinux.org/10/ALSA-2026-42694.html",
             "https://errata.rockylinux.org/RLSA-2026:42952",
             "https://inbox.sourceware.org/libc-alpha/cover.1777546194.git.fweimer@redhat.com/",
             "https://inbox.sourceware.org/libc-announce/7a655d55-276f-41fe-b550-feb3ebb2ce91@redhat.com/T/#u",
@@ -38905,7 +38935,7 @@
           "Description": "Converting crafted SHIFT_JISX0213 input to UCS-4 or the internal wide character encoding, for example with iconv, in the GNU C Library version 2.3 to 2.44 may result in the converter making no progress, causing the calling application to hang.\n\nSome SHIFT_JISX0213 sequences decode to two code points.  If the output buffer has room for only the first one, the converter stores the second in the conversion state and returns E2BIG, but it never clears that pending character after emitting it on the next call.  The converter then keeps emitting the pending character without consuming further input, so an application that retries the conversion loops forever. The input must be attacker controlled and the application must convert it with an output buffer small enough to split the two code points. Only the SHIFT_JISX0213 character set is affected, which is not commonly used.  The related defect in the EUC_JISX0213 converter is tracked separately as CVE-2026-80489.",
           "Fingerprint": "sha256:bd4c1ae2c719f407d0e4c23713309589350ca6c81ad2b088e351c1d3e4f8d9bf",
           "InstalledVersion": "2.36-9+deb12u14",
-          "LastModifiedDate": "2026-09-15T13:16:43.34Z",
+          "LastModifiedDate": "2026-09-18T18:17:47.257Z",
           "Layer": {
             "DiffID": "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
             "Digest": "sha256:dbaa5c62f0ed2acebf15ba5fc565cb938c8495c0b77e1acfab05f5a7354ab1a9"
@@ -38954,7 +38984,7 @@
           "Description": "Converting crafted EUC_JISX0213 input to UCS-4 or the internal wide character encoding, for example with iconv, in the GNU C Library version 2.3 to 2.44 may result in the converter making no progress, causing the calling application to hang.\n\nSome EUC_JISX0213 sequences decode to two code points.  If the output buffer has room for only the first one, the converter stores the second in the conversion state and returns E2BIG, but it never clears that pending character after emitting it on the next call.  The converter then keeps emitting the pending character without consuming further input, so an application that retries the conversion loops forever. The input must be attacker controlled and the application must convert it with an output buffer small enough to split the two code points. Only the EUC_JISX0213 character set is affected, which is not commonly used.  The related defect in SHIFT_JISX0213 converter is tracked separately as CVE-2026-77117.",
           "Fingerprint": "sha256:d8ed4f9348805a77b1c2fc018fc1896aff045d2cff9ca6a91fcd4c3764d86041",
           "InstalledVersion": "2.36-9+deb12u14",
-          "LastModifiedDate": "2026-09-15T13:16:43.463Z",
+          "LastModifiedDate": "2026-09-18T18:17:47.257Z",
           "Layer": {
             "DiffID": "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
             "Digest": "sha256:dbaa5c62f0ed2acebf15ba5fc565cb938c8495c0b77e1acfab05f5a7354ab1a9"
@@ -38984,6 +39014,55 @@
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-80489"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 5.3,
+              "V3Vector": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-617"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "Initializing the DNS stub resolver from an /etc/resolv.conf file, or a LOCALDOMAIN environment variable, whose search list contains a domain of roughly 200 characters or more in the GNU C Library version 2.26 to 2.44 results in an assertion failure which aborts the process.\n\nThe resolver truncates the search list when copying it into the fixed-size _res.defdname buffer, then asserts that the copy is consistent with the full configuration.  The consistency check compared against the wrong size and did not handle a first entry that does not fit, so a correctly truncated list failed the assertion.  Any process that resolves names through the library is affected, including long-running processes that reload /etc/resolv.conf on the next query after it changes.  Search domains are commonly written to /etc/resolv.conf from data received over DHCP or from a VPN server, so an attacker on the local network may be able to trigger this without privileges on the target system, subject to validation by the network configuration software.",
+          "Fingerprint": "sha256:6ea24dd6a1139d5a272982c651a98762f766be300556280c208686003ed93742",
+          "InstalledVersion": "2.36-9+deb12u14",
+          "LastModifiedDate": "2026-09-18T18:17:47.257Z",
+          "Layer": {
+            "DiffID": "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+            "Digest": "sha256:dbaa5c62f0ed2acebf15ba5fc565cb938c8495c0b77e1acfab05f5a7354ab1a9"
+          },
+          "PkgID": "libc6@2.36-9+deb12u14",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.15",
+            "UID": "348ed513aa2cf7e9"
+          },
+          "PkgName": "libc6",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-8674",
+          "PublishedDate": "2026-09-17T17:16:53.22Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/09/17/4",
+            "https://access.redhat.com/security/cve/CVE-2026-8674",
+            "https://joshua.hu/fuzzing-glibc-libresolv",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-8674",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=31026",
+            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0021",
+            "https://sourceware.org/git/?p=glibc.git;a=commit;h=506ea57086bfb9ce3daff1c14246a1cb532aba0a",
+            "https://www.cve.org/CVERecord?id=CVE-2026-8674"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fix_deferred",
+          "Title": "glibc: glibc DNS stub resolver: Denial of Service via long search domain in configuration",
+          "VendorSeverity": {
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2026-8674"
         },
         {
           "CVSS": {
@@ -39025,7 +39104,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-89092"
           ],
           "Severity": "MEDIUM",
-          "Status": "affected",
+          "Status": "fix_deferred",
           "Title": "glibc: nscd stack overflow leads to degraded DNS resolution",
           "VendorSeverity": {
             "redhat": 2
@@ -39427,43 +39506,6 @@
             "redhat": 1
           },
           "VulnerabilityID": "CVE-2019-9192"
-        },
-        {
-          "CweIDs": [
-            "CWE-617"
-          ],
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Description": "Initializing the DNS stub resolver from an /etc/resolv.conf file, or a LOCALDOMAIN environment variable, whose search list contains a domain of roughly 200 characters or more in the GNU C Library version 2.26 to 2.44 results in an assertion failure which aborts the process.\n\nThe resolver truncates the search list when copying it into the fixed-size _res.defdname buffer, then asserts that the copy is consistent with the full configuration.  The consistency check compared against the wrong size and did not handle a first entry that does not fit, so a correctly truncated list failed the assertion.  Any process that resolves names through the library is affected, including long-running processes that reload /etc/resolv.conf on the next query after it changes.  Search domains are commonly written to /etc/resolv.conf from data received over DHCP or from a VPN server, so an attacker on the local network may be able to trigger this without privileges on the target system, subject to validation by the network configuration software.",
-          "Fingerprint": "sha256:6ea24dd6a1139d5a272982c651a98762f766be300556280c208686003ed93742",
-          "InstalledVersion": "2.36-9+deb12u14",
-          "LastModifiedDate": "2026-09-17T19:17:06.427Z",
-          "Layer": {
-            "DiffID": "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
-            "Digest": "sha256:dbaa5c62f0ed2acebf15ba5fc565cb938c8495c0b77e1acfab05f5a7354ab1a9"
-          },
-          "PkgID": "libc6@2.36-9+deb12u14",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.15",
-            "UID": "348ed513aa2cf7e9"
-          },
-          "PkgName": "libc6",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-8674",
-          "PublishedDate": "2026-09-17T17:16:53.22Z",
-          "References": [
-            "http://www.openwall.com/lists/oss-security/2026/09/17/4",
-            "https://joshua.hu/fuzzing-glibc-libresolv",
-            "https://sourceware.org/bugzilla/show_bug.cgi?id=31026",
-            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0021",
-            "https://sourceware.org/git/?p=glibc.git;a=commit;h=506ea57086bfb9ce3daff1c14246a1cb532aba0a"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "affected",
-          "Title": "Initializing the DNS stub resolver from an /etc/resolv.conf file, or a ...",
-          "VulnerabilityID": "CVE-2026-8674"
         },
         {
           "CVSS": {
@@ -40619,8 +40661,10 @@
           "PublishedDate": "2026-07-03T07:16:24.453Z",
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:55439",
-            "https://access.redhat.com/errata/RHSA-2026:57462",
             "https://access.redhat.com/security/cve/CVE-2026-8286",
+            "https://bugzilla.redhat.com/2446448",
+            "https://bugzilla.redhat.com/2446450",
+            "https://bugzilla.redhat.com/2496758",
             "https://bugzilla.redhat.com/2496763",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2446448",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2446450",
@@ -40634,7 +40678,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-3783",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-8286",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-9547",
-            "https://errata.almalinux.org/8/ALSA-2026-57462.html",
+            "https://errata.almalinux.org/9/ALSA-2026-55439.html",
             "https://errata.rockylinux.org/RLSA-2026:55439",
             "https://github.com/advisories/GHSA-32xh-3x3c-6g6h",
             "https://hackerone.com/reports/3718195",
@@ -41353,46 +41397,6 @@
           "VulnerabilityID": "CVE-2026-80230"
         },
         {
-          "CweIDs": [
-            "CWE-201"
-          ],
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Description": "When libpsl support is enabled, libcurl fails to enforce the Public Suffix\nList boundary check when processing a `Set-Cookie` header where the `Domain`\nattribute explicitly matches an origin host that is itself a public suffix\n(e.g., `Domain=co.uk` set by `co.uk`).\n\nInstead of coercing it into a strict host-only cookie, libcurl saves the\ncookie with wildcard domain scope (`.co.uk`). Consequently, the cookie is\ninappropriately included in subsequent outbound requests or HTTP redirects to\narbitrary sibling subdomains under the same public suffix (e.g.,\n`attacker.co.uk`).",
-          "Fingerprint": "sha256:781c0a7d9488749d60ea04ca7eaa0b35406a364a15394c09fac60259cb055003",
-          "InstalledVersion": "7.88.1-10+deb12u15",
-          "LastModifiedDate": "2026-09-15T07:16:31.233Z",
-          "Layer": {
-            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
-            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
-          },
-          "PkgID": "libcurl4@7.88.1-10+deb12u15",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libcurl4@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
-            "UID": "c1719b3c07f72781"
-          },
-          "PkgName": "libcurl4",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-82209",
-          "PublishedDate": "2026-09-06T18:17:22.847Z",
-          "References": [
-            "https://curl.se/docs/CVE-2026-82209.html",
-            "https://curl.se/docs/CVE-2026-82209.json",
-            "https://github.com/curl/curl/commit/95c1e8915dce64606bd753fd47f",
-            "https://hackerone.com/reports/3972385",
-            "https://www.cve.org/CVERecord?id=CVE-2026-82209"
-          ],
-          "Severity": "MEDIUM",
-          "Status": "fix_deferred",
-          "Title": "When libpsl support is enabled, libcurl fails to enforce the Public Su ...",
-          "VendorSeverity": {
-            "ubuntu": 2
-          },
-          "VulnerabilityID": "CVE-2026-82209"
-        },
-        {
           "CVSS": {
             "julia": {
               "V3Score": 9.1,
@@ -41935,6 +41939,55 @@
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-18924"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 3.1,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:N/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-201"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "When libpsl support is enabled, libcurl fails to enforce the Public Suffix\nList boundary check when processing a `Set-Cookie` header where the `Domain`\nattribute explicitly matches an origin host that is itself a public suffix\n(e.g., `Domain=co.uk` set by `co.uk`).\n\nInstead of coercing it into a strict host-only cookie, libcurl saves the\ncookie with wildcard domain scope (`.co.uk`). Consequently, the cookie is\ninappropriately included in subsequent outbound requests or HTTP redirects to\narbitrary sibling subdomains under the same public suffix (e.g.,\n`attacker.co.uk`).",
+          "Fingerprint": "sha256:781c0a7d9488749d60ea04ca7eaa0b35406a364a15394c09fac60259cb055003",
+          "InstalledVersion": "7.88.1-10+deb12u15",
+          "LastModifiedDate": "2026-09-15T07:16:31.233Z",
+          "Layer": {
+            "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
+            "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
+          },
+          "PkgID": "libcurl4@7.88.1-10+deb12u15",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libcurl4@7.88.1-10%2Bdeb12u15?arch=amd64\u0026distro=debian-12.15",
+            "UID": "c1719b3c07f72781"
+          },
+          "PkgName": "libcurl4",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-82209",
+          "PublishedDate": "2026-09-06T18:17:22.847Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-82209",
+            "https://curl.se/docs/CVE-2026-82209.html",
+            "https://curl.se/docs/CVE-2026-82209.json",
+            "https://github.com/curl/curl/commit/95c1e8915dce64606bd753fd47f",
+            "https://hackerone.com/reports/3972385",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-82209",
+            "https://www.cve.org/CVERecord?id=CVE-2026-82209"
+          ],
+          "Severity": "LOW",
+          "Status": "fix_deferred",
+          "Title": "curl: libcurl: Information disclosure via improper Public Suffix List boundary check",
+          "VendorSeverity": {
+            "redhat": 1,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-82209"
         },
         {
           "CVSS": {
@@ -42534,15 +42587,26 @@
             "http://www.openwall.com/lists/oss-security/2025/09/16/2",
             "http://www.openwall.com/lists/oss-security/2026/05/01/5",
             "https://access.redhat.com/errata/RHSA-2025:22175",
-            "https://access.redhat.com/errata/RHSA-2026:3407",
+            "https://access.redhat.com/errata/RHSA-2026:19064",
             "https://access.redhat.com/security/cve/CVE-2025-59375",
             "https://bugzilla.redhat.com/2395108",
+            "https://bugzilla.redhat.com/2408891",
+            "https://bugzilla.redhat.com/2418084",
+            "https://bugzilla.redhat.com/2431366",
+            "https://bugzilla.redhat.com/2431374",
+            "https://bugzilla.redhat.com/2444691",
+            "https://bugzilla.redhat.com/2448168",
+            "https://bugzilla.redhat.com/2448181",
+            "https://bugzilla.redhat.com/2449649",
+            "https://bugzilla.redhat.com/2457409",
+            "https://bugzilla.redhat.com/2457932",
+            "https://bugzilla.redhat.com/2458049",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2395108",
             "https://cert-portal.siemens.com/productcert/html/ssa-082556.html",
             "https://cert-portal.siemens.com/productcert/html/ssa-089022.html",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-59375",
-            "https://errata.almalinux.org/8/ALSA-2026-3407.html",
+            "https://errata.almalinux.org/10/ALSA-2026-19064.html",
             "https://errata.rockylinux.org/RLSA-2025:22175",
             "https://github.com/bottlerocket-os/bottlerocket-core-kit/blob/develop/advisories/10.5.0/BRSA-ja1ptrrpkcey.toml",
             "https://github.com/libexpat/libexpat/blob/676a4c531ec768732fac215da9730b5f50fbd2bf/expat/Changes#L45-L74",
@@ -42696,7 +42760,7 @@
             "https://cert-portal.siemens.com/productcert/html/ssa-082556.html",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-45186",
-            "https://errata.almalinux.org/8/ALSA-2026-22721.html",
+            "https://errata.almalinux.org/10/ALSA-2026-22715.html",
             "https://errata.rockylinux.org/RLSA-2026:23230",
             "https://github.com/libexpat/libexpat/pull/1216",
             "https://linux.oracle.com/cve/CVE-2026-45186.html",
@@ -42741,7 +42805,7 @@
           "Description": "Expat through 2.8.3 contains a denial of service vulnerability caused by quadratic algorithmic complexity in the storeAtts() function in xmlparse.c, where processing N specified attributes with non-normalized values triggers an O(N^2) linear scan of elementType-\u003edefaultAtts to determine CDATA status. A remote unauthenticated attacker can supply a single well-formed XML document of a few megabytes to an application parsing untrusted XML to cause excessive CPU consumption, resulting in denial of service without requiring authentication, external entity resolution, or non-default parser options.",
           "Fingerprint": "sha256:c299cb252fda5ab625ddabf3a4de1a79f651ca8dbe0c125505bc8a0f985b6151",
           "InstalledVersion": "2.5.0-1+deb12u3",
-          "LastModifiedDate": "2026-08-20T16:17:40.66Z",
+          "LastModifiedDate": "2026-09-18T15:07:24.37Z",
           "Layer": {
             "DiffID": "sha256:905bf59043385ce289840e534186eb3bf35122962eb94f7583fe42d6817e427d",
             "Digest": "sha256:6588f3d6c294ad40631721f15539ca55d602cf91c20c2311bcb4a8fd10079610"
@@ -43061,7 +43125,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56132",
           "PublishedDate": "2026-06-19T06:17:10.253Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:64809",
+            "https://access.redhat.com/errata/RHSA-2026:64810",
             "https://access.redhat.com/errata/RHSA-2026:64812",
             "https://access.redhat.com/security/cve/CVE-2026-56132",
             "https://bugzilla.redhat.com/2484620",
@@ -43071,7 +43135,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-50219",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56132",
-            "https://errata.almalinux.org/8/ALSA-2026-64809.html",
+            "https://errata.almalinux.org/10/ALSA-2026-64810.html",
             "https://errata.rockylinux.org/RLSA-2026:64812",
             "https://github.com/libexpat/libexpat/pull/1272",
             "https://linux.oracle.com/cve/CVE-2026-56132.html",
@@ -44369,7 +44433,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-21210",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-21217",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-21235",
-            "https://errata.almalinux.org/8/ALSA-2024-8127.html",
+            "https://errata.almalinux.org/9/ALSA-2024-8127.html",
             "https://errata.rockylinux.org/RLSA-2024:8127",
             "https://github.com/tacetool/TACE#cve-2023-48161",
             "https://linux.oracle.com/cve/CVE-2023-48161.html",
@@ -44384,7 +44448,7 @@
           "Title": "giflib: Heap-Buffer Overflow during Image Saving in DumpScreen2RGB Function",
           "VendorSeverity": {
             "alma": 2,
-            "amazon": 1,
+            "amazon": 2,
             "azure": 3,
             "cbl-mariner": 3,
             "debian": 1,
@@ -44929,18 +44993,11 @@
             "https://access.redhat.com/errata/RHSA-2026:53371",
             "https://access.redhat.com/errata/RHSA-2026:58981",
             "https://access.redhat.com/security/cve/CVE-2026-58016",
-            "https://bugzilla.redhat.com/2419093",
-            "https://bugzilla.redhat.com/2492243",
-            "https://bugzilla.redhat.com/2492245",
-            "https://bugzilla.redhat.com/2492247",
-            "https://bugzilla.redhat.com/2492248",
-            "https://bugzilla.redhat.com/2492255",
-            "https://bugzilla.redhat.com/2492256",
             "https://bugzilla.redhat.com/2492257",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492257",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-58016",
-            "https://errata.almalinux.org/8/ALSA-2026-49512.html",
+            "https://errata.almalinux.org/10/ALSA-2026-42063.html",
             "https://errata.rockylinux.org/RLSA-2026:42089",
             "https://github.com/advisories/GHSA-8rpw-4xx7-27w7",
             "https://gitlab.gnome.org/GNOME/glib/-/issues/3932",
@@ -45048,7 +45105,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-58013",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-58014",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-58015",
-            "https://errata.almalinux.org/8/ALSA-2026-61766.html",
+            "https://errata.almalinux.org/10/ALSA-2026-57015.html",
             "https://errata.rockylinux.org/RLSA-2026:55440",
             "https://github.com/advisories/GHSA-m7rp-473c-296x",
             "https://gitlab.gnome.org/GNOME/glib/-/issues/3915",
@@ -45156,7 +45213,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-58013",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-58014",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-58015",
-            "https://errata.almalinux.org/8/ALSA-2026-61766.html",
+            "https://errata.almalinux.org/10/ALSA-2026-57015.html",
             "https://errata.rockylinux.org/RLSA-2026:55440",
             "https://github.com/advisories/GHSA-8xmh-8wfg-9f6j",
             "https://gitlab.gnome.org/GNOME/glib/-/issues/3917",
@@ -45265,7 +45322,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-58013",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-58014",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-58015",
-            "https://errata.almalinux.org/8/ALSA-2026-61766.html",
+            "https://errata.almalinux.org/10/ALSA-2026-57015.html",
             "https://errata.rockylinux.org/RLSA-2026:55440",
             "https://github.com/advisories/GHSA-vwg8-37h9-g38g",
             "https://gitlab.gnome.org/GNOME/glib/-/issues/3918",
@@ -45373,7 +45430,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-58013",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-58014",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-58015",
-            "https://errata.almalinux.org/8/ALSA-2026-61766.html",
+            "https://errata.almalinux.org/10/ALSA-2026-57015.html",
             "https://errata.rockylinux.org/RLSA-2026:55440",
             "https://github.com/advisories/GHSA-4x46-h598-64qr",
             "https://gitlab.gnome.org/GNOME/glib/-/issues/3925",
@@ -45482,7 +45539,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-58013",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-58014",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-58015",
-            "https://errata.almalinux.org/8/ALSA-2026-61766.html",
+            "https://errata.almalinux.org/10/ALSA-2026-57015.html",
             "https://errata.rockylinux.org/RLSA-2026:55440",
             "https://github.com/advisories/GHSA-h88q-m8mm-7243",
             "https://gitlab.gnome.org/GNOME/glib/-/issues/3930",
@@ -45590,7 +45647,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-58013",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-58014",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-58015",
-            "https://errata.almalinux.org/8/ALSA-2026-61766.html",
+            "https://errata.almalinux.org/10/ALSA-2026-57015.html",
             "https://errata.rockylinux.org/RLSA-2026:55440",
             "https://github.com/advisories/GHSA-hmpf-72wc-2r6x",
             "https://gitlab.gnome.org/GNOME/glib/-/issues/3931",
@@ -45692,7 +45749,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-58013",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-58014",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-58015",
-            "https://errata.almalinux.org/8/ALSA-2026-61766.html",
+            "https://errata.almalinux.org/10/ALSA-2026-57015.html",
             "https://errata.rockylinux.org/RLSA-2026:55440",
             "https://gitlab.gnome.org/GNOME/glib/-/issues/3985",
             "https://gitlab.gnome.org/GNOME/glib/-/merge_requests/5240",
@@ -45756,7 +45813,7 @@
             "https://bugzilla.redhat.com/show_bug.cgi?id=2501732",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-16118",
-            "https://errata.almalinux.org/8/ALSA-2026-66451.html",
+            "https://errata.almalinux.org/10/ALSA-2026-64799.html",
             "https://errata.rockylinux.org/RLSA-2026:64800",
             "https://gitlab.freedesktop.org/xdg/xdgmime/-/work_items/41",
             "https://gitlab.gnome.org/GNOME/glib/-/work_items/3992",
@@ -46421,15 +46478,17 @@
           "PublishedDate": "2024-02-29T01:44:18.78Z",
           "References": [
             "https://access.redhat.com/errata/RHSA-2024:3268",
+            "https://access.redhat.com/errata/RHSA-2024:9331",
             "https://access.redhat.com/security/cve/CVE-2024-26458",
             "https://bugzilla.redhat.com/2266731",
             "https://bugzilla.redhat.com/2266740",
+            "https://bugzilla.redhat.com/2266742",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2266731",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2266740",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-26458",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-26461",
-            "https://errata.almalinux.org/8/ALSA-2024-3268.html",
+            "https://errata.almalinux.org/9/ALSA-2024-9331.html",
             "https://errata.rockylinux.org/RLSA-2024:3268",
             "https://github.com/LuMingYinDetect/krb5_defects/blob/main/krb5_detect_1.md",
             "https://linux.oracle.com/cve/CVE-2024-26458.html",
@@ -46445,7 +46504,7 @@
           "Status": "affected",
           "Title": "krb5: Memory leak at /krb5/src/lib/rpc/pmap_rmt.c",
           "VendorSeverity": {
-            "alma": 1,
+            "alma": 2,
             "amazon": 2,
             "azure": 2,
             "cbl-mariner": 2,
@@ -46491,15 +46550,17 @@
           "PublishedDate": "2024-02-29T01:44:18.82Z",
           "References": [
             "https://access.redhat.com/errata/RHSA-2024:3268",
+            "https://access.redhat.com/errata/RHSA-2024:9331",
             "https://access.redhat.com/security/cve/CVE-2024-26461",
             "https://bugzilla.redhat.com/2266731",
             "https://bugzilla.redhat.com/2266740",
+            "https://bugzilla.redhat.com/2266742",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2266731",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2266740",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-26458",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-26461",
-            "https://errata.almalinux.org/8/ALSA-2024-3268.html",
+            "https://errata.almalinux.org/9/ALSA-2024-9331.html",
             "https://errata.rockylinux.org/RLSA-2024:3268",
             "https://github.com/LuMingYinDetect/krb5_defects/blob/main/krb5_detect_2.md",
             "https://linux.oracle.com/cve/CVE-2024-26461.html",
@@ -46515,7 +46576,7 @@
           "Status": "affected",
           "Title": "krb5: Memory leak at /krb5/src/lib/gssapi/krb5/k5sealv3.c",
           "VendorSeverity": {
-            "alma": 1,
+            "alma": 2,
             "amazon": 2,
             "azure": 3,
             "cbl-mariner": 3,
@@ -46625,14 +46686,13 @@
           "PublishedDate": "2023-02-04T20:15:08.027Z",
           "References": [
             "https://access.redhat.com/errata/RHSA-2024:2410",
-            "https://access.redhat.com/errata/RHSA-2024:2980",
             "https://access.redhat.com/security/cve/CVE-2023-25193",
             "https://bugzilla.redhat.com/2167254",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2167254",
             "https://chromium.googlesource.com/chromium/src/+/e1f324aa681af54101c1f2d173d92adb80e37088/DEPS#361",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-25193",
-            "https://errata.almalinux.org/8/ALSA-2024-2980.html",
+            "https://errata.almalinux.org/9/ALSA-2024-2410.html",
             "https://errata.rockylinux.org/RLSA-2024:2410",
             "https://github.com/harfbuzz/harfbuzz/blob/2822b589bc837fae6f66233e2cf2eef0f6ce8470/src/hb-ot-layout-gsubgpos.hh",
             "https://github.com/harfbuzz/harfbuzz/commit/85be877925ddbf34f74a1229f3ca1716bb6170dc",
@@ -47105,15 +47165,17 @@
           "PublishedDate": "2024-02-29T01:44:18.78Z",
           "References": [
             "https://access.redhat.com/errata/RHSA-2024:3268",
+            "https://access.redhat.com/errata/RHSA-2024:9331",
             "https://access.redhat.com/security/cve/CVE-2024-26458",
             "https://bugzilla.redhat.com/2266731",
             "https://bugzilla.redhat.com/2266740",
+            "https://bugzilla.redhat.com/2266742",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2266731",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2266740",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-26458",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-26461",
-            "https://errata.almalinux.org/8/ALSA-2024-3268.html",
+            "https://errata.almalinux.org/9/ALSA-2024-9331.html",
             "https://errata.rockylinux.org/RLSA-2024:3268",
             "https://github.com/LuMingYinDetect/krb5_defects/blob/main/krb5_detect_1.md",
             "https://linux.oracle.com/cve/CVE-2024-26458.html",
@@ -47129,7 +47191,7 @@
           "Status": "affected",
           "Title": "krb5: Memory leak at /krb5/src/lib/rpc/pmap_rmt.c",
           "VendorSeverity": {
-            "alma": 1,
+            "alma": 2,
             "amazon": 2,
             "azure": 2,
             "cbl-mariner": 2,
@@ -47175,15 +47237,17 @@
           "PublishedDate": "2024-02-29T01:44:18.82Z",
           "References": [
             "https://access.redhat.com/errata/RHSA-2024:3268",
+            "https://access.redhat.com/errata/RHSA-2024:9331",
             "https://access.redhat.com/security/cve/CVE-2024-26461",
             "https://bugzilla.redhat.com/2266731",
             "https://bugzilla.redhat.com/2266740",
+            "https://bugzilla.redhat.com/2266742",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2266731",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2266740",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-26458",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-26461",
-            "https://errata.almalinux.org/8/ALSA-2024-3268.html",
+            "https://errata.almalinux.org/9/ALSA-2024-9331.html",
             "https://errata.rockylinux.org/RLSA-2024:3268",
             "https://github.com/LuMingYinDetect/krb5_defects/blob/main/krb5_detect_2.md",
             "https://linux.oracle.com/cve/CVE-2024-26461.html",
@@ -47199,7 +47263,7 @@
           "Status": "affected",
           "Title": "krb5: Memory leak at /krb5/src/lib/gssapi/krb5/k5sealv3.c",
           "VendorSeverity": {
-            "alma": 1,
+            "alma": 2,
             "amazon": 2,
             "azure": 3,
             "cbl-mariner": 3,
@@ -47352,15 +47416,17 @@
           "PublishedDate": "2024-02-29T01:44:18.78Z",
           "References": [
             "https://access.redhat.com/errata/RHSA-2024:3268",
+            "https://access.redhat.com/errata/RHSA-2024:9331",
             "https://access.redhat.com/security/cve/CVE-2024-26458",
             "https://bugzilla.redhat.com/2266731",
             "https://bugzilla.redhat.com/2266740",
+            "https://bugzilla.redhat.com/2266742",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2266731",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2266740",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-26458",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-26461",
-            "https://errata.almalinux.org/8/ALSA-2024-3268.html",
+            "https://errata.almalinux.org/9/ALSA-2024-9331.html",
             "https://errata.rockylinux.org/RLSA-2024:3268",
             "https://github.com/LuMingYinDetect/krb5_defects/blob/main/krb5_detect_1.md",
             "https://linux.oracle.com/cve/CVE-2024-26458.html",
@@ -47376,7 +47442,7 @@
           "Status": "affected",
           "Title": "krb5: Memory leak at /krb5/src/lib/rpc/pmap_rmt.c",
           "VendorSeverity": {
-            "alma": 1,
+            "alma": 2,
             "amazon": 2,
             "azure": 2,
             "cbl-mariner": 2,
@@ -47422,15 +47488,17 @@
           "PublishedDate": "2024-02-29T01:44:18.82Z",
           "References": [
             "https://access.redhat.com/errata/RHSA-2024:3268",
+            "https://access.redhat.com/errata/RHSA-2024:9331",
             "https://access.redhat.com/security/cve/CVE-2024-26461",
             "https://bugzilla.redhat.com/2266731",
             "https://bugzilla.redhat.com/2266740",
+            "https://bugzilla.redhat.com/2266742",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2266731",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2266740",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-26458",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-26461",
-            "https://errata.almalinux.org/8/ALSA-2024-3268.html",
+            "https://errata.almalinux.org/9/ALSA-2024-9331.html",
             "https://errata.rockylinux.org/RLSA-2024:3268",
             "https://github.com/LuMingYinDetect/krb5_defects/blob/main/krb5_detect_2.md",
             "https://linux.oracle.com/cve/CVE-2024-26461.html",
@@ -47446,7 +47514,7 @@
           "Status": "affected",
           "Title": "krb5: Memory leak at /krb5/src/lib/gssapi/krb5/k5sealv3.c",
           "VendorSeverity": {
-            "alma": 1,
+            "alma": 2,
             "amazon": 2,
             "azure": 3,
             "cbl-mariner": 3,
@@ -47599,15 +47667,17 @@
           "PublishedDate": "2024-02-29T01:44:18.78Z",
           "References": [
             "https://access.redhat.com/errata/RHSA-2024:3268",
+            "https://access.redhat.com/errata/RHSA-2024:9331",
             "https://access.redhat.com/security/cve/CVE-2024-26458",
             "https://bugzilla.redhat.com/2266731",
             "https://bugzilla.redhat.com/2266740",
+            "https://bugzilla.redhat.com/2266742",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2266731",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2266740",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-26458",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-26461",
-            "https://errata.almalinux.org/8/ALSA-2024-3268.html",
+            "https://errata.almalinux.org/9/ALSA-2024-9331.html",
             "https://errata.rockylinux.org/RLSA-2024:3268",
             "https://github.com/LuMingYinDetect/krb5_defects/blob/main/krb5_detect_1.md",
             "https://linux.oracle.com/cve/CVE-2024-26458.html",
@@ -47623,7 +47693,7 @@
           "Status": "affected",
           "Title": "krb5: Memory leak at /krb5/src/lib/rpc/pmap_rmt.c",
           "VendorSeverity": {
-            "alma": 1,
+            "alma": 2,
             "amazon": 2,
             "azure": 2,
             "cbl-mariner": 2,
@@ -47669,15 +47739,17 @@
           "PublishedDate": "2024-02-29T01:44:18.82Z",
           "References": [
             "https://access.redhat.com/errata/RHSA-2024:3268",
+            "https://access.redhat.com/errata/RHSA-2024:9331",
             "https://access.redhat.com/security/cve/CVE-2024-26461",
             "https://bugzilla.redhat.com/2266731",
             "https://bugzilla.redhat.com/2266740",
+            "https://bugzilla.redhat.com/2266742",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2266731",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2266740",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-26458",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-26461",
-            "https://errata.almalinux.org/8/ALSA-2024-3268.html",
+            "https://errata.almalinux.org/9/ALSA-2024-9331.html",
             "https://errata.rockylinux.org/RLSA-2024:3268",
             "https://github.com/LuMingYinDetect/krb5_defects/blob/main/krb5_detect_2.md",
             "https://linux.oracle.com/cve/CVE-2024-26461.html",
@@ -47693,7 +47765,7 @@
           "Status": "affected",
           "Title": "krb5: Memory leak at /krb5/src/lib/gssapi/krb5/k5sealv3.c",
           "VendorSeverity": {
-            "alma": 1,
+            "alma": 2,
             "amazon": 2,
             "azure": 3,
             "cbl-mariner": 3,
@@ -49981,7 +50053,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "Description Not Available",
+          "Description": "[Unknown description]",
           "Fingerprint": "sha256:cfcc54287e23bb4f0314ce6c44d1b65101ab237b0a7688749b8a5dc6bfa57917",
           "InstalledVersion": "2.28.3-1",
           "Layer": {
@@ -49997,7 +50069,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-35336",
           "Severity": "UNKNOWN",
           "Status": "end_of_life",
-          "Title": "Title Not Available",
+          "Title": "[Unknown description]",
           "VulnerabilityID": "CVE-2026-35336"
         },
         {
@@ -50056,7 +50128,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "Description Not Available",
+          "Description": "[Unknown description]",
           "Fingerprint": "sha256:7098e49b72d744995bfe33cedd7e13e534152989b302cf7546a20ee6e8ce2dd7",
           "InstalledVersion": "2.28.3-1",
           "Layer": {
@@ -50072,7 +50144,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-50580",
           "Severity": "UNKNOWN",
           "Status": "end_of_life",
-          "Title": "Title Not Available",
+          "Title": "[Unknown description]",
           "VulnerabilityID": "CVE-2026-50580"
         },
         {
@@ -50131,7 +50203,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "Description Not Available",
+          "Description": "[Unknown description]",
           "Fingerprint": "sha256:121c0da2963af9df427d2d307ddecb3382a4cbd3fd689bd37168bdf622e61943",
           "InstalledVersion": "2.28.3-1",
           "Layer": {
@@ -50147,7 +50219,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-50584",
           "Severity": "UNKNOWN",
           "Status": "end_of_life",
-          "Title": "Title Not Available",
+          "Title": "[Unknown description]",
           "VulnerabilityID": "CVE-2026-50584"
         },
         {
@@ -50181,7 +50253,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "Description Not Available",
+          "Description": "[Unknown description]",
           "Fingerprint": "sha256:3534087c6f52487df0fa2bc246b420227ef47581c9df1fa1a0173ffa9c0871d7",
           "InstalledVersion": "2.28.3-1",
           "Layer": {
@@ -50197,7 +50269,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-50586",
           "Severity": "UNKNOWN",
           "Status": "end_of_life",
-          "Title": "Title Not Available",
+          "Title": "[Unknown description]",
           "VulnerabilityID": "CVE-2026-50586"
         },
         {
@@ -50206,7 +50278,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "[Unknown description]",
+          "Description": "Description Not Available",
           "Fingerprint": "sha256:10462dd40ec3c25e3bc959d0691d2595c30b4ede499b817d632d977a18913255",
           "InstalledVersion": "2.28.3-1",
           "Layer": {
@@ -50222,7 +50294,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-50587",
           "Severity": "UNKNOWN",
           "Status": "end_of_life",
-          "Title": "[Unknown description]",
+          "Title": "Title Not Available",
           "VulnerabilityID": "CVE-2026-50587"
         },
         {
@@ -50306,7 +50378,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "Description Not Available",
+          "Description": "[Unknown description]",
           "Fingerprint": "sha256:a7442c82cd7f1a92424203e4c7fc34b225a9874896c160add5116ec9e2f6d437",
           "InstalledVersion": "2.28.3-1",
           "Layer": {
@@ -50322,7 +50394,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-54435",
           "Severity": "UNKNOWN",
           "Status": "end_of_life",
-          "Title": "Title Not Available",
+          "Title": "[Unknown description]",
           "VulnerabilityID": "CVE-2026-54435"
         },
         {
@@ -50331,7 +50403,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "Description Not Available",
+          "Description": "[Unknown description]",
           "Fingerprint": "sha256:da808b9be1da11f17ce1513f3e04daad0974ed85f924bdb8a117d5a3d519e5a7",
           "InstalledVersion": "2.28.3-1",
           "Layer": {
@@ -50347,7 +50419,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-54441",
           "Severity": "UNKNOWN",
           "Status": "end_of_life",
-          "Title": "Title Not Available",
+          "Title": "[Unknown description]",
           "VulnerabilityID": "CVE-2026-54441"
         },
         {
@@ -51292,7 +51364,7 @@
             "https://bugzilla.redhat.com/show_bug.cgi?id=2419369",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-14104",
-            "https://errata.almalinux.org/8/ALSA-2026-1852.html",
+            "https://errata.almalinux.org/9/ALSA-2026-1913.html",
             "https://errata.rockylinux.org/RLSA-2026:1913",
             "https://linux.oracle.com/cve/CVE-2025-14104.html",
             "https://linux.oracle.com/errata/ELSA-2026-1913.html",
@@ -51559,14 +51631,14 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-58055",
           "PublishedDate": "2026-06-28T02:16:32.677Z",
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:54650",
             "https://access.redhat.com/errata/RHSA-2026:54662",
-            "https://access.redhat.com/errata/RHSA-2026:55804",
             "https://access.redhat.com/security/cve/CVE-2026-58055",
             "https://bugzilla.redhat.com/2493954",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2493954",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-58055",
-            "https://errata.almalinux.org/8/ALSA-2026-55804.html",
+            "https://errata.almalinux.org/10/ALSA-2026-54650.html",
             "https://errata.rockylinux.org/RLSA-2026:54662",
             "https://github.com/advisories/GHSA-xrr7-82jr-v58x",
             "https://github.com/bikini/exploitarium/tree/main/nghttp2-nghttpx-upgrade-queue-poison-poc",
@@ -52478,13 +52550,12 @@
             "https://access.redhat.com/errata/RHSA-2024:9941",
             "https://access.redhat.com/security/cve/CVE-2024-10041",
             "https://bugzilla.redhat.com/2319212",
-            "https://bugzilla.redhat.com/2324291",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2319212",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2324291",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-10041",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-10963",
-            "https://errata.almalinux.org/8/ALSA-2024-10379.html",
+            "https://errata.almalinux.org/9/ALSA-2024-11250.html",
             "https://errata.rockylinux.org/RLSA-2024:10379",
             "https://linux.oracle.com/cve/CVE-2024-10041.html",
             "https://linux.oracle.com/errata/ELSA-2024-11250.html",
@@ -52495,7 +52566,7 @@
           "Status": "will_not_fix",
           "Title": "pam: libpam: Libpam vulnerable to read hashed password",
           "VendorSeverity": {
-            "alma": 3,
+            "alma": 2,
             "amazon": 2,
             "azure": 2,
             "cbl-mariner": 2,
@@ -52537,7 +52608,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-54411",
           "PublishedDate": "2026-06-14T18:17:20.587Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:56131",
+            "https://access.redhat.com/errata/RHSA-2026:59379",
             "https://access.redhat.com/errata/RHSA-2026:64815",
             "https://access.redhat.com/security/cve/CVE-2026-54411",
             "https://bugzilla.redhat.com/2488766",
@@ -52545,7 +52616,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54411",
             "https://cwe.mitre.org/data/definitions/208.html",
-            "https://errata.almalinux.org/8/ALSA-2026-56131.html",
+            "https://errata.almalinux.org/10/ALSA-2026-59379.html",
             "https://errata.rockylinux.org/RLSA-2026:64815",
             "https://github.com/linux-pam/linux-pam",
             "https://github.com/linux-pam/linux-pam/blob/master/libpam/include/pam_inline.h",
@@ -52606,13 +52677,12 @@
             "https://access.redhat.com/errata/RHSA-2024:9941",
             "https://access.redhat.com/security/cve/CVE-2024-10041",
             "https://bugzilla.redhat.com/2319212",
-            "https://bugzilla.redhat.com/2324291",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2319212",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2324291",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-10041",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-10963",
-            "https://errata.almalinux.org/8/ALSA-2024-10379.html",
+            "https://errata.almalinux.org/9/ALSA-2024-11250.html",
             "https://errata.rockylinux.org/RLSA-2024:10379",
             "https://linux.oracle.com/cve/CVE-2024-10041.html",
             "https://linux.oracle.com/errata/ELSA-2024-11250.html",
@@ -52623,7 +52693,7 @@
           "Status": "will_not_fix",
           "Title": "pam: libpam: Libpam vulnerable to read hashed password",
           "VendorSeverity": {
-            "alma": 3,
+            "alma": 2,
             "amazon": 2,
             "azure": 2,
             "cbl-mariner": 2,
@@ -52665,7 +52735,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-54411",
           "PublishedDate": "2026-06-14T18:17:20.587Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:56131",
+            "https://access.redhat.com/errata/RHSA-2026:59379",
             "https://access.redhat.com/errata/RHSA-2026:64815",
             "https://access.redhat.com/security/cve/CVE-2026-54411",
             "https://bugzilla.redhat.com/2488766",
@@ -52673,7 +52743,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54411",
             "https://cwe.mitre.org/data/definitions/208.html",
-            "https://errata.almalinux.org/8/ALSA-2026-56131.html",
+            "https://errata.almalinux.org/10/ALSA-2026-59379.html",
             "https://errata.rockylinux.org/RLSA-2026:64815",
             "https://github.com/linux-pam/linux-pam",
             "https://github.com/linux-pam/linux-pam/blob/master/libpam/include/pam_inline.h",
@@ -52734,13 +52804,12 @@
             "https://access.redhat.com/errata/RHSA-2024:9941",
             "https://access.redhat.com/security/cve/CVE-2024-10041",
             "https://bugzilla.redhat.com/2319212",
-            "https://bugzilla.redhat.com/2324291",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2319212",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2324291",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-10041",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-10963",
-            "https://errata.almalinux.org/8/ALSA-2024-10379.html",
+            "https://errata.almalinux.org/9/ALSA-2024-11250.html",
             "https://errata.rockylinux.org/RLSA-2024:10379",
             "https://linux.oracle.com/cve/CVE-2024-10041.html",
             "https://linux.oracle.com/errata/ELSA-2024-11250.html",
@@ -52751,7 +52820,7 @@
           "Status": "will_not_fix",
           "Title": "pam: libpam: Libpam vulnerable to read hashed password",
           "VendorSeverity": {
-            "alma": 3,
+            "alma": 2,
             "amazon": 2,
             "azure": 2,
             "cbl-mariner": 2,
@@ -52793,7 +52862,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-54411",
           "PublishedDate": "2026-06-14T18:17:20.587Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:56131",
+            "https://access.redhat.com/errata/RHSA-2026:59379",
             "https://access.redhat.com/errata/RHSA-2026:64815",
             "https://access.redhat.com/security/cve/CVE-2026-54411",
             "https://bugzilla.redhat.com/2488766",
@@ -52801,7 +52870,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54411",
             "https://cwe.mitre.org/data/definitions/208.html",
-            "https://errata.almalinux.org/8/ALSA-2026-56131.html",
+            "https://errata.almalinux.org/10/ALSA-2026-59379.html",
             "https://errata.rockylinux.org/RLSA-2026:64815",
             "https://github.com/linux-pam/linux-pam",
             "https://github.com/linux-pam/linux-pam/blob/master/libpam/include/pam_inline.h",
@@ -52862,13 +52931,12 @@
             "https://access.redhat.com/errata/RHSA-2024:9941",
             "https://access.redhat.com/security/cve/CVE-2024-10041",
             "https://bugzilla.redhat.com/2319212",
-            "https://bugzilla.redhat.com/2324291",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2319212",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2324291",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-10041",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-10963",
-            "https://errata.almalinux.org/8/ALSA-2024-10379.html",
+            "https://errata.almalinux.org/9/ALSA-2024-11250.html",
             "https://errata.rockylinux.org/RLSA-2024:10379",
             "https://linux.oracle.com/cve/CVE-2024-10041.html",
             "https://linux.oracle.com/errata/ELSA-2024-11250.html",
@@ -52879,7 +52947,7 @@
           "Status": "will_not_fix",
           "Title": "pam: libpam: Libpam vulnerable to read hashed password",
           "VendorSeverity": {
-            "alma": 3,
+            "alma": 2,
             "amazon": 2,
             "azure": 2,
             "cbl-mariner": 2,
@@ -52921,7 +52989,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-54411",
           "PublishedDate": "2026-06-14T18:17:20.587Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:56131",
+            "https://access.redhat.com/errata/RHSA-2026:59379",
             "https://access.redhat.com/errata/RHSA-2026:64815",
             "https://access.redhat.com/security/cve/CVE-2026-54411",
             "https://bugzilla.redhat.com/2488766",
@@ -52929,7 +52997,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54411",
             "https://cwe.mitre.org/data/definitions/208.html",
-            "https://errata.almalinux.org/8/ALSA-2026-56131.html",
+            "https://errata.almalinux.org/10/ALSA-2026-59379.html",
             "https://errata.rockylinux.org/RLSA-2026:64815",
             "https://github.com/linux-pam/linux-pam",
             "https://github.com/linux-pam/linux-pam/blob/master/libpam/include/pam_inline.h",
@@ -56513,7 +56581,7 @@
             "https://bugzilla.redhat.com/show_bug.cgi?id=2419369",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-14104",
-            "https://errata.almalinux.org/8/ALSA-2026-1852.html",
+            "https://errata.almalinux.org/9/ALSA-2026-1913.html",
             "https://errata.rockylinux.org/RLSA-2026:1913",
             "https://linux.oracle.com/cve/CVE-2025-14104.html",
             "https://linux.oracle.com/errata/ELSA-2026-1913.html",
@@ -56587,7 +56655,7 @@
             "https://bugzilla.redhat.com/show_bug.cgi?id=2463856",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-37555",
-            "https://errata.almalinux.org/8/ALSA-2026-19559.html",
+            "https://errata.almalinux.org/10/ALSA-2026-19560.html",
             "https://errata.rockylinux.org/RLSA-2026:19610",
             "https://gist.github.com/sgInnora/a5f5c19e4bf6f4fb74fab7b0ef2bfcc1",
             "https://github.com/libsndfile/libsndfile/commit/9a829113c88a51e57c1e46473e90609e4b7df151",
@@ -57085,13 +57153,17 @@
             "https://access.redhat.com/errata/RHSA-2026:62217",
             "https://access.redhat.com/errata/RHSA-2026:62218",
             "https://access.redhat.com/security/cve/CVE-2026-59847",
+            "https://bugzilla.redhat.com/2498168",
             "https://bugzilla.redhat.com/2498176",
             "https://bugzilla.redhat.com/2498177",
             "https://bugzilla.redhat.com/2498178",
             "https://bugzilla.redhat.com/2498179",
             "https://bugzilla.redhat.com/2498180",
             "https://bugzilla.redhat.com/2498181",
+            "https://bugzilla.redhat.com/2498182",
             "https://bugzilla.redhat.com/2498183",
+            "https://bugzilla.redhat.com/2498184",
+            "https://bugzilla.redhat.com/2499049",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2498176",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2498177",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2498178",
@@ -57107,7 +57179,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-59847",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-59848",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-59850",
-            "https://errata.almalinux.org/8/ALSA-2026-62218.html",
+            "https://errata.almalinux.org/10/ALSA-2026-55855.html",
             "https://errata.rockylinux.org/RLSA-2026:62217",
             "https://linux.oracle.com/cve/CVE-2026-59847.html",
             "https://linux.oracle.com/errata/ELSA-2026-62218-0.html",
@@ -57122,7 +57194,7 @@
           "Status": "affected",
           "Title": "libssh: libssh: integrity downgrade via OpenSSL AES-GCM tag verification",
           "VendorSeverity": {
-            "alma": 2,
+            "alma": 3,
             "azure": 2,
             "nvd": 3,
             "oracle-oval": 2,
@@ -57270,13 +57342,17 @@
             "https://access.redhat.com/errata/RHSA-2026:62217",
             "https://access.redhat.com/errata/RHSA-2026:62218",
             "https://access.redhat.com/security/cve/CVE-2026-59850",
+            "https://bugzilla.redhat.com/2498168",
             "https://bugzilla.redhat.com/2498176",
             "https://bugzilla.redhat.com/2498177",
             "https://bugzilla.redhat.com/2498178",
             "https://bugzilla.redhat.com/2498179",
             "https://bugzilla.redhat.com/2498180",
             "https://bugzilla.redhat.com/2498181",
+            "https://bugzilla.redhat.com/2498182",
             "https://bugzilla.redhat.com/2498183",
+            "https://bugzilla.redhat.com/2498184",
+            "https://bugzilla.redhat.com/2499049",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2498176",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2498177",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2498178",
@@ -57292,7 +57368,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-59847",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-59848",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-59850",
-            "https://errata.almalinux.org/8/ALSA-2026-62218.html",
+            "https://errata.almalinux.org/10/ALSA-2026-55855.html",
             "https://errata.rockylinux.org/RLSA-2026:62217",
             "https://linux.oracle.com/cve/CVE-2026-59850.html",
             "https://linux.oracle.com/errata/ELSA-2026-62218-0.html",
@@ -57307,7 +57383,7 @@
           "Status": "affected",
           "Title": "libssh: libssh: use-after-free via data callbacks on closed channels",
           "VendorSeverity": {
-            "alma": 2,
+            "alma": 3,
             "azure": 2,
             "nvd": 3,
             "oracle-oval": 2,
@@ -57549,13 +57625,17 @@
             "https://access.redhat.com/errata/RHSA-2026:62217",
             "https://access.redhat.com/errata/RHSA-2026:62218",
             "https://access.redhat.com/security/cve/CVE-2026-59843",
+            "https://bugzilla.redhat.com/2498168",
             "https://bugzilla.redhat.com/2498176",
             "https://bugzilla.redhat.com/2498177",
             "https://bugzilla.redhat.com/2498178",
             "https://bugzilla.redhat.com/2498179",
             "https://bugzilla.redhat.com/2498180",
             "https://bugzilla.redhat.com/2498181",
+            "https://bugzilla.redhat.com/2498182",
             "https://bugzilla.redhat.com/2498183",
+            "https://bugzilla.redhat.com/2498184",
+            "https://bugzilla.redhat.com/2499049",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2498176",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2498177",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2498178",
@@ -57571,7 +57651,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-59847",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-59848",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-59850",
-            "https://errata.almalinux.org/8/ALSA-2026-62218.html",
+            "https://errata.almalinux.org/10/ALSA-2026-55855.html",
             "https://errata.rockylinux.org/RLSA-2026:62217",
             "https://linux.oracle.com/cve/CVE-2026-59843.html",
             "https://linux.oracle.com/errata/ELSA-2026-62218-0.html",
@@ -57585,7 +57665,7 @@
           "Status": "affected",
           "Title": "libssh: libssh: denial of service via zero advertised channel packet size",
           "VendorSeverity": {
-            "alma": 2,
+            "alma": 3,
             "azure": 2,
             "oracle-oval": 2,
             "redhat": 2,
@@ -57631,13 +57711,17 @@
             "https://access.redhat.com/errata/RHSA-2026:62217",
             "https://access.redhat.com/errata/RHSA-2026:62218",
             "https://access.redhat.com/security/cve/CVE-2026-59844",
+            "https://bugzilla.redhat.com/2498168",
             "https://bugzilla.redhat.com/2498176",
             "https://bugzilla.redhat.com/2498177",
             "https://bugzilla.redhat.com/2498178",
             "https://bugzilla.redhat.com/2498179",
             "https://bugzilla.redhat.com/2498180",
             "https://bugzilla.redhat.com/2498181",
+            "https://bugzilla.redhat.com/2498182",
             "https://bugzilla.redhat.com/2498183",
+            "https://bugzilla.redhat.com/2498184",
+            "https://bugzilla.redhat.com/2499049",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2498176",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2498177",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2498178",
@@ -57653,7 +57737,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-59847",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-59848",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-59850",
-            "https://errata.almalinux.org/8/ALSA-2026-62218.html",
+            "https://errata.almalinux.org/10/ALSA-2026-55855.html",
             "https://errata.rockylinux.org/RLSA-2026:62217",
             "https://linux.oracle.com/cve/CVE-2026-59844.html",
             "https://linux.oracle.com/errata/ELSA-2026-62218-0.html",
@@ -57667,7 +57751,7 @@
           "Status": "affected",
           "Title": "libssh: libssh: denial of service via oversized SFTP read length",
           "VendorSeverity": {
-            "alma": 2,
+            "alma": 3,
             "azure": 2,
             "oracle-oval": 2,
             "redhat": 2,
@@ -57717,13 +57801,17 @@
             "https://access.redhat.com/errata/RHSA-2026:62217",
             "https://access.redhat.com/errata/RHSA-2026:62218",
             "https://access.redhat.com/security/cve/CVE-2026-59845",
+            "https://bugzilla.redhat.com/2498168",
             "https://bugzilla.redhat.com/2498176",
             "https://bugzilla.redhat.com/2498177",
             "https://bugzilla.redhat.com/2498178",
             "https://bugzilla.redhat.com/2498179",
             "https://bugzilla.redhat.com/2498180",
             "https://bugzilla.redhat.com/2498181",
+            "https://bugzilla.redhat.com/2498182",
             "https://bugzilla.redhat.com/2498183",
+            "https://bugzilla.redhat.com/2498184",
+            "https://bugzilla.redhat.com/2499049",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2498176",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2498177",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2498178",
@@ -57739,7 +57827,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-59847",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-59848",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-59850",
-            "https://errata.almalinux.org/8/ALSA-2026-62218.html",
+            "https://errata.almalinux.org/10/ALSA-2026-55855.html",
             "https://errata.rockylinux.org/RLSA-2026:62217",
             "https://linux.oracle.com/cve/CVE-2026-59845.html",
             "https://linux.oracle.com/errata/ELSA-2026-62218-0.html",
@@ -57754,7 +57842,7 @@
           "Status": "affected",
           "Title": "libssh: libssh: denial of service via unchecked ProxyCommand fork() failure",
           "VendorSeverity": {
-            "alma": 2,
+            "alma": 3,
             "azure": 2,
             "nvd": 2,
             "oracle-oval": 2,
@@ -57801,13 +57889,17 @@
             "https://access.redhat.com/errata/RHSA-2026:62217",
             "https://access.redhat.com/errata/RHSA-2026:62218",
             "https://access.redhat.com/security/cve/CVE-2026-59848",
+            "https://bugzilla.redhat.com/2498168",
             "https://bugzilla.redhat.com/2498176",
             "https://bugzilla.redhat.com/2498177",
             "https://bugzilla.redhat.com/2498178",
             "https://bugzilla.redhat.com/2498179",
             "https://bugzilla.redhat.com/2498180",
             "https://bugzilla.redhat.com/2498181",
+            "https://bugzilla.redhat.com/2498182",
             "https://bugzilla.redhat.com/2498183",
+            "https://bugzilla.redhat.com/2498184",
+            "https://bugzilla.redhat.com/2499049",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2498176",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2498177",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2498178",
@@ -57823,7 +57915,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-59847",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-59848",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-59850",
-            "https://errata.almalinux.org/8/ALSA-2026-62218.html",
+            "https://errata.almalinux.org/10/ALSA-2026-55855.html",
             "https://errata.rockylinux.org/RLSA-2026:62217",
             "https://linux.oracle.com/cve/CVE-2026-59848.html",
             "https://linux.oracle.com/errata/ELSA-2026-62218-0.html",
@@ -57837,7 +57929,7 @@
           "Status": "affected",
           "Title": "libssh: libssh: denial of service via SFTP responses with unknown request IDs",
           "VendorSeverity": {
-            "alma": 2,
+            "alma": 3,
             "azure": 2,
             "oracle-oval": 2,
             "redhat": 2,
@@ -58071,13 +58163,17 @@
             "https://access.redhat.com/errata/RHSA-2026:62217",
             "https://access.redhat.com/errata/RHSA-2026:62218",
             "https://access.redhat.com/security/cve/CVE-2026-59846",
+            "https://bugzilla.redhat.com/2498168",
             "https://bugzilla.redhat.com/2498176",
             "https://bugzilla.redhat.com/2498177",
             "https://bugzilla.redhat.com/2498178",
             "https://bugzilla.redhat.com/2498179",
             "https://bugzilla.redhat.com/2498180",
             "https://bugzilla.redhat.com/2498181",
+            "https://bugzilla.redhat.com/2498182",
             "https://bugzilla.redhat.com/2498183",
+            "https://bugzilla.redhat.com/2498184",
+            "https://bugzilla.redhat.com/2499049",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2498176",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2498177",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2498178",
@@ -58093,7 +58189,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-59847",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-59848",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-59850",
-            "https://errata.almalinux.org/8/ALSA-2026-62218.html",
+            "https://errata.almalinux.org/10/ALSA-2026-55855.html",
             "https://errata.rockylinux.org/RLSA-2026:62217",
             "https://linux.oracle.com/cve/CVE-2026-59846.html",
             "https://linux.oracle.com/errata/ELSA-2026-62218-0.html",
@@ -58107,7 +58203,7 @@
           "Status": "affected",
           "Title": "libssh: libssh: information disclosure via ProxyCommand %r username expansion",
           "VendorSeverity": {
-            "alma": 2,
+            "alma": 3,
             "oracle-oval": 2,
             "redhat": 1,
             "rocky": 2,
@@ -64054,14 +64150,14 @@
           "PublishedDate": "2026-01-07T22:15:43.2Z",
           "References": [
             "http://www.openwall.com/lists/oss-security/2026/01/08/5",
+            "https://access.redhat.com/errata/RHSA-2026:28235",
             "https://access.redhat.com/errata/RHSA-2026:28253",
-            "https://access.redhat.com/errata/RHSA-2026:36728",
             "https://access.redhat.com/security/cve/CVE-2025-13151",
             "https://bugzilla.redhat.com/2427698",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2427698",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-13151",
-            "https://errata.almalinux.org/8/ALSA-2026-36728.html",
+            "https://errata.almalinux.org/10/ALSA-2026-28235.html",
             "https://errata.rockylinux.org/RLSA-2026:28253",
             "https://gitlab.com/gnutls/libtasn1",
             "https://gitlab.com/gnutls/libtasn1/-/merge_requests/121",
@@ -64121,10 +64217,14 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-73066",
           "PublishedDate": "2026-08-11T15:17:38.777Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:67832",
+            "https://access.redhat.com/errata/RHSA-2026:67831",
             "https://access.redhat.com/security/cve/CVE-2026-73066",
             "https://bugzilla.redhat.com/2514011",
-            "https://errata.almalinux.org/8/ALSA-2026-67832.html",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2514011",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-73066",
+            "https://errata.almalinux.org/9/ALSA-2026-67831.html",
+            "https://errata.rockylinux.org/RLSA-2026:67831",
             "https://github.com/tesseract-ocr/tesseract/commit/2f4d2f4bf45c363785d7bf1da29b6628f8939a72",
             "https://github.com/tesseract-ocr/tesseract/pull/4588",
             "https://github.com/tesseract-ocr/tesseract/releases/tag/5.5.3",
@@ -64140,7 +64240,8 @@
           "VendorSeverity": {
             "alma": 3,
             "oracle-oval": 3,
-            "redhat": 3
+            "redhat": 3,
+            "rocky": 3
           },
           "VulnerabilityID": "CVE-2026-73066"
         },
@@ -64790,11 +64891,12 @@
             "https://access.redhat.com/errata/RHSA-2026:58556",
             "https://access.redhat.com/errata/RHSA-2026:61657",
             "https://access.redhat.com/security/cve/CVE-2026-12912",
+            "https://bugzilla.redhat.com/2251326",
             "https://bugzilla.redhat.com/2492871",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492871",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-12912",
-            "https://errata.almalinux.org/8/ALSA-2026-47184.html",
+            "https://errata.almalinux.org/10/ALSA-2026-41892.html",
             "https://errata.rockylinux.org/RLSA-2026:42668",
             "https://gitlab.com/libtiff/libtiff/-/merge_requests/873",
             "https://gitlab.com/libtiff/libtiff/-/work_items/824",
@@ -65377,10 +65479,11 @@
             "https://access.redhat.com/errata/RHSA-2024:2289",
             "https://access.redhat.com/errata/RHSA-2024:5079",
             "https://access.redhat.com/security/cve/CVE-2023-6228",
-            "https://bugzilla.redhat.com/1614051",
-            "https://bugzilla.redhat.com/2218744",
+            "https://bugzilla.redhat.com/2215865",
+            "https://bugzilla.redhat.com/2234970",
+            "https://bugzilla.redhat.com/2235264",
+            "https://bugzilla.redhat.com/2235265",
             "https://bugzilla.redhat.com/2240995",
-            "https://bugzilla.redhat.com/2251344",
             "https://bugzilla.redhat.com/show_bug.cgi?id=1614051",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2218744",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2240995",
@@ -65390,7 +65493,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-25433",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-52356",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-6228",
-            "https://errata.almalinux.org/8/ALSA-2024-5079.html",
+            "https://errata.almalinux.org/9/ALSA-2024-2289.html",
             "https://errata.rockylinux.org/RLSA-2024:5079",
             "https://linux.oracle.com/cve/CVE-2023-6228.html",
             "https://linux.oracle.com/errata/ELSA-2024-5079.html",
@@ -65725,16 +65828,16 @@
           "PublishedDate": "2025-07-26T04:16:10.527Z",
           "References": [
             "http://www.libtiff.org/",
-            "https://access.redhat.com/errata/RHSA-2025:20034",
             "https://access.redhat.com/errata/RHSA-2025:20956",
             "https://access.redhat.com/security/cve/CVE-2025-8176",
             "https://bugzilla.redhat.com/2383598",
+            "https://bugzilla.redhat.com/2392784",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2383598",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2392784",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-8176",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-9900",
-            "https://errata.almalinux.org/8/ALSA-2025-20034.html",
+            "https://errata.almalinux.org/9/ALSA-2025-20956.html",
             "https://errata.rockylinux.org/RLSA-2025:20956",
             "https://gitlab.com/libtiff/libtiff/-/commit/fe10872e53efba9cc36c66ac4ab3b41a839d5172",
             "https://gitlab.com/libtiff/libtiff/-/issues/707",
@@ -67447,7 +67550,7 @@
             "https://bugzilla.redhat.com/show_bug.cgi?id=2419369",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-14104",
-            "https://errata.almalinux.org/8/ALSA-2026-1852.html",
+            "https://errata.almalinux.org/9/ALSA-2026-1913.html",
             "https://errata.rockylinux.org/RLSA-2026:1913",
             "https://linux.oracle.com/cve/CVE-2025-14104.html",
             "https://linux.oracle.com/errata/ELSA-2026-1913.html",
@@ -68038,8 +68141,8 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-11979",
           "PublishedDate": "2026-06-29T14:16:40.593Z",
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:60394",
             "https://access.redhat.com/errata/RHSA-2026:61247",
-            "https://access.redhat.com/errata/RHSA-2026:61248",
             "https://access.redhat.com/security/cve/CVE-2026-11979",
             "https://bugzilla.redhat.com/2494191",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2491354",
@@ -68048,7 +68151,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-11979",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-6653",
-            "https://errata.almalinux.org/8/ALSA-2026-61248.html",
+            "https://errata.almalinux.org/10/ALSA-2026-60394.html",
             "https://errata.rockylinux.org/RLSA-2026:61247",
             "https://gitlab.gnome.org/GNOME/libxml2/-/commit/c2e233fc1b341685fc99621b2768b503f777a72e",
             "https://linux.oracle.com/cve/CVE-2026-11979.html",
@@ -68825,7 +68928,7 @@
             "https://bugzilla.redhat.com/show_bug.cgi?id=2419369",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-14104",
-            "https://errata.almalinux.org/8/ALSA-2026-1852.html",
+            "https://errata.almalinux.org/9/ALSA-2026-1913.html",
             "https://errata.rockylinux.org/RLSA-2026:1913",
             "https://linux.oracle.com/cve/CVE-2025-14104.html",
             "https://linux.oracle.com/errata/ELSA-2026-1913.html",
@@ -70018,13 +70121,13 @@
           "References": [
             "http://www.openwall.com/lists/oss-security/2026/07/13/5",
             "https://access.redhat.com/errata/RHSA-2026:67155",
-            "https://access.redhat.com/errata/RHSA-2026:67278",
+            "https://access.redhat.com/errata/RHSA-2026:67156",
             "https://access.redhat.com/security/cve/CVE-2026-13221",
             "https://bugzilla.redhat.com/2499727",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2499727",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-13221",
-            "https://errata.almalinux.org/8/ALSA-2026-67278.html",
+            "https://errata.almalinux.org/10/ALSA-2026-67156.html",
             "https://errata.rockylinux.org/RLSA-2026:67155",
             "https://github.com/Perl/perl5/commit/03f74bbbd3a68350d926ee93d56ee4808c28c4c7.patch",
             "https://github.com/Perl/perl5/issues/23388",
@@ -70099,7 +70202,7 @@
             "https://bugzilla.redhat.com/show_bug.cgi?id=2481314",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42496",
-            "https://errata.almalinux.org/8/ALSA-2026-30852.html",
+            "https://errata.almalinux.org/10/ALSA-2026-30857.html",
             "https://errata.rockylinux.org/RLSA-2026:30856",
             "https://github.com/jib/archive-tar-new/commit/17c873492a05eddc0de18c1485e0b2cccd5a9158.patch",
             "https://linux.oracle.com/cve/CVE-2026-42496.html",
@@ -70296,7 +70399,7 @@
             "https://bugzilla.redhat.com/show_bug.cgi?id=2481767",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-48962",
-            "https://errata.almalinux.org/8/ALSA-2026-30858.html",
+            "https://errata.almalinux.org/10/ALSA-2026-30860.html",
             "https://errata.rockylinux.org/RLSA-2026:30859",
             "https://github.com/pmqs/IO-Compress/commit/f2db247bf90d4cc7ee2710be384946081f3b4610.patch",
             "https://linux.oracle.com/cve/CVE-2026-48962.html",
@@ -70472,14 +70575,14 @@
           "PublishedDate": "2026-05-26T02:16:41.15Z",
           "References": [
             "http://www.openwall.com/lists/oss-security/2026/05/26/4",
-            "https://access.redhat.com/errata/RHSA-2026:49524",
+            "https://access.redhat.com/errata/RHSA-2026:49523",
             "https://access.redhat.com/errata/RHSA-2026:49525",
             "https://access.redhat.com/security/cve/CVE-2026-9538",
             "https://bugzilla.redhat.com/2481315",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2481315",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-9538",
-            "https://errata.almalinux.org/8/ALSA-2026-49524.html",
+            "https://errata.almalinux.org/10/ALSA-2026-49523.html",
             "https://errata.rockylinux.org/RLSA-2026:49525",
             "https://github.com/jib/archive-tar-new/commit/f9af01426038e29d9578825a0cd3626946ab08c7.patch",
             "https://linux.oracle.com/cve/CVE-2026-9538.html",
@@ -70998,11 +71101,11 @@
             "http://www.openwall.com/lists/oss-security/2023/05/03/3",
             "http://www.openwall.com/lists/oss-security/2023/05/03/5",
             "http://www.openwall.com/lists/oss-security/2023/05/07/2",
-            "https://access.redhat.com/errata/RHSA-2023:7174",
+            "https://access.redhat.com/errata/RHSA-2023:6542",
             "https://access.redhat.com/security/cve/CVE-2023-31486",
             "https://blog.hackeriet.no/perl-http-tiny-insecure-tls-default-affects-cpan-modules/",
             "https://bugzilla.redhat.com/2228392",
-            "https://errata.almalinux.org/8/ALSA-2023-7174.html",
+            "https://errata.almalinux.org/9/ALSA-2023-6542.html",
             "https://github.com/chansen/p5-http-tiny/pull/153",
             "https://hackeriet.github.io/cpan-http-tiny-overview/",
             "https://linux.oracle.com/cve/CVE-2023-31486.html",
@@ -71386,10 +71489,14 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-73066",
           "PublishedDate": "2026-08-11T15:17:38.777Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:67832",
+            "https://access.redhat.com/errata/RHSA-2026:67831",
             "https://access.redhat.com/security/cve/CVE-2026-73066",
             "https://bugzilla.redhat.com/2514011",
-            "https://errata.almalinux.org/8/ALSA-2026-67832.html",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2514011",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-73066",
+            "https://errata.almalinux.org/9/ALSA-2026-67831.html",
+            "https://errata.rockylinux.org/RLSA-2026:67831",
             "https://github.com/tesseract-ocr/tesseract/commit/2f4d2f4bf45c363785d7bf1da29b6628f8939a72",
             "https://github.com/tesseract-ocr/tesseract/pull/4588",
             "https://github.com/tesseract-ocr/tesseract/releases/tag/5.5.3",
@@ -71405,7 +71512,8 @@
           "VendorSeverity": {
             "alma": 3,
             "oracle-oval": 3,
-            "redhat": 3
+            "redhat": 3,
+            "rocky": 3
           },
           "VulnerabilityID": "CVE-2026-73066"
         },
@@ -72434,7 +72542,7 @@
             "https://bugzilla.redhat.com/show_bug.cgi?id=2419369",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-14104",
-            "https://errata.almalinux.org/8/ALSA-2026-1852.html",
+            "https://errata.almalinux.org/9/ALSA-2026-1913.html",
             "https://errata.rockylinux.org/RLSA-2026:1913",
             "https://linux.oracle.com/cve/CVE-2025-14104.html",
             "https://linux.oracle.com/errata/ELSA-2026-1913.html",
@@ -73019,7 +73127,7 @@
             "https://bugzilla.redhat.com/show_bug.cgi?id=2419369",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-14104",
-            "https://errata.almalinux.org/8/ALSA-2026-1852.html",
+            "https://errata.almalinux.org/9/ALSA-2026-1913.html",
             "https://errata.rockylinux.org/RLSA-2026:1913",
             "https://linux.oracle.com/cve/CVE-2025-14104.html",
             "https://linux.oracle.com/errata/ELSA-2026-1913.html",
@@ -73941,7 +74049,7 @@
           "Fingerprint": "sha256:08b9293d199b82c7ce0f298a7d784566573ec01d70056aa74a8efd239b4c29eb",
           "FixedVersion": "1.13.0",
           "InstalledVersion": "v1.10.0",
-          "LastModifiedDate": "2026-09-16T15:17:47.98Z",
+          "LastModifiedDate": "2026-09-18T18:17:14.82Z",
           "Layer": {
             "DiffID": "sha256:6394cf242e64ce8f28128ab0733c3e0d32c3c4ef685587c2a38e383b33bd8d7c",
             "Digest": "sha256:f16a755b67c209221b65c7bdf247d2ad825b3e14aa36becc3e049f7f2d9a5645"
@@ -73965,7 +74073,7 @@
           "Severity": "CRITICAL",
           "SeveritySource": "ghsa",
           "Status": "fixed",
-          "Title": "RabbitMQ amqp091-go: Missing Explicit TLS Minimum Version Configuration In URI Parser",
+          "Title": "RabbitMQ amqp091-go is a Go AMQP 0.9.1 client. Prior to 1.13.0, tlsCon ...",
           "VendorIDs": [
             "GHSA-33mj-cw25-m34h"
           ],
@@ -74017,7 +74125,7 @@
           "Severity": "CRITICAL",
           "SeveritySource": "ghsa",
           "Status": "fixed",
-          "Title": "RabbitMQ amqp091-go: Silent Data Truncation and State Corruption via Shortstr Integer Overflow",
+          "Title": "RabbitMQ amqp091-go is a Go AMQP 0.9.1 client. Prior to 1.13.0, the wr ...",
           "VendorIDs": [
             "GHSA-j497-x9hr-x34x"
           ],
@@ -74069,7 +74177,7 @@
           "Severity": "CRITICAL",
           "SeveritySource": "ghsa",
           "Status": "fixed",
-          "Title": "RabbitMQ amqp091-go: Protocol Desynchronization and Frame Injection via Integer Overflow in readLongstr",
+          "Title": "RabbitMQ amqp091-go is a Go AMQP 0.9.1 client. Prior to 1.13.0, readLo ...",
           "VendorIDs": [
             "GHSA-c5pq-fr2g-9jpf"
           ],
@@ -74083,6 +74191,10 @@
             "ghsa": {
               "V40Score": 8.9,
               "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:H"
+            },
+            "redhat": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
             }
           },
           "CweIDs": [
@@ -74111,22 +74223,25 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-77403",
           "PublishedDate": "2026-09-16T15:17:46.847Z",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-77403",
             "https://github.com/rabbitmq/amqp091-go",
             "https://github.com/rabbitmq/amqp091-go/commit/2e0a919b89f337dbf58db2bb34ab206dac354a06",
             "https://github.com/rabbitmq/amqp091-go/pull/353",
             "https://github.com/rabbitmq/amqp091-go/releases/tag/v1.13.0",
             "https://github.com/rabbitmq/amqp091-go/security/advisories/GHSA-xwwf-m8fg-p9q2",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-77403"
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-77403",
+            "https://www.cve.org/CVERecord?id=CVE-2026-77403"
           ],
           "Severity": "HIGH",
           "SeveritySource": "ghsa",
           "Status": "fixed",
-          "Title": "RabbitMQ amqp091-go: Denial of Service via Sub-Spec Frame Size Negotiation",
+          "Title": "github.com/rabbitmq/amqp091-go: RabbitMQ amqp091-go: Denial of Service via AMQP frame size negotiation",
           "VendorIDs": [
             "GHSA-xwwf-m8fg-p9q2"
           ],
           "VendorSeverity": {
-            "ghsa": 3
+            "ghsa": 3,
+            "redhat": 2
           },
           "VulnerabilityID": "CVE-2026-77403"
         },
@@ -74135,6 +74250,10 @@
             "ghsa": {
               "V40Score": 8.7,
               "V40Vector": "CVSS:4.0/AV:L/AC:L/AT:P/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:L"
+            },
+            "redhat": {
+              "V3Score": 8.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H"
             }
           },
           "CweIDs": [
@@ -74163,22 +74282,25 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-77404",
           "PublishedDate": "2026-09-16T15:17:47.067Z",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-77404",
             "https://github.com/rabbitmq/amqp091-go",
             "https://github.com/rabbitmq/amqp091-go/commit/743d488e46955fe7ffc55506fe2c401d01216783",
             "https://github.com/rabbitmq/amqp091-go/pull/352",
             "https://github.com/rabbitmq/amqp091-go/releases/tag/v1.13.0",
             "https://github.com/rabbitmq/amqp091-go/security/advisories/GHSA-465g-fh3v-9jw4",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-77404"
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-77404",
+            "https://www.cve.org/CVERecord?id=CVE-2026-77404"
           ],
           "Severity": "HIGH",
           "SeveritySource": "ghsa",
           "Status": "fixed",
-          "Title": "RabbitMQ amqp091-go: Connection Configuration Overwrite via Unsanitized TLS Path Parameter Injection",
+          "Title": "github.com/rabbitmq/amqp091-go: RabbitMQ amqp091-go: Connection configuration overwrite via unsanitized TLS path parameter injection",
           "VendorIDs": [
             "GHSA-465g-fh3v-9jw4"
           ],
           "VendorSeverity": {
-            "ghsa": 3
+            "ghsa": 3,
+            "redhat": 3
           },
           "VulnerabilityID": "CVE-2026-77404"
         },
@@ -74187,6 +74309,10 @@
             "ghsa": {
               "V40Score": 8.2,
               "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:L"
+            },
+            "redhat": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
             }
           },
           "CweIDs": [
@@ -74215,22 +74341,25 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-77406",
           "PublishedDate": "2026-09-16T15:17:49.07Z",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-77406",
             "https://github.com/rabbitmq/amqp091-go",
             "https://github.com/rabbitmq/amqp091-go/commit/3b879e1d1d25b544e26b3bc3d7db3213203c0f3b",
             "https://github.com/rabbitmq/amqp091-go/pull/351",
             "https://github.com/rabbitmq/amqp091-go/releases/tag/v1.13.0",
             "https://github.com/rabbitmq/amqp091-go/security/advisories/GHSA-rm6m-hrcw-jw33",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-77406"
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-77406",
+            "https://www.cve.org/CVERecord?id=CVE-2026-77406"
           ],
           "Severity": "HIGH",
           "SeveritySource": "ghsa",
           "Status": "fixed",
-          "Title": "RabbitMQ amqp091-go: Consumer Message Flooding via Signed-to-Unsigned Integer Casting in Qos Configuration",
+          "Title": "github.com/rabbitmq/amqp091-go: RabbitMQ amqp091-go: Denial of Service via signed-to-unsigned integer casting",
           "VendorIDs": [
             "GHSA-rm6m-hrcw-jw33"
           ],
           "VendorSeverity": {
-            "ghsa": 3
+            "ghsa": 3,
+            "redhat": 3
           },
           "VulnerabilityID": "CVE-2026-77406"
         },
@@ -74239,6 +74368,10 @@
             "ghsa": {
               "V40Score": 7,
               "V40Vector": "CVSS:4.0/AV:L/AC:L/AT:P/PR:L/UI:N/VC:H/VI:N/VA:N/SC:H/SI:L/SA:L"
+            },
+            "redhat": {
+              "V3Score": 5.5,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
             }
           },
           "CweIDs": [
@@ -74267,22 +74400,25 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-77407",
           "PublishedDate": "2026-09-16T15:17:49.21Z",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-77407",
             "https://github.com/rabbitmq/amqp091-go",
             "https://github.com/rabbitmq/amqp091-go/commit/fa013b8447eb60988db3c9281ff6b981e4d2fb4f",
             "https://github.com/rabbitmq/amqp091-go/pull/350",
             "https://github.com/rabbitmq/amqp091-go/releases/tag/v1.13.0",
             "https://github.com/rabbitmq/amqp091-go/security/advisories/GHSA-27gv-rfvv-22mv",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-77407"
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-77407",
+            "https://www.cve.org/CVERecord?id=CVE-2026-77407"
           ],
           "Severity": "HIGH",
           "SeveritySource": "ghsa",
           "Status": "fixed",
-          "Title": "RabbitMQ amqp091-go: Plaintext Credential Exposure via Exported PLAIN Authentication Struct Fields",
+          "Title": "github.com/rabbitmq/amqp091-go: RabbitMQ amqp091-go: Plaintext Credential Exposure via Exported PLAIN Authentication Fields",
           "VendorIDs": [
             "GHSA-27gv-rfvv-22mv"
           ],
           "VendorSeverity": {
-            "ghsa": 3
+            "ghsa": 3,
+            "redhat": 2
           },
           "VulnerabilityID": "CVE-2026-77407"
         },
@@ -74291,6 +74427,10 @@
             "ghsa": {
               "V40Score": 8.9,
               "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:H"
+            },
+            "redhat": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
             }
           },
           "CweIDs": [
@@ -74319,22 +74459,25 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-77410",
           "PublishedDate": "2026-09-16T15:17:50.43Z",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-77410",
             "https://github.com/rabbitmq/amqp091-go",
             "https://github.com/rabbitmq/amqp091-go/commit/91b65fa0096a99a580cf51a31b24028ff1c60382",
             "https://github.com/rabbitmq/amqp091-go/pull/346",
             "https://github.com/rabbitmq/amqp091-go/releases/tag/v1.13.0",
             "https://github.com/rabbitmq/amqp091-go/security/advisories/GHSA-r9c8-gcjp-xfwh",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-77410"
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-77410",
+            "https://www.cve.org/CVERecord?id=CVE-2026-77410"
           ],
           "Severity": "HIGH",
           "SeveritySource": "ghsa",
           "Status": "fixed",
-          "Title": "RabbitMQ amqp091-go: Resource Exhaustion (OOM) via Unbounded Body Buffer Allocation",
+          "Title": "github.com/rabbitmq/amqp091-go: RabbitMQ amqp091-go: Denial of Service via unbounded body buffer allocation",
           "VendorIDs": [
             "GHSA-r9c8-gcjp-xfwh"
           ],
           "VendorSeverity": {
-            "ghsa": 3
+            "ghsa": 3,
+            "redhat": 3
           },
           "VulnerabilityID": "CVE-2026-77410"
         },
@@ -74343,6 +74486,10 @@
             "ghsa": {
               "V40Score": 8.9,
               "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:H"
+            },
+            "redhat": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
             }
           },
           "CweIDs": [
@@ -74371,22 +74518,25 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-77412",
           "PublishedDate": "2026-09-16T15:17:50.707Z",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-77412",
             "https://github.com/rabbitmq/amqp091-go",
             "https://github.com/rabbitmq/amqp091-go/commit/669b42bf7b1db76bc6d4973e3634247f680accbf",
             "https://github.com/rabbitmq/amqp091-go/pull/344",
             "https://github.com/rabbitmq/amqp091-go/releases/tag/v1.13.0",
             "https://github.com/rabbitmq/amqp091-go/security/advisories/GHSA-4v58-74mf-rjx3",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-77412"
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-77412",
+            "https://www.cve.org/CVERecord?id=CVE-2026-77412"
           ],
           "Severity": "HIGH",
           "SeveritySource": "ghsa",
           "Status": "fixed",
-          "Title": "RabbitMQ amqp091-go: Denial of Service via Malicious Field Length in AMQP Client",
+          "Title": "github.com/rabbitmq/amqp091-go: RabbitMQ amqp091-go: Denial of Service via Malicious AMQP Field Length",
           "VendorIDs": [
             "GHSA-4v58-74mf-rjx3"
           ],
           "VendorSeverity": {
-            "ghsa": 3
+            "ghsa": 3,
+            "redhat": 3
           },
           "VulnerabilityID": "CVE-2026-77412"
         },
@@ -74820,11 +74970,10 @@
             "https://access.redhat.com/errata/RHSA-2026:66022",
             "https://access.redhat.com/errata/RHSA-2026:67450",
             "https://access.redhat.com/security/cve/CVE-2026-39829",
-            "https://bugzilla.redhat.com/2455470",
+            "https://bugzilla.redhat.com/2480680",
             "https://bugzilla.redhat.com/2480681",
             "https://bugzilla.redhat.com/2480684",
             "https://bugzilla.redhat.com/2480685",
-            "https://bugzilla.redhat.com/2480688",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480680",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480681",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
@@ -74840,7 +74989,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39835",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42508",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-57231",
-            "https://errata.almalinux.org/8/ALSA-2026-35833.html",
+            "https://errata.almalinux.org/10/ALSA-2026-36199.html",
             "https://errata.rockylinux.org/RLSA-2026:37123",
             "https://go.dev/cl/781641",
             "https://go.dev/cl/781661",
@@ -74956,11 +75105,10 @@
             "https://access.redhat.com/errata/RHSA-2026:66521",
             "https://access.redhat.com/errata/RHSA-2026:67450",
             "https://access.redhat.com/security/cve/CVE-2026-39830",
-            "https://bugzilla.redhat.com/2455470",
+            "https://bugzilla.redhat.com/2480680",
             "https://bugzilla.redhat.com/2480681",
             "https://bugzilla.redhat.com/2480684",
             "https://bugzilla.redhat.com/2480685",
-            "https://bugzilla.redhat.com/2480688",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2445356",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2456333",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2456338",
@@ -74974,7 +75122,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32283",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39829",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39830",
-            "https://errata.almalinux.org/8/ALSA-2026-35833.html",
+            "https://errata.almalinux.org/10/ALSA-2026-36199.html",
             "https://errata.rockylinux.org/RLSA-2026:29455",
             "https://github.com/golang/crypto/commit/4e7a7384ecbc8d519f6f4c11b36fa9d761fc8946",
             "https://go.dev/cl/781640",
@@ -75133,17 +75281,16 @@
             "https://access.redhat.com/errata/RHSA-2026:66521",
             "https://access.redhat.com/errata/RHSA-2026:67450",
             "https://access.redhat.com/security/cve/CVE-2026-39832",
-            "https://bugzilla.redhat.com/2455470",
+            "https://bugzilla.redhat.com/2480680",
             "https://bugzilla.redhat.com/2480681",
             "https://bugzilla.redhat.com/2480684",
             "https://bugzilla.redhat.com/2480685",
-            "https://bugzilla.redhat.com/2480688",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480680",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39832",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39835",
-            "https://errata.almalinux.org/8/ALSA-2026-35833.html",
+            "https://errata.almalinux.org/10/ALSA-2026-36199.html",
             "https://errata.rockylinux.org/RLSA-2026:37410",
             "https://github.com/golang/crypto/commit/e3d1254f1e7e60baa086142c46174bf6d8d0fe50",
             "https://go.dev/cl/778640",
@@ -75197,7 +75344,7 @@
           "Fingerprint": "sha256:c0f4585be63dc1c7ba3efd949b1aea27d6bed5c7ddbbf8783fc093ea341cc379",
           "FixedVersion": "0.52.0",
           "InstalledVersion": "v0.51.0",
-          "LastModifiedDate": "2026-09-11T13:17:56.5Z",
+          "LastModifiedDate": "2026-09-18T13:18:12.74Z",
           "Layer": {
             "DiffID": "sha256:6394cf242e64ce8f28128ab0733c3e0d32c3c4ef685587c2a38e383b33bd8d7c",
             "Digest": "sha256:f16a755b67c209221b65c7bdf247d2ad825b3e14aa36becc3e049f7f2d9a5645"
@@ -75264,15 +75411,16 @@
             "https://access.redhat.com/errata/RHSA-2026:66022",
             "https://access.redhat.com/errata/RHSA-2026:66521",
             "https://access.redhat.com/security/cve/CVE-2026-39835",
-            "https://bugzilla.redhat.com/2467822",
             "https://bugzilla.redhat.com/2480680",
-            "https://bugzilla.redhat.com/2493620",
+            "https://bugzilla.redhat.com/2480681",
+            "https://bugzilla.redhat.com/2480684",
+            "https://bugzilla.redhat.com/2480685",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480680",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39832",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39835",
-            "https://errata.almalinux.org/8/ALSA-2026-38504.html",
+            "https://errata.almalinux.org/10/ALSA-2026-36199.html",
             "https://errata.rockylinux.org/RLSA-2026:37410",
             "https://go.dev/cl/781660",
             "https://go.dev/issue/79563",
@@ -75376,11 +75524,13 @@
             "https://access.redhat.com/errata/RHSA-2026:66521",
             "https://access.redhat.com/errata/RHSA-2026:67450",
             "https://access.redhat.com/security/cve/CVE-2026-42508",
-            "https://bugzilla.redhat.com/2455470",
+            "https://bugzilla.redhat.com/2480680",
             "https://bugzilla.redhat.com/2480681",
-            "https://bugzilla.redhat.com/2480684",
             "https://bugzilla.redhat.com/2480685",
             "https://bugzilla.redhat.com/2480688",
+            "https://bugzilla.redhat.com/2480757",
+            "https://bugzilla.redhat.com/2480761",
+            "https://bugzilla.redhat.com/2493620",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480680",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480681",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
@@ -75396,7 +75546,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39835",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42508",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-57231",
-            "https://errata.almalinux.org/8/ALSA-2026-35833.html",
+            "https://errata.almalinux.org/9/ALSA-2026-37123.html",
             "https://errata.rockylinux.org/RLSA-2026:37123",
             "https://github.com/golang/crypto/commit/f717e29698a271c548239ed56bf5dd9516d6f7e8",
             "https://go.dev/cl/781220",
@@ -76095,7 +76245,7 @@
             "https://go.dev/issue/79574",
             "https://groups.google.com/g/golang-announce/c/iI-mYSI0lu8",
             "https://linux.oracle.com/cve/CVE-2026-25681.html",
-            "https://linux.oracle.com/errata/ELSA-2026-66432-0.html",
+            "https://linux.oracle.com/errata/ELSA-2026-67139-0.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-25681",
             "https://pkg.go.dev/vuln/GO-2026-5029",
             "https://www.cve.org/CVERecord?id=CVE-2026-25681"
@@ -76174,7 +76324,7 @@
             "https://go.dev/issue/79575",
             "https://groups.google.com/g/golang-announce/c/iI-mYSI0lu8",
             "https://linux.oracle.com/cve/CVE-2026-27136.html",
-            "https://linux.oracle.com/errata/ELSA-2026-66432-0.html",
+            "https://linux.oracle.com/errata/ELSA-2026-67139-0.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-27136",
             "https://pkg.go.dev/vuln/GO-2026-5030",
             "https://www.cve.org/CVERecord?id=CVE-2026-27136"
@@ -76380,16 +76530,8 @@
             "https://access.redhat.com/errata/RHSA-2026:67517",
             "https://access.redhat.com/errata/RHSA-2026:68504",
             "https://access.redhat.com/security/cve/CVE-2026-39821",
-            "https://bugzilla.redhat.com/2315719",
-            "https://bugzilla.redhat.com/2341751",
-            "https://bugzilla.redhat.com/2467820",
             "https://bugzilla.redhat.com/2480756",
-            "https://bugzilla.redhat.com/2515815",
-            "https://bugzilla.redhat.com/2515820",
-            "https://bugzilla.redhat.com/2515827",
-            "https://bugzilla.redhat.com/2515838",
-            "https://bugzilla.redhat.com/2515839",
-            "https://bugzilla.redhat.com/2515840",
+            "https://bugzilla.redhat.com/2484207",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2456333",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2456339",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2467809",
@@ -76417,7 +76559,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56859",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56860",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56862",
-            "https://errata.almalinux.org/8/ALSA-2026-66016.html",
+            "https://errata.almalinux.org/10/ALSA-2026-46395.html",
             "https://errata.rockylinux.org/RLSA-2026:65886",
             "https://github.com/golang/go/issues/78760",
             "https://go.dev/cl/767220",
@@ -76610,7 +76752,7 @@
             "https://go.dev/issue/79572",
             "https://groups.google.com/g/golang-announce/c/iI-mYSI0lu8",
             "https://linux.oracle.com/cve/CVE-2026-42502.html",
-            "https://linux.oracle.com/errata/ELSA-2026-66432-0.html",
+            "https://linux.oracle.com/errata/ELSA-2026-67139-0.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-42502",
             "https://pkg.go.dev/vuln/GO-2026-5027",
             "https://www.cve.org/CVERecord?id=CVE-2026-42502"
