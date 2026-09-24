@@ -1,6 +1,6 @@
 # hub-objecttracking SBOM quality
 
-Collection status: `collected`; collected at `2026-09-23T02:36:46Z`.
+Collection status: `collected`; collected at `2026-09-24T02:37:12Z`.
 
 Overall quality: **Needs work**, **67/100** across **52 packages**.
 
