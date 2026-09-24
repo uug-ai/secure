@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:9990ae23b951ce992d94e589c5da90f5b92def94907d8ccbe494c02a59f3d43a",
   "ArtifactName": "ghcr.io/uug-ai/hub-pipeline-classifier@sha256:9ebf8b1a7191b4a17e50bf63db1e42d11e5446f6285c0aaed0ab8c921bc7904d",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-09-23T03:54:30.153961998Z",
+  "CreatedAt": "2026-09-24T03:53:11.955645154Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
@@ -647,7 +647,7 @@
     ],
     "Size": 6849133056
   },
-  "ReportID": "01a0cc66-9589-7ea4-b368-741bbe704287",
+  "ReportID": "01a0d18b-c013-79cf-89f1-24d40a614049",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -32672,7 +32672,7 @@
           "Status": "affected",
           "Title": "binutils: Binutils: Out-of-bounds Write Vulnerability",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "azure": 2,
             "cbl-mariner": 2,
             "debian": 1,
@@ -36938,7 +36938,7 @@
           "Status": "affected",
           "Title": "binutils: Binutils: Out-of-bounds Write Vulnerability",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "azure": 2,
             "cbl-mariner": 2,
             "debian": 1,
@@ -41204,7 +41204,7 @@
           "Status": "affected",
           "Title": "binutils: Binutils: Out-of-bounds Write Vulnerability",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "azure": 2,
             "cbl-mariner": 2,
             "debian": 1,
@@ -50589,6 +50589,7 @@
             "https://nvd.nist.gov/vuln/detail/CVE-2026-41992",
             "https://ubuntu.com/security/notices/USN-8512-1",
             "https://ubuntu.com/security/notices/USN-8733-1",
+            "https://ubuntu.com/security/notices/USN-8733-2",
             "https://www.cve.org/CVERecord?id=CVE-2026-41992",
             "https://www.gnu.org/software/gzip",
             "https://www.gnu.org/software/gzip/"
@@ -50671,6 +50672,7 @@
             "https://nvd.nist.gov/vuln/detail/CVE-2026-41991",
             "https://ubuntu.com/security/notices/USN-8512-1",
             "https://ubuntu.com/security/notices/USN-8733-1",
+            "https://ubuntu.com/security/notices/USN-8733-2",
             "https://www.cve.org/CVERecord?id=CVE-2026-41991",
             "https://www.gnu.org/software/gzip",
             "https://www.gnu.org/software/gzip/"
@@ -65827,7 +65829,7 @@
           "Status": "affected",
           "Title": "binutils: Binutils: Out-of-bounds Write Vulnerability",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "azure": 2,
             "cbl-mariner": 2,
             "debian": 1,
@@ -68349,6 +68351,52 @@
         {
           "CVSS": {
             "redhat": {
+              "V3Score": 7,
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-367"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "A time-of-check to time-of-use (TOCTOU) race condition in the dynamic loader (ld.so) of the GNU C Library (glibc) versions 2.14 through 2.44 allows a local attacker to escalate privileges. When expanding $ORIGIN in DT_RPATH for setuid/setgid (AT_SECURE) programs, glibc validates the lexically normalized search path against the trusted directories but then opens the raw, un-normalized path. On systems where the Linux fs.protected_hardlinks sysctl is disabled, a local attacker who hard-links such a program into an attacker-controlled directory and wins a race to replace an intermediate path component with a symbolic link can direct the loader outside the trusted directory, causing it to load an attacker-controlled shared object and execute arbitrary code with the elevated privileges of the program.\n\nExploitation requires an installed setuid or setgid binary whose DT_RPATH uses $ORIGIN followed by \"..\" traversal that normalizes into a trusted directory, and the ability to hard-link that binary and win the race by swapping a path component for a symbolic link. Major Linux-based OS distributions ship with fs.protected_hardlinks enabled by default and mitigate the vulnerability.",
+          "Fingerprint": "sha256:356ae548705c3b562ec163050c2ced95b0a535b3d84d48f1f8ac7286f627bd1b",
+          "InstalledVersion": "2.36-9+deb12u14",
+          "LastModifiedDate": "2026-09-23T04:17:57.137Z",
+          "Layer": {
+            "DiffID": "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+            "Digest": "sha256:dbaa5c62f0ed2acebf15ba5fc565cb938c8495c0b77e1acfab05f5a7354ab1a9"
+          },
+          "PkgID": "libc-bin@2.36-9+deb12u14",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.15",
+            "UID": "fffe74ad3db2b1d6"
+          },
+          "PkgName": "libc-bin",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86805",
+          "PublishedDate": "2026-09-22T16:18:06.23Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-86805",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-86805",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=34360",
+            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0022",
+            "https://www.cve.org/CVERecord?id=CVE-2026-86805"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "affected",
+          "Title": "glibc: glibc: Privilege escalation and arbitrary code execution via TOCTOU race condition in dynamic loader",
+          "VendorSeverity": {
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2026-86805"
+        },
+        {
+          "CVSS": {
+            "redhat": {
               "V3Score": 4.2,
               "V3Vector": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:L"
             }
@@ -68392,6 +68440,52 @@
             "redhat": 2
           },
           "VulnerabilityID": "CVE-2026-89092"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 5.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-121"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "A stack-based buffer overflow in the dynamic loader (ld.so) of the GNU C Library (glibc) versions 2.14 through 2.44 allows a local attacker to crash or corrupt the memory of setuid/setgid (AT_SECURE) programs.\n\nWhen such a program's DT_RPATH or DT_RUNPATH begins with $ORIGIN and is followed by NUL or '/' the loader both reads past the end of the path buffer and writes past the end of a stack-allocated internal buffer. The corrupted loader stack can lead to a loader crash (denial of service) and limited disclosure of process memory.",
+          "Fingerprint": "sha256:fcf7adfca7873b7a7e0fdc211f1293ab63a03a563edcc0e74026a273ebcf6d54",
+          "InstalledVersion": "2.36-9+deb12u14",
+          "LastModifiedDate": "2026-09-22T19:56:19.073Z",
+          "Layer": {
+            "DiffID": "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+            "Digest": "sha256:dbaa5c62f0ed2acebf15ba5fc565cb938c8495c0b77e1acfab05f5a7354ab1a9"
+          },
+          "PkgID": "libc-bin@2.36-9+deb12u14",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.15",
+            "UID": "fffe74ad3db2b1d6"
+          },
+          "PkgName": "libc-bin",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-95818",
+          "PublishedDate": "2026-09-22T17:17:32.093Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-95818",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-95818",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=34360",
+            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0023",
+            "https://www.cve.org/CVERecord?id=CVE-2026-95818"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "affected",
+          "Title": "glibc: glibc: Local attacker can cause denial of service and information disclosure via stack-based buffer overflow.",
+          "VendorSeverity": {
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2026-95818"
         },
         {
           "CVSS": {
@@ -68788,74 +68882,6 @@
             "redhat": 1
           },
           "VulnerabilityID": "CVE-2019-9192"
-        },
-        {
-          "CweIDs": [
-            "CWE-367"
-          ],
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Description": "A time-of-check to time-of-use (TOCTOU) race condition in the dynamic loader (ld.so) of the GNU C Library (glibc) versions 2.14 through 2.44 allows a local attacker to escalate privileges. When expanding $ORIGIN in DT_RPATH for setuid/setgid (AT_SECURE) programs, glibc validates the lexically normalized search path against the trusted directories but then opens the raw, un-normalized path. On systems where the Linux fs.protected_hardlinks sysctl is disabled, a local attacker who hard-links such a program into an attacker-controlled directory and wins a race to replace an intermediate path component with a symbolic link can direct the loader outside the trusted directory, causing it to load an attacker-controlled shared object and execute arbitrary code with the elevated privileges of the program.\n\nExploitation requires an installed setuid or setgid binary whose DT_RPATH uses $ORIGIN followed by \"..\" traversal that normalizes into a trusted directory, and the ability to hard-link that binary and win the race by swapping a path component for a symbolic link. Major Linux-based OS distributions ship with fs.protected_hardlinks enabled by default and mitigate the vulnerability.",
-          "Fingerprint": "sha256:356ae548705c3b562ec163050c2ced95b0a535b3d84d48f1f8ac7286f627bd1b",
-          "InstalledVersion": "2.36-9+deb12u14",
-          "LastModifiedDate": "2026-09-22T19:56:19.073Z",
-          "Layer": {
-            "DiffID": "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
-            "Digest": "sha256:dbaa5c62f0ed2acebf15ba5fc565cb938c8495c0b77e1acfab05f5a7354ab1a9"
-          },
-          "PkgID": "libc-bin@2.36-9+deb12u14",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.15",
-            "UID": "fffe74ad3db2b1d6"
-          },
-          "PkgName": "libc-bin",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86805",
-          "PublishedDate": "2026-09-22T16:18:06.23Z",
-          "References": [
-            "https://sourceware.org/bugzilla/show_bug.cgi?id=34360",
-            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0022"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "affected",
-          "Title": "A time-of-check to time-of-use (TOCTOU) race condition in the dynamic  ...",
-          "VulnerabilityID": "CVE-2026-86805"
-        },
-        {
-          "CweIDs": [
-            "CWE-121"
-          ],
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Description": "A stack-based buffer overflow in the dynamic loader (ld.so) of the GNU C Library (glibc) versions 2.14 through 2.44 allows a local attacker to crash or corrupt the memory of setuid/setgid (AT_SECURE) programs.\n\nWhen such a program's DT_RPATH or DT_RUNPATH begins with $ORIGIN and is followed by NUL or '/' the loader both reads past the end of the path buffer and writes past the end of a stack-allocated internal buffer. The corrupted loader stack can lead to a loader crash (denial of service) and limited disclosure of process memory.",
-          "Fingerprint": "sha256:fcf7adfca7873b7a7e0fdc211f1293ab63a03a563edcc0e74026a273ebcf6d54",
-          "InstalledVersion": "2.36-9+deb12u14",
-          "LastModifiedDate": "2026-09-22T19:56:19.073Z",
-          "Layer": {
-            "DiffID": "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
-            "Digest": "sha256:dbaa5c62f0ed2acebf15ba5fc565cb938c8495c0b77e1acfab05f5a7354ab1a9"
-          },
-          "PkgID": "libc-bin@2.36-9+deb12u14",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.15",
-            "UID": "fffe74ad3db2b1d6"
-          },
-          "PkgName": "libc-bin",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-95818",
-          "PublishedDate": "2026-09-22T17:17:32.093Z",
-          "References": [
-            "https://sourceware.org/bugzilla/show_bug.cgi?id=34360",
-            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0023"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "affected",
-          "Title": "A stack-based buffer overflow in the dynamic loader (ld.so) of the GNU ...",
-          "VulnerabilityID": "CVE-2026-95818"
         },
         {
           "CVSS": {
@@ -69524,6 +69550,52 @@
         {
           "CVSS": {
             "redhat": {
+              "V3Score": 7,
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-367"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "A time-of-check to time-of-use (TOCTOU) race condition in the dynamic loader (ld.so) of the GNU C Library (glibc) versions 2.14 through 2.44 allows a local attacker to escalate privileges. When expanding $ORIGIN in DT_RPATH for setuid/setgid (AT_SECURE) programs, glibc validates the lexically normalized search path against the trusted directories but then opens the raw, un-normalized path. On systems where the Linux fs.protected_hardlinks sysctl is disabled, a local attacker who hard-links such a program into an attacker-controlled directory and wins a race to replace an intermediate path component with a symbolic link can direct the loader outside the trusted directory, causing it to load an attacker-controlled shared object and execute arbitrary code with the elevated privileges of the program.\n\nExploitation requires an installed setuid or setgid binary whose DT_RPATH uses $ORIGIN followed by \"..\" traversal that normalizes into a trusted directory, and the ability to hard-link that binary and win the race by swapping a path component for a symbolic link. Major Linux-based OS distributions ship with fs.protected_hardlinks enabled by default and mitigate the vulnerability.",
+          "Fingerprint": "sha256:83125aeaaa7eedb365ed92271ae2a24ff714899d112d46818e0ee1fe04760765",
+          "InstalledVersion": "2.36-9+deb12u14",
+          "LastModifiedDate": "2026-09-23T04:17:57.137Z",
+          "Layer": {
+            "DiffID": "sha256:bc9ca4465f5decda38abd083678d73c7ead1d70e8c28cac35e6a44d66c605b6c",
+            "Digest": "sha256:73a2753d9b9a9426901f214248ddedfc8e768aeb1b051cb4fdf719393d4af8bb"
+          },
+          "PkgID": "libc-dev-bin@2.36-9+deb12u14",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libc-dev-bin@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.15",
+            "UID": "ae7bcc97d635768b"
+          },
+          "PkgName": "libc-dev-bin",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86805",
+          "PublishedDate": "2026-09-22T16:18:06.23Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-86805",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-86805",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=34360",
+            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0022",
+            "https://www.cve.org/CVERecord?id=CVE-2026-86805"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "affected",
+          "Title": "glibc: glibc: Privilege escalation and arbitrary code execution via TOCTOU race condition in dynamic loader",
+          "VendorSeverity": {
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2026-86805"
+        },
+        {
+          "CVSS": {
+            "redhat": {
               "V3Score": 4.2,
               "V3Vector": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:L"
             }
@@ -69567,6 +69639,52 @@
             "redhat": 2
           },
           "VulnerabilityID": "CVE-2026-89092"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 5.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-121"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "A stack-based buffer overflow in the dynamic loader (ld.so) of the GNU C Library (glibc) versions 2.14 through 2.44 allows a local attacker to crash or corrupt the memory of setuid/setgid (AT_SECURE) programs.\n\nWhen such a program's DT_RPATH or DT_RUNPATH begins with $ORIGIN and is followed by NUL or '/' the loader both reads past the end of the path buffer and writes past the end of a stack-allocated internal buffer. The corrupted loader stack can lead to a loader crash (denial of service) and limited disclosure of process memory.",
+          "Fingerprint": "sha256:0d5bd2a5daee8344e6d4cdc3ad03cbcf53e0d9210af6cc551960261b43e21354",
+          "InstalledVersion": "2.36-9+deb12u14",
+          "LastModifiedDate": "2026-09-22T19:56:19.073Z",
+          "Layer": {
+            "DiffID": "sha256:bc9ca4465f5decda38abd083678d73c7ead1d70e8c28cac35e6a44d66c605b6c",
+            "Digest": "sha256:73a2753d9b9a9426901f214248ddedfc8e768aeb1b051cb4fdf719393d4af8bb"
+          },
+          "PkgID": "libc-dev-bin@2.36-9+deb12u14",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libc-dev-bin@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.15",
+            "UID": "ae7bcc97d635768b"
+          },
+          "PkgName": "libc-dev-bin",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-95818",
+          "PublishedDate": "2026-09-22T17:17:32.093Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-95818",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-95818",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=34360",
+            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0023",
+            "https://www.cve.org/CVERecord?id=CVE-2026-95818"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "affected",
+          "Title": "glibc: glibc: Local attacker can cause denial of service and information disclosure via stack-based buffer overflow.",
+          "VendorSeverity": {
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2026-95818"
         },
         {
           "CVSS": {
@@ -69963,74 +70081,6 @@
             "redhat": 1
           },
           "VulnerabilityID": "CVE-2019-9192"
-        },
-        {
-          "CweIDs": [
-            "CWE-367"
-          ],
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Description": "A time-of-check to time-of-use (TOCTOU) race condition in the dynamic loader (ld.so) of the GNU C Library (glibc) versions 2.14 through 2.44 allows a local attacker to escalate privileges. When expanding $ORIGIN in DT_RPATH for setuid/setgid (AT_SECURE) programs, glibc validates the lexically normalized search path against the trusted directories but then opens the raw, un-normalized path. On systems where the Linux fs.protected_hardlinks sysctl is disabled, a local attacker who hard-links such a program into an attacker-controlled directory and wins a race to replace an intermediate path component with a symbolic link can direct the loader outside the trusted directory, causing it to load an attacker-controlled shared object and execute arbitrary code with the elevated privileges of the program.\n\nExploitation requires an installed setuid or setgid binary whose DT_RPATH uses $ORIGIN followed by \"..\" traversal that normalizes into a trusted directory, and the ability to hard-link that binary and win the race by swapping a path component for a symbolic link. Major Linux-based OS distributions ship with fs.protected_hardlinks enabled by default and mitigate the vulnerability.",
-          "Fingerprint": "sha256:83125aeaaa7eedb365ed92271ae2a24ff714899d112d46818e0ee1fe04760765",
-          "InstalledVersion": "2.36-9+deb12u14",
-          "LastModifiedDate": "2026-09-22T19:56:19.073Z",
-          "Layer": {
-            "DiffID": "sha256:bc9ca4465f5decda38abd083678d73c7ead1d70e8c28cac35e6a44d66c605b6c",
-            "Digest": "sha256:73a2753d9b9a9426901f214248ddedfc8e768aeb1b051cb4fdf719393d4af8bb"
-          },
-          "PkgID": "libc-dev-bin@2.36-9+deb12u14",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc-dev-bin@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.15",
-            "UID": "ae7bcc97d635768b"
-          },
-          "PkgName": "libc-dev-bin",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86805",
-          "PublishedDate": "2026-09-22T16:18:06.23Z",
-          "References": [
-            "https://sourceware.org/bugzilla/show_bug.cgi?id=34360",
-            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0022"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "affected",
-          "Title": "A time-of-check to time-of-use (TOCTOU) race condition in the dynamic  ...",
-          "VulnerabilityID": "CVE-2026-86805"
-        },
-        {
-          "CweIDs": [
-            "CWE-121"
-          ],
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Description": "A stack-based buffer overflow in the dynamic loader (ld.so) of the GNU C Library (glibc) versions 2.14 through 2.44 allows a local attacker to crash or corrupt the memory of setuid/setgid (AT_SECURE) programs.\n\nWhen such a program's DT_RPATH or DT_RUNPATH begins with $ORIGIN and is followed by NUL or '/' the loader both reads past the end of the path buffer and writes past the end of a stack-allocated internal buffer. The corrupted loader stack can lead to a loader crash (denial of service) and limited disclosure of process memory.",
-          "Fingerprint": "sha256:0d5bd2a5daee8344e6d4cdc3ad03cbcf53e0d9210af6cc551960261b43e21354",
-          "InstalledVersion": "2.36-9+deb12u14",
-          "LastModifiedDate": "2026-09-22T19:56:19.073Z",
-          "Layer": {
-            "DiffID": "sha256:bc9ca4465f5decda38abd083678d73c7ead1d70e8c28cac35e6a44d66c605b6c",
-            "Digest": "sha256:73a2753d9b9a9426901f214248ddedfc8e768aeb1b051cb4fdf719393d4af8bb"
-          },
-          "PkgID": "libc-dev-bin@2.36-9+deb12u14",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc-dev-bin@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.15",
-            "UID": "ae7bcc97d635768b"
-          },
-          "PkgName": "libc-dev-bin",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-95818",
-          "PublishedDate": "2026-09-22T17:17:32.093Z",
-          "References": [
-            "https://sourceware.org/bugzilla/show_bug.cgi?id=34360",
-            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0023"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "affected",
-          "Title": "A stack-based buffer overflow in the dynamic loader (ld.so) of the GNU ...",
-          "VulnerabilityID": "CVE-2026-95818"
         },
         {
           "CVSS": {
@@ -70699,6 +70749,52 @@
         {
           "CVSS": {
             "redhat": {
+              "V3Score": 7,
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-367"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "A time-of-check to time-of-use (TOCTOU) race condition in the dynamic loader (ld.so) of the GNU C Library (glibc) versions 2.14 through 2.44 allows a local attacker to escalate privileges. When expanding $ORIGIN in DT_RPATH for setuid/setgid (AT_SECURE) programs, glibc validates the lexically normalized search path against the trusted directories but then opens the raw, un-normalized path. On systems where the Linux fs.protected_hardlinks sysctl is disabled, a local attacker who hard-links such a program into an attacker-controlled directory and wins a race to replace an intermediate path component with a symbolic link can direct the loader outside the trusted directory, causing it to load an attacker-controlled shared object and execute arbitrary code with the elevated privileges of the program.\n\nExploitation requires an installed setuid or setgid binary whose DT_RPATH uses $ORIGIN followed by \"..\" traversal that normalizes into a trusted directory, and the ability to hard-link that binary and win the race by swapping a path component for a symbolic link. Major Linux-based OS distributions ship with fs.protected_hardlinks enabled by default and mitigate the vulnerability.",
+          "Fingerprint": "sha256:57ed1d9a5fc686798da40f96c92f0c99788610a592e02c25bf556449ef608890",
+          "InstalledVersion": "2.36-9+deb12u14",
+          "LastModifiedDate": "2026-09-23T04:17:57.137Z",
+          "Layer": {
+            "DiffID": "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+            "Digest": "sha256:dbaa5c62f0ed2acebf15ba5fc565cb938c8495c0b77e1acfab05f5a7354ab1a9"
+          },
+          "PkgID": "libc6@2.36-9+deb12u14",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.15",
+            "UID": "348ed513aa2cf7e9"
+          },
+          "PkgName": "libc6",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86805",
+          "PublishedDate": "2026-09-22T16:18:06.23Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-86805",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-86805",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=34360",
+            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0022",
+            "https://www.cve.org/CVERecord?id=CVE-2026-86805"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "affected",
+          "Title": "glibc: glibc: Privilege escalation and arbitrary code execution via TOCTOU race condition in dynamic loader",
+          "VendorSeverity": {
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2026-86805"
+        },
+        {
+          "CVSS": {
+            "redhat": {
               "V3Score": 4.2,
               "V3Vector": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:L"
             }
@@ -70742,6 +70838,52 @@
             "redhat": 2
           },
           "VulnerabilityID": "CVE-2026-89092"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 5.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-121"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "A stack-based buffer overflow in the dynamic loader (ld.so) of the GNU C Library (glibc) versions 2.14 through 2.44 allows a local attacker to crash or corrupt the memory of setuid/setgid (AT_SECURE) programs.\n\nWhen such a program's DT_RPATH or DT_RUNPATH begins with $ORIGIN and is followed by NUL or '/' the loader both reads past the end of the path buffer and writes past the end of a stack-allocated internal buffer. The corrupted loader stack can lead to a loader crash (denial of service) and limited disclosure of process memory.",
+          "Fingerprint": "sha256:0fd59faa959d98d638737c62a6efb82a8d72156a1161dc436caff0da9fa7e945",
+          "InstalledVersion": "2.36-9+deb12u14",
+          "LastModifiedDate": "2026-09-22T19:56:19.073Z",
+          "Layer": {
+            "DiffID": "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+            "Digest": "sha256:dbaa5c62f0ed2acebf15ba5fc565cb938c8495c0b77e1acfab05f5a7354ab1a9"
+          },
+          "PkgID": "libc6@2.36-9+deb12u14",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.15",
+            "UID": "348ed513aa2cf7e9"
+          },
+          "PkgName": "libc6",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-95818",
+          "PublishedDate": "2026-09-22T17:17:32.093Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-95818",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-95818",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=34360",
+            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0023",
+            "https://www.cve.org/CVERecord?id=CVE-2026-95818"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "affected",
+          "Title": "glibc: glibc: Local attacker can cause denial of service and information disclosure via stack-based buffer overflow.",
+          "VendorSeverity": {
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2026-95818"
         },
         {
           "CVSS": {
@@ -71138,74 +71280,6 @@
             "redhat": 1
           },
           "VulnerabilityID": "CVE-2019-9192"
-        },
-        {
-          "CweIDs": [
-            "CWE-367"
-          ],
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Description": "A time-of-check to time-of-use (TOCTOU) race condition in the dynamic loader (ld.so) of the GNU C Library (glibc) versions 2.14 through 2.44 allows a local attacker to escalate privileges. When expanding $ORIGIN in DT_RPATH for setuid/setgid (AT_SECURE) programs, glibc validates the lexically normalized search path against the trusted directories but then opens the raw, un-normalized path. On systems where the Linux fs.protected_hardlinks sysctl is disabled, a local attacker who hard-links such a program into an attacker-controlled directory and wins a race to replace an intermediate path component with a symbolic link can direct the loader outside the trusted directory, causing it to load an attacker-controlled shared object and execute arbitrary code with the elevated privileges of the program.\n\nExploitation requires an installed setuid or setgid binary whose DT_RPATH uses $ORIGIN followed by \"..\" traversal that normalizes into a trusted directory, and the ability to hard-link that binary and win the race by swapping a path component for a symbolic link. Major Linux-based OS distributions ship with fs.protected_hardlinks enabled by default and mitigate the vulnerability.",
-          "Fingerprint": "sha256:57ed1d9a5fc686798da40f96c92f0c99788610a592e02c25bf556449ef608890",
-          "InstalledVersion": "2.36-9+deb12u14",
-          "LastModifiedDate": "2026-09-22T19:56:19.073Z",
-          "Layer": {
-            "DiffID": "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
-            "Digest": "sha256:dbaa5c62f0ed2acebf15ba5fc565cb938c8495c0b77e1acfab05f5a7354ab1a9"
-          },
-          "PkgID": "libc6@2.36-9+deb12u14",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.15",
-            "UID": "348ed513aa2cf7e9"
-          },
-          "PkgName": "libc6",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86805",
-          "PublishedDate": "2026-09-22T16:18:06.23Z",
-          "References": [
-            "https://sourceware.org/bugzilla/show_bug.cgi?id=34360",
-            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0022"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "affected",
-          "Title": "A time-of-check to time-of-use (TOCTOU) race condition in the dynamic  ...",
-          "VulnerabilityID": "CVE-2026-86805"
-        },
-        {
-          "CweIDs": [
-            "CWE-121"
-          ],
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Description": "A stack-based buffer overflow in the dynamic loader (ld.so) of the GNU C Library (glibc) versions 2.14 through 2.44 allows a local attacker to crash or corrupt the memory of setuid/setgid (AT_SECURE) programs.\n\nWhen such a program's DT_RPATH or DT_RUNPATH begins with $ORIGIN and is followed by NUL or '/' the loader both reads past the end of the path buffer and writes past the end of a stack-allocated internal buffer. The corrupted loader stack can lead to a loader crash (denial of service) and limited disclosure of process memory.",
-          "Fingerprint": "sha256:0fd59faa959d98d638737c62a6efb82a8d72156a1161dc436caff0da9fa7e945",
-          "InstalledVersion": "2.36-9+deb12u14",
-          "LastModifiedDate": "2026-09-22T19:56:19.073Z",
-          "Layer": {
-            "DiffID": "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
-            "Digest": "sha256:dbaa5c62f0ed2acebf15ba5fc565cb938c8495c0b77e1acfab05f5a7354ab1a9"
-          },
-          "PkgID": "libc6@2.36-9+deb12u14",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.15",
-            "UID": "348ed513aa2cf7e9"
-          },
-          "PkgName": "libc6",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-95818",
-          "PublishedDate": "2026-09-22T17:17:32.093Z",
-          "References": [
-            "https://sourceware.org/bugzilla/show_bug.cgi?id=34360",
-            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0023"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "affected",
-          "Title": "A stack-based buffer overflow in the dynamic loader (ld.so) of the GNU ...",
-          "VulnerabilityID": "CVE-2026-95818"
         },
         {
           "CVSS": {
@@ -71874,6 +71948,52 @@
         {
           "CVSS": {
             "redhat": {
+              "V3Score": 7,
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-367"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "A time-of-check to time-of-use (TOCTOU) race condition in the dynamic loader (ld.so) of the GNU C Library (glibc) versions 2.14 through 2.44 allows a local attacker to escalate privileges. When expanding $ORIGIN in DT_RPATH for setuid/setgid (AT_SECURE) programs, glibc validates the lexically normalized search path against the trusted directories but then opens the raw, un-normalized path. On systems where the Linux fs.protected_hardlinks sysctl is disabled, a local attacker who hard-links such a program into an attacker-controlled directory and wins a race to replace an intermediate path component with a symbolic link can direct the loader outside the trusted directory, causing it to load an attacker-controlled shared object and execute arbitrary code with the elevated privileges of the program.\n\nExploitation requires an installed setuid or setgid binary whose DT_RPATH uses $ORIGIN followed by \"..\" traversal that normalizes into a trusted directory, and the ability to hard-link that binary and win the race by swapping a path component for a symbolic link. Major Linux-based OS distributions ship with fs.protected_hardlinks enabled by default and mitigate the vulnerability.",
+          "Fingerprint": "sha256:718647025a2e8bec0dffdf22c863304d152a6fcf1668aab7ccf01d9d5a2d3054",
+          "InstalledVersion": "2.36-9+deb12u14",
+          "LastModifiedDate": "2026-09-23T04:17:57.137Z",
+          "Layer": {
+            "DiffID": "sha256:bc9ca4465f5decda38abd083678d73c7ead1d70e8c28cac35e6a44d66c605b6c",
+            "Digest": "sha256:73a2753d9b9a9426901f214248ddedfc8e768aeb1b051cb4fdf719393d4af8bb"
+          },
+          "PkgID": "libc6-dev@2.36-9+deb12u14",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libc6-dev@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.15",
+            "UID": "bd39c41d0c2a591a"
+          },
+          "PkgName": "libc6-dev",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86805",
+          "PublishedDate": "2026-09-22T16:18:06.23Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-86805",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-86805",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=34360",
+            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0022",
+            "https://www.cve.org/CVERecord?id=CVE-2026-86805"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "affected",
+          "Title": "glibc: glibc: Privilege escalation and arbitrary code execution via TOCTOU race condition in dynamic loader",
+          "VendorSeverity": {
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2026-86805"
+        },
+        {
+          "CVSS": {
+            "redhat": {
               "V3Score": 4.2,
               "V3Vector": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:L"
             }
@@ -71917,6 +72037,52 @@
             "redhat": 2
           },
           "VulnerabilityID": "CVE-2026-89092"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 5.8,
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-121"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "A stack-based buffer overflow in the dynamic loader (ld.so) of the GNU C Library (glibc) versions 2.14 through 2.44 allows a local attacker to crash or corrupt the memory of setuid/setgid (AT_SECURE) programs.\n\nWhen such a program's DT_RPATH or DT_RUNPATH begins with $ORIGIN and is followed by NUL or '/' the loader both reads past the end of the path buffer and writes past the end of a stack-allocated internal buffer. The corrupted loader stack can lead to a loader crash (denial of service) and limited disclosure of process memory.",
+          "Fingerprint": "sha256:f3613c1964f48e40057ff9518240e243f12a4b53e252b9e0f9226a9b931c751f",
+          "InstalledVersion": "2.36-9+deb12u14",
+          "LastModifiedDate": "2026-09-22T19:56:19.073Z",
+          "Layer": {
+            "DiffID": "sha256:bc9ca4465f5decda38abd083678d73c7ead1d70e8c28cac35e6a44d66c605b6c",
+            "Digest": "sha256:73a2753d9b9a9426901f214248ddedfc8e768aeb1b051cb4fdf719393d4af8bb"
+          },
+          "PkgID": "libc6-dev@2.36-9+deb12u14",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libc6-dev@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.15",
+            "UID": "bd39c41d0c2a591a"
+          },
+          "PkgName": "libc6-dev",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-95818",
+          "PublishedDate": "2026-09-22T17:17:32.093Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-95818",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-95818",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=34360",
+            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0023",
+            "https://www.cve.org/CVERecord?id=CVE-2026-95818"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "affected",
+          "Title": "glibc: glibc: Local attacker can cause denial of service and information disclosure via stack-based buffer overflow.",
+          "VendorSeverity": {
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2026-95818"
         },
         {
           "CVSS": {
@@ -72313,74 +72479,6 @@
             "redhat": 1
           },
           "VulnerabilityID": "CVE-2019-9192"
-        },
-        {
-          "CweIDs": [
-            "CWE-367"
-          ],
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Description": "A time-of-check to time-of-use (TOCTOU) race condition in the dynamic loader (ld.so) of the GNU C Library (glibc) versions 2.14 through 2.44 allows a local attacker to escalate privileges. When expanding $ORIGIN in DT_RPATH for setuid/setgid (AT_SECURE) programs, glibc validates the lexically normalized search path against the trusted directories but then opens the raw, un-normalized path. On systems where the Linux fs.protected_hardlinks sysctl is disabled, a local attacker who hard-links such a program into an attacker-controlled directory and wins a race to replace an intermediate path component with a symbolic link can direct the loader outside the trusted directory, causing it to load an attacker-controlled shared object and execute arbitrary code with the elevated privileges of the program.\n\nExploitation requires an installed setuid or setgid binary whose DT_RPATH uses $ORIGIN followed by \"..\" traversal that normalizes into a trusted directory, and the ability to hard-link that binary and win the race by swapping a path component for a symbolic link. Major Linux-based OS distributions ship with fs.protected_hardlinks enabled by default and mitigate the vulnerability.",
-          "Fingerprint": "sha256:718647025a2e8bec0dffdf22c863304d152a6fcf1668aab7ccf01d9d5a2d3054",
-          "InstalledVersion": "2.36-9+deb12u14",
-          "LastModifiedDate": "2026-09-22T19:56:19.073Z",
-          "Layer": {
-            "DiffID": "sha256:bc9ca4465f5decda38abd083678d73c7ead1d70e8c28cac35e6a44d66c605b6c",
-            "Digest": "sha256:73a2753d9b9a9426901f214248ddedfc8e768aeb1b051cb4fdf719393d4af8bb"
-          },
-          "PkgID": "libc6-dev@2.36-9+deb12u14",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc6-dev@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.15",
-            "UID": "bd39c41d0c2a591a"
-          },
-          "PkgName": "libc6-dev",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86805",
-          "PublishedDate": "2026-09-22T16:18:06.23Z",
-          "References": [
-            "https://sourceware.org/bugzilla/show_bug.cgi?id=34360",
-            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0022"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "affected",
-          "Title": "A time-of-check to time-of-use (TOCTOU) race condition in the dynamic  ...",
-          "VulnerabilityID": "CVE-2026-86805"
-        },
-        {
-          "CweIDs": [
-            "CWE-121"
-          ],
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Description": "A stack-based buffer overflow in the dynamic loader (ld.so) of the GNU C Library (glibc) versions 2.14 through 2.44 allows a local attacker to crash or corrupt the memory of setuid/setgid (AT_SECURE) programs.\n\nWhen such a program's DT_RPATH or DT_RUNPATH begins with $ORIGIN and is followed by NUL or '/' the loader both reads past the end of the path buffer and writes past the end of a stack-allocated internal buffer. The corrupted loader stack can lead to a loader crash (denial of service) and limited disclosure of process memory.",
-          "Fingerprint": "sha256:f3613c1964f48e40057ff9518240e243f12a4b53e252b9e0f9226a9b931c751f",
-          "InstalledVersion": "2.36-9+deb12u14",
-          "LastModifiedDate": "2026-09-22T19:56:19.073Z",
-          "Layer": {
-            "DiffID": "sha256:bc9ca4465f5decda38abd083678d73c7ead1d70e8c28cac35e6a44d66c605b6c",
-            "Digest": "sha256:73a2753d9b9a9426901f214248ddedfc8e768aeb1b051cb4fdf719393d4af8bb"
-          },
-          "PkgID": "libc6-dev@2.36-9+deb12u14",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc6-dev@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.15",
-            "UID": "bd39c41d0c2a591a"
-          },
-          "PkgName": "libc6-dev",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-95818",
-          "PublishedDate": "2026-09-22T17:17:32.093Z",
-          "References": [
-            "https://sourceware.org/bugzilla/show_bug.cgi?id=34360",
-            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0023"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "affected",
-          "Title": "A stack-based buffer overflow in the dynamic loader (ld.so) of the GNU ...",
-          "VulnerabilityID": "CVE-2026-95818"
         },
         {
           "CVSS": {
@@ -76485,7 +76583,7 @@
           "Status": "affected",
           "Title": "binutils: Binutils: Out-of-bounds Write Vulnerability",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "azure": 2,
             "cbl-mariner": 2,
             "debian": 1,
@@ -80751,7 +80849,7 @@
           "Status": "affected",
           "Title": "binutils: Binutils: Out-of-bounds Write Vulnerability",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "azure": 2,
             "cbl-mariner": 2,
             "debian": 1,
@@ -85993,6 +86091,54 @@
         },
         {
           "CVSS": {
+            "redhat": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-176"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "Expat through 2.8.4 fails to validate low surrogates following high surrogates in UTF-16 input, allowing malformed UTF-16 sequences to be accepted. Attackers can craft UTF-16 encoded XML with lone high surrogates that consume following code units, hiding markup characters from the parser and enabling XML injection attacks.",
+          "Fingerprint": "sha256:7d6a43f528e561290dd5f85567cb2b93be41685a32650048bf909e0a0becf317",
+          "InstalledVersion": "2.5.0-1+deb12u3",
+          "LastModifiedDate": "2026-09-22T20:25:55.87Z",
+          "Layer": {
+            "DiffID": "sha256:bc9ca4465f5decda38abd083678d73c7ead1d70e8c28cac35e6a44d66c605b6c",
+            "Digest": "sha256:73a2753d9b9a9426901f214248ddedfc8e768aeb1b051cb4fdf719393d4af8bb"
+          },
+          "PkgID": "libexpat1@2.5.0-1+deb12u3",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libexpat1@2.5.0-1%2Bdeb12u3?arch=amd64\u0026distro=debian-12.15",
+            "UID": "3d80839447f00d6e"
+          },
+          "PkgName": "libexpat1",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-93990",
+          "PublishedDate": "2026-09-19T23:17:10.203Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-93990",
+            "https://github.com/libexpat/libexpat",
+            "https://github.com/libexpat/libexpat/commit/ff6e1d7e750bbe245178f51a47a965dc8342861a",
+            "https://github.com/libexpat/libexpat/pull/1282",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-93990",
+            "https://www.cve.org/CVERecord?id=CVE-2026-93990",
+            "https://www.vulncheck.com/advisories/expat-through-2.8.4-malformed-utf-16-acceptance-via-unchecked-surrogate"
+          ],
+          "Severity": "HIGH",
+          "Status": "affected",
+          "Title": "expat: Expat: XML Injection via Malformed UTF-16 Input",
+          "VendorSeverity": {
+            "redhat": 3
+          },
+          "VulnerabilityID": "CVE-2026-93990"
+        },
+        {
+          "CVSS": {
             "julia": {
               "V3Score": 5.5,
               "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
@@ -86593,42 +86739,6 @@
           "VulnerabilityID": "CVE-2026-41080"
         },
         {
-          "CweIDs": [
-            "CWE-176"
-          ],
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Description": "Expat through 2.8.4 fails to validate low surrogates following high surrogates in UTF-16 input, allowing malformed UTF-16 sequences to be accepted. Attackers can craft UTF-16 encoded XML with lone high surrogates that consume following code units, hiding markup characters from the parser and enabling XML injection attacks.",
-          "Fingerprint": "sha256:7d6a43f528e561290dd5f85567cb2b93be41685a32650048bf909e0a0becf317",
-          "InstalledVersion": "2.5.0-1+deb12u3",
-          "LastModifiedDate": "2026-09-22T20:25:55.87Z",
-          "Layer": {
-            "DiffID": "sha256:bc9ca4465f5decda38abd083678d73c7ead1d70e8c28cac35e6a44d66c605b6c",
-            "Digest": "sha256:73a2753d9b9a9426901f214248ddedfc8e768aeb1b051cb4fdf719393d4af8bb"
-          },
-          "PkgID": "libexpat1@2.5.0-1+deb12u3",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libexpat1@2.5.0-1%2Bdeb12u3?arch=amd64\u0026distro=debian-12.15",
-            "UID": "3d80839447f00d6e"
-          },
-          "PkgName": "libexpat1",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-93990",
-          "PublishedDate": "2026-09-19T23:17:10.203Z",
-          "References": [
-            "https://github.com/libexpat/libexpat",
-            "https://github.com/libexpat/libexpat/commit/ff6e1d7e750bbe245178f51a47a965dc8342861a",
-            "https://github.com/libexpat/libexpat/pull/1282",
-            "https://www.vulncheck.com/advisories/expat-through-2.8.4-malformed-utf-16-acceptance-via-unchecked-surrogate"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "affected",
-          "Title": "Expat through 2.8.4 fails to validate low surrogates following high su ...",
-          "VulnerabilityID": "CVE-2026-93990"
-        },
-        {
           "CVSS": {
             "julia": {
               "V3Score": 7.5,
@@ -86918,6 +87028,54 @@
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-66046"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-176"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "Expat through 2.8.4 fails to validate low surrogates following high surrogates in UTF-16 input, allowing malformed UTF-16 sequences to be accepted. Attackers can craft UTF-16 encoded XML with lone high surrogates that consume following code units, hiding markup characters from the parser and enabling XML injection attacks.",
+          "Fingerprint": "sha256:f093af1243f3e73729ca745b22ab6739eec305758ca121294a79b386920f1216",
+          "InstalledVersion": "2.5.0-1+deb12u3",
+          "LastModifiedDate": "2026-09-22T20:25:55.87Z",
+          "Layer": {
+            "DiffID": "sha256:bc9ca4465f5decda38abd083678d73c7ead1d70e8c28cac35e6a44d66c605b6c",
+            "Digest": "sha256:73a2753d9b9a9426901f214248ddedfc8e768aeb1b051cb4fdf719393d4af8bb"
+          },
+          "PkgID": "libexpat1-dev@2.5.0-1+deb12u3",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libexpat1-dev@2.5.0-1%2Bdeb12u3?arch=amd64\u0026distro=debian-12.15",
+            "UID": "d5fcbf436088411d"
+          },
+          "PkgName": "libexpat1-dev",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-93990",
+          "PublishedDate": "2026-09-19T23:17:10.203Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-93990",
+            "https://github.com/libexpat/libexpat",
+            "https://github.com/libexpat/libexpat/commit/ff6e1d7e750bbe245178f51a47a965dc8342861a",
+            "https://github.com/libexpat/libexpat/pull/1282",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-93990",
+            "https://www.cve.org/CVERecord?id=CVE-2026-93990",
+            "https://www.vulncheck.com/advisories/expat-through-2.8.4-malformed-utf-16-acceptance-via-unchecked-surrogate"
+          ],
+          "Severity": "HIGH",
+          "Status": "affected",
+          "Title": "expat: Expat: XML Injection via Malformed UTF-16 Input",
+          "VendorSeverity": {
+            "redhat": 3
+          },
+          "VulnerabilityID": "CVE-2026-93990"
         },
         {
           "CVSS": {
@@ -87519,42 +87677,6 @@
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-41080"
-        },
-        {
-          "CweIDs": [
-            "CWE-176"
-          ],
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Description": "Expat through 2.8.4 fails to validate low surrogates following high surrogates in UTF-16 input, allowing malformed UTF-16 sequences to be accepted. Attackers can craft UTF-16 encoded XML with lone high surrogates that consume following code units, hiding markup characters from the parser and enabling XML injection attacks.",
-          "Fingerprint": "sha256:f093af1243f3e73729ca745b22ab6739eec305758ca121294a79b386920f1216",
-          "InstalledVersion": "2.5.0-1+deb12u3",
-          "LastModifiedDate": "2026-09-22T20:25:55.87Z",
-          "Layer": {
-            "DiffID": "sha256:bc9ca4465f5decda38abd083678d73c7ead1d70e8c28cac35e6a44d66c605b6c",
-            "Digest": "sha256:73a2753d9b9a9426901f214248ddedfc8e768aeb1b051cb4fdf719393d4af8bb"
-          },
-          "PkgID": "libexpat1-dev@2.5.0-1+deb12u3",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libexpat1-dev@2.5.0-1%2Bdeb12u3?arch=amd64\u0026distro=debian-12.15",
-            "UID": "d5fcbf436088411d"
-          },
-          "PkgName": "libexpat1-dev",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-93990",
-          "PublishedDate": "2026-09-19T23:17:10.203Z",
-          "References": [
-            "https://github.com/libexpat/libexpat",
-            "https://github.com/libexpat/libexpat/commit/ff6e1d7e750bbe245178f51a47a965dc8342861a",
-            "https://github.com/libexpat/libexpat/pull/1282",
-            "https://www.vulncheck.com/advisories/expat-through-2.8.4-malformed-utf-16-acceptance-via-unchecked-surrogate"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "affected",
-          "Title": "Expat through 2.8.4 fails to validate low surrogates following high su ...",
-          "VulnerabilityID": "CVE-2026-93990"
         },
         {
           "CweIDs": [
@@ -93184,7 +93306,7 @@
           "Status": "affected",
           "Title": "binutils: Binutils: Out-of-bounds Write Vulnerability",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "azure": 2,
             "cbl-mariner": 2,
             "debian": 1,
@@ -95123,7 +95245,7 @@
           "Description": "libjxl before 0.12 contains an integer underflow vulnerability in the container box parser that allows remote attackers to inject arbitrary metadata by exploiting 64-bit box size truncation to size_t on 32-bit platforms. Attackers can supply a crafted JPEG XL file causing the decoder to parse attacker-controlled codestream bytes as phantom box headers, enabling injection of arbitrary metadata (Exif, XMP, IPTC, JUMBF) and potential out-of-bounds reads.",
           "Fingerprint": "sha256:59d1c16dd64900d3cb9a3680f2a34aa08683325c6ba728a3b48f414d3e048778",
           "InstalledVersion": "0.7.0-10+deb12u1",
-          "LastModifiedDate": "2026-09-02T19:18:07.1Z",
+          "LastModifiedDate": "2026-09-23T17:17:43.213Z",
           "Layer": {
             "DiffID": "sha256:bc9ca4465f5decda38abd083678d73c7ead1d70e8c28cac35e6a44d66c605b6c",
             "Digest": "sha256:73a2753d9b9a9426901f214248ddedfc8e768aeb1b051cb4fdf719393d4af8bb"
@@ -98185,7 +98307,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "Description Not Available",
+          "Description": "[Unknown description]",
           "Fingerprint": "sha256:fb07643df001533ab8d714ce59ec58839c9e2aaef8bd377c9a501622de747cf5",
           "InstalledVersion": "2.28.3-1",
           "Layer": {
@@ -98201,7 +98323,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-35336",
           "Severity": "UNKNOWN",
           "Status": "end_of_life",
-          "Title": "Title Not Available",
+          "Title": "[Unknown description]",
           "VulnerabilityID": "CVE-2026-35336"
         },
         {
@@ -98310,7 +98432,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "Description Not Available",
+          "Description": "[Unknown description]",
           "Fingerprint": "sha256:fd7785016542bd8ed7c55848c514affce4797ccd260af39c929aa7426856e9e2",
           "InstalledVersion": "2.28.3-1",
           "Layer": {
@@ -98326,7 +98448,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-50583",
           "Severity": "UNKNOWN",
           "Status": "end_of_life",
-          "Title": "Title Not Available",
+          "Title": "[Unknown description]",
           "VulnerabilityID": "CVE-2026-50583"
         },
         {
@@ -98360,7 +98482,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "Description Not Available",
+          "Description": "[Unknown description]",
           "Fingerprint": "sha256:1f896e39816390e40bcec0acfe0309d5da0f14212c708b3e54ed8d69497869a3",
           "InstalledVersion": "2.28.3-1",
           "Layer": {
@@ -98376,7 +98498,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-50585",
           "Severity": "UNKNOWN",
           "Status": "end_of_life",
-          "Title": "Title Not Available",
+          "Title": "[Unknown description]",
           "VulnerabilityID": "CVE-2026-50585"
         },
         {
@@ -98460,7 +98582,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "[Unknown description]",
+          "Description": "Description Not Available",
           "Fingerprint": "sha256:14f8d3604af70abda60d11114997a4fc453c2eb2783ce4094ff961025167adf3",
           "InstalledVersion": "2.28.3-1",
           "Layer": {
@@ -98476,7 +98598,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-50640",
           "Severity": "UNKNOWN",
           "Status": "end_of_life",
-          "Title": "[Unknown description]",
+          "Title": "Title Not Available",
           "VulnerabilityID": "CVE-2026-50640"
         },
         {
@@ -105454,7 +105576,7 @@
           "Title": "cpython: Incomplete control character validation in http.cookies",
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 2,
+            "amazon": 3,
             "azure": 2,
             "nvd": 3,
             "oracle-oval": 3,
@@ -106270,7 +106392,7 @@
           "Status": "will_not_fix",
           "Title": "python: Python base64: Incomplete data decoding due to premature stop at padding",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "bitnami": 2,
             "redhat": 2
           },
@@ -106347,7 +106469,7 @@
           "Title": "python: Python: Cross-Site Scripting (XSS) vulnerability in http.cookies module",
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 3,
+            "amazon": 2,
             "bitnami": 2,
             "nvd": 2,
             "oracle-oval": 3,
@@ -106643,7 +106765,7 @@
           "Status": "affected",
           "Title": "python: Python pkgutil.get_data(): Path Traversal via improper resource argument validation",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "debian": 1,
             "photon": 3,
             "redhat": 1
@@ -107064,7 +107186,7 @@
           "Title": "cpython: Incomplete control character validation in http.cookies",
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 2,
+            "amazon": 3,
             "azure": 2,
             "nvd": 3,
             "oracle-oval": 3,
@@ -107880,7 +108002,7 @@
           "Status": "will_not_fix",
           "Title": "python: Python base64: Incomplete data decoding due to premature stop at padding",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "bitnami": 2,
             "redhat": 2
           },
@@ -107957,7 +108079,7 @@
           "Title": "python: Python: Cross-Site Scripting (XSS) vulnerability in http.cookies module",
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 3,
+            "amazon": 2,
             "bitnami": 2,
             "nvd": 2,
             "oracle-oval": 3,
@@ -108253,7 +108375,7 @@
           "Status": "affected",
           "Title": "python: Python pkgutil.get_data(): Path Traversal via improper resource argument validation",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "debian": 1,
             "photon": 3,
             "redhat": 1
@@ -108674,7 +108796,7 @@
           "Title": "cpython: Incomplete control character validation in http.cookies",
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 2,
+            "amazon": 3,
             "azure": 2,
             "nvd": 3,
             "oracle-oval": 3,
@@ -109490,7 +109612,7 @@
           "Status": "will_not_fix",
           "Title": "python: Python base64: Incomplete data decoding due to premature stop at padding",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "bitnami": 2,
             "redhat": 2
           },
@@ -109567,7 +109689,7 @@
           "Title": "python: Python: Cross-Site Scripting (XSS) vulnerability in http.cookies module",
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 3,
+            "amazon": 2,
             "bitnami": 2,
             "nvd": 2,
             "oracle-oval": 3,
@@ -109863,7 +109985,7 @@
           "Status": "affected",
           "Title": "python: Python pkgutil.get_data(): Path Traversal via improper resource argument validation",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "debian": 1,
             "photon": 3,
             "redhat": 1
@@ -110284,7 +110406,7 @@
           "Title": "cpython: Incomplete control character validation in http.cookies",
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 2,
+            "amazon": 3,
             "azure": 2,
             "nvd": 3,
             "oracle-oval": 3,
@@ -111100,7 +111222,7 @@
           "Status": "will_not_fix",
           "Title": "python: Python base64: Incomplete data decoding due to premature stop at padding",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "bitnami": 2,
             "redhat": 2
           },
@@ -111177,7 +111299,7 @@
           "Title": "python: Python: Cross-Site Scripting (XSS) vulnerability in http.cookies module",
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 3,
+            "amazon": 2,
             "bitnami": 2,
             "nvd": 2,
             "oracle-oval": 3,
@@ -111473,7 +111595,7 @@
           "Status": "affected",
           "Title": "python: Python pkgutil.get_data(): Path Traversal via improper resource argument validation",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "debian": 1,
             "photon": 3,
             "redhat": 1
@@ -120306,7 +120428,11 @@
             "https://access.redhat.com/errata/RHSA-2026:69095",
             "https://access.redhat.com/security/cve/CVE-2026-52490",
             "https://bugzilla.redhat.com/2523148",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2523148",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-52490",
             "https://errata.almalinux.org/8/ALSA-2026-69095.html",
+            "https://errata.rockylinux.org/RLSA-2026:69095",
             "https://gist.github.com/okyfh/122c2d72e991a78c8af80a3af3be8671",
             "https://gitlab.com/libtiff/libtiff/-/work_items/846",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-52490",
@@ -120318,7 +120444,8 @@
           "VendorSeverity": {
             "alma": 3,
             "amazon": 3,
-            "redhat": 3
+            "redhat": 3,
+            "rocky": 3
           },
           "VulnerabilityID": "CVE-2026-52490"
         },
@@ -123030,6 +123157,12 @@
           "VulnerabilityID": "CVE-2025-14104"
         },
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H"
+            }
+          },
           "CweIDs": [
             "CWE-122"
           ],
@@ -123055,14 +123188,26 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-88806",
           "PublishedDate": "2026-09-21T14:17:22.273Z",
           "References": [
-            "https://gitlab.freedesktop.org/xorg/lib/libx11/-/merge_requests/309"
+            "https://access.redhat.com/security/cve/CVE-2026-88806",
+            "https://gitlab.freedesktop.org/xorg/lib/libx11/-/merge_requests/309",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-88806",
+            "https://www.cve.org/CVERecord?id=CVE-2026-88806"
           ],
-          "Severity": "UNKNOWN",
+          "Severity": "HIGH",
           "Status": "affected",
-          "Title": "A malicious X server could exploit a buffer overflow in libX11 before  ...",
+          "Title": "libX11: libX11: Heap-based buffer overflow via malicious X server",
+          "VendorSeverity": {
+            "redhat": 3
+          },
           "VulnerabilityID": "CVE-2026-88806"
         },
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H"
+            }
+          },
           "CweIDs": [
             "CWE-122"
           ],
@@ -123088,14 +123233,26 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-88806",
           "PublishedDate": "2026-09-21T14:17:22.273Z",
           "References": [
-            "https://gitlab.freedesktop.org/xorg/lib/libx11/-/merge_requests/309"
+            "https://access.redhat.com/security/cve/CVE-2026-88806",
+            "https://gitlab.freedesktop.org/xorg/lib/libx11/-/merge_requests/309",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-88806",
+            "https://www.cve.org/CVERecord?id=CVE-2026-88806"
           ],
-          "Severity": "UNKNOWN",
+          "Severity": "HIGH",
           "Status": "affected",
-          "Title": "A malicious X server could exploit a buffer overflow in libX11 before  ...",
+          "Title": "libX11: libX11: Heap-based buffer overflow via malicious X server",
+          "VendorSeverity": {
+            "redhat": 3
+          },
           "VulnerabilityID": "CVE-2026-88806"
         },
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H"
+            }
+          },
           "CweIDs": [
             "CWE-122"
           ],
@@ -123121,11 +123278,17 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-88806",
           "PublishedDate": "2026-09-21T14:17:22.273Z",
           "References": [
-            "https://gitlab.freedesktop.org/xorg/lib/libx11/-/merge_requests/309"
+            "https://access.redhat.com/security/cve/CVE-2026-88806",
+            "https://gitlab.freedesktop.org/xorg/lib/libx11/-/merge_requests/309",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-88806",
+            "https://www.cve.org/CVERecord?id=CVE-2026-88806"
           ],
-          "Severity": "UNKNOWN",
+          "Severity": "HIGH",
           "Status": "affected",
-          "Title": "A malicious X server could exploit a buffer overflow in libX11 before  ...",
+          "Title": "libX11: libX11: Heap-based buffer overflow via malicious X server",
+          "VendorSeverity": {
+            "redhat": 3
+          },
           "VulnerabilityID": "CVE-2026-88806"
         },
         {
@@ -123849,6 +124012,12 @@
           "VulnerabilityID": "CVE-2026-86141"
         },
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 8.3,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:H/A:H"
+            }
+          },
           "CweIDs": [
             "CWE-122"
           ],
@@ -123874,11 +124043,17 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-88807",
           "PublishedDate": "2026-09-21T14:17:22.41Z",
           "References": [
-            "https://gitlab.freedesktop.org/xorg/lib/libxrender/-/merge_requests/19"
+            "https://access.redhat.com/security/cve/CVE-2026-88807",
+            "https://gitlab.freedesktop.org/xorg/lib/libxrender/-/merge_requests/19",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-88807",
+            "https://www.cve.org/CVERecord?id=CVE-2026-88807"
           ],
-          "Severity": "UNKNOWN",
+          "Severity": "HIGH",
           "Status": "affected",
-          "Title": "A heap overflow in libXrender before 0.9.13 inRenderQueryPictFormats c ...",
+          "Title": "libXrender: libXrender: Code injection via heap overflow in RenderQueryPictFormats",
+          "VendorSeverity": {
+            "redhat": 3
+          },
           "VulnerabilityID": "CVE-2026-88807"
         },
         {
@@ -137389,6 +137564,58 @@
         },
         {
           "CVSS": {
+            "redhat": {
+              "V3Score": 7,
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
+            }
+          },
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: qla2xxx: Bound rsp_info_len to avoid OOB sense-data read\n\nIn qla2x00_status_entry(), the FWI2 status path advances sense_data and\nshrinks par_sense_len by rsp_info_len:\n\n\tif (IS_FWI2_CAPABLE(ha)) {\n\t\tsense_data += rsp_info_len;\n\t\tpar_sense_len -= rsp_info_len;\n\t}\n\nrsp_info_len is a 32-bit value taken directly from the target's FCP\nresponse (sf.rsp_data_len), while par_sense_len is the IOCB data area\nsize (28 bytes for 24xx, 60 bytes for 29xx). A hostile or buggy target\nreporting an rsp_info_len larger than par_sense_len makes the unsigned\nsubtraction underflow to a huge value and advances sense_data out of\nbounds.\n\nThe underflowed par_sense_len then defeats the cap in\nqla2x00_handle_sense():\n\n\tif (sense_len \u003e par_sense_len)\n\t\tsense_len = par_sense_len;\n\tmemcpy(cp-\u003esense_buffer, sense_data, sense_len);\n\nso the memcpy reads up to SCSI_SENSE_BUFFERSIZE bytes from the\nout-of-bounds sense_data pointer, leaking adjacent response-ring/heap\nmemory into the command's sense buffer.\n\nClamp rsp_info_len to par_sense_len before the subtraction so\npar_sense_len can never underflow and sense_data stays within the IOCB\ndata area. The fix sits before the comp_status switch, covering both\nqla2x00_handle_sense() call sites.",
+          "Fingerprint": "sha256:c5a3c2a0a905f66b645e9331cd7e2814c4ec6f52faf03bf3adb044386f2047cf",
+          "InstalledVersion": "6.1.187-1",
+          "LastModifiedDate": "2026-09-16T15:18:12.823Z",
+          "Layer": {
+            "DiffID": "sha256:bc9ca4465f5decda38abd083678d73c7ead1d70e8c28cac35e6a44d66c605b6c",
+            "Digest": "sha256:73a2753d9b9a9426901f214248ddedfc8e768aeb1b051cb4fdf719393d4af8bb"
+          },
+          "PkgID": "linux-libc-dev@6.1.187-1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/linux-libc-dev@6.1.187-1?arch=amd64\u0026distro=debian-12.15",
+            "UID": "ea324c365d6c0e15"
+          },
+          "PkgName": "linux-libc-dev",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-89846",
+          "PublishedDate": "2026-09-16T11:16:51.853Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-89846",
+            "https://git.kernel.org/linus/ca6d880d6c70cb7946e7b3e05d7285f271b6d99e%20%287.3-rc1%29",
+            "https://git.kernel.org/pub/scm/linux/security/vulns.git/plain/cve/published/2026/CVE-2026-89846.mbox",
+            "https://git.kernel.org/stable/c/125b12861c726e58448bb95d55b04851fb131d1f",
+            "https://git.kernel.org/stable/c/6b08c0cb110a1fba92f99d655020198489699815",
+            "https://git.kernel.org/stable/c/be75ab791c9b3baca66c70ce03443afebc83acda",
+            "https://git.kernel.org/stable/c/ca6d880d6c70cb7946e7b3e05d7285f271b6d99e",
+            "https://git.kernel.org/stable/c/d7f7746ff031ae45724881261804f4bf5317c985",
+            "https://git.kernel.org/stable/c/e57ace988bda5693f7b3645f652ea4b4220870ee",
+            "https://git.kernel.org/stable/c/ebc41dfc59d190956e0113e8bd90c28f6f21e8b9",
+            "https://git.kernel.org/stable/c/f6e8977bce887481b2b2b0e2e14a791270741cfb",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-89846",
+            "https://www.cve.org/CVERecord?id=CVE-2026-89846"
+          ],
+          "Severity": "HIGH",
+          "Status": "affected",
+          "Title": "kernel: scsi: qla2xxx: Bound rsp_info_len to avoid OOB sense-data read",
+          "VendorSeverity": {
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-89846"
+        },
+        {
+          "CVSS": {
             "nvd": {
               "V2Score": 4.9,
               "V2Vector": "AV:L/AC:L/Au:N/C:N/I:N/A:C",
@@ -141061,7 +141288,7 @@
           "Status": "affected",
           "Title": "hw: Spectre-SRC that is Speculative Race Conditions (SRCs) for synchronization primitives similar like Spectre V1 with possibility to bypass software features (e.g., IPIs, high-precision timers, etc)",
           "VendorSeverity": {
-            "amazon": 2,
+            "amazon": 3,
             "bottlerocket": 2,
             "photon": 2,
             "redhat": 2
@@ -152717,7 +152944,7 @@
           "Status": "affected",
           "Title": "kernel: x86/mm/ident_map: Use gbpages only where full GB page should be mapped.",
           "VendorSeverity": {
-            "amazon": 2,
+            "amazon": 3,
             "azure": 2,
             "nvd": 2,
             "redhat": 2,
@@ -211210,48 +211437,6 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: qla2xxx: Bound rsp_info_len to avoid OOB sense-data read\n\nIn qla2x00_status_entry(), the FWI2 status path advances sense_data and\nshrinks par_sense_len by rsp_info_len:\n\n\tif (IS_FWI2_CAPABLE(ha)) {\n\t\tsense_data += rsp_info_len;\n\t\tpar_sense_len -= rsp_info_len;\n\t}\n\nrsp_info_len is a 32-bit value taken directly from the target's FCP\nresponse (sf.rsp_data_len), while par_sense_len is the IOCB data area\nsize (28 bytes for 24xx, 60 bytes for 29xx). A hostile or buggy target\nreporting an rsp_info_len larger than par_sense_len makes the unsigned\nsubtraction underflow to a huge value and advances sense_data out of\nbounds.\n\nThe underflowed par_sense_len then defeats the cap in\nqla2x00_handle_sense():\n\n\tif (sense_len \u003e par_sense_len)\n\t\tsense_len = par_sense_len;\n\tmemcpy(cp-\u003esense_buffer, sense_data, sense_len);\n\nso the memcpy reads up to SCSI_SENSE_BUFFERSIZE bytes from the\nout-of-bounds sense_data pointer, leaking adjacent response-ring/heap\nmemory into the command's sense buffer.\n\nClamp rsp_info_len to par_sense_len before the subtraction so\npar_sense_len can never underflow and sense_data stays within the IOCB\ndata area. The fix sits before the comp_status switch, covering both\nqla2x00_handle_sense() call sites.",
-          "Fingerprint": "sha256:c5a3c2a0a905f66b645e9331cd7e2814c4ec6f52faf03bf3adb044386f2047cf",
-          "InstalledVersion": "6.1.187-1",
-          "LastModifiedDate": "2026-09-16T15:18:12.823Z",
-          "Layer": {
-            "DiffID": "sha256:bc9ca4465f5decda38abd083678d73c7ead1d70e8c28cac35e6a44d66c605b6c",
-            "Digest": "sha256:73a2753d9b9a9426901f214248ddedfc8e768aeb1b051cb4fdf719393d4af8bb"
-          },
-          "PkgID": "linux-libc-dev@6.1.187-1",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/linux-libc-dev@6.1.187-1?arch=amd64\u0026distro=debian-12.15",
-            "UID": "ea324c365d6c0e15"
-          },
-          "PkgName": "linux-libc-dev",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-89846",
-          "PublishedDate": "2026-09-16T11:16:51.853Z",
-          "References": [
-            "https://git.kernel.org/linus/ca6d880d6c70cb7946e7b3e05d7285f271b6d99e%20%287.3-rc1%29",
-            "https://git.kernel.org/stable/c/125b12861c726e58448bb95d55b04851fb131d1f",
-            "https://git.kernel.org/stable/c/6b08c0cb110a1fba92f99d655020198489699815",
-            "https://git.kernel.org/stable/c/be75ab791c9b3baca66c70ce03443afebc83acda",
-            "https://git.kernel.org/stable/c/ca6d880d6c70cb7946e7b3e05d7285f271b6d99e",
-            "https://git.kernel.org/stable/c/d7f7746ff031ae45724881261804f4bf5317c985",
-            "https://git.kernel.org/stable/c/e57ace988bda5693f7b3645f652ea4b4220870ee",
-            "https://git.kernel.org/stable/c/ebc41dfc59d190956e0113e8bd90c28f6f21e8b9",
-            "https://git.kernel.org/stable/c/f6e8977bce887481b2b2b0e2e14a791270741cfb",
-            "https://www.cve.org/CVERecord?id=CVE-2026-89846"
-          ],
-          "Severity": "MEDIUM",
-          "Status": "affected",
-          "Title": "In the Linux kernel, the following vulnerability has been resolved:  s ...",
-          "VendorSeverity": {
-            "ubuntu": 2
-          },
-          "VulnerabilityID": "CVE-2026-89846"
-        },
-        {
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
           "Description": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: qla2xxx: Avoid double completion in async IOCB timeout\n\nqla2x00_async_iocb_timeout() tries to abort a timed-out async IOCB. When\nqla24xx_async_abort_cmd() fails, both the SRB_LOGIN_CMD path and the\nSRB_CTRL_VP/default path scan outstanding_cmds[] for the SRB and then\ncall sp-\u003edone(sp, QLA_FUNCTION_TIMEOUT) unconditionally, without checking\nwhether the SRB was actually found and removed.\n\nIf the response ISR completes the same handle first, it removes the SRB\nunder qp_lock_ptr and runs sp-\u003edone() -\u003e complete(sp-\u003ecomp). The\nsubmitter qla24xx_control_vp() wakes from wait_for_completion(), clears\nsp-\u003ecomp, drops its reference and returns, reclaiming the on-stack\ncompletion. The timer reference keeps the SRB alive across the timeout\nhandler, but not the submitter's stack. The timeout then issues a second\nsp-\u003edone() -\u003e qla_ctrlvp_sp_done(), which evaluates \"if (sp-\u003ecomp)\ncomplete(sp-\u003ecomp)\"; with the pointer loaded before the submitter's NULL\nstore, complete() writes into the freed stack frame, a use-after-free.\n\nTrack whether this path removed the SRB from outstanding_cmds and only\ncall sp-\u003edone() when it did, so the command is completed exactly once by\nwhichever path owns it. This mirrors the sp_found guard already used in\nqla24xx_abort_iocb_timeout().",
           "Fingerprint": "sha256:164b460295b9d84e61f777d0ac0fdcdefcf7bd9c76b0beaed380fc94c08eb7f2",
           "InstalledVersion": "6.1.187-1",
@@ -246230,7 +246415,7 @@
           "Title": "cpython: Incomplete control character validation in http.cookies",
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 2,
+            "amazon": 3,
             "azure": 2,
             "nvd": 3,
             "oracle-oval": 3,
@@ -247046,7 +247231,7 @@
           "Status": "will_not_fix",
           "Title": "python: Python base64: Incomplete data decoding due to premature stop at padding",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "bitnami": 2,
             "redhat": 2
           },
@@ -247123,7 +247308,7 @@
           "Title": "python: Python: Cross-Site Scripting (XSS) vulnerability in http.cookies module",
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 3,
+            "amazon": 2,
             "bitnami": 2,
             "nvd": 2,
             "oracle-oval": 3,
@@ -247419,7 +247604,7 @@
           "Status": "affected",
           "Title": "python: Python pkgutil.get_data(): Path Traversal via improper resource argument validation",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "debian": 1,
             "photon": 3,
             "redhat": 1
@@ -247840,7 +248025,7 @@
           "Title": "cpython: Incomplete control character validation in http.cookies",
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 2,
+            "amazon": 3,
             "azure": 2,
             "nvd": 3,
             "oracle-oval": 3,
@@ -248656,7 +248841,7 @@
           "Status": "will_not_fix",
           "Title": "python: Python base64: Incomplete data decoding due to premature stop at padding",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "bitnami": 2,
             "redhat": 2
           },
@@ -248733,7 +248918,7 @@
           "Title": "python: Python: Cross-Site Scripting (XSS) vulnerability in http.cookies module",
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 3,
+            "amazon": 2,
             "bitnami": 2,
             "nvd": 2,
             "oracle-oval": 3,
@@ -249029,7 +249214,7 @@
           "Status": "affected",
           "Title": "python: Python pkgutil.get_data(): Path Traversal via improper resource argument validation",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "debian": 1,
             "photon": 3,
             "redhat": 1
@@ -249423,6 +249608,33 @@
             "debian": 1
           },
           "VulnerabilityID": "TEMP-0290435-0B57B5"
+        },
+        {
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:77c6a313525efee7dde142ee4a2287adc98c950d2db77d195f98a416d3cc4d22",
+          "FixedVersion": "2026c-0+deb12u1",
+          "InstalledVersion": "2026b-0+deb12u1",
+          "Layer": {
+            "DiffID": "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+            "Digest": "sha256:dbaa5c62f0ed2acebf15ba5fc565cb938c8495c0b77e1acfab05f5a7354ab1a9"
+          },
+          "PkgID": "tzdata@2026b-0+deb12u1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/tzdata@2026b-0%2Bdeb12u1?arch=all\u0026distro=debian-12.15",
+            "UID": "9c044d6d00a3a61d"
+          },
+          "PkgName": "tzdata",
+          "Severity": "UNKNOWN",
+          "Status": "fixed",
+          "Title": "tzdata - new timezone database",
+          "VendorIDs": [
+            "DLA-4792-1"
+          ],
+          "VulnerabilityID": "DLA-4792-1"
         },
         {
           "CVSS": {
@@ -256006,7 +256218,7 @@
           ],
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 2,
+            "amazon": 3,
             "azure": 3,
             "cbl-mariner": 3,
             "ghsa": 3,
@@ -256099,7 +256311,7 @@
           ],
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 2,
+            "amazon": 3,
             "azure": 3,
             "cbl-mariner": 3,
             "ghsa": 3,

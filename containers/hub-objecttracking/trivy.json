@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:c3121c4cc66879c315121bb972e155e6396091817c1fe564b166323779e2fdd3",
   "ArtifactName": "ghcr.io/uug-ai/hub-objecttracking@sha256:5ab0adcb624c563bc21e04e9384a3c83dfcfe400dc96553b83dec828bbecd506",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-09-23T03:52:53.000816656Z",
+  "CreatedAt": "2026-09-24T03:52:00.726043263Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
@@ -492,7 +492,7 @@
     ],
     "Size": 3825029632
   },
-  "ReportID": "01a0cc65-1a08-7c6f-8aa3-7f220981bcdf",
+  "ReportID": "01a0d18a-a9d6-70a3-b0fc-df1a539f2e09",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -23310,6 +23310,7 @@
             "https://nvd.nist.gov/vuln/detail/CVE-2026-41991",
             "https://ubuntu.com/security/notices/USN-8512-1",
             "https://ubuntu.com/security/notices/USN-8733-1",
+            "https://ubuntu.com/security/notices/USN-8733-2",
             "https://www.cve.org/CVERecord?id=CVE-2026-41991",
             "https://www.gnu.org/software/gzip",
             "https://www.gnu.org/software/gzip/"
@@ -23396,6 +23397,7 @@
             "https://nvd.nist.gov/vuln/detail/CVE-2026-41992",
             "https://ubuntu.com/security/notices/USN-8512-1",
             "https://ubuntu.com/security/notices/USN-8733-1",
+            "https://ubuntu.com/security/notices/USN-8733-2",
             "https://www.cve.org/CVERecord?id=CVE-2026-41992",
             "https://www.gnu.org/software/gzip",
             "https://www.gnu.org/software/gzip/"
@@ -23435,7 +23437,7 @@
           "Description": "A heap buffer overflow vulnerability was found in libaom, the reference AV1 codec implementation. A flaw in the AV1 encoder's Look-Ahead Processing (LAP) mode causes the first-pass stats ring buffer wrap-around guard to be bypassed when g_lag_in_frames is set to 1 or higher. This results in a 232-byte out-of-bounds write on every encoded frame after the second, corrupting adjacent heap objects. An attacker who can influence encoder configuration in a transcoding service or WebRTC session could exploit this to cause a denial of service (process crash) or potentially achieve code execution.",
           "Fingerprint": "sha256:c147983cab1024e67c582586fd924114f3168bf4aa2db8805a545cebfaa4f9e9",
           "InstalledVersion": "3.3.0-1ubuntu0.1",
-          "LastModifiedDate": "2026-09-22T13:17:06.71Z",
+          "LastModifiedDate": "2026-09-23T07:16:44.96Z",
           "Layer": {
             "DiffID": "sha256:66a500ea707ec56d5f727cc5300b5353cd327ad5f036f95f509d3e9dfccb3cb4",
             "Digest": "sha256:f12134a4c747773870db269f5592853697dd1b563442b23dcbc47392c800b272"
@@ -46074,6 +46076,12 @@
           "VulnerabilityID": "CVE-2026-72522"
         },
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
           "CweIDs": [
             "CWE-125"
           ],
@@ -46099,6 +46107,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-76641",
           "PublishedDate": "2026-08-20T18:16:51.887Z",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-76641",
             "https://github.com/libexpat/libexpat/commit/98599f6dcc2b460410881fe420f5f55d6bec63bf",
             "https://github.com/libexpat/libexpat/pull/1331",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-76641",
@@ -46108,9 +46117,10 @@
           "Severity": "MEDIUM",
           "SeveritySource": "ubuntu",
           "Status": "affected",
-          "Title": "CVE-2026-76641 affecting package expat for versions less than 2.8.3-2",
+          "Title": "expat: Expat: Denial of Service via XML external entity parsing",
           "VendorSeverity": {
             "azure": 3,
+            "redhat": 3,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-76641"
@@ -82700,6 +82710,8 @@
             "https://access.redhat.com/security/cve/CVE-2026-56852",
             "https://go.dev/cl/794100",
             "https://go.dev/issue/80142",
+            "https://linux.oracle.com/cve/CVE-2026-56852.html",
+            "https://linux.oracle.com/errata/ELSA-2026-70201.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-56852",
             "https://pkg.go.dev/vuln/GO-2026-5970",
             "https://www.cve.org/CVERecord?id=CVE-2026-56852"
@@ -82713,6 +82725,7 @@
           "VendorSeverity": {
             "amazon": 3,
             "azure": 3,
+            "oracle-oval": 3,
             "redhat": 3
           },
           "VulnerabilityID": "CVE-2026-56852"
@@ -84167,7 +84180,7 @@
             "https://go.dev/issue/80405",
             "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
             "https://linux.oracle.com/cve/CVE-2026-33818.html",
-            "https://linux.oracle.com/errata/ELSA-2026-69308.html",
+            "https://linux.oracle.com/errata/ELSA-2026-70201.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-33818",
             "https://pkg.go.dev/vuln/GO-2026-5972",
             "https://www.cve.org/CVERecord?id=CVE-2026-33818"
@@ -84984,7 +84997,7 @@
             "https://go.dev/issue/78987",
             "https://groups.google.com/g/golang-announce/c/qcCIEXso47M",
             "https://linux.oracle.com/cve/CVE-2026-42499.html",
-            "https://linux.oracle.com/errata/ELSA-2026-65895-0.html",
+            "https://linux.oracle.com/errata/ELSA-2026-70201.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-42499",
             "https://pkg.go.dev/vuln/GO-2026-4977",
             "https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-42499.json",
@@ -85196,7 +85209,7 @@
             "https://go.dev/issue/80205",
             "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
             "https://linux.oracle.com/cve/CVE-2026-56853.html",
-            "https://linux.oracle.com/errata/ELSA-2026-65895-0.html",
+            "https://linux.oracle.com/errata/ELSA-2026-70201.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-56853",
             "https://pkg.go.dev/vuln/GO-2026-6089",
             "https://www.cve.org/CVERecord?id=CVE-2026-56853"
@@ -85301,7 +85314,7 @@
             "https://go.dev/issue/80435",
             "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
             "https://linux.oracle.com/cve/CVE-2026-56858.html",
-            "https://linux.oracle.com/errata/ELSA-2026-65895-0.html",
+            "https://linux.oracle.com/errata/ELSA-2026-70201.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-56858",
             "https://pkg.go.dev/vuln/GO-2026-6091",
             "https://www.cve.org/CVERecord?id=CVE-2026-56858"
@@ -85406,7 +85419,7 @@
             "https://go.dev/issue/80481",
             "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
             "https://linux.oracle.com/cve/CVE-2026-56859.html",
-            "https://linux.oracle.com/errata/ELSA-2026-69308.html",
+            "https://linux.oracle.com/errata/ELSA-2026-70201.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-56859",
             "https://pkg.go.dev/vuln/GO-2026-6088",
             "https://www.cve.org/CVERecord?id=CVE-2026-56859"
@@ -85483,7 +85496,7 @@
             "https://go.dev/issue/80494",
             "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
             "https://linux.oracle.com/cve/CVE-2026-56860.html",
-            "https://linux.oracle.com/errata/ELSA-2026-69308.html",
+            "https://linux.oracle.com/errata/ELSA-2026-70201.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-56860",
             "https://pkg.go.dev/vuln/GO-2026-6218",
             "https://www.cve.org/CVERecord?id=CVE-2026-56860"
@@ -85560,7 +85573,7 @@
             "https://go.dev/issue/80528",
             "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
             "https://linux.oracle.com/cve/CVE-2026-56862.html",
-            "https://linux.oracle.com/errata/ELSA-2026-69308.html",
+            "https://linux.oracle.com/errata/ELSA-2026-70201.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-56862",
             "https://pkg.go.dev/vuln/GO-2026-6090",
             "https://www.cve.org/CVERecord?id=CVE-2026-56862"
