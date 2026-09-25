@@ -1,8 +1,8 @@
 # Critical and high vulnerability findings
 
-Generated at `2026-09-24T03:51:01Z` from the latest available Trivy container reports. Occurrences count every affected package record across scanned images; one advisory can therefore occur more than once in one or more repositories.
+Generated at `2026-09-25T03:51:13Z` from the latest available Trivy container reports. Occurrences count every affected package record across scanned images; one advisory can therefore occur more than once in one or more repositories.
 
-**370 unique findings**: 17 critical and 353 high, with 1606 total occurrences.
+**371 unique findings**: 17 critical and 354 high, with 1611 total occurrences.
 
 | Severity | Advisory | Occurrences | Fixable | Repositories | Packages |
 | --- | --- | ---: | ---: | --- | --- |
@@ -90,6 +90,7 @@ Generated at `2026-09-24T03:51:01Z` from the latest available Trivy container re
 | HIGH | [CVE-2026-7210](https://avd.aquasec.com/nvd/cve-2026-7210) | 6 | 0 | hub-pipeline-classifier | libpython3.11-dev@3.11.2-6+deb12u8, libpython3.11-minimal@3.11.2-6+deb12u8, libpython3.11-stdlib@3.11.2-6+deb12u8, libpython3.11@3.11.2-6+deb12u8, python3.11-minimal@3.11.2-6+deb12u8, python3.11@3.11.2-6+deb12u8 |
 | HIGH | [CVE-2026-8328](https://avd.aquasec.com/nvd/cve-2026-8328) | 6 | 0 | hub-pipeline-classifier | libpython3.11-dev@3.11.2-6+deb12u8, libpython3.11-minimal@3.11.2-6+deb12u8, libpython3.11-stdlib@3.11.2-6+deb12u8, libpython3.11@3.11.2-6+deb12u8, python3.11-minimal@3.11.2-6+deb12u8, python3.11@3.11.2-6+deb12u8 |
 | HIGH | [CVE-2026-88806](https://avd.aquasec.com/nvd/cve-2026-88806) | 6 | 0 | hub-anpr, hub-pipeline-classifier | libx11-6@2:1.8.4-2+deb12u2, libx11-data@2:1.8.4-2+deb12u2, libx11-xcb1@2:1.8.4-2+deb12u2 |
+| HIGH | [CVE-2026-93990](https://avd.aquasec.com/nvd/cve-2026-93990) | 6 | 3 | hub-anpr, hub-frontend, hub-pipeline-classifier, hub-pipeline-dominantcolors, hub-pipeline-thumbnail | libexpat1-dev@2.5.0-1+deb12u3, libexpat1@2.5.0-1+deb12u3, libexpat@2.8.4-r0 |
 | HIGH | [CVE-2026-12064](https://avd.aquasec.com/nvd/cve-2026-12064) | 5 | 0 | hub-anpr, hub-pipeline-classifier | curl@7.88.1-10+deb12u15, libcurl3-gnutls@7.88.1-10+deb12u15, libcurl4@7.88.1-10+deb12u15 |
 | HIGH | [CVE-2026-29181](https://avd.aquasec.com/nvd/cve-2026-29181) | 5 | 5 | hub-pipeline-counting, hub-pipeline-dominantcolors, hub-pipeline-sprite, hub-pipeline-throttler, hub-pipeline-thumbnail | go.opentelemetry.io/otel@v1.39.0 |
 | HIGH | [CVE-2026-42497](https://avd.aquasec.com/nvd/cve-2026-42497) | 5 | 0 | hub-anpr, hub-pipeline-classifier | libperl5.36@5.36.0-7+deb12u3, perl-base@5.36.0-7+deb12u3, perl-modules-5.36@5.36.0-7+deb12u3, perl@5.36.0-7+deb12u3 |
@@ -118,7 +119,6 @@ Generated at `2026-09-24T03:51:01Z` from the latest available Trivy container re
 | HIGH | [CVE-2026-56864](https://avd.aquasec.com/nvd/cve-2026-56864) | 3 | 3 | factory, hub-api, vault | golang.org/x/mod@v0.33.0, golang.org/x/mod@v0.36.0 |
 | HIGH | [CVE-2026-56865](https://avd.aquasec.com/nvd/cve-2026-56865) | 3 | 3 | factory, hub-api, vault | golang.org/x/mod@v0.33.0, golang.org/x/mod@v0.36.0 |
 | HIGH | [CVE-2026-66046](https://avd.aquasec.com/nvd/cve-2026-66046) | 3 | 0 | hub-anpr, hub-pipeline-classifier | libexpat1-dev@2.5.0-1+deb12u3, libexpat1@2.5.0-1+deb12u3 |
-| HIGH | [CVE-2026-93990](https://avd.aquasec.com/nvd/cve-2026-93990) | 3 | 0 | hub-anpr, hub-pipeline-classifier | libexpat1-dev@2.5.0-1+deb12u3, libexpat1@2.5.0-1+deb12u3 |
 | HIGH | [CVE-2020-26160](https://avd.aquasec.com/nvd/cve-2020-26160) | 2 | 0 | factory, vault | github.com/dgrijalva/jwt-go@v3.2.0+incompatible |
 | HIGH | [CVE-2023-25193](https://avd.aquasec.com/nvd/cve-2023-25193) | 2 | 0 | hub-anpr, hub-pipeline-classifier | libharfbuzz0b@6.0.0+dfsg-3 |
 | HIGH | [CVE-2023-2953](https://avd.aquasec.com/nvd/cve-2023-2953) | 2 | 0 | hub-anpr, hub-pipeline-classifier | libldap-2.5-0@2.5.13+dfsg-5 |
@@ -173,6 +173,7 @@ Generated at `2026-09-24T03:51:01Z` from the latest available Trivy container re
 | HIGH | [CVE-2026-88807](https://avd.aquasec.com/nvd/cve-2026-88807) | 2 | 0 | hub-anpr, hub-pipeline-classifier | libxrender1@1:0.9.10-1.1 |
 | HIGH | [CVE-2026-89157](https://avd.aquasec.com/nvd/cve-2026-89157) | 2 | 2 | hub-anpr, hub-pipeline-classifier | libpcre2-8-0@10.42-1 |
 | HIGH | [CVE-2026-89161](https://avd.aquasec.com/nvd/cve-2026-89161) | 2 | 2 | hub-anpr, hub-pipeline-classifier | libpcre2-8-0@10.42-1 |
+| HIGH | [CVE-2026-96889](https://avd.aquasec.com/nvd/cve-2026-96889) | 2 | 0 | hub-anpr, hub-pipeline-classifier | librsvg2-2@2.54.7+dfsg-1~deb12u1 |
 | HIGH | [CVE-2013-7445](https://avd.aquasec.com/nvd/cve-2013-7445) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
 | HIGH | [CVE-2019-19449](https://avd.aquasec.com/nvd/cve-2019-19449) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
 | HIGH | [CVE-2019-19814](https://avd.aquasec.com/nvd/cve-2019-19814) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
