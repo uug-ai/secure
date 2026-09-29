@@ -1,8 +1,8 @@
 # Critical and high vulnerability findings
 
-Generated at `2026-09-28T03:57:16Z` from the latest available Trivy container reports. Occurrences count every affected package record across scanned images; one advisory can therefore occur more than once in one or more repositories.
+Generated at `2026-09-29T03:54:07Z` from the latest available Trivy container reports. Occurrences count every affected package record across scanned images; one advisory can therefore occur more than once in one or more repositories.
 
-**373 unique findings**: 17 critical and 356 high, with 1641 total occurrences.
+**372 unique findings**: 17 critical and 355 high, with 1640 total occurrences.
 
 | Severity | Advisory | Occurrences | Fixable | Repositories | Packages |
 | --- | --- | ---: | ---: | --- | --- |
@@ -360,7 +360,6 @@ Generated at `2026-09-28T03:57:16Z` from the latest available Trivy container re
 | HIGH | [CVE-2026-89563](https://avd.aquasec.com/nvd/cve-2026-89563) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
 | HIGH | [CVE-2026-89564](https://avd.aquasec.com/nvd/cve-2026-89564) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
 | HIGH | [CVE-2026-89569](https://avd.aquasec.com/nvd/cve-2026-89569) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
-| HIGH | [CVE-2026-89579](https://avd.aquasec.com/nvd/cve-2026-89579) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
 | HIGH | [CVE-2026-89603](https://avd.aquasec.com/nvd/cve-2026-89603) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
 | HIGH | [CVE-2026-89607](https://avd.aquasec.com/nvd/cve-2026-89607) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
 | HIGH | [CVE-2026-89631](https://avd.aquasec.com/nvd/cve-2026-89631) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
