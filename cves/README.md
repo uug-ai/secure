@@ -1,8 +1,8 @@
 # Critical and high vulnerability findings
 
-Generated at `2026-09-29T03:54:07Z` from the latest available Trivy container reports. Occurrences count every affected package record across scanned images; one advisory can therefore occur more than once in one or more repositories.
+Generated at `2026-09-30T03:54:49Z` from the latest available Trivy container reports. Occurrences count every affected package record across scanned images; one advisory can therefore occur more than once in one or more repositories.
 
-**372 unique findings**: 17 critical and 355 high, with 1640 total occurrences.
+**374 unique findings**: 17 critical and 357 high, with 1645 total occurrences.
 
 | Severity | Advisory | Occurrences | Fixable | Repositories | Packages |
 | --- | --- | ---: | ---: | --- | --- |
@@ -113,6 +113,7 @@ Generated at `2026-09-29T03:54:07Z` from the latest available Trivy container re
 | HIGH | [CVE-2026-39836](https://avd.aquasec.com/nvd/cve-2026-39836) | 4 | 4 | hub-audit, hub-objecttracking, hub-pipeline-redaction, hub-workflows-forwarder | stdlib@v1.25.8 |
 | HIGH | [CVE-2026-42499](https://avd.aquasec.com/nvd/cve-2026-42499) | 4 | 4 | hub-audit, hub-objecttracking, hub-pipeline-redaction, hub-workflows-forwarder | stdlib@v1.25.8 |
 | HIGH | [CVE-2026-42504](https://avd.aquasec.com/nvd/cve-2026-42504) | 4 | 4 | hub-audit, hub-objecttracking, hub-pipeline-redaction, hub-workflows-forwarder | stdlib@v1.25.8 |
+| HIGH | [CVE-2026-84782](https://avd.aquasec.com/nvd/cve-2026-84782) | 4 | 0 | hub-anpr, hub-pipeline-classifier | libssl3@3.0.20-1~deb12u2, openssl@3.0.20-1~deb12u2 |
 | HIGH | [CVE-2025-59375](https://avd.aquasec.com/nvd/cve-2025-59375) | 3 | 0 | hub-anpr, hub-pipeline-classifier | libexpat1-dev@2.5.0-1+deb12u3, libexpat1@2.5.0-1+deb12u3 |
 | HIGH | [CVE-2026-25210](https://avd.aquasec.com/nvd/cve-2026-25210) | 3 | 0 | hub-anpr, hub-pipeline-classifier | libexpat1-dev@2.5.0-1+deb12u3, libexpat1@2.5.0-1+deb12u3 |
 | HIGH | [CVE-2026-45186](https://avd.aquasec.com/nvd/cve-2026-45186) | 3 | 0 | hub-anpr, hub-pipeline-classifier | libexpat1-dev@2.5.0-1+deb12u3, libexpat1@2.5.0-1+deb12u3 |
@@ -339,7 +340,6 @@ Generated at `2026-09-29T03:54:07Z` from the latest available Trivy container re
 | HIGH | [CVE-2026-72042](https://avd.aquasec.com/nvd/cve-2026-72042) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
 | HIGH | [CVE-2026-72098](https://avd.aquasec.com/nvd/cve-2026-72098) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
 | HIGH | [CVE-2026-72130](https://avd.aquasec.com/nvd/cve-2026-72130) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
-| HIGH | [CVE-2026-72320](https://avd.aquasec.com/nvd/cve-2026-72320) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
 | HIGH | [CVE-2026-74268](https://avd.aquasec.com/nvd/cve-2026-74268) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
 | HIGH | [CVE-2026-74269](https://avd.aquasec.com/nvd/cve-2026-74269) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
 | HIGH | [CVE-2026-74345](https://avd.aquasec.com/nvd/cve-2026-74345) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
@@ -376,5 +376,7 @@ Generated at `2026-09-29T03:54:07Z` from the latest available Trivy container re
 | HIGH | [CVE-2026-89708](https://avd.aquasec.com/nvd/cve-2026-89708) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
 | HIGH | [CVE-2026-89713](https://avd.aquasec.com/nvd/cve-2026-89713) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
 | HIGH | [CVE-2026-89846](https://avd.aquasec.com/nvd/cve-2026-89846) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
+| HIGH | [CVE-2026-93817](https://avd.aquasec.com/nvd/cve-2026-93817) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
 | HIGH | [CVE-2026-97417](https://avd.aquasec.com/nvd/cve-2026-97417) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
+| HIGH | [CVE-2026-98116](https://avd.aquasec.com/nvd/cve-2026-98116) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
 | HIGH | [GHSA-6v7p-g79w-8964](https://github.com/advisories/GHSA-6v7p-g79w-8964) | 1 | 1 | hub-pipeline-classifier | msgpack@1.1.2 |
