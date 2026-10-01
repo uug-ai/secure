@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:02c2e7b436bf23e7d0400c8783fd52e672f039673989cdfde8b9c07880de3399",
   "ArtifactName": "ghcr.io/uug-ai/hub-monitor-device@sha256:97d25a9f7d9f0cd5abb01a74babf2fe417b5795dd1978e0c6289678cea6a6df4",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-09-30T03:55:21.001152991Z",
+  "CreatedAt": "2026-10-01T03:58:32.12961853Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:7211d01aba8fa2e9eb71ad34395cd313df5fc51a6b69b92d2dfad32cc37759cb",
@@ -166,7 +166,7 @@
     ],
     "Size": 81851904
   },
-  "ReportID": "01a0f073-e029-7250-a800-3b661f8d31ea",
+  "ReportID": "01a0f59d-26c1-796a-a760-b05bb5554351",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -1523,20 +1523,6 @@
             "https://access.redhat.com/errata/RHSA-2026:59831",
             "https://access.redhat.com/errata/RHSA-2026:66524",
             "https://access.redhat.com/security/cve/CVE-2026-45447",
-            "https://bugzilla.redhat.com/2481879",
-            "https://bugzilla.redhat.com/2481880",
-            "https://bugzilla.redhat.com/2481881",
-            "https://bugzilla.redhat.com/2481882",
-            "https://bugzilla.redhat.com/2481884",
-            "https://bugzilla.redhat.com/2481885",
-            "https://bugzilla.redhat.com/2481887",
-            "https://bugzilla.redhat.com/2481890",
-            "https://bugzilla.redhat.com/2481891",
-            "https://bugzilla.redhat.com/2481892",
-            "https://bugzilla.redhat.com/2481893",
-            "https://bugzilla.redhat.com/2481894",
-            "https://bugzilla.redhat.com/2481896",
-            "https://bugzilla.redhat.com/2481897",
             "https://bugzilla.redhat.com/2481898",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2481879",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2481880",
@@ -1569,7 +1555,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-45447",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-7383",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-9076",
-            "https://errata.almalinux.org/10/ALSA-2026-25237.html",
+            "https://errata.almalinux.org/9/ALSA-2026-44438.html",
             "https://errata.rockylinux.org/RLSA-2026:25239",
             "https://github.com/advisories/GHSA-f684-cpcq-j565",
             "https://github.com/openssl/openssl/commit/3aad5eb7af4de4ee0633c30a8541a54d9bbde63c",
@@ -1609,6 +1595,112 @@
         },
         {
           "CVSS": {
+            "redhat": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "Issue summary: OpenSSL QUIC stack does not enforce connection\nlevel flow control for streams. Remote peers may send more bytes\nas long as they fit within the stream flow control limits.\n\nImpact summary: A malicious remote peer may exploit the lack of connection\nflow control for streams to make the QUIC stack receive ~100MB of memory\ninstead of 768 KiB (default flow control window size).\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: The local QUIC stack advertises two flow control limits\nto its remote peer: stream flow control limit and connection flow\ncontrol limit. The remote peer must follow both limits when transmitting\nstream data.\n\nWhenever the local QUIC stack receives a stream frame, it validates\nthat the size of the received stream frame stays within flow control limits.\nIf either limit is exceeded (stream level or connection level), then\nthe QUIC stack must close the connection with a flow control error.\n\nThe vulnerable OpenSSL QUIC stack enforces the stream-level but not\nthe connection-level limit. To exploit the issue, three conditions must be met:\n  - the remote peer opens several streams\n  - each stream must stay within the stream-level flow control limit\n  - there must be no zero-offset byte sent on any of the streams\n    (to prevent the vulnerable QUIC stack from consuming data).\nBy meeting the conditions above, the remote peer may make the local stack\nallocate 2 x MAX_STREAMS x (stream flow control limit) bytes\nof memory. MAX_STREAMS defaults to 100, and the limit applies to both\nbidirectional and unidirectional streams, making it 200 in total. The default\nflow control window for a stream is 512kB. The remote peer may\nforce the vulnerable QUIC stack to allocate 100MB of heap per connection.\n\nFIPS impact: no\nThe FIPS module is not affected as the QUIC implementation is outside of\nthe OpenSSL FIPS module boundary.",
+          "Fingerprint": "sha256:379a088e38908f7ad7b1a42822b2346afa36f6e91c9491c92121ceb6dff435cc",
+          "FixedVersion": "3.3.7-r2",
+          "InstalledVersion": "3.3.7-r0",
+          "LastModifiedDate": "2026-09-29T21:27:41.13Z",
+          "Layer": {
+            "DiffID": "sha256:7211d01aba8fa2e9eb71ad34395cd313df5fc51a6b69b92d2dfad32cc37759cb",
+            "Digest": "sha256:897d797d2723cf0e318402f4d6f37d51b011517e5cf09246b22155f0fa90dc81"
+          },
+          "PkgID": "libcrypto3@3.3.7-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcrypto3@3.3.7-r0?arch=x86_64\u0026distro=3.21.7",
+            "UID": "dbe1df97871a633d"
+          },
+          "PkgName": "libcrypto3",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-75804",
+          "PublishedDate": "2026-09-29T16:17:10.887Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-75804",
+            "https://github.com/openssl/openssl/commit/2e8f54666b3fb7b05ff5f58aa6cac9285163654e",
+            "https://github.com/openssl/openssl/commit/4533ee8a5686c953ed3b644738ac4bdf20806538",
+            "https://github.com/openssl/openssl/commit/64d3102fb5b54311e92517f26ba00169d719e74a",
+            "https://github.com/openssl/openssl/commit/f9eaecf5bdd6692da052bc65b0332af2a938ac03",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-75804",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-75804"
+          ],
+          "Severity": "HIGH",
+          "Status": "fixed",
+          "Title": "openssl: OpenSSL: Denial of Service via unenforced QUIC connection flow control",
+          "VendorSeverity": {
+            "redhat": 3,
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-75804"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 7.4,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-125"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "Issue summary: The DTLS retransmission logic does not correctly handle\na handshake message write that is suspended part-way through.\nThe retransmitted message can be read past the message buffer and\nthe retransmission overwrites the internal state the suspended write\nneeds to resume correctly.\n\nImpact summary: The retransmitted message can disclose a heap memory\nto the peer as plaintext handshake data or cause a crash and a Denial\nof Service when the read reaches an unmapped memory region.\n\nCWE: CWE-125: Out-of-bounds Read\n\nDescription: DTLS handshake messages can be written out in multiple\nfragments, and a write can suspend mid-message (returning WANT_WRITE)\nif the underlying transport temporarily cannot accept more data. While\nsuch a write is suspended, the DTLS retransmission timer may\nindependently fire and ask the retransmission logic to resend an\nearlier, already-acknowledged-as-sent message from its retransmit\nqueue.\n\nThe retransmission logic reused the same internal buffer and position\ntracking as the message that was still being written, without\nresetting the position back to the start of the message being\nretransmitted. As a result the retransmission was read starting from\nwherever the suspended write had left off, producing a mislabelled\nmessage whose body was leftover bytes from the other, larger message\nstill in flight - content that was never meant to be sent at that\npoint, and which could run past the end of the allocated buffer.\n\nSeparately, even when the retransmission is positioned correctly,\nallowing it to run to completion while another write is suspended\noverwrites the same shared bookkeeping that the suspended write\ndepends on to resume. When the application later resumes the\nsuspended write (via a subsequent SSL_read(), SSL_write(),\nSSL_accept(), or SSL_connect() call), it finds that bookkeeping in a\nstate inconsistent with the message and aborts the process in\na debugging build.\n\nThe fix resets the retransmission's read position to the start of the\nmessage before resending, and skips retransmission entirely whenever a\nhandshake write is still suspended, deferring to the next call that\nresumes it instead.\n\nFIPS impact: no\nThe affected code is outside the FIPS module boundary.",
+          "Fingerprint": "sha256:234619aca1ec7032dc1bf10ed8103c72ad8b738c4deb4c7cc68c1cd41816f9f5",
+          "FixedVersion": "3.3.7-r2",
+          "InstalledVersion": "3.3.7-r0",
+          "LastModifiedDate": "2026-09-29T21:27:41.13Z",
+          "Layer": {
+            "DiffID": "sha256:7211d01aba8fa2e9eb71ad34395cd313df5fc51a6b69b92d2dfad32cc37759cb",
+            "Digest": "sha256:897d797d2723cf0e318402f4d6f37d51b011517e5cf09246b22155f0fa90dc81"
+          },
+          "PkgID": "libcrypto3@3.3.7-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcrypto3@3.3.7-r0?arch=x86_64\u0026distro=3.21.7",
+            "UID": "dbe1df97871a633d"
+          },
+          "PkgName": "libcrypto3",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-84782",
+          "PublishedDate": "2026-09-29T16:17:12.5Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-84782",
+            "https://github.com/openssl/openssl/commit/906cf0ef1c85ca40ce69163e9086d6d3fe292943",
+            "https://github.com/openssl/openssl/commit/9f6b34422af7eb5dac61322e33dac1ae989fa628",
+            "https://github.com/openssl/openssl/commit/a383dafdd754eb5b22bf45e37e1bff9d07277a58",
+            "https://github.com/openssl/openssl/commit/d951e02ede8f6a6ff8150546db44b34f0518192c",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-84782",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://openssl-library.org/news/vulnerabilities/#CVE-2026-84782",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://ubuntu.com/security/notices/USN-8847-2",
+            "https://www.cve.org/CVERecord?id=CVE-2026-84782"
+          ],
+          "Severity": "HIGH",
+          "Status": "fixed",
+          "Title": "openssl: compat-openssl: openssl: Information disclosure via DTLS handshake retransmission",
+          "VendorSeverity": {
+            "redhat": 3,
+            "ubuntu": 3
+          },
+          "VulnerabilityID": "CVE-2026-84782"
+        },
+        {
+          "CVSS": {
             "julia": {
               "V3Score": 9.1,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N"
@@ -1644,7 +1736,6 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-34182",
           "PublishedDate": "2026-06-09T17:17:04.857Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:25237",
             "https://access.redhat.com/errata/RHSA-2026:25239",
             "https://access.redhat.com/security/cve/CVE-2026-34182",
             "https://bugzilla.redhat.com/2481879",
@@ -1693,7 +1784,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-45447",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-7383",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-9076",
-            "https://errata.almalinux.org/10/ALSA-2026-25237.html",
+            "https://errata.almalinux.org/9/ALSA-2026-25239.html",
             "https://errata.rockylinux.org/RLSA-2026:25239",
             "https://github.com/advisories/GHSA-f9v2-4w9p-2cwc",
             "https://github.com/openssl/openssl/commit/03c1f4d45fb963aee7d5833390c507cd290182bc",
@@ -1767,7 +1858,6 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-34183",
           "PublishedDate": "2026-06-09T17:17:05Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:25237",
             "https://access.redhat.com/errata/RHSA-2026:25239",
             "https://access.redhat.com/security/cve/CVE-2026-34183",
             "https://bugzilla.redhat.com/2481879",
@@ -1816,7 +1906,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-45447",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-7383",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-9076",
-            "https://errata.almalinux.org/10/ALSA-2026-25237.html",
+            "https://errata.almalinux.org/9/ALSA-2026-25239.html",
             "https://errata.rockylinux.org/RLSA-2026:25239",
             "https://github.com/advisories/GHSA-f5vx-f6jp-89j6",
             "https://github.com/openssl/openssl/commit/5b306efb0b3779dfdd0803b4afc9d08c91f11517",
@@ -1887,7 +1977,6 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-45445",
           "PublishedDate": "2026-06-09T17:17:18.993Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:25237",
             "https://access.redhat.com/errata/RHSA-2026:25239",
             "https://access.redhat.com/security/cve/CVE-2026-45445",
             "https://bugzilla.redhat.com/2481879",
@@ -1936,7 +2025,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-45447",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-7383",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-9076",
-            "https://errata.almalinux.org/10/ALSA-2026-25237.html",
+            "https://errata.almalinux.org/9/ALSA-2026-25239.html",
             "https://errata.rockylinux.org/RLSA-2026:25239",
             "https://github.com/advisories/GHSA-v446-xwfm-x7mr",
             "https://github.com/openssl/openssl/commit/323f0b6e7d530a4cb4336d50c88cb70f3ac2a451",
@@ -1975,6 +2064,111 @@
         {
           "CVSS": {
             "redhat": {
+              "V3Score": 5.9,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-208"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "Issue summary: The generic elliptic-curve scalar multiplication used for\nECDSA and SM2 signature operations with curves that do not have a dedicated\nimplementation leaks information about the secret nonce through timing.\n\nImpact summary: An attacker able to measure signing times may learn\ninformation about the per-signature secret nonce, which over many signatures\ncan, via a lattice / Hidden Number Problem attack, lead to recovery of the\nprivate key.\n\nCWE: CWE-208: Observable Timing Discrepancy\n\nDescription: The generic elliptic-curve scalar multiplication used for\ncurves that do not have a dedicated constant-time implementation pads the\nsecret scalar with non-constant-time BIGNUM operations, so the time taken\ndepends on the value of the secret scalar derived from the ECDSA and SM2 nonce.\n\nThe leak is very small; observing it requires a large number of\nmeasurements. The effect is largest for curves whose group order lies\non a machine-word boundary, such as brainpoolP384r1.\n\nApplications using ECDSA signing over the Brainpool and other generic prime\ncurves, and SM2 signing on platforms that use the generic implementation,\nare vulnerable to this issue.\n\nThe NIST curves P-256, P-384 and P-521 use dedicated constant-time\nimplementations and are not affected.\n\nFIPS Impact: no\nThe FIPS modules are not affected: the approved NIST curves used in the FIPS\nprovider have dedicated constant-time implementations and do not use the\naffected code path.",
+          "Fingerprint": "sha256:c6c4b2829162b4085de004c52b2caa90ba910b6f6608d90c232a501c84be0a65",
+          "FixedVersion": "3.3.7-r2",
+          "InstalledVersion": "3.3.7-r0",
+          "LastModifiedDate": "2026-09-29T21:27:41.13Z",
+          "Layer": {
+            "DiffID": "sha256:7211d01aba8fa2e9eb71ad34395cd313df5fc51a6b69b92d2dfad32cc37759cb",
+            "Digest": "sha256:897d797d2723cf0e318402f4d6f37d51b011517e5cf09246b22155f0fa90dc81"
+          },
+          "PkgID": "libcrypto3@3.3.7-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcrypto3@3.3.7-r0?arch=x86_64\u0026distro=3.21.7",
+            "UID": "dbe1df97871a633d"
+          },
+          "PkgName": "libcrypto3",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-54872",
+          "PublishedDate": "2026-09-29T16:17:08.623Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-54872",
+            "https://github.com/openssl/openssl/commit/1a5bee8dc57430a2be69cd1ffe7fec6a62f4f179",
+            "https://github.com/openssl/openssl/commit/3f7e1363dccec6f7732bb9e9fa471bb6e4aa68cb",
+            "https://github.com/openssl/openssl/commit/7d83bc7764999dfd91b83b4f0815b45390422afd",
+            "https://github.com/openssl/openssl/commit/8166827a78aad164a07aa86dea2b425403ced471",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-54872",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://ubuntu.com/security/notices/USN-8847-2",
+            "https://www.cve.org/CVERecord?id=CVE-2026-54872"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "openssl: OpenSSL: Private key recovery via timing side-channel in generic elliptic curve operations",
+          "VendorSeverity": {
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-54872"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 4.7,
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-208"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "Issue summary: A non-constant-time optimized implementation of scalar\npoint multiplication is used for SM2 private key operations on ARM64 and\nRISC-V platforms.\n\nImpact summary: An attacker able to measure the time taken by, or to observe\nthe cache-line access pattern of SM2 signing or decryption on an affected\nplatform can learn information about the secret scalar.\n\nCWE: CWE-208: Observable Timing Discrepancy\n\nDescription: On ARM64 and RISC-V processors, the SM2 curve uses an optimized\nscalar multiplication implementation whose conditional branches and table\nlook ups are chosen according to the bits of the secret scalar. The execution\ntime and the cache-access pattern therefore depend on the long-term private\nkey (during SM2 decryption) or the per-signature nonce (during SM2 signature\ngeneration), forming a timing and cache side-channel.\n\nFIPS Impact: no\nSM2 is not a FIPS algorithm and the optimized SM2 implementation is not part\nof the FIPS module.\n\nOpenSSL 4.0, 3.6, 3.5 and 3.4 are vulnerable to this issue on AArch64 and\nRISC-V.\n\nOpenSSL 3.0, 1.1.1 and 1.0.2 are not affected by this issue.\n\nOpenSSL 4.0 users should upgrade to OpenSSL 4.0.3.\nOpenSSL 3.6 users should upgrade to OpenSSL 3.6.5.\nOpenSSL 3.5 users should upgrade to OpenSSL 3.5.9.\nOpenSSL 3.4 users should upgrade to OpenSSL 3.4.8.\n\nThis issue was reported on 2 May 2026 by Abhinav Agarwal.\nIt was independently reported on 6 June 2026 by Feng Xue.\nThe fix was developed by Igor Ustinov.\n\n-- cut (non-publishing metadata for internal use) --\nReported by: Abhinav Agarwal, Feng Xue\nFixed by: Igor Ustinov",
+          "Fingerprint": "sha256:93db4fd51a3fd8433e4ea82a33c82655a59b4a7ea4958e62ea707e48f0a95a57",
+          "FixedVersion": "3.3.7-r2",
+          "InstalledVersion": "3.3.7-r0",
+          "LastModifiedDate": "2026-09-29T21:27:41.13Z",
+          "Layer": {
+            "DiffID": "sha256:7211d01aba8fa2e9eb71ad34395cd313df5fc51a6b69b92d2dfad32cc37759cb",
+            "Digest": "sha256:897d797d2723cf0e318402f4d6f37d51b011517e5cf09246b22155f0fa90dc81"
+          },
+          "PkgID": "libcrypto3@3.3.7-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcrypto3@3.3.7-r0?arch=x86_64\u0026distro=3.21.7",
+            "UID": "dbe1df97871a633d"
+          },
+          "PkgName": "libcrypto3",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-54875",
+          "PublishedDate": "2026-09-29T16:17:08.92Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-54875",
+            "https://github.com/openssl/openssl/commit/3f01bbc28f7e08211fcdc797fd43816504f94257",
+            "https://github.com/openssl/openssl/commit/469f3e42629f4a0b5631796e20c66c92c138a3e8",
+            "https://github.com/openssl/openssl/commit/9794ed473764839275cb701b4850f3c24d929c28",
+            "https://github.com/openssl/openssl/commit/dddad955d5ff3e9507619cf4e0f13e9988e2197c",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-54875",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-54875"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "openssl: openssl: information disclosure via non-constant-time SM2 scalar multiplication on ARM64 and RISC-V",
+          "VendorSeverity": {
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-54875"
+        },
+        {
+          "CVSS": {
+            "redhat": {
               "V3Score": 7.5,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
             }
@@ -2005,7 +2199,6 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-63072",
           "PublishedDate": "2026-08-25T13:19:26.01Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:67154",
             "https://access.redhat.com/errata/RHSA-2026:67165",
             "https://access.redhat.com/security/cve/CVE-2026-63072",
             "https://bugzilla.redhat.com/2515348",
@@ -2036,7 +2229,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-63074",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-63075",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-63076",
-            "https://errata.almalinux.org/10/ALSA-2026-67154.html",
+            "https://errata.almalinux.org/9/ALSA-2026-67165.html",
             "https://errata.rockylinux.org/RLSA-2026:67165",
             "https://github.com/openssl/openssl/commit/2a3dac874c8057c1f0186849bf1ede1ae7b6b756",
             "https://github.com/openssl/openssl/commit/87784ad619af36b8807c2044b3940006fccc1e42",
@@ -2099,7 +2292,6 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-63076",
           "PublishedDate": "2026-08-25T13:19:26.543Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:67154",
             "https://access.redhat.com/errata/RHSA-2026:67165",
             "https://access.redhat.com/security/cve/CVE-2026-63076",
             "https://bugzilla.redhat.com/2515348",
@@ -2130,7 +2322,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-63074",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-63075",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-63076",
-            "https://errata.almalinux.org/10/ALSA-2026-67154.html",
+            "https://errata.almalinux.org/9/ALSA-2026-67165.html",
             "https://errata.rockylinux.org/RLSA-2026:67165",
             "https://github.com/openssl/openssl/commit/37882aa2e0256e1072442a8f62f7db45b995c45b",
             "https://github.com/openssl/openssl/commit/a17cc8d612ecff6d94a9b7ca8b5283ddf5ff570e",
@@ -2159,6 +2351,320 @@
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-63076"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 5.9,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "Issue summary: A TLS server that calls SSL_set_SSL_CTX() to switch a\nconnection to a different SSL_CTX part way through a handshake may access\nmemory beyond the end of an internal array if the replacement context knows\nabout more provider signature algorithms than the context the connection was\ncreated from. Applications which never call SSL_set_SSL_CTX() are not\naffected.\n\nImpact summary: A remote peer may be able to cause a small out-of-bounds\nread, and in some circumstances a fixed-value out-of-bounds write, on the\nserver heap. This may lead to a Denial of Service.\n\nCWE: CWE-787: Out-of-bounds Write\n\nDescription: A TLS connection records how many certificate slots it has\nwhen it is created, taken from the SSL_CTX that created it: the built-in\ncertificate types plus one slot for each provider TLS-SIGALG entry that\ncontext was aware of. That count sizes an internal array of per-slot\ncertificate validity flags.\n\nAn application may replace a connection's SSL_CTX part way through the\nhandshake by calling SSL_set_SSL_CTX(), most commonly from a servername\ncallback in order to serve a different virtual host. Doing so did not\nrefresh the recorded count. A provider signature algorithm's slot index is\nits position in the list of whichever context resolves it, so if the\nreplacement context is aware of more of them than the original, an\nalgorithm offered by the peer can resolve to an index beyond the end of the\narray. Processing the peer's signature algorithms then reads one four byte\nword past the end for each such algorithm and, where the word read is zero,\nwrites a fixed value over it. A peer offering many of them can corrupt heap\nmetadata and abort the process.\n\nOnly provider signature algorithms which occupy one of the excess slots,\nand which the server also has configured, have this effect. Codepoints the\nreplacement context does not recognise are discarded without being resolved\nto a slot, and provider signature algorithms are usable only from TLS 1.3.\n\nThe two contexts must therefore be aware of different numbers of provider\nsignature algorithms, which requires separate library contexts, a provider\nloaded between the two being created, or providers which differ in what\nthey advertise - in 4.0, for example, the default provider advertises SM2\nwhere the FIPS provider does not. A deployment meeting the condition is\nalso unable to negotiate the affected algorithms with legitimate clients,\nsince the same stale count hides the corresponding certificates, so the\nmisconfiguration is likely to be noticed. For that reason, and because the\nconfiguration is not the default, this issue has been assessed as Low\nseverity.\n\nFIPS impact: no\nNo FIPS modules are affected by this issue as the affected code is outside\nthe OpenSSL FIPS module boundary.",
+          "Fingerprint": "sha256:7b18c67ecf8bde891dd78bb0e487609ad0bdce9bf9971248c24c9a1b1da3b6a0",
+          "FixedVersion": "3.3.7-r2",
+          "InstalledVersion": "3.3.7-r0",
+          "LastModifiedDate": "2026-09-29T21:27:41.13Z",
+          "Layer": {
+            "DiffID": "sha256:7211d01aba8fa2e9eb71ad34395cd313df5fc51a6b69b92d2dfad32cc37759cb",
+            "Digest": "sha256:897d797d2723cf0e318402f4d6f37d51b011517e5cf09246b22155f0fa90dc81"
+          },
+          "PkgID": "libcrypto3@3.3.7-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcrypto3@3.3.7-r0?arch=x86_64\u0026distro=3.21.7",
+            "UID": "dbe1df97871a633d"
+          },
+          "PkgName": "libcrypto3",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-72897",
+          "PublishedDate": "2026-09-29T16:17:09.903Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-72897",
+            "https://github.com/openssl/openssl/commit/00646e5085a0d12d29e0d2f9b9bc5f7111a50922",
+            "https://github.com/openssl/openssl/commit/4135f553c9d3ba4a09fe752f5d30af2a6a092b2e",
+            "https://github.com/openssl/openssl/commit/9c54d209486f6b1ad79fe2179c40f13200fa4f61",
+            "https://github.com/openssl/openssl/commit/e87ed26b298a74d8ba61a53e9c7bcd1acac6b814",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-72897",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-72897"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "openssl: openssl: Denial of Service via out-of-bounds write during TLS context switch",
+          "VendorSeverity": {
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-72897"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 5.9,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-476"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "Issue summary: A CMP client that requests certificate revocation on the basis\nof a PKCS#10 CSR may dereference a NULL pointer and terminate abnormally when\nprocessing a crafted revocation response. \n\nImpact summary: The NULL pointer dereference happens on a read which \nleads to a crash and a Denial of Service for the affected client application.\n\nCWE: CWE-476: NULL-pointer dereference\n\nDescription: A CMP client revoking a certificate has to tell the server which\ncertificate to revoke, and may do so by supplying a PKCS#10 CSR instead of the\ncertificate itself or its issuer name and serial number. This is\n'openssl cmp -cmd rr -csr \u003cfile\u003e' on the command line, or\nOSSL_CMP_exec_RR_ses() with the certificate supplied via\nOSSL_CMP_CTX_set1_p10CSR() through the API.\n\nA CSR does not contain the issuer name and serial number of the certificate,\nso the client does not send them. A server may optionally name the\ncertificate it revoked in its response, and the client then compares that\nname against what it sent. Having sent neither an issuer name nor a serial\nnumber, it has nothing to compare against, and a server returning a specially\ncrafted name causes the client to read from a NULL pointer and crash.\n\nThe revocation response is checked for valid message protection before\nthe affected code is reached, so an attacker must be a malicious or\ncompromised CMP server, or a man-in-the-middle in possession of the\nsecret used for message protection. Clients that identify the certificate\nto be revoked by a certificate or by issuer and serial number rather\nthan by a PKCS#10 CSR are not affected.\n\nFIPS impact: no\nNo FIPS modules are affected by this issue, as the CMP protocol\nimplementation is outside the OpenSSL FIPS module boundary.",
+          "Fingerprint": "sha256:2556843e6ca29081450726bd17c087e3c8d53388372c70311bb86c54ebaf235e",
+          "FixedVersion": "3.3.7-r2",
+          "InstalledVersion": "3.3.7-r0",
+          "LastModifiedDate": "2026-09-29T21:27:41.13Z",
+          "Layer": {
+            "DiffID": "sha256:7211d01aba8fa2e9eb71ad34395cd313df5fc51a6b69b92d2dfad32cc37759cb",
+            "Digest": "sha256:897d797d2723cf0e318402f4d6f37d51b011517e5cf09246b22155f0fa90dc81"
+          },
+          "PkgID": "libcrypto3@3.3.7-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcrypto3@3.3.7-r0?arch=x86_64\u0026distro=3.21.7",
+            "UID": "dbe1df97871a633d"
+          },
+          "PkgName": "libcrypto3",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-75805",
+          "PublishedDate": "2026-09-29T16:17:11.063Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-75805",
+            "https://github.com/openssl/openssl/commit/7588db7fef14209c3caa3a101d11a02006b19166",
+            "https://github.com/openssl/openssl/commit/7ca0ccb5172a577e9b87267d77bfe21e5481a5e7",
+            "https://github.com/openssl/openssl/commit/9eb2a8a9b86136cdb39d6d7d50644dd66941cdc3",
+            "https://github.com/openssl/openssl/commit/abf02872a4b71767ecc72293424420f5b009190f",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-75805",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-75805"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "openssl: openssl: Denial of Service via crafted CMP certificate revocation response",
+          "VendorSeverity": {
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-75805"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 5.3,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+            }
+          },
+          "CweIDs": [
+            "CWE-1284"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "Issue summary: An established DTLS 1.2 association using an AEAD cipher suite\ncan be terminated by a single unauthenticated datagram whose encrypted\nfragment is shorter than the mandatory explicit IV and authentication tag\noverhead.\n\nImpact summary: An attacker who can send a datagram that is routed to an\nexisting DTLS 1.2 association can tear that association down without knowing\nany key material. This is a Denial of Service limited to the targeted\nassociation. There is no memory safety or confidentiality impact.\n\nCWE: CWE-1284: Improper Validation of Specified Quantity in Input\n\nDescription: In TLS 1.2 and DTLS 1.2 every record protected by an AEAD cipher\nsuite carries an explicit IV followed by the ciphertext and an authentication\ntag. When decrypting such a record the record layer passed the record length to\nthe cipher implementation before checking that the record was long enough to\ncontain the explicit IV and the tag. For a record shorter than that overhead the\ncipher implementation rejected the impossible length, and the record layer\ntreated this as an internal failure and raised a fatal internal_error alert\ninstead of treating the record as one that failed authentication.\n\nIn TLS 1.2 the same record causes a fatal internal_error alert instead of the\nexpected bad_record_mac alert. Since any undecryptable record already\nterminates a TLS connection, this is a protocol conformance issue rather than\na security issue in TLS.\n\nThe fix validates the record length against the explicit IV and tag length\nbefore any AEAD processing, so that TLS reports bad_record_mac and DTLS\nsilently discards the record.\n\nFIPS impact: no\nThe affected code is outside the FIPS module boundary.",
+          "Fingerprint": "sha256:80d9ffa55a6a8141e398720d4eb4153203e203933be015e7a9badcfa0fc2cf5b",
+          "FixedVersion": "3.3.7-r2",
+          "InstalledVersion": "3.3.7-r0",
+          "LastModifiedDate": "2026-09-29T21:27:41.13Z",
+          "Layer": {
+            "DiffID": "sha256:7211d01aba8fa2e9eb71ad34395cd313df5fc51a6b69b92d2dfad32cc37759cb",
+            "Digest": "sha256:897d797d2723cf0e318402f4d6f37d51b011517e5cf09246b22155f0fa90dc81"
+          },
+          "PkgID": "libcrypto3@3.3.7-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcrypto3@3.3.7-r0?arch=x86_64\u0026distro=3.21.7",
+            "UID": "dbe1df97871a633d"
+          },
+          "PkgName": "libcrypto3",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-75806",
+          "PublishedDate": "2026-09-29T16:17:11.217Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-75806",
+            "https://github.com/openssl/openssl/commit/04728a289a823e68137f88da016cb9ede307217d",
+            "https://github.com/openssl/openssl/commit/050b275cd671a6eed1d6457642d41a5a77aab972",
+            "https://github.com/openssl/openssl/commit/3a4589d015a9049d47b66f186cf50a8711343a1d",
+            "https://github.com/openssl/openssl/commit/5af82fefbaf2b5fec2fc0e1d87f112844902f01d",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-75806",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-75806"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "openssl: OpenSSL: Denial of Service via undersized DTLS record",
+          "VendorSeverity": {
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-75806"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 5.9,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-208"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "Issue summary: SM2 signature generation uses non-constant-time arithmetic\non secret values, forming a timing side-channel.\n\nImpact summary: An attacker able to measure SM2 signing times may learn\ninformation about the per-signature secret nonce, which over many signatures\ncan, via a lattice / Hidden Number Problem attack, lead to recovery of the\nprivate key.\n\nCWE: CWE-208: Observable Timing Discrepancy\n\nDescription: SM2 signature generation computes the signature value using\nvariable-time BIGNUM operations on the secret nonce and the private key, so\nthe time taken to produce an SM2 signature depends on these secret values,\nforming a timing side-channel.\n\nApplications performing SM2 signature generation are affected on all\nplatforms.\n\nFIPS Impact: no\nSM2 is not a FIPS algorithm.",
+          "Fingerprint": "sha256:0ffff1b0c1f50f53dc35702aea9878bde928f8415cbdcdf61690e552647bc2ac",
+          "FixedVersion": "3.3.7-r2",
+          "InstalledVersion": "3.3.7-r0",
+          "LastModifiedDate": "2026-09-29T21:27:41.13Z",
+          "Layer": {
+            "DiffID": "sha256:7211d01aba8fa2e9eb71ad34395cd313df5fc51a6b69b92d2dfad32cc37759cb",
+            "Digest": "sha256:897d797d2723cf0e318402f4d6f37d51b011517e5cf09246b22155f0fa90dc81"
+          },
+          "PkgID": "libcrypto3@3.3.7-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcrypto3@3.3.7-r0?arch=x86_64\u0026distro=3.21.7",
+            "UID": "dbe1df97871a633d"
+          },
+          "PkgName": "libcrypto3",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-77696",
+          "PublishedDate": "2026-09-29T16:17:11.493Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-77696",
+            "https://github.com/openssl/openssl/commit/1c4aed808a7aea32d2d013049c2e0d9fef164fc9",
+            "https://github.com/openssl/openssl/commit/20b20628d39b2dcc4677194bd68c7c060fa598cb",
+            "https://github.com/openssl/openssl/commit/419f5cb519721dceed393dbc524d79e487c72e64",
+            "https://github.com/openssl/openssl/commit/6b90445a56b99a328ac1feba058abf976504f440",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-77696",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://ubuntu.com/security/notices/USN-8847-2",
+            "https://www.cve.org/CVERecord?id=CVE-2026-77696"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "openssl: OpenSSL: Private key recovery via SM2 timing side-channel",
+          "VendorSeverity": {
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-77696"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 5.3,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+            }
+          },
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "Issue summary: A malicious remote peer may flood the local QUIC\nstack with NEW_CONNECTION_ID frames by avoiding a limit check on\nhow many connection IDs the remote QUIC stack can use.\n\nImpact summary: The local QUIC stack sends a RETIRE_CONN_ID frame\nfor every NEW_CONNECTION_ID frame it receives. The RETIRE_CONN_ID\nframe is dispatched via the Control Frame Queue (CFQ). If the remote\npeer also withholds ACKs, then it can force the local stack\nto allocate ~400MB (depending on ACK delay).\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: RFC 9000 sections 5.1.1 and 5.1.2 [1] describe the mechanism\nby which a remote peer can notify the local QUIC stack to change the\ndestination connection ID (a.k.a. CID) the local stack uses to\nidentify the connection at the remote peer. Each CID is associated\nwith a sequence number. The sequence number is transmitted\nin NEW_CONNECTION_ID and RETIRE_CONNECTION_ID frames to identify the CID\nwhich is being either associated with a connection or retired.\n\nThe remote peer sends a NEW_CONNECTION_ID frame to let the local stack know\na new CID is being associated with an existing connection. The\nNEW_CONNECTION_ID frame carries the new CID, its sequence number, and the\nretire-prior-to number. The retire-prior-to identifies existing\nCIDs that are to be retired. The local QUIC stack must send a\nRETIRE_CONNECTION_ID for every destination CID whose sequence number\nis less than retire-prior-to. The CID becomes retired after the\nlocal stack receives an ACK for its RETIRE_CONNECTION_ID frame.\n\nAlthough the OpenSSL QUIC stack supports at most one destination CID\nfor every connection, it can be tricked into processing more than\none RETIRE_CONNECTION_ID frame per connection. The OpenSSL QUIC\nstack currently retires the destination CID as soon as it receives\nthe NEW_CONNECTION_ID, while in fact the destination CID must\nbe retired after an ACK for the RETIRE_CONNECTION_ID frame is received.\nCorrecting the flawed logic also fixes the backlog growth.\n\n[1] https://datatracker.ietf.org/doc/html/rfc9000#name-issuing-connection-ids\n\nFIPS impact: no\nThe FIPS module is not affected as the QUIC implementation is outside of\nthe OpenSSL FIPS module boundary.",
+          "Fingerprint": "sha256:819cded4eb130faff2526c655c6168e853fd4f2032cd662c220504758de29ffc",
+          "FixedVersion": "3.3.7-r2",
+          "InstalledVersion": "3.3.7-r0",
+          "LastModifiedDate": "2026-09-29T21:27:41.13Z",
+          "Layer": {
+            "DiffID": "sha256:7211d01aba8fa2e9eb71ad34395cd313df5fc51a6b69b92d2dfad32cc37759cb",
+            "Digest": "sha256:897d797d2723cf0e318402f4d6f37d51b011517e5cf09246b22155f0fa90dc81"
+          },
+          "PkgID": "libcrypto3@3.3.7-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcrypto3@3.3.7-r0?arch=x86_64\u0026distro=3.21.7",
+            "UID": "dbe1df97871a633d"
+          },
+          "PkgName": "libcrypto3",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-84784",
+          "PublishedDate": "2026-09-29T16:17:12.81Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-84784",
+            "https://github.com/openssl/openssl/commit/4685c914b0d410b1034f40b547c95bc95e7a380a",
+            "https://github.com/openssl/openssl/commit/9a30fe0fba195c14e5b87bf93c0d0fdb70373806",
+            "https://github.com/openssl/openssl/commit/dba3c48d653c64fcbc9070a17a0ee2b3e2f3af1f",
+            "https://github.com/openssl/openssl/commit/e9e5155833fa968bee50024bf9ca3a185ab599fe",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-84784",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-84784"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "openssl: OpenSSL: Denial of Service via unbounded QUIC connection identifier backlog",
+          "VendorSeverity": {
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-84784"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 3.7,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L"
+            }
+          },
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "Issue summary: A certificate with many nameRelativeToCRLIssuer CRL\ndistribution points causes disproportionate heap growth when OpenSSL caches\nX.509 extensions.\n\nImpact summary: Receiving a crafted certificate from a malicious peer can lead\nto significant memory pressure and possible Denial of Service in clients or\nin servers that solicit client certificates.\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: A certificate or a set of certificates that fits under the limit for\nsize of certificates accepted from the peer (~100 KiB) can result in allocation\nof several hundred MiB of resident memory on the receiving side\nduring a normal TLS handshake.  This may be enough to crash the client or\nserver, if multiple concurrent connections lead to similarly large memory\nallocations.\n\nThe fix postpones processing of the CRL distribution points extensions in\ncertificates to the time when the processed value is required for CRL processing.\nThis avoids keeping large memory allocations for a long time when such\ncertificates are received.\n\nFIPS impact: no\nThe affected code is outside the FIPS module boundary.",
+          "Fingerprint": "sha256:b8b87f89272bad213ab5363889644f7e070d6ecd9e0905972a0709e58e70679b",
+          "FixedVersion": "3.3.7-r2",
+          "InstalledVersion": "3.3.7-r0",
+          "LastModifiedDate": "2026-09-30T21:17:10.43Z",
+          "Layer": {
+            "DiffID": "sha256:7211d01aba8fa2e9eb71ad34395cd313df5fc51a6b69b92d2dfad32cc37759cb",
+            "Digest": "sha256:897d797d2723cf0e318402f4d6f37d51b011517e5cf09246b22155f0fa90dc81"
+          },
+          "PkgID": "libcrypto3@3.3.7-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcrypto3@3.3.7-r0?arch=x86_64\u0026distro=3.21.7",
+            "UID": "dbe1df97871a633d"
+          },
+          "PkgName": "libcrypto3",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-35189",
+          "PublishedDate": "2026-09-29T16:17:07.33Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-35189",
+            "https://github.com/openssl/openssl/commit/2b93c73b2c70ddc4c61c5e4bfaaa6bd71379eb84",
+            "https://github.com/openssl/openssl/commit/3842516cc15e8b2cf55747011045e77547e71d89",
+            "https://github.com/openssl/openssl/commit/8e0efc7549b7ff8246d40e585e3fd604f728473f",
+            "https://github.com/openssl/openssl/commit/c72ae182cac17a82e4246c6ecd4e9c4ec3586ec9",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-35189",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://ubuntu.com/security/notices/USN-8847-2",
+            "https://www.cve.org/CVERecord?id=CVE-2026-35189"
+          ],
+          "Severity": "LOW",
+          "Status": "fixed",
+          "Title": "openssl: openssl: Denial of Service via excessive memory allocation in CRL distribution point processing",
+          "VendorSeverity": {
+            "redhat": 1,
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-35189"
         },
         {
           "CVSS": {
@@ -2197,7 +2703,6 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-42766",
           "PublishedDate": "2026-06-09T17:17:07.97Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:25237",
             "https://access.redhat.com/errata/RHSA-2026:25239",
             "https://access.redhat.com/security/cve/CVE-2026-42766",
             "https://bugzilla.redhat.com/2481879",
@@ -2246,7 +2751,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-45447",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-7383",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-9076",
-            "https://errata.almalinux.org/10/ALSA-2026-25237.html",
+            "https://errata.almalinux.org/9/ALSA-2026-25239.html",
             "https://errata.rockylinux.org/RLSA-2026:25239",
             "https://github.com/advisories/GHSA-58mv-qqmv-gqgv",
             "https://github.com/openssl/openssl/commit/056d06c1918fafbb98c1c85a02e4c47cc4e199ce",
@@ -2320,7 +2825,6 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-42768",
           "PublishedDate": "2026-06-09T17:17:08.223Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:25237",
             "https://access.redhat.com/errata/RHSA-2026:25239",
             "https://access.redhat.com/security/cve/CVE-2026-42768",
             "https://bugzilla.redhat.com/2481879",
@@ -2369,7 +2873,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-45447",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-7383",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-9076",
-            "https://errata.almalinux.org/10/ALSA-2026-25237.html",
+            "https://errata.almalinux.org/9/ALSA-2026-25239.html",
             "https://errata.rockylinux.org/RLSA-2026:25239",
             "https://github.com/advisories/GHSA-5m8f-m8jv-3rp3",
             "https://github.com/openssl/openssl/commit/a2ca7b2d73e0ffc1eae183fe6e1741dac767cb4f",
@@ -2440,7 +2944,6 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-42770",
           "PublishedDate": "2026-06-09T17:17:08.523Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:25237",
             "https://access.redhat.com/errata/RHSA-2026:25239",
             "https://access.redhat.com/security/cve/CVE-2026-42770",
             "https://bugzilla.redhat.com/2481879",
@@ -2489,7 +2992,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-45447",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-7383",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-9076",
-            "https://errata.almalinux.org/10/ALSA-2026-25237.html",
+            "https://errata.almalinux.org/9/ALSA-2026-25239.html",
             "https://errata.rockylinux.org/RLSA-2026:25239",
             "https://github.com/advisories/GHSA-3cxm-476w-ghm2",
             "https://github.com/openssl/openssl/commit/3da5a516cd2635a320ff748503db2cef7c4b0f02",
@@ -2562,7 +3065,6 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-45446",
           "PublishedDate": "2026-06-09T17:17:19.137Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:25237",
             "https://access.redhat.com/errata/RHSA-2026:25239",
             "https://access.redhat.com/security/cve/CVE-2026-45446",
             "https://bugzilla.redhat.com/2481879",
@@ -2611,7 +3113,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-45447",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-7383",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-9076",
-            "https://errata.almalinux.org/10/ALSA-2026-25237.html",
+            "https://errata.almalinux.org/9/ALSA-2026-25239.html",
             "https://errata.rockylinux.org/RLSA-2026:25239",
             "https://github.com/advisories/GHSA-7phf-qpm5-q6p3",
             "https://github.com/openssl/openssl/commit/25b32cd9d41d2bc01b6abc425bb4baf2c2236fdc",
@@ -2680,7 +3182,6 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-63073",
           "PublishedDate": "2026-08-25T13:19:26.147Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:67154",
             "https://access.redhat.com/errata/RHSA-2026:67165",
             "https://access.redhat.com/security/cve/CVE-2026-63073",
             "https://bugzilla.redhat.com/2515348",
@@ -2711,7 +3212,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-63074",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-63075",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-63076",
-            "https://errata.almalinux.org/10/ALSA-2026-67154.html",
+            "https://errata.almalinux.org/9/ALSA-2026-67165.html",
             "https://errata.rockylinux.org/RLSA-2026:67165",
             "https://github.com/openssl/openssl/commit/0cc20b322639919aa423e90799d9a57c3b4b76ca",
             "https://github.com/openssl/openssl/commit/6a0acc072b4d37a7cac1252a29c1ce1f00c5ec29",
@@ -2832,7 +3333,6 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-9076",
           "PublishedDate": "2026-06-09T17:17:50.997Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:25237",
             "https://access.redhat.com/errata/RHSA-2026:25239",
             "https://access.redhat.com/security/cve/CVE-2026-9076",
             "https://bugzilla.redhat.com/2481879",
@@ -2881,7 +3381,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-45447",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-7383",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-9076",
-            "https://errata.almalinux.org/10/ALSA-2026-25237.html",
+            "https://errata.almalinux.org/9/ALSA-2026-25239.html",
             "https://errata.rockylinux.org/RLSA-2026:25239",
             "https://github.com/advisories/GHSA-q98x-73c3-57gj",
             "https://github.com/openssl/openssl/commit/05b066366842f930fadd9a6e94df98030af431bb",
@@ -2976,20 +3476,6 @@
             "https://access.redhat.com/errata/RHSA-2026:59831",
             "https://access.redhat.com/errata/RHSA-2026:66524",
             "https://access.redhat.com/security/cve/CVE-2026-45447",
-            "https://bugzilla.redhat.com/2481879",
-            "https://bugzilla.redhat.com/2481880",
-            "https://bugzilla.redhat.com/2481881",
-            "https://bugzilla.redhat.com/2481882",
-            "https://bugzilla.redhat.com/2481884",
-            "https://bugzilla.redhat.com/2481885",
-            "https://bugzilla.redhat.com/2481887",
-            "https://bugzilla.redhat.com/2481890",
-            "https://bugzilla.redhat.com/2481891",
-            "https://bugzilla.redhat.com/2481892",
-            "https://bugzilla.redhat.com/2481893",
-            "https://bugzilla.redhat.com/2481894",
-            "https://bugzilla.redhat.com/2481896",
-            "https://bugzilla.redhat.com/2481897",
             "https://bugzilla.redhat.com/2481898",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2481879",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2481880",
@@ -3022,7 +3508,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-45447",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-7383",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-9076",
-            "https://errata.almalinux.org/10/ALSA-2026-25237.html",
+            "https://errata.almalinux.org/9/ALSA-2026-44438.html",
             "https://errata.rockylinux.org/RLSA-2026:25239",
             "https://github.com/advisories/GHSA-f684-cpcq-j565",
             "https://github.com/openssl/openssl/commit/3aad5eb7af4de4ee0633c30a8541a54d9bbde63c",
@@ -3062,6 +3548,112 @@
         },
         {
           "CVSS": {
+            "redhat": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "Issue summary: OpenSSL QUIC stack does not enforce connection\nlevel flow control for streams. Remote peers may send more bytes\nas long as they fit within the stream flow control limits.\n\nImpact summary: A malicious remote peer may exploit the lack of connection\nflow control for streams to make the QUIC stack receive ~100MB of memory\ninstead of 768 KiB (default flow control window size).\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: The local QUIC stack advertises two flow control limits\nto its remote peer: stream flow control limit and connection flow\ncontrol limit. The remote peer must follow both limits when transmitting\nstream data.\n\nWhenever the local QUIC stack receives a stream frame, it validates\nthat the size of the received stream frame stays within flow control limits.\nIf either limit is exceeded (stream level or connection level), then\nthe QUIC stack must close the connection with a flow control error.\n\nThe vulnerable OpenSSL QUIC stack enforces the stream-level but not\nthe connection-level limit. To exploit the issue, three conditions must be met:\n  - the remote peer opens several streams\n  - each stream must stay within the stream-level flow control limit\n  - there must be no zero-offset byte sent on any of the streams\n    (to prevent the vulnerable QUIC stack from consuming data).\nBy meeting the conditions above, the remote peer may make the local stack\nallocate 2 x MAX_STREAMS x (stream flow control limit) bytes\nof memory. MAX_STREAMS defaults to 100, and the limit applies to both\nbidirectional and unidirectional streams, making it 200 in total. The default\nflow control window for a stream is 512kB. The remote peer may\nforce the vulnerable QUIC stack to allocate 100MB of heap per connection.\n\nFIPS impact: no\nThe FIPS module is not affected as the QUIC implementation is outside of\nthe OpenSSL FIPS module boundary.",
+          "Fingerprint": "sha256:45abe5e2650f18afec15563ec52d463a50087aecf4f41c8bee185ac50b189a97",
+          "FixedVersion": "3.3.7-r2",
+          "InstalledVersion": "3.3.7-r0",
+          "LastModifiedDate": "2026-09-29T21:27:41.13Z",
+          "Layer": {
+            "DiffID": "sha256:7211d01aba8fa2e9eb71ad34395cd313df5fc51a6b69b92d2dfad32cc37759cb",
+            "Digest": "sha256:897d797d2723cf0e318402f4d6f37d51b011517e5cf09246b22155f0fa90dc81"
+          },
+          "PkgID": "libssl3@3.3.7-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libssl3@3.3.7-r0?arch=x86_64\u0026distro=3.21.7",
+            "UID": "3f5c8d36a5c13541"
+          },
+          "PkgName": "libssl3",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-75804",
+          "PublishedDate": "2026-09-29T16:17:10.887Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-75804",
+            "https://github.com/openssl/openssl/commit/2e8f54666b3fb7b05ff5f58aa6cac9285163654e",
+            "https://github.com/openssl/openssl/commit/4533ee8a5686c953ed3b644738ac4bdf20806538",
+            "https://github.com/openssl/openssl/commit/64d3102fb5b54311e92517f26ba00169d719e74a",
+            "https://github.com/openssl/openssl/commit/f9eaecf5bdd6692da052bc65b0332af2a938ac03",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-75804",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-75804"
+          ],
+          "Severity": "HIGH",
+          "Status": "fixed",
+          "Title": "openssl: OpenSSL: Denial of Service via unenforced QUIC connection flow control",
+          "VendorSeverity": {
+            "redhat": 3,
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-75804"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 7.4,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-125"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "Issue summary: The DTLS retransmission logic does not correctly handle\na handshake message write that is suspended part-way through.\nThe retransmitted message can be read past the message buffer and\nthe retransmission overwrites the internal state the suspended write\nneeds to resume correctly.\n\nImpact summary: The retransmitted message can disclose a heap memory\nto the peer as plaintext handshake data or cause a crash and a Denial\nof Service when the read reaches an unmapped memory region.\n\nCWE: CWE-125: Out-of-bounds Read\n\nDescription: DTLS handshake messages can be written out in multiple\nfragments, and a write can suspend mid-message (returning WANT_WRITE)\nif the underlying transport temporarily cannot accept more data. While\nsuch a write is suspended, the DTLS retransmission timer may\nindependently fire and ask the retransmission logic to resend an\nearlier, already-acknowledged-as-sent message from its retransmit\nqueue.\n\nThe retransmission logic reused the same internal buffer and position\ntracking as the message that was still being written, without\nresetting the position back to the start of the message being\nretransmitted. As a result the retransmission was read starting from\nwherever the suspended write had left off, producing a mislabelled\nmessage whose body was leftover bytes from the other, larger message\nstill in flight - content that was never meant to be sent at that\npoint, and which could run past the end of the allocated buffer.\n\nSeparately, even when the retransmission is positioned correctly,\nallowing it to run to completion while another write is suspended\noverwrites the same shared bookkeeping that the suspended write\ndepends on to resume. When the application later resumes the\nsuspended write (via a subsequent SSL_read(), SSL_write(),\nSSL_accept(), or SSL_connect() call), it finds that bookkeeping in a\nstate inconsistent with the message and aborts the process in\na debugging build.\n\nThe fix resets the retransmission's read position to the start of the\nmessage before resending, and skips retransmission entirely whenever a\nhandshake write is still suspended, deferring to the next call that\nresumes it instead.\n\nFIPS impact: no\nThe affected code is outside the FIPS module boundary.",
+          "Fingerprint": "sha256:a16bd85c38098055ac1fe62c9df4fd3f05ccfcb208f4cb2958ec03d957ce2b71",
+          "FixedVersion": "3.3.7-r2",
+          "InstalledVersion": "3.3.7-r0",
+          "LastModifiedDate": "2026-09-29T21:27:41.13Z",
+          "Layer": {
+            "DiffID": "sha256:7211d01aba8fa2e9eb71ad34395cd313df5fc51a6b69b92d2dfad32cc37759cb",
+            "Digest": "sha256:897d797d2723cf0e318402f4d6f37d51b011517e5cf09246b22155f0fa90dc81"
+          },
+          "PkgID": "libssl3@3.3.7-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libssl3@3.3.7-r0?arch=x86_64\u0026distro=3.21.7",
+            "UID": "3f5c8d36a5c13541"
+          },
+          "PkgName": "libssl3",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-84782",
+          "PublishedDate": "2026-09-29T16:17:12.5Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-84782",
+            "https://github.com/openssl/openssl/commit/906cf0ef1c85ca40ce69163e9086d6d3fe292943",
+            "https://github.com/openssl/openssl/commit/9f6b34422af7eb5dac61322e33dac1ae989fa628",
+            "https://github.com/openssl/openssl/commit/a383dafdd754eb5b22bf45e37e1bff9d07277a58",
+            "https://github.com/openssl/openssl/commit/d951e02ede8f6a6ff8150546db44b34f0518192c",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-84782",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://openssl-library.org/news/vulnerabilities/#CVE-2026-84782",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://ubuntu.com/security/notices/USN-8847-2",
+            "https://www.cve.org/CVERecord?id=CVE-2026-84782"
+          ],
+          "Severity": "HIGH",
+          "Status": "fixed",
+          "Title": "openssl: compat-openssl: openssl: Information disclosure via DTLS handshake retransmission",
+          "VendorSeverity": {
+            "redhat": 3,
+            "ubuntu": 3
+          },
+          "VulnerabilityID": "CVE-2026-84782"
+        },
+        {
+          "CVSS": {
             "julia": {
               "V3Score": 9.1,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N"
@@ -3097,7 +3689,6 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-34182",
           "PublishedDate": "2026-06-09T17:17:04.857Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:25237",
             "https://access.redhat.com/errata/RHSA-2026:25239",
             "https://access.redhat.com/security/cve/CVE-2026-34182",
             "https://bugzilla.redhat.com/2481879",
@@ -3146,7 +3737,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-45447",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-7383",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-9076",
-            "https://errata.almalinux.org/10/ALSA-2026-25237.html",
+            "https://errata.almalinux.org/9/ALSA-2026-25239.html",
             "https://errata.rockylinux.org/RLSA-2026:25239",
             "https://github.com/advisories/GHSA-f9v2-4w9p-2cwc",
             "https://github.com/openssl/openssl/commit/03c1f4d45fb963aee7d5833390c507cd290182bc",
@@ -3220,7 +3811,6 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-34183",
           "PublishedDate": "2026-06-09T17:17:05Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:25237",
             "https://access.redhat.com/errata/RHSA-2026:25239",
             "https://access.redhat.com/security/cve/CVE-2026-34183",
             "https://bugzilla.redhat.com/2481879",
@@ -3269,7 +3859,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-45447",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-7383",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-9076",
-            "https://errata.almalinux.org/10/ALSA-2026-25237.html",
+            "https://errata.almalinux.org/9/ALSA-2026-25239.html",
             "https://errata.rockylinux.org/RLSA-2026:25239",
             "https://github.com/advisories/GHSA-f5vx-f6jp-89j6",
             "https://github.com/openssl/openssl/commit/5b306efb0b3779dfdd0803b4afc9d08c91f11517",
@@ -3340,7 +3930,6 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-45445",
           "PublishedDate": "2026-06-09T17:17:18.993Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:25237",
             "https://access.redhat.com/errata/RHSA-2026:25239",
             "https://access.redhat.com/security/cve/CVE-2026-45445",
             "https://bugzilla.redhat.com/2481879",
@@ -3389,7 +3978,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-45447",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-7383",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-9076",
-            "https://errata.almalinux.org/10/ALSA-2026-25237.html",
+            "https://errata.almalinux.org/9/ALSA-2026-25239.html",
             "https://errata.rockylinux.org/RLSA-2026:25239",
             "https://github.com/advisories/GHSA-v446-xwfm-x7mr",
             "https://github.com/openssl/openssl/commit/323f0b6e7d530a4cb4336d50c88cb70f3ac2a451",
@@ -3428,6 +4017,111 @@
         {
           "CVSS": {
             "redhat": {
+              "V3Score": 5.9,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-208"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "Issue summary: The generic elliptic-curve scalar multiplication used for\nECDSA and SM2 signature operations with curves that do not have a dedicated\nimplementation leaks information about the secret nonce through timing.\n\nImpact summary: An attacker able to measure signing times may learn\ninformation about the per-signature secret nonce, which over many signatures\ncan, via a lattice / Hidden Number Problem attack, lead to recovery of the\nprivate key.\n\nCWE: CWE-208: Observable Timing Discrepancy\n\nDescription: The generic elliptic-curve scalar multiplication used for\ncurves that do not have a dedicated constant-time implementation pads the\nsecret scalar with non-constant-time BIGNUM operations, so the time taken\ndepends on the value of the secret scalar derived from the ECDSA and SM2 nonce.\n\nThe leak is very small; observing it requires a large number of\nmeasurements. The effect is largest for curves whose group order lies\non a machine-word boundary, such as brainpoolP384r1.\n\nApplications using ECDSA signing over the Brainpool and other generic prime\ncurves, and SM2 signing on platforms that use the generic implementation,\nare vulnerable to this issue.\n\nThe NIST curves P-256, P-384 and P-521 use dedicated constant-time\nimplementations and are not affected.\n\nFIPS Impact: no\nThe FIPS modules are not affected: the approved NIST curves used in the FIPS\nprovider have dedicated constant-time implementations and do not use the\naffected code path.",
+          "Fingerprint": "sha256:2d1b708b86c47f121fa0c25937da0259cfc580ef0bc146f1dd12343f163992a1",
+          "FixedVersion": "3.3.7-r2",
+          "InstalledVersion": "3.3.7-r0",
+          "LastModifiedDate": "2026-09-29T21:27:41.13Z",
+          "Layer": {
+            "DiffID": "sha256:7211d01aba8fa2e9eb71ad34395cd313df5fc51a6b69b92d2dfad32cc37759cb",
+            "Digest": "sha256:897d797d2723cf0e318402f4d6f37d51b011517e5cf09246b22155f0fa90dc81"
+          },
+          "PkgID": "libssl3@3.3.7-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libssl3@3.3.7-r0?arch=x86_64\u0026distro=3.21.7",
+            "UID": "3f5c8d36a5c13541"
+          },
+          "PkgName": "libssl3",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-54872",
+          "PublishedDate": "2026-09-29T16:17:08.623Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-54872",
+            "https://github.com/openssl/openssl/commit/1a5bee8dc57430a2be69cd1ffe7fec6a62f4f179",
+            "https://github.com/openssl/openssl/commit/3f7e1363dccec6f7732bb9e9fa471bb6e4aa68cb",
+            "https://github.com/openssl/openssl/commit/7d83bc7764999dfd91b83b4f0815b45390422afd",
+            "https://github.com/openssl/openssl/commit/8166827a78aad164a07aa86dea2b425403ced471",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-54872",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://ubuntu.com/security/notices/USN-8847-2",
+            "https://www.cve.org/CVERecord?id=CVE-2026-54872"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "openssl: OpenSSL: Private key recovery via timing side-channel in generic elliptic curve operations",
+          "VendorSeverity": {
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-54872"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 4.7,
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-208"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "Issue summary: A non-constant-time optimized implementation of scalar\npoint multiplication is used for SM2 private key operations on ARM64 and\nRISC-V platforms.\n\nImpact summary: An attacker able to measure the time taken by, or to observe\nthe cache-line access pattern of SM2 signing or decryption on an affected\nplatform can learn information about the secret scalar.\n\nCWE: CWE-208: Observable Timing Discrepancy\n\nDescription: On ARM64 and RISC-V processors, the SM2 curve uses an optimized\nscalar multiplication implementation whose conditional branches and table\nlook ups are chosen according to the bits of the secret scalar. The execution\ntime and the cache-access pattern therefore depend on the long-term private\nkey (during SM2 decryption) or the per-signature nonce (during SM2 signature\ngeneration), forming a timing and cache side-channel.\n\nFIPS Impact: no\nSM2 is not a FIPS algorithm and the optimized SM2 implementation is not part\nof the FIPS module.\n\nOpenSSL 4.0, 3.6, 3.5 and 3.4 are vulnerable to this issue on AArch64 and\nRISC-V.\n\nOpenSSL 3.0, 1.1.1 and 1.0.2 are not affected by this issue.\n\nOpenSSL 4.0 users should upgrade to OpenSSL 4.0.3.\nOpenSSL 3.6 users should upgrade to OpenSSL 3.6.5.\nOpenSSL 3.5 users should upgrade to OpenSSL 3.5.9.\nOpenSSL 3.4 users should upgrade to OpenSSL 3.4.8.\n\nThis issue was reported on 2 May 2026 by Abhinav Agarwal.\nIt was independently reported on 6 June 2026 by Feng Xue.\nThe fix was developed by Igor Ustinov.\n\n-- cut (non-publishing metadata for internal use) --\nReported by: Abhinav Agarwal, Feng Xue\nFixed by: Igor Ustinov",
+          "Fingerprint": "sha256:00a52acde9986f503b535c9ac3dc78f005e699b3aa5310e27446dd12f50b7690",
+          "FixedVersion": "3.3.7-r2",
+          "InstalledVersion": "3.3.7-r0",
+          "LastModifiedDate": "2026-09-29T21:27:41.13Z",
+          "Layer": {
+            "DiffID": "sha256:7211d01aba8fa2e9eb71ad34395cd313df5fc51a6b69b92d2dfad32cc37759cb",
+            "Digest": "sha256:897d797d2723cf0e318402f4d6f37d51b011517e5cf09246b22155f0fa90dc81"
+          },
+          "PkgID": "libssl3@3.3.7-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libssl3@3.3.7-r0?arch=x86_64\u0026distro=3.21.7",
+            "UID": "3f5c8d36a5c13541"
+          },
+          "PkgName": "libssl3",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-54875",
+          "PublishedDate": "2026-09-29T16:17:08.92Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-54875",
+            "https://github.com/openssl/openssl/commit/3f01bbc28f7e08211fcdc797fd43816504f94257",
+            "https://github.com/openssl/openssl/commit/469f3e42629f4a0b5631796e20c66c92c138a3e8",
+            "https://github.com/openssl/openssl/commit/9794ed473764839275cb701b4850f3c24d929c28",
+            "https://github.com/openssl/openssl/commit/dddad955d5ff3e9507619cf4e0f13e9988e2197c",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-54875",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-54875"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "openssl: openssl: information disclosure via non-constant-time SM2 scalar multiplication on ARM64 and RISC-V",
+          "VendorSeverity": {
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-54875"
+        },
+        {
+          "CVSS": {
+            "redhat": {
               "V3Score": 7.5,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
             }
@@ -3458,7 +4152,6 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-63072",
           "PublishedDate": "2026-08-25T13:19:26.01Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:67154",
             "https://access.redhat.com/errata/RHSA-2026:67165",
             "https://access.redhat.com/security/cve/CVE-2026-63072",
             "https://bugzilla.redhat.com/2515348",
@@ -3489,7 +4182,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-63074",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-63075",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-63076",
-            "https://errata.almalinux.org/10/ALSA-2026-67154.html",
+            "https://errata.almalinux.org/9/ALSA-2026-67165.html",
             "https://errata.rockylinux.org/RLSA-2026:67165",
             "https://github.com/openssl/openssl/commit/2a3dac874c8057c1f0186849bf1ede1ae7b6b756",
             "https://github.com/openssl/openssl/commit/87784ad619af36b8807c2044b3940006fccc1e42",
@@ -3552,7 +4245,6 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-63076",
           "PublishedDate": "2026-08-25T13:19:26.543Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:67154",
             "https://access.redhat.com/errata/RHSA-2026:67165",
             "https://access.redhat.com/security/cve/CVE-2026-63076",
             "https://bugzilla.redhat.com/2515348",
@@ -3583,7 +4275,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-63074",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-63075",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-63076",
-            "https://errata.almalinux.org/10/ALSA-2026-67154.html",
+            "https://errata.almalinux.org/9/ALSA-2026-67165.html",
             "https://errata.rockylinux.org/RLSA-2026:67165",
             "https://github.com/openssl/openssl/commit/37882aa2e0256e1072442a8f62f7db45b995c45b",
             "https://github.com/openssl/openssl/commit/a17cc8d612ecff6d94a9b7ca8b5283ddf5ff570e",
@@ -3612,6 +4304,320 @@
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-63076"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 5.9,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "Issue summary: A TLS server that calls SSL_set_SSL_CTX() to switch a\nconnection to a different SSL_CTX part way through a handshake may access\nmemory beyond the end of an internal array if the replacement context knows\nabout more provider signature algorithms than the context the connection was\ncreated from. Applications which never call SSL_set_SSL_CTX() are not\naffected.\n\nImpact summary: A remote peer may be able to cause a small out-of-bounds\nread, and in some circumstances a fixed-value out-of-bounds write, on the\nserver heap. This may lead to a Denial of Service.\n\nCWE: CWE-787: Out-of-bounds Write\n\nDescription: A TLS connection records how many certificate slots it has\nwhen it is created, taken from the SSL_CTX that created it: the built-in\ncertificate types plus one slot for each provider TLS-SIGALG entry that\ncontext was aware of. That count sizes an internal array of per-slot\ncertificate validity flags.\n\nAn application may replace a connection's SSL_CTX part way through the\nhandshake by calling SSL_set_SSL_CTX(), most commonly from a servername\ncallback in order to serve a different virtual host. Doing so did not\nrefresh the recorded count. A provider signature algorithm's slot index is\nits position in the list of whichever context resolves it, so if the\nreplacement context is aware of more of them than the original, an\nalgorithm offered by the peer can resolve to an index beyond the end of the\narray. Processing the peer's signature algorithms then reads one four byte\nword past the end for each such algorithm and, where the word read is zero,\nwrites a fixed value over it. A peer offering many of them can corrupt heap\nmetadata and abort the process.\n\nOnly provider signature algorithms which occupy one of the excess slots,\nand which the server also has configured, have this effect. Codepoints the\nreplacement context does not recognise are discarded without being resolved\nto a slot, and provider signature algorithms are usable only from TLS 1.3.\n\nThe two contexts must therefore be aware of different numbers of provider\nsignature algorithms, which requires separate library contexts, a provider\nloaded between the two being created, or providers which differ in what\nthey advertise - in 4.0, for example, the default provider advertises SM2\nwhere the FIPS provider does not. A deployment meeting the condition is\nalso unable to negotiate the affected algorithms with legitimate clients,\nsince the same stale count hides the corresponding certificates, so the\nmisconfiguration is likely to be noticed. For that reason, and because the\nconfiguration is not the default, this issue has been assessed as Low\nseverity.\n\nFIPS impact: no\nNo FIPS modules are affected by this issue as the affected code is outside\nthe OpenSSL FIPS module boundary.",
+          "Fingerprint": "sha256:9f729c7d08cf9aa2ff653b59dafd33b3133741b9d224e7b64b05bf72111e9166",
+          "FixedVersion": "3.3.7-r2",
+          "InstalledVersion": "3.3.7-r0",
+          "LastModifiedDate": "2026-09-29T21:27:41.13Z",
+          "Layer": {
+            "DiffID": "sha256:7211d01aba8fa2e9eb71ad34395cd313df5fc51a6b69b92d2dfad32cc37759cb",
+            "Digest": "sha256:897d797d2723cf0e318402f4d6f37d51b011517e5cf09246b22155f0fa90dc81"
+          },
+          "PkgID": "libssl3@3.3.7-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libssl3@3.3.7-r0?arch=x86_64\u0026distro=3.21.7",
+            "UID": "3f5c8d36a5c13541"
+          },
+          "PkgName": "libssl3",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-72897",
+          "PublishedDate": "2026-09-29T16:17:09.903Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-72897",
+            "https://github.com/openssl/openssl/commit/00646e5085a0d12d29e0d2f9b9bc5f7111a50922",
+            "https://github.com/openssl/openssl/commit/4135f553c9d3ba4a09fe752f5d30af2a6a092b2e",
+            "https://github.com/openssl/openssl/commit/9c54d209486f6b1ad79fe2179c40f13200fa4f61",
+            "https://github.com/openssl/openssl/commit/e87ed26b298a74d8ba61a53e9c7bcd1acac6b814",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-72897",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-72897"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "openssl: openssl: Denial of Service via out-of-bounds write during TLS context switch",
+          "VendorSeverity": {
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-72897"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 5.9,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-476"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "Issue summary: A CMP client that requests certificate revocation on the basis\nof a PKCS#10 CSR may dereference a NULL pointer and terminate abnormally when\nprocessing a crafted revocation response. \n\nImpact summary: The NULL pointer dereference happens on a read which \nleads to a crash and a Denial of Service for the affected client application.\n\nCWE: CWE-476: NULL-pointer dereference\n\nDescription: A CMP client revoking a certificate has to tell the server which\ncertificate to revoke, and may do so by supplying a PKCS#10 CSR instead of the\ncertificate itself or its issuer name and serial number. This is\n'openssl cmp -cmd rr -csr \u003cfile\u003e' on the command line, or\nOSSL_CMP_exec_RR_ses() with the certificate supplied via\nOSSL_CMP_CTX_set1_p10CSR() through the API.\n\nA CSR does not contain the issuer name and serial number of the certificate,\nso the client does not send them. A server may optionally name the\ncertificate it revoked in its response, and the client then compares that\nname against what it sent. Having sent neither an issuer name nor a serial\nnumber, it has nothing to compare against, and a server returning a specially\ncrafted name causes the client to read from a NULL pointer and crash.\n\nThe revocation response is checked for valid message protection before\nthe affected code is reached, so an attacker must be a malicious or\ncompromised CMP server, or a man-in-the-middle in possession of the\nsecret used for message protection. Clients that identify the certificate\nto be revoked by a certificate or by issuer and serial number rather\nthan by a PKCS#10 CSR are not affected.\n\nFIPS impact: no\nNo FIPS modules are affected by this issue, as the CMP protocol\nimplementation is outside the OpenSSL FIPS module boundary.",
+          "Fingerprint": "sha256:55a59dbe6996c082041de180b37befa2c9bb8e52de1999c845e55e1eb55c4fa7",
+          "FixedVersion": "3.3.7-r2",
+          "InstalledVersion": "3.3.7-r0",
+          "LastModifiedDate": "2026-09-29T21:27:41.13Z",
+          "Layer": {
+            "DiffID": "sha256:7211d01aba8fa2e9eb71ad34395cd313df5fc51a6b69b92d2dfad32cc37759cb",
+            "Digest": "sha256:897d797d2723cf0e318402f4d6f37d51b011517e5cf09246b22155f0fa90dc81"
+          },
+          "PkgID": "libssl3@3.3.7-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libssl3@3.3.7-r0?arch=x86_64\u0026distro=3.21.7",
+            "UID": "3f5c8d36a5c13541"
+          },
+          "PkgName": "libssl3",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-75805",
+          "PublishedDate": "2026-09-29T16:17:11.063Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-75805",
+            "https://github.com/openssl/openssl/commit/7588db7fef14209c3caa3a101d11a02006b19166",
+            "https://github.com/openssl/openssl/commit/7ca0ccb5172a577e9b87267d77bfe21e5481a5e7",
+            "https://github.com/openssl/openssl/commit/9eb2a8a9b86136cdb39d6d7d50644dd66941cdc3",
+            "https://github.com/openssl/openssl/commit/abf02872a4b71767ecc72293424420f5b009190f",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-75805",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-75805"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "openssl: openssl: Denial of Service via crafted CMP certificate revocation response",
+          "VendorSeverity": {
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-75805"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 5.3,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+            }
+          },
+          "CweIDs": [
+            "CWE-1284"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "Issue summary: An established DTLS 1.2 association using an AEAD cipher suite\ncan be terminated by a single unauthenticated datagram whose encrypted\nfragment is shorter than the mandatory explicit IV and authentication tag\noverhead.\n\nImpact summary: An attacker who can send a datagram that is routed to an\nexisting DTLS 1.2 association can tear that association down without knowing\nany key material. This is a Denial of Service limited to the targeted\nassociation. There is no memory safety or confidentiality impact.\n\nCWE: CWE-1284: Improper Validation of Specified Quantity in Input\n\nDescription: In TLS 1.2 and DTLS 1.2 every record protected by an AEAD cipher\nsuite carries an explicit IV followed by the ciphertext and an authentication\ntag. When decrypting such a record the record layer passed the record length to\nthe cipher implementation before checking that the record was long enough to\ncontain the explicit IV and the tag. For a record shorter than that overhead the\ncipher implementation rejected the impossible length, and the record layer\ntreated this as an internal failure and raised a fatal internal_error alert\ninstead of treating the record as one that failed authentication.\n\nIn TLS 1.2 the same record causes a fatal internal_error alert instead of the\nexpected bad_record_mac alert. Since any undecryptable record already\nterminates a TLS connection, this is a protocol conformance issue rather than\na security issue in TLS.\n\nThe fix validates the record length against the explicit IV and tag length\nbefore any AEAD processing, so that TLS reports bad_record_mac and DTLS\nsilently discards the record.\n\nFIPS impact: no\nThe affected code is outside the FIPS module boundary.",
+          "Fingerprint": "sha256:a124e99d5527c0a8232b0631212276b4820e9aceadc3f82fe1e413c867d0b233",
+          "FixedVersion": "3.3.7-r2",
+          "InstalledVersion": "3.3.7-r0",
+          "LastModifiedDate": "2026-09-29T21:27:41.13Z",
+          "Layer": {
+            "DiffID": "sha256:7211d01aba8fa2e9eb71ad34395cd313df5fc51a6b69b92d2dfad32cc37759cb",
+            "Digest": "sha256:897d797d2723cf0e318402f4d6f37d51b011517e5cf09246b22155f0fa90dc81"
+          },
+          "PkgID": "libssl3@3.3.7-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libssl3@3.3.7-r0?arch=x86_64\u0026distro=3.21.7",
+            "UID": "3f5c8d36a5c13541"
+          },
+          "PkgName": "libssl3",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-75806",
+          "PublishedDate": "2026-09-29T16:17:11.217Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-75806",
+            "https://github.com/openssl/openssl/commit/04728a289a823e68137f88da016cb9ede307217d",
+            "https://github.com/openssl/openssl/commit/050b275cd671a6eed1d6457642d41a5a77aab972",
+            "https://github.com/openssl/openssl/commit/3a4589d015a9049d47b66f186cf50a8711343a1d",
+            "https://github.com/openssl/openssl/commit/5af82fefbaf2b5fec2fc0e1d87f112844902f01d",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-75806",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-75806"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "openssl: OpenSSL: Denial of Service via undersized DTLS record",
+          "VendorSeverity": {
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-75806"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 5.9,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-208"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "Issue summary: SM2 signature generation uses non-constant-time arithmetic\non secret values, forming a timing side-channel.\n\nImpact summary: An attacker able to measure SM2 signing times may learn\ninformation about the per-signature secret nonce, which over many signatures\ncan, via a lattice / Hidden Number Problem attack, lead to recovery of the\nprivate key.\n\nCWE: CWE-208: Observable Timing Discrepancy\n\nDescription: SM2 signature generation computes the signature value using\nvariable-time BIGNUM operations on the secret nonce and the private key, so\nthe time taken to produce an SM2 signature depends on these secret values,\nforming a timing side-channel.\n\nApplications performing SM2 signature generation are affected on all\nplatforms.\n\nFIPS Impact: no\nSM2 is not a FIPS algorithm.",
+          "Fingerprint": "sha256:e9fc629850e30bf17873470404f59817deccd707adc44b4ce6c9ea331528c445",
+          "FixedVersion": "3.3.7-r2",
+          "InstalledVersion": "3.3.7-r0",
+          "LastModifiedDate": "2026-09-29T21:27:41.13Z",
+          "Layer": {
+            "DiffID": "sha256:7211d01aba8fa2e9eb71ad34395cd313df5fc51a6b69b92d2dfad32cc37759cb",
+            "Digest": "sha256:897d797d2723cf0e318402f4d6f37d51b011517e5cf09246b22155f0fa90dc81"
+          },
+          "PkgID": "libssl3@3.3.7-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libssl3@3.3.7-r0?arch=x86_64\u0026distro=3.21.7",
+            "UID": "3f5c8d36a5c13541"
+          },
+          "PkgName": "libssl3",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-77696",
+          "PublishedDate": "2026-09-29T16:17:11.493Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-77696",
+            "https://github.com/openssl/openssl/commit/1c4aed808a7aea32d2d013049c2e0d9fef164fc9",
+            "https://github.com/openssl/openssl/commit/20b20628d39b2dcc4677194bd68c7c060fa598cb",
+            "https://github.com/openssl/openssl/commit/419f5cb519721dceed393dbc524d79e487c72e64",
+            "https://github.com/openssl/openssl/commit/6b90445a56b99a328ac1feba058abf976504f440",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-77696",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://ubuntu.com/security/notices/USN-8847-2",
+            "https://www.cve.org/CVERecord?id=CVE-2026-77696"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "openssl: OpenSSL: Private key recovery via SM2 timing side-channel",
+          "VendorSeverity": {
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-77696"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 5.3,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+            }
+          },
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "Issue summary: A malicious remote peer may flood the local QUIC\nstack with NEW_CONNECTION_ID frames by avoiding a limit check on\nhow many connection IDs the remote QUIC stack can use.\n\nImpact summary: The local QUIC stack sends a RETIRE_CONN_ID frame\nfor every NEW_CONNECTION_ID frame it receives. The RETIRE_CONN_ID\nframe is dispatched via the Control Frame Queue (CFQ). If the remote\npeer also withholds ACKs, then it can force the local stack\nto allocate ~400MB (depending on ACK delay).\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: RFC 9000 sections 5.1.1 and 5.1.2 [1] describe the mechanism\nby which a remote peer can notify the local QUIC stack to change the\ndestination connection ID (a.k.a. CID) the local stack uses to\nidentify the connection at the remote peer. Each CID is associated\nwith a sequence number. The sequence number is transmitted\nin NEW_CONNECTION_ID and RETIRE_CONNECTION_ID frames to identify the CID\nwhich is being either associated with a connection or retired.\n\nThe remote peer sends a NEW_CONNECTION_ID frame to let the local stack know\na new CID is being associated with an existing connection. The\nNEW_CONNECTION_ID frame carries the new CID, its sequence number, and the\nretire-prior-to number. The retire-prior-to identifies existing\nCIDs that are to be retired. The local QUIC stack must send a\nRETIRE_CONNECTION_ID for every destination CID whose sequence number\nis less than retire-prior-to. The CID becomes retired after the\nlocal stack receives an ACK for its RETIRE_CONNECTION_ID frame.\n\nAlthough the OpenSSL QUIC stack supports at most one destination CID\nfor every connection, it can be tricked into processing more than\none RETIRE_CONNECTION_ID frame per connection. The OpenSSL QUIC\nstack currently retires the destination CID as soon as it receives\nthe NEW_CONNECTION_ID, while in fact the destination CID must\nbe retired after an ACK for the RETIRE_CONNECTION_ID frame is received.\nCorrecting the flawed logic also fixes the backlog growth.\n\n[1] https://datatracker.ietf.org/doc/html/rfc9000#name-issuing-connection-ids\n\nFIPS impact: no\nThe FIPS module is not affected as the QUIC implementation is outside of\nthe OpenSSL FIPS module boundary.",
+          "Fingerprint": "sha256:d4a385af743c405e505247cf4792ec0ff63e8951e7a6304fa04a4c8c313cec4a",
+          "FixedVersion": "3.3.7-r2",
+          "InstalledVersion": "3.3.7-r0",
+          "LastModifiedDate": "2026-09-29T21:27:41.13Z",
+          "Layer": {
+            "DiffID": "sha256:7211d01aba8fa2e9eb71ad34395cd313df5fc51a6b69b92d2dfad32cc37759cb",
+            "Digest": "sha256:897d797d2723cf0e318402f4d6f37d51b011517e5cf09246b22155f0fa90dc81"
+          },
+          "PkgID": "libssl3@3.3.7-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libssl3@3.3.7-r0?arch=x86_64\u0026distro=3.21.7",
+            "UID": "3f5c8d36a5c13541"
+          },
+          "PkgName": "libssl3",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-84784",
+          "PublishedDate": "2026-09-29T16:17:12.81Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-84784",
+            "https://github.com/openssl/openssl/commit/4685c914b0d410b1034f40b547c95bc95e7a380a",
+            "https://github.com/openssl/openssl/commit/9a30fe0fba195c14e5b87bf93c0d0fdb70373806",
+            "https://github.com/openssl/openssl/commit/dba3c48d653c64fcbc9070a17a0ee2b3e2f3af1f",
+            "https://github.com/openssl/openssl/commit/e9e5155833fa968bee50024bf9ca3a185ab599fe",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-84784",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-84784"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "openssl: OpenSSL: Denial of Service via unbounded QUIC connection identifier backlog",
+          "VendorSeverity": {
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-84784"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 3.7,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L"
+            }
+          },
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "Issue summary: A certificate with many nameRelativeToCRLIssuer CRL\ndistribution points causes disproportionate heap growth when OpenSSL caches\nX.509 extensions.\n\nImpact summary: Receiving a crafted certificate from a malicious peer can lead\nto significant memory pressure and possible Denial of Service in clients or\nin servers that solicit client certificates.\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: A certificate or a set of certificates that fits under the limit for\nsize of certificates accepted from the peer (~100 KiB) can result in allocation\nof several hundred MiB of resident memory on the receiving side\nduring a normal TLS handshake.  This may be enough to crash the client or\nserver, if multiple concurrent connections lead to similarly large memory\nallocations.\n\nThe fix postpones processing of the CRL distribution points extensions in\ncertificates to the time when the processed value is required for CRL processing.\nThis avoids keeping large memory allocations for a long time when such\ncertificates are received.\n\nFIPS impact: no\nThe affected code is outside the FIPS module boundary.",
+          "Fingerprint": "sha256:3a7a046142e9e68830fa0758d56411b273286a390552a298ce2fc4b646182726",
+          "FixedVersion": "3.3.7-r2",
+          "InstalledVersion": "3.3.7-r0",
+          "LastModifiedDate": "2026-09-30T21:17:10.43Z",
+          "Layer": {
+            "DiffID": "sha256:7211d01aba8fa2e9eb71ad34395cd313df5fc51a6b69b92d2dfad32cc37759cb",
+            "Digest": "sha256:897d797d2723cf0e318402f4d6f37d51b011517e5cf09246b22155f0fa90dc81"
+          },
+          "PkgID": "libssl3@3.3.7-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libssl3@3.3.7-r0?arch=x86_64\u0026distro=3.21.7",
+            "UID": "3f5c8d36a5c13541"
+          },
+          "PkgName": "libssl3",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-35189",
+          "PublishedDate": "2026-09-29T16:17:07.33Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-35189",
+            "https://github.com/openssl/openssl/commit/2b93c73b2c70ddc4c61c5e4bfaaa6bd71379eb84",
+            "https://github.com/openssl/openssl/commit/3842516cc15e8b2cf55747011045e77547e71d89",
+            "https://github.com/openssl/openssl/commit/8e0efc7549b7ff8246d40e585e3fd604f728473f",
+            "https://github.com/openssl/openssl/commit/c72ae182cac17a82e4246c6ecd4e9c4ec3586ec9",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-35189",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://ubuntu.com/security/notices/USN-8847-2",
+            "https://www.cve.org/CVERecord?id=CVE-2026-35189"
+          ],
+          "Severity": "LOW",
+          "Status": "fixed",
+          "Title": "openssl: openssl: Denial of Service via excessive memory allocation in CRL distribution point processing",
+          "VendorSeverity": {
+            "redhat": 1,
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-35189"
         },
         {
           "CVSS": {
@@ -3650,7 +4656,6 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-42766",
           "PublishedDate": "2026-06-09T17:17:07.97Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:25237",
             "https://access.redhat.com/errata/RHSA-2026:25239",
             "https://access.redhat.com/security/cve/CVE-2026-42766",
             "https://bugzilla.redhat.com/2481879",
@@ -3699,7 +4704,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-45447",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-7383",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-9076",
-            "https://errata.almalinux.org/10/ALSA-2026-25237.html",
+            "https://errata.almalinux.org/9/ALSA-2026-25239.html",
             "https://errata.rockylinux.org/RLSA-2026:25239",
             "https://github.com/advisories/GHSA-58mv-qqmv-gqgv",
             "https://github.com/openssl/openssl/commit/056d06c1918fafbb98c1c85a02e4c47cc4e199ce",
@@ -3773,7 +4778,6 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-42768",
           "PublishedDate": "2026-06-09T17:17:08.223Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:25237",
             "https://access.redhat.com/errata/RHSA-2026:25239",
             "https://access.redhat.com/security/cve/CVE-2026-42768",
             "https://bugzilla.redhat.com/2481879",
@@ -3822,7 +4826,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-45447",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-7383",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-9076",
-            "https://errata.almalinux.org/10/ALSA-2026-25237.html",
+            "https://errata.almalinux.org/9/ALSA-2026-25239.html",
             "https://errata.rockylinux.org/RLSA-2026:25239",
             "https://github.com/advisories/GHSA-5m8f-m8jv-3rp3",
             "https://github.com/openssl/openssl/commit/a2ca7b2d73e0ffc1eae183fe6e1741dac767cb4f",
@@ -3893,7 +4897,6 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-42770",
           "PublishedDate": "2026-06-09T17:17:08.523Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:25237",
             "https://access.redhat.com/errata/RHSA-2026:25239",
             "https://access.redhat.com/security/cve/CVE-2026-42770",
             "https://bugzilla.redhat.com/2481879",
@@ -3942,7 +4945,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-45447",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-7383",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-9076",
-            "https://errata.almalinux.org/10/ALSA-2026-25237.html",
+            "https://errata.almalinux.org/9/ALSA-2026-25239.html",
             "https://errata.rockylinux.org/RLSA-2026:25239",
             "https://github.com/advisories/GHSA-3cxm-476w-ghm2",
             "https://github.com/openssl/openssl/commit/3da5a516cd2635a320ff748503db2cef7c4b0f02",
@@ -4015,7 +5018,6 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-45446",
           "PublishedDate": "2026-06-09T17:17:19.137Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:25237",
             "https://access.redhat.com/errata/RHSA-2026:25239",
             "https://access.redhat.com/security/cve/CVE-2026-45446",
             "https://bugzilla.redhat.com/2481879",
@@ -4064,7 +5066,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-45447",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-7383",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-9076",
-            "https://errata.almalinux.org/10/ALSA-2026-25237.html",
+            "https://errata.almalinux.org/9/ALSA-2026-25239.html",
             "https://errata.rockylinux.org/RLSA-2026:25239",
             "https://github.com/advisories/GHSA-7phf-qpm5-q6p3",
             "https://github.com/openssl/openssl/commit/25b32cd9d41d2bc01b6abc425bb4baf2c2236fdc",
@@ -4133,7 +5135,6 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-63073",
           "PublishedDate": "2026-08-25T13:19:26.147Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:67154",
             "https://access.redhat.com/errata/RHSA-2026:67165",
             "https://access.redhat.com/security/cve/CVE-2026-63073",
             "https://bugzilla.redhat.com/2515348",
@@ -4164,7 +5165,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-63074",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-63075",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-63076",
-            "https://errata.almalinux.org/10/ALSA-2026-67154.html",
+            "https://errata.almalinux.org/9/ALSA-2026-67165.html",
             "https://errata.rockylinux.org/RLSA-2026:67165",
             "https://github.com/openssl/openssl/commit/0cc20b322639919aa423e90799d9a57c3b4b76ca",
             "https://github.com/openssl/openssl/commit/6a0acc072b4d37a7cac1252a29c1ce1f00c5ec29",
@@ -4285,7 +5286,6 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-9076",
           "PublishedDate": "2026-06-09T17:17:50.997Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:25237",
             "https://access.redhat.com/errata/RHSA-2026:25239",
             "https://access.redhat.com/security/cve/CVE-2026-9076",
             "https://bugzilla.redhat.com/2481879",
@@ -4334,7 +5334,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-45447",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-7383",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-9076",
-            "https://errata.almalinux.org/10/ALSA-2026-25237.html",
+            "https://errata.almalinux.org/9/ALSA-2026-25239.html",
             "https://errata.rockylinux.org/RLSA-2026:25239",
             "https://github.com/advisories/GHSA-q98x-73c3-57gj",
             "https://github.com/openssl/openssl/commit/05b066366842f930fadd9a6e94df98030af431bb",
@@ -5637,7 +6637,7 @@
           "Fingerprint": "sha256:e04d46dd5812a0dbbe888a84d273271b1ae828ce08b5c943877938cfac028308",
           "FixedVersion": "1.45.0",
           "InstalledVersion": "v1.39.0",
-          "LastModifiedDate": "2026-09-17T15:16:52.953Z",
+          "LastModifiedDate": "2026-09-30T17:51:56.193Z",
           "Layer": {
             "DiffID": "sha256:14d7fccb6f2d3852916bef5b78db2b11bacbbd77450889c24955569e9c3d668e",
             "Digest": "sha256:15f067908ca6b22cf1f44ad1b386533ea31b8dc13dbdab7ace8f7dd89a8751eb"
@@ -5758,7 +6758,7 @@
           "Fingerprint": "sha256:a73cb9b8808599f943b888a3db4a34d0671b5e25fe13f0d39fd9f89c87cb876b",
           "FixedVersion": "1.45.0",
           "InstalledVersion": "v1.39.0",
-          "LastModifiedDate": "2026-09-17T15:16:52.953Z",
+          "LastModifiedDate": "2026-09-30T17:51:56.193Z",
           "Layer": {
             "DiffID": "sha256:14d7fccb6f2d3852916bef5b78db2b11bacbbd77450889c24955569e9c3d668e",
             "Digest": "sha256:15f067908ca6b22cf1f44ad1b386533ea31b8dc13dbdab7ace8f7dd89a8751eb"
@@ -5948,7 +6948,7 @@
           "Fingerprint": "sha256:a5af0ec6d1fb06643f1b88504c2b10957cde11eb00345fd1885094d95f3cdf72",
           "FixedVersion": "1.45.0",
           "InstalledVersion": "v1.39.0",
-          "LastModifiedDate": "2026-09-17T15:16:52.953Z",
+          "LastModifiedDate": "2026-09-30T17:51:56.193Z",
           "Layer": {
             "DiffID": "sha256:14d7fccb6f2d3852916bef5b78db2b11bacbbd77450889c24955569e9c3d668e",
             "Digest": "sha256:15f067908ca6b22cf1f44ad1b386533ea31b8dc13dbdab7ace8f7dd89a8751eb"
@@ -6195,8 +7195,11 @@
             "https://access.redhat.com/security/cve/CVE-2026-39829",
             "https://bugzilla.redhat.com/2480680",
             "https://bugzilla.redhat.com/2480681",
-            "https://bugzilla.redhat.com/2480684",
             "https://bugzilla.redhat.com/2480685",
+            "https://bugzilla.redhat.com/2480688",
+            "https://bugzilla.redhat.com/2480757",
+            "https://bugzilla.redhat.com/2480761",
+            "https://bugzilla.redhat.com/2493620",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480680",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480681",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
@@ -6212,7 +7215,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39835",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42508",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-57231",
-            "https://errata.almalinux.org/10/ALSA-2026-36199.html",
+            "https://errata.almalinux.org/9/ALSA-2026-37123.html",
             "https://errata.rockylinux.org/RLSA-2026:37123",
             "https://go.dev/cl/781641",
             "https://go.dev/cl/781661",
@@ -6329,10 +7332,14 @@
             "https://access.redhat.com/errata/RHSA-2026:67450",
             "https://access.redhat.com/errata/RHSA-2026:69961",
             "https://access.redhat.com/security/cve/CVE-2026-39830",
-            "https://bugzilla.redhat.com/2480680",
-            "https://bugzilla.redhat.com/2480681",
             "https://bugzilla.redhat.com/2480684",
-            "https://bugzilla.redhat.com/2480685",
+            "https://bugzilla.redhat.com/2508234",
+            "https://bugzilla.redhat.com/2515815",
+            "https://bugzilla.redhat.com/2515820",
+            "https://bugzilla.redhat.com/2515827",
+            "https://bugzilla.redhat.com/2515838",
+            "https://bugzilla.redhat.com/2515839",
+            "https://bugzilla.redhat.com/2515840",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480684",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2508234",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2515815",
@@ -6352,7 +7359,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56859",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56860",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56862",
-            "https://errata.almalinux.org/10/ALSA-2026-36199.html",
+            "https://errata.almalinux.org/9/ALSA-2026-69961.html",
             "https://errata.rockylinux.org/RLSA-2026:69961",
             "https://github.com/golang/crypto/commit/4e7a7384ecbc8d519f6f4c11b36fa9d761fc8946",
             "https://go.dev/cl/781640",
@@ -6512,15 +7519,13 @@
             "https://access.redhat.com/errata/RHSA-2026:67450",
             "https://access.redhat.com/security/cve/CVE-2026-39832",
             "https://bugzilla.redhat.com/2480680",
-            "https://bugzilla.redhat.com/2480681",
-            "https://bugzilla.redhat.com/2480684",
             "https://bugzilla.redhat.com/2480685",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480680",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39832",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39835",
-            "https://errata.almalinux.org/10/ALSA-2026-36199.html",
+            "https://errata.almalinux.org/9/ALSA-2026-37410.html",
             "https://errata.rockylinux.org/RLSA-2026:37410",
             "https://github.com/golang/crypto/commit/e3d1254f1e7e60baa086142c46174bf6d8d0fe50",
             "https://go.dev/cl/778640",
@@ -6642,15 +7647,13 @@
             "https://access.redhat.com/errata/RHSA-2026:66521",
             "https://access.redhat.com/security/cve/CVE-2026-39835",
             "https://bugzilla.redhat.com/2480680",
-            "https://bugzilla.redhat.com/2480681",
-            "https://bugzilla.redhat.com/2480684",
             "https://bugzilla.redhat.com/2480685",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480680",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39832",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39835",
-            "https://errata.almalinux.org/10/ALSA-2026-36199.html",
+            "https://errata.almalinux.org/9/ALSA-2026-37410.html",
             "https://errata.rockylinux.org/RLSA-2026:37410",
             "https://go.dev/cl/781660",
             "https://go.dev/issue/79563",
@@ -7435,15 +8438,16 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-25681",
           "PublishedDate": "2026-05-22T16:16:19.863Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:34357",
+            "https://access.redhat.com/errata/RHSA-2026:37123",
             "https://access.redhat.com/errata/RHSA-2026:69293",
             "https://access.redhat.com/security/cve/CVE-2026-25681",
-            "https://bugzilla.redhat.com/2466505",
-            "https://bugzilla.redhat.com/2466507",
-            "https://bugzilla.redhat.com/2467822",
-            "https://bugzilla.redhat.com/2480756",
+            "https://bugzilla.redhat.com/2480680",
+            "https://bugzilla.redhat.com/2480681",
+            "https://bugzilla.redhat.com/2480685",
+            "https://bugzilla.redhat.com/2480688",
+            "https://bugzilla.redhat.com/2480757",
             "https://bugzilla.redhat.com/2480761",
-            "https://bugzilla.redhat.com/2484207",
+            "https://bugzilla.redhat.com/2493620",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480757",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480761",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480762",
@@ -7455,7 +8459,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-41178",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42502",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-55677",
-            "https://errata.almalinux.org/10/ALSA-2026-34357.html",
+            "https://errata.almalinux.org/9/ALSA-2026-37123.html",
             "https://errata.rockylinux.org/RLSA-2026:69293",
             "https://go.dev/cl/781703",
             "https://go.dev/issue/79574",
@@ -7668,6 +8672,7 @@
             "https://access.redhat.com/errata/RHSA-2026:65126",
             "https://access.redhat.com/errata/RHSA-2026:66350",
             "https://access.redhat.com/security/cve/CVE-2026-33814",
+            "https://bugzilla.redhat.com/2467822",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2467809",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2467810",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2467811",
@@ -7691,6 +8696,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39836",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42499",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42501",
+            "https://errata.almalinux.org/8/ALSA-2026-22112.html",
             "https://errata.rockylinux.org/RLSA-2026:22121",
             "https://github.com/golang/go/issues/78476",
             "https://go-review.googlesource.com/c/go/+/761581",
@@ -7718,6 +8724,7 @@
             "GO-2026-4918"
           ],
           "VendorSeverity": {
+            "alma": 3,
             "amazon": 3,
             "azure": 2,
             "bitnami": 3,
@@ -7915,8 +8922,16 @@
             "https://access.redhat.com/errata/RHSA-2026:67517",
             "https://access.redhat.com/errata/RHSA-2026:68504",
             "https://access.redhat.com/security/cve/CVE-2026-39821",
+            "https://bugzilla.redhat.com/2467809",
+            "https://bugzilla.redhat.com/2467820",
             "https://bugzilla.redhat.com/2480756",
-            "https://bugzilla.redhat.com/2484207",
+            "https://bugzilla.redhat.com/2484204",
+            "https://bugzilla.redhat.com/2515815",
+            "https://bugzilla.redhat.com/2515820",
+            "https://bugzilla.redhat.com/2515827",
+            "https://bugzilla.redhat.com/2515838",
+            "https://bugzilla.redhat.com/2515839",
+            "https://bugzilla.redhat.com/2515840",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2456333",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2456339",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2467809",
@@ -7944,7 +8959,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56859",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56860",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56862",
-            "https://errata.almalinux.org/10/ALSA-2026-46395.html",
+            "https://errata.almalinux.org/9/ALSA-2026-65153.html",
             "https://errata.rockylinux.org/RLSA-2026:65886",
             "https://github.com/golang/go/issues/78760",
             "https://go.dev/cl/767220",
@@ -8640,7 +9655,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32283",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-33186",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-34986",
-            "https://errata.almalinux.org/10/ALSA-2026-19135.html",
+            "https://errata.almalinux.org/9/ALSA-2026-19353.html",
             "https://errata.rockylinux.org/RLSA-2026:23228",
             "https://github.com/grpc/grpc-go",
             "https://github.com/grpc/grpc-go/security/advisories/GHSA-p77j-4mvh-x3m3",
@@ -8926,19 +9941,13 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-33818",
           "PublishedDate": "2026-08-13T22:17:19.84Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:70201",
             "https://access.redhat.com/errata/RHSA-2026:70641",
             "https://access.redhat.com/security/cve/CVE-2026-33818",
-            "https://bugzilla.redhat.com/2456335",
-            "https://bugzilla.redhat.com/2467809",
-            "https://bugzilla.redhat.com/2504233",
-            "https://bugzilla.redhat.com/2508234",
             "https://bugzilla.redhat.com/2515815",
             "https://bugzilla.redhat.com/2515820",
             "https://bugzilla.redhat.com/2515827",
             "https://bugzilla.redhat.com/2515838",
             "https://bugzilla.redhat.com/2515839",
-            "https://bugzilla.redhat.com/2515840",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2402034",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2515815",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2515820",
@@ -8952,7 +9961,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56858",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56860",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56862",
-            "https://errata.almalinux.org/10/ALSA-2026-70201.html",
+            "https://errata.almalinux.org/9/ALSA-2026-70641.html",
             "https://errata.rockylinux.org/RLSA-2026:70641",
             "https://go.dev/cl/814980",
             "https://go.dev/issue/80405",
@@ -9165,8 +10174,16 @@
             "https://access.redhat.com/errata/RHSA-2026:67517",
             "https://access.redhat.com/errata/RHSA-2026:68504",
             "https://access.redhat.com/security/cve/CVE-2026-39821",
+            "https://bugzilla.redhat.com/2467809",
+            "https://bugzilla.redhat.com/2467820",
             "https://bugzilla.redhat.com/2480756",
-            "https://bugzilla.redhat.com/2484207",
+            "https://bugzilla.redhat.com/2484204",
+            "https://bugzilla.redhat.com/2515815",
+            "https://bugzilla.redhat.com/2515820",
+            "https://bugzilla.redhat.com/2515827",
+            "https://bugzilla.redhat.com/2515838",
+            "https://bugzilla.redhat.com/2515839",
+            "https://bugzilla.redhat.com/2515840",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2456333",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2456339",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2467809",
@@ -9194,7 +10211,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56859",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56860",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56862",
-            "https://errata.almalinux.org/10/ALSA-2026-46395.html",
+            "https://errata.almalinux.org/9/ALSA-2026-65153.html",
             "https://errata.rockylinux.org/RLSA-2026:65886",
             "https://github.com/golang/go/issues/78760",
             "https://go.dev/cl/767220",
@@ -9263,19 +10280,13 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56853",
           "PublishedDate": "2026-08-13T22:17:22.093Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:70201",
             "https://access.redhat.com/errata/RHSA-2026:70641",
             "https://access.redhat.com/security/cve/CVE-2026-56853",
-            "https://bugzilla.redhat.com/2456335",
-            "https://bugzilla.redhat.com/2467809",
-            "https://bugzilla.redhat.com/2504233",
-            "https://bugzilla.redhat.com/2508234",
             "https://bugzilla.redhat.com/2515815",
             "https://bugzilla.redhat.com/2515820",
             "https://bugzilla.redhat.com/2515827",
             "https://bugzilla.redhat.com/2515838",
             "https://bugzilla.redhat.com/2515839",
-            "https://bugzilla.redhat.com/2515840",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2402034",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2515815",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2515820",
@@ -9289,7 +10300,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56858",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56860",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56862",
-            "https://errata.almalinux.org/10/ALSA-2026-70201.html",
+            "https://errata.almalinux.org/9/ALSA-2026-70641.html",
             "https://errata.rockylinux.org/RLSA-2026:70641",
             "https://go.dev/cl/795540",
             "https://go.dev/issue/80205",
@@ -9354,19 +10365,13 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56858",
           "PublishedDate": "2026-08-13T22:17:22.207Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:70201",
             "https://access.redhat.com/errata/RHSA-2026:70641",
             "https://access.redhat.com/security/cve/CVE-2026-56858",
-            "https://bugzilla.redhat.com/2456335",
-            "https://bugzilla.redhat.com/2467809",
-            "https://bugzilla.redhat.com/2504233",
-            "https://bugzilla.redhat.com/2508234",
             "https://bugzilla.redhat.com/2515815",
             "https://bugzilla.redhat.com/2515820",
             "https://bugzilla.redhat.com/2515827",
             "https://bugzilla.redhat.com/2515838",
             "https://bugzilla.redhat.com/2515839",
-            "https://bugzilla.redhat.com/2515840",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2402034",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2515815",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2515820",
@@ -9380,7 +10385,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56858",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56860",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56862",
-            "https://errata.almalinux.org/10/ALSA-2026-70201.html",
+            "https://errata.almalinux.org/9/ALSA-2026-70641.html",
             "https://errata.rockylinux.org/RLSA-2026:70641",
             "https://go.dev/cl/807100",
             "https://go.dev/issue/80435",
@@ -9446,11 +10451,8 @@
           "PublishedDate": "2026-08-13T22:17:22.32Z",
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:69961",
-            "https://access.redhat.com/errata/RHSA-2026:70201",
             "https://access.redhat.com/security/cve/CVE-2026-56859",
-            "https://bugzilla.redhat.com/2456335",
-            "https://bugzilla.redhat.com/2467809",
-            "https://bugzilla.redhat.com/2504233",
+            "https://bugzilla.redhat.com/2480684",
             "https://bugzilla.redhat.com/2508234",
             "https://bugzilla.redhat.com/2515815",
             "https://bugzilla.redhat.com/2515820",
@@ -9477,7 +10479,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56859",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56860",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56862",
-            "https://errata.almalinux.org/10/ALSA-2026-70201.html",
+            "https://errata.almalinux.org/9/ALSA-2026-69961.html",
             "https://errata.rockylinux.org/RLSA-2026:69961",
             "https://go.dev/cl/803320",
             "https://go.dev/issue/80481",
@@ -9542,19 +10544,13 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56860",
           "PublishedDate": "2026-08-13T22:17:22.44Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:70201",
             "https://access.redhat.com/errata/RHSA-2026:70641",
             "https://access.redhat.com/security/cve/CVE-2026-56860",
-            "https://bugzilla.redhat.com/2456335",
-            "https://bugzilla.redhat.com/2467809",
-            "https://bugzilla.redhat.com/2504233",
-            "https://bugzilla.redhat.com/2508234",
             "https://bugzilla.redhat.com/2515815",
             "https://bugzilla.redhat.com/2515820",
             "https://bugzilla.redhat.com/2515827",
             "https://bugzilla.redhat.com/2515838",
             "https://bugzilla.redhat.com/2515839",
-            "https://bugzilla.redhat.com/2515840",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2402034",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2515815",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2515820",
@@ -9568,7 +10564,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56858",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56860",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56862",
-            "https://errata.almalinux.org/10/ALSA-2026-70201.html",
+            "https://errata.almalinux.org/9/ALSA-2026-70641.html",
             "https://errata.rockylinux.org/RLSA-2026:70641",
             "https://go.dev/cl/803681",
             "https://go.dev/issue/80494",
@@ -9633,19 +10629,13 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56862",
           "PublishedDate": "2026-08-13T22:17:22.55Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:70201",
             "https://access.redhat.com/errata/RHSA-2026:70641",
             "https://access.redhat.com/security/cve/CVE-2026-56862",
-            "https://bugzilla.redhat.com/2456335",
-            "https://bugzilla.redhat.com/2467809",
-            "https://bugzilla.redhat.com/2504233",
-            "https://bugzilla.redhat.com/2508234",
             "https://bugzilla.redhat.com/2515815",
             "https://bugzilla.redhat.com/2515820",
             "https://bugzilla.redhat.com/2515827",
             "https://bugzilla.redhat.com/2515838",
             "https://bugzilla.redhat.com/2515839",
-            "https://bugzilla.redhat.com/2515840",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2402034",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2515815",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2515820",
@@ -9659,7 +10649,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56858",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56860",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56862",
-            "https://errata.almalinux.org/10/ALSA-2026-70201.html",
+            "https://errata.almalinux.org/9/ALSA-2026-70641.html",
             "https://errata.rockylinux.org/RLSA-2026:70641",
             "https://go.dev/cl/804261",
             "https://go.dev/issue/80528",
