@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:9ba52fa20c705d914cc0c676fa96fb83c9b1c0188324ec632242b88aac022f1b",
   "ArtifactName": "ghcr.io/uug-ai/factory@sha256:d64cf9094b3e231d32637b91a0f222ec6767b21e1adbd053d14e587095f07954",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-10-01T03:58:08.552066169Z",
+  "CreatedAt": "2026-10-02T03:54:05.867237223Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:34884abbe92863fce933ed7c39c0e045631af0ed86d5cc0dfbdf9fdca426ce3c",
@@ -195,7 +195,7 @@
     ],
     "Size": 255520256
   },
-  "ReportID": "01a0f59c-caa8-70fa-b977-25350a3d82ce",
+  "ReportID": "01a0fabf-72ab-7398-88ec-8243a0094d4b",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -4274,6 +4274,77 @@
             "ubuntu": 1
           },
           "VulnerabilityID": "CVE-2026-75803"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 5.4,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:L/I:L/A:N",
+              "V40Score": 6.3,
+              "V40Vector": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:L/VI:L/VA:N/SC:N/SI:L/SA:N"
+            },
+            "redhat": {
+              "V3Score": 5.4,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:L/I:L/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-444"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "nghttp2's nghttpx proxy through 1.69.0 forwards an HTTP/1.1 Upgrade request that also carries a Content-Length header and body onto reusable keep-alive backend connections, re-adding the Upgrade and Connection headers while passing Content-Length verbatim. A backend that resolves the resulting ambiguous message in the attacker's favor enables HTTP request/response smuggling and cross-client response-queue poisoning.",
+          "Fingerprint": "sha256:2ffef9c060138c415ee5f0e8b149bc69f0ac5bf32a504eaa6d4154c316d5bee4",
+          "FixedVersion": "1.70.0-r0",
+          "InstalledVersion": "1.69.0-r0",
+          "LastModifiedDate": "2026-06-30T17:41:26.433Z",
+          "Layer": {
+            "DiffID": "sha256:899774ee839921a2f777b2d1d7f8bc00dc24286109ea7da5f4d500b3d1a9b71c",
+            "Digest": "sha256:17f2225d4c3397e58fc407ed5de0edcc2b2fdbee62a43876166f42eeaa043ce9"
+          },
+          "PkgID": "nghttp2-libs@1.69.0-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/nghttp2-libs@1.69.0-r0?arch=x86_64\u0026distro=3.24.1",
+            "UID": "cdceee5bd778a45c"
+          },
+          "PkgName": "nghttp2-libs",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-58055",
+          "PublishedDate": "2026-06-28T02:16:32.677Z",
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:54662",
+            "https://access.redhat.com/security/cve/CVE-2026-58055",
+            "https://bugzilla.redhat.com/2493954",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2493954",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-58055",
+            "https://errata.almalinux.org/9/ALSA-2026-54662.html",
+            "https://errata.rockylinux.org/RLSA-2026:54662",
+            "https://github.com/advisories/GHSA-xrr7-82jr-v58x",
+            "https://github.com/bikini/exploitarium/tree/main/nghttp2-nghttpx-upgrade-queue-poison-poc",
+            "https://github.com/nghttp2/nghttp2/commit/ab28105c4a0197da24f8bfc414bc116055249e1e",
+            "https://linux.oracle.com/cve/CVE-2026-58055.html",
+            "https://linux.oracle.com/errata/ELSA-2026-55804.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-58055",
+            "https://ubuntu.com/security/notices/USN-8495-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-58055",
+            "https://www.vulncheck.com/advisories/nghttp2-nghttpx-http-request-response-smuggling-via-upgrade-request-with-content-length"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "nghttp2: nghttp2: HTTP Request/Response Smuggling and Response-Queue Poisoning via ambiguous HTTP/1.1 Upgrade requests",
+          "VendorSeverity": {
+            "alma": 2,
+            "azure": 2,
+            "julia": 2,
+            "oracle-oval": 2,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-58055"
         }
       ]
     },
@@ -7857,7 +7928,7 @@
             "oracle-oval": 3,
             "redhat": 3,
             "rocky": 3,
-            "ubuntu": 2
+            "ubuntu": 3
           },
           "VulnerabilityID": "CVE-2026-39821"
         },
@@ -8567,7 +8638,7 @@
             "oracle-oval": 3,
             "redhat": 3,
             "rocky": 3,
-            "ubuntu": 2
+            "ubuntu": 3
           },
           "VulnerabilityID": "CVE-2026-39821"
         },
@@ -8633,7 +8704,7 @@
           ],
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 3,
+            "amazon": 2,
             "azure": 3,
             "bitnami": 3,
             "oracle-oval": 3,
