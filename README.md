@@ -66,13 +66,13 @@ Generated at `2026-10-02T03:53:57Z` from the newest tagged GHCR image available 
 <!-- SBOM_QUALITY_START -->
 ## SBOM quality overview
 
-Generated at `2026-10-02T02:41:27Z`. Quality combines document metadata (20%), package identity (30%), licensing (20%), provenance (15%), and relationships (15%).
+Generated at `2026-10-03T02:45:40Z`. Quality combines document metadata (20%), package identity (30%), licensing (20%), provenance (15%), and relationships (15%).
 
 Legend: 🟢 85-100, 🟡 70-84, 🟠 50-69, 🔴 0-49 or unavailable. This measures SBOM completeness, not vulnerability severity.
 
 | Repository | Collection | Quality | Score | Packages | Versioned | Licensed | PURL | Details |
 | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- |
-| [factory](https://github.com/uug-ai/factory) | collected | 🟠 Needs work | 66/100 | 162 | 100% | 64% | 100% | [Breakdown](sboms/factory/README.md) · [SPDX](sboms/factory/sbom.spdx.json) |
+| [factory](https://github.com/uug-ai/factory) | collected | 🟠 Needs work | 68/100 | 162 | 100% | 88% | 100% | [Breakdown](sboms/factory/README.md) · [SPDX](sboms/factory/sbom.spdx.json) |
 | [hub-anpr](https://github.com/uug-ai/hub-anpr) | collected | 🟠 Needs work | 68/100 | 52 | 100% | 85% | 100% | [Breakdown](sboms/hub-anpr/README.md) · [SPDX](sboms/hub-anpr/sbom.spdx.json) |
 | [hub-api](https://github.com/uug-ai/hub-api) | collected | 🟠 Needs work | 69/100 | 178 | 100% | 90% | 100% | [Breakdown](sboms/hub-api/README.md) · [SPDX](sboms/hub-api/sbom.spdx.json) |
 | [hub-audit](https://github.com/uug-ai/hub-audit) | unavailable | 🔴 Unavailable | 0/100 | 0 | 0% | 0% | 0% | [Breakdown](sboms/hub-audit/README.md) |
