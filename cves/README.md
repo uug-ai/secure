@@ -1,6 +1,6 @@
 # Critical and high vulnerability findings
 
-Generated at `2026-10-03T04:03:51Z` from the latest available Trivy container reports. Occurrences count every affected package record across scanned images; one advisory can therefore occur more than once in one or more repositories.
+Generated at `2026-10-04T05:13:33Z` from the latest available Trivy container reports. Occurrences count every affected package record across scanned images; one advisory can therefore occur more than once in one or more repositories.
 
 **380 unique findings**: 17 critical and 363 high, with 1704 total occurrences.
 
@@ -83,7 +83,7 @@ Generated at `2026-10-03T04:03:51Z` from the latest available Trivy container re
 | HIGH | [CVE-2026-33814](https://avd.aquasec.com/nvd/cve-2026-33814) | 8 | 8 | factory, hub-audit, hub-loitering, hub-monitor-device, hub-objecttracking, hub-pipeline-notification-test, hub-pipeline-redaction, hub-workflows-forwarder | golang.org/x/net@v0.36.0, golang.org/x/net@v0.51.0, golang.org/x/net@v0.52.0, stdlib@v1.25.8 |
 | HIGH | [CVE-2026-45447](https://avd.aquasec.com/nvd/cve-2026-45447) | 8 | 8 | hub-monitor-device, hub-objecttracking, hub-pipeline-notification-test, hub-pipeline-throttler | libcrypto3@3.3.7-r0, libssl3@3.0.2-0ubuntu1.15, libssl3@3.3.7-r0, openssl@3.0.2-0ubuntu1.15 |
 | HIGH | [CVE-2025-69534](https://avd.aquasec.com/nvd/cve-2025-69534) | 6 | 0 | hub-pipeline-classifier | libpython3.11-dev@3.11.2-6+deb12u8, libpython3.11-minimal@3.11.2-6+deb12u8, libpython3.11-stdlib@3.11.2-6+deb12u8, libpython3.11@3.11.2-6+deb12u8, python3.11-minimal@3.11.2-6+deb12u8, python3.11@3.11.2-6+deb12u8 |
-| HIGH | [CVE-2026-103111](https://avd.aquasec.com/nvd/cve-2026-103111) | 6 | 4 | hub-anpr, hub-frontend, hub-pipeline-classifier, hub-pipeline-dominantcolors, hub-pipeline-thumbnail, hub-vlm | libpcre2-8-0@10.42-1, pcre2@10.48-r0 |
+| HIGH | [CVE-2026-103111](https://avd.aquasec.com/nvd/cve-2026-103111) | 6 | 6 | hub-anpr, hub-frontend, hub-pipeline-classifier, hub-pipeline-dominantcolors, hub-pipeline-thumbnail, hub-vlm | libpcre2-8-0@10.42-1, pcre2@10.48-r0 |
 | HIGH | [CVE-2026-11940](https://avd.aquasec.com/nvd/cve-2026-11940) | 6 | 0 | hub-pipeline-classifier | libpython3.11-dev@3.11.2-6+deb12u8, libpython3.11-minimal@3.11.2-6+deb12u8, libpython3.11-stdlib@3.11.2-6+deb12u8, libpython3.11@3.11.2-6+deb12u8, python3.11-minimal@3.11.2-6+deb12u8, python3.11@3.11.2-6+deb12u8 |
 | HIGH | [CVE-2026-15308](https://avd.aquasec.com/nvd/cve-2026-15308) | 6 | 0 | hub-pipeline-classifier | libpython3.11-dev@3.11.2-6+deb12u8, libpython3.11-minimal@3.11.2-6+deb12u8, libpython3.11-stdlib@3.11.2-6+deb12u8, libpython3.11@3.11.2-6+deb12u8, python3.11-minimal@3.11.2-6+deb12u8, python3.11@3.11.2-6+deb12u8 |
 | HIGH | [CVE-2026-19553](https://avd.aquasec.com/nvd/cve-2026-19553) | 6 | 0 | hub-pipeline-classifier | libpython3.11-dev@3.11.2-6+deb12u8, libpython3.11-minimal@3.11.2-6+deb12u8, libpython3.11-stdlib@3.11.2-6+deb12u8, libpython3.11@3.11.2-6+deb12u8, python3.11-minimal@3.11.2-6+deb12u8, python3.11@3.11.2-6+deb12u8 |
