@@ -1,6 +1,6 @@
 # hub-proxy SBOM quality
 
-Collection status: `collected`; collected at `2026-10-04T03:12:39Z`.
+Collection status: `collected`; collected at `2026-10-05T02:50:41Z`.
 
 Overall quality: **Needs work**, **66/100** across **23 packages**.
 
