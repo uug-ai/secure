@@ -1,8 +1,8 @@
 # Critical and high vulnerability findings
 
-Generated at `2026-10-04T05:13:33Z` from the latest available Trivy container reports. Occurrences count every affected package record across scanned images; one advisory can therefore occur more than once in one or more repositories.
+Generated at `2026-10-05T04:04:24Z` from the latest available Trivy container reports. Occurrences count every affected package record across scanned images; one advisory can therefore occur more than once in one or more repositories.
 
-**380 unique findings**: 17 critical and 363 high, with 1704 total occurrences.
+**379 unique findings**: 17 critical and 362 high, with 1702 total occurrences.
 
 | Severity | Advisory | Occurrences | Fixable | Repositories | Packages |
 | --- | --- | ---: | ---: | --- | --- |
@@ -163,7 +163,6 @@ Generated at `2026-10-04T05:13:33Z` from the latest available Trivy container re
 | HIGH | [CVE-2026-73066](https://avd.aquasec.com/nvd/cve-2026-73066) | 2 | 0 | hub-anpr | libtesseract5@5.3.0-2, tesseract-ocr@5.3.0-2 |
 | HIGH | [CVE-2026-74860](https://avd.aquasec.com/nvd/cve-2026-74860) | 2 | 0 | hub-anpr, hub-pipeline-classifier | libxml2@2.9.14+dfsg-1.3~deb12u6 |
 | HIGH | [CVE-2026-86138](https://avd.aquasec.com/nvd/cve-2026-86138) | 2 | 0 | hub-anpr, hub-pipeline-classifier | libxml2@2.9.14+dfsg-1.3~deb12u6 |
-| HIGH | [CVE-2026-86139](https://avd.aquasec.com/nvd/cve-2026-86139) | 2 | 0 | hub-anpr, hub-pipeline-classifier | libxml2@2.9.14+dfsg-1.3~deb12u6 |
 | HIGH | [CVE-2026-86140](https://avd.aquasec.com/nvd/cve-2026-86140) | 2 | 0 | hub-anpr, hub-pipeline-classifier | libxml2@2.9.14+dfsg-1.3~deb12u6 |
 | HIGH | [CVE-2026-86142](https://avd.aquasec.com/nvd/cve-2026-86142) | 2 | 0 | hub-anpr, hub-pipeline-classifier | libxml2@2.9.14+dfsg-1.3~deb12u6 |
 | HIGH | [CVE-2026-86143](https://avd.aquasec.com/nvd/cve-2026-86143) | 2 | 0 | hub-anpr, hub-pipeline-classifier | libxml2@2.9.14+dfsg-1.3~deb12u6 |
