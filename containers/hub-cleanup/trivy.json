@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:fec3fe379a025ce05daebcfb34d02707d7f61316b57d9dcc64f0964b0c7c97ad",
   "ArtifactName": "ghcr.io/uug-ai/hub-cleanup@sha256:b92a9e3c8fcf58b40484d1d2b1231460db00e264e4e9db293cc27e309f2c3a5a",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-10-07T03:57:11.748553272Z",
+  "CreatedAt": "2026-10-08T03:57:08.664904392Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:74d97c428c51a828f9051a7a40a53ff1fc99e54fc30323ce36760701b0b7f711",
@@ -199,7 +199,7 @@
     ],
     "Size": 71125504
   },
-  "ReportID": "01a11482-14c4-786a-9864-2f70bb42c9fb",
+  "ReportID": "01a119a8-64b8-7dc6-bd64-cf4f98f751d0",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -1499,7 +1499,50 @@
         }
       ],
       "Target": "ghcr.io/uug-ai/hub-cleanup@sha256:b92a9e3c8fcf58b40484d1d2b1231460db00e264e4e9db293cc27e309f2c3a5a (alpine 3.24.2)",
-      "Type": "alpine"
+      "Type": "alpine",
+      "Vulnerabilities": [
+        {
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "zlib versions 1.3.1.2 through 1.3.2 contain a heap buffer overflow vulnerability in the gz_vacate() function when processing non-blocking gzwrite() operations with stale external buffer pointers. Attackers can trigger the overflow by calling gzprintf() or gzvprintf() after a write stall, causing an unchecked memmove() to write beyond the internal input buffer boundary.",
+          "Fingerprint": "sha256:39f2b1d9cdcb6906a38fe8e2b3768e824cf6035df0dfa31a9c099c831f860bf2",
+          "FixedVersion": "1.3.2-r1",
+          "InstalledVersion": "1.3.2-r0",
+          "LastModifiedDate": "2026-09-09T20:41:07.123Z",
+          "Layer": {
+            "DiffID": "sha256:74d97c428c51a828f9051a7a40a53ff1fc99e54fc30323ce36760701b0b7f711",
+            "Digest": "sha256:e2de96513ba9eb53b431787ec8a65cdde380ac4772a3e4c4b714dcfde2a102b5"
+          },
+          "PkgID": "zlib@1.3.2-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/zlib@1.3.2-r0?arch=x86_64\u0026distro=3.24.2",
+            "UID": "e37054a2982d6c16"
+          },
+          "PkgName": "zlib",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-85091",
+          "PublishedDate": "2026-09-03T13:06:20.573Z",
+          "References": [
+            "https://gist.github.com/thesmartshadow/e0b9481792afb7c31e86fee1ff084490",
+            "https://github.com/madler/zlib",
+            "https://github.com/madler/zlib/blob/v1.3.2/gzwrite.c#L393",
+            "https://www.cve.org/CVERecord?id=CVE-2026-85091",
+            "https://www.vulncheck.com/advisories/zlib-1.3.1.2-through-1.3.2-heap-buffer-overflow-via-gz-vacate"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "zlib versions 1.3.1.2 through 1.3.2 contain a heap buffer overflow vul ...",
+          "VendorSeverity": {
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-85091"
+        }
+      ]
     },
     {
       "Class": "lang-pkgs",

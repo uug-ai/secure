@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:847450bbfe94a086e13eb993d4f83366e7c70426582b0f9275998c9f94988926",
   "ArtifactName": "ghcr.io/uug-ai/hub-pipeline-event@sha256:deea548195ad0c2b5aafb1f0192ea2b480c99a145b288b2f1e9852ef30c956c4",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-10-07T04:00:46.980035431Z",
+  "CreatedAt": "2026-10-08T03:58:45.690088183Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:1073f425247ed24670458429c13a67afbd36f83d2004dade046ddbd6519b1839",
@@ -166,7 +166,7 @@
     ],
     "Size": 58006016
   },
-  "ReportID": "01a11485-5d84-7084-9ccf-ecc9b2acf2eb",
+  "ReportID": "01a119a9-dfba-7154-8ea6-9bba701f4fcc",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -2490,6 +2490,47 @@
             "ubuntu": 1
           },
           "VulnerabilityID": "CVE-2026-35189"
+        },
+        {
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "zlib versions 1.3.1.2 through 1.3.2 contain a heap buffer overflow vulnerability in the gz_vacate() function when processing non-blocking gzwrite() operations with stale external buffer pointers. Attackers can trigger the overflow by calling gzprintf() or gzvprintf() after a write stall, causing an unchecked memmove() to write beyond the internal input buffer boundary.",
+          "Fingerprint": "sha256:345f7108bf6a44f2c9f629ca787f772bd51c5b2137fd170aa886ceb0ca06758f",
+          "FixedVersion": "1.3.2-r1",
+          "InstalledVersion": "1.3.2-r0",
+          "LastModifiedDate": "2026-09-09T20:41:07.123Z",
+          "Layer": {
+            "DiffID": "sha256:1073f425247ed24670458429c13a67afbd36f83d2004dade046ddbd6519b1839",
+            "Digest": "sha256:16333ee0c00fc65e025a2a4f839703ad37a74728832977fbdf080984de1b8e5a"
+          },
+          "PkgID": "zlib@1.3.2-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/zlib@1.3.2-r0?arch=x86_64\u0026distro=3.21.8",
+            "UID": "d8ae209f75282866"
+          },
+          "PkgName": "zlib",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-85091",
+          "PublishedDate": "2026-09-03T13:06:20.573Z",
+          "References": [
+            "https://gist.github.com/thesmartshadow/e0b9481792afb7c31e86fee1ff084490",
+            "https://github.com/madler/zlib",
+            "https://github.com/madler/zlib/blob/v1.3.2/gzwrite.c#L393",
+            "https://www.cve.org/CVERecord?id=CVE-2026-85091",
+            "https://www.vulncheck.com/advisories/zlib-1.3.1.2-through-1.3.2-heap-buffer-overflow-via-gz-vacate"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "zlib versions 1.3.1.2 through 1.3.2 contain a heap buffer overflow vul ...",
+          "VendorSeverity": {
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-85091"
         }
       ]
     },
@@ -3643,8 +3684,11 @@
             "https://access.redhat.com/security/cve/CVE-2026-39829",
             "https://bugzilla.redhat.com/2480680",
             "https://bugzilla.redhat.com/2480681",
-            "https://bugzilla.redhat.com/2480684",
             "https://bugzilla.redhat.com/2480685",
+            "https://bugzilla.redhat.com/2480688",
+            "https://bugzilla.redhat.com/2480757",
+            "https://bugzilla.redhat.com/2480761",
+            "https://bugzilla.redhat.com/2493620",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480680",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480681",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
@@ -3660,7 +3704,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39835",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42508",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-57231",
-            "https://errata.almalinux.org/10/ALSA-2026-36199.html",
+            "https://errata.almalinux.org/9/ALSA-2026-37123.html",
             "https://errata.rockylinux.org/RLSA-2026:37123",
             "https://go.dev/cl/781641",
             "https://go.dev/cl/781661",
@@ -3777,10 +3821,14 @@
             "https://access.redhat.com/errata/RHSA-2026:67450",
             "https://access.redhat.com/errata/RHSA-2026:69961",
             "https://access.redhat.com/security/cve/CVE-2026-39830",
-            "https://bugzilla.redhat.com/2480680",
-            "https://bugzilla.redhat.com/2480681",
             "https://bugzilla.redhat.com/2480684",
-            "https://bugzilla.redhat.com/2480685",
+            "https://bugzilla.redhat.com/2508234",
+            "https://bugzilla.redhat.com/2515815",
+            "https://bugzilla.redhat.com/2515820",
+            "https://bugzilla.redhat.com/2515827",
+            "https://bugzilla.redhat.com/2515838",
+            "https://bugzilla.redhat.com/2515839",
+            "https://bugzilla.redhat.com/2515840",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480684",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2508234",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2515815",
@@ -3800,7 +3848,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56859",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56860",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56862",
-            "https://errata.almalinux.org/10/ALSA-2026-36199.html",
+            "https://errata.almalinux.org/9/ALSA-2026-69961.html",
             "https://errata.rockylinux.org/RLSA-2026:69961",
             "https://github.com/golang/crypto/commit/4e7a7384ecbc8d519f6f4c11b36fa9d761fc8946",
             "https://go.dev/cl/781640",
@@ -3960,15 +4008,13 @@
             "https://access.redhat.com/errata/RHSA-2026:67450",
             "https://access.redhat.com/security/cve/CVE-2026-39832",
             "https://bugzilla.redhat.com/2480680",
-            "https://bugzilla.redhat.com/2480681",
-            "https://bugzilla.redhat.com/2480684",
             "https://bugzilla.redhat.com/2480685",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480680",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39832",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39835",
-            "https://errata.almalinux.org/10/ALSA-2026-36199.html",
+            "https://errata.almalinux.org/9/ALSA-2026-37410.html",
             "https://errata.rockylinux.org/RLSA-2026:37410",
             "https://github.com/golang/crypto/commit/e3d1254f1e7e60baa086142c46174bf6d8d0fe50",
             "https://go.dev/cl/778640",
@@ -4090,15 +4136,13 @@
             "https://access.redhat.com/errata/RHSA-2026:66521",
             "https://access.redhat.com/security/cve/CVE-2026-39835",
             "https://bugzilla.redhat.com/2480680",
-            "https://bugzilla.redhat.com/2480681",
-            "https://bugzilla.redhat.com/2480684",
             "https://bugzilla.redhat.com/2480685",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480680",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39832",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39835",
-            "https://errata.almalinux.org/10/ALSA-2026-36199.html",
+            "https://errata.almalinux.org/9/ALSA-2026-37410.html",
             "https://errata.rockylinux.org/RLSA-2026:37410",
             "https://go.dev/cl/781660",
             "https://go.dev/issue/79563",
