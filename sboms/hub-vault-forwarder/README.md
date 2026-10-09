@@ -1,6 +1,6 @@
 # hub-vault-forwarder SBOM quality
 
-Collection status: `collected`; collected at `2026-10-08T02:45:27Z`.
+Collection status: `collected`; collected at `2026-10-09T02:47:23Z`.
 
 Overall quality: **Needs work**, **69/100** across **8 packages**.
 
