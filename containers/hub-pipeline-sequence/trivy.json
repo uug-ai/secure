@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:75297d500177d96f3343efdb1139151de0b5ed8d975f23f6f62ca9f796039494",
   "ArtifactName": "ghcr.io/uug-ai/hub-pipeline-sequence@sha256:29d2c88e76567547dea5f24e6739827511d17aa56f3e874e531c46dc6a4605d6",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-10-10T03:58:50.605928584Z",
+  "CreatedAt": "2026-10-11T04:01:30.265123981Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:1073f425247ed24670458429c13a67afbd36f83d2004dade046ddbd6519b1839",
@@ -166,7 +166,7 @@
     ],
     "Size": 124216832
   },
-  "ReportID": "01a123f6-aaed-7e26-a269-4638d3f85b7d",
+  "ReportID": "01a1291f-7699-71e1-b18b-300e9672c6d5",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -1474,7 +1474,6 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-84782",
           "PublishedDate": "2026-09-29T16:17:12.5Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:76918",
             "https://access.redhat.com/errata/RHSA-2026:77396",
             "https://access.redhat.com/security/cve/CVE-2026-84782",
             "https://bugzilla.redhat.com/2537080",
@@ -1482,7 +1481,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-84782",
             "https://errata.almalinux.org/9/ALSA-2026-77396.html",
-            "https://errata.rockylinux.org/RLSA-2026:76918",
+            "https://errata.rockylinux.org/RLSA-2026:77396",
             "https://github.com/openssl/openssl/commit/906cf0ef1c85ca40ce69163e9086d6d3fe292943",
             "https://github.com/openssl/openssl/commit/9f6b34422af7eb5dac61322e33dac1ae989fa628",
             "https://github.com/openssl/openssl/commit/a383dafdd754eb5b22bf45e37e1bff9d07277a58",
@@ -2012,7 +2011,6 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-84782",
           "PublishedDate": "2026-09-29T16:17:12.5Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:76918",
             "https://access.redhat.com/errata/RHSA-2026:77396",
             "https://access.redhat.com/security/cve/CVE-2026-84782",
             "https://bugzilla.redhat.com/2537080",
@@ -2020,7 +2018,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-84782",
             "https://errata.almalinux.org/9/ALSA-2026-77396.html",
-            "https://errata.rockylinux.org/RLSA-2026:76918",
+            "https://errata.rockylinux.org/RLSA-2026:77396",
             "https://github.com/openssl/openssl/commit/906cf0ef1c85ca40ce69163e9086d6d3fe292943",
             "https://github.com/openssl/openssl/commit/9f6b34422af7eb5dac61322e33dac1ae989fa628",
             "https://github.com/openssl/openssl/commit/a383dafdd754eb5b22bf45e37e1bff9d07277a58",
@@ -3580,6 +3578,10 @@
             "ghsa": {
               "V40Score": 9.4,
               "V40Vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:H/VA:N/SC:H/SI:L/SA:N"
+            },
+            "redhat": {
+              "V3Score": 7.4,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N"
             }
           },
           "CweIDs": [
@@ -3608,23 +3610,26 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-77405",
           "PublishedDate": "2026-09-16T15:17:47.98Z",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-77405",
             "https://github.com/rabbitmq/amqp091-go",
             "https://github.com/rabbitmq/amqp091-go/commit/c9fd433ecac2e557919e51acc9d809390c402c6e",
             "https://github.com/rabbitmq/amqp091-go/pull/355",
             "https://github.com/rabbitmq/amqp091-go/releases/tag/v1.13.0",
             "https://github.com/rabbitmq/amqp091-go/security/advisories/GHSA-33mj-cw25-m34h",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-77405"
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-77405",
+            "https://www.cve.org/CVERecord?id=CVE-2026-77405"
           ],
           "Severity": "CRITICAL",
           "SeveritySource": "ghsa",
           "Status": "fixed",
-          "Title": "RabbitMQ amqp091-go is a Go AMQP 0.9.1 client. Prior to 1.13.0, tlsCon ...",
+          "Title": "github.com/rabbitmq/amqp091-go: RabbitMQ amqp091-go: Missing Explicit TLS Minimum Version Configuration In URI Parser",
           "VendorIDs": [
             "GHSA-33mj-cw25-m34h"
           ],
           "VendorSeverity": {
             "azure": 4,
-            "ghsa": 4
+            "ghsa": 4,
+            "redhat": 3
           },
           "VulnerabilityID": "CVE-2026-77405"
         },
@@ -3693,6 +3698,10 @@
             "ghsa": {
               "V40Score": 9.5,
               "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H"
+            },
+            "redhat": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
             }
           },
           "CweIDs": [
@@ -3721,23 +3730,26 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-77411",
           "PublishedDate": "2026-09-16T15:17:50.563Z",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-77411",
             "https://github.com/rabbitmq/amqp091-go",
             "https://github.com/rabbitmq/amqp091-go/commit/143c1ace5fa7344cee135e5c7d22970f0de68282",
             "https://github.com/rabbitmq/amqp091-go/pull/347",
             "https://github.com/rabbitmq/amqp091-go/releases/tag/v1.13.0",
             "https://github.com/rabbitmq/amqp091-go/security/advisories/GHSA-c5pq-fr2g-9jpf",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-77411"
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-77411",
+            "https://www.cve.org/CVERecord?id=CVE-2026-77411"
           ],
           "Severity": "CRITICAL",
           "SeveritySource": "ghsa",
           "Status": "fixed",
-          "Title": "RabbitMQ amqp091-go is a Go AMQP 0.9.1 client. Prior to 1.13.0, readLo ...",
+          "Title": "github.com/rabbitmq/amqp091-go: RabbitMQ amqp091-go: Protocol Desynchronization and Frame Injection via Integer Overflow in readLongstr",
           "VendorIDs": [
             "GHSA-c5pq-fr2g-9jpf"
           ],
           "VendorSeverity": {
             "azure": 3,
-            "ghsa": 4
+            "ghsa": 4,
+            "redhat": 3
           },
           "VulnerabilityID": "CVE-2026-77411"
         },
@@ -4165,6 +4177,10 @@
             "ghsa": {
               "V40Score": 6.3,
               "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N"
+            },
+            "redhat": {
+              "V3Score": 5.9,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
             }
           },
           "CweIDs": [
@@ -4193,21 +4209,25 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-107386",
           "PublishedDate": "2026-10-08T19:17:01.347Z",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-107386",
             "https://github.com/rabbitmq/amqp091-go",
             "https://github.com/rabbitmq/amqp091-go/commit/6723e8cff8710f0a6bf5fb4af375e285052535b3",
             "https://github.com/rabbitmq/amqp091-go/pull/377",
             "https://github.com/rabbitmq/amqp091-go/releases/tag/v1.14.0",
-            "https://github.com/rabbitmq/amqp091-go/security/advisories/GHSA-w6r9-248c-frg8"
+            "https://github.com/rabbitmq/amqp091-go/security/advisories/GHSA-w6r9-248c-frg8",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-107386",
+            "https://www.cve.org/CVERecord?id=CVE-2026-107386"
           ],
           "Severity": "MEDIUM",
           "SeveritySource": "ghsa",
           "Status": "fixed",
-          "Title": "amqp091-go is a Go AMQP 0.9.1 client. From 1.13.0 until 1.14.0, the fr ...",
+          "Title": "github.com/rabbitmq/amqp091-go: amqp091-go: Denial of Service via excessive memory allocation during frame parsing",
           "VendorIDs": [
             "GHSA-w6r9-248c-frg8"
           ],
           "VendorSeverity": {
-            "ghsa": 2
+            "ghsa": 2,
+            "redhat": 2
           },
           "VulnerabilityID": "CVE-2026-107386"
         },
