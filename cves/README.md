@@ -1,6 +1,6 @@
 # Critical and high vulnerability findings
 
-Generated at `2026-10-12T04:05:16Z` from the latest available Trivy container reports. Occurrences count every affected package record across scanned images; one advisory can therefore occur more than once in one or more repositories.
+Generated at `2026-10-13T04:03:02Z` from the latest available Trivy container reports. Occurrences count every affected package record across scanned images; one advisory can therefore occur more than once in one or more repositories.
 
 **399 unique findings**: 17 critical and 382 high, with 1641 total occurrences.
 
