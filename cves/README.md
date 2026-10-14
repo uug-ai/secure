@@ -1,8 +1,8 @@
 # Critical and high vulnerability findings
 
-Generated at `2026-10-13T04:03:02Z` from the latest available Trivy container reports. Occurrences count every affected package record across scanned images; one advisory can therefore occur more than once in one or more repositories.
+Generated at `2026-10-14T03:52:15Z` from the latest available Trivy container reports. Occurrences count every affected package record across scanned images; one advisory can therefore occur more than once in one or more repositories.
 
-**399 unique findings**: 17 critical and 382 high, with 1641 total occurrences.
+**397 unique findings**: 17 critical and 380 high, with 1637 total occurrences.
 
 | Severity | Advisory | Occurrences | Fixable | Repositories | Packages |
 | --- | --- | ---: | ---: | --- | --- |
@@ -176,8 +176,6 @@ Generated at `2026-10-13T04:03:02Z` from the latest available Trivy container re
 | HIGH | [CVE-2026-88051](https://avd.aquasec.com/nvd/cve-2026-88051) | 2 | 0 | hub-anpr | libtesseract5@5.3.0-2, tesseract-ocr@5.3.0-2 |
 | HIGH | [CVE-2026-88052](https://avd.aquasec.com/nvd/cve-2026-88052) | 2 | 0 | hub-anpr | libtesseract5@5.3.0-2, tesseract-ocr@5.3.0-2 |
 | HIGH | [CVE-2026-88053](https://avd.aquasec.com/nvd/cve-2026-88053) | 2 | 0 | hub-anpr | libtesseract5@5.3.0-2, tesseract-ocr@5.3.0-2 |
-| HIGH | [CVE-2026-88647](https://avd.aquasec.com/nvd/cve-2026-88647) | 2 | 0 | hub-anpr, hub-pipeline-classifier | libgnutls30@3.7.9-2+deb12u7 |
-| HIGH | [CVE-2026-88648](https://avd.aquasec.com/nvd/cve-2026-88648) | 2 | 0 | hub-anpr, hub-pipeline-classifier | libgnutls30@3.7.9-2+deb12u7 |
 | HIGH | [CVE-2026-88807](https://avd.aquasec.com/nvd/cve-2026-88807) | 2 | 0 | hub-anpr, hub-pipeline-classifier | libxrender1@1:0.9.10-1.1 |
 | HIGH | [CVE-2026-96889](https://avd.aquasec.com/nvd/cve-2026-96889) | 2 | 0 | hub-anpr, hub-pipeline-classifier | librsvg2-2@2.54.7+dfsg-1~deb12u1 |
 | HIGH | [CVE-2026-97687](https://avd.aquasec.com/nvd/cve-2026-97687) | 2 | 2 | hub-pipeline-classifier | urllib3@2.2.1, urllib3@2.7.0 |
