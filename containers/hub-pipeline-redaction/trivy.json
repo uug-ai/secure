@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:2f051c6fec3bfa1d71d5ccc236f388eb551253c083f5507f8951ad2d1170d549",
   "ArtifactName": "ghcr.io/uug-ai/hub-pipeline-redaction@sha256:c90adbd030c4b3929db9cc4fede38d3fa2739a32502b767776467750ecc90151",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-10-14T03:54:42.631138139Z",
+  "CreatedAt": "2026-10-15T03:54:45.10621171Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:ea16cace89338c84eb6bcb91a7efdfcae6838fff359efe951858227436486c34",
@@ -228,7 +228,7 @@
     ],
     "Size": 676255232
   },
-  "ReportID": "01a1388c-5247-7215-ae78-a49ddbe5279e",
+  "ReportID": "01a13db2-b7f2-7334-817a-e17be91e4741",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -25308,6 +25308,277 @@
           "VulnerabilityID": "CVE-2026-82209"
         },
         {
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "Setting `CURLOPT_AWS_SIGV4` to NULL does not disable SigV4 authentication, contrary to expectations and documentation. A subsequent transfer on the same handle still sends an `Authorization: AWS4-HMAC-SHA256` header to whatever URL is set next, leaking state information.",
+          "Fingerprint": "sha256:5018366ed75d9da0dfd48dbc60b8e3e06a4509aebc8ee258cd2db80b089c0773",
+          "InstalledVersion": "7.81.0-1ubuntu1.27",
+          "Layer": {
+            "DiffID": "sha256:8b37e10cbfe215bca8369e0250f3e6dd0c832c112b3e98b94473694d00a0f824",
+            "Digest": "sha256:f807640896cd5f90197313e825b8765db7218e6ef79315aed53bf4ffc78f2423"
+          },
+          "PkgID": "curl@7.81.0-1ubuntu1.27",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/curl@7.81.0-1ubuntu1.27?arch=amd64\u0026distro=ubuntu-22.04",
+            "UID": "e2561e9afec8c86f"
+          },
+          "PkgName": "curl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86409",
+          "References": [
+            "https://curl.se/docs/CVE-2026-86409.html",
+            "https://ubuntu.com/security/notices/USN-8927-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-86409"
+          ],
+          "Severity": "LOW",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "Setting `CURLOPT_AWS_SIGV4` to NULL does not disable SigV4 authen",
+          "VendorSeverity": {
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-86409"
+        },
+        {
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "A HTTP proxy can trick libcurl into sending the origin's credentials (Basic password, or a Negotiate/Kerberos ticket) to the proxy itself, by answering the `CONNECT` tunnel request with 401 `WWW-Authenticate:` instead of the expected 407 `Proxy-Authenticate:`.",
+          "Fingerprint": "sha256:bbfebd923d3d98b7e16142f0655dff763227f4c49ff365da554459b8afc07304",
+          "InstalledVersion": "7.81.0-1ubuntu1.27",
+          "Layer": {
+            "DiffID": "sha256:8b37e10cbfe215bca8369e0250f3e6dd0c832c112b3e98b94473694d00a0f824",
+            "Digest": "sha256:f807640896cd5f90197313e825b8765db7218e6ef79315aed53bf4ffc78f2423"
+          },
+          "PkgID": "curl@7.81.0-1ubuntu1.27",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/curl@7.81.0-1ubuntu1.27?arch=amd64\u0026distro=ubuntu-22.04",
+            "UID": "e2561e9afec8c86f"
+          },
+          "PkgName": "curl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86414",
+          "References": [
+            "https://curl.se/docs/CVE-2026-86414.html",
+            "https://ubuntu.com/security/notices/USN-8927-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-86414"
+          ],
+          "Severity": "LOW",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "A HTTP proxy can trick libcurl into sending the origin's credenti",
+          "VendorSeverity": {
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-86414"
+        },
+        {
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "Importing a `includeSubDomains` parent HSTS entry before a longer-lived child entry, silently drops the child. Consequently, when the parent expires, the child's valid HSTS policy is lost, causing curl to issue unencrypted HTTP requests rather than upgrading to HTTPS.",
+          "Fingerprint": "sha256:940d531f9b41f83c094c472d0995679e0a72190da75b9ec027d82fe75917aae8",
+          "InstalledVersion": "7.81.0-1ubuntu1.27",
+          "Layer": {
+            "DiffID": "sha256:8b37e10cbfe215bca8369e0250f3e6dd0c832c112b3e98b94473694d00a0f824",
+            "Digest": "sha256:f807640896cd5f90197313e825b8765db7218e6ef79315aed53bf4ffc78f2423"
+          },
+          "PkgID": "curl@7.81.0-1ubuntu1.27",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/curl@7.81.0-1ubuntu1.27?arch=amd64\u0026distro=ubuntu-22.04",
+            "UID": "e2561e9afec8c86f"
+          },
+          "PkgName": "curl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-87862",
+          "References": [
+            "https://curl.se/docs/CVE-2026-87862.html",
+            "https://ubuntu.com/security/notices/USN-8927-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-87862"
+          ],
+          "Severity": "LOW",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "VendorSeverity": {
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-87862"
+        },
+        {
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "Enabling `CURLOPT_CRLF` causes curl to advertise the raw input byte count in the `IMAP APPEND {N}` literal while transmitting line-ending expanded data. The server reads only N bytes for the payload, causing the remaining overflow bytes to be interpreted and executed as pipelined IMAP commands within the authenticated session.",
+          "Fingerprint": "sha256:935d00f89e81181fd9f9614ec7e38f94c72cc0113e4c20638e8e4541c2ce59e4",
+          "InstalledVersion": "7.81.0-1ubuntu1.27",
+          "Layer": {
+            "DiffID": "sha256:8b37e10cbfe215bca8369e0250f3e6dd0c832c112b3e98b94473694d00a0f824",
+            "Digest": "sha256:f807640896cd5f90197313e825b8765db7218e6ef79315aed53bf4ffc78f2423"
+          },
+          "PkgID": "curl@7.81.0-1ubuntu1.27",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/curl@7.81.0-1ubuntu1.27?arch=amd64\u0026distro=ubuntu-22.04",
+            "UID": "e2561e9afec8c86f"
+          },
+          "PkgName": "curl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-87864",
+          "References": [
+            "https://curl.se/docs/CVE-2026-87864.html",
+            "https://ubuntu.com/security/notices/USN-8927-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-87864"
+          ],
+          "Severity": "LOW",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "IMAP APPEND plus CRLF conversion command injection",
+          "VendorSeverity": {
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-87864"
+        },
+        {
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "When an FTP wildcard `LIST` operation fails, libcurl omits the restoration path meant for successful listings, leaving the write callback set to the internal listing parser and the write callback data pointing directly to the easy handle. Subsequent reuse of this handle triggers an immediate crash, and cloning it via `curl_easy_duphandle()` copies this corrupted state into the duplicate. If the original handle is subsequently freed, executing a transfer on the cloned handle causes a heap use-after-free read against the dangling handle reference; alternatively, reusing the original or cloned handle while reconfiguring only `CURLOPT_WRITEDATA` (and omitting `CURLOPT_WRITEFUNCTION`) results in type confusion, forcing the internal parser to interpret incoming server response bytes into memory at the application-supplied write data pointer.",
+          "Fingerprint": "sha256:7087b4159639086a31afea6255f49b60b4dd81ed03359cef6fd976bf96cd61e0",
+          "InstalledVersion": "7.81.0-1ubuntu1.27",
+          "Layer": {
+            "DiffID": "sha256:8b37e10cbfe215bca8369e0250f3e6dd0c832c112b3e98b94473694d00a0f824",
+            "Digest": "sha256:f807640896cd5f90197313e825b8765db7218e6ef79315aed53bf4ffc78f2423"
+          },
+          "PkgID": "curl@7.81.0-1ubuntu1.27",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/curl@7.81.0-1ubuntu1.27?arch=amd64\u0026distro=ubuntu-22.04",
+            "UID": "e2561e9afec8c86f"
+          },
+          "PkgName": "curl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-92388",
+          "References": [
+            "https://curl.se/docs/CVE-2026-92388.html",
+            "https://ubuntu.com/security/notices/USN-8927-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-92388"
+          ],
+          "Severity": "LOW",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "Title Not Available",
+          "VendorSeverity": {
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-92388"
+        },
+        {
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "libcurl's TFTP state machine fails to validate state transitions against the requested transfer direction, accepting opening server responses for both reads and writes interchangeably. A malicious TFTP server can respond to a download request in a way that forces the client into transmit mode, prompting libcurl to consume and transmit data from the handle's persistent `CURLOPT_READDATA` pointer - including data remaining from unrelated prior operations, such as an HTTP POST request executed on a reused handle.",
+          "Fingerprint": "sha256:98b372b57ca5f239321b181a0e45b85245f9061aea2bfc535f04697f09aa1535",
+          "InstalledVersion": "7.81.0-1ubuntu1.27",
+          "Layer": {
+            "DiffID": "sha256:8b37e10cbfe215bca8369e0250f3e6dd0c832c112b3e98b94473694d00a0f824",
+            "Digest": "sha256:f807640896cd5f90197313e825b8765db7218e6ef79315aed53bf4ffc78f2423"
+          },
+          "PkgID": "curl@7.81.0-1ubuntu1.27",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/curl@7.81.0-1ubuntu1.27?arch=amd64\u0026distro=ubuntu-22.04",
+            "UID": "e2561e9afec8c86f"
+          },
+          "PkgName": "curl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-92389",
+          "References": [
+            "https://curl.se/docs/CVE-2026-92389.html",
+            "https://ubuntu.com/security/notices/USN-8927-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-92389"
+          ],
+          "Severity": "LOW",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "TFTP direction confusion",
+          "VendorSeverity": {
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-92389"
+        },
+        {
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "A deeply nested multipart MIME structure constructed via the public API causes a stack overflow in libcurl during normal cleanup operations. An excessive recursion depth within `curl_mime_free` leads to unbounded stack frame allocation during structure traversal, ultimately crashing the host process.",
+          "Fingerprint": "sha256:68af848c17013a4a283c8272ca4154060aa5a61d5746852a5d32ad1517cfa740",
+          "InstalledVersion": "7.81.0-1ubuntu1.27",
+          "Layer": {
+            "DiffID": "sha256:8b37e10cbfe215bca8369e0250f3e6dd0c832c112b3e98b94473694d00a0f824",
+            "Digest": "sha256:f807640896cd5f90197313e825b8765db7218e6ef79315aed53bf4ffc78f2423"
+          },
+          "PkgID": "curl@7.81.0-1ubuntu1.27",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/curl@7.81.0-1ubuntu1.27?arch=amd64\u0026distro=ubuntu-22.04",
+            "UID": "e2561e9afec8c86f"
+          },
+          "PkgName": "curl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-92391",
+          "References": [
+            "https://curl.se/docs/CVE-2026-92391.html",
+            "https://ubuntu.com/security/notices/USN-8927-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-92391"
+          ],
+          "Severity": "LOW",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "Title Not Available",
+          "VendorSeverity": {
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-92391"
+        },
+        {
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "libcurl could accidentally return a URL for curl_easy_getinfo's `CURLINFO_EFFECTIVE_URL` option containing credentials, even though neither the URL provided to libcurl nor the redirected URL did. The curl tool exposes the same information using the command line option `--write-out '%{url_effective}'`. This credential leak can happen when curl retrieves credentials from a `.netrc` file.",
+          "Fingerprint": "sha256:3b41ebb0a96ff385cf0a74510d7f5aeb2a5b30e1d93def6178ef9c5403c06219",
+          "InstalledVersion": "7.81.0-1ubuntu1.27",
+          "Layer": {
+            "DiffID": "sha256:8b37e10cbfe215bca8369e0250f3e6dd0c832c112b3e98b94473694d00a0f824",
+            "Digest": "sha256:f807640896cd5f90197313e825b8765db7218e6ef79315aed53bf4ffc78f2423"
+          },
+          "PkgID": "curl@7.81.0-1ubuntu1.27",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/curl@7.81.0-1ubuntu1.27?arch=amd64\u0026distro=ubuntu-22.04",
+            "UID": "e2561e9afec8c86f"
+          },
+          "PkgName": "curl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-94266",
+          "References": [
+            "https://curl.se/docs/CVE-2026-94266.html",
+            "https://ubuntu.com/security/notices/USN-8927-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-94266"
+          ],
+          "Severity": "LOW",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "Title Not Available",
+          "VendorSeverity": {
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-94266"
+        },
+        {
           "CVSS": {
             "julia": {
               "V3Score": 6.5,
@@ -29279,7 +29550,7 @@
           "Description": "libiberty/rust-demangle.c in GNU GCC 11.2 allows stack consumption in demangle_const, as demonstrated by nm-new.",
           "Fingerprint": "sha256:2b9d6872d25efa06321ddd4d3228a0a2ec6d85fa22bb21eb10c111c67cd21856",
           "InstalledVersion": "12.3.0-1ubuntu1~22.04.3",
-          "LastModifiedDate": "2026-10-08T19:16:56.007Z",
+          "LastModifiedDate": "2026-10-14T17:17:37.83Z",
           "Layer": {
             "DiffID": "sha256:ea16cace89338c84eb6bcb91a7efdfcae6838fff359efe951858227436486c34",
             "Digest": "sha256:84ad5f3a28e133b7e3d79a5974fa2411b373762f03734f30c1c2b75fb05bcb40"
@@ -29294,6 +29565,7 @@
           "PublishedDate": "2022-03-26T13:15:07.9Z",
           "References": [
             "https://access.redhat.com/security/cve/CVE-2022-27943",
+            "https://cert-portal.siemens.com/productcert/html/ssa-398330.html",
             "https://gcc.gnu.org/bugzilla/show_bug.cgi?id=105039",
             "https://gcc.gnu.org/git/gitweb.cgi?p=gcc.git;h=1a770b01ef415e114164b6151d1e55acdee09371",
             "https://gcc.gnu.org/git/gitweb.cgi?p=gcc.git;h=9234cdca6ee88badfc00297e72f13dac4e540c79",
@@ -50704,6 +50976,277 @@
           "VulnerabilityID": "CVE-2026-82209"
         },
         {
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "Setting `CURLOPT_AWS_SIGV4` to NULL does not disable SigV4 authentication, contrary to expectations and documentation. A subsequent transfer on the same handle still sends an `Authorization: AWS4-HMAC-SHA256` header to whatever URL is set next, leaking state information.",
+          "Fingerprint": "sha256:144bbe7ba692df0e36fbd883dc1eb414ef6affe5b3b7f62a9d4d813d6bc5c551",
+          "InstalledVersion": "7.81.0-1ubuntu1.27",
+          "Layer": {
+            "DiffID": "sha256:8b37e10cbfe215bca8369e0250f3e6dd0c832c112b3e98b94473694d00a0f824",
+            "Digest": "sha256:f807640896cd5f90197313e825b8765db7218e6ef79315aed53bf4ffc78f2423"
+          },
+          "PkgID": "libcurl4@7.81.0-1ubuntu1.27",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/libcurl4@7.81.0-1ubuntu1.27?arch=amd64\u0026distro=ubuntu-22.04",
+            "UID": "74f81de96dbd3c36"
+          },
+          "PkgName": "libcurl4",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86409",
+          "References": [
+            "https://curl.se/docs/CVE-2026-86409.html",
+            "https://ubuntu.com/security/notices/USN-8927-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-86409"
+          ],
+          "Severity": "LOW",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "Setting `CURLOPT_AWS_SIGV4` to NULL does not disable SigV4 authen",
+          "VendorSeverity": {
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-86409"
+        },
+        {
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "A HTTP proxy can trick libcurl into sending the origin's credentials (Basic password, or a Negotiate/Kerberos ticket) to the proxy itself, by answering the `CONNECT` tunnel request with 401 `WWW-Authenticate:` instead of the expected 407 `Proxy-Authenticate:`.",
+          "Fingerprint": "sha256:d6481abccba9f1a783c6ee47a3634c954573b90476b0cb24738db6697177007c",
+          "InstalledVersion": "7.81.0-1ubuntu1.27",
+          "Layer": {
+            "DiffID": "sha256:8b37e10cbfe215bca8369e0250f3e6dd0c832c112b3e98b94473694d00a0f824",
+            "Digest": "sha256:f807640896cd5f90197313e825b8765db7218e6ef79315aed53bf4ffc78f2423"
+          },
+          "PkgID": "libcurl4@7.81.0-1ubuntu1.27",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/libcurl4@7.81.0-1ubuntu1.27?arch=amd64\u0026distro=ubuntu-22.04",
+            "UID": "74f81de96dbd3c36"
+          },
+          "PkgName": "libcurl4",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86414",
+          "References": [
+            "https://curl.se/docs/CVE-2026-86414.html",
+            "https://ubuntu.com/security/notices/USN-8927-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-86414"
+          ],
+          "Severity": "LOW",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "A HTTP proxy can trick libcurl into sending the origin's credenti",
+          "VendorSeverity": {
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-86414"
+        },
+        {
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "Importing a `includeSubDomains` parent HSTS entry before a longer-lived child entry, silently drops the child. Consequently, when the parent expires, the child's valid HSTS policy is lost, causing curl to issue unencrypted HTTP requests rather than upgrading to HTTPS.",
+          "Fingerprint": "sha256:b8fd83df88aec9478445cbd6282c06e85711178eb305488fd933ef1c2a68551b",
+          "InstalledVersion": "7.81.0-1ubuntu1.27",
+          "Layer": {
+            "DiffID": "sha256:8b37e10cbfe215bca8369e0250f3e6dd0c832c112b3e98b94473694d00a0f824",
+            "Digest": "sha256:f807640896cd5f90197313e825b8765db7218e6ef79315aed53bf4ffc78f2423"
+          },
+          "PkgID": "libcurl4@7.81.0-1ubuntu1.27",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/libcurl4@7.81.0-1ubuntu1.27?arch=amd64\u0026distro=ubuntu-22.04",
+            "UID": "74f81de96dbd3c36"
+          },
+          "PkgName": "libcurl4",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-87862",
+          "References": [
+            "https://curl.se/docs/CVE-2026-87862.html",
+            "https://ubuntu.com/security/notices/USN-8927-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-87862"
+          ],
+          "Severity": "LOW",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "VendorSeverity": {
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-87862"
+        },
+        {
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "Enabling `CURLOPT_CRLF` causes curl to advertise the raw input byte count in the `IMAP APPEND {N}` literal while transmitting line-ending expanded data. The server reads only N bytes for the payload, causing the remaining overflow bytes to be interpreted and executed as pipelined IMAP commands within the authenticated session.",
+          "Fingerprint": "sha256:4d652013fb136bf9f5b2a1d80630656a1bc2d4c18be31c43f6aa5dcdd4ed4d11",
+          "InstalledVersion": "7.81.0-1ubuntu1.27",
+          "Layer": {
+            "DiffID": "sha256:8b37e10cbfe215bca8369e0250f3e6dd0c832c112b3e98b94473694d00a0f824",
+            "Digest": "sha256:f807640896cd5f90197313e825b8765db7218e6ef79315aed53bf4ffc78f2423"
+          },
+          "PkgID": "libcurl4@7.81.0-1ubuntu1.27",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/libcurl4@7.81.0-1ubuntu1.27?arch=amd64\u0026distro=ubuntu-22.04",
+            "UID": "74f81de96dbd3c36"
+          },
+          "PkgName": "libcurl4",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-87864",
+          "References": [
+            "https://curl.se/docs/CVE-2026-87864.html",
+            "https://ubuntu.com/security/notices/USN-8927-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-87864"
+          ],
+          "Severity": "LOW",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "IMAP APPEND plus CRLF conversion command injection",
+          "VendorSeverity": {
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-87864"
+        },
+        {
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "When an FTP wildcard `LIST` operation fails, libcurl omits the restoration path meant for successful listings, leaving the write callback set to the internal listing parser and the write callback data pointing directly to the easy handle. Subsequent reuse of this handle triggers an immediate crash, and cloning it via `curl_easy_duphandle()` copies this corrupted state into the duplicate. If the original handle is subsequently freed, executing a transfer on the cloned handle causes a heap use-after-free read against the dangling handle reference; alternatively, reusing the original or cloned handle while reconfiguring only `CURLOPT_WRITEDATA` (and omitting `CURLOPT_WRITEFUNCTION`) results in type confusion, forcing the internal parser to interpret incoming server response bytes into memory at the application-supplied write data pointer.",
+          "Fingerprint": "sha256:3d75ccf4aa606ed5a32dd22f9772527e0ffa76da4499ada29fc1a31a88603d47",
+          "InstalledVersion": "7.81.0-1ubuntu1.27",
+          "Layer": {
+            "DiffID": "sha256:8b37e10cbfe215bca8369e0250f3e6dd0c832c112b3e98b94473694d00a0f824",
+            "Digest": "sha256:f807640896cd5f90197313e825b8765db7218e6ef79315aed53bf4ffc78f2423"
+          },
+          "PkgID": "libcurl4@7.81.0-1ubuntu1.27",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/libcurl4@7.81.0-1ubuntu1.27?arch=amd64\u0026distro=ubuntu-22.04",
+            "UID": "74f81de96dbd3c36"
+          },
+          "PkgName": "libcurl4",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-92388",
+          "References": [
+            "https://curl.se/docs/CVE-2026-92388.html",
+            "https://ubuntu.com/security/notices/USN-8927-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-92388"
+          ],
+          "Severity": "LOW",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "Title Not Available",
+          "VendorSeverity": {
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-92388"
+        },
+        {
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "libcurl's TFTP state machine fails to validate state transitions against the requested transfer direction, accepting opening server responses for both reads and writes interchangeably. A malicious TFTP server can respond to a download request in a way that forces the client into transmit mode, prompting libcurl to consume and transmit data from the handle's persistent `CURLOPT_READDATA` pointer - including data remaining from unrelated prior operations, such as an HTTP POST request executed on a reused handle.",
+          "Fingerprint": "sha256:18642bf097dd585427f5b322b7726d3474eb83667d2e50c8d647c26f5fb738c9",
+          "InstalledVersion": "7.81.0-1ubuntu1.27",
+          "Layer": {
+            "DiffID": "sha256:8b37e10cbfe215bca8369e0250f3e6dd0c832c112b3e98b94473694d00a0f824",
+            "Digest": "sha256:f807640896cd5f90197313e825b8765db7218e6ef79315aed53bf4ffc78f2423"
+          },
+          "PkgID": "libcurl4@7.81.0-1ubuntu1.27",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/libcurl4@7.81.0-1ubuntu1.27?arch=amd64\u0026distro=ubuntu-22.04",
+            "UID": "74f81de96dbd3c36"
+          },
+          "PkgName": "libcurl4",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-92389",
+          "References": [
+            "https://curl.se/docs/CVE-2026-92389.html",
+            "https://ubuntu.com/security/notices/USN-8927-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-92389"
+          ],
+          "Severity": "LOW",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "TFTP direction confusion",
+          "VendorSeverity": {
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-92389"
+        },
+        {
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "A deeply nested multipart MIME structure constructed via the public API causes a stack overflow in libcurl during normal cleanup operations. An excessive recursion depth within `curl_mime_free` leads to unbounded stack frame allocation during structure traversal, ultimately crashing the host process.",
+          "Fingerprint": "sha256:d18fdfdd4c1c20d3095e4526627f79b0bf2eed57296efc56cbe4326967a95417",
+          "InstalledVersion": "7.81.0-1ubuntu1.27",
+          "Layer": {
+            "DiffID": "sha256:8b37e10cbfe215bca8369e0250f3e6dd0c832c112b3e98b94473694d00a0f824",
+            "Digest": "sha256:f807640896cd5f90197313e825b8765db7218e6ef79315aed53bf4ffc78f2423"
+          },
+          "PkgID": "libcurl4@7.81.0-1ubuntu1.27",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/libcurl4@7.81.0-1ubuntu1.27?arch=amd64\u0026distro=ubuntu-22.04",
+            "UID": "74f81de96dbd3c36"
+          },
+          "PkgName": "libcurl4",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-92391",
+          "References": [
+            "https://curl.se/docs/CVE-2026-92391.html",
+            "https://ubuntu.com/security/notices/USN-8927-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-92391"
+          ],
+          "Severity": "LOW",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "Title Not Available",
+          "VendorSeverity": {
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-92391"
+        },
+        {
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "libcurl could accidentally return a URL for curl_easy_getinfo's `CURLINFO_EFFECTIVE_URL` option containing credentials, even though neither the URL provided to libcurl nor the redirected URL did. The curl tool exposes the same information using the command line option `--write-out '%{url_effective}'`. This credential leak can happen when curl retrieves credentials from a `.netrc` file.",
+          "Fingerprint": "sha256:bc0f214ddf177d1eba58a6298d89fed5a25fb0b7c10ff7f05e2bc314f915e13c",
+          "InstalledVersion": "7.81.0-1ubuntu1.27",
+          "Layer": {
+            "DiffID": "sha256:8b37e10cbfe215bca8369e0250f3e6dd0c832c112b3e98b94473694d00a0f824",
+            "Digest": "sha256:f807640896cd5f90197313e825b8765db7218e6ef79315aed53bf4ffc78f2423"
+          },
+          "PkgID": "libcurl4@7.81.0-1ubuntu1.27",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/libcurl4@7.81.0-1ubuntu1.27?arch=amd64\u0026distro=ubuntu-22.04",
+            "UID": "74f81de96dbd3c36"
+          },
+          "PkgName": "libcurl4",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-94266",
+          "References": [
+            "https://curl.se/docs/CVE-2026-94266.html",
+            "https://ubuntu.com/security/notices/USN-8927-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-94266"
+          ],
+          "Severity": "LOW",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "Title Not Available",
+          "VendorSeverity": {
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-94266"
+        },
+        {
           "CVSS": {
             "nvd": {
               "V3Score": 5.9,
@@ -52397,7 +52940,7 @@
           "Description": "libiberty/rust-demangle.c in GNU GCC 11.2 allows stack consumption in demangle_const, as demonstrated by nm-new.",
           "Fingerprint": "sha256:79746869597c1f4052e401dc9163956f93894d088e0f220884a6b05b5469fd7e",
           "InstalledVersion": "12.3.0-1ubuntu1~22.04.3",
-          "LastModifiedDate": "2026-10-08T19:16:56.007Z",
+          "LastModifiedDate": "2026-10-14T17:17:37.83Z",
           "Layer": {
             "DiffID": "sha256:ea16cace89338c84eb6bcb91a7efdfcae6838fff359efe951858227436486c34",
             "Digest": "sha256:84ad5f3a28e133b7e3d79a5974fa2411b373762f03734f30c1c2b75fb05bcb40"
@@ -52412,6 +52955,7 @@
           "PublishedDate": "2022-03-26T13:15:07.9Z",
           "References": [
             "https://access.redhat.com/security/cve/CVE-2022-27943",
+            "https://cert-portal.siemens.com/productcert/html/ssa-398330.html",
             "https://gcc.gnu.org/bugzilla/show_bug.cgi?id=105039",
             "https://gcc.gnu.org/git/gitweb.cgi?p=gcc.git;h=1a770b01ef415e114164b6151d1e55acdee09371",
             "https://gcc.gnu.org/git/gitweb.cgi?p=gcc.git;h=9234cdca6ee88badfc00297e72f13dac4e540c79",
@@ -52458,7 +53002,7 @@
           "Description": "libiberty/rust-demangle.c in GNU GCC 11.2 allows stack consumption in demangle_const, as demonstrated by nm-new.",
           "Fingerprint": "sha256:4c878e68f417a8c749e0168e4f3d2114ae6880b662df23a3b2d42176d25c7582",
           "InstalledVersion": "12.3.0-1ubuntu1~22.04.3",
-          "LastModifiedDate": "2026-10-08T19:16:56.007Z",
+          "LastModifiedDate": "2026-10-14T17:17:37.83Z",
           "Layer": {
             "DiffID": "sha256:8b37e10cbfe215bca8369e0250f3e6dd0c832c112b3e98b94473694d00a0f824",
             "Digest": "sha256:f807640896cd5f90197313e825b8765db7218e6ef79315aed53bf4ffc78f2423"
@@ -52473,6 +53017,7 @@
           "PublishedDate": "2022-03-26T13:15:07.9Z",
           "References": [
             "https://access.redhat.com/security/cve/CVE-2022-27943",
+            "https://cert-portal.siemens.com/productcert/html/ssa-398330.html",
             "https://gcc.gnu.org/bugzilla/show_bug.cgi?id=105039",
             "https://gcc.gnu.org/git/gitweb.cgi?p=gcc.git;h=1a770b01ef415e114164b6151d1e55acdee09371",
             "https://gcc.gnu.org/git/gitweb.cgi?p=gcc.git;h=9234cdca6ee88badfc00297e72f13dac4e540c79",
@@ -52514,7 +53059,7 @@
           "Fingerprint": "sha256:a9e0af2630349d7b0e05eecb54ff4895241b1893d8f53a33b927975941223add",
           "FixedVersion": "2.72.4-0ubuntu2.10",
           "InstalledVersion": "2.72.4-0ubuntu2.9",
-          "LastModifiedDate": "2026-10-13T09:17:17.96Z",
+          "LastModifiedDate": "2026-10-14T20:17:33.813Z",
           "Layer": {
             "DiffID": "sha256:8b37e10cbfe215bca8369e0250f3e6dd0c832c112b3e98b94473694d00a0f824",
             "Digest": "sha256:f807640896cd5f90197313e825b8765db7218e6ef79315aed53bf4ffc78f2423"
@@ -52592,6 +53137,17 @@
             "https://access.redhat.com/errata/RHSA-2026:82059",
             "https://access.redhat.com/errata/RHSA-2026:82061",
             "https://access.redhat.com/errata/RHSA-2026:82066",
+            "https://access.redhat.com/errata/RHSA-2026:82304",
+            "https://access.redhat.com/errata/RHSA-2026:82322",
+            "https://access.redhat.com/errata/RHSA-2026:82336",
+            "https://access.redhat.com/errata/RHSA-2026:82347",
+            "https://access.redhat.com/errata/RHSA-2026:82354",
+            "https://access.redhat.com/errata/RHSA-2026:82368",
+            "https://access.redhat.com/errata/RHSA-2026:82371",
+            "https://access.redhat.com/errata/RHSA-2026:82372",
+            "https://access.redhat.com/errata/RHSA-2026:82415",
+            "https://access.redhat.com/errata/RHSA-2026:82857",
+            "https://access.redhat.com/errata/RHSA-2026:82888",
             "https://access.redhat.com/security/cve/CVE-2026-15588",
             "https://bugzilla.redhat.com/2492243",
             "https://bugzilla.redhat.com/2492245",
@@ -52660,7 +53216,7 @@
           "Fingerprint": "sha256:d3125b5205db564ef2d5b63029ebc3cd4f0183418fdc2ddb1e1e530ef4f5ff6b",
           "FixedVersion": "2.72.4-0ubuntu2.10",
           "InstalledVersion": "2.72.4-0ubuntu2.9",
-          "LastModifiedDate": "2026-10-13T09:17:18.507Z",
+          "LastModifiedDate": "2026-10-14T20:17:34.41Z",
           "Layer": {
             "DiffID": "sha256:8b37e10cbfe215bca8369e0250f3e6dd0c832c112b3e98b94473694d00a0f824",
             "Digest": "sha256:f807640896cd5f90197313e825b8765db7218e6ef79315aed53bf4ffc78f2423"
@@ -52735,6 +53291,17 @@
             "https://access.redhat.com/errata/RHSA-2026:82059",
             "https://access.redhat.com/errata/RHSA-2026:82061",
             "https://access.redhat.com/errata/RHSA-2026:82066",
+            "https://access.redhat.com/errata/RHSA-2026:82304",
+            "https://access.redhat.com/errata/RHSA-2026:82322",
+            "https://access.redhat.com/errata/RHSA-2026:82336",
+            "https://access.redhat.com/errata/RHSA-2026:82347",
+            "https://access.redhat.com/errata/RHSA-2026:82354",
+            "https://access.redhat.com/errata/RHSA-2026:82368",
+            "https://access.redhat.com/errata/RHSA-2026:82371",
+            "https://access.redhat.com/errata/RHSA-2026:82372",
+            "https://access.redhat.com/errata/RHSA-2026:82415",
+            "https://access.redhat.com/errata/RHSA-2026:82857",
+            "https://access.redhat.com/errata/RHSA-2026:82888",
             "https://access.redhat.com/security/cve/CVE-2026-16118",
             "https://bugzilla.redhat.com/2501732",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2501732",
@@ -52791,7 +53358,7 @@
           "Fingerprint": "sha256:45da00332eb215177cb2c516ead04ad2a4fd1989c12143922916efe7d06eb654",
           "FixedVersion": "2.72.4-0ubuntu2.10",
           "InstalledVersion": "2.72.4-0ubuntu2.9",
-          "LastModifiedDate": "2026-10-13T09:17:19Z",
+          "LastModifiedDate": "2026-10-14T20:17:50.933Z",
           "Layer": {
             "DiffID": "sha256:8b37e10cbfe215bca8369e0250f3e6dd0c832c112b3e98b94473694d00a0f824",
             "Digest": "sha256:f807640896cd5f90197313e825b8765db7218e6ef79315aed53bf4ffc78f2423"
@@ -52867,6 +53434,17 @@
             "https://access.redhat.com/errata/RHSA-2026:82059",
             "https://access.redhat.com/errata/RHSA-2026:82061",
             "https://access.redhat.com/errata/RHSA-2026:82066",
+            "https://access.redhat.com/errata/RHSA-2026:82304",
+            "https://access.redhat.com/errata/RHSA-2026:82322",
+            "https://access.redhat.com/errata/RHSA-2026:82336",
+            "https://access.redhat.com/errata/RHSA-2026:82347",
+            "https://access.redhat.com/errata/RHSA-2026:82354",
+            "https://access.redhat.com/errata/RHSA-2026:82368",
+            "https://access.redhat.com/errata/RHSA-2026:82371",
+            "https://access.redhat.com/errata/RHSA-2026:82372",
+            "https://access.redhat.com/errata/RHSA-2026:82415",
+            "https://access.redhat.com/errata/RHSA-2026:82857",
+            "https://access.redhat.com/errata/RHSA-2026:82888",
             "https://access.redhat.com/security/cve/CVE-2026-58010",
             "https://bugzilla.redhat.com/2492243",
             "https://bugzilla.redhat.com/2492245",
@@ -52945,7 +53523,7 @@
           "Fingerprint": "sha256:20bc4128ebf8ae70d4c4236ddbc713aa3cba6dfcb26f5769bded979d32079084",
           "FixedVersion": "2.72.4-0ubuntu2.10",
           "InstalledVersion": "2.72.4-0ubuntu2.9",
-          "LastModifiedDate": "2026-10-13T09:17:19.53Z",
+          "LastModifiedDate": "2026-10-14T20:17:51.567Z",
           "Layer": {
             "DiffID": "sha256:8b37e10cbfe215bca8369e0250f3e6dd0c832c112b3e98b94473694d00a0f824",
             "Digest": "sha256:f807640896cd5f90197313e825b8765db7218e6ef79315aed53bf4ffc78f2423"
@@ -53021,6 +53599,17 @@
             "https://access.redhat.com/errata/RHSA-2026:82059",
             "https://access.redhat.com/errata/RHSA-2026:82061",
             "https://access.redhat.com/errata/RHSA-2026:82066",
+            "https://access.redhat.com/errata/RHSA-2026:82304",
+            "https://access.redhat.com/errata/RHSA-2026:82322",
+            "https://access.redhat.com/errata/RHSA-2026:82336",
+            "https://access.redhat.com/errata/RHSA-2026:82347",
+            "https://access.redhat.com/errata/RHSA-2026:82354",
+            "https://access.redhat.com/errata/RHSA-2026:82368",
+            "https://access.redhat.com/errata/RHSA-2026:82371",
+            "https://access.redhat.com/errata/RHSA-2026:82372",
+            "https://access.redhat.com/errata/RHSA-2026:82415",
+            "https://access.redhat.com/errata/RHSA-2026:82857",
+            "https://access.redhat.com/errata/RHSA-2026:82888",
             "https://access.redhat.com/security/cve/CVE-2026-58011",
             "https://bugzilla.redhat.com/2492243",
             "https://bugzilla.redhat.com/2492245",
@@ -53100,7 +53689,7 @@
           "Fingerprint": "sha256:14bc5a8cf532c0515571725ccf3ae0af53c73f2410f1ea5e4ba9f0b20a1502b7",
           "FixedVersion": "2.72.4-0ubuntu2.10",
           "InstalledVersion": "2.72.4-0ubuntu2.9",
-          "LastModifiedDate": "2026-10-13T09:17:20.04Z",
+          "LastModifiedDate": "2026-10-14T20:17:52.147Z",
           "Layer": {
             "DiffID": "sha256:8b37e10cbfe215bca8369e0250f3e6dd0c832c112b3e98b94473694d00a0f824",
             "Digest": "sha256:f807640896cd5f90197313e825b8765db7218e6ef79315aed53bf4ffc78f2423"
@@ -53176,6 +53765,17 @@
             "https://access.redhat.com/errata/RHSA-2026:82059",
             "https://access.redhat.com/errata/RHSA-2026:82061",
             "https://access.redhat.com/errata/RHSA-2026:82066",
+            "https://access.redhat.com/errata/RHSA-2026:82304",
+            "https://access.redhat.com/errata/RHSA-2026:82322",
+            "https://access.redhat.com/errata/RHSA-2026:82336",
+            "https://access.redhat.com/errata/RHSA-2026:82347",
+            "https://access.redhat.com/errata/RHSA-2026:82354",
+            "https://access.redhat.com/errata/RHSA-2026:82368",
+            "https://access.redhat.com/errata/RHSA-2026:82371",
+            "https://access.redhat.com/errata/RHSA-2026:82372",
+            "https://access.redhat.com/errata/RHSA-2026:82415",
+            "https://access.redhat.com/errata/RHSA-2026:82857",
+            "https://access.redhat.com/errata/RHSA-2026:82888",
             "https://access.redhat.com/security/cve/CVE-2026-58012",
             "https://bugzilla.redhat.com/2492243",
             "https://bugzilla.redhat.com/2492245",
@@ -53254,7 +53854,7 @@
           "Fingerprint": "sha256:2da4977e8ec71e4b6ef0f040cffb3287ee672ce84be6cb70ffb20b1a41cdcbe3",
           "FixedVersion": "2.72.4-0ubuntu2.10",
           "InstalledVersion": "2.72.4-0ubuntu2.9",
-          "LastModifiedDate": "2026-10-13T09:17:20.547Z",
+          "LastModifiedDate": "2026-10-14T20:17:52.76Z",
           "Layer": {
             "DiffID": "sha256:8b37e10cbfe215bca8369e0250f3e6dd0c832c112b3e98b94473694d00a0f824",
             "Digest": "sha256:f807640896cd5f90197313e825b8765db7218e6ef79315aed53bf4ffc78f2423"
@@ -53330,6 +53930,17 @@
             "https://access.redhat.com/errata/RHSA-2026:82059",
             "https://access.redhat.com/errata/RHSA-2026:82061",
             "https://access.redhat.com/errata/RHSA-2026:82066",
+            "https://access.redhat.com/errata/RHSA-2026:82304",
+            "https://access.redhat.com/errata/RHSA-2026:82322",
+            "https://access.redhat.com/errata/RHSA-2026:82336",
+            "https://access.redhat.com/errata/RHSA-2026:82347",
+            "https://access.redhat.com/errata/RHSA-2026:82354",
+            "https://access.redhat.com/errata/RHSA-2026:82368",
+            "https://access.redhat.com/errata/RHSA-2026:82371",
+            "https://access.redhat.com/errata/RHSA-2026:82372",
+            "https://access.redhat.com/errata/RHSA-2026:82415",
+            "https://access.redhat.com/errata/RHSA-2026:82857",
+            "https://access.redhat.com/errata/RHSA-2026:82888",
             "https://access.redhat.com/security/cve/CVE-2026-58013",
             "https://bugzilla.redhat.com/2492243",
             "https://bugzilla.redhat.com/2492245",
@@ -53408,7 +54019,7 @@
           "Fingerprint": "sha256:d9388b5f797677f911fde0e60bf13ca32aa020de504b6fd907c0faddee35ca38",
           "FixedVersion": "2.72.4-0ubuntu2.10",
           "InstalledVersion": "2.72.4-0ubuntu2.9",
-          "LastModifiedDate": "2026-10-13T09:17:21.047Z",
+          "LastModifiedDate": "2026-10-14T20:17:54.81Z",
           "Layer": {
             "DiffID": "sha256:8b37e10cbfe215bca8369e0250f3e6dd0c832c112b3e98b94473694d00a0f824",
             "Digest": "sha256:f807640896cd5f90197313e825b8765db7218e6ef79315aed53bf4ffc78f2423"
@@ -53489,6 +54100,17 @@
             "https://access.redhat.com/errata/RHSA-2026:82059",
             "https://access.redhat.com/errata/RHSA-2026:82061",
             "https://access.redhat.com/errata/RHSA-2026:82066",
+            "https://access.redhat.com/errata/RHSA-2026:82304",
+            "https://access.redhat.com/errata/RHSA-2026:82322",
+            "https://access.redhat.com/errata/RHSA-2026:82336",
+            "https://access.redhat.com/errata/RHSA-2026:82347",
+            "https://access.redhat.com/errata/RHSA-2026:82354",
+            "https://access.redhat.com/errata/RHSA-2026:82368",
+            "https://access.redhat.com/errata/RHSA-2026:82371",
+            "https://access.redhat.com/errata/RHSA-2026:82372",
+            "https://access.redhat.com/errata/RHSA-2026:82415",
+            "https://access.redhat.com/errata/RHSA-2026:82857",
+            "https://access.redhat.com/errata/RHSA-2026:82888",
             "https://access.redhat.com/security/cve/CVE-2026-58014",
             "https://bugzilla.redhat.com/2492243",
             "https://bugzilla.redhat.com/2492245",
@@ -53567,7 +54189,7 @@
           "Fingerprint": "sha256:fa73d613b7281cd5706c35f676b6e3bcec458809178c8a3c1e364853231e692b",
           "FixedVersion": "2.72.4-0ubuntu2.10",
           "InstalledVersion": "2.72.4-0ubuntu2.9",
-          "LastModifiedDate": "2026-10-13T09:17:21.583Z",
+          "LastModifiedDate": "2026-10-14T20:17:55.467Z",
           "Layer": {
             "DiffID": "sha256:8b37e10cbfe215bca8369e0250f3e6dd0c832c112b3e98b94473694d00a0f824",
             "Digest": "sha256:f807640896cd5f90197313e825b8765db7218e6ef79315aed53bf4ffc78f2423"
@@ -53646,6 +54268,17 @@
             "https://access.redhat.com/errata/RHSA-2026:82059",
             "https://access.redhat.com/errata/RHSA-2026:82061",
             "https://access.redhat.com/errata/RHSA-2026:82066",
+            "https://access.redhat.com/errata/RHSA-2026:82304",
+            "https://access.redhat.com/errata/RHSA-2026:82322",
+            "https://access.redhat.com/errata/RHSA-2026:82336",
+            "https://access.redhat.com/errata/RHSA-2026:82347",
+            "https://access.redhat.com/errata/RHSA-2026:82354",
+            "https://access.redhat.com/errata/RHSA-2026:82368",
+            "https://access.redhat.com/errata/RHSA-2026:82371",
+            "https://access.redhat.com/errata/RHSA-2026:82372",
+            "https://access.redhat.com/errata/RHSA-2026:82415",
+            "https://access.redhat.com/errata/RHSA-2026:82857",
+            "https://access.redhat.com/errata/RHSA-2026:82888",
             "https://access.redhat.com/security/cve/CVE-2026-58015",
             "https://bugzilla.redhat.com/2492243",
             "https://bugzilla.redhat.com/2492245",
@@ -53724,7 +54357,7 @@
           "Fingerprint": "sha256:a5b176ef4a369caf5940393a48a6caaa3dd6ec018b46d24660250d3cffc11b61",
           "FixedVersion": "2.72.4-0ubuntu2.10",
           "InstalledVersion": "2.72.4-0ubuntu2.9",
-          "LastModifiedDate": "2026-10-02T03:16:49.82Z",
+          "LastModifiedDate": "2026-10-14T20:17:56.057Z",
           "Layer": {
             "DiffID": "sha256:8b37e10cbfe215bca8369e0250f3e6dd0c832c112b3e98b94473694d00a0f824",
             "Digest": "sha256:f807640896cd5f90197313e825b8765db7218e6ef79315aed53bf4ffc78f2423"
@@ -53773,6 +54406,14 @@
             "https://access.redhat.com/errata/RHSA-2026:74462",
             "https://access.redhat.com/errata/RHSA-2026:74463",
             "https://access.redhat.com/errata/RHSA-2026:74674",
+            "https://access.redhat.com/errata/RHSA-2026:82304",
+            "https://access.redhat.com/errata/RHSA-2026:82322",
+            "https://access.redhat.com/errata/RHSA-2026:82336",
+            "https://access.redhat.com/errata/RHSA-2026:82347",
+            "https://access.redhat.com/errata/RHSA-2026:82354",
+            "https://access.redhat.com/errata/RHSA-2026:82372",
+            "https://access.redhat.com/errata/RHSA-2026:82857",
+            "https://access.redhat.com/errata/RHSA-2026:82888",
             "https://access.redhat.com/security/cve/CVE-2026-58016",
             "https://bugzilla.redhat.com/2492257",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492257",
@@ -53879,7 +54520,7 @@
           "Description": "libiberty/rust-demangle.c in GNU GCC 11.2 allows stack consumption in demangle_const, as demonstrated by nm-new.",
           "Fingerprint": "sha256:219841f223984d00abb77304d3f921a1c329526cf3c217c72028eb6ef772545b",
           "InstalledVersion": "12.3.0-1ubuntu1~22.04.3",
-          "LastModifiedDate": "2026-10-08T19:16:56.007Z",
+          "LastModifiedDate": "2026-10-14T17:17:37.83Z",
           "Layer": {
             "DiffID": "sha256:8b37e10cbfe215bca8369e0250f3e6dd0c832c112b3e98b94473694d00a0f824",
             "Digest": "sha256:f807640896cd5f90197313e825b8765db7218e6ef79315aed53bf4ffc78f2423"
@@ -53894,6 +54535,7 @@
           "PublishedDate": "2022-03-26T13:15:07.9Z",
           "References": [
             "https://access.redhat.com/security/cve/CVE-2022-27943",
+            "https://cert-portal.siemens.com/productcert/html/ssa-398330.html",
             "https://gcc.gnu.org/bugzilla/show_bug.cgi?id=105039",
             "https://gcc.gnu.org/git/gitweb.cgi?p=gcc.git;h=1a770b01ef415e114164b6151d1e55acdee09371",
             "https://gcc.gnu.org/git/gitweb.cgi?p=gcc.git;h=9234cdca6ee88badfc00297e72f13dac4e540c79",
@@ -54628,7 +55270,7 @@
             "https://errata.almalinux.org/9/ALSA-2026-81532.html",
             "https://github.com/PCRE2Project/pcre2/security/advisories/GHSA-r9hj-j2rw-4q3m",
             "https://linux.oracle.com/cve/CVE-2026-103111.html",
-            "https://linux.oracle.com/errata/ELSA-2026-81522.html",
+            "https://linux.oracle.com/errata/ELSA-2026-81613.html",
             "https://lists.debian.org/debian-lts-announce/2026/10/msg00008.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-103111",
             "https://www.cve.org/CVERecord?id=CVE-2026-103111"
@@ -54691,7 +55333,7 @@
             "https://github.com/PCRE2Project/pcre2/releases/tag/pcre2-10.48",
             "https://github.com/PCRE2Project/pcre2/security/advisories/GHSA-3r4p-g7gg-ppmf",
             "https://linux.oracle.com/cve/CVE-2026-86145.html",
-            "https://linux.oracle.com/errata/ELSA-2026-81522.html",
+            "https://linux.oracle.com/errata/ELSA-2026-81613.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-86145",
             "https://www.cve.org/CVERecord?id=CVE-2026-86145"
           ],
@@ -54757,7 +55399,7 @@
             "https://github.com/PCRE2Project/pcre2/releases/tag/pcre2-10.48",
             "https://github.com/PCRE2Project/pcre2/security/advisories/GHSA-2p8c-ff85-vh9x",
             "https://linux.oracle.com/cve/CVE-2026-89156.html",
-            "https://linux.oracle.com/errata/ELSA-2026-81522.html",
+            "https://linux.oracle.com/errata/ELSA-2026-81532.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-89156",
             "https://www.cve.org/CVERecord?id=CVE-2026-89156"
           ],
@@ -54824,7 +55466,7 @@
             "https://github.com/PCRE2Project/pcre2/releases/tag/pcre2-10.48",
             "https://github.com/PCRE2Project/pcre2/security/advisories/GHSA-q8g2-wprr-34m9",
             "https://linux.oracle.com/cve/CVE-2026-89157.html",
-            "https://linux.oracle.com/errata/ELSA-2026-81522.html",
+            "https://linux.oracle.com/errata/ELSA-2026-81613.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-89157",
             "https://www.cve.org/CVERecord?id=CVE-2026-89157"
           ],
@@ -54891,7 +55533,7 @@
             "https://github.com/PCRE2Project/pcre2/releases/tag/pcre2-10.48",
             "https://github.com/PCRE2Project/pcre2/security/advisories/GHSA-fmgr-6ggq-9859",
             "https://linux.oracle.com/cve/CVE-2026-89158.html",
-            "https://linux.oracle.com/errata/ELSA-2026-81522.html",
+            "https://linux.oracle.com/errata/ELSA-2026-81613.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-89158",
             "https://www.cve.org/CVERecord?id=CVE-2026-89158"
           ],
@@ -54958,7 +55600,7 @@
             "https://github.com/PCRE2Project/pcre2/releases/tag/pcre2-10.48",
             "https://github.com/PCRE2Project/pcre2/security/advisories/GHSA-9qww-pwc4-77qq",
             "https://linux.oracle.com/cve/CVE-2026-89160.html",
-            "https://linux.oracle.com/errata/ELSA-2026-81522.html",
+            "https://linux.oracle.com/errata/ELSA-2026-81532.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-89160",
             "https://www.cve.org/CVERecord?id=CVE-2026-89160"
           ],
@@ -55026,7 +55668,7 @@
             "https://github.com/PCRE2Project/pcre2/pull/937",
             "https://github.com/PCRE2Project/pcre2/releases/tag/pcre2-10.48",
             "https://linux.oracle.com/cve/CVE-2026-89161.html",
-            "https://linux.oracle.com/errata/ELSA-2026-81522.html",
+            "https://linux.oracle.com/errata/ELSA-2026-81532.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-89161",
             "https://www.cve.org/CVERecord?id=CVE-2026-89161"
           ],
@@ -59001,7 +59643,7 @@
           "Description": "libiberty/rust-demangle.c in GNU GCC 11.2 allows stack consumption in demangle_const, as demonstrated by nm-new.",
           "Fingerprint": "sha256:7ea5d71eb700241ae4de6ae8fc9aac20b6917854d4df118e3c700070c7786a94",
           "InstalledVersion": "12.3.0-1ubuntu1~22.04.3",
-          "LastModifiedDate": "2026-10-08T19:16:56.007Z",
+          "LastModifiedDate": "2026-10-14T17:17:37.83Z",
           "Layer": {
             "DiffID": "sha256:8b37e10cbfe215bca8369e0250f3e6dd0c832c112b3e98b94473694d00a0f824",
             "Digest": "sha256:f807640896cd5f90197313e825b8765db7218e6ef79315aed53bf4ffc78f2423"
@@ -59016,6 +59658,7 @@
           "PublishedDate": "2022-03-26T13:15:07.9Z",
           "References": [
             "https://access.redhat.com/security/cve/CVE-2022-27943",
+            "https://cert-portal.siemens.com/productcert/html/ssa-398330.html",
             "https://gcc.gnu.org/bugzilla/show_bug.cgi?id=105039",
             "https://gcc.gnu.org/git/gitweb.cgi?p=gcc.git;h=1a770b01ef415e114164b6151d1e55acdee09371",
             "https://gcc.gnu.org/git/gitweb.cgi?p=gcc.git;h=9234cdca6ee88badfc00297e72f13dac4e540c79",
@@ -59037,6 +59680,104 @@
             "ubuntu": 1
           },
           "VulnerabilityID": "CVE-2022-27943"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-122"
+          ],
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "A heap-based buffer overflow flaw was found in Cyrus SASL. The add_to_challenge() function in the DIGEST-MD5 plugin computes the size of the buffer needed for a challenge/response field before DIGEST-MD5 quoting is applied, but does not recompute that size when quoting (escaping special characters) makes the value longer. The under-sized buffer is then passed to strcat(), causing a heap-based out-of-bounds write whose size depends on attacker-controlled input. A malicious or on-path DIGEST-MD5 (or HTTP Digest) server can trigger this flaw in a connecting client by supplying a crafted challenge field, such as realm or nonce, most likely resulting in a crash of the client application.",
+          "Fingerprint": "sha256:fdfea03ff8187f0353d1ed62a1754a86c2a251f6716c5b9585f224c5a54bf8be",
+          "InstalledVersion": "2.1.27+dfsg2-3ubuntu1.2",
+          "LastModifiedDate": "2026-10-10T03:17:05.307Z",
+          "Layer": {
+            "DiffID": "sha256:8b37e10cbfe215bca8369e0250f3e6dd0c832c112b3e98b94473694d00a0f824",
+            "Digest": "sha256:f807640896cd5f90197313e825b8765db7218e6ef79315aed53bf4ffc78f2423"
+          },
+          "PkgID": "libsasl2-2@2.1.27+dfsg2-3ubuntu1.2",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/libsasl2-2@2.1.27%2Bdfsg2-3ubuntu1.2?arch=amd64\u0026distro=ubuntu-22.04",
+            "UID": "73c7fcb56589dc7a"
+          },
+          "PkgName": "libsasl2-2",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-107161",
+          "PublishedDate": "2026-10-07T20:17:10.977Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/10/09/20",
+            "https://access.redhat.com/security/cve/CVE-2026-107161",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2460420",
+            "https://github.com/cyrusimap/cyrus-sasl/pull/892",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-107161",
+            "https://www.cve.org/CVERecord?id=CVE-2026-107161"
+          ],
+          "Severity": "MEDIUM",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "cyrus-sasl: Heap buffer overflow in cyrus-sasl add_to_challenge() allows malicious server to crash or compromise DIGEST-MD5 clients",
+          "VendorSeverity": {
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-107161"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-122"
+          ],
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "A heap-based buffer overflow flaw was found in Cyrus SASL. The add_to_challenge() function in the DIGEST-MD5 plugin computes the size of the buffer needed for a challenge/response field before DIGEST-MD5 quoting is applied, but does not recompute that size when quoting (escaping special characters) makes the value longer. The under-sized buffer is then passed to strcat(), causing a heap-based out-of-bounds write whose size depends on attacker-controlled input. A malicious or on-path DIGEST-MD5 (or HTTP Digest) server can trigger this flaw in a connecting client by supplying a crafted challenge field, such as realm or nonce, most likely resulting in a crash of the client application.",
+          "Fingerprint": "sha256:14fa736e105963d3a7450a49e0468e36872cfcd696f5f47ecdc98251fc188590",
+          "InstalledVersion": "2.1.27+dfsg2-3ubuntu1.2",
+          "LastModifiedDate": "2026-10-10T03:17:05.307Z",
+          "Layer": {
+            "DiffID": "sha256:8b37e10cbfe215bca8369e0250f3e6dd0c832c112b3e98b94473694d00a0f824",
+            "Digest": "sha256:f807640896cd5f90197313e825b8765db7218e6ef79315aed53bf4ffc78f2423"
+          },
+          "PkgID": "libsasl2-modules-db@2.1.27+dfsg2-3ubuntu1.2",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/libsasl2-modules-db@2.1.27%2Bdfsg2-3ubuntu1.2?arch=amd64\u0026distro=ubuntu-22.04",
+            "UID": "68d9eef0b6bbad95"
+          },
+          "PkgName": "libsasl2-modules-db",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-107161",
+          "PublishedDate": "2026-10-07T20:17:10.977Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/10/09/20",
+            "https://access.redhat.com/security/cve/CVE-2026-107161",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2460420",
+            "https://github.com/cyrusimap/cyrus-sasl/pull/892",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-107161",
+            "https://www.cve.org/CVERecord?id=CVE-2026-107161"
+          ],
+          "Severity": "MEDIUM",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "cyrus-sasl: Heap buffer overflow in cyrus-sasl add_to_challenge() allows malicious server to crash or compromise DIGEST-MD5 clients",
+          "VendorSeverity": {
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-107161"
         },
         {
           "CVSS": {
@@ -59769,7 +60510,7 @@
           "Description": "libiberty/rust-demangle.c in GNU GCC 11.2 allows stack consumption in demangle_const, as demonstrated by nm-new.",
           "Fingerprint": "sha256:e569f950c5a35887c349e52ff48d86534c4545572e12ca30b3487c7aecf4cfa8",
           "InstalledVersion": "12.3.0-1ubuntu1~22.04.3",
-          "LastModifiedDate": "2026-10-08T19:16:56.007Z",
+          "LastModifiedDate": "2026-10-14T17:17:37.83Z",
           "Layer": {
             "DiffID": "sha256:ea16cace89338c84eb6bcb91a7efdfcae6838fff359efe951858227436486c34",
             "Digest": "sha256:84ad5f3a28e133b7e3d79a5974fa2411b373762f03734f30c1c2b75fb05bcb40"
@@ -59784,6 +60525,7 @@
           "PublishedDate": "2022-03-26T13:15:07.9Z",
           "References": [
             "https://access.redhat.com/security/cve/CVE-2022-27943",
+            "https://cert-portal.siemens.com/productcert/html/ssa-398330.html",
             "https://gcc.gnu.org/bugzilla/show_bug.cgi?id=105039",
             "https://gcc.gnu.org/git/gitweb.cgi?p=gcc.git;h=1a770b01ef415e114164b6151d1e55acdee09371",
             "https://gcc.gnu.org/git/gitweb.cgi?p=gcc.git;h=9234cdca6ee88badfc00297e72f13dac4e540c79",
@@ -68204,7 +68946,7 @@
           "Fingerprint": "sha256:df6d24c1716eb2c4b155f4dfb739cd7d1478aa2cdd51bc35ca987fcce9ca3142",
           "FixedVersion": "2.9.13+dfsg-1ubuntu0.13",
           "InstalledVersion": "2.9.13+dfsg-1ubuntu0.12",
-          "LastModifiedDate": "2026-10-09T02:17:04.28Z",
+          "LastModifiedDate": "2026-10-14T19:17:20.15Z",
           "Layer": {
             "DiffID": "sha256:8b37e10cbfe215bca8369e0250f3e6dd0c832c112b3e98b94473694d00a0f824",
             "Digest": "sha256:f807640896cd5f90197313e825b8765db7218e6ef79315aed53bf4ffc78f2423"
@@ -68226,6 +68968,7 @@
             "https://access.redhat.com/errata/RHSA-2026:72475",
             "https://access.redhat.com/errata/RHSA-2026:72476",
             "https://access.redhat.com/errata/RHSA-2026:79357",
+            "https://access.redhat.com/errata/RHSA-2026:82939",
             "https://access.redhat.com/security/cve/CVE-2026-74860",
             "https://bugzilla.redhat.com/2528986",
             "https://bugzilla.redhat.com/2528987",
@@ -68555,7 +69298,7 @@
             "https://github.com/GNOME/libxml2/compare/v2.15.3...v2.15.4",
             "https://gitlab.gnome.org/GNOME/libxml2/-/work_items/1113",
             "https://linux.oracle.com/cve/CVE-2026-86142.html",
-            "https://linux.oracle.com/errata/ELSA-2026-71586.html",
+            "https://linux.oracle.com/errata/ELSA-2026-80675.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-86142",
             "https://ubuntu.com/security/notices/USN-8910-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-86142"
@@ -68569,7 +69312,7 @@
             "amazon": 2,
             "azure": 2,
             "nvd": 3,
-            "oracle-oval": 3,
+            "oracle-oval": 2,
             "photon": 3,
             "redhat": 2,
             "rocky": 3,
@@ -69656,7 +70399,7 @@
           "Description": "In Shadow 4.13, it is possible to inject control characters into fields provided to the SUID program chfn (change finger). Although it is not possible to exploit this directly (e.g., adding a new user fails because \\n is in the block list), it is possible to misrepresent the /etc/passwd file when viewed. Use of \\r manipulations and Unicode characters to work around blocking of the : character make it possible to give the impression that a new user has been added. In other words, an adversary may be able to convince a system administrator to take the system offline (an indirect, social-engineered denial of service) by demonstrating that \"cat /etc/passwd\" shows a rogue user account.",
           "Fingerprint": "sha256:d445be0770324c4a4c2af5f758f8cb23477fbde221d8db59ba64a676253ddca7",
           "InstalledVersion": "1:4.8.1-2ubuntu2.2",
-          "LastModifiedDate": "2026-06-17T05:49:57.01Z",
+          "LastModifiedDate": "2026-10-14T23:17:17.783Z",
           "Layer": {
             "DiffID": "sha256:ea16cace89338c84eb6bcb91a7efdfcae6838fff359efe951858227436486c34",
             "Digest": "sha256:84ad5f3a28e133b7e3d79a5974fa2411b373762f03734f30c1c2b75fb05bcb40"
@@ -69671,6 +70414,8 @@
           "PublishedDate": "2023-04-14T22:15:07.68Z",
           "References": [
             "https://access.redhat.com/security/cve/CVE-2023-29383",
+            "https://cert-portal.siemens.com/productcert/html/ssa-202008.html",
+            "https://cert-portal.siemens.com/productcert/html/ssa-398330.html",
             "https://github.com/shadow-maint/shadow/commit/e5905c4b84d4fb90aefcd96ee618411ebfac663d",
             "https://github.com/shadow-maint/shadow/pull/687",
             "https://lists.debian.org/debian-lts-announce/2025/04/msg00026.html",
@@ -70235,7 +70980,7 @@
           "Description": "In Shadow 4.13, it is possible to inject control characters into fields provided to the SUID program chfn (change finger). Although it is not possible to exploit this directly (e.g., adding a new user fails because \\n is in the block list), it is possible to misrepresent the /etc/passwd file when viewed. Use of \\r manipulations and Unicode characters to work around blocking of the : character make it possible to give the impression that a new user has been added. In other words, an adversary may be able to convince a system administrator to take the system offline (an indirect, social-engineered denial of service) by demonstrating that \"cat /etc/passwd\" shows a rogue user account.",
           "Fingerprint": "sha256:c20ebdce606e92c63c51d78d46192895e8abd953fdb8123506b388ecaaf6e203",
           "InstalledVersion": "1:4.8.1-2ubuntu2.2",
-          "LastModifiedDate": "2026-06-17T05:49:57.01Z",
+          "LastModifiedDate": "2026-10-14T23:17:17.783Z",
           "Layer": {
             "DiffID": "sha256:ea16cace89338c84eb6bcb91a7efdfcae6838fff359efe951858227436486c34",
             "Digest": "sha256:84ad5f3a28e133b7e3d79a5974fa2411b373762f03734f30c1c2b75fb05bcb40"
@@ -70250,6 +70995,8 @@
           "PublishedDate": "2023-04-14T22:15:07.68Z",
           "References": [
             "https://access.redhat.com/security/cve/CVE-2023-29383",
+            "https://cert-portal.siemens.com/productcert/html/ssa-202008.html",
+            "https://cert-portal.siemens.com/productcert/html/ssa-398330.html",
             "https://github.com/shadow-maint/shadow/commit/e5905c4b84d4fb90aefcd96ee618411ebfac663d",
             "https://github.com/shadow-maint/shadow/pull/687",
             "https://lists.debian.org/debian-lts-announce/2025/04/msg00026.html",
@@ -74785,9 +75532,11 @@
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:76744",
             "https://access.redhat.com/security/cve/CVE-2026-84445",
+            "https://bugzilla.redhat.com/2533175",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2533175",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-84445",
+            "https://errata.almalinux.org/9/ALSA-2026-76744.html",
             "https://errata.rockylinux.org/RLSA-2026:76744",
             "https://github.com/grpc/grpc-go",
             "https://github.com/grpc/grpc-go/commit/3822494d8ea03b992c089fd2a195f041762fffb7",
@@ -74811,6 +75560,7 @@
             "GHSA-2v4p-qf9q-27wj"
           ],
           "VendorSeverity": {
+            "alma": 3,
             "azure": 3,
             "ghsa": 3,
             "redhat": 3,
@@ -78267,7 +79017,7 @@
           ],
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 2,
+            "amazon": 4,
             "azure": 2,
             "bitnami": 2,
             "photon": 2,

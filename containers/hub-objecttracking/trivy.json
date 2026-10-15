@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:c3121c4cc66879c315121bb972e155e6396091817c1fe564b166323779e2fdd3",
   "ArtifactName": "ghcr.io/uug-ai/hub-objecttracking@sha256:5ab0adcb624c563bc21e04e9384a3c83dfcfe400dc96553b83dec828bbecd506",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-10-14T03:53:16.513337102Z",
+  "CreatedAt": "2026-10-15T03:53:17.497251305Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
@@ -492,7 +492,7 @@
     ],
     "Size": 3825029632
   },
-  "ReportID": "01a1388b-01e1-751d-ae28-f9e7cdaf2bbd",
+  "ReportID": "01a13db1-61b9-73cd-a016-e8495cae2baf",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -17681,15 +17681,19 @@
               "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
             }
           },
+          "CweIDs": [
+            "CWE-367"
+          ],
           "DataSource": {
             "ID": "ubuntu",
             "Name": "Ubuntu CVE Tracker",
             "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
           },
-          "Description": "When an /etc/fstab entry is configured with the user or users option, mount(8) validates the target path before performing the mount syscall, creating a Time-of-Check-Time-of-Use (TOCTOU) window. A local unprivileged user with write access to an ancestor directory of the mount target can swap that directory to redirect the mount to an arbitrary root-owned location, potentially escalating privileges to root.",
+          "Description": "util-linux is a random collection of Linux utilities. In util-linux 2.17 through 2.41.6 and 2.42 through 2.42.3, and in 2.42.4 when the legacy `mount(2)` path is used without `/proc`, restricted non-root `mount` requests validate an `/etc/fstab` target before the mount operation re-resolves that pathname. A local low-privileged user authorized by an fstab `user` or `users` entry whose target has an attacker-writable ancestor can use `renameat2(RENAME_EXCHANGE)` to swap a path component and redirect an authorized mount to a root-owned location, such as mounting attacker-controlled content over `/etc/sudoers.d`, and thereby gain root privileges. Versions 2.41.5 and 2.42.2 pin targets for the new mount API, and 2.42.4 pins legacy targets through `/proc/self/fd`; the documented legacy fallback without `/proc` remains affected.",
           "Fingerprint": "sha256:120b91b272e2c5f7fb1afeb1931d19ee861cd1989394ea18ab60d723ce1a09d4",
           "FixedVersion": "2.37.2-4ubuntu3.6",
           "InstalledVersion": "1:2.37.2-4ubuntu3.4",
+          "LastModifiedDate": "2026-10-14T15:17:20.41Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -17701,8 +17705,22 @@
           },
           "PkgName": "bsdutils",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-53613",
+          "PublishedDate": "2026-10-14T15:17:20.41Z",
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-53613",
+            "https://github.com/util-linux/util-linux/commit/0b010025a0e429bc80355c94db86a843395d49e2",
+            "https://github.com/util-linux/util-linux/commit/0d3d55975aa3492c62fd345eac38f41cd166c0b0",
+            "https://github.com/util-linux/util-linux/commit/2c773f336134acf016e639abb6f12ba7341fe4b8",
+            "https://github.com/util-linux/util-linux/commit/39fef62bf3226abb6bb018fa8750afa0327e84b4",
+            "https://github.com/util-linux/util-linux/commit/472cc3fb2d4d47cca7aab2e0b59eb3fb8a9359ec",
+            "https://github.com/util-linux/util-linux/commit/646fb66603d10a7ac337e14f566f1af48e3107c9",
+            "https://github.com/util-linux/util-linux/commit/708d1b3c51932dc5ba8082c7368187715e6a8d78",
+            "https://github.com/util-linux/util-linux/commit/78a860982e036f38fe9c0b3344998df5ac2c2ff5",
+            "https://github.com/util-linux/util-linux/commit/85d16b341f7232c9dbb4884b632e1e956584bee9",
+            "https://github.com/util-linux/util-linux/commit/a9508d216eb8977979102782672e0470cc9bf2a2",
+            "https://github.com/util-linux/util-linux/releases/tag/v2.41.5",
+            "https://github.com/util-linux/util-linux/releases/tag/v2.42.2",
+            "https://github.com/util-linux/util-linux/releases/tag/v2.42.4",
             "https://github.com/util-linux/util-linux/security/advisories/GHSA-8gj5-72r3-428g",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-53613",
             "https://ubuntu.com/security/notices/USN-8702-1",
@@ -17719,15 +17737,19 @@
           "VulnerabilityID": "CVE-2026-53613"
         },
         {
+          "CweIDs": [
+            "CWE-190"
+          ],
           "DataSource": {
             "ID": "ubuntu",
             "Name": "Ubuntu CVE Tracker",
             "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
           },
-          "Description": "[Integer Overflow or Wraparound in libblkid/src/partitions/dos.c]",
+          "Description": "util-linux is a random collection of Linux utilities. Before util-linux 2.41.4, `parse_dos_extended()` in `libblkid/src/partitions/dos.c` computes an extended-partition start sector with 32-bit addition and does not apply the extended-area bounds checks to the first two EBR entries. A local attacker who causes a crafted DOS extended-partition disk image or removable medium to be probed can wrap `cur_start + start` to sector zero and cause libblkid to report a false partition overlapping the MBR. This directly compromises the integrity of the reported partition metadata; disk modification or availability loss requires a separate downstream consumer to act on that metadata. This issue is fixed in 2.41.4.",
           "Fingerprint": "sha256:70545e70ad2c2f332bcc6babab8a08b387ce87fb13ec1ce19b781be20313c984",
           "FixedVersion": "2.37.2-4ubuntu3.6",
           "InstalledVersion": "1:2.37.2-4ubuntu3.4",
+          "LastModifiedDate": "2026-10-14T16:17:46.07Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -17739,7 +17761,12 @@
           },
           "PkgName": "bsdutils",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "PublishedDate": "2026-10-14T16:17:46.07Z",
           "References": [
+            "https://github.com/util-linux/util-linux/commit/05c2dbadf34cc74192287f377904afaaf4061623",
+            "https://github.com/util-linux/util-linux/commit/a2d858176b609ab5b8535021a3af9cd302d23d31",
+            "https://github.com/util-linux/util-linux/commit/e9d544d013267ea86b70ee8ff78abd280e6641af",
+            "https://github.com/util-linux/util-linux/releases/tag/v2.41.4",
             "https://github.com/util-linux/util-linux/security/advisories/GHSA-h4rw-gv36-wmp5",
             "https://ubuntu.com/security/notices/USN-8702-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-53615"
@@ -17747,7 +17774,7 @@
           "Severity": "MEDIUM",
           "SeveritySource": "ubuntu",
           "Status": "fixed",
-          "Title": "[Integer Overflow or Wraparound in libblkid/src/partitions/dos.c]",
+          "Title": "util-linux is a random collection of Linux utilities. Before util-linu ...",
           "VendorSeverity": {
             "amazon": 3,
             "ubuntu": 2
@@ -17773,7 +17800,7 @@
           "Fingerprint": "sha256:e21fdc5a818a4cc3ff1aaafa86d9abe41a88999763cc9a15e0251fbd156cfbef",
           "FixedVersion": "8.32-4.1ubuntu1.4",
           "InstalledVersion": "8.32-4.1ubuntu1.2",
-          "LastModifiedDate": "2026-09-29T01:16:43.143Z",
+          "LastModifiedDate": "2026-10-14T20:17:25.55Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -17802,6 +17829,13 @@
             "https://access.redhat.com/errata/RHSA-2026:58981",
             "https://access.redhat.com/errata/RHSA-2026:69964",
             "https://access.redhat.com/errata/RHSA-2026:72502",
+            "https://access.redhat.com/errata/RHSA-2026:82304",
+            "https://access.redhat.com/errata/RHSA-2026:82322",
+            "https://access.redhat.com/errata/RHSA-2026:82347",
+            "https://access.redhat.com/errata/RHSA-2026:82354",
+            "https://access.redhat.com/errata/RHSA-2026:82372",
+            "https://access.redhat.com/errata/RHSA-2026:82857",
+            "https://access.redhat.com/errata/RHSA-2026:82888",
             "https://access.redhat.com/security/cve/CVE-2025-5278",
             "https://bugzilla.redhat.com/2368764",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2368764",
@@ -21901,7 +21935,7 @@
           "Description": "libiberty/rust-demangle.c in GNU GCC 11.2 allows stack consumption in demangle_const, as demonstrated by nm-new.",
           "Fingerprint": "sha256:c82cfb324406df434011b25325fd710a9aaa4ed8dbd1ea117811da4f210a673f",
           "InstalledVersion": "12.3.0-1ubuntu1~22.04.3",
-          "LastModifiedDate": "2026-10-08T19:16:56.007Z",
+          "LastModifiedDate": "2026-10-14T17:17:37.83Z",
           "Layer": {
             "DiffID": "sha256:66a500ea707ec56d5f727cc5300b5353cd327ad5f036f95f509d3e9dfccb3cb4",
             "Digest": "sha256:f12134a4c747773870db269f5592853697dd1b563442b23dcbc47392c800b272"
@@ -21916,6 +21950,7 @@
           "PublishedDate": "2022-03-26T13:15:07.9Z",
           "References": [
             "https://access.redhat.com/security/cve/CVE-2022-27943",
+            "https://cert-portal.siemens.com/productcert/html/ssa-398330.html",
             "https://gcc.gnu.org/bugzilla/show_bug.cgi?id=105039",
             "https://gcc.gnu.org/git/gitweb.cgi?p=gcc.git;h=1a770b01ef415e114164b6151d1e55acdee09371",
             "https://gcc.gnu.org/git/gitweb.cgi?p=gcc.git;h=9234cdca6ee88badfc00297e72f13dac4e540c79",
@@ -43484,15 +43519,19 @@
               "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
             }
           },
+          "CweIDs": [
+            "CWE-367"
+          ],
           "DataSource": {
             "ID": "ubuntu",
             "Name": "Ubuntu CVE Tracker",
             "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
           },
-          "Description": "When an /etc/fstab entry is configured with the user or users option, mount(8) validates the target path before performing the mount syscall, creating a Time-of-Check-Time-of-Use (TOCTOU) window. A local unprivileged user with write access to an ancestor directory of the mount target can swap that directory to redirect the mount to an arbitrary root-owned location, potentially escalating privileges to root.",
+          "Description": "util-linux is a random collection of Linux utilities. In util-linux 2.17 through 2.41.6 and 2.42 through 2.42.3, and in 2.42.4 when the legacy `mount(2)` path is used without `/proc`, restricted non-root `mount` requests validate an `/etc/fstab` target before the mount operation re-resolves that pathname. A local low-privileged user authorized by an fstab `user` or `users` entry whose target has an attacker-writable ancestor can use `renameat2(RENAME_EXCHANGE)` to swap a path component and redirect an authorized mount to a root-owned location, such as mounting attacker-controlled content over `/etc/sudoers.d`, and thereby gain root privileges. Versions 2.41.5 and 2.42.2 pin targets for the new mount API, and 2.42.4 pins legacy targets through `/proc/self/fd`; the documented legacy fallback without `/proc` remains affected.",
           "Fingerprint": "sha256:4fdf6030c6cf391a512eec4419c1217e9ecd79fd4b0b5bb7943a4fbfe3eaf626",
           "FixedVersion": "2.37.2-4ubuntu3.6",
           "InstalledVersion": "2.37.2-4ubuntu3.4",
+          "LastModifiedDate": "2026-10-14T15:17:20.41Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -43504,8 +43543,22 @@
           },
           "PkgName": "libblkid1",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-53613",
+          "PublishedDate": "2026-10-14T15:17:20.41Z",
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-53613",
+            "https://github.com/util-linux/util-linux/commit/0b010025a0e429bc80355c94db86a843395d49e2",
+            "https://github.com/util-linux/util-linux/commit/0d3d55975aa3492c62fd345eac38f41cd166c0b0",
+            "https://github.com/util-linux/util-linux/commit/2c773f336134acf016e639abb6f12ba7341fe4b8",
+            "https://github.com/util-linux/util-linux/commit/39fef62bf3226abb6bb018fa8750afa0327e84b4",
+            "https://github.com/util-linux/util-linux/commit/472cc3fb2d4d47cca7aab2e0b59eb3fb8a9359ec",
+            "https://github.com/util-linux/util-linux/commit/646fb66603d10a7ac337e14f566f1af48e3107c9",
+            "https://github.com/util-linux/util-linux/commit/708d1b3c51932dc5ba8082c7368187715e6a8d78",
+            "https://github.com/util-linux/util-linux/commit/78a860982e036f38fe9c0b3344998df5ac2c2ff5",
+            "https://github.com/util-linux/util-linux/commit/85d16b341f7232c9dbb4884b632e1e956584bee9",
+            "https://github.com/util-linux/util-linux/commit/a9508d216eb8977979102782672e0470cc9bf2a2",
+            "https://github.com/util-linux/util-linux/releases/tag/v2.41.5",
+            "https://github.com/util-linux/util-linux/releases/tag/v2.42.2",
+            "https://github.com/util-linux/util-linux/releases/tag/v2.42.4",
             "https://github.com/util-linux/util-linux/security/advisories/GHSA-8gj5-72r3-428g",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-53613",
             "https://ubuntu.com/security/notices/USN-8702-1",
@@ -43522,15 +43575,19 @@
           "VulnerabilityID": "CVE-2026-53613"
         },
         {
+          "CweIDs": [
+            "CWE-190"
+          ],
           "DataSource": {
             "ID": "ubuntu",
             "Name": "Ubuntu CVE Tracker",
             "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
           },
-          "Description": "[Integer Overflow or Wraparound in libblkid/src/partitions/dos.c]",
+          "Description": "util-linux is a random collection of Linux utilities. Before util-linux 2.41.4, `parse_dos_extended()` in `libblkid/src/partitions/dos.c` computes an extended-partition start sector with 32-bit addition and does not apply the extended-area bounds checks to the first two EBR entries. A local attacker who causes a crafted DOS extended-partition disk image or removable medium to be probed can wrap `cur_start + start` to sector zero and cause libblkid to report a false partition overlapping the MBR. This directly compromises the integrity of the reported partition metadata; disk modification or availability loss requires a separate downstream consumer to act on that metadata. This issue is fixed in 2.41.4.",
           "Fingerprint": "sha256:dc04518a259a1ea086e3a747dd359f453725b71d3a194fbb762fa0b08c37a693",
           "FixedVersion": "2.37.2-4ubuntu3.6",
           "InstalledVersion": "2.37.2-4ubuntu3.4",
+          "LastModifiedDate": "2026-10-14T16:17:46.07Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -43542,7 +43599,12 @@
           },
           "PkgName": "libblkid1",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "PublishedDate": "2026-10-14T16:17:46.07Z",
           "References": [
+            "https://github.com/util-linux/util-linux/commit/05c2dbadf34cc74192287f377904afaaf4061623",
+            "https://github.com/util-linux/util-linux/commit/a2d858176b609ab5b8535021a3af9cd302d23d31",
+            "https://github.com/util-linux/util-linux/commit/e9d544d013267ea86b70ee8ff78abd280e6641af",
+            "https://github.com/util-linux/util-linux/releases/tag/v2.41.4",
             "https://github.com/util-linux/util-linux/security/advisories/GHSA-h4rw-gv36-wmp5",
             "https://ubuntu.com/security/notices/USN-8702-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-53615"
@@ -43550,7 +43612,7 @@
           "Severity": "MEDIUM",
           "SeveritySource": "ubuntu",
           "Status": "fixed",
-          "Title": "[Integer Overflow or Wraparound in libblkid/src/partitions/dos.c]",
+          "Title": "util-linux is a random collection of Linux utilities. Before util-linu ...",
           "VendorSeverity": {
             "amazon": 3,
             "ubuntu": 2
@@ -47376,7 +47438,7 @@
           "Fingerprint": "sha256:c6bc60bf060c652f7ef8acf0128de741f4c258db4c73492995fab41dc24088a2",
           "FixedVersion": "1:2.44-1ubuntu0.22.04.3",
           "InstalledVersion": "1:2.44-1ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-10-09T23:16:54.323Z",
+          "LastModifiedDate": "2026-10-14T20:17:46.487Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -47431,6 +47493,13 @@
             "https://access.redhat.com/errata/RHSA-2026:72502",
             "https://access.redhat.com/errata/RHSA-2026:74674",
             "https://access.redhat.com/errata/RHSA-2026:7473",
+            "https://access.redhat.com/errata/RHSA-2026:82304",
+            "https://access.redhat.com/errata/RHSA-2026:82322",
+            "https://access.redhat.com/errata/RHSA-2026:82347",
+            "https://access.redhat.com/errata/RHSA-2026:82354",
+            "https://access.redhat.com/errata/RHSA-2026:82372",
+            "https://access.redhat.com/errata/RHSA-2026:82857",
+            "https://access.redhat.com/errata/RHSA-2026:82888",
             "https://access.redhat.com/security/cve/CVE-2026-4878",
             "https://bugzilla.redhat.com/2451615",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2447554",
@@ -49112,7 +49181,7 @@
           "Description": "libiberty/rust-demangle.c in GNU GCC 11.2 allows stack consumption in demangle_const, as demonstrated by nm-new.",
           "Fingerprint": "sha256:049f1d3849a080aaf2479ee9d97d62adbbd23893efd4f7048c25bc5ce5b6db76",
           "InstalledVersion": "12.3.0-1ubuntu1~22.04.3",
-          "LastModifiedDate": "2026-10-08T19:16:56.007Z",
+          "LastModifiedDate": "2026-10-14T17:17:37.83Z",
           "Layer": {
             "DiffID": "sha256:66a500ea707ec56d5f727cc5300b5353cd327ad5f036f95f509d3e9dfccb3cb4",
             "Digest": "sha256:f12134a4c747773870db269f5592853697dd1b563442b23dcbc47392c800b272"
@@ -49127,6 +49196,7 @@
           "PublishedDate": "2022-03-26T13:15:07.9Z",
           "References": [
             "https://access.redhat.com/security/cve/CVE-2022-27943",
+            "https://cert-portal.siemens.com/productcert/html/ssa-398330.html",
             "https://gcc.gnu.org/bugzilla/show_bug.cgi?id=105039",
             "https://gcc.gnu.org/git/gitweb.cgi?p=gcc.git;h=1a770b01ef415e114164b6151d1e55acdee09371",
             "https://gcc.gnu.org/git/gitweb.cgi?p=gcc.git;h=9234cdca6ee88badfc00297e72f13dac4e540c79",
@@ -49315,7 +49385,7 @@
           "Description": "libiberty/rust-demangle.c in GNU GCC 11.2 allows stack consumption in demangle_const, as demonstrated by nm-new.",
           "Fingerprint": "sha256:ddc4b22ed05e31aa9a09ad422b7370f468afea912f1f462883221db00ac0ba59",
           "InstalledVersion": "12.3.0-1ubuntu1~22.04.3",
-          "LastModifiedDate": "2026-10-08T19:16:56.007Z",
+          "LastModifiedDate": "2026-10-14T17:17:37.83Z",
           "Layer": {
             "DiffID": "sha256:66a500ea707ec56d5f727cc5300b5353cd327ad5f036f95f509d3e9dfccb3cb4",
             "Digest": "sha256:f12134a4c747773870db269f5592853697dd1b563442b23dcbc47392c800b272"
@@ -49330,6 +49400,7 @@
           "PublishedDate": "2022-03-26T13:15:07.9Z",
           "References": [
             "https://access.redhat.com/security/cve/CVE-2022-27943",
+            "https://cert-portal.siemens.com/productcert/html/ssa-398330.html",
             "https://gcc.gnu.org/bugzilla/show_bug.cgi?id=105039",
             "https://gcc.gnu.org/git/gitweb.cgi?p=gcc.git;h=1a770b01ef415e114164b6151d1e55acdee09371",
             "https://gcc.gnu.org/git/gitweb.cgi?p=gcc.git;h=9234cdca6ee88badfc00297e72f13dac4e540c79",
@@ -49371,7 +49442,7 @@
           "Fingerprint": "sha256:caa4b81351e7be3e7914a5089456a072ec1fa6a55ae740f097b111c45f4e3ba0",
           "FixedVersion": "2.72.4-0ubuntu2.10",
           "InstalledVersion": "2.72.4-0ubuntu2.9",
-          "LastModifiedDate": "2026-10-13T09:17:17.96Z",
+          "LastModifiedDate": "2026-10-14T20:17:33.813Z",
           "Layer": {
             "DiffID": "sha256:66a500ea707ec56d5f727cc5300b5353cd327ad5f036f95f509d3e9dfccb3cb4",
             "Digest": "sha256:f12134a4c747773870db269f5592853697dd1b563442b23dcbc47392c800b272"
@@ -49449,6 +49520,17 @@
             "https://access.redhat.com/errata/RHSA-2026:82059",
             "https://access.redhat.com/errata/RHSA-2026:82061",
             "https://access.redhat.com/errata/RHSA-2026:82066",
+            "https://access.redhat.com/errata/RHSA-2026:82304",
+            "https://access.redhat.com/errata/RHSA-2026:82322",
+            "https://access.redhat.com/errata/RHSA-2026:82336",
+            "https://access.redhat.com/errata/RHSA-2026:82347",
+            "https://access.redhat.com/errata/RHSA-2026:82354",
+            "https://access.redhat.com/errata/RHSA-2026:82368",
+            "https://access.redhat.com/errata/RHSA-2026:82371",
+            "https://access.redhat.com/errata/RHSA-2026:82372",
+            "https://access.redhat.com/errata/RHSA-2026:82415",
+            "https://access.redhat.com/errata/RHSA-2026:82857",
+            "https://access.redhat.com/errata/RHSA-2026:82888",
             "https://access.redhat.com/security/cve/CVE-2026-15588",
             "https://bugzilla.redhat.com/2492243",
             "https://bugzilla.redhat.com/2492245",
@@ -49517,7 +49599,7 @@
           "Fingerprint": "sha256:4b35507512b4271858383af535df7af38e65ff63aacddbc2e854689088dd7eae",
           "FixedVersion": "2.72.4-0ubuntu2.10",
           "InstalledVersion": "2.72.4-0ubuntu2.9",
-          "LastModifiedDate": "2026-10-13T09:17:18.507Z",
+          "LastModifiedDate": "2026-10-14T20:17:34.41Z",
           "Layer": {
             "DiffID": "sha256:66a500ea707ec56d5f727cc5300b5353cd327ad5f036f95f509d3e9dfccb3cb4",
             "Digest": "sha256:f12134a4c747773870db269f5592853697dd1b563442b23dcbc47392c800b272"
@@ -49592,6 +49674,17 @@
             "https://access.redhat.com/errata/RHSA-2026:82059",
             "https://access.redhat.com/errata/RHSA-2026:82061",
             "https://access.redhat.com/errata/RHSA-2026:82066",
+            "https://access.redhat.com/errata/RHSA-2026:82304",
+            "https://access.redhat.com/errata/RHSA-2026:82322",
+            "https://access.redhat.com/errata/RHSA-2026:82336",
+            "https://access.redhat.com/errata/RHSA-2026:82347",
+            "https://access.redhat.com/errata/RHSA-2026:82354",
+            "https://access.redhat.com/errata/RHSA-2026:82368",
+            "https://access.redhat.com/errata/RHSA-2026:82371",
+            "https://access.redhat.com/errata/RHSA-2026:82372",
+            "https://access.redhat.com/errata/RHSA-2026:82415",
+            "https://access.redhat.com/errata/RHSA-2026:82857",
+            "https://access.redhat.com/errata/RHSA-2026:82888",
             "https://access.redhat.com/security/cve/CVE-2026-16118",
             "https://bugzilla.redhat.com/2501732",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2501732",
@@ -49648,7 +49741,7 @@
           "Fingerprint": "sha256:c97714362ccf3d5fa9c8c16d79fb07d3d7b69e01720d9e60f8075668a8bf939e",
           "FixedVersion": "2.72.4-0ubuntu2.10",
           "InstalledVersion": "2.72.4-0ubuntu2.9",
-          "LastModifiedDate": "2026-10-13T09:17:19Z",
+          "LastModifiedDate": "2026-10-14T20:17:50.933Z",
           "Layer": {
             "DiffID": "sha256:66a500ea707ec56d5f727cc5300b5353cd327ad5f036f95f509d3e9dfccb3cb4",
             "Digest": "sha256:f12134a4c747773870db269f5592853697dd1b563442b23dcbc47392c800b272"
@@ -49724,6 +49817,17 @@
             "https://access.redhat.com/errata/RHSA-2026:82059",
             "https://access.redhat.com/errata/RHSA-2026:82061",
             "https://access.redhat.com/errata/RHSA-2026:82066",
+            "https://access.redhat.com/errata/RHSA-2026:82304",
+            "https://access.redhat.com/errata/RHSA-2026:82322",
+            "https://access.redhat.com/errata/RHSA-2026:82336",
+            "https://access.redhat.com/errata/RHSA-2026:82347",
+            "https://access.redhat.com/errata/RHSA-2026:82354",
+            "https://access.redhat.com/errata/RHSA-2026:82368",
+            "https://access.redhat.com/errata/RHSA-2026:82371",
+            "https://access.redhat.com/errata/RHSA-2026:82372",
+            "https://access.redhat.com/errata/RHSA-2026:82415",
+            "https://access.redhat.com/errata/RHSA-2026:82857",
+            "https://access.redhat.com/errata/RHSA-2026:82888",
             "https://access.redhat.com/security/cve/CVE-2026-58010",
             "https://bugzilla.redhat.com/2492243",
             "https://bugzilla.redhat.com/2492245",
@@ -49802,7 +49906,7 @@
           "Fingerprint": "sha256:9dff0548a1543e9a3ae30527f465cf1defb4c3cfecc39b6e40d4e668d9bb3d9b",
           "FixedVersion": "2.72.4-0ubuntu2.10",
           "InstalledVersion": "2.72.4-0ubuntu2.9",
-          "LastModifiedDate": "2026-10-13T09:17:19.53Z",
+          "LastModifiedDate": "2026-10-14T20:17:51.567Z",
           "Layer": {
             "DiffID": "sha256:66a500ea707ec56d5f727cc5300b5353cd327ad5f036f95f509d3e9dfccb3cb4",
             "Digest": "sha256:f12134a4c747773870db269f5592853697dd1b563442b23dcbc47392c800b272"
@@ -49878,6 +49982,17 @@
             "https://access.redhat.com/errata/RHSA-2026:82059",
             "https://access.redhat.com/errata/RHSA-2026:82061",
             "https://access.redhat.com/errata/RHSA-2026:82066",
+            "https://access.redhat.com/errata/RHSA-2026:82304",
+            "https://access.redhat.com/errata/RHSA-2026:82322",
+            "https://access.redhat.com/errata/RHSA-2026:82336",
+            "https://access.redhat.com/errata/RHSA-2026:82347",
+            "https://access.redhat.com/errata/RHSA-2026:82354",
+            "https://access.redhat.com/errata/RHSA-2026:82368",
+            "https://access.redhat.com/errata/RHSA-2026:82371",
+            "https://access.redhat.com/errata/RHSA-2026:82372",
+            "https://access.redhat.com/errata/RHSA-2026:82415",
+            "https://access.redhat.com/errata/RHSA-2026:82857",
+            "https://access.redhat.com/errata/RHSA-2026:82888",
             "https://access.redhat.com/security/cve/CVE-2026-58011",
             "https://bugzilla.redhat.com/2492243",
             "https://bugzilla.redhat.com/2492245",
@@ -49957,7 +50072,7 @@
           "Fingerprint": "sha256:9a3a780158cc85c89f1a82befeb7c4f1b309f42366da349d2d69493ddaefbc5e",
           "FixedVersion": "2.72.4-0ubuntu2.10",
           "InstalledVersion": "2.72.4-0ubuntu2.9",
-          "LastModifiedDate": "2026-10-13T09:17:20.04Z",
+          "LastModifiedDate": "2026-10-14T20:17:52.147Z",
           "Layer": {
             "DiffID": "sha256:66a500ea707ec56d5f727cc5300b5353cd327ad5f036f95f509d3e9dfccb3cb4",
             "Digest": "sha256:f12134a4c747773870db269f5592853697dd1b563442b23dcbc47392c800b272"
@@ -50033,6 +50148,17 @@
             "https://access.redhat.com/errata/RHSA-2026:82059",
             "https://access.redhat.com/errata/RHSA-2026:82061",
             "https://access.redhat.com/errata/RHSA-2026:82066",
+            "https://access.redhat.com/errata/RHSA-2026:82304",
+            "https://access.redhat.com/errata/RHSA-2026:82322",
+            "https://access.redhat.com/errata/RHSA-2026:82336",
+            "https://access.redhat.com/errata/RHSA-2026:82347",
+            "https://access.redhat.com/errata/RHSA-2026:82354",
+            "https://access.redhat.com/errata/RHSA-2026:82368",
+            "https://access.redhat.com/errata/RHSA-2026:82371",
+            "https://access.redhat.com/errata/RHSA-2026:82372",
+            "https://access.redhat.com/errata/RHSA-2026:82415",
+            "https://access.redhat.com/errata/RHSA-2026:82857",
+            "https://access.redhat.com/errata/RHSA-2026:82888",
             "https://access.redhat.com/security/cve/CVE-2026-58012",
             "https://bugzilla.redhat.com/2492243",
             "https://bugzilla.redhat.com/2492245",
@@ -50111,7 +50237,7 @@
           "Fingerprint": "sha256:168428e6a58f431588f82d5539dcc07fce5d3b1486f0ea90610ee0d78eb2dbfd",
           "FixedVersion": "2.72.4-0ubuntu2.10",
           "InstalledVersion": "2.72.4-0ubuntu2.9",
-          "LastModifiedDate": "2026-10-13T09:17:20.547Z",
+          "LastModifiedDate": "2026-10-14T20:17:52.76Z",
           "Layer": {
             "DiffID": "sha256:66a500ea707ec56d5f727cc5300b5353cd327ad5f036f95f509d3e9dfccb3cb4",
             "Digest": "sha256:f12134a4c747773870db269f5592853697dd1b563442b23dcbc47392c800b272"
@@ -50187,6 +50313,17 @@
             "https://access.redhat.com/errata/RHSA-2026:82059",
             "https://access.redhat.com/errata/RHSA-2026:82061",
             "https://access.redhat.com/errata/RHSA-2026:82066",
+            "https://access.redhat.com/errata/RHSA-2026:82304",
+            "https://access.redhat.com/errata/RHSA-2026:82322",
+            "https://access.redhat.com/errata/RHSA-2026:82336",
+            "https://access.redhat.com/errata/RHSA-2026:82347",
+            "https://access.redhat.com/errata/RHSA-2026:82354",
+            "https://access.redhat.com/errata/RHSA-2026:82368",
+            "https://access.redhat.com/errata/RHSA-2026:82371",
+            "https://access.redhat.com/errata/RHSA-2026:82372",
+            "https://access.redhat.com/errata/RHSA-2026:82415",
+            "https://access.redhat.com/errata/RHSA-2026:82857",
+            "https://access.redhat.com/errata/RHSA-2026:82888",
             "https://access.redhat.com/security/cve/CVE-2026-58013",
             "https://bugzilla.redhat.com/2492243",
             "https://bugzilla.redhat.com/2492245",
@@ -50265,7 +50402,7 @@
           "Fingerprint": "sha256:7f3ad5ac1bc6b02a960cfa3105878fab51c4d2dcf95b595d7fae77f84547bb1b",
           "FixedVersion": "2.72.4-0ubuntu2.10",
           "InstalledVersion": "2.72.4-0ubuntu2.9",
-          "LastModifiedDate": "2026-10-13T09:17:21.047Z",
+          "LastModifiedDate": "2026-10-14T20:17:54.81Z",
           "Layer": {
             "DiffID": "sha256:66a500ea707ec56d5f727cc5300b5353cd327ad5f036f95f509d3e9dfccb3cb4",
             "Digest": "sha256:f12134a4c747773870db269f5592853697dd1b563442b23dcbc47392c800b272"
@@ -50346,6 +50483,17 @@
             "https://access.redhat.com/errata/RHSA-2026:82059",
             "https://access.redhat.com/errata/RHSA-2026:82061",
             "https://access.redhat.com/errata/RHSA-2026:82066",
+            "https://access.redhat.com/errata/RHSA-2026:82304",
+            "https://access.redhat.com/errata/RHSA-2026:82322",
+            "https://access.redhat.com/errata/RHSA-2026:82336",
+            "https://access.redhat.com/errata/RHSA-2026:82347",
+            "https://access.redhat.com/errata/RHSA-2026:82354",
+            "https://access.redhat.com/errata/RHSA-2026:82368",
+            "https://access.redhat.com/errata/RHSA-2026:82371",
+            "https://access.redhat.com/errata/RHSA-2026:82372",
+            "https://access.redhat.com/errata/RHSA-2026:82415",
+            "https://access.redhat.com/errata/RHSA-2026:82857",
+            "https://access.redhat.com/errata/RHSA-2026:82888",
             "https://access.redhat.com/security/cve/CVE-2026-58014",
             "https://bugzilla.redhat.com/2492243",
             "https://bugzilla.redhat.com/2492245",
@@ -50424,7 +50572,7 @@
           "Fingerprint": "sha256:5915ab1ae2d20bf9f7eda56477688a01bd65a12cc30bf77adfb71561bc74cc5f",
           "FixedVersion": "2.72.4-0ubuntu2.10",
           "InstalledVersion": "2.72.4-0ubuntu2.9",
-          "LastModifiedDate": "2026-10-13T09:17:21.583Z",
+          "LastModifiedDate": "2026-10-14T20:17:55.467Z",
           "Layer": {
             "DiffID": "sha256:66a500ea707ec56d5f727cc5300b5353cd327ad5f036f95f509d3e9dfccb3cb4",
             "Digest": "sha256:f12134a4c747773870db269f5592853697dd1b563442b23dcbc47392c800b272"
@@ -50503,6 +50651,17 @@
             "https://access.redhat.com/errata/RHSA-2026:82059",
             "https://access.redhat.com/errata/RHSA-2026:82061",
             "https://access.redhat.com/errata/RHSA-2026:82066",
+            "https://access.redhat.com/errata/RHSA-2026:82304",
+            "https://access.redhat.com/errata/RHSA-2026:82322",
+            "https://access.redhat.com/errata/RHSA-2026:82336",
+            "https://access.redhat.com/errata/RHSA-2026:82347",
+            "https://access.redhat.com/errata/RHSA-2026:82354",
+            "https://access.redhat.com/errata/RHSA-2026:82368",
+            "https://access.redhat.com/errata/RHSA-2026:82371",
+            "https://access.redhat.com/errata/RHSA-2026:82372",
+            "https://access.redhat.com/errata/RHSA-2026:82415",
+            "https://access.redhat.com/errata/RHSA-2026:82857",
+            "https://access.redhat.com/errata/RHSA-2026:82888",
             "https://access.redhat.com/security/cve/CVE-2026-58015",
             "https://bugzilla.redhat.com/2492243",
             "https://bugzilla.redhat.com/2492245",
@@ -50581,7 +50740,7 @@
           "Fingerprint": "sha256:f668eea85ed8e2111dc0d871bb25f59c5b1f7ebea25f92a7201acb391ee9e844",
           "FixedVersion": "2.72.4-0ubuntu2.10",
           "InstalledVersion": "2.72.4-0ubuntu2.9",
-          "LastModifiedDate": "2026-10-02T03:16:49.82Z",
+          "LastModifiedDate": "2026-10-14T20:17:56.057Z",
           "Layer": {
             "DiffID": "sha256:66a500ea707ec56d5f727cc5300b5353cd327ad5f036f95f509d3e9dfccb3cb4",
             "Digest": "sha256:f12134a4c747773870db269f5592853697dd1b563442b23dcbc47392c800b272"
@@ -50630,6 +50789,14 @@
             "https://access.redhat.com/errata/RHSA-2026:74462",
             "https://access.redhat.com/errata/RHSA-2026:74463",
             "https://access.redhat.com/errata/RHSA-2026:74674",
+            "https://access.redhat.com/errata/RHSA-2026:82304",
+            "https://access.redhat.com/errata/RHSA-2026:82322",
+            "https://access.redhat.com/errata/RHSA-2026:82336",
+            "https://access.redhat.com/errata/RHSA-2026:82347",
+            "https://access.redhat.com/errata/RHSA-2026:82354",
+            "https://access.redhat.com/errata/RHSA-2026:82372",
+            "https://access.redhat.com/errata/RHSA-2026:82857",
+            "https://access.redhat.com/errata/RHSA-2026:82888",
             "https://access.redhat.com/security/cve/CVE-2026-58016",
             "https://bugzilla.redhat.com/2492257",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492257",
@@ -50964,7 +51131,7 @@
           "Fingerprint": "sha256:d6ba2a4f09088a6f95b3a2f8b64c65f619769934a907f4568b38c4919be8dea8",
           "FixedVersion": "3.7.3-4ubuntu1.8",
           "InstalledVersion": "3.7.3-4ubuntu1.4",
-          "LastModifiedDate": "2026-09-01T12:17:17.5Z",
+          "LastModifiedDate": "2026-10-14T20:17:25.107Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -50999,6 +51166,10 @@
             "https://access.redhat.com/errata/RHSA-2026:7329",
             "https://access.redhat.com/errata/RHSA-2026:7335",
             "https://access.redhat.com/errata/RHSA-2026:7477",
+            "https://access.redhat.com/errata/RHSA-2026:82347",
+            "https://access.redhat.com/errata/RHSA-2026:82354",
+            "https://access.redhat.com/errata/RHSA-2026:82372",
+            "https://access.redhat.com/errata/RHSA-2026:82857",
             "https://access.redhat.com/errata/RHSA-2026:8746",
             "https://access.redhat.com/errata/RHSA-2026:8747",
             "https://access.redhat.com/errata/RHSA-2026:8748",
@@ -51413,7 +51584,7 @@
           "Fingerprint": "sha256:98f77a073f15dd692e3d854050d472a628b0192093289726ba2f6ba3a7896344",
           "FixedVersion": "3.7.3-4ubuntu1.9",
           "InstalledVersion": "3.7.3-4ubuntu1.4",
-          "LastModifiedDate": "2026-10-08T21:17:58.28Z",
+          "LastModifiedDate": "2026-10-14T20:17:36.257Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -51455,6 +51626,13 @@
             "https://access.redhat.com/errata/RHSA-2026:65839",
             "https://access.redhat.com/errata/RHSA-2026:72502",
             "https://access.redhat.com/errata/RHSA-2026:74674",
+            "https://access.redhat.com/errata/RHSA-2026:82304",
+            "https://access.redhat.com/errata/RHSA-2026:82322",
+            "https://access.redhat.com/errata/RHSA-2026:82347",
+            "https://access.redhat.com/errata/RHSA-2026:82354",
+            "https://access.redhat.com/errata/RHSA-2026:82372",
+            "https://access.redhat.com/errata/RHSA-2026:82857",
+            "https://access.redhat.com/errata/RHSA-2026:82888",
             "https://access.redhat.com/security/cve/CVE-2026-33845",
             "https://bugzilla.redhat.com/2445763",
             "https://bugzilla.redhat.com/2450624",
@@ -51536,7 +51714,7 @@
           "Fingerprint": "sha256:1b64ac3cb288223b51608d63853037b8be484d8a245e59ac885e4739b8433fc0",
           "FixedVersion": "3.7.3-4ubuntu1.9",
           "InstalledVersion": "3.7.3-4ubuntu1.4",
-          "LastModifiedDate": "2026-10-08T21:17:58.947Z",
+          "LastModifiedDate": "2026-10-14T20:17:36.97Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -51578,6 +51756,13 @@
             "https://access.redhat.com/errata/RHSA-2026:65839",
             "https://access.redhat.com/errata/RHSA-2026:72502",
             "https://access.redhat.com/errata/RHSA-2026:74674",
+            "https://access.redhat.com/errata/RHSA-2026:82304",
+            "https://access.redhat.com/errata/RHSA-2026:82322",
+            "https://access.redhat.com/errata/RHSA-2026:82347",
+            "https://access.redhat.com/errata/RHSA-2026:82354",
+            "https://access.redhat.com/errata/RHSA-2026:82372",
+            "https://access.redhat.com/errata/RHSA-2026:82857",
+            "https://access.redhat.com/errata/RHSA-2026:82888",
             "https://access.redhat.com/security/cve/CVE-2026-33846",
             "https://bugzilla.redhat.com/2445763",
             "https://bugzilla.redhat.com/2450624",
@@ -51658,7 +51843,7 @@
           "Fingerprint": "sha256:62862e9e098c4e0c687cb18319111627bccc4454ebb671f9eaf3adf0f501fc1b",
           "FixedVersion": "3.7.3-4ubuntu1.9",
           "InstalledVersion": "3.7.3-4ubuntu1.4",
-          "LastModifiedDate": "2026-09-29T01:16:47.74Z",
+          "LastModifiedDate": "2026-10-14T20:17:37.673Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -51680,6 +51865,13 @@
             "https://access.redhat.com/errata/RHSA-2026:29197",
             "https://access.redhat.com/errata/RHSA-2026:58981",
             "https://access.redhat.com/errata/RHSA-2026:72502",
+            "https://access.redhat.com/errata/RHSA-2026:82304",
+            "https://access.redhat.com/errata/RHSA-2026:82322",
+            "https://access.redhat.com/errata/RHSA-2026:82347",
+            "https://access.redhat.com/errata/RHSA-2026:82354",
+            "https://access.redhat.com/errata/RHSA-2026:82372",
+            "https://access.redhat.com/errata/RHSA-2026:82857",
+            "https://access.redhat.com/errata/RHSA-2026:82888",
             "https://access.redhat.com/security/cve/CVE-2026-3832",
             "https://bugzilla.redhat.com/2445763",
             "https://bugzilla.redhat.com/2450624",
@@ -51761,7 +51953,7 @@
           "Fingerprint": "sha256:0ef8a26e21b074f0891a8778a831313fe764d0ae41c9dcb2e4e6f746cda252b5",
           "FixedVersion": "3.7.3-4ubuntu1.9",
           "InstalledVersion": "3.7.3-4ubuntu1.4",
-          "LastModifiedDate": "2026-10-09T00:17:08.727Z",
+          "LastModifiedDate": "2026-10-14T20:17:37.933Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -51800,6 +51992,13 @@
             "https://access.redhat.com/errata/RHSA-2026:67857",
             "https://access.redhat.com/errata/RHSA-2026:72502",
             "https://access.redhat.com/errata/RHSA-2026:74674",
+            "https://access.redhat.com/errata/RHSA-2026:82304",
+            "https://access.redhat.com/errata/RHSA-2026:82322",
+            "https://access.redhat.com/errata/RHSA-2026:82347",
+            "https://access.redhat.com/errata/RHSA-2026:82354",
+            "https://access.redhat.com/errata/RHSA-2026:82372",
+            "https://access.redhat.com/errata/RHSA-2026:82857",
+            "https://access.redhat.com/errata/RHSA-2026:82888",
             "https://access.redhat.com/security/cve/CVE-2026-3833",
             "https://bugzilla.redhat.com/2445763",
             "https://bugzilla.redhat.com/2450624",
@@ -51880,7 +52079,7 @@
           "Fingerprint": "sha256:c99907711636033ca791393d514d99fb4a12838abc37ca07d08ff0d749129b95",
           "FixedVersion": "3.7.3-4ubuntu1.9",
           "InstalledVersion": "3.7.3-4ubuntu1.4",
-          "LastModifiedDate": "2026-10-13T01:16:43.113Z",
+          "LastModifiedDate": "2026-10-14T20:17:38.357Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -51925,6 +52124,13 @@
             "https://access.redhat.com/errata/RHSA-2026:65839",
             "https://access.redhat.com/errata/RHSA-2026:72502",
             "https://access.redhat.com/errata/RHSA-2026:74674",
+            "https://access.redhat.com/errata/RHSA-2026:82304",
+            "https://access.redhat.com/errata/RHSA-2026:82322",
+            "https://access.redhat.com/errata/RHSA-2026:82347",
+            "https://access.redhat.com/errata/RHSA-2026:82354",
+            "https://access.redhat.com/errata/RHSA-2026:82372",
+            "https://access.redhat.com/errata/RHSA-2026:82857",
+            "https://access.redhat.com/errata/RHSA-2026:82888",
             "https://access.redhat.com/security/cve/CVE-2026-42009",
             "https://bugzilla.redhat.com/2445763",
             "https://bugzilla.redhat.com/2450624",
@@ -52010,7 +52216,7 @@
           "Fingerprint": "sha256:9484defded9acec02327e17cbee6275c11a40bb62a038437e95ee59a4c6632cd",
           "FixedVersion": "3.7.3-4ubuntu1.9",
           "InstalledVersion": "3.7.3-4ubuntu1.4",
-          "LastModifiedDate": "2026-10-13T01:16:43.97Z",
+          "LastModifiedDate": "2026-10-14T20:17:39.123Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -52054,6 +52260,13 @@
             "https://access.redhat.com/errata/RHSA-2026:67857",
             "https://access.redhat.com/errata/RHSA-2026:72502",
             "https://access.redhat.com/errata/RHSA-2026:74674",
+            "https://access.redhat.com/errata/RHSA-2026:82304",
+            "https://access.redhat.com/errata/RHSA-2026:82322",
+            "https://access.redhat.com/errata/RHSA-2026:82347",
+            "https://access.redhat.com/errata/RHSA-2026:82354",
+            "https://access.redhat.com/errata/RHSA-2026:82372",
+            "https://access.redhat.com/errata/RHSA-2026:82857",
+            "https://access.redhat.com/errata/RHSA-2026:82888",
             "https://access.redhat.com/security/cve/CVE-2026-42010",
             "https://bugzilla.redhat.com/2445763",
             "https://bugzilla.redhat.com/2450624",
@@ -52135,7 +52348,7 @@
           "Fingerprint": "sha256:4db6a70c2971b52a908dc85031ae4a8e5db5b2ccc4ccd204a11f1db339fe5fff",
           "FixedVersion": "3.7.3-4ubuntu1.9",
           "InstalledVersion": "3.7.3-4ubuntu1.4",
-          "LastModifiedDate": "2026-10-10T00:17:04.007Z",
+          "LastModifiedDate": "2026-10-14T20:17:41.3Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -52171,6 +52384,13 @@
             "https://access.redhat.com/errata/RHSA-2026:60019",
             "https://access.redhat.com/errata/RHSA-2026:72502",
             "https://access.redhat.com/errata/RHSA-2026:74674",
+            "https://access.redhat.com/errata/RHSA-2026:82304",
+            "https://access.redhat.com/errata/RHSA-2026:82322",
+            "https://access.redhat.com/errata/RHSA-2026:82347",
+            "https://access.redhat.com/errata/RHSA-2026:82354",
+            "https://access.redhat.com/errata/RHSA-2026:82372",
+            "https://access.redhat.com/errata/RHSA-2026:82857",
+            "https://access.redhat.com/errata/RHSA-2026:82888",
             "https://access.redhat.com/security/cve/CVE-2026-42011",
             "https://bugzilla.redhat.com/2445763",
             "https://bugzilla.redhat.com/2450624",
@@ -52249,7 +52469,7 @@
           "Fingerprint": "sha256:3b18321b01d4ceb33b1532312cd888256ac2fff81e963b137dc59badc49a29e2",
           "FixedVersion": "3.7.3-4ubuntu1.9",
           "InstalledVersion": "3.7.3-4ubuntu1.4",
-          "LastModifiedDate": "2026-10-13T01:16:44.693Z",
+          "LastModifiedDate": "2026-10-14T20:17:42.55Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -52280,6 +52500,13 @@
             "https://access.redhat.com/errata/RHSA-2026:58981",
             "https://access.redhat.com/errata/RHSA-2026:72502",
             "https://access.redhat.com/errata/RHSA-2026:74674",
+            "https://access.redhat.com/errata/RHSA-2026:82304",
+            "https://access.redhat.com/errata/RHSA-2026:82322",
+            "https://access.redhat.com/errata/RHSA-2026:82347",
+            "https://access.redhat.com/errata/RHSA-2026:82354",
+            "https://access.redhat.com/errata/RHSA-2026:82372",
+            "https://access.redhat.com/errata/RHSA-2026:82857",
+            "https://access.redhat.com/errata/RHSA-2026:82888",
             "https://access.redhat.com/security/cve/CVE-2026-42012",
             "https://bugzilla.redhat.com/2445763",
             "https://bugzilla.redhat.com/2450624",
@@ -52358,7 +52585,7 @@
           "Fingerprint": "sha256:f96f33d583adcd93809f702ed9d427a08135ce386733d2c576d56cfd031497fb",
           "FixedVersion": "3.7.3-4ubuntu1.9",
           "InstalledVersion": "3.7.3-4ubuntu1.4",
-          "LastModifiedDate": "2026-10-13T01:16:45.06Z",
+          "LastModifiedDate": "2026-10-14T20:17:42.987Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -52394,6 +52621,13 @@
             "https://access.redhat.com/errata/RHSA-2026:60019",
             "https://access.redhat.com/errata/RHSA-2026:72502",
             "https://access.redhat.com/errata/RHSA-2026:74674",
+            "https://access.redhat.com/errata/RHSA-2026:82304",
+            "https://access.redhat.com/errata/RHSA-2026:82322",
+            "https://access.redhat.com/errata/RHSA-2026:82347",
+            "https://access.redhat.com/errata/RHSA-2026:82354",
+            "https://access.redhat.com/errata/RHSA-2026:82372",
+            "https://access.redhat.com/errata/RHSA-2026:82857",
+            "https://access.redhat.com/errata/RHSA-2026:82888",
             "https://access.redhat.com/security/cve/CVE-2026-42013",
             "https://bugzilla.redhat.com/2445763",
             "https://bugzilla.redhat.com/2450624",
@@ -52472,7 +52706,7 @@
           "Fingerprint": "sha256:60469bd781a581ebdb9fda0b93d66f887de8889d73453ba9c9bce593caf539dd",
           "FixedVersion": "3.7.3-4ubuntu1.9",
           "InstalledVersion": "3.7.3-4ubuntu1.4",
-          "LastModifiedDate": "2026-10-13T01:16:45.407Z",
+          "LastModifiedDate": "2026-10-14T20:17:43.41Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -52503,6 +52737,13 @@
             "https://access.redhat.com/errata/RHSA-2026:58981",
             "https://access.redhat.com/errata/RHSA-2026:72502",
             "https://access.redhat.com/errata/RHSA-2026:74674",
+            "https://access.redhat.com/errata/RHSA-2026:82304",
+            "https://access.redhat.com/errata/RHSA-2026:82322",
+            "https://access.redhat.com/errata/RHSA-2026:82347",
+            "https://access.redhat.com/errata/RHSA-2026:82354",
+            "https://access.redhat.com/errata/RHSA-2026:82372",
+            "https://access.redhat.com/errata/RHSA-2026:82857",
+            "https://access.redhat.com/errata/RHSA-2026:82888",
             "https://access.redhat.com/security/cve/CVE-2026-42014",
             "https://bugzilla.redhat.com/2445763",
             "https://bugzilla.redhat.com/2450624",
@@ -52582,7 +52823,7 @@
           "Fingerprint": "sha256:28682acdb2b5a50b6fc0553c1af89d5b27c51bb4dbfbfaf74aed2ae0a32c3e3f",
           "FixedVersion": "3.7.3-4ubuntu1.9",
           "InstalledVersion": "3.7.3-4ubuntu1.4",
-          "LastModifiedDate": "2026-10-13T01:16:45.75Z",
+          "LastModifiedDate": "2026-10-14T20:17:43.807Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -52613,6 +52854,13 @@
             "https://access.redhat.com/errata/RHSA-2026:58981",
             "https://access.redhat.com/errata/RHSA-2026:72502",
             "https://access.redhat.com/errata/RHSA-2026:74674",
+            "https://access.redhat.com/errata/RHSA-2026:82304",
+            "https://access.redhat.com/errata/RHSA-2026:82322",
+            "https://access.redhat.com/errata/RHSA-2026:82347",
+            "https://access.redhat.com/errata/RHSA-2026:82354",
+            "https://access.redhat.com/errata/RHSA-2026:82372",
+            "https://access.redhat.com/errata/RHSA-2026:82857",
+            "https://access.redhat.com/errata/RHSA-2026:82888",
             "https://access.redhat.com/security/cve/CVE-2026-42015",
             "https://bugzilla.redhat.com/2445763",
             "https://bugzilla.redhat.com/2450624",
@@ -52691,7 +52939,7 @@
           "Fingerprint": "sha256:b0051262bed19f29a671466d328aa9eaa0ff6a81d936a042bdb374c0c2417475",
           "FixedVersion": "3.7.3-4ubuntu1.9",
           "InstalledVersion": "3.7.3-4ubuntu1.4",
-          "LastModifiedDate": "2026-10-13T01:16:46.347Z",
+          "LastModifiedDate": "2026-10-14T20:17:57.027Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -52727,6 +52975,13 @@
             "https://access.redhat.com/errata/RHSA-2026:67837",
             "https://access.redhat.com/errata/RHSA-2026:72502",
             "https://access.redhat.com/errata/RHSA-2026:74674",
+            "https://access.redhat.com/errata/RHSA-2026:82304",
+            "https://access.redhat.com/errata/RHSA-2026:82322",
+            "https://access.redhat.com/errata/RHSA-2026:82347",
+            "https://access.redhat.com/errata/RHSA-2026:82354",
+            "https://access.redhat.com/errata/RHSA-2026:82372",
+            "https://access.redhat.com/errata/RHSA-2026:82857",
+            "https://access.redhat.com/errata/RHSA-2026:82888",
             "https://access.redhat.com/security/cve/CVE-2026-5260",
             "https://bugzilla.redhat.com/2445763",
             "https://bugzilla.redhat.com/2450624",
@@ -52805,7 +53060,7 @@
           "Fingerprint": "sha256:24038d512706616abff267c556733fb97eecbbaa2f28e704527479b91a377456",
           "FixedVersion": "3.7.3-4ubuntu1.8",
           "InstalledVersion": "3.7.3-4ubuntu1.4",
-          "LastModifiedDate": "2026-09-01T13:18:06.073Z",
+          "LastModifiedDate": "2026-10-14T20:17:26.56Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -52829,6 +53084,10 @@
             "https://access.redhat.com/errata/RHSA-2026:5606",
             "https://access.redhat.com/errata/RHSA-2026:7329",
             "https://access.redhat.com/errata/RHSA-2026:7477",
+            "https://access.redhat.com/errata/RHSA-2026:82347",
+            "https://access.redhat.com/errata/RHSA-2026:82354",
+            "https://access.redhat.com/errata/RHSA-2026:82372",
+            "https://access.redhat.com/errata/RHSA-2026:82857",
             "https://access.redhat.com/security/cve/CVE-2025-9820",
             "https://bugzilla.redhat.com/2392528",
             "https://bugzilla.redhat.com/2423177",
@@ -52889,7 +53148,7 @@
           "Description": "libiberty/rust-demangle.c in GNU GCC 11.2 allows stack consumption in demangle_const, as demonstrated by nm-new.",
           "Fingerprint": "sha256:379d38e27d5d945e69a3d59f9e6bfc359d09bf72a1bf62a8477623571bd50f80",
           "InstalledVersion": "12.3.0-1ubuntu1~22.04.3",
-          "LastModifiedDate": "2026-10-08T19:16:56.007Z",
+          "LastModifiedDate": "2026-10-14T17:17:37.83Z",
           "Layer": {
             "DiffID": "sha256:66a500ea707ec56d5f727cc5300b5353cd327ad5f036f95f509d3e9dfccb3cb4",
             "Digest": "sha256:f12134a4c747773870db269f5592853697dd1b563442b23dcbc47392c800b272"
@@ -52904,6 +53163,7 @@
           "PublishedDate": "2022-03-26T13:15:07.9Z",
           "References": [
             "https://access.redhat.com/security/cve/CVE-2022-27943",
+            "https://cert-portal.siemens.com/productcert/html/ssa-398330.html",
             "https://gcc.gnu.org/bugzilla/show_bug.cgi?id=105039",
             "https://gcc.gnu.org/git/gitweb.cgi?p=gcc.git;h=1a770b01ef415e114164b6151d1e55acdee09371",
             "https://gcc.gnu.org/git/gitweb.cgi?p=gcc.git;h=9234cdca6ee88badfc00297e72f13dac4e540c79",
@@ -57053,15 +57313,19 @@
               "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
             }
           },
+          "CweIDs": [
+            "CWE-367"
+          ],
           "DataSource": {
             "ID": "ubuntu",
             "Name": "Ubuntu CVE Tracker",
             "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
           },
-          "Description": "When an /etc/fstab entry is configured with the user or users option, mount(8) validates the target path before performing the mount syscall, creating a Time-of-Check-Time-of-Use (TOCTOU) window. A local unprivileged user with write access to an ancestor directory of the mount target can swap that directory to redirect the mount to an arbitrary root-owned location, potentially escalating privileges to root.",
+          "Description": "util-linux is a random collection of Linux utilities. In util-linux 2.17 through 2.41.6 and 2.42 through 2.42.3, and in 2.42.4 when the legacy `mount(2)` path is used without `/proc`, restricted non-root `mount` requests validate an `/etc/fstab` target before the mount operation re-resolves that pathname. A local low-privileged user authorized by an fstab `user` or `users` entry whose target has an attacker-writable ancestor can use `renameat2(RENAME_EXCHANGE)` to swap a path component and redirect an authorized mount to a root-owned location, such as mounting attacker-controlled content over `/etc/sudoers.d`, and thereby gain root privileges. Versions 2.41.5 and 2.42.2 pin targets for the new mount API, and 2.42.4 pins legacy targets through `/proc/self/fd`; the documented legacy fallback without `/proc` remains affected.",
           "Fingerprint": "sha256:e3d720c79fa37b53ad1e330de6f1cc1cd43133023f8dfdb862abf05def87f80f",
           "FixedVersion": "2.37.2-4ubuntu3.6",
           "InstalledVersion": "2.37.2-4ubuntu3.4",
+          "LastModifiedDate": "2026-10-14T15:17:20.41Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -57073,8 +57337,22 @@
           },
           "PkgName": "libmount1",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-53613",
+          "PublishedDate": "2026-10-14T15:17:20.41Z",
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-53613",
+            "https://github.com/util-linux/util-linux/commit/0b010025a0e429bc80355c94db86a843395d49e2",
+            "https://github.com/util-linux/util-linux/commit/0d3d55975aa3492c62fd345eac38f41cd166c0b0",
+            "https://github.com/util-linux/util-linux/commit/2c773f336134acf016e639abb6f12ba7341fe4b8",
+            "https://github.com/util-linux/util-linux/commit/39fef62bf3226abb6bb018fa8750afa0327e84b4",
+            "https://github.com/util-linux/util-linux/commit/472cc3fb2d4d47cca7aab2e0b59eb3fb8a9359ec",
+            "https://github.com/util-linux/util-linux/commit/646fb66603d10a7ac337e14f566f1af48e3107c9",
+            "https://github.com/util-linux/util-linux/commit/708d1b3c51932dc5ba8082c7368187715e6a8d78",
+            "https://github.com/util-linux/util-linux/commit/78a860982e036f38fe9c0b3344998df5ac2c2ff5",
+            "https://github.com/util-linux/util-linux/commit/85d16b341f7232c9dbb4884b632e1e956584bee9",
+            "https://github.com/util-linux/util-linux/commit/a9508d216eb8977979102782672e0470cc9bf2a2",
+            "https://github.com/util-linux/util-linux/releases/tag/v2.41.5",
+            "https://github.com/util-linux/util-linux/releases/tag/v2.42.2",
+            "https://github.com/util-linux/util-linux/releases/tag/v2.42.4",
             "https://github.com/util-linux/util-linux/security/advisories/GHSA-8gj5-72r3-428g",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-53613",
             "https://ubuntu.com/security/notices/USN-8702-1",
@@ -57091,15 +57369,19 @@
           "VulnerabilityID": "CVE-2026-53613"
         },
         {
+          "CweIDs": [
+            "CWE-190"
+          ],
           "DataSource": {
             "ID": "ubuntu",
             "Name": "Ubuntu CVE Tracker",
             "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
           },
-          "Description": "[Integer Overflow or Wraparound in libblkid/src/partitions/dos.c]",
+          "Description": "util-linux is a random collection of Linux utilities. Before util-linux 2.41.4, `parse_dos_extended()` in `libblkid/src/partitions/dos.c` computes an extended-partition start sector with 32-bit addition and does not apply the extended-area bounds checks to the first two EBR entries. A local attacker who causes a crafted DOS extended-partition disk image or removable medium to be probed can wrap `cur_start + start` to sector zero and cause libblkid to report a false partition overlapping the MBR. This directly compromises the integrity of the reported partition metadata; disk modification or availability loss requires a separate downstream consumer to act on that metadata. This issue is fixed in 2.41.4.",
           "Fingerprint": "sha256:e793a6bf918e0feb8a5723e360f7df104269908858881b8c39b5caeb6b592ed5",
           "FixedVersion": "2.37.2-4ubuntu3.6",
           "InstalledVersion": "2.37.2-4ubuntu3.4",
+          "LastModifiedDate": "2026-10-14T16:17:46.07Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -57111,7 +57393,12 @@
           },
           "PkgName": "libmount1",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "PublishedDate": "2026-10-14T16:17:46.07Z",
           "References": [
+            "https://github.com/util-linux/util-linux/commit/05c2dbadf34cc74192287f377904afaaf4061623",
+            "https://github.com/util-linux/util-linux/commit/a2d858176b609ab5b8535021a3af9cd302d23d31",
+            "https://github.com/util-linux/util-linux/commit/e9d544d013267ea86b70ee8ff78abd280e6641af",
+            "https://github.com/util-linux/util-linux/releases/tag/v2.41.4",
             "https://github.com/util-linux/util-linux/security/advisories/GHSA-h4rw-gv36-wmp5",
             "https://ubuntu.com/security/notices/USN-8702-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-53615"
@@ -57119,7 +57406,7 @@
           "Severity": "MEDIUM",
           "SeveritySource": "ubuntu",
           "Status": "fixed",
-          "Title": "[Integer Overflow or Wraparound in libblkid/src/partitions/dos.c]",
+          "Title": "util-linux is a random collection of Linux utilities. Before util-linu ...",
           "VendorSeverity": {
             "amazon": 3,
             "ubuntu": 2
@@ -57729,7 +58016,7 @@
           "Fingerprint": "sha256:a80bcf64b4b6535731406581ec09c8f0d72e04bda9fee611e223d3aed911e77f",
           "FixedVersion": "0.24.0-6ubuntu0.1",
           "InstalledVersion": "0.24.0-6build1",
-          "LastModifiedDate": "2026-10-12T21:17:14.327Z",
+          "LastModifiedDate": "2026-10-14T20:17:32.733Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -57759,6 +58046,14 @@
             "https://access.redhat.com/errata/RHSA-2026:72476",
             "https://access.redhat.com/errata/RHSA-2026:72502",
             "https://access.redhat.com/errata/RHSA-2026:81201",
+            "https://access.redhat.com/errata/RHSA-2026:82304",
+            "https://access.redhat.com/errata/RHSA-2026:82322",
+            "https://access.redhat.com/errata/RHSA-2026:82336",
+            "https://access.redhat.com/errata/RHSA-2026:82347",
+            "https://access.redhat.com/errata/RHSA-2026:82354",
+            "https://access.redhat.com/errata/RHSA-2026:82372",
+            "https://access.redhat.com/errata/RHSA-2026:82857",
+            "https://access.redhat.com/errata/RHSA-2026:82888",
             "https://access.redhat.com/security/cve/CVE-2026-13757",
             "https://bugzilla.redhat.com/2494556",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2494556",
@@ -58514,7 +58809,7 @@
             "https://errata.almalinux.org/9/ALSA-2026-81532.html",
             "https://github.com/PCRE2Project/pcre2/security/advisories/GHSA-r9hj-j2rw-4q3m",
             "https://linux.oracle.com/cve/CVE-2026-103111.html",
-            "https://linux.oracle.com/errata/ELSA-2026-81522.html",
+            "https://linux.oracle.com/errata/ELSA-2026-81613.html",
             "https://lists.debian.org/debian-lts-announce/2026/10/msg00008.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-103111",
             "https://www.cve.org/CVERecord?id=CVE-2026-103111"
@@ -58577,7 +58872,7 @@
             "https://github.com/PCRE2Project/pcre2/releases/tag/pcre2-10.48",
             "https://github.com/PCRE2Project/pcre2/security/advisories/GHSA-3r4p-g7gg-ppmf",
             "https://linux.oracle.com/cve/CVE-2026-86145.html",
-            "https://linux.oracle.com/errata/ELSA-2026-81522.html",
+            "https://linux.oracle.com/errata/ELSA-2026-81613.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-86145",
             "https://www.cve.org/CVERecord?id=CVE-2026-86145"
           ],
@@ -58643,7 +58938,7 @@
             "https://github.com/PCRE2Project/pcre2/releases/tag/pcre2-10.48",
             "https://github.com/PCRE2Project/pcre2/security/advisories/GHSA-2p8c-ff85-vh9x",
             "https://linux.oracle.com/cve/CVE-2026-89156.html",
-            "https://linux.oracle.com/errata/ELSA-2026-81522.html",
+            "https://linux.oracle.com/errata/ELSA-2026-81532.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-89156",
             "https://www.cve.org/CVERecord?id=CVE-2026-89156"
           ],
@@ -58710,7 +59005,7 @@
             "https://github.com/PCRE2Project/pcre2/releases/tag/pcre2-10.48",
             "https://github.com/PCRE2Project/pcre2/security/advisories/GHSA-q8g2-wprr-34m9",
             "https://linux.oracle.com/cve/CVE-2026-89157.html",
-            "https://linux.oracle.com/errata/ELSA-2026-81522.html",
+            "https://linux.oracle.com/errata/ELSA-2026-81613.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-89157",
             "https://www.cve.org/CVERecord?id=CVE-2026-89157"
           ],
@@ -58777,7 +59072,7 @@
             "https://github.com/PCRE2Project/pcre2/releases/tag/pcre2-10.48",
             "https://github.com/PCRE2Project/pcre2/security/advisories/GHSA-fmgr-6ggq-9859",
             "https://linux.oracle.com/cve/CVE-2026-89158.html",
-            "https://linux.oracle.com/errata/ELSA-2026-81522.html",
+            "https://linux.oracle.com/errata/ELSA-2026-81613.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-89158",
             "https://www.cve.org/CVERecord?id=CVE-2026-89158"
           ],
@@ -58844,7 +59139,7 @@
             "https://github.com/PCRE2Project/pcre2/releases/tag/pcre2-10.48",
             "https://github.com/PCRE2Project/pcre2/security/advisories/GHSA-9qww-pwc4-77qq",
             "https://linux.oracle.com/cve/CVE-2026-89160.html",
-            "https://linux.oracle.com/errata/ELSA-2026-81522.html",
+            "https://linux.oracle.com/errata/ELSA-2026-81532.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-89160",
             "https://www.cve.org/CVERecord?id=CVE-2026-89160"
           ],
@@ -58912,7 +59207,7 @@
             "https://github.com/PCRE2Project/pcre2/pull/937",
             "https://github.com/PCRE2Project/pcre2/releases/tag/pcre2-10.48",
             "https://linux.oracle.com/cve/CVE-2026-89161.html",
-            "https://linux.oracle.com/errata/ELSA-2026-81522.html",
+            "https://linux.oracle.com/errata/ELSA-2026-81532.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-89161",
             "https://www.cve.org/CVERecord?id=CVE-2026-89161"
           ],
@@ -62887,7 +63182,7 @@
           "Description": "libiberty/rust-demangle.c in GNU GCC 11.2 allows stack consumption in demangle_const, as demonstrated by nm-new.",
           "Fingerprint": "sha256:9c95f2c3cb940442a5afe551f6173896e9e824167c740bc098963dc1752d72de",
           "InstalledVersion": "12.3.0-1ubuntu1~22.04.3",
-          "LastModifiedDate": "2026-10-08T19:16:56.007Z",
+          "LastModifiedDate": "2026-10-14T17:17:37.83Z",
           "Layer": {
             "DiffID": "sha256:66a500ea707ec56d5f727cc5300b5353cd327ad5f036f95f509d3e9dfccb3cb4",
             "Digest": "sha256:f12134a4c747773870db269f5592853697dd1b563442b23dcbc47392c800b272"
@@ -62902,6 +63197,7 @@
           "PublishedDate": "2022-03-26T13:15:07.9Z",
           "References": [
             "https://access.redhat.com/security/cve/CVE-2022-27943",
+            "https://cert-portal.siemens.com/productcert/html/ssa-398330.html",
             "https://gcc.gnu.org/bugzilla/show_bug.cgi?id=105039",
             "https://gcc.gnu.org/git/gitweb.cgi?p=gcc.git;h=1a770b01ef415e114164b6151d1e55acdee09371",
             "https://gcc.gnu.org/git/gitweb.cgi?p=gcc.git;h=9234cdca6ee88badfc00297e72f13dac4e540c79",
@@ -62923,6 +63219,104 @@
             "ubuntu": 1
           },
           "VulnerabilityID": "CVE-2022-27943"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-122"
+          ],
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "A heap-based buffer overflow flaw was found in Cyrus SASL. The add_to_challenge() function in the DIGEST-MD5 plugin computes the size of the buffer needed for a challenge/response field before DIGEST-MD5 quoting is applied, but does not recompute that size when quoting (escaping special characters) makes the value longer. The under-sized buffer is then passed to strcat(), causing a heap-based out-of-bounds write whose size depends on attacker-controlled input. A malicious or on-path DIGEST-MD5 (or HTTP Digest) server can trigger this flaw in a connecting client by supplying a crafted challenge field, such as realm or nonce, most likely resulting in a crash of the client application.",
+          "Fingerprint": "sha256:95c4f2cc449e61b288ac023a9a7121db364e174af09a89da8bd121b5c1476e5e",
+          "InstalledVersion": "2.1.27+dfsg2-3ubuntu1.2",
+          "LastModifiedDate": "2026-10-10T03:17:05.307Z",
+          "Layer": {
+            "DiffID": "sha256:47654eeadbc543f1dd44ebb41c6ca0954b9f1813efabdcd46b0e7f17ac4e9fd1",
+            "Digest": "sha256:0d6448aff88945ea46a37cfe4330bdb0ada228268b80da6258a0fec63086f404"
+          },
+          "PkgID": "libsasl2-2@2.1.27+dfsg2-3ubuntu1.2",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/libsasl2-2@2.1.27%2Bdfsg2-3ubuntu1.2?arch=amd64\u0026distro=ubuntu-22.04",
+            "UID": "aeb3dca6d9fbe3b8"
+          },
+          "PkgName": "libsasl2-2",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-107161",
+          "PublishedDate": "2026-10-07T20:17:10.977Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/10/09/20",
+            "https://access.redhat.com/security/cve/CVE-2026-107161",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2460420",
+            "https://github.com/cyrusimap/cyrus-sasl/pull/892",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-107161",
+            "https://www.cve.org/CVERecord?id=CVE-2026-107161"
+          ],
+          "Severity": "MEDIUM",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "cyrus-sasl: Heap buffer overflow in cyrus-sasl add_to_challenge() allows malicious server to crash or compromise DIGEST-MD5 clients",
+          "VendorSeverity": {
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-107161"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-122"
+          ],
+          "DataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "Description": "A heap-based buffer overflow flaw was found in Cyrus SASL. The add_to_challenge() function in the DIGEST-MD5 plugin computes the size of the buffer needed for a challenge/response field before DIGEST-MD5 quoting is applied, but does not recompute that size when quoting (escaping special characters) makes the value longer. The under-sized buffer is then passed to strcat(), causing a heap-based out-of-bounds write whose size depends on attacker-controlled input. A malicious or on-path DIGEST-MD5 (or HTTP Digest) server can trigger this flaw in a connecting client by supplying a crafted challenge field, such as realm or nonce, most likely resulting in a crash of the client application.",
+          "Fingerprint": "sha256:56099d8058e8024dbab0b7de92ea3de7fd444425a57c5160cd08426be5953854",
+          "InstalledVersion": "2.1.27+dfsg2-3ubuntu1.2",
+          "LastModifiedDate": "2026-10-10T03:17:05.307Z",
+          "Layer": {
+            "DiffID": "sha256:47654eeadbc543f1dd44ebb41c6ca0954b9f1813efabdcd46b0e7f17ac4e9fd1",
+            "Digest": "sha256:0d6448aff88945ea46a37cfe4330bdb0ada228268b80da6258a0fec63086f404"
+          },
+          "PkgID": "libsasl2-modules-db@2.1.27+dfsg2-3ubuntu1.2",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/ubuntu/libsasl2-modules-db@2.1.27%2Bdfsg2-3ubuntu1.2?arch=amd64\u0026distro=ubuntu-22.04",
+            "UID": "3a2416b194a415dd"
+          },
+          "PkgName": "libsasl2-modules-db",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-107161",
+          "PublishedDate": "2026-10-07T20:17:10.977Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/10/09/20",
+            "https://access.redhat.com/security/cve/CVE-2026-107161",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2460420",
+            "https://github.com/cyrusimap/cyrus-sasl/pull/892",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-107161",
+            "https://www.cve.org/CVERecord?id=CVE-2026-107161"
+          ],
+          "Severity": "MEDIUM",
+          "SeveritySource": "ubuntu",
+          "Status": "affected",
+          "Title": "cyrus-sasl: Heap buffer overflow in cyrus-sasl add_to_challenge() allows malicious server to crash or compromise DIGEST-MD5 clients",
+          "VendorSeverity": {
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-107161"
         },
         {
           "CVSS": {
@@ -63120,15 +63514,19 @@
               "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
             }
           },
+          "CweIDs": [
+            "CWE-367"
+          ],
           "DataSource": {
             "ID": "ubuntu",
             "Name": "Ubuntu CVE Tracker",
             "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
           },
-          "Description": "When an /etc/fstab entry is configured with the user or users option, mount(8) validates the target path before performing the mount syscall, creating a Time-of-Check-Time-of-Use (TOCTOU) window. A local unprivileged user with write access to an ancestor directory of the mount target can swap that directory to redirect the mount to an arbitrary root-owned location, potentially escalating privileges to root.",
+          "Description": "util-linux is a random collection of Linux utilities. In util-linux 2.17 through 2.41.6 and 2.42 through 2.42.3, and in 2.42.4 when the legacy `mount(2)` path is used without `/proc`, restricted non-root `mount` requests validate an `/etc/fstab` target before the mount operation re-resolves that pathname. A local low-privileged user authorized by an fstab `user` or `users` entry whose target has an attacker-writable ancestor can use `renameat2(RENAME_EXCHANGE)` to swap a path component and redirect an authorized mount to a root-owned location, such as mounting attacker-controlled content over `/etc/sudoers.d`, and thereby gain root privileges. Versions 2.41.5 and 2.42.2 pin targets for the new mount API, and 2.42.4 pins legacy targets through `/proc/self/fd`; the documented legacy fallback without `/proc` remains affected.",
           "Fingerprint": "sha256:cc08ec787fbbf25ef692df45bc5704ad6f8c804fd00833d0df6538bb3f330e7e",
           "FixedVersion": "2.37.2-4ubuntu3.6",
           "InstalledVersion": "2.37.2-4ubuntu3.4",
+          "LastModifiedDate": "2026-10-14T15:17:20.41Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -63140,8 +63538,22 @@
           },
           "PkgName": "libsmartcols1",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-53613",
+          "PublishedDate": "2026-10-14T15:17:20.41Z",
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-53613",
+            "https://github.com/util-linux/util-linux/commit/0b010025a0e429bc80355c94db86a843395d49e2",
+            "https://github.com/util-linux/util-linux/commit/0d3d55975aa3492c62fd345eac38f41cd166c0b0",
+            "https://github.com/util-linux/util-linux/commit/2c773f336134acf016e639abb6f12ba7341fe4b8",
+            "https://github.com/util-linux/util-linux/commit/39fef62bf3226abb6bb018fa8750afa0327e84b4",
+            "https://github.com/util-linux/util-linux/commit/472cc3fb2d4d47cca7aab2e0b59eb3fb8a9359ec",
+            "https://github.com/util-linux/util-linux/commit/646fb66603d10a7ac337e14f566f1af48e3107c9",
+            "https://github.com/util-linux/util-linux/commit/708d1b3c51932dc5ba8082c7368187715e6a8d78",
+            "https://github.com/util-linux/util-linux/commit/78a860982e036f38fe9c0b3344998df5ac2c2ff5",
+            "https://github.com/util-linux/util-linux/commit/85d16b341f7232c9dbb4884b632e1e956584bee9",
+            "https://github.com/util-linux/util-linux/commit/a9508d216eb8977979102782672e0470cc9bf2a2",
+            "https://github.com/util-linux/util-linux/releases/tag/v2.41.5",
+            "https://github.com/util-linux/util-linux/releases/tag/v2.42.2",
+            "https://github.com/util-linux/util-linux/releases/tag/v2.42.4",
             "https://github.com/util-linux/util-linux/security/advisories/GHSA-8gj5-72r3-428g",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-53613",
             "https://ubuntu.com/security/notices/USN-8702-1",
@@ -63158,15 +63570,19 @@
           "VulnerabilityID": "CVE-2026-53613"
         },
         {
+          "CweIDs": [
+            "CWE-190"
+          ],
           "DataSource": {
             "ID": "ubuntu",
             "Name": "Ubuntu CVE Tracker",
             "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
           },
-          "Description": "[Integer Overflow or Wraparound in libblkid/src/partitions/dos.c]",
+          "Description": "util-linux is a random collection of Linux utilities. Before util-linux 2.41.4, `parse_dos_extended()` in `libblkid/src/partitions/dos.c` computes an extended-partition start sector with 32-bit addition and does not apply the extended-area bounds checks to the first two EBR entries. A local attacker who causes a crafted DOS extended-partition disk image or removable medium to be probed can wrap `cur_start + start` to sector zero and cause libblkid to report a false partition overlapping the MBR. This directly compromises the integrity of the reported partition metadata; disk modification or availability loss requires a separate downstream consumer to act on that metadata. This issue is fixed in 2.41.4.",
           "Fingerprint": "sha256:198c4b376d53152817b6b7d826879bf2fb8677b24be0dca51aa12b25a16297d8",
           "FixedVersion": "2.37.2-4ubuntu3.6",
           "InstalledVersion": "2.37.2-4ubuntu3.4",
+          "LastModifiedDate": "2026-10-14T16:17:46.07Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -63178,7 +63594,12 @@
           },
           "PkgName": "libsmartcols1",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "PublishedDate": "2026-10-14T16:17:46.07Z",
           "References": [
+            "https://github.com/util-linux/util-linux/commit/05c2dbadf34cc74192287f377904afaaf4061623",
+            "https://github.com/util-linux/util-linux/commit/a2d858176b609ab5b8535021a3af9cd302d23d31",
+            "https://github.com/util-linux/util-linux/commit/e9d544d013267ea86b70ee8ff78abd280e6641af",
+            "https://github.com/util-linux/util-linux/releases/tag/v2.41.4",
             "https://github.com/util-linux/util-linux/security/advisories/GHSA-h4rw-gv36-wmp5",
             "https://ubuntu.com/security/notices/USN-8702-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-53615"
@@ -63186,7 +63607,7 @@
           "Severity": "MEDIUM",
           "SeveritySource": "ubuntu",
           "Status": "fixed",
-          "Title": "[Integer Overflow or Wraparound in libblkid/src/partitions/dos.c]",
+          "Title": "util-linux is a random collection of Linux utilities. Before util-linu ...",
           "VendorSeverity": {
             "amazon": 3,
             "ubuntu": 2
@@ -68320,7 +68741,7 @@
           "Description": "libiberty/rust-demangle.c in GNU GCC 11.2 allows stack consumption in demangle_const, as demonstrated by nm-new.",
           "Fingerprint": "sha256:a1c202fff23cb7b164b05b05b68e491910325cc960f34f722dcc1ad4e49e7b65",
           "InstalledVersion": "12.3.0-1ubuntu1~22.04.3",
-          "LastModifiedDate": "2026-10-08T19:16:56.007Z",
+          "LastModifiedDate": "2026-10-14T17:17:37.83Z",
           "Layer": {
             "DiffID": "sha256:66a500ea707ec56d5f727cc5300b5353cd327ad5f036f95f509d3e9dfccb3cb4",
             "Digest": "sha256:f12134a4c747773870db269f5592853697dd1b563442b23dcbc47392c800b272"
@@ -68335,6 +68756,7 @@
           "PublishedDate": "2022-03-26T13:15:07.9Z",
           "References": [
             "https://access.redhat.com/security/cve/CVE-2022-27943",
+            "https://cert-portal.siemens.com/productcert/html/ssa-398330.html",
             "https://gcc.gnu.org/bugzilla/show_bug.cgi?id=105039",
             "https://gcc.gnu.org/git/gitweb.cgi?p=gcc.git;h=1a770b01ef415e114164b6151d1e55acdee09371",
             "https://gcc.gnu.org/git/gitweb.cgi?p=gcc.git;h=9234cdca6ee88badfc00297e72f13dac4e540c79",
@@ -76339,7 +76761,7 @@
           "Fingerprint": "sha256:c1f598ed104eb393a688d3b4d876cfb942e829ce8d1b4ba536e79da7bffd4d37",
           "FixedVersion": "249.11-0ubuntu3.21",
           "InstalledVersion": "249.11-0ubuntu3.12",
-          "LastModifiedDate": "2026-06-17T06:51:51.53Z",
+          "LastModifiedDate": "2026-10-14T23:17:21.197Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -76360,6 +76782,7 @@
             "https://bugzilla.redhat.com/2222672",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2222261",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2222672",
+            "https://cert-portal.siemens.com/productcert/html/ssa-794697.html",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-7008",
             "https://errata.almalinux.org/9/ALSA-2024-2463.html",
@@ -76620,7 +77043,7 @@
           "Fingerprint": "sha256:98a722751c5844532a73d47da30a6712d5ab438e81725490d3b24bd24a80f7e6",
           "FixedVersion": "4.18.0-4ubuntu0.2",
           "InstalledVersion": "4.18.0-4build1",
-          "LastModifiedDate": "2026-06-17T04:15:39.577Z",
+          "LastModifiedDate": "2026-10-14T13:17:13.013Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -76639,6 +77062,7 @@
             "https://bugs.gentoo.org/866237",
             "https://bugzilla.redhat.com/2140058",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2140058",
+            "https://cert-portal.siemens.com/productcert/html/ssa-398330.html",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-46848",
             "https://errata.almalinux.org/9/ALSA-2023-0343.html",
@@ -77287,7 +77711,7 @@
           "Fingerprint": "sha256:dcee04132b61379afb6ba087f09532e0cf76ceca74c6f04d63345316941cff44",
           "FixedVersion": "249.11-0ubuntu3.21",
           "InstalledVersion": "249.11-0ubuntu3.12",
-          "LastModifiedDate": "2026-06-17T06:51:51.53Z",
+          "LastModifiedDate": "2026-10-14T23:17:21.197Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -77308,6 +77732,7 @@
             "https://bugzilla.redhat.com/2222672",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2222261",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2222672",
+            "https://cert-portal.siemens.com/productcert/html/ssa-794697.html",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-7008",
             "https://errata.almalinux.org/9/ALSA-2024-2463.html",
@@ -77528,15 +77953,19 @@
               "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
             }
           },
+          "CweIDs": [
+            "CWE-367"
+          ],
           "DataSource": {
             "ID": "ubuntu",
             "Name": "Ubuntu CVE Tracker",
             "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
           },
-          "Description": "When an /etc/fstab entry is configured with the user or users option, mount(8) validates the target path before performing the mount syscall, creating a Time-of-Check-Time-of-Use (TOCTOU) window. A local unprivileged user with write access to an ancestor directory of the mount target can swap that directory to redirect the mount to an arbitrary root-owned location, potentially escalating privileges to root.",
+          "Description": "util-linux is a random collection of Linux utilities. In util-linux 2.17 through 2.41.6 and 2.42 through 2.42.3, and in 2.42.4 when the legacy `mount(2)` path is used without `/proc`, restricted non-root `mount` requests validate an `/etc/fstab` target before the mount operation re-resolves that pathname. A local low-privileged user authorized by an fstab `user` or `users` entry whose target has an attacker-writable ancestor can use `renameat2(RENAME_EXCHANGE)` to swap a path component and redirect an authorized mount to a root-owned location, such as mounting attacker-controlled content over `/etc/sudoers.d`, and thereby gain root privileges. Versions 2.41.5 and 2.42.2 pin targets for the new mount API, and 2.42.4 pins legacy targets through `/proc/self/fd`; the documented legacy fallback without `/proc` remains affected.",
           "Fingerprint": "sha256:01ce15913d07f0ee993fc2bf2a1cada35e7c2ca52e39860b8eb50166912b46dd",
           "FixedVersion": "2.37.2-4ubuntu3.6",
           "InstalledVersion": "2.37.2-4ubuntu3.4",
+          "LastModifiedDate": "2026-10-14T15:17:20.41Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -77548,8 +77977,22 @@
           },
           "PkgName": "libuuid1",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-53613",
+          "PublishedDate": "2026-10-14T15:17:20.41Z",
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-53613",
+            "https://github.com/util-linux/util-linux/commit/0b010025a0e429bc80355c94db86a843395d49e2",
+            "https://github.com/util-linux/util-linux/commit/0d3d55975aa3492c62fd345eac38f41cd166c0b0",
+            "https://github.com/util-linux/util-linux/commit/2c773f336134acf016e639abb6f12ba7341fe4b8",
+            "https://github.com/util-linux/util-linux/commit/39fef62bf3226abb6bb018fa8750afa0327e84b4",
+            "https://github.com/util-linux/util-linux/commit/472cc3fb2d4d47cca7aab2e0b59eb3fb8a9359ec",
+            "https://github.com/util-linux/util-linux/commit/646fb66603d10a7ac337e14f566f1af48e3107c9",
+            "https://github.com/util-linux/util-linux/commit/708d1b3c51932dc5ba8082c7368187715e6a8d78",
+            "https://github.com/util-linux/util-linux/commit/78a860982e036f38fe9c0b3344998df5ac2c2ff5",
+            "https://github.com/util-linux/util-linux/commit/85d16b341f7232c9dbb4884b632e1e956584bee9",
+            "https://github.com/util-linux/util-linux/commit/a9508d216eb8977979102782672e0470cc9bf2a2",
+            "https://github.com/util-linux/util-linux/releases/tag/v2.41.5",
+            "https://github.com/util-linux/util-linux/releases/tag/v2.42.2",
+            "https://github.com/util-linux/util-linux/releases/tag/v2.42.4",
             "https://github.com/util-linux/util-linux/security/advisories/GHSA-8gj5-72r3-428g",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-53613",
             "https://ubuntu.com/security/notices/USN-8702-1",
@@ -77566,15 +78009,19 @@
           "VulnerabilityID": "CVE-2026-53613"
         },
         {
+          "CweIDs": [
+            "CWE-190"
+          ],
           "DataSource": {
             "ID": "ubuntu",
             "Name": "Ubuntu CVE Tracker",
             "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
           },
-          "Description": "[Integer Overflow or Wraparound in libblkid/src/partitions/dos.c]",
+          "Description": "util-linux is a random collection of Linux utilities. Before util-linux 2.41.4, `parse_dos_extended()` in `libblkid/src/partitions/dos.c` computes an extended-partition start sector with 32-bit addition and does not apply the extended-area bounds checks to the first two EBR entries. A local attacker who causes a crafted DOS extended-partition disk image or removable medium to be probed can wrap `cur_start + start` to sector zero and cause libblkid to report a false partition overlapping the MBR. This directly compromises the integrity of the reported partition metadata; disk modification or availability loss requires a separate downstream consumer to act on that metadata. This issue is fixed in 2.41.4.",
           "Fingerprint": "sha256:c2df65e8070eb7e69469e616b649ac8af379247c40ed3325b3e92fdb18a1aa56",
           "FixedVersion": "2.37.2-4ubuntu3.6",
           "InstalledVersion": "2.37.2-4ubuntu3.4",
+          "LastModifiedDate": "2026-10-14T16:17:46.07Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -77586,7 +78033,12 @@
           },
           "PkgName": "libuuid1",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "PublishedDate": "2026-10-14T16:17:46.07Z",
           "References": [
+            "https://github.com/util-linux/util-linux/commit/05c2dbadf34cc74192287f377904afaaf4061623",
+            "https://github.com/util-linux/util-linux/commit/a2d858176b609ab5b8535021a3af9cd302d23d31",
+            "https://github.com/util-linux/util-linux/commit/e9d544d013267ea86b70ee8ff78abd280e6641af",
+            "https://github.com/util-linux/util-linux/releases/tag/v2.41.4",
             "https://github.com/util-linux/util-linux/security/advisories/GHSA-h4rw-gv36-wmp5",
             "https://ubuntu.com/security/notices/USN-8702-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-53615"
@@ -77594,7 +78046,7 @@
           "Severity": "MEDIUM",
           "SeveritySource": "ubuntu",
           "Status": "fixed",
-          "Title": "[Integer Overflow or Wraparound in libblkid/src/partitions/dos.c]",
+          "Title": "util-linux is a random collection of Linux utilities. Before util-linu ...",
           "VendorSeverity": {
             "amazon": 3,
             "ubuntu": 2
@@ -78258,7 +78710,7 @@
           "Fingerprint": "sha256:d8a27c931883ea32cf1d62adb0954451cf95efca22e1b272f3ca059b1bf9a368",
           "FixedVersion": "2.9.13+dfsg-1ubuntu0.13",
           "InstalledVersion": "2.9.13+dfsg-1ubuntu0.12",
-          "LastModifiedDate": "2026-10-09T02:17:04.28Z",
+          "LastModifiedDate": "2026-10-14T19:17:20.15Z",
           "Layer": {
             "DiffID": "sha256:66a500ea707ec56d5f727cc5300b5353cd327ad5f036f95f509d3e9dfccb3cb4",
             "Digest": "sha256:f12134a4c747773870db269f5592853697dd1b563442b23dcbc47392c800b272"
@@ -78280,6 +78732,7 @@
             "https://access.redhat.com/errata/RHSA-2026:72475",
             "https://access.redhat.com/errata/RHSA-2026:72476",
             "https://access.redhat.com/errata/RHSA-2026:79357",
+            "https://access.redhat.com/errata/RHSA-2026:82939",
             "https://access.redhat.com/security/cve/CVE-2026-74860",
             "https://bugzilla.redhat.com/2528986",
             "https://bugzilla.redhat.com/2528987",
@@ -78609,7 +79062,7 @@
             "https://github.com/GNOME/libxml2/compare/v2.15.3...v2.15.4",
             "https://gitlab.gnome.org/GNOME/libxml2/-/work_items/1113",
             "https://linux.oracle.com/cve/CVE-2026-86142.html",
-            "https://linux.oracle.com/errata/ELSA-2026-71586.html",
+            "https://linux.oracle.com/errata/ELSA-2026-80675.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-86142",
             "https://ubuntu.com/security/notices/USN-8910-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-86142"
@@ -78623,7 +79076,7 @@
             "amazon": 2,
             "azure": 2,
             "nvd": 3,
-            "oracle-oval": 3,
+            "oracle-oval": 2,
             "photon": 3,
             "redhat": 2,
             "rocky": 3,
@@ -79710,7 +80163,7 @@
           "Description": "In Shadow 4.13, it is possible to inject control characters into fields provided to the SUID program chfn (change finger). Although it is not possible to exploit this directly (e.g., adding a new user fails because \\n is in the block list), it is possible to misrepresent the /etc/passwd file when viewed. Use of \\r manipulations and Unicode characters to work around blocking of the : character make it possible to give the impression that a new user has been added. In other words, an adversary may be able to convince a system administrator to take the system offline (an indirect, social-engineered denial of service) by demonstrating that \"cat /etc/passwd\" shows a rogue user account.",
           "Fingerprint": "sha256:1246306ec01e590bf40616b088a1de546f6d19c2b0e10391f8d29326ebe8d256",
           "InstalledVersion": "1:4.8.1-2ubuntu2.2",
-          "LastModifiedDate": "2026-06-17T05:49:57.01Z",
+          "LastModifiedDate": "2026-10-14T23:17:17.783Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -79725,6 +80178,8 @@
           "PublishedDate": "2023-04-14T22:15:07.68Z",
           "References": [
             "https://access.redhat.com/security/cve/CVE-2023-29383",
+            "https://cert-portal.siemens.com/productcert/html/ssa-202008.html",
+            "https://cert-portal.siemens.com/productcert/html/ssa-398330.html",
             "https://github.com/shadow-maint/shadow/commit/e5905c4b84d4fb90aefcd96ee618411ebfac663d",
             "https://github.com/shadow-maint/shadow/pull/687",
             "https://lists.debian.org/debian-lts-announce/2025/04/msg00026.html",
@@ -79940,15 +80395,19 @@
               "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
             }
           },
+          "CweIDs": [
+            "CWE-367"
+          ],
           "DataSource": {
             "ID": "ubuntu",
             "Name": "Ubuntu CVE Tracker",
             "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
           },
-          "Description": "When an /etc/fstab entry is configured with the user or users option, mount(8) validates the target path before performing the mount syscall, creating a Time-of-Check-Time-of-Use (TOCTOU) window. A local unprivileged user with write access to an ancestor directory of the mount target can swap that directory to redirect the mount to an arbitrary root-owned location, potentially escalating privileges to root.",
+          "Description": "util-linux is a random collection of Linux utilities. In util-linux 2.17 through 2.41.6 and 2.42 through 2.42.3, and in 2.42.4 when the legacy `mount(2)` path is used without `/proc`, restricted non-root `mount` requests validate an `/etc/fstab` target before the mount operation re-resolves that pathname. A local low-privileged user authorized by an fstab `user` or `users` entry whose target has an attacker-writable ancestor can use `renameat2(RENAME_EXCHANGE)` to swap a path component and redirect an authorized mount to a root-owned location, such as mounting attacker-controlled content over `/etc/sudoers.d`, and thereby gain root privileges. Versions 2.41.5 and 2.42.2 pin targets for the new mount API, and 2.42.4 pins legacy targets through `/proc/self/fd`; the documented legacy fallback without `/proc` remains affected.",
           "Fingerprint": "sha256:6cf4bf1682de8252a32aa36bd624251ccc66986f9a3a7ffaef3476f666914037",
           "FixedVersion": "2.37.2-4ubuntu3.6",
           "InstalledVersion": "2.37.2-4ubuntu3.4",
+          "LastModifiedDate": "2026-10-14T15:17:20.41Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -79960,8 +80419,22 @@
           },
           "PkgName": "mount",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-53613",
+          "PublishedDate": "2026-10-14T15:17:20.41Z",
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-53613",
+            "https://github.com/util-linux/util-linux/commit/0b010025a0e429bc80355c94db86a843395d49e2",
+            "https://github.com/util-linux/util-linux/commit/0d3d55975aa3492c62fd345eac38f41cd166c0b0",
+            "https://github.com/util-linux/util-linux/commit/2c773f336134acf016e639abb6f12ba7341fe4b8",
+            "https://github.com/util-linux/util-linux/commit/39fef62bf3226abb6bb018fa8750afa0327e84b4",
+            "https://github.com/util-linux/util-linux/commit/472cc3fb2d4d47cca7aab2e0b59eb3fb8a9359ec",
+            "https://github.com/util-linux/util-linux/commit/646fb66603d10a7ac337e14f566f1af48e3107c9",
+            "https://github.com/util-linux/util-linux/commit/708d1b3c51932dc5ba8082c7368187715e6a8d78",
+            "https://github.com/util-linux/util-linux/commit/78a860982e036f38fe9c0b3344998df5ac2c2ff5",
+            "https://github.com/util-linux/util-linux/commit/85d16b341f7232c9dbb4884b632e1e956584bee9",
+            "https://github.com/util-linux/util-linux/commit/a9508d216eb8977979102782672e0470cc9bf2a2",
+            "https://github.com/util-linux/util-linux/releases/tag/v2.41.5",
+            "https://github.com/util-linux/util-linux/releases/tag/v2.42.2",
+            "https://github.com/util-linux/util-linux/releases/tag/v2.42.4",
             "https://github.com/util-linux/util-linux/security/advisories/GHSA-8gj5-72r3-428g",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-53613",
             "https://ubuntu.com/security/notices/USN-8702-1",
@@ -79978,15 +80451,19 @@
           "VulnerabilityID": "CVE-2026-53613"
         },
         {
+          "CweIDs": [
+            "CWE-190"
+          ],
           "DataSource": {
             "ID": "ubuntu",
             "Name": "Ubuntu CVE Tracker",
             "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
           },
-          "Description": "[Integer Overflow or Wraparound in libblkid/src/partitions/dos.c]",
+          "Description": "util-linux is a random collection of Linux utilities. Before util-linux 2.41.4, `parse_dos_extended()` in `libblkid/src/partitions/dos.c` computes an extended-partition start sector with 32-bit addition and does not apply the extended-area bounds checks to the first two EBR entries. A local attacker who causes a crafted DOS extended-partition disk image or removable medium to be probed can wrap `cur_start + start` to sector zero and cause libblkid to report a false partition overlapping the MBR. This directly compromises the integrity of the reported partition metadata; disk modification or availability loss requires a separate downstream consumer to act on that metadata. This issue is fixed in 2.41.4.",
           "Fingerprint": "sha256:c42a4ad278c68f35345103b1d603d6a792c28080743f41356b1ae8239a707030",
           "FixedVersion": "2.37.2-4ubuntu3.6",
           "InstalledVersion": "2.37.2-4ubuntu3.4",
+          "LastModifiedDate": "2026-10-14T16:17:46.07Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -79998,7 +80475,12 @@
           },
           "PkgName": "mount",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "PublishedDate": "2026-10-14T16:17:46.07Z",
           "References": [
+            "https://github.com/util-linux/util-linux/commit/05c2dbadf34cc74192287f377904afaaf4061623",
+            "https://github.com/util-linux/util-linux/commit/a2d858176b609ab5b8535021a3af9cd302d23d31",
+            "https://github.com/util-linux/util-linux/commit/e9d544d013267ea86b70ee8ff78abd280e6641af",
+            "https://github.com/util-linux/util-linux/releases/tag/v2.41.4",
             "https://github.com/util-linux/util-linux/security/advisories/GHSA-h4rw-gv36-wmp5",
             "https://ubuntu.com/security/notices/USN-8702-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-53615"
@@ -80006,7 +80488,7 @@
           "Severity": "MEDIUM",
           "SeveritySource": "ubuntu",
           "Status": "fixed",
-          "Title": "[Integer Overflow or Wraparound in libblkid/src/partitions/dos.c]",
+          "Title": "util-linux is a random collection of Linux utilities. Before util-linu ...",
           "VendorSeverity": {
             "amazon": 3,
             "ubuntu": 2
@@ -84807,7 +85289,7 @@
           "Description": "In Shadow 4.13, it is possible to inject control characters into fields provided to the SUID program chfn (change finger). Although it is not possible to exploit this directly (e.g., adding a new user fails because \\n is in the block list), it is possible to misrepresent the /etc/passwd file when viewed. Use of \\r manipulations and Unicode characters to work around blocking of the : character make it possible to give the impression that a new user has been added. In other words, an adversary may be able to convince a system administrator to take the system offline (an indirect, social-engineered denial of service) by demonstrating that \"cat /etc/passwd\" shows a rogue user account.",
           "Fingerprint": "sha256:0f0defd34a09fa7915340ddbebc16a8470ae245c1de4f742443d0c583fb19243",
           "InstalledVersion": "1:4.8.1-2ubuntu2.2",
-          "LastModifiedDate": "2026-06-17T05:49:57.01Z",
+          "LastModifiedDate": "2026-10-14T23:17:17.783Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -84822,6 +85304,8 @@
           "PublishedDate": "2023-04-14T22:15:07.68Z",
           "References": [
             "https://access.redhat.com/security/cve/CVE-2023-29383",
+            "https://cert-portal.siemens.com/productcert/html/ssa-202008.html",
+            "https://cert-portal.siemens.com/productcert/html/ssa-398330.html",
             "https://github.com/shadow-maint/shadow/commit/e5905c4b84d4fb90aefcd96ee618411ebfac663d",
             "https://github.com/shadow-maint/shadow/pull/687",
             "https://lists.debian.org/debian-lts-announce/2025/04/msg00026.html",
@@ -86042,15 +86526,19 @@
               "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
             }
           },
+          "CweIDs": [
+            "CWE-367"
+          ],
           "DataSource": {
             "ID": "ubuntu",
             "Name": "Ubuntu CVE Tracker",
             "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
           },
-          "Description": "When an /etc/fstab entry is configured with the user or users option, mount(8) validates the target path before performing the mount syscall, creating a Time-of-Check-Time-of-Use (TOCTOU) window. A local unprivileged user with write access to an ancestor directory of the mount target can swap that directory to redirect the mount to an arbitrary root-owned location, potentially escalating privileges to root.",
+          "Description": "util-linux is a random collection of Linux utilities. In util-linux 2.17 through 2.41.6 and 2.42 through 2.42.3, and in 2.42.4 when the legacy `mount(2)` path is used without `/proc`, restricted non-root `mount` requests validate an `/etc/fstab` target before the mount operation re-resolves that pathname. A local low-privileged user authorized by an fstab `user` or `users` entry whose target has an attacker-writable ancestor can use `renameat2(RENAME_EXCHANGE)` to swap a path component and redirect an authorized mount to a root-owned location, such as mounting attacker-controlled content over `/etc/sudoers.d`, and thereby gain root privileges. Versions 2.41.5 and 2.42.2 pin targets for the new mount API, and 2.42.4 pins legacy targets through `/proc/self/fd`; the documented legacy fallback without `/proc` remains affected.",
           "Fingerprint": "sha256:88d494f79add4c6613f19a1e48ba990f01c0bb5e71b94c4c5a2f626e985000d6",
           "FixedVersion": "2.37.2-4ubuntu3.6",
           "InstalledVersion": "2.37.2-4ubuntu3.4",
+          "LastModifiedDate": "2026-10-14T15:17:20.41Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -86062,8 +86550,22 @@
           },
           "PkgName": "util-linux",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-53613",
+          "PublishedDate": "2026-10-14T15:17:20.41Z",
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-53613",
+            "https://github.com/util-linux/util-linux/commit/0b010025a0e429bc80355c94db86a843395d49e2",
+            "https://github.com/util-linux/util-linux/commit/0d3d55975aa3492c62fd345eac38f41cd166c0b0",
+            "https://github.com/util-linux/util-linux/commit/2c773f336134acf016e639abb6f12ba7341fe4b8",
+            "https://github.com/util-linux/util-linux/commit/39fef62bf3226abb6bb018fa8750afa0327e84b4",
+            "https://github.com/util-linux/util-linux/commit/472cc3fb2d4d47cca7aab2e0b59eb3fb8a9359ec",
+            "https://github.com/util-linux/util-linux/commit/646fb66603d10a7ac337e14f566f1af48e3107c9",
+            "https://github.com/util-linux/util-linux/commit/708d1b3c51932dc5ba8082c7368187715e6a8d78",
+            "https://github.com/util-linux/util-linux/commit/78a860982e036f38fe9c0b3344998df5ac2c2ff5",
+            "https://github.com/util-linux/util-linux/commit/85d16b341f7232c9dbb4884b632e1e956584bee9",
+            "https://github.com/util-linux/util-linux/commit/a9508d216eb8977979102782672e0470cc9bf2a2",
+            "https://github.com/util-linux/util-linux/releases/tag/v2.41.5",
+            "https://github.com/util-linux/util-linux/releases/tag/v2.42.2",
+            "https://github.com/util-linux/util-linux/releases/tag/v2.42.4",
             "https://github.com/util-linux/util-linux/security/advisories/GHSA-8gj5-72r3-428g",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-53613",
             "https://ubuntu.com/security/notices/USN-8702-1",
@@ -86080,15 +86582,19 @@
           "VulnerabilityID": "CVE-2026-53613"
         },
         {
+          "CweIDs": [
+            "CWE-190"
+          ],
           "DataSource": {
             "ID": "ubuntu",
             "Name": "Ubuntu CVE Tracker",
             "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
           },
-          "Description": "[Integer Overflow or Wraparound in libblkid/src/partitions/dos.c]",
+          "Description": "util-linux is a random collection of Linux utilities. Before util-linux 2.41.4, `parse_dos_extended()` in `libblkid/src/partitions/dos.c` computes an extended-partition start sector with 32-bit addition and does not apply the extended-area bounds checks to the first two EBR entries. A local attacker who causes a crafted DOS extended-partition disk image or removable medium to be probed can wrap `cur_start + start` to sector zero and cause libblkid to report a false partition overlapping the MBR. This directly compromises the integrity of the reported partition metadata; disk modification or availability loss requires a separate downstream consumer to act on that metadata. This issue is fixed in 2.41.4.",
           "Fingerprint": "sha256:1ebcbb1dd87c550f43cccc4f42ddea3f7dcf1825e5d883d3b2fad706eabb8121",
           "FixedVersion": "2.37.2-4ubuntu3.6",
           "InstalledVersion": "2.37.2-4ubuntu3.4",
+          "LastModifiedDate": "2026-10-14T16:17:46.07Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -86100,7 +86606,12 @@
           },
           "PkgName": "util-linux",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "PublishedDate": "2026-10-14T16:17:46.07Z",
           "References": [
+            "https://github.com/util-linux/util-linux/commit/05c2dbadf34cc74192287f377904afaaf4061623",
+            "https://github.com/util-linux/util-linux/commit/a2d858176b609ab5b8535021a3af9cd302d23d31",
+            "https://github.com/util-linux/util-linux/commit/e9d544d013267ea86b70ee8ff78abd280e6641af",
+            "https://github.com/util-linux/util-linux/releases/tag/v2.41.4",
             "https://github.com/util-linux/util-linux/security/advisories/GHSA-h4rw-gv36-wmp5",
             "https://ubuntu.com/security/notices/USN-8702-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-53615"
@@ -86108,7 +86619,7 @@
           "Severity": "MEDIUM",
           "SeveritySource": "ubuntu",
           "Status": "fixed",
-          "Title": "[Integer Overflow or Wraparound in libblkid/src/partitions/dos.c]",
+          "Title": "util-linux is a random collection of Linux utilities. Before util-linu ...",
           "VendorSeverity": {
             "amazon": 3,
             "ubuntu": 2
@@ -90222,9 +90733,11 @@
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:76744",
             "https://access.redhat.com/security/cve/CVE-2026-84445",
+            "https://bugzilla.redhat.com/2533175",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2533175",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-84445",
+            "https://errata.almalinux.org/9/ALSA-2026-76744.html",
             "https://errata.rockylinux.org/RLSA-2026:76744",
             "https://github.com/grpc/grpc-go",
             "https://github.com/grpc/grpc-go/commit/3822494d8ea03b992c089fd2a195f041762fffb7",
@@ -90248,6 +90761,7 @@
             "GHSA-2v4p-qf9q-27wj"
           ],
           "VendorSeverity": {
+            "alma": 3,
             "azure": 3,
             "ghsa": 3,
             "redhat": 3,
@@ -93704,7 +94218,7 @@
           ],
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 2,
+            "amazon": 4,
             "azure": 2,
             "bitnami": 2,
             "photon": 2,
