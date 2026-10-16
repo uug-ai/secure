@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:7f8e11f17894403b4da1ba780c92067ec34cd026b1176e00c631f47c914feae1",
   "ArtifactName": "ghcr.io/uug-ai/hub-vlm@sha256:c85bd3b1aa0fd0b8405d1152ab5513a3ede48bcaa743e38688f6c6342e08525f",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-10-15T03:54:56.272686091Z",
+  "CreatedAt": "2026-10-16T03:55:11.542545208Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:74d97c428c51a828f9051a7a40a53ff1fc99e54fc30323ce36760701b0b7f711",
@@ -166,7 +166,7 @@
     ],
     "Size": 205033472
   },
-  "ReportID": "01a13db2-e390-7a72-aadd-6e3cf44cda27",
+  "ReportID": "01a142d9-7b36-784a-a947-4b390e2bfb00",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -8619,6 +8619,7 @@
             "https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-39821.json",
             "https://ubuntu.com/security/notices/USN-8416-1",
             "https://ubuntu.com/security/notices/USN-8883-1",
+            "https://ubuntu.com/security/notices/USN-8883-2",
             "https://ubuntu.com/security/notices/USN-8900-1",
             "https://ubuntu.com/security/notices/USN-8914-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-39821"
@@ -8732,6 +8733,7 @@
           "PublishedDate": "2026-10-08T23:17:04.01Z",
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-78669",
+            "https://github.com/golang/go/issues/81742",
             "https://go.dev/cl/847186",
             "https://go.dev/cl/847308",
             "https://go.dev/issue/81742",
@@ -8739,7 +8741,8 @@
             "https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-78669",
             "https://pkg.go.dev/vuln/GO-2026-6611",
-            "https://www.cve.org/CVERecord?id=CVE-2026-78669"
+            "https://www.cve.org/CVERecord?id=CVE-2026-78669",
+            "https://www.openwall.com/lists/oss-security/2026/10/08/9"
           ],
           "Severity": "HIGH",
           "Status": "fixed",
@@ -8748,7 +8751,8 @@
             "GO-2026-6611"
           ],
           "VendorSeverity": {
-            "redhat": 3
+            "redhat": 3,
+            "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-78669"
         },
@@ -8939,6 +8943,101 @@
           "VulnerabilityID": "CVE-2026-42506"
         },
         {
+          "CweIDs": [
+            "CWE-405"
+          ],
+          "DataSource": {
+            "ID": "govulndb",
+            "Name": "The Go Vulnerability Database",
+            "URL": "https://pkg.go.dev/vuln/"
+          },
+          "Description": "When \"Trailer\" headers are sent by a client, the HTTP server internally uses the header values to populate the Request.Trailer map passed to the server handler. Because Request.Trailer is a map, each entry incurs memory overhead. For HTTP/2 servers, a malicious client can exploit this by sending a \"Trailer\" header that declares a large number of fields, causing the server to allocate a disproportionate amount of memory while bypassing Server.MaxHeaderValueCount and Server.MaxHeaderBytes limits. This exploit is not applicable for HTTP/1 servers, which do not support multiplexing a large number of requests over one TCP connection, and whose Server.MaxHeaderBytes are calculated differently.",
+          "Fingerprint": "sha256:dd8dbdb1f80f459fdd64570380b529b310d08ddfde15f16b3ae1dc48e456ec41",
+          "FixedVersion": "0.60.0",
+          "InstalledVersion": "v0.54.0",
+          "LastModifiedDate": "2026-10-09T16:35:35.9Z",
+          "Layer": {
+            "DiffID": "sha256:aa8ae0eeaf0fb907b6f049f9e0473cf916cca673e496624143cadf8d1b622251",
+            "Digest": "sha256:90bf883dd299cd582e01759662529c42e5973fcddd6757d28b1b139ce50d42a4"
+          },
+          "PkgID": "golang.org/x/net@v0.54.0",
+          "PkgIdentifier": {
+            "PURL": "pkg:golang/golang.org/x/net@v0.54.0",
+            "UID": "79bf349aa03b78de"
+          },
+          "PkgName": "golang.org/x/net",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78659",
+          "PublishedDate": "2026-10-08T23:17:03.27Z",
+          "References": [
+            "https://github.com/golang/go/issues/81857",
+            "https://go.dev/cl/847185",
+            "https://go.dev/cl/847314",
+            "https://go.dev/issue/81857",
+            "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
+            "https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs",
+            "https://pkg.go.dev/vuln/GO-2026-6603",
+            "https://www.cve.org/CVERecord?id=CVE-2026-78659",
+            "https://www.openwall.com/lists/oss-security/2026/10/08/9"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "When \"Trailer\" headers are sent by a client, the HTTP server internall ...",
+          "VendorIDs": [
+            "GO-2026-6603"
+          ],
+          "VendorSeverity": {
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-78659"
+        },
+        {
+          "CweIDs": [
+            "CWE-444"
+          ],
+          "DataSource": {
+            "ID": "govulndb",
+            "Name": "The Go Vulnerability Database",
+            "URL": "https://pkg.go.dev/vuln/"
+          },
+          "Description": "Historically, we have been rather lax about malformed framing-related headers in our HTTP/2 implementation, as they cannot interfere with HTTP/2 framing. However, this makes it possible for our HTTP/2 implementation to forward responses containing such headers to an HTTP/1 client when acting as a reverse proxy. If the HTTP/1 client also does not behave strictly enough, this can result in response smuggling.",
+          "Fingerprint": "sha256:45c60a378b5a0e6edc7e5860b1c024c9ac13a789e762f99f7a5fb1de7f2076bc",
+          "FixedVersion": "0.60.0",
+          "InstalledVersion": "v0.54.0",
+          "LastModifiedDate": "2026-10-09T17:16:49.243Z",
+          "Layer": {
+            "DiffID": "sha256:aa8ae0eeaf0fb907b6f049f9e0473cf916cca673e496624143cadf8d1b622251",
+            "Digest": "sha256:90bf883dd299cd582e01759662529c42e5973fcddd6757d28b1b139ce50d42a4"
+          },
+          "PkgID": "golang.org/x/net@v0.54.0",
+          "PkgIdentifier": {
+            "PURL": "pkg:golang/golang.org/x/net@v0.54.0",
+            "UID": "79bf349aa03b78de"
+          },
+          "PkgName": "golang.org/x/net",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78660",
+          "PublishedDate": "2026-10-08T23:17:03.51Z",
+          "References": [
+            "https://github.com/golang/go/issues/81115",
+            "https://go.dev/cl/835145",
+            "https://go.dev/cl/836385",
+            "https://go.dev/issue/81115",
+            "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
+            "https://pkg.go.dev/vuln/GO-2026-6610",
+            "https://www.cve.org/CVERecord?id=CVE-2026-78660",
+            "https://www.openwall.com/lists/oss-security/2026/10/08/9"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "Historically, we have been rather lax about malformed framing-related  ...",
+          "VendorIDs": [
+            "GO-2026-6610"
+          ],
+          "VendorSeverity": {
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-78660"
+        },
+        {
           "CVSS": {
             "redhat": {
               "V3Score": 5.3,
@@ -8972,6 +9071,7 @@
           "PublishedDate": "2026-10-08T23:17:03.647Z",
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-78663",
+            "https://github.com/golang/go/issues/81743",
             "https://go.dev/cl/847187",
             "https://go.dev/cl/847310",
             "https://go.dev/issue/81743",
@@ -8979,7 +9079,8 @@
             "https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-78663",
             "https://pkg.go.dev/vuln/GO-2026-6612",
-            "https://www.cve.org/CVERecord?id=CVE-2026-78663"
+            "https://www.cve.org/CVERecord?id=CVE-2026-78663",
+            "https://www.openwall.com/lists/oss-security/2026/10/08/9"
           ],
           "Severity": "MEDIUM",
           "Status": "fixed",
@@ -8988,7 +9089,8 @@
             "GO-2026-6612"
           ],
           "VendorSeverity": {
-            "redhat": 2
+            "redhat": 2,
+            "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-78663"
         },
@@ -8999,6 +9101,9 @@
               "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
             }
           },
+          "CweIDs": [
+            "CWE-362"
+          ],
           "DataSource": {
             "ID": "govulndb",
             "Name": "The Go Vulnerability Database",
@@ -9008,7 +9113,7 @@
           "Fingerprint": "sha256:46273e4bb5faacdb487fb42b101d1b59036f6cdfa469fb4b1ddca76c9f06b377",
           "FixedVersion": "0.60.0",
           "InstalledVersion": "v0.54.0",
-          "LastModifiedDate": "2026-10-09T16:35:35.9Z",
+          "LastModifiedDate": "2026-10-15T16:18:24.967Z",
           "Layer": {
             "DiffID": "sha256:aa8ae0eeaf0fb907b6f049f9e0473cf916cca673e496624143cadf8d1b622251",
             "Digest": "sha256:90bf883dd299cd582e01759662529c42e5973fcddd6757d28b1b139ce50d42a4"
@@ -9042,89 +9147,6 @@
             "redhat": 2
           },
           "VulnerabilityID": "CVE-2026-97032"
-        },
-        {
-          "CweIDs": [
-            "CWE-405"
-          ],
-          "DataSource": {
-            "ID": "govulndb",
-            "Name": "The Go Vulnerability Database",
-            "URL": "https://pkg.go.dev/vuln/"
-          },
-          "Description": "When \"Trailer\" headers are sent by a client, the HTTP server internally uses the header values to populate the Request.Trailer map passed to the server handler. Because Request.Trailer is a map, each entry incurs memory overhead. For HTTP/2 servers, a malicious client can exploit this by sending a \"Trailer\" header that declares a large number of fields, causing the server to allocate a disproportionate amount of memory while bypassing Server.MaxHeaderValueCount and Server.MaxHeaderBytes limits. This exploit is not applicable for HTTP/1 servers, which do not support multiplexing a large number of requests over one TCP connection, and whose Server.MaxHeaderBytes are calculated differently.",
-          "Fingerprint": "sha256:dd8dbdb1f80f459fdd64570380b529b310d08ddfde15f16b3ae1dc48e456ec41",
-          "FixedVersion": "0.60.0",
-          "InstalledVersion": "v0.54.0",
-          "LastModifiedDate": "2026-10-09T16:35:35.9Z",
-          "Layer": {
-            "DiffID": "sha256:aa8ae0eeaf0fb907b6f049f9e0473cf916cca673e496624143cadf8d1b622251",
-            "Digest": "sha256:90bf883dd299cd582e01759662529c42e5973fcddd6757d28b1b139ce50d42a4"
-          },
-          "PkgID": "golang.org/x/net@v0.54.0",
-          "PkgIdentifier": {
-            "PURL": "pkg:golang/golang.org/x/net@v0.54.0",
-            "UID": "79bf349aa03b78de"
-          },
-          "PkgName": "golang.org/x/net",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78659",
-          "PublishedDate": "2026-10-08T23:17:03.27Z",
-          "References": [
-            "https://go.dev/cl/847185",
-            "https://go.dev/cl/847314",
-            "https://go.dev/issue/81857",
-            "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
-            "https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs",
-            "https://pkg.go.dev/vuln/GO-2026-6603"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "Title": "When \"Trailer\" headers are sent by a client, the HTTP server internall ...",
-          "VendorIDs": [
-            "GO-2026-6603"
-          ],
-          "VulnerabilityID": "CVE-2026-78659"
-        },
-        {
-          "CweIDs": [
-            "CWE-444"
-          ],
-          "DataSource": {
-            "ID": "govulndb",
-            "Name": "The Go Vulnerability Database",
-            "URL": "https://pkg.go.dev/vuln/"
-          },
-          "Description": "Historically, we have been rather lax about malformed framing-related headers in our HTTP/2 implementation, as they cannot interfere with HTTP/2 framing. However, this makes it possible for our HTTP/2 implementation to forward responses containing such headers to an HTTP/1 client when acting as a reverse proxy. If the HTTP/1 client also does not behave strictly enough, this can result in response smuggling.",
-          "Fingerprint": "sha256:45c60a378b5a0e6edc7e5860b1c024c9ac13a789e762f99f7a5fb1de7f2076bc",
-          "FixedVersion": "0.60.0",
-          "InstalledVersion": "v0.54.0",
-          "LastModifiedDate": "2026-10-09T17:16:49.243Z",
-          "Layer": {
-            "DiffID": "sha256:aa8ae0eeaf0fb907b6f049f9e0473cf916cca673e496624143cadf8d1b622251",
-            "Digest": "sha256:90bf883dd299cd582e01759662529c42e5973fcddd6757d28b1b139ce50d42a4"
-          },
-          "PkgID": "golang.org/x/net@v0.54.0",
-          "PkgIdentifier": {
-            "PURL": "pkg:golang/golang.org/x/net@v0.54.0",
-            "UID": "79bf349aa03b78de"
-          },
-          "PkgName": "golang.org/x/net",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78660",
-          "PublishedDate": "2026-10-08T23:17:03.51Z",
-          "References": [
-            "https://go.dev/cl/835145",
-            "https://go.dev/cl/836385",
-            "https://go.dev/issue/81115",
-            "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
-            "https://pkg.go.dev/vuln/GO-2026-6610"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "Title": "Historically, we have been rather lax about malformed framing-related  ...",
-          "VendorIDs": [
-            "GO-2026-6610"
-          ],
-          "VulnerabilityID": "CVE-2026-78660"
         },
         {
           "CVSS": {
@@ -9531,12 +9553,14 @@
           "PublishedDate": "2026-10-08T23:17:03.88Z",
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-78667",
+            "https://github.com/golang/go/issues/81858",
             "https://go.dev/cl/847309",
             "https://go.dev/issue/81858",
             "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-78667",
             "https://pkg.go.dev/vuln/GO-2026-6609",
-            "https://www.cve.org/CVERecord?id=CVE-2026-78667"
+            "https://www.cve.org/CVERecord?id=CVE-2026-78667",
+            "https://www.openwall.com/lists/oss-security/2026/10/08/9"
           ],
           "Severity": "HIGH",
           "Status": "fixed",
@@ -9545,7 +9569,8 @@
             "GO-2026-6609"
           ],
           "VendorSeverity": {
-            "redhat": 3
+            "redhat": 3,
+            "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-78667"
         },
@@ -9583,6 +9608,7 @@
           "PublishedDate": "2026-10-08T23:17:04.01Z",
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-78669",
+            "https://github.com/golang/go/issues/81742",
             "https://go.dev/cl/847186",
             "https://go.dev/cl/847308",
             "https://go.dev/issue/81742",
@@ -9590,7 +9616,8 @@
             "https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-78669",
             "https://pkg.go.dev/vuln/GO-2026-6611",
-            "https://www.cve.org/CVERecord?id=CVE-2026-78669"
+            "https://www.cve.org/CVERecord?id=CVE-2026-78669",
+            "https://www.openwall.com/lists/oss-security/2026/10/08/9"
           ],
           "Severity": "HIGH",
           "Status": "fixed",
@@ -9599,7 +9626,8 @@
             "GO-2026-6611"
           ],
           "VendorSeverity": {
-            "redhat": 3
+            "redhat": 3,
+            "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-78669"
         },
@@ -9689,12 +9717,14 @@
           "PublishedDate": "2026-10-08T23:17:01.62Z",
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-56866",
+            "https://github.com/golang/go/issues/81740",
             "https://go.dev/cl/847306",
             "https://go.dev/issue/81740",
             "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-56866",
             "https://pkg.go.dev/vuln/GO-2026-6605",
-            "https://www.cve.org/CVERecord?id=CVE-2026-56866"
+            "https://www.cve.org/CVERecord?id=CVE-2026-56866",
+            "https://www.openwall.com/lists/oss-security/2026/10/08/9"
           ],
           "Severity": "MEDIUM",
           "Status": "fixed",
@@ -9703,9 +9733,105 @@
             "GO-2026-6605"
           ],
           "VendorSeverity": {
-            "redhat": 2
+            "redhat": 2,
+            "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-56866"
+        },
+        {
+          "CweIDs": [
+            "CWE-405"
+          ],
+          "DataSource": {
+            "ID": "govulndb",
+            "Name": "The Go Vulnerability Database",
+            "URL": "https://pkg.go.dev/vuln/"
+          },
+          "Description": "When \"Trailer\" headers are sent by a client, the HTTP server internally uses the header values to populate the Request.Trailer map passed to the server handler. Because Request.Trailer is a map, each entry incurs memory overhead. For HTTP/2 servers, a malicious client can exploit this by sending a \"Trailer\" header that declares a large number of fields, causing the server to allocate a disproportionate amount of memory while bypassing Server.MaxHeaderValueCount and Server.MaxHeaderBytes limits. This exploit is not applicable for HTTP/1 servers, which do not support multiplexing a large number of requests over one TCP connection, and whose Server.MaxHeaderBytes are calculated differently.",
+          "Fingerprint": "sha256:3dc549c7b5adeb96f7fd75ffc775a195fdd6c8c7c566f7139ef6df72a5161c76",
+          "FixedVersion": "1.26.9, 1.27.2",
+          "InstalledVersion": "v1.25.14",
+          "LastModifiedDate": "2026-10-09T16:35:35.9Z",
+          "Layer": {
+            "DiffID": "sha256:aa8ae0eeaf0fb907b6f049f9e0473cf916cca673e496624143cadf8d1b622251",
+            "Digest": "sha256:90bf883dd299cd582e01759662529c42e5973fcddd6757d28b1b139ce50d42a4"
+          },
+          "PkgID": "stdlib@v1.25.14",
+          "PkgIdentifier": {
+            "PURL": "pkg:golang/stdlib@v1.25.14",
+            "UID": "26a62577c9e93629"
+          },
+          "PkgName": "stdlib",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78659",
+          "PublishedDate": "2026-10-08T23:17:03.27Z",
+          "References": [
+            "https://github.com/golang/go/issues/81857",
+            "https://go.dev/cl/847185",
+            "https://go.dev/cl/847314",
+            "https://go.dev/issue/81857",
+            "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
+            "https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs",
+            "https://pkg.go.dev/vuln/GO-2026-6603",
+            "https://www.cve.org/CVERecord?id=CVE-2026-78659",
+            "https://www.openwall.com/lists/oss-security/2026/10/08/9"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "When \"Trailer\" headers are sent by a client, the HTTP server internall ...",
+          "VendorIDs": [
+            "GO-2026-6603"
+          ],
+          "VendorSeverity": {
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-78659"
+        },
+        {
+          "CweIDs": [
+            "CWE-444"
+          ],
+          "DataSource": {
+            "ID": "govulndb",
+            "Name": "The Go Vulnerability Database",
+            "URL": "https://pkg.go.dev/vuln/"
+          },
+          "Description": "Historically, we have been rather lax about malformed framing-related headers in our HTTP/2 implementation, as they cannot interfere with HTTP/2 framing. However, this makes it possible for our HTTP/2 implementation to forward responses containing such headers to an HTTP/1 client when acting as a reverse proxy. If the HTTP/1 client also does not behave strictly enough, this can result in response smuggling.",
+          "Fingerprint": "sha256:d91de1f2427323ec5cb8f92a64a877e710d13bb353b4f859a212bed7ee0441c7",
+          "FixedVersion": "1.26.9, 1.27.2",
+          "InstalledVersion": "v1.25.14",
+          "LastModifiedDate": "2026-10-09T17:16:49.243Z",
+          "Layer": {
+            "DiffID": "sha256:aa8ae0eeaf0fb907b6f049f9e0473cf916cca673e496624143cadf8d1b622251",
+            "Digest": "sha256:90bf883dd299cd582e01759662529c42e5973fcddd6757d28b1b139ce50d42a4"
+          },
+          "PkgID": "stdlib@v1.25.14",
+          "PkgIdentifier": {
+            "PURL": "pkg:golang/stdlib@v1.25.14",
+            "UID": "26a62577c9e93629"
+          },
+          "PkgName": "stdlib",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78660",
+          "PublishedDate": "2026-10-08T23:17:03.51Z",
+          "References": [
+            "https://github.com/golang/go/issues/81115",
+            "https://go.dev/cl/835145",
+            "https://go.dev/cl/836385",
+            "https://go.dev/issue/81115",
+            "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
+            "https://pkg.go.dev/vuln/GO-2026-6610",
+            "https://www.cve.org/CVERecord?id=CVE-2026-78660",
+            "https://www.openwall.com/lists/oss-security/2026/10/08/9"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "Historically, we have been rather lax about malformed framing-related  ...",
+          "VendorIDs": [
+            "GO-2026-6610"
+          ],
+          "VendorSeverity": {
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-78660"
         },
         {
           "CVSS": {
@@ -9741,6 +9867,7 @@
           "PublishedDate": "2026-10-08T23:17:03.647Z",
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-78663",
+            "https://github.com/golang/go/issues/81743",
             "https://go.dev/cl/847187",
             "https://go.dev/cl/847310",
             "https://go.dev/issue/81743",
@@ -9748,7 +9875,8 @@
             "https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-78663",
             "https://pkg.go.dev/vuln/GO-2026-6612",
-            "https://www.cve.org/CVERecord?id=CVE-2026-78663"
+            "https://www.cve.org/CVERecord?id=CVE-2026-78663",
+            "https://www.openwall.com/lists/oss-security/2026/10/08/9"
           ],
           "Severity": "MEDIUM",
           "Status": "fixed",
@@ -9757,7 +9885,8 @@
             "GO-2026-6612"
           ],
           "VendorSeverity": {
-            "redhat": 2
+            "redhat": 2,
+            "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-78663"
         },
@@ -9795,12 +9924,14 @@
           "PublishedDate": "2026-10-08T23:17:04.76Z",
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-94439",
+            "https://github.com/golang/go/issues/81744",
             "https://go.dev/cl/847311",
             "https://go.dev/issue/81744",
             "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-94439",
             "https://pkg.go.dev/vuln/GO-2026-6613",
-            "https://www.cve.org/CVERecord?id=CVE-2026-94439"
+            "https://www.cve.org/CVERecord?id=CVE-2026-94439",
+            "https://www.openwall.com/lists/oss-security/2026/10/08/9"
           ],
           "Severity": "MEDIUM",
           "Status": "fixed",
@@ -9809,9 +9940,56 @@
             "GO-2026-6613"
           ],
           "VendorSeverity": {
-            "redhat": 2
+            "redhat": 2,
+            "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-94439"
+        },
+        {
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "DataSource": {
+            "ID": "govulndb",
+            "Name": "The Go Vulnerability Database",
+            "URL": "https://pkg.go.dev/vuln/"
+          },
+          "Description": "Parsing a multipart form can bypass memory limits and read an arbitrarily long line into memory when the remaining limit at the start of a part is less than 400 bytes.",
+          "Fingerprint": "sha256:986f030b06cf3581c5a11c1fe3ac2120e4cdcd95ee2d192e044b9d2f80dc12d2",
+          "FixedVersion": "1.26.9, 1.27.2",
+          "InstalledVersion": "v1.25.14",
+          "LastModifiedDate": "2026-10-09T17:16:50.907Z",
+          "Layer": {
+            "DiffID": "sha256:aa8ae0eeaf0fb907b6f049f9e0473cf916cca673e496624143cadf8d1b622251",
+            "Digest": "sha256:90bf883dd299cd582e01759662529c42e5973fcddd6757d28b1b139ce50d42a4"
+          },
+          "PkgID": "stdlib@v1.25.14",
+          "PkgIdentifier": {
+            "PURL": "pkg:golang/stdlib@v1.25.14",
+            "UID": "26a62577c9e93629"
+          },
+          "PkgName": "stdlib",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-94440",
+          "PublishedDate": "2026-10-08T23:17:04.917Z",
+          "References": [
+            "https://github.com/golang/go/issues/81741",
+            "https://go.dev/cl/847307",
+            "https://go.dev/issue/81741",
+            "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
+            "https://pkg.go.dev/vuln/GO-2026-6608",
+            "https://www.cve.org/CVERecord?id=CVE-2026-94440",
+            "https://www.openwall.com/lists/oss-security/2026/10/08/9"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "Parsing a multipart form can bypass memory limits and read an arbitrar ...",
+          "VendorIDs": [
+            "GO-2026-6608"
+          ],
+          "VendorSeverity": {
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-94440"
         },
         {
           "CVSS": {
@@ -9820,6 +9998,9 @@
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
             }
           },
+          "CweIDs": [
+            "CWE-79"
+          ],
           "DataSource": {
             "ID": "govulndb",
             "Name": "The Go Vulnerability Database",
@@ -9829,7 +10010,7 @@
           "Fingerprint": "sha256:f7620568b7f11f68023a75f1096231740b47bb952961a56e86e3c7a533aa46ad",
           "FixedVersion": "1.26.9, 1.27.2",
           "InstalledVersion": "v1.25.14",
-          "LastModifiedDate": "2026-10-09T16:35:35.9Z",
+          "LastModifiedDate": "2026-10-15T16:18:24.327Z",
           "Layer": {
             "DiffID": "sha256:aa8ae0eeaf0fb907b6f049f9e0473cf916cca673e496624143cadf8d1b622251",
             "Digest": "sha256:90bf883dd299cd582e01759662529c42e5973fcddd6757d28b1b139ce50d42a4"
@@ -9869,6 +10050,9 @@
               "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
             }
           },
+          "CweIDs": [
+            "CWE-362"
+          ],
           "DataSource": {
             "ID": "govulndb",
             "Name": "The Go Vulnerability Database",
@@ -9878,7 +10062,7 @@
           "Fingerprint": "sha256:c7834a2d6e4d1a1b1e31fcec37f71cb128ab7bb895a7c819a139caf701bc7234",
           "FixedVersion": "1.26.9, 1.27.2",
           "InstalledVersion": "v1.25.14",
-          "LastModifiedDate": "2026-10-09T16:35:35.9Z",
+          "LastModifiedDate": "2026-10-15T16:18:24.967Z",
           "Layer": {
             "DiffID": "sha256:aa8ae0eeaf0fb907b6f049f9e0473cf916cca673e496624143cadf8d1b622251",
             "Digest": "sha256:90bf883dd299cd582e01759662529c42e5973fcddd6757d28b1b139ce50d42a4"
@@ -9967,128 +10151,8 @@
         },
         {
           "CweIDs": [
-            "CWE-405"
+            "CWE-79"
           ],
-          "DataSource": {
-            "ID": "govulndb",
-            "Name": "The Go Vulnerability Database",
-            "URL": "https://pkg.go.dev/vuln/"
-          },
-          "Description": "When \"Trailer\" headers are sent by a client, the HTTP server internally uses the header values to populate the Request.Trailer map passed to the server handler. Because Request.Trailer is a map, each entry incurs memory overhead. For HTTP/2 servers, a malicious client can exploit this by sending a \"Trailer\" header that declares a large number of fields, causing the server to allocate a disproportionate amount of memory while bypassing Server.MaxHeaderValueCount and Server.MaxHeaderBytes limits. This exploit is not applicable for HTTP/1 servers, which do not support multiplexing a large number of requests over one TCP connection, and whose Server.MaxHeaderBytes are calculated differently.",
-          "Fingerprint": "sha256:3dc549c7b5adeb96f7fd75ffc775a195fdd6c8c7c566f7139ef6df72a5161c76",
-          "FixedVersion": "1.26.9, 1.27.2",
-          "InstalledVersion": "v1.25.14",
-          "LastModifiedDate": "2026-10-09T16:35:35.9Z",
-          "Layer": {
-            "DiffID": "sha256:aa8ae0eeaf0fb907b6f049f9e0473cf916cca673e496624143cadf8d1b622251",
-            "Digest": "sha256:90bf883dd299cd582e01759662529c42e5973fcddd6757d28b1b139ce50d42a4"
-          },
-          "PkgID": "stdlib@v1.25.14",
-          "PkgIdentifier": {
-            "PURL": "pkg:golang/stdlib@v1.25.14",
-            "UID": "26a62577c9e93629"
-          },
-          "PkgName": "stdlib",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78659",
-          "PublishedDate": "2026-10-08T23:17:03.27Z",
-          "References": [
-            "https://go.dev/cl/847185",
-            "https://go.dev/cl/847314",
-            "https://go.dev/issue/81857",
-            "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
-            "https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs",
-            "https://pkg.go.dev/vuln/GO-2026-6603"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "Title": "When \"Trailer\" headers are sent by a client, the HTTP server internall ...",
-          "VendorIDs": [
-            "GO-2026-6603"
-          ],
-          "VulnerabilityID": "CVE-2026-78659"
-        },
-        {
-          "CweIDs": [
-            "CWE-444"
-          ],
-          "DataSource": {
-            "ID": "govulndb",
-            "Name": "The Go Vulnerability Database",
-            "URL": "https://pkg.go.dev/vuln/"
-          },
-          "Description": "Historically, we have been rather lax about malformed framing-related headers in our HTTP/2 implementation, as they cannot interfere with HTTP/2 framing. However, this makes it possible for our HTTP/2 implementation to forward responses containing such headers to an HTTP/1 client when acting as a reverse proxy. If the HTTP/1 client also does not behave strictly enough, this can result in response smuggling.",
-          "Fingerprint": "sha256:d91de1f2427323ec5cb8f92a64a877e710d13bb353b4f859a212bed7ee0441c7",
-          "FixedVersion": "1.26.9, 1.27.2",
-          "InstalledVersion": "v1.25.14",
-          "LastModifiedDate": "2026-10-09T17:16:49.243Z",
-          "Layer": {
-            "DiffID": "sha256:aa8ae0eeaf0fb907b6f049f9e0473cf916cca673e496624143cadf8d1b622251",
-            "Digest": "sha256:90bf883dd299cd582e01759662529c42e5973fcddd6757d28b1b139ce50d42a4"
-          },
-          "PkgID": "stdlib@v1.25.14",
-          "PkgIdentifier": {
-            "PURL": "pkg:golang/stdlib@v1.25.14",
-            "UID": "26a62577c9e93629"
-          },
-          "PkgName": "stdlib",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78660",
-          "PublishedDate": "2026-10-08T23:17:03.51Z",
-          "References": [
-            "https://go.dev/cl/835145",
-            "https://go.dev/cl/836385",
-            "https://go.dev/issue/81115",
-            "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
-            "https://pkg.go.dev/vuln/GO-2026-6610"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "Title": "Historically, we have been rather lax about malformed framing-related  ...",
-          "VendorIDs": [
-            "GO-2026-6610"
-          ],
-          "VulnerabilityID": "CVE-2026-78660"
-        },
-        {
-          "CweIDs": [
-            "CWE-770"
-          ],
-          "DataSource": {
-            "ID": "govulndb",
-            "Name": "The Go Vulnerability Database",
-            "URL": "https://pkg.go.dev/vuln/"
-          },
-          "Description": "Parsing a multipart form can bypass memory limits and read an arbitrarily long line into memory when the remaining limit at the start of a part is less than 400 bytes.",
-          "Fingerprint": "sha256:986f030b06cf3581c5a11c1fe3ac2120e4cdcd95ee2d192e044b9d2f80dc12d2",
-          "FixedVersion": "1.26.9, 1.27.2",
-          "InstalledVersion": "v1.25.14",
-          "LastModifiedDate": "2026-10-09T17:16:50.907Z",
-          "Layer": {
-            "DiffID": "sha256:aa8ae0eeaf0fb907b6f049f9e0473cf916cca673e496624143cadf8d1b622251",
-            "Digest": "sha256:90bf883dd299cd582e01759662529c42e5973fcddd6757d28b1b139ce50d42a4"
-          },
-          "PkgID": "stdlib@v1.25.14",
-          "PkgIdentifier": {
-            "PURL": "pkg:golang/stdlib@v1.25.14",
-            "UID": "26a62577c9e93629"
-          },
-          "PkgName": "stdlib",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-94440",
-          "PublishedDate": "2026-10-08T23:17:04.917Z",
-          "References": [
-            "https://go.dev/cl/847307",
-            "https://go.dev/issue/81741",
-            "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
-            "https://pkg.go.dev/vuln/GO-2026-6608"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "Title": "Parsing a multipart form can bypass memory limits and read an arbitrar ...",
-          "VendorIDs": [
-            "GO-2026-6608"
-          ],
-          "VulnerabilityID": "CVE-2026-94440"
-        },
-        {
           "DataSource": {
             "ID": "govulndb",
             "Name": "The Go Vulnerability Database",
@@ -10098,7 +10162,7 @@
           "Fingerprint": "sha256:a30dd7a6c3d2265431b370c22db3143e2996ed8c457a6f23c58508494c2fd34f",
           "FixedVersion": "1.26.9, 1.27.2",
           "InstalledVersion": "v1.25.14",
-          "LastModifiedDate": "2026-10-09T16:35:35.9Z",
+          "LastModifiedDate": "2026-10-15T16:18:24.817Z",
           "Layer": {
             "DiffID": "sha256:aa8ae0eeaf0fb907b6f049f9e0473cf916cca673e496624143cadf8d1b622251",
             "Digest": "sha256:90bf883dd299cd582e01759662529c42e5973fcddd6757d28b1b139ce50d42a4"
