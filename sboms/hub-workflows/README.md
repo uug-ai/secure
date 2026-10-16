@@ -1,8 +1,8 @@
 # hub-workflows SBOM quality
 
-Collection status: `collected`; collected at `2026-10-15T02:37:02Z`.
+Collection status: `collected`; collected at `2026-10-16T02:36:12Z`.
 
-Overall quality: **Needs work**, **68/100** across **103 packages**.
+Overall quality: **Needs work**, **69/100** across **135 packages**.
 
 | Category | Field | Coverage | Points | Gap |
 | --- | --- | ---: | ---: | ---: |
@@ -12,7 +12,7 @@ Overall quality: **Needs work**, **68/100** across **103 packages**.
 | Identity | Versions | 100% | 10/10 | +0 |
 | Identity | PURLs | 100% | 10/10 | +0 |
 | Licensing | Declared licenses | 1% | 0/10 | +10 |
-| Licensing | Concluded licenses | 88% | 8/10 | +2 |
+| Licensing | Concluded licenses | 91% | 9/10 | +1 |
 | Provenance | Suppliers | 0% | 0/7 | +7 |
 | Provenance | Download locations | 1% | 0/8 | +8 |
 | Relationships | Document describes | 0% | 0/5 | +5 |
