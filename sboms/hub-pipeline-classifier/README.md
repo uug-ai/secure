@@ -1,6 +1,6 @@
 # hub-pipeline-classifier SBOM quality
 
-Collection status: `collected`; collected at `2026-10-16T02:36:12Z`.
+Collection status: `collected`; collected at `2026-10-17T02:35:19Z`.
 
 Overall quality: **Needs work**, **68/100** across **62 packages**.
 
