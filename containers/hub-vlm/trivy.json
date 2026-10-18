@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:7f8e11f17894403b4da1ba780c92067ec34cd026b1176e00c631f47c914feae1",
   "ArtifactName": "ghcr.io/uug-ai/hub-vlm@sha256:c85bd3b1aa0fd0b8405d1152ab5513a3ede48bcaa743e38688f6c6342e08525f",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-10-17T03:53:12.920524817Z",
+  "CreatedAt": "2026-10-18T03:54:03.226137046Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:74d97c428c51a828f9051a7a40a53ff1fc99e54fc30323ce36760701b0b7f711",
@@ -166,7 +166,7 @@
     ],
     "Size": 205033472
   },
-  "ReportID": "01a147fe-07d8-77fd-8e08-b104f427b355",
+  "ReportID": "01a14d25-285a-7212-a2eb-217f3ecaa41e",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -5270,6 +5270,106 @@
       "Type": "alpine",
       "Vulnerabilities": [
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 8.2,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:L"
+            }
+          },
+          "CweIDs": [
+            "CWE-125"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "libexpat before commit 13c5f63 contains a heap buffer over-read vulnerability in xmlparse.c. XML_ParseBuffer advances the parse buffer end with parser-\u003em_bufferEnd += len using a caller-supplied length that is not validated against the allocated buffer size, so repeated XML_ParseBuffer calls move m_bufferEnd past the end of the heap allocation and subsequent parsing reads out of bounds. Reaching this path requires a parse buffer to already be present; otherwise XML_ParseBuffer returns XML_ERROR_NO_BUFFER. A buffer is present after a prior call to XML_GetBuffer, either directly (the common case) or indirectly through a prior XML_Parse call that allocates the buffer internally. The over-read discloses adjacent heap memory to the calling application, recovering heap pointers, libc function pointers, and code pointers sufficient to defeat ASLR and build further exploitation primitives.",
+          "Fingerprint": "sha256:04f53bdb220b8d3d5d9955d647aff62163d1b683cd84dcab85db7961871ae21e",
+          "FixedVersion": "2.9.0-r0",
+          "InstalledVersion": "2.8.5-r0",
+          "LastModifiedDate": "2026-10-10T03:17:08.487Z",
+          "Layer": {
+            "DiffID": "sha256:cd57e46471d4a6719b8e9e01ff71922ef52586e3cbed570b60129cb7f5663cc7",
+            "Digest": "sha256:7d710ee01f8013bf39ca628d465aca5bf86f9e3b2e2eb69a16e8e3ac1cbeac4e"
+          },
+          "PkgID": "libexpat@2.8.5-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libexpat@2.8.5-r0?arch=x86_64\u0026distro=3.24.2",
+            "UID": "dd5c252c6dc8a02d"
+          },
+          "PkgName": "libexpat",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-77214",
+          "PublishedDate": "2026-10-07T15:17:53.327Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-77214",
+            "https://github.com/libexpat/libexpat/commit/13c5f63a7f1c52c2feee3b16a1134d4fb68e9ea0",
+            "https://github.com/libexpat/libexpat/pull/1393",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-77214",
+            "https://www.cve.org/CVERecord?id=CVE-2026-77214",
+            "https://www.vulncheck.com/advisories/libexpat-heap-buffer-over-read-in-xmlparse-c-via-xml-parsebuffer"
+          ],
+          "Severity": "HIGH",
+          "Status": "fixed",
+          "Title": "expat: expat: Information disclosure via heap buffer over-read in XML_ParseBuffer",
+          "VendorSeverity": {
+            "azure": 3,
+            "redhat": 3
+          },
+          "VulnerabilityID": "CVE-2026-77214"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 5.9,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-190"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "libexpat versions 2.7.2 through 2.8.5 contain an integer overflow vulnerability in expat_realloc() function on 32-bit platforms when computing allocation sizes. Attackers supplying malicious XML to applications parsing with vulnerable libexpat can cause heap buffer overflow, memory corruption, or denial of service.",
+          "Fingerprint": "sha256:f663f9d11bf344791a5e65c694c12b23691ded9f642257065dee56caac6263cf",
+          "FixedVersion": "2.9.0-r0",
+          "InstalledVersion": "2.8.5-r0",
+          "LastModifiedDate": "2026-09-29T21:32:59.833Z",
+          "Layer": {
+            "DiffID": "sha256:cd57e46471d4a6719b8e9e01ff71922ef52586e3cbed570b60129cb7f5663cc7",
+            "Digest": "sha256:7d710ee01f8013bf39ca628d465aca5bf86f9e3b2e2eb69a16e8e3ac1cbeac4e"
+          },
+          "PkgID": "libexpat@2.8.5-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libexpat@2.8.5-r0?arch=x86_64\u0026distro=3.24.2",
+            "UID": "dd5c252c6dc8a02d"
+          },
+          "PkgName": "libexpat",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-102633",
+          "PublishedDate": "2026-09-29T17:17:06.98Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-102633",
+            "https://github.com/libexpat/libexpat",
+            "https://github.com/libexpat/libexpat/blob/R_2_8_5/expat/lib/xmlparse.c#L1003",
+            "https://github.com/libexpat/libexpat/commit/209801d7fbaf07ab74bae8cb32dd2ab9e5846118",
+            "https://github.com/libexpat/libexpat/pull/1392",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-102633",
+            "https://www.cve.org/CVERecord?id=CVE-2026-102633",
+            "https://www.vulncheck.com/advisories/libexpat-2.7.2-through-2.8.5-integer-overflow-in-expat-realloc"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "expat: expat: Denial of Service via integer overflow in expat_realloc",
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2026-102633"
+        },
+        {
           "CweIDs": [
             "CWE-787"
           ],
@@ -6681,6 +6781,7 @@
             "GHSA-8wmf-6v46-5gfg"
           ],
           "VendorSeverity": {
+            "azure": 1,
             "ghsa": 1,
             "redhat": 1
           },
@@ -6742,6 +6843,7 @@
             "GHSA-8wmf-6v46-5gfg"
           ],
           "VendorSeverity": {
+            "azure": 1,
             "ghsa": 1,
             "redhat": 1
           },
@@ -6803,6 +6905,7 @@
             "GHSA-8wmf-6v46-5gfg"
           ],
           "VendorSeverity": {
+            "azure": 1,
             "ghsa": 1,
             "redhat": 1
           },
@@ -8701,6 +8804,10 @@
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
             "redhat": {
               "V3Score": 7.5,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
@@ -8751,6 +8858,8 @@
             "GO-2026-6611"
           ],
           "VendorSeverity": {
+            "azure": 3,
+            "bitnami": 3,
             "redhat": 3,
             "ubuntu": 2
           },
@@ -8943,6 +9052,12 @@
           "VulnerabilityID": "CVE-2026-42506"
         },
         {
+          "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
           "CweIDs": [
             "CWE-405"
           ],
@@ -8975,6 +9090,7 @@
             "https://go.dev/issue/81857",
             "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
             "https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-78659",
             "https://pkg.go.dev/vuln/GO-2026-6603",
             "https://www.cve.org/CVERecord?id=CVE-2026-78659",
             "https://www.openwall.com/lists/oss-security/2026/10/08/9"
@@ -8986,11 +9102,19 @@
             "GO-2026-6603"
           ],
           "VendorSeverity": {
+            "azure": 2,
+            "bitnami": 3,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-78659"
         },
         {
+          "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+            }
+          },
           "CweIDs": [
             "CWE-444"
           ],
@@ -9022,6 +9146,7 @@
             "https://go.dev/cl/836385",
             "https://go.dev/issue/81115",
             "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-78660",
             "https://pkg.go.dev/vuln/GO-2026-6610",
             "https://www.cve.org/CVERecord?id=CVE-2026-78660",
             "https://www.openwall.com/lists/oss-security/2026/10/08/9"
@@ -9033,12 +9158,18 @@
             "GO-2026-6610"
           ],
           "VendorSeverity": {
+            "azure": 3,
+            "bitnami": 3,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-78660"
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 9.1,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H"
+            },
             "redhat": {
               "V3Score": 5.3,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
@@ -9089,6 +9220,8 @@
             "GO-2026-6612"
           ],
           "VendorSeverity": {
+            "azure": 3,
+            "bitnami": 4,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -9096,6 +9229,10 @@
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
             "redhat": {
               "V3Score": 5.9,
               "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
@@ -9144,9 +9281,54 @@
             "GO-2026-6617"
           ],
           "VendorSeverity": {
+            "azure": 2,
+            "bitnami": 3,
             "redhat": 2
           },
           "VulnerabilityID": "CVE-2026-97032"
+        },
+        {
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "govulndb",
+            "Name": "The Go Vulnerability Database",
+            "URL": "https://pkg.go.dev/vuln/"
+          },
+          "Description": "The Nickname profile can panic with an out-of-bounds slice error when transforming crafted input into a short destination buffer.",
+          "Fingerprint": "sha256:9f3d54ffb3f6de9210e8742c6cc7c1559f679b14774f736d59810c1fd0710b00",
+          "FixedVersion": "0.41.0",
+          "InstalledVersion": "v0.38.0",
+          "LastModifiedDate": "2026-10-08T21:35:53.89Z",
+          "Layer": {
+            "DiffID": "sha256:aa8ae0eeaf0fb907b6f049f9e0473cf916cca673e496624143cadf8d1b622251",
+            "Digest": "sha256:90bf883dd299cd582e01759662529c42e5973fcddd6757d28b1b139ce50d42a4"
+          },
+          "PkgID": "golang.org/x/text@v0.38.0",
+          "PkgIdentifier": {
+            "PURL": "pkg:golang/golang.org/x/text@v0.38.0",
+            "UID": "dbc40d5afbbad8a3"
+          },
+          "PkgName": "golang.org/x/text",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56851",
+          "PublishedDate": "2026-10-07T18:17:20.903Z",
+          "References": [
+            "https://go.dev/cl/793360",
+            "https://go.dev/issue/80112",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-56851",
+            "https://pkg.go.dev/vuln/GO-2026-6629"
+          ],
+          "Severity": "HIGH",
+          "Status": "fixed",
+          "Title": "The Nickname profile can panic with an out-of-bounds slice error when  ...",
+          "VendorIDs": [
+            "GO-2026-6629"
+          ],
+          "VendorSeverity": {
+            "azure": 3
+          },
+          "VulnerabilityID": "CVE-2026-56851"
         },
         {
           "CVSS": {
@@ -9241,45 +9423,6 @@
             "rocky": 3
           },
           "VulnerabilityID": "CVE-2026-56852"
-        },
-        {
-          "CweIDs": [
-            "CWE-787"
-          ],
-          "DataSource": {
-            "ID": "govulndb",
-            "Name": "The Go Vulnerability Database",
-            "URL": "https://pkg.go.dev/vuln/"
-          },
-          "Description": "The Nickname profile can panic with an out-of-bounds slice error when transforming crafted input into a short destination buffer.",
-          "Fingerprint": "sha256:9f3d54ffb3f6de9210e8742c6cc7c1559f679b14774f736d59810c1fd0710b00",
-          "FixedVersion": "0.41.0",
-          "InstalledVersion": "v0.38.0",
-          "LastModifiedDate": "2026-10-08T21:35:53.89Z",
-          "Layer": {
-            "DiffID": "sha256:aa8ae0eeaf0fb907b6f049f9e0473cf916cca673e496624143cadf8d1b622251",
-            "Digest": "sha256:90bf883dd299cd582e01759662529c42e5973fcddd6757d28b1b139ce50d42a4"
-          },
-          "PkgID": "golang.org/x/text@v0.38.0",
-          "PkgIdentifier": {
-            "PURL": "pkg:golang/golang.org/x/text@v0.38.0",
-            "UID": "dbc40d5afbbad8a3"
-          },
-          "PkgName": "golang.org/x/text",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56851",
-          "PublishedDate": "2026-10-07T18:17:20.903Z",
-          "References": [
-            "https://go.dev/cl/793360",
-            "https://go.dev/issue/80112",
-            "https://pkg.go.dev/vuln/GO-2026-6629"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "Title": "The Nickname profile can panic with an out-of-bounds slice error when  ...",
-          "VendorIDs": [
-            "GO-2026-6629"
-          ],
-          "VulnerabilityID": "CVE-2026-56851"
         },
         {
           "CVSS": {
@@ -9521,6 +9664,10 @@
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
             "redhat": {
               "V3Score": 7.5,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
@@ -9569,6 +9716,7 @@
             "GO-2026-6609"
           ],
           "VendorSeverity": {
+            "bitnami": 3,
             "redhat": 3,
             "ubuntu": 2
           },
@@ -9576,6 +9724,10 @@
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
             "redhat": {
               "V3Score": 7.5,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
@@ -9626,6 +9778,8 @@
             "GO-2026-6611"
           ],
           "VendorSeverity": {
+            "azure": 3,
+            "bitnami": 3,
             "redhat": 3,
             "ubuntu": 2
           },
@@ -9633,6 +9787,10 @@
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
             "redhat": {
               "V3Score": 7.5,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
@@ -9679,12 +9837,17 @@
             "GO-2026-6607"
           ],
           "VendorSeverity": {
+            "bitnami": 3,
             "redhat": 3
           },
           "VulnerabilityID": "CVE-2026-97031"
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+            },
             "redhat": {
               "V3Score": 6.5,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N"
@@ -9733,12 +9896,19 @@
             "GO-2026-6605"
           ],
           "VendorSeverity": {
+            "bitnami": 3,
             "redhat": 2,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-56866"
         },
         {
+          "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
           "CweIDs": [
             "CWE-405"
           ],
@@ -9771,6 +9941,7 @@
             "https://go.dev/issue/81857",
             "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
             "https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-78659",
             "https://pkg.go.dev/vuln/GO-2026-6603",
             "https://www.cve.org/CVERecord?id=CVE-2026-78659",
             "https://www.openwall.com/lists/oss-security/2026/10/08/9"
@@ -9782,11 +9953,19 @@
             "GO-2026-6603"
           ],
           "VendorSeverity": {
+            "azure": 2,
+            "bitnami": 3,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-78659"
         },
         {
+          "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+            }
+          },
           "CweIDs": [
             "CWE-444"
           ],
@@ -9818,6 +9997,7 @@
             "https://go.dev/cl/836385",
             "https://go.dev/issue/81115",
             "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-78660",
             "https://pkg.go.dev/vuln/GO-2026-6610",
             "https://www.cve.org/CVERecord?id=CVE-2026-78660",
             "https://www.openwall.com/lists/oss-security/2026/10/08/9"
@@ -9829,12 +10009,18 @@
             "GO-2026-6610"
           ],
           "VendorSeverity": {
+            "azure": 3,
+            "bitnami": 3,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-78660"
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 9.1,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H"
+            },
             "redhat": {
               "V3Score": 5.3,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
@@ -9885,6 +10071,8 @@
             "GO-2026-6612"
           ],
           "VendorSeverity": {
+            "azure": 3,
+            "bitnami": 4,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -9892,6 +10080,10 @@
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+            },
             "redhat": {
               "V3Score": 6.5,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N"
@@ -9940,12 +10132,19 @@
             "GO-2026-6613"
           ],
           "VendorSeverity": {
+            "bitnami": 3,
             "redhat": 2,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-94439"
         },
         {
+          "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
           "CweIDs": [
             "CWE-770"
           ],
@@ -9976,6 +10175,7 @@
             "https://go.dev/cl/847307",
             "https://go.dev/issue/81741",
             "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-94440",
             "https://pkg.go.dev/vuln/GO-2026-6608",
             "https://www.cve.org/CVERecord?id=CVE-2026-94440",
             "https://www.openwall.com/lists/oss-security/2026/10/08/9"
@@ -9987,12 +10187,17 @@
             "GO-2026-6608"
           ],
           "VendorSeverity": {
+            "bitnami": 3,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-94440"
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 6.1,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+            },
             "redhat": {
               "V3Score": 6.1,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
@@ -10039,12 +10244,67 @@
             "GO-2026-6599"
           ],
           "VendorSeverity": {
+            "bitnami": 2,
             "redhat": 2
           },
           "VulnerabilityID": "CVE-2026-94448"
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 6.1,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-79"
+          ],
+          "DataSource": {
+            "ID": "govulndb",
+            "Name": "The Go Vulnerability Database",
+            "URL": "https://pkg.go.dev/vuln/"
+          },
+          "Description": "A trusted template author may have previously written a valid template wherein the use of the 'yield' keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.",
+          "Fingerprint": "sha256:a30dd7a6c3d2265431b370c22db3143e2996ed8c457a6f23c58508494c2fd34f",
+          "FixedVersion": "1.26.9, 1.27.2",
+          "InstalledVersion": "v1.25.14",
+          "LastModifiedDate": "2026-10-15T16:18:24.817Z",
+          "Layer": {
+            "DiffID": "sha256:aa8ae0eeaf0fb907b6f049f9e0473cf916cca673e496624143cadf8d1b622251",
+            "Digest": "sha256:90bf883dd299cd582e01759662529c42e5973fcddd6757d28b1b139ce50d42a4"
+          },
+          "PkgID": "stdlib@v1.25.14",
+          "PkgIdentifier": {
+            "PURL": "pkg:golang/stdlib@v1.25.14",
+            "UID": "26a62577c9e93629"
+          },
+          "PkgName": "stdlib",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-97030",
+          "PublishedDate": "2026-10-08T23:17:05.91Z",
+          "References": [
+            "https://go.dev/cl/840925",
+            "https://go.dev/issue/81823",
+            "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-97030",
+            "https://pkg.go.dev/vuln/GO-2026-6600"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "A trusted template author may have previously written a valid template ...",
+          "VendorIDs": [
+            "GO-2026-6600"
+          ],
+          "VendorSeverity": {
+            "bitnami": 2
+          },
+          "VulnerabilityID": "CVE-2026-97030"
+        },
+        {
+          "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
             "redhat": {
               "V3Score": 5.9,
               "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
@@ -10093,12 +10353,18 @@
             "GO-2026-6617"
           ],
           "VendorSeverity": {
+            "azure": 2,
+            "bitnami": 3,
             "redhat": 2
           },
           "VulnerabilityID": "CVE-2026-97032"
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 9.8,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+            },
             "redhat": {
               "V3Score": 3.3,
               "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N"
@@ -10145,49 +10411,10 @@
             "GO-2026-6604"
           ],
           "VendorSeverity": {
+            "bitnami": 4,
             "redhat": 1
           },
           "VulnerabilityID": "CVE-2026-56857"
-        },
-        {
-          "CweIDs": [
-            "CWE-79"
-          ],
-          "DataSource": {
-            "ID": "govulndb",
-            "Name": "The Go Vulnerability Database",
-            "URL": "https://pkg.go.dev/vuln/"
-          },
-          "Description": "A trusted template author may have previously written a valid template wherein the use of the 'yield' keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.",
-          "Fingerprint": "sha256:a30dd7a6c3d2265431b370c22db3143e2996ed8c457a6f23c58508494c2fd34f",
-          "FixedVersion": "1.26.9, 1.27.2",
-          "InstalledVersion": "v1.25.14",
-          "LastModifiedDate": "2026-10-15T16:18:24.817Z",
-          "Layer": {
-            "DiffID": "sha256:aa8ae0eeaf0fb907b6f049f9e0473cf916cca673e496624143cadf8d1b622251",
-            "Digest": "sha256:90bf883dd299cd582e01759662529c42e5973fcddd6757d28b1b139ce50d42a4"
-          },
-          "PkgID": "stdlib@v1.25.14",
-          "PkgIdentifier": {
-            "PURL": "pkg:golang/stdlib@v1.25.14",
-            "UID": "26a62577c9e93629"
-          },
-          "PkgName": "stdlib",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-97030",
-          "PublishedDate": "2026-10-08T23:17:05.91Z",
-          "References": [
-            "https://go.dev/cl/840925",
-            "https://go.dev/issue/81823",
-            "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
-            "https://pkg.go.dev/vuln/GO-2026-6600"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "Title": "A trusted template author may have previously written a valid template ...",
-          "VendorIDs": [
-            "GO-2026-6600"
-          ],
-          "VulnerabilityID": "CVE-2026-97030"
         }
       ]
     }

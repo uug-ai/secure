@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:dab1d8bd74e938c6d3262ce42453be2dda628f3d415cde95a32ab4fa3bcefe34",
   "ArtifactName": "ghcr.io/uug-ai/hub-frontend@sha256:ec9a927b1f66d390ee0ba6183264259121ce34a390babf6fefe041624ac99def",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-10-17T03:50:57.882275296Z",
+  "CreatedAt": "2026-10-18T03:51:49.413681631Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:74d97c428c51a828f9051a7a40a53ff1fc99e54fc30323ce36760701b0b7f711",
@@ -257,7 +257,7 @@
     ],
     "Size": 125509632
   },
-  "ReportID": "01a147fb-f85a-742f-9463-503848129e46",
+  "ReportID": "01a14d23-1da5-7a61-933e-43e68d4acd50",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -3674,6 +3674,106 @@
       "Target": "ghcr.io/uug-ai/hub-frontend@sha256:ec9a927b1f66d390ee0ba6183264259121ce34a390babf6fefe041624ac99def (alpine 3.24.2)",
       "Type": "alpine",
       "Vulnerabilities": [
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 8.2,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:L"
+            }
+          },
+          "CweIDs": [
+            "CWE-125"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "libexpat before commit 13c5f63 contains a heap buffer over-read vulnerability in xmlparse.c. XML_ParseBuffer advances the parse buffer end with parser-\u003em_bufferEnd += len using a caller-supplied length that is not validated against the allocated buffer size, so repeated XML_ParseBuffer calls move m_bufferEnd past the end of the heap allocation and subsequent parsing reads out of bounds. Reaching this path requires a parse buffer to already be present; otherwise XML_ParseBuffer returns XML_ERROR_NO_BUFFER. A buffer is present after a prior call to XML_GetBuffer, either directly (the common case) or indirectly through a prior XML_Parse call that allocates the buffer internally. The over-read discloses adjacent heap memory to the calling application, recovering heap pointers, libc function pointers, and code pointers sufficient to defeat ASLR and build further exploitation primitives.",
+          "Fingerprint": "sha256:8143ab5021a826f2d77eb0987f7f0ff7b412559af9c6e66a78cbb4ed53da3675",
+          "FixedVersion": "2.9.0-r0",
+          "InstalledVersion": "2.8.5-r0",
+          "LastModifiedDate": "2026-10-10T03:17:08.487Z",
+          "Layer": {
+            "DiffID": "sha256:6aef7713033e574d61ccfb63c76c936acf96b3ad813bb4b8d18d416512e34d33",
+            "Digest": "sha256:1fdd0614a47ec2896aea36fb280a7b5e8655614dfb56ec1a64002131791de601"
+          },
+          "PkgID": "libexpat@2.8.5-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libexpat@2.8.5-r0?arch=x86_64\u0026distro=3.24.2",
+            "UID": "dd5c252c6dc8a02d"
+          },
+          "PkgName": "libexpat",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-77214",
+          "PublishedDate": "2026-10-07T15:17:53.327Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-77214",
+            "https://github.com/libexpat/libexpat/commit/13c5f63a7f1c52c2feee3b16a1134d4fb68e9ea0",
+            "https://github.com/libexpat/libexpat/pull/1393",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-77214",
+            "https://www.cve.org/CVERecord?id=CVE-2026-77214",
+            "https://www.vulncheck.com/advisories/libexpat-heap-buffer-over-read-in-xmlparse-c-via-xml-parsebuffer"
+          ],
+          "Severity": "HIGH",
+          "Status": "fixed",
+          "Title": "expat: expat: Information disclosure via heap buffer over-read in XML_ParseBuffer",
+          "VendorSeverity": {
+            "azure": 3,
+            "redhat": 3
+          },
+          "VulnerabilityID": "CVE-2026-77214"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 5.9,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-190"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "libexpat versions 2.7.2 through 2.8.5 contain an integer overflow vulnerability in expat_realloc() function on 32-bit platforms when computing allocation sizes. Attackers supplying malicious XML to applications parsing with vulnerable libexpat can cause heap buffer overflow, memory corruption, or denial of service.",
+          "Fingerprint": "sha256:d8dba6f624f724e76ac035bfb8f8a1c3a1e716eadfe0cbe0566450bac3860b8e",
+          "FixedVersion": "2.9.0-r0",
+          "InstalledVersion": "2.8.5-r0",
+          "LastModifiedDate": "2026-09-29T21:32:59.833Z",
+          "Layer": {
+            "DiffID": "sha256:6aef7713033e574d61ccfb63c76c936acf96b3ad813bb4b8d18d416512e34d33",
+            "Digest": "sha256:1fdd0614a47ec2896aea36fb280a7b5e8655614dfb56ec1a64002131791de601"
+          },
+          "PkgID": "libexpat@2.8.5-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libexpat@2.8.5-r0?arch=x86_64\u0026distro=3.24.2",
+            "UID": "dd5c252c6dc8a02d"
+          },
+          "PkgName": "libexpat",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-102633",
+          "PublishedDate": "2026-09-29T17:17:06.98Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-102633",
+            "https://github.com/libexpat/libexpat",
+            "https://github.com/libexpat/libexpat/blob/R_2_8_5/expat/lib/xmlparse.c#L1003",
+            "https://github.com/libexpat/libexpat/commit/209801d7fbaf07ab74bae8cb32dd2ab9e5846118",
+            "https://github.com/libexpat/libexpat/pull/1392",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-102633",
+            "https://www.cve.org/CVERecord?id=CVE-2026-102633",
+            "https://www.vulncheck.com/advisories/libexpat-2.7.2-through-2.8.5-integer-overflow-in-expat-realloc"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "expat: expat: Denial of Service via integer overflow in expat_realloc",
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2026-102633"
+        },
         {
           "CweIDs": [
             "CWE-787"

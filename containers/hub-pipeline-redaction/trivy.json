@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:8e77f977769f0a2d96709e5ef0cd6de217fa3180a50618121eabf26038cfb358",
   "ArtifactName": "ghcr.io/uug-ai/hub-pipeline-redaction@sha256:9a152bc211c08494d409133d661936f7afc8af3b72385ebd81aa5416c88dad76",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-10-17T03:53:02.309714592Z",
+  "CreatedAt": "2026-10-18T03:53:52.845731427Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:cbaf391e670933f026c05c7dedec3faf8f194b6c2d83b0d5694ad68323c8077c",
@@ -228,7 +228,7 @@
     ],
     "Size": 706585088
   },
-  "ReportID": "01a147fd-de65-7ae2-8f56-96198163c8b3",
+  "ReportID": "01a14d24-ffcd-7b25-9abf-9f9ab72d212d",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -25148,12 +25148,18 @@
       "Type": "ubuntu",
       "Vulnerabilities": [
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 5.3,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N"
+            }
+          },
           "DataSource": {
             "ID": "ubuntu",
             "Name": "Ubuntu CVE Tracker",
             "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
           },
-          "Description": "Setting `CURLOPT_AWS_SIGV4` to NULL does not disable SigV4 authentication, contrary to expectations and documentation. A subsequent transfer on the same handle still sends an `Authorization: AWS4-HMAC-SHA256` header to whatever URL is set next, leaking state information.",
+          "Description": "A flaw was found in curl. When an application attempts to disable Amazon Web Services Signature Version 4 (AWS SigV4) authentication on a reused connection handle, curl fails to clear the setting as expected. If the application subsequently directs a request to an untrusted or attacker-controlled server using the same handle, curl unintentionally transmits the signed authorization header. This flaw allows a remote attacker to obtain access key identifiers and request signatures, leading to information disclosure.",
           "Fingerprint": "sha256:65f51fd0d50459b8dfa76b6244dce03f0966de9c4b054023258b5d7a54705eca",
           "InstalledVersion": "7.81.0-1ubuntu1.30",
           "Layer": {
@@ -25168,15 +25174,18 @@
           "PkgName": "curl",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86409",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-86409",
             "https://curl.se/docs/CVE-2026-86409.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-86409",
             "https://ubuntu.com/security/notices/USN-8927-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-86409"
           ],
           "Severity": "LOW",
           "SeveritySource": "ubuntu",
           "Status": "affected",
-          "Title": "stale SigV4 headers sent unintended",
+          "Title": "curl: curl: stale SigV4 headers sent unintended",
           "VendorSeverity": {
+            "redhat": 1,
             "ubuntu": 1
           },
           "VulnerabilityID": "CVE-2026-86409"
@@ -25225,12 +25234,18 @@
           "VulnerabilityID": "CVE-2026-86414"
         },
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 3.7,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
+            }
+          },
           "DataSource": {
             "ID": "ubuntu",
             "Name": "Ubuntu CVE Tracker",
             "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
           },
-          "Description": "Importing a `includeSubDomains` parent HSTS entry before a longer-lived child entry, silently drops the child. Consequently, when the parent expires, the child's valid HSTS policy is lost, causing curl to issue unencrypted HTTP requests rather than upgrading to HTTPS.",
+          "Description": "A flaw was found in curl. When importing HTTP Strict Transport Security (HSTS) cache records, loading a parent domain entry configured to include subdomains before a longer-lived subdomain entry silently drops the subdomain policy. Consequently, once the parent policy expires, curl fails to upgrade subsequent connections for the subdomain to HTTPS and transmits unencrypted requests, allowing a network attacker to intercept sensitive data.",
           "Fingerprint": "sha256:79efca34b1a20399f860bae610142bb7410280eaaa91d06fcccf8605cbe4aef4",
           "InstalledVersion": "7.81.0-1ubuntu1.30",
           "Layer": {
@@ -25245,25 +25260,35 @@
           "PkgName": "curl",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-87862",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-87862",
             "https://curl.se/docs/CVE-2026-87862.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-87862",
             "https://ubuntu.com/security/notices/USN-8927-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-87862"
           ],
           "Severity": "LOW",
           "SeveritySource": "ubuntu",
           "Status": "affected",
+          "Title": "curl: curl: HSTS cache import drops longer-lived child",
           "VendorSeverity": {
+            "redhat": 1,
             "ubuntu": 1
           },
           "VulnerabilityID": "CVE-2026-87862"
         },
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 3.7,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:L/I:L/A:N"
+            }
+          },
           "DataSource": {
             "ID": "ubuntu",
             "Name": "Ubuntu CVE Tracker",
             "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
           },
-          "Description": "Enabling `CURLOPT_CRLF` causes curl to advertise the raw input byte count in the `IMAP APPEND {N}` literal while transmitting line-ending expanded data. The server reads only N bytes for the payload, causing the remaining overflow bytes to be interpreted and executed as pipelined IMAP commands within the authenticated session.",
+          "Description": "A flaw was found in curl. When curl is configured to perform carriage return and line feed (CRLF) conversion during an Internet Message Access Protocol (IMAP) append operation, it incorrectly reports the raw input size rather than the expanded byte count. Because the receiving server only reads the advertised length as message data, it interprets the remaining overflow bytes as subsequent commands. An attacker capable of supplying message data with line breaks can exploit this issue to execute unauthorized IMAP commands within an authenticated session.",
           "Fingerprint": "sha256:4df3a6bd920f71df79e2ab205c838edda716cceee73519042a6ab8273795f787",
           "InstalledVersion": "7.81.0-1ubuntu1.30",
           "Layer": {
@@ -25278,15 +25303,18 @@
           "PkgName": "curl",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-87864",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-87864",
             "https://curl.se/docs/CVE-2026-87864.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-87864",
             "https://ubuntu.com/security/notices/USN-8927-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-87864"
           ],
           "Severity": "LOW",
           "SeveritySource": "ubuntu",
           "Status": "affected",
-          "Title": "Title Not Available",
+          "Title": "curl: IMAP APPEND plus CRLF conversion command injection",
           "VendorSeverity": {
+            "redhat": 1,
             "ubuntu": 1
           },
           "VulnerabilityID": "CVE-2026-87864"
@@ -25335,12 +25363,18 @@
           "VulnerabilityID": "CVE-2026-92388"
         },
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 3.7,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
+            }
+          },
           "DataSource": {
             "ID": "ubuntu",
             "Name": "Ubuntu CVE Tracker",
             "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
           },
-          "Description": "libcurl's TFTP state machine fails to validate state transitions against the requested transfer direction, accepting opening server responses for both reads and writes interchangeably. A malicious TFTP server can respond to a download request in a way that forces the client into transmit mode, prompting libcurl to consume and transmit data from the handle's persistent `CURLOPT_READDATA` pointer - including data remaining from unrelated prior operations, such as an HTTP POST request executed on a reused handle.",
+          "Description": "A flaw was found in curl. When handling Trivial File Transfer Protocol (TFTP) transfers, a malicious server can trigger information disclosure by responding to a download request in a way that forces the client into transmit mode. Consequently, the client may unintentionally send leftover sensitive data from prior operations on a reused connection handle to the attacker's server.",
           "Fingerprint": "sha256:949840d878c5e9a077fc27f4a71e2c7c86b021a6a3632157ad4e54a794bfdaf8",
           "InstalledVersion": "7.81.0-1ubuntu1.30",
           "Layer": {
@@ -25355,26 +25389,35 @@
           "PkgName": "curl",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-92389",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-92389",
             "https://curl.se/docs/CVE-2026-92389.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-92389",
             "https://ubuntu.com/security/notices/USN-8927-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-92389"
           ],
           "Severity": "LOW",
           "SeveritySource": "ubuntu",
           "Status": "affected",
-          "Title": "Title Not Available",
+          "Title": "curl: curl: TFTP direction confusion",
           "VendorSeverity": {
+            "redhat": 1,
             "ubuntu": 1
           },
           "VulnerabilityID": "CVE-2026-92389"
         },
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 3.7,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L"
+            }
+          },
           "DataSource": {
             "ID": "ubuntu",
             "Name": "Ubuntu CVE Tracker",
             "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
           },
-          "Description": "A deeply nested multipart MIME structure constructed via the public API causes a stack overflow in libcurl during normal cleanup operations. An excessive recursion depth within `curl_mime_free` leads to unbounded stack frame allocation during structure traversal, ultimately crashing the host process.",
+          "Description": "A flaw was found in curl. An attacker could supply deeply nested Multipurpose Internet Mail Extensions (MIME) structures to an application utilizing the libcurl library. During memory cleanup in the curl_mime_free function, excessive recursive calls exhaust available stack memory, leading to an application crash and a Denial of Service (DoS).",
           "Fingerprint": "sha256:976a166597a18ee64517c2bd319c02504fc4371a53811e7cd568916dfce0d444",
           "InstalledVersion": "7.81.0-1ubuntu1.30",
           "Layer": {
@@ -25389,26 +25432,35 @@
           "PkgName": "curl",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-92391",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-92391",
             "https://curl.se/docs/CVE-2026-92391.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-92391",
             "https://ubuntu.com/security/notices/USN-8927-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-92391"
           ],
           "Severity": "LOW",
           "SeveritySource": "ubuntu",
           "Status": "affected",
-          "Title": "Title Not Available",
+          "Title": "curl: curl: curl_mime_free stack overflow by recursion",
           "VendorSeverity": {
+            "redhat": 1,
             "ubuntu": 1
           },
           "VulnerabilityID": "CVE-2026-92391"
         },
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 3.3,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+            }
+          },
           "DataSource": {
             "ID": "ubuntu",
             "Name": "Ubuntu CVE Tracker",
             "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
           },
-          "Description": "libcurl could accidentally return a URL for curl_easy_getinfo's `CURLINFO_EFFECTIVE_URL` option containing credentials, even though neither the URL provided to libcurl nor the redirected URL did. The curl tool exposes the same information using the command line option `--write-out '%{url_effective}'`. This credential leak can happen when curl retrieves credentials from a `.netrc` file.",
+          "Description": "A flaw was found in curl. This vulnerability can lead to information disclosure by inadvertently revealing authentication credentials. When curl retrieves credentials from a local configuration file (such as a .netrc file), requesting the effective URL metadata can cause the returned destination address to improperly include those secret credentials. A local user may exploit this issue to view sensitive authentication tokens if an application or script queries and logs or displays the resolved URL.",
           "Fingerprint": "sha256:6bb490c9e0b3544957fd5de924cae7c7cce83f45de56acf864c584dde9ec03db",
           "InstalledVersion": "7.81.0-1ubuntu1.30",
           "Layer": {
@@ -25423,15 +25475,18 @@
           "PkgName": "curl",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-94266",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-94266",
             "https://curl.se/docs/CVE-2026-94266.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-94266",
             "https://ubuntu.com/security/notices/USN-8927-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-94266"
           ],
           "Severity": "LOW",
           "SeveritySource": "ubuntu",
           "Status": "affected",
-          "Title": "libcurl could accidentally return a URL for curl_easy_getinfo's `",
+          "Title": "curl: curl: password leak in CURLINFO_EFFECTIVE_URL",
           "VendorSeverity": {
+            "redhat": 1,
             "ubuntu": 1
           },
           "VulnerabilityID": "CVE-2026-94266"
@@ -50030,12 +50085,18 @@
           "VulnerabilityID": "CVE-2018-18064"
         },
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 5.3,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N"
+            }
+          },
           "DataSource": {
             "ID": "ubuntu",
             "Name": "Ubuntu CVE Tracker",
             "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
           },
-          "Description": "Setting `CURLOPT_AWS_SIGV4` to NULL does not disable SigV4 authentication, contrary to expectations and documentation. A subsequent transfer on the same handle still sends an `Authorization: AWS4-HMAC-SHA256` header to whatever URL is set next, leaking state information.",
+          "Description": "A flaw was found in curl. When an application attempts to disable Amazon Web Services Signature Version 4 (AWS SigV4) authentication on a reused connection handle, curl fails to clear the setting as expected. If the application subsequently directs a request to an untrusted or attacker-controlled server using the same handle, curl unintentionally transmits the signed authorization header. This flaw allows a remote attacker to obtain access key identifiers and request signatures, leading to information disclosure.",
           "Fingerprint": "sha256:6c56f102fc7f33f00245985c95192e755adea23cef25677180d025ebbc63832b",
           "InstalledVersion": "7.81.0-1ubuntu1.30",
           "Layer": {
@@ -50050,15 +50111,18 @@
           "PkgName": "libcurl4",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86409",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-86409",
             "https://curl.se/docs/CVE-2026-86409.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-86409",
             "https://ubuntu.com/security/notices/USN-8927-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-86409"
           ],
           "Severity": "LOW",
           "SeveritySource": "ubuntu",
           "Status": "affected",
-          "Title": "stale SigV4 headers sent unintended",
+          "Title": "curl: curl: stale SigV4 headers sent unintended",
           "VendorSeverity": {
+            "redhat": 1,
             "ubuntu": 1
           },
           "VulnerabilityID": "CVE-2026-86409"
@@ -50107,12 +50171,18 @@
           "VulnerabilityID": "CVE-2026-86414"
         },
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 3.7,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
+            }
+          },
           "DataSource": {
             "ID": "ubuntu",
             "Name": "Ubuntu CVE Tracker",
             "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
           },
-          "Description": "Importing a `includeSubDomains` parent HSTS entry before a longer-lived child entry, silently drops the child. Consequently, when the parent expires, the child's valid HSTS policy is lost, causing curl to issue unencrypted HTTP requests rather than upgrading to HTTPS.",
+          "Description": "A flaw was found in curl. When importing HTTP Strict Transport Security (HSTS) cache records, loading a parent domain entry configured to include subdomains before a longer-lived subdomain entry silently drops the subdomain policy. Consequently, once the parent policy expires, curl fails to upgrade subsequent connections for the subdomain to HTTPS and transmits unencrypted requests, allowing a network attacker to intercept sensitive data.",
           "Fingerprint": "sha256:ebc81aeafbbcc02d63000f92fa1216def4f91e902a5ba703453a4fd751b252d6",
           "InstalledVersion": "7.81.0-1ubuntu1.30",
           "Layer": {
@@ -50127,25 +50197,35 @@
           "PkgName": "libcurl4",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-87862",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-87862",
             "https://curl.se/docs/CVE-2026-87862.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-87862",
             "https://ubuntu.com/security/notices/USN-8927-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-87862"
           ],
           "Severity": "LOW",
           "SeveritySource": "ubuntu",
           "Status": "affected",
+          "Title": "curl: curl: HSTS cache import drops longer-lived child",
           "VendorSeverity": {
+            "redhat": 1,
             "ubuntu": 1
           },
           "VulnerabilityID": "CVE-2026-87862"
         },
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 3.7,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:L/I:L/A:N"
+            }
+          },
           "DataSource": {
             "ID": "ubuntu",
             "Name": "Ubuntu CVE Tracker",
             "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
           },
-          "Description": "Enabling `CURLOPT_CRLF` causes curl to advertise the raw input byte count in the `IMAP APPEND {N}` literal while transmitting line-ending expanded data. The server reads only N bytes for the payload, causing the remaining overflow bytes to be interpreted and executed as pipelined IMAP commands within the authenticated session.",
+          "Description": "A flaw was found in curl. When curl is configured to perform carriage return and line feed (CRLF) conversion during an Internet Message Access Protocol (IMAP) append operation, it incorrectly reports the raw input size rather than the expanded byte count. Because the receiving server only reads the advertised length as message data, it interprets the remaining overflow bytes as subsequent commands. An attacker capable of supplying message data with line breaks can exploit this issue to execute unauthorized IMAP commands within an authenticated session.",
           "Fingerprint": "sha256:e234e171d7566717e25e80b4264b357f3ccd56aaa99b75186fff4d3af64530e9",
           "InstalledVersion": "7.81.0-1ubuntu1.30",
           "Layer": {
@@ -50160,15 +50240,18 @@
           "PkgName": "libcurl4",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-87864",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-87864",
             "https://curl.se/docs/CVE-2026-87864.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-87864",
             "https://ubuntu.com/security/notices/USN-8927-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-87864"
           ],
           "Severity": "LOW",
           "SeveritySource": "ubuntu",
           "Status": "affected",
-          "Title": "Title Not Available",
+          "Title": "curl: IMAP APPEND plus CRLF conversion command injection",
           "VendorSeverity": {
+            "redhat": 1,
             "ubuntu": 1
           },
           "VulnerabilityID": "CVE-2026-87864"
@@ -50217,12 +50300,18 @@
           "VulnerabilityID": "CVE-2026-92388"
         },
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 3.7,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
+            }
+          },
           "DataSource": {
             "ID": "ubuntu",
             "Name": "Ubuntu CVE Tracker",
             "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
           },
-          "Description": "libcurl's TFTP state machine fails to validate state transitions against the requested transfer direction, accepting opening server responses for both reads and writes interchangeably. A malicious TFTP server can respond to a download request in a way that forces the client into transmit mode, prompting libcurl to consume and transmit data from the handle's persistent `CURLOPT_READDATA` pointer - including data remaining from unrelated prior operations, such as an HTTP POST request executed on a reused handle.",
+          "Description": "A flaw was found in curl. When handling Trivial File Transfer Protocol (TFTP) transfers, a malicious server can trigger information disclosure by responding to a download request in a way that forces the client into transmit mode. Consequently, the client may unintentionally send leftover sensitive data from prior operations on a reused connection handle to the attacker's server.",
           "Fingerprint": "sha256:bb1a86485b5bc5e428989b61b7dd4f78365b091aac0ef4323fb3bf2024f0d1f3",
           "InstalledVersion": "7.81.0-1ubuntu1.30",
           "Layer": {
@@ -50237,26 +50326,35 @@
           "PkgName": "libcurl4",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-92389",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-92389",
             "https://curl.se/docs/CVE-2026-92389.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-92389",
             "https://ubuntu.com/security/notices/USN-8927-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-92389"
           ],
           "Severity": "LOW",
           "SeveritySource": "ubuntu",
           "Status": "affected",
-          "Title": "Title Not Available",
+          "Title": "curl: curl: TFTP direction confusion",
           "VendorSeverity": {
+            "redhat": 1,
             "ubuntu": 1
           },
           "VulnerabilityID": "CVE-2026-92389"
         },
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 3.7,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L"
+            }
+          },
           "DataSource": {
             "ID": "ubuntu",
             "Name": "Ubuntu CVE Tracker",
             "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
           },
-          "Description": "A deeply nested multipart MIME structure constructed via the public API causes a stack overflow in libcurl during normal cleanup operations. An excessive recursion depth within `curl_mime_free` leads to unbounded stack frame allocation during structure traversal, ultimately crashing the host process.",
+          "Description": "A flaw was found in curl. An attacker could supply deeply nested Multipurpose Internet Mail Extensions (MIME) structures to an application utilizing the libcurl library. During memory cleanup in the curl_mime_free function, excessive recursive calls exhaust available stack memory, leading to an application crash and a Denial of Service (DoS).",
           "Fingerprint": "sha256:6a40d4fe6e7c71335cec83bd7e1a20a7659f3c0374ace7254eb1904332f3989b",
           "InstalledVersion": "7.81.0-1ubuntu1.30",
           "Layer": {
@@ -50271,26 +50369,35 @@
           "PkgName": "libcurl4",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-92391",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-92391",
             "https://curl.se/docs/CVE-2026-92391.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-92391",
             "https://ubuntu.com/security/notices/USN-8927-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-92391"
           ],
           "Severity": "LOW",
           "SeveritySource": "ubuntu",
           "Status": "affected",
-          "Title": "Title Not Available",
+          "Title": "curl: curl: curl_mime_free stack overflow by recursion",
           "VendorSeverity": {
+            "redhat": 1,
             "ubuntu": 1
           },
           "VulnerabilityID": "CVE-2026-92391"
         },
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 3.3,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+            }
+          },
           "DataSource": {
             "ID": "ubuntu",
             "Name": "Ubuntu CVE Tracker",
             "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
           },
-          "Description": "libcurl could accidentally return a URL for curl_easy_getinfo's `CURLINFO_EFFECTIVE_URL` option containing credentials, even though neither the URL provided to libcurl nor the redirected URL did. The curl tool exposes the same information using the command line option `--write-out '%{url_effective}'`. This credential leak can happen when curl retrieves credentials from a `.netrc` file.",
+          "Description": "A flaw was found in curl. This vulnerability can lead to information disclosure by inadvertently revealing authentication credentials. When curl retrieves credentials from a local configuration file (such as a .netrc file), requesting the effective URL metadata can cause the returned destination address to improperly include those secret credentials. A local user may exploit this issue to view sensitive authentication tokens if an application or script queries and logs or displays the resolved URL.",
           "Fingerprint": "sha256:b2564c2b8035df2f7e1dc34ef5d7ca8acec34987759f30114dc5966122a7ce8c",
           "InstalledVersion": "7.81.0-1ubuntu1.30",
           "Layer": {
@@ -50305,15 +50412,18 @@
           "PkgName": "libcurl4",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-94266",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-94266",
             "https://curl.se/docs/CVE-2026-94266.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-94266",
             "https://ubuntu.com/security/notices/USN-8927-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-94266"
           ],
           "Severity": "LOW",
           "SeveritySource": "ubuntu",
           "Status": "affected",
-          "Title": "libcurl could accidentally return a URL for curl_easy_getinfo's `",
+          "Title": "curl: curl: password leak in CURLINFO_EFFECTIVE_URL",
           "VendorSeverity": {
+            "redhat": 1,
             "ubuntu": 1
           },
           "VulnerabilityID": "CVE-2026-94266"
@@ -50930,7 +51040,7 @@
           "Description": "An issue in gnutls v.3.8.13 allows an attacker to obtain sensitive information via failing to reject end-entity X.509 certificates that contain a contradictory combination of Key Usage (KU) and Extended Key Usage (EKU)",
           "Fingerprint": "sha256:598f476f6a75203bcb248129d137fed14e6b12ea317867fa435faaa83c584471",
           "InstalledVersion": "3.7.3-4ubuntu1.9",
-          "LastModifiedDate": "2026-10-09T12:17:11.35Z",
+          "LastModifiedDate": "2026-10-16T18:18:00.667Z",
           "Layer": {
             "DiffID": "sha256:cbaf391e670933f026c05c7dedec3faf8f194b6c2d83b0d5694ad68323c8077c",
             "Digest": "sha256:98c4455a98982b35380ec62f90d5cf0edff02eeb4b3bb18595d871fdeb0c0c67"
@@ -50948,6 +51058,7 @@
             "https://access.redhat.com/security/cve/CVE-2026-67693",
             "https://gist.github.com/lkloliver/6fbfc191bc6163942c8017551ac3f238",
             "https://gitlab.com/gnutls/gnutls/-/blob/3.8.13/lib/x509/verify.c#L1119-1178",
+            "https://gitlab.com/gnutls/gnutls/-/work_items/1642",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-67693",
             "https://www.cve.org/CVERecord?id=CVE-2026-67693"
           ],
@@ -51021,7 +51132,7 @@
           "Description": "Improper certificate validation in gnutls v3.8.13 causes the application to reject legitimate certificates for valid users, leading to a Denial of Service (DoS).",
           "Fingerprint": "sha256:9f3c0c1a0acb03b08712f125bf73930d08f22aa7811ba9326365537d72668b4e",
           "InstalledVersion": "3.7.3-4ubuntu1.9",
-          "LastModifiedDate": "2026-10-08T21:33:42.423Z",
+          "LastModifiedDate": "2026-10-16T18:19:45.397Z",
           "Layer": {
             "DiffID": "sha256:cbaf391e670933f026c05c7dedec3faf8f194b6c2d83b0d5694ad68323c8077c",
             "Digest": "sha256:98c4455a98982b35380ec62f90d5cf0edff02eeb4b3bb18595d871fdeb0c0c67"
@@ -51038,7 +51149,8 @@
             "http://gnutls.com",
             "https://evil.com",
             "https://gist.github.com/lkloliver/0c8b47fa75a0958fa88587665b82ae15",
-            "https://www.cve.org/CVERecord?id=CVE-2026-95184"
+            "https://www.cve.org/CVERecord?id=CVE-2026-95184",
+            "https://www.gnutls.org"
           ],
           "Severity": "MEDIUM",
           "SeveritySource": "ubuntu",
@@ -51061,7 +51173,7 @@
           "Description": "An issue in gnutls v3.8.13 causes legitimate CA certificates to be rejected, leading to a Denial of Service (DoS).",
           "Fingerprint": "sha256:b05773eb24cf172a7f3e7011813db36a3c8ee17e26fc12c654188cba62661eae",
           "InstalledVersion": "3.7.3-4ubuntu1.9",
-          "LastModifiedDate": "2026-10-08T21:33:42.423Z",
+          "LastModifiedDate": "2026-10-16T18:19:45.56Z",
           "Layer": {
             "DiffID": "sha256:cbaf391e670933f026c05c7dedec3faf8f194b6c2d83b0d5694ad68323c8077c",
             "Digest": "sha256:98c4455a98982b35380ec62f90d5cf0edff02eeb4b3bb18595d871fdeb0c0c67"
@@ -51078,7 +51190,8 @@
             "http://gnutls.com",
             "https://evil.com",
             "https://gist.github.com/lkloliver/8e4498311aff18e2077010e412043e18",
-            "https://www.cve.org/CVERecord?id=CVE-2026-95209"
+            "https://www.cve.org/CVERecord?id=CVE-2026-95209",
+            "https://www.gnutls.org"
           ],
           "Severity": "MEDIUM",
           "SeveritySource": "ubuntu",
@@ -51932,6 +52045,7 @@
           "Title": "pcre2: pcre2: Out-of-bounds write via crafted regular expression",
           "VendorSeverity": {
             "alma": 3,
+            "azure": 3,
             "oracle-oval": 3,
             "redhat": 3,
             "rocky": 3,
@@ -52181,6 +52295,7 @@
             "azure": 2,
             "nvd": 3,
             "oracle-oval": 3,
+            "photon": 3,
             "redhat": 2,
             "rocky": 3,
             "ubuntu": 2
@@ -52434,6 +52549,7 @@
             "amazon": 3,
             "nvd": 3,
             "oracle-oval": 3,
+            "photon": 3,
             "redhat": 3,
             "rocky": 3,
             "ubuntu": 2
@@ -67593,6 +67709,7 @@
             "GHSA-8wmf-6v46-5gfg"
           ],
           "VendorSeverity": {
+            "azure": 1,
             "ghsa": 1,
             "redhat": 1
           },
@@ -67654,6 +67771,7 @@
             "GHSA-8wmf-6v46-5gfg"
           ],
           "VendorSeverity": {
+            "azure": 1,
             "ghsa": 1,
             "redhat": 1
           },
@@ -67715,6 +67833,7 @@
             "GHSA-8wmf-6v46-5gfg"
           ],
           "VendorSeverity": {
+            "azure": 1,
             "ghsa": 1,
             "redhat": 1
           },
@@ -69613,6 +69732,10 @@
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
             "redhat": {
               "V3Score": 7.5,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
@@ -69663,6 +69786,8 @@
             "GO-2026-6611"
           ],
           "VendorSeverity": {
+            "azure": 3,
+            "bitnami": 3,
             "redhat": 3,
             "ubuntu": 2
           },
@@ -69855,6 +69980,12 @@
           "VulnerabilityID": "CVE-2026-42506"
         },
         {
+          "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
           "CweIDs": [
             "CWE-405"
           ],
@@ -69887,6 +70018,7 @@
             "https://go.dev/issue/81857",
             "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
             "https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-78659",
             "https://pkg.go.dev/vuln/GO-2026-6603",
             "https://www.cve.org/CVERecord?id=CVE-2026-78659",
             "https://www.openwall.com/lists/oss-security/2026/10/08/9"
@@ -69898,11 +70030,19 @@
             "GO-2026-6603"
           ],
           "VendorSeverity": {
+            "azure": 2,
+            "bitnami": 3,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-78659"
         },
         {
+          "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+            }
+          },
           "CweIDs": [
             "CWE-444"
           ],
@@ -69934,6 +70074,7 @@
             "https://go.dev/cl/836385",
             "https://go.dev/issue/81115",
             "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-78660",
             "https://pkg.go.dev/vuln/GO-2026-6610",
             "https://www.cve.org/CVERecord?id=CVE-2026-78660",
             "https://www.openwall.com/lists/oss-security/2026/10/08/9"
@@ -69945,12 +70086,18 @@
             "GO-2026-6610"
           ],
           "VendorSeverity": {
+            "azure": 3,
+            "bitnami": 3,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-78660"
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 9.1,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H"
+            },
             "redhat": {
               "V3Score": 5.3,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
@@ -70001,6 +70148,8 @@
             "GO-2026-6612"
           ],
           "VendorSeverity": {
+            "azure": 3,
+            "bitnami": 4,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -70008,6 +70157,10 @@
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
             "redhat": {
               "V3Score": 5.9,
               "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
@@ -70056,9 +70209,54 @@
             "GO-2026-6617"
           ],
           "VendorSeverity": {
+            "azure": 2,
+            "bitnami": 3,
             "redhat": 2
           },
           "VulnerabilityID": "CVE-2026-97032"
+        },
+        {
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "govulndb",
+            "Name": "The Go Vulnerability Database",
+            "URL": "https://pkg.go.dev/vuln/"
+          },
+          "Description": "The Nickname profile can panic with an out-of-bounds slice error when transforming crafted input into a short destination buffer.",
+          "Fingerprint": "sha256:09b13b60389e8c12a94f9e2280b512236d967cd38a348d84a90d66a9f31b4af3",
+          "FixedVersion": "0.41.0",
+          "InstalledVersion": "v0.38.0",
+          "LastModifiedDate": "2026-10-08T21:35:53.89Z",
+          "Layer": {
+            "DiffID": "sha256:d36b979e545ee2dcaeb49ed880149aab18f15c9de6ab6fafa32bbc1e8b891f85",
+            "Digest": "sha256:001e04ee3684590190da32ee2d74d7cd85b9d0909cf6b26d54408d9e45093e74"
+          },
+          "PkgID": "golang.org/x/text@v0.38.0",
+          "PkgIdentifier": {
+            "PURL": "pkg:golang/golang.org/x/text@v0.38.0",
+            "UID": "eb621e7db253262"
+          },
+          "PkgName": "golang.org/x/text",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56851",
+          "PublishedDate": "2026-10-07T18:17:20.903Z",
+          "References": [
+            "https://go.dev/cl/793360",
+            "https://go.dev/issue/80112",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-56851",
+            "https://pkg.go.dev/vuln/GO-2026-6629"
+          ],
+          "Severity": "HIGH",
+          "Status": "fixed",
+          "Title": "The Nickname profile can panic with an out-of-bounds slice error when  ...",
+          "VendorIDs": [
+            "GO-2026-6629"
+          ],
+          "VendorSeverity": {
+            "azure": 3
+          },
+          "VulnerabilityID": "CVE-2026-56851"
         },
         {
           "CVSS": {
@@ -70153,45 +70351,6 @@
             "rocky": 3
           },
           "VulnerabilityID": "CVE-2026-56852"
-        },
-        {
-          "CweIDs": [
-            "CWE-787"
-          ],
-          "DataSource": {
-            "ID": "govulndb",
-            "Name": "The Go Vulnerability Database",
-            "URL": "https://pkg.go.dev/vuln/"
-          },
-          "Description": "The Nickname profile can panic with an out-of-bounds slice error when transforming crafted input into a short destination buffer.",
-          "Fingerprint": "sha256:09b13b60389e8c12a94f9e2280b512236d967cd38a348d84a90d66a9f31b4af3",
-          "FixedVersion": "0.41.0",
-          "InstalledVersion": "v0.38.0",
-          "LastModifiedDate": "2026-10-08T21:35:53.89Z",
-          "Layer": {
-            "DiffID": "sha256:d36b979e545ee2dcaeb49ed880149aab18f15c9de6ab6fafa32bbc1e8b891f85",
-            "Digest": "sha256:001e04ee3684590190da32ee2d74d7cd85b9d0909cf6b26d54408d9e45093e74"
-          },
-          "PkgID": "golang.org/x/text@v0.38.0",
-          "PkgIdentifier": {
-            "PURL": "pkg:golang/golang.org/x/text@v0.38.0",
-            "UID": "eb621e7db253262"
-          },
-          "PkgName": "golang.org/x/text",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56851",
-          "PublishedDate": "2026-10-07T18:17:20.903Z",
-          "References": [
-            "https://go.dev/cl/793360",
-            "https://go.dev/issue/80112",
-            "https://pkg.go.dev/vuln/GO-2026-6629"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "Title": "The Nickname profile can panic with an out-of-bounds slice error when  ...",
-          "VendorIDs": [
-            "GO-2026-6629"
-          ],
-          "VulnerabilityID": "CVE-2026-56851"
         },
         {
           "CVSS": {
@@ -73069,6 +73228,10 @@
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
             "redhat": {
               "V3Score": 7.5,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
@@ -73117,6 +73280,7 @@
             "GO-2026-6609"
           ],
           "VendorSeverity": {
+            "bitnami": 3,
             "redhat": 3,
             "ubuntu": 2
           },
@@ -73124,6 +73288,10 @@
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
             "redhat": {
               "V3Score": 7.5,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
@@ -73174,6 +73342,8 @@
             "GO-2026-6611"
           ],
           "VendorSeverity": {
+            "azure": 3,
+            "bitnami": 3,
             "redhat": 3,
             "ubuntu": 2
           },
@@ -73181,6 +73351,10 @@
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
             "redhat": {
               "V3Score": 7.5,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
@@ -73227,6 +73401,7 @@
             "GO-2026-6607"
           ],
           "VendorSeverity": {
+            "bitnami": 3,
             "redhat": 3
           },
           "VulnerabilityID": "CVE-2026-97031"
@@ -73877,6 +74052,10 @@
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+            },
             "redhat": {
               "V3Score": 6.5,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N"
@@ -73925,12 +74104,19 @@
             "GO-2026-6605"
           ],
           "VendorSeverity": {
+            "bitnami": 3,
             "redhat": 2,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-56866"
         },
         {
+          "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
           "CweIDs": [
             "CWE-405"
           ],
@@ -73963,6 +74149,7 @@
             "https://go.dev/issue/81857",
             "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
             "https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-78659",
             "https://pkg.go.dev/vuln/GO-2026-6603",
             "https://www.cve.org/CVERecord?id=CVE-2026-78659",
             "https://www.openwall.com/lists/oss-security/2026/10/08/9"
@@ -73974,11 +74161,19 @@
             "GO-2026-6603"
           ],
           "VendorSeverity": {
+            "azure": 2,
+            "bitnami": 3,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-78659"
         },
         {
+          "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+            }
+          },
           "CweIDs": [
             "CWE-444"
           ],
@@ -74010,6 +74205,7 @@
             "https://go.dev/cl/836385",
             "https://go.dev/issue/81115",
             "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-78660",
             "https://pkg.go.dev/vuln/GO-2026-6610",
             "https://www.cve.org/CVERecord?id=CVE-2026-78660",
             "https://www.openwall.com/lists/oss-security/2026/10/08/9"
@@ -74021,12 +74217,18 @@
             "GO-2026-6610"
           ],
           "VendorSeverity": {
+            "azure": 3,
+            "bitnami": 3,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-78660"
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 9.1,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H"
+            },
             "redhat": {
               "V3Score": 5.3,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
@@ -74077,6 +74279,8 @@
             "GO-2026-6612"
           ],
           "VendorSeverity": {
+            "azure": 3,
+            "bitnami": 4,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -74084,6 +74288,10 @@
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+            },
             "redhat": {
               "V3Score": 6.5,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N"
@@ -74132,12 +74340,19 @@
             "GO-2026-6613"
           ],
           "VendorSeverity": {
+            "bitnami": 3,
             "redhat": 2,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-94439"
         },
         {
+          "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
           "CweIDs": [
             "CWE-770"
           ],
@@ -74168,6 +74383,7 @@
             "https://go.dev/cl/847307",
             "https://go.dev/issue/81741",
             "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-94440",
             "https://pkg.go.dev/vuln/GO-2026-6608",
             "https://www.cve.org/CVERecord?id=CVE-2026-94440",
             "https://www.openwall.com/lists/oss-security/2026/10/08/9"
@@ -74179,12 +74395,17 @@
             "GO-2026-6608"
           ],
           "VendorSeverity": {
+            "bitnami": 3,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-94440"
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 6.1,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+            },
             "redhat": {
               "V3Score": 6.1,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
@@ -74231,12 +74452,67 @@
             "GO-2026-6599"
           ],
           "VendorSeverity": {
+            "bitnami": 2,
             "redhat": 2
           },
           "VulnerabilityID": "CVE-2026-94448"
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 6.1,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-79"
+          ],
+          "DataSource": {
+            "ID": "govulndb",
+            "Name": "The Go Vulnerability Database",
+            "URL": "https://pkg.go.dev/vuln/"
+          },
+          "Description": "A trusted template author may have previously written a valid template wherein the use of the 'yield' keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.",
+          "Fingerprint": "sha256:95ea225353978b6b75b9f3cad10d5456d14268f34eece0911cf3fa004acb78b6",
+          "FixedVersion": "1.26.9, 1.27.2",
+          "InstalledVersion": "v1.25.8",
+          "LastModifiedDate": "2026-10-15T16:18:24.817Z",
+          "Layer": {
+            "DiffID": "sha256:d36b979e545ee2dcaeb49ed880149aab18f15c9de6ab6fafa32bbc1e8b891f85",
+            "Digest": "sha256:001e04ee3684590190da32ee2d74d7cd85b9d0909cf6b26d54408d9e45093e74"
+          },
+          "PkgID": "stdlib@v1.25.8",
+          "PkgIdentifier": {
+            "PURL": "pkg:golang/stdlib@v1.25.8",
+            "UID": "33e0e8962e334f91"
+          },
+          "PkgName": "stdlib",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-97030",
+          "PublishedDate": "2026-10-08T23:17:05.91Z",
+          "References": [
+            "https://go.dev/cl/840925",
+            "https://go.dev/issue/81823",
+            "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-97030",
+            "https://pkg.go.dev/vuln/GO-2026-6600"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "A trusted template author may have previously written a valid template ...",
+          "VendorIDs": [
+            "GO-2026-6600"
+          ],
+          "VendorSeverity": {
+            "bitnami": 2
+          },
+          "VulnerabilityID": "CVE-2026-97030"
+        },
+        {
+          "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
             "redhat": {
               "V3Score": 5.9,
               "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
@@ -74285,12 +74561,18 @@
             "GO-2026-6617"
           ],
           "VendorSeverity": {
+            "azure": 2,
+            "bitnami": 3,
             "redhat": 2
           },
           "VulnerabilityID": "CVE-2026-97032"
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 9.8,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+            },
             "redhat": {
               "V3Score": 3.3,
               "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N"
@@ -74337,49 +74619,10 @@
             "GO-2026-6604"
           ],
           "VendorSeverity": {
+            "bitnami": 4,
             "redhat": 1
           },
           "VulnerabilityID": "CVE-2026-56857"
-        },
-        {
-          "CweIDs": [
-            "CWE-79"
-          ],
-          "DataSource": {
-            "ID": "govulndb",
-            "Name": "The Go Vulnerability Database",
-            "URL": "https://pkg.go.dev/vuln/"
-          },
-          "Description": "A trusted template author may have previously written a valid template wherein the use of the 'yield' keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.",
-          "Fingerprint": "sha256:95ea225353978b6b75b9f3cad10d5456d14268f34eece0911cf3fa004acb78b6",
-          "FixedVersion": "1.26.9, 1.27.2",
-          "InstalledVersion": "v1.25.8",
-          "LastModifiedDate": "2026-10-15T16:18:24.817Z",
-          "Layer": {
-            "DiffID": "sha256:d36b979e545ee2dcaeb49ed880149aab18f15c9de6ab6fafa32bbc1e8b891f85",
-            "Digest": "sha256:001e04ee3684590190da32ee2d74d7cd85b9d0909cf6b26d54408d9e45093e74"
-          },
-          "PkgID": "stdlib@v1.25.8",
-          "PkgIdentifier": {
-            "PURL": "pkg:golang/stdlib@v1.25.8",
-            "UID": "33e0e8962e334f91"
-          },
-          "PkgName": "stdlib",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-97030",
-          "PublishedDate": "2026-10-08T23:17:05.91Z",
-          "References": [
-            "https://go.dev/cl/840925",
-            "https://go.dev/issue/81823",
-            "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
-            "https://pkg.go.dev/vuln/GO-2026-6600"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "Title": "A trusted template author may have previously written a valid template ...",
-          "VendorIDs": [
-            "GO-2026-6600"
-          ],
-          "VulnerabilityID": "CVE-2026-97030"
         }
       ]
     }

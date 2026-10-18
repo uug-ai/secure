@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:b618f5c2e7f22a2deda2128eed08dd1b4aa504036943f150914a3b813a14fb56",
   "ArtifactName": "ghcr.io/uug-ai/hub-anpr@sha256:00184c1c218401c857b364ad35f020633e55c6ac3eabb87b450205cb1e4a8a0e",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-10-17T03:50:47.16889508Z",
+  "CreatedAt": "2026-10-18T03:51:39.604644638Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:15f1c8eb1ab18eae260c7fb6296434cbe1ff0e1e30fd814ae92a80dd54005e62",
@@ -207,7 +207,7 @@
     ],
     "Size": 741571072
   },
-  "ReportID": "01a147fb-ce80-7da1-beb5-2d90b3dac66c",
+  "ReportID": "01a14d22-f754-79ce-acef-e9efa6ceecae",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -21807,6 +21807,53 @@
         {
           "CVSS": {
             "redhat": {
+              "V3Score": 3.6,
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:L/I:N/A:L"
+            }
+          },
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "A flaw was found in libarchive. An attacker can cause a Denial of Service (DoS) or potential information disclosure due to a use-after-free vulnerability, which occurs when a program reads memory that has already been released. This issue arises when the archive_entry_copy_mac_metadata() function deallocates an internal buffer before completing a data copy. An attacker who can supply input to an application utilizing this function can trigger the flaw to crash the application or read uninitialized memory data.",
+          "Fingerprint": "sha256:c2ab9402c705dff62cd6032b99021eca7a6a1846f44a96015c96f6ab074e1b00",
+          "InstalledVersion": "3.7.4-4+deb13u1",
+          "LastModifiedDate": "2026-10-17T17:16:29.753Z",
+          "Layer": {
+            "DiffID": "sha256:44642b899dfe8ae5ae0d1015db49246d9f9b1e747499fb112b6407ed91925e71",
+            "Digest": "sha256:f6930d04243d4f33a32af97924235fbf7e27eaa3c45e752047c63e48bee588b2"
+          },
+          "PkgID": "libarchive13t64@3.7.4-4+deb13u1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libarchive13t64@3.7.4-4%2Bdeb13u1?arch=amd64\u0026distro=debian-13.7",
+            "UID": "586c3bcd89cab26"
+          },
+          "PkgName": "libarchive13t64",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-17591",
+          "PublishedDate": "2026-10-16T23:17:01.42Z",
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:77775",
+            "https://access.redhat.com/security/cve/CVE-2026-17591",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2554209",
+            "https://github.com/libarchive/libarchive/pull/3318",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-17591",
+            "https://www.cve.org/CVERecord?id=CVE-2026-17591"
+          ],
+          "Severity": "LOW",
+          "Status": "affected",
+          "Title": "libarchive: libarchive: use-after-free via aliased Mac metadata copy",
+          "VendorSeverity": {
+            "redhat": 1
+          },
+          "VulnerabilityID": "CVE-2026-17591"
+        },
+        {
+          "CVSS": {
+            "redhat": {
               "V3Score": 5.5,
               "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
             }
@@ -22268,7 +22315,7 @@
           "Description": "An issue in libass v.0.17.5 allows a remote attacker to cause a denial of service via the ass_outline_construct() in libass/ass_render.c",
           "Fingerprint": "sha256:1a5235dd1daf552aac6e70446bd7d3061febf2c2e6a7260b040c1031b1854cdd",
           "InstalledVersion": "1:0.17.3-1+deb13u1",
-          "LastModifiedDate": "2026-10-13T15:17:51.92Z",
+          "LastModifiedDate": "2026-10-16T19:56:15.773Z",
           "Layer": {
             "DiffID": "sha256:44642b899dfe8ae5ae0d1015db49246d9f9b1e747499fb112b6407ed91925e71",
             "Digest": "sha256:f6930d04243d4f33a32af97924235fbf7e27eaa3c45e752047c63e48bee588b2"
@@ -37228,6 +37275,7 @@
           "Status": "affected",
           "Title": "curl: libcurl: Information disclosure via incorrect connection reuse with Negotiate authentication",
           "VendorSeverity": {
+            "azure": 2,
             "photon": 4,
             "redhat": 2
           },
@@ -37940,12 +37988,18 @@
           "VulnerabilityID": "CVE-2025-15224"
         },
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 4.8,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:L"
+            }
+          },
           "DataSource": {
             "ID": "debian",
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "When curl is built with GnuTLS, a malicious WebSocket server can make curl send memory past its send buffer. This is due to an out of bounds read following when `gnutls_record_send()` returns a number of bytes sent greater than the number of bytes it was given to send. GnuTLS does that after a blocked send.",
+          "Description": "A flaw was found in curl. When curl is built with the GnuTLS library, a blocked transmission during communication with a malicious WebSocket server can trigger an out-of-bounds memory read. A malicious server can exploit this flaw to expose sensitive data from neighboring memory buffers or crash the client, leading to information disclosure or a Denial of Service (DoS).",
           "Fingerprint": "sha256:36d646ae45137d510f7e587a6f4fc20c07bf832dfc018039c464e2ae4122198a",
           "InstalledVersion": "8.14.1-2+deb13u7",
           "Layer": {
@@ -37960,25 +38014,34 @@
           "PkgName": "libcurl4t64",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-107928",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-107928",
             "https://curl.se/docs/CVE-2026-107928.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-107928",
             "https://ubuntu.com/security/notices/USN-8927-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-107928"
           ],
           "Severity": "LOW",
           "Status": "affected",
-          "Title": "When curl is built with GnuTLS, a malicious WebSocket server can ",
+          "Title": "curl: curl: info leak uploading over WebSockets with GnuTLS",
           "VendorSeverity": {
+            "redhat": 1,
             "ubuntu": 1
           },
           "VulnerabilityID": "CVE-2026-107928"
         },
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 3.7,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
+            }
+          },
           "DataSource": {
             "ID": "debian",
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "When `CURLOPT_INTERFACE` (or the command line tool's `--interface` option) is set with one of the documented prefixes (`if!`, `host!`, `ifhost!`), that binding is not part of the connection reuse key, so a later transfer asking for a different source can silently reuse an existing connection and go out from the earlier transfer's source address.",
+          "Description": "A flaw was found in curl. When connection pooling is used with forced local interface binding options, curl fails to include the source interface configuration in its connection reuse cache. An attacker able to initiate network requests in an application using pooled connections can cause subsequent transfers to inadvertently reuse an existing connection. This behavior causes outbound network traffic to be transmitted through the wrong source address, potentially routing requests through an unintended network interface.",
           "Fingerprint": "sha256:2f84d300a5cdeaa64524b4fbbd7e168246068a14604fc83e5849a014ad8ab27e",
           "InstalledVersion": "8.14.1-2+deb13u7",
           "Layer": {
@@ -37993,14 +38056,17 @@
           "PkgName": "libcurl4t64",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-107929",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-107929",
             "https://curl.se/docs/CVE-2026-107929.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-107929",
             "https://ubuntu.com/security/notices/USN-8927-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-107929"
           ],
           "Severity": "LOW",
           "Status": "affected",
-          "Title": "When `CURLOPT_INTERFACE` (or the command line tool's `--interface",
+          "Title": "curl: curl: local interface connection reuse mixup",
           "VendorSeverity": {
+            "redhat": 1,
             "ubuntu": 1
           },
           "VulnerabilityID": "CVE-2026-107929"
@@ -38051,6 +38117,7 @@
           "Title": "curl: curl: Authentication bypass in OpenLDAP SASL negotiation via Man-in-the-Middle (MITM) attack",
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 1,
             "photon": 3,
             "redhat": 1,
             "ubuntu": 2
@@ -38102,6 +38169,7 @@
           "Status": "affected",
           "Title": "curl: libcurl: Use-after-free in HTTP/2 Server Push with shared connections",
           "VendorSeverity": {
+            "azure": 2,
             "photon": 4,
             "redhat": 1,
             "ubuntu": 2
@@ -38154,6 +38222,7 @@
           "Title": "curl: curl: Public key pinning bypass allows unauthenticated connections",
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 1,
             "photon": 3,
             "redhat": 1,
             "ubuntu": 2
@@ -38313,12 +38382,18 @@
           "VulnerabilityID": "CVE-2026-82209"
         },
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 5.3,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N"
+            }
+          },
           "DataSource": {
             "ID": "debian",
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "Setting `CURLOPT_AWS_SIGV4` to NULL does not disable SigV4 authentication, contrary to expectations and documentation. A subsequent transfer on the same handle still sends an `Authorization: AWS4-HMAC-SHA256` header to whatever URL is set next, leaking state information.",
+          "Description": "A flaw was found in curl. When an application attempts to disable Amazon Web Services Signature Version 4 (AWS SigV4) authentication on a reused connection handle, curl fails to clear the setting as expected. If the application subsequently directs a request to an untrusted or attacker-controlled server using the same handle, curl unintentionally transmits the signed authorization header. This flaw allows a remote attacker to obtain access key identifiers and request signatures, leading to information disclosure.",
           "Fingerprint": "sha256:b96a8755a5f883a7dac9ed1fc9fd2821a7ba6097662776caf4786dcdb5167035",
           "InstalledVersion": "8.14.1-2+deb13u7",
           "Layer": {
@@ -38333,25 +38408,34 @@
           "PkgName": "libcurl4t64",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86409",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-86409",
             "https://curl.se/docs/CVE-2026-86409.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-86409",
             "https://ubuntu.com/security/notices/USN-8927-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-86409"
           ],
           "Severity": "LOW",
           "Status": "affected",
-          "Title": "stale SigV4 headers sent unintended",
+          "Title": "curl: curl: stale SigV4 headers sent unintended",
           "VendorSeverity": {
+            "redhat": 1,
             "ubuntu": 1
           },
           "VulnerabilityID": "CVE-2026-86409"
         },
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 6.8,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:N"
+            }
+          },
           "DataSource": {
             "ID": "debian",
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "A flaw in the curl command line tool's logic makes it only set SSH host verification options when interacting directly using SFTP or SCP, and not as a result of following a redirect. This means `--knownhosts`, `--hostpubsha256`, and `--hostpubmd5` are never installed when the initial URL is HTTPS. If `--location` and `--proto-redir +sftp` is used and the server returns a `Location: sftp://example.com` redirect, the SFTP connection proceeds without any of the user's requested SSH host verification methods.",
+          "Description": "A flaw was found in the curl command-line tool. When configured to follow redirects to Secure File Transfer Protocol (SFTP) or Secure Copy Protocol (SCP) destinations, curl fails to apply user-specified Secure Shell (SSH) host verification settings. A malicious server can exploit this flaw by redirecting requests to an untrusted server, causing the connection to proceed without validating the remote host's identity. This failure can enable an attacker to intercept communications, leading to sensitive information disclosure.",
           "Fingerprint": "sha256:1d7b4636240d8e1badc5198bf4846291bb51cceb8c199b094151eaa9a27aed12",
           "InstalledVersion": "8.14.1-2+deb13u7",
           "Layer": {
@@ -38366,7 +38450,9 @@
           "PkgName": "libcurl4t64",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86410",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-86410",
             "https://curl.se/docs/CVE-2026-86410.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-86410",
             "https://ubuntu.com/security/notices/USN-8927-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-86410"
           ],
@@ -38374,6 +38460,7 @@
           "Status": "affected",
           "Title": "curl: curl: redirect to SFTP or SCP bypasses host verification",
           "VendorSeverity": {
+            "redhat": 1,
             "ubuntu": 1
           },
           "VulnerabilityID": "CVE-2026-86410"
@@ -38421,12 +38508,18 @@
           "VulnerabilityID": "CVE-2026-86414"
         },
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 3.7,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
+            }
+          },
           "DataSource": {
             "ID": "debian",
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "Importing a `includeSubDomains` parent HSTS entry before a longer-lived child entry, silently drops the child. Consequently, when the parent expires, the child's valid HSTS policy is lost, causing curl to issue unencrypted HTTP requests rather than upgrading to HTTPS.",
+          "Description": "A flaw was found in curl. When importing HTTP Strict Transport Security (HSTS) cache records, loading a parent domain entry configured to include subdomains before a longer-lived subdomain entry silently drops the subdomain policy. Consequently, once the parent policy expires, curl fails to upgrade subsequent connections for the subdomain to HTTPS and transmits unencrypted requests, allowing a network attacker to intercept sensitive data.",
           "Fingerprint": "sha256:525eafb878085052e4bd76cdb22e665bec564e3aa957fedfe8ac6cbc71d20be1",
           "InstalledVersion": "8.14.1-2+deb13u7",
           "Layer": {
@@ -38441,24 +38534,34 @@
           "PkgName": "libcurl4t64",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-87862",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-87862",
             "https://curl.se/docs/CVE-2026-87862.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-87862",
             "https://ubuntu.com/security/notices/USN-8927-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-87862"
           ],
           "Severity": "LOW",
           "Status": "affected",
+          "Title": "curl: curl: HSTS cache import drops longer-lived child",
           "VendorSeverity": {
+            "redhat": 1,
             "ubuntu": 1
           },
           "VulnerabilityID": "CVE-2026-87862"
         },
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 3.7,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N"
+            }
+          },
           "DataSource": {
             "ID": "debian",
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "An authenticated HTTPS origin can supply an HSTS `max-age` value that the parser accepts, but time serialization later fails to process. On 64-bit systems, extreme max-age values compute an absolute expiry within standard time integer limits that exceeds calendar time structure bounds. During cache saves, the original HSTS file is truncated before writing a temporary replacement; when serialization fails, the temporary file is deleted, leaving an empty or partial cache. Because the save error is silently ignored during cleanup, curl exits successfully despite the data loss.",
+          "Description": "A flaw was found in curl. When persistent HTTP Strict Transport Security (HSTS) caching is enabled, a remote HTTPS server can return an out-of-range expiration value that fails time serialization during cache saving. Because curl truncates the cache file prior to writing the update, this serialization failure causes the persistent HSTS cache to be deleted or emptied. As a result, stored security policies for known hosts are lost, potentially allowing future connections to fall back to insecure communication.",
           "Fingerprint": "sha256:381be89fa408bcdb0d1ca409b98d8c35e8da9c4a381aa8b606bad1f784527dce",
           "InstalledVersion": "8.14.1-2+deb13u7",
           "Layer": {
@@ -38473,25 +38576,34 @@
           "PkgName": "libcurl4t64",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-87863",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-87863",
             "https://curl.se/docs/CVE-2026-87863.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-87863",
             "https://ubuntu.com/security/notices/USN-8927-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-87863"
           ],
           "Severity": "LOW",
           "Status": "affected",
-          "Title": "Title Not Available",
+          "Title": "curl: curl: Hsts Response Erases Persisted Entries",
           "VendorSeverity": {
+            "redhat": 1,
             "ubuntu": 1
           },
           "VulnerabilityID": "CVE-2026-87863"
         },
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 3.7,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:L/I:L/A:N"
+            }
+          },
           "DataSource": {
             "ID": "debian",
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "Enabling `CURLOPT_CRLF` causes curl to advertise the raw input byte count in the `IMAP APPEND {N}` literal while transmitting line-ending expanded data. The server reads only N bytes for the payload, causing the remaining overflow bytes to be interpreted and executed as pipelined IMAP commands within the authenticated session.",
+          "Description": "A flaw was found in curl. When curl is configured to perform carriage return and line feed (CRLF) conversion during an Internet Message Access Protocol (IMAP) append operation, it incorrectly reports the raw input size rather than the expanded byte count. Because the receiving server only reads the advertised length as message data, it interprets the remaining overflow bytes as subsequent commands. An attacker capable of supplying message data with line breaks can exploit this issue to execute unauthorized IMAP commands within an authenticated session.",
           "Fingerprint": "sha256:f7b9a74c5e8719bd7251aedaa0b5cd5cf495f956e10f61cf208ca54911f0a3f5",
           "InstalledVersion": "8.14.1-2+deb13u7",
           "Layer": {
@@ -38506,25 +38618,34 @@
           "PkgName": "libcurl4t64",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-87864",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-87864",
             "https://curl.se/docs/CVE-2026-87864.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-87864",
             "https://ubuntu.com/security/notices/USN-8927-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-87864"
           ],
           "Severity": "LOW",
           "Status": "affected",
-          "Title": "Title Not Available",
+          "Title": "curl: IMAP APPEND plus CRLF conversion command injection",
           "VendorSeverity": {
+            "redhat": 1,
             "ubuntu": 1
           },
           "VulnerabilityID": "CVE-2026-87864"
         },
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 3.7,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N"
+            }
+          },
           "DataSource": {
             "ID": "debian",
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "When libcurl uses libssh2 with a hashed `known_hosts` file, an unrelated initial entry can cause host key validation to report a key *mismatch* as a *missing* key to the `CURLOPT_SSH_KEYFUNCTION` callback.",
+          "Description": "A flaw was found in curl. When libcurl is built with the libssh2 backend and uses a hashed known-hosts file, host key verification can mistakenly report a key mismatch as a missing key to custom verification callbacks. A remote attacker who intercepts or controls the Secure Shell (SSH) connection can exploit this flaw to make a previously pinned server appear as a new host. As a result, the application may inadvertently authenticate to an untrusted server, leading to credential exposure and the receipt of malicious data.",
           "Fingerprint": "sha256:fe53bd012e449decf7b08fba53fc118ae2d96d62177ac55b2410fa43c536d1c3",
           "InstalledVersion": "8.14.1-2+deb13u7",
           "Layer": {
@@ -38539,25 +38660,34 @@
           "PkgName": "libcurl4t64",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-87865",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-87865",
             "https://curl.se/docs/CVE-2026-87865.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-87865",
             "https://ubuntu.com/security/notices/USN-8927-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-87865"
           ],
           "Severity": "LOW",
           "Status": "affected",
-          "Title": "knownhost callback mismatches key as missing",
+          "Title": "curl: curl: knownhost callback mismatches key as missing",
           "VendorSeverity": {
+            "redhat": 1,
             "ubuntu": 1
           },
           "VulnerabilityID": "CVE-2026-87865"
         },
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 3.7,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N"
+            }
+          },
           "DataSource": {
             "ID": "debian",
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "When built with wolfSSL, curl can successfully validate a pinned public key hash against a key the TLS peer does not possess. During the TLS handshake, wolfSSL validates the connection, but curl's subsequent re-parsing of the same certificate - tricked by a manipulated validity length field - extracts and matches a different embedded key, incorrectly authorizing the pinned public key.",
+          "Description": "A flaw was found in curl. This vulnerability allows a malicious server to bypass public key pinning when curl is built with the wolfSSL backend. By presenting a specially crafted certificate with a manipulated validity length field, the attacker can trick curl into improperly re-parsing the certificate and authorizing an invalid key during the Transport Layer Security (TLS) handshake.",
           "Fingerprint": "sha256:835eaa2b3e168348e0c54f8eb95b6cd7075ed758000fd65942090a398a2c5665",
           "InstalledVersion": "8.14.1-2+deb13u7",
           "Layer": {
@@ -38571,22 +38701,34 @@
           },
           "PkgName": "libcurl4t64",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-87866",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-87866",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-87866",
+            "https://www.cve.org/CVERecord?id=CVE-2026-87866"
+          ],
           "Severity": "LOW",
           "SeveritySource": "debian",
           "Status": "affected",
-          "Title": "wolfSSL public-key pinning bypass",
+          "Title": "curl: curl: wolfSSL public-key pinning bypass",
           "VendorSeverity": {
-            "debian": 1
+            "debian": 1,
+            "redhat": 1
           },
           "VulnerabilityID": "CVE-2026-87866"
         },
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 4.3,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L"
+            }
+          },
           "DataSource": {
             "ID": "debian",
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "When writing a long cookie name and value to a Netscape cookie jar, a remote HTTP server can make `curl` write a record that exceeds its line-length parsing limit. Consequently, any subsequent `curl` invocation reading from that same cookie jar using `--cookie` will silently abort parsing prematurely upon encountering the oversized line, ignoring all subsequent valid cookies in the file.",
+          "Description": "A flaw was found in curl. A remote malicious server can trigger a denial of service (DoS) in cookie handling by providing an overly long cookie name and value that exceeds curl's line-length limit when saved to a cookie file. Subsequent curl operations reading from this cookie file silently abort parsing upon encountering the oversized entry, causing all remaining valid cookies in the file to be ignored.",
           "Fingerprint": "sha256:63294f653047e642e54bcfc4569bc485d782e69788bd1fcbacbdafe58dec815a",
           "InstalledVersion": "8.14.1-2+deb13u7",
           "Layer": {
@@ -38601,25 +38743,34 @@
           "PkgName": "libcurl4t64",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-92386",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-92386",
             "https://curl.se/docs/CVE-2026-92386.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-92386",
             "https://ubuntu.com/security/notices/USN-8927-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-92386"
           ],
           "Severity": "LOW",
           "Status": "affected",
-          "Title": "Title Not Available",
+          "Title": "curl: curl: server-set cookie aborts cookie jar load",
           "VendorSeverity": {
+            "redhat": 1,
             "ubuntu": 1
           },
           "VulnerabilityID": "CVE-2026-92386"
         },
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 3.7,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L"
+            }
+          },
           "DataSource": {
             "ID": "debian",
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "By permanently omitting the final control-response line, a malicious FTP, IMAP, POP3, or SMTP server can exploit libcurl and completely bypass its configured transfer timeout mechanism, indefinitely blocking all concurrent transfers bound to the same multi-handle.",
+          "Description": "A flaw was found in curl. When communicating with a malicious server using protocols such as FTP, IMAP, POP3, or SMTP, the server can trigger an infinite loop by continuously transmitting data while omitting the final control response line. This behavior bypasses configured transfer timeouts, indefinitely blocking concurrent transfers and resulting in a Denial of Service (DoS).",
           "Fingerprint": "sha256:54c4459a94895066b69077d6a73588cbc03f0dbfca9bb95316ef4fc54f9eb5c6",
           "InstalledVersion": "8.14.1-2+deb13u7",
           "Layer": {
@@ -38634,24 +38785,34 @@
           "PkgName": "libcurl4t64",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-92387",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-92387",
             "https://curl.se/docs/CVE-2026-92387.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-92387",
             "https://ubuntu.com/security/notices/USN-8927-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-92387"
           ],
           "Severity": "LOW",
           "Status": "affected",
+          "Title": "curl: curl: never-ending loop via server response omission",
           "VendorSeverity": {
+            "redhat": 1,
             "ubuntu": 1
           },
           "VulnerabilityID": "CVE-2026-92387"
         },
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 3.7,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
+            }
+          },
           "DataSource": {
             "ID": "debian",
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "libcurl's TFTP state machine fails to validate state transitions against the requested transfer direction, accepting opening server responses for both reads and writes interchangeably. A malicious TFTP server can respond to a download request in a way that forces the client into transmit mode, prompting libcurl to consume and transmit data from the handle's persistent `CURLOPT_READDATA` pointer - including data remaining from unrelated prior operations, such as an HTTP POST request executed on a reused handle.",
+          "Description": "A flaw was found in curl. When handling Trivial File Transfer Protocol (TFTP) transfers, a malicious server can trigger information disclosure by responding to a download request in a way that forces the client into transmit mode. Consequently, the client may unintentionally send leftover sensitive data from prior operations on a reused connection handle to the attacker's server.",
           "Fingerprint": "sha256:8470b1f365e4f0df13746e0bd374d292843107e66d890f1821ca1b1a3a01ccb5",
           "InstalledVersion": "8.14.1-2+deb13u7",
           "Layer": {
@@ -38666,25 +38827,34 @@
           "PkgName": "libcurl4t64",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-92389",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-92389",
             "https://curl.se/docs/CVE-2026-92389.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-92389",
             "https://ubuntu.com/security/notices/USN-8927-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-92389"
           ],
           "Severity": "LOW",
           "Status": "affected",
-          "Title": "Title Not Available",
+          "Title": "curl: curl: TFTP direction confusion",
           "VendorSeverity": {
+            "redhat": 1,
             "ubuntu": 1
           },
           "VulnerabilityID": "CVE-2026-92389"
         },
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 6.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N"
+            }
+          },
           "DataSource": {
             "ID": "debian",
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "When invoked with `--remote-header-name` (`-J`), curl fails to preserve its documented anti-clobbering protection if an intermediate 103 Early Hints response precedes the final HTTP response, or if an `ETag` header is processed before `Content-Disposition` under `--etag-save`. This flaw allows an HTTP(S) server to overwrite an existing local file specified in the `Content-Disposition` header despite the presence of the `-J` non-overwrite constraint.",
+          "Description": "A flaw was found in curl. When the command-line tool is executed with the remote header name option to prevent overwriting existing files, a malicious server can bypass this protection by returning an intermediate HTTP 103 (Early Hints) response or through specific header ordering. This flaw allows an attacker controlling a remote server to overwrite existing local files on the client system.",
           "Fingerprint": "sha256:ad978dcc588c5ff9edbd33b430615b310d47d1191d0e252d6a6e4b11c3dc2aba",
           "InstalledVersion": "8.14.1-2+deb13u7",
           "Layer": {
@@ -38699,25 +38869,34 @@
           "PkgName": "libcurl4t64",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-92390",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-92390",
             "https://curl.se/docs/CVE-2026-92390.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-92390",
             "https://ubuntu.com/security/notices/USN-8927-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-92390"
           ],
           "Severity": "LOW",
           "Status": "affected",
-          "Title": "When invoked with `--remote-header-name` (`-J`), curl fails to pr",
+          "Title": "curl: curl: -J no-clobber guarantee bypassed with 103 early hints",
           "VendorSeverity": {
+            "redhat": 1,
             "ubuntu": 1
           },
           "VulnerabilityID": "CVE-2026-92390"
         },
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 3.7,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L"
+            }
+          },
           "DataSource": {
             "ID": "debian",
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "A deeply nested multipart MIME structure constructed via the public API causes a stack overflow in libcurl during normal cleanup operations. An excessive recursion depth within `curl_mime_free` leads to unbounded stack frame allocation during structure traversal, ultimately crashing the host process.",
+          "Description": "A flaw was found in curl. An attacker could supply deeply nested Multipurpose Internet Mail Extensions (MIME) structures to an application utilizing the libcurl library. During memory cleanup in the curl_mime_free function, excessive recursive calls exhaust available stack memory, leading to an application crash and a Denial of Service (DoS).",
           "Fingerprint": "sha256:84a778018825fa81013135e4a76c7c5237ab4ac104bb8104789a3f194dc4969f",
           "InstalledVersion": "8.14.1-2+deb13u7",
           "Layer": {
@@ -38732,25 +38911,34 @@
           "PkgName": "libcurl4t64",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-92391",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-92391",
             "https://curl.se/docs/CVE-2026-92391.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-92391",
             "https://ubuntu.com/security/notices/USN-8927-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-92391"
           ],
           "Severity": "LOW",
           "Status": "affected",
-          "Title": "Title Not Available",
+          "Title": "curl: curl: curl_mime_free stack overflow by recursion",
           "VendorSeverity": {
+            "redhat": 1,
             "ubuntu": 1
           },
           "VulnerabilityID": "CVE-2026-92391"
         },
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 3.3,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+            }
+          },
           "DataSource": {
             "ID": "debian",
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "libcurl could accidentally return a URL for curl_easy_getinfo's `CURLINFO_EFFECTIVE_URL` option containing credentials, even though neither the URL provided to libcurl nor the redirected URL did. The curl tool exposes the same information using the command line option `--write-out '%{url_effective}'`. This credential leak can happen when curl retrieves credentials from a `.netrc` file.",
+          "Description": "A flaw was found in curl. This vulnerability can lead to information disclosure by inadvertently revealing authentication credentials. When curl retrieves credentials from a local configuration file (such as a .netrc file), requesting the effective URL metadata can cause the returned destination address to improperly include those secret credentials. A local user may exploit this issue to view sensitive authentication tokens if an application or script queries and logs or displays the resolved URL.",
           "Fingerprint": "sha256:5efd70be40c5730b466bcd9524916f6ebdb111ce406c1986b6f63f5c99178138",
           "InstalledVersion": "8.14.1-2+deb13u7",
           "Layer": {
@@ -38765,14 +38953,17 @@
           "PkgName": "libcurl4t64",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-94266",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-94266",
             "https://curl.se/docs/CVE-2026-94266.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-94266",
             "https://ubuntu.com/security/notices/USN-8927-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-94266"
           ],
           "Severity": "LOW",
           "Status": "affected",
-          "Title": "libcurl could accidentally return a URL for curl_easy_getinfo's `",
+          "Title": "curl: curl: password leak in CURLINFO_EFFECTIVE_URL",
           "VendorSeverity": {
+            "redhat": 1,
             "ubuntu": 1
           },
           "VulnerabilityID": "CVE-2026-94266"
@@ -39288,293 +39479,6 @@
         },
         {
           "CVSS": {
-            "redhat": {
-              "V3Score": 7.5,
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
-            }
-          },
-          "CweIDs": [
-            "CWE-407"
-          ],
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Description": "Expat through 2.8.3 contains a denial of service vulnerability caused by quadratic algorithmic complexity in the storeAtts() function in xmlparse.c, where processing N specified attributes with non-normalized values triggers an O(N^2) linear scan of elementType-\u003edefaultAtts to determine CDATA status. A remote unauthenticated attacker can supply a single well-formed XML document of a few megabytes to an application parsing untrusted XML to cause excessive CPU consumption, resulting in denial of service without requiring authentication, external entity resolution, or non-default parser options.",
-          "Fingerprint": "sha256:1ae03abb8210f0e6b0ad58edf4d06eae001226a8758ed4fe8078ca4765d910cf",
-          "InstalledVersion": "2.9.0-1~deb13u1",
-          "LastModifiedDate": "2026-09-18T15:07:24.37Z",
-          "Layer": {
-            "DiffID": "sha256:44642b899dfe8ae5ae0d1015db49246d9f9b1e747499fb112b6407ed91925e71",
-            "Digest": "sha256:f6930d04243d4f33a32af97924235fbf7e27eaa3c45e752047c63e48bee588b2"
-          },
-          "PkgID": "libexpat1@2.9.0-1~deb13u1",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libexpat1@2.9.0-1~deb13u1?arch=amd64\u0026distro=debian-13.7",
-            "UID": "e303fe8e0766825b"
-          },
-          "PkgName": "libexpat1",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-66046",
-          "PublishedDate": "2026-08-18T15:16:57Z",
-          "References": [
-            "https://access.redhat.com/errata/RHSA-2026:72663",
-            "https://access.redhat.com/security/cve/CVE-2026-66046",
-            "https://bugzilla.redhat.com/2538967",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2517901",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2538967",
-            "https://creativecommons.org/licenses/by/4.0/",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-66046",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-93990",
-            "https://errata.almalinux.org/9/ALSA-2026-72663.html",
-            "https://errata.rockylinux.org/RLSA-2026:72663",
-            "https://github.com/libexpat/libexpat/pull/1321",
-            "https://linux.oracle.com/cve/CVE-2026-66046.html",
-            "https://linux.oracle.com/errata/ELSA-2026-74001.html",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-66046",
-            "https://ubuntu.com/security/notices/USN-8813-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-66046",
-            "https://www.vulncheck.com/advisories/expat-denial-of-service-via-storeatts-quadratic-complexity"
-          ],
-          "Severity": "HIGH",
-          "Status": "affected",
-          "Title": "expat: Expat: Denial of Service via quadratic complexity in attribute processing",
-          "VendorSeverity": {
-            "alma": 3,
-            "amazon": 3,
-            "azure": 3,
-            "oracle-oval": 3,
-            "redhat": 3,
-            "rocky": 3,
-            "ubuntu": 2
-          },
-          "VulnerabilityID": "CVE-2026-66046"
-        },
-        {
-          "CVSS": {
-            "nvd": {
-              "V3Score": 7.5,
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
-            },
-            "redhat": {
-              "V3Score": 5.9,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
-            }
-          },
-          "CweIDs": [
-            "CWE-394"
-          ],
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Description": "In libexpat 2.8.2 and 2.8.3 before 2.8.4, misinterpretation of getentropy's return code leads to insufficient entropy, which results in being vulnerable to hash flooding attacks, causing a denial of service via crafted XML content.",
-          "Fingerprint": "sha256:5b0de12315c4f6eddaaac980054d4512e675c0feddbe0a5a0aa54286cdb727b9",
-          "InstalledVersion": "2.9.0-1~deb13u1",
-          "LastModifiedDate": "2026-09-08T21:08:20.697Z",
-          "Layer": {
-            "DiffID": "sha256:44642b899dfe8ae5ae0d1015db49246d9f9b1e747499fb112b6407ed91925e71",
-            "Digest": "sha256:f6930d04243d4f33a32af97924235fbf7e27eaa3c45e752047c63e48bee588b2"
-          },
-          "PkgID": "libexpat1@2.9.0-1~deb13u1",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libexpat1@2.9.0-1~deb13u1?arch=amd64\u0026distro=debian-13.7",
-            "UID": "e303fe8e0766825b"
-          },
-          "PkgName": "libexpat1",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-76956",
-          "PublishedDate": "2026-08-20T05:16:29.61Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-76956",
-            "https://github.com/libexpat/libexpat/pull/1326",
-            "https://github.com/libexpat/libexpat/pull/1329",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-76956",
-            "https://www.cve.org/CVERecord?id=CVE-2026-76956"
-          ],
-          "Severity": "HIGH",
-          "SeveritySource": "nvd",
-          "Status": "affected",
-          "Title": "libexpat: libexpat: Denial of Service via hash flooding attack with crafted XML",
-          "VendorSeverity": {
-            "azure": 2,
-            "nvd": 3,
-            "redhat": 2
-          },
-          "VulnerabilityID": "CVE-2026-76956"
-        },
-        {
-          "CVSS": {
-            "nvd": {
-              "V3Score": 7.8,
-              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
-            },
-            "redhat": {
-              "V3Score": 4.9,
-              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L"
-            }
-          },
-          "CweIDs": [
-            "CWE-416"
-          ],
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Description": "libexpat before 2.8.4 lacks handler call depth tracking with custom encoding callbacks. Thus, a use-after-free can occur. NOTE: this is similar to CVE-2026-50219, CVE-2026-56131 and CVE-2026-56412.",
-          "Fingerprint": "sha256:2008f2b3bd0bc188794aaa788a5add1d116170ee04c57ea53d752b5285399e54",
-          "InstalledVersion": "2.9.0-1~deb13u1",
-          "LastModifiedDate": "2026-09-08T20:56:31.86Z",
-          "Layer": {
-            "DiffID": "sha256:44642b899dfe8ae5ae0d1015db49246d9f9b1e747499fb112b6407ed91925e71",
-            "Digest": "sha256:f6930d04243d4f33a32af97924235fbf7e27eaa3c45e752047c63e48bee588b2"
-          },
-          "PkgID": "libexpat1@2.9.0-1~deb13u1",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libexpat1@2.9.0-1~deb13u1?arch=amd64\u0026distro=debian-13.7",
-            "UID": "e303fe8e0766825b"
-          },
-          "PkgName": "libexpat1",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-76957",
-          "PublishedDate": "2026-08-20T05:16:29.747Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-76957",
-            "https://github.com/libexpat/libexpat/pull/1322",
-            "https://github.com/libexpat/libexpat/pull/1329",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-76957",
-            "https://ubuntu.com/security/notices/USN-8813-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-76957"
-          ],
-          "Severity": "HIGH",
-          "SeveritySource": "nvd",
-          "Status": "affected",
-          "Title": "libexpat: libexpat: Memory corruption vulnerability allows arbitrary code execution or denial of service",
-          "VendorSeverity": {
-            "amazon": 3,
-            "azure": 2,
-            "nvd": 3,
-            "redhat": 2,
-            "ubuntu": 2
-          },
-          "VulnerabilityID": "CVE-2026-76957"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 8.2,
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:L"
-            }
-          },
-          "CweIDs": [
-            "CWE-125"
-          ],
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Description": "libexpat before commit 13c5f63 contains a heap buffer over-read vulnerability in xmlparse.c. XML_ParseBuffer advances the parse buffer end with parser-\u003em_bufferEnd += len using a caller-supplied length that is not validated against the allocated buffer size, so repeated XML_ParseBuffer calls move m_bufferEnd past the end of the heap allocation and subsequent parsing reads out of bounds. Reaching this path requires a parse buffer to already be present; otherwise XML_ParseBuffer returns XML_ERROR_NO_BUFFER. A buffer is present after a prior call to XML_GetBuffer, either directly (the common case) or indirectly through a prior XML_Parse call that allocates the buffer internally. The over-read discloses adjacent heap memory to the calling application, recovering heap pointers, libc function pointers, and code pointers sufficient to defeat ASLR and build further exploitation primitives.",
-          "Fingerprint": "sha256:4582ebf1590da742c7764900a8ad0e03e8ef46f7dd39c3b30d3f2bdd16b8961b",
-          "InstalledVersion": "2.9.0-1~deb13u1",
-          "LastModifiedDate": "2026-10-10T03:17:08.487Z",
-          "Layer": {
-            "DiffID": "sha256:44642b899dfe8ae5ae0d1015db49246d9f9b1e747499fb112b6407ed91925e71",
-            "Digest": "sha256:f6930d04243d4f33a32af97924235fbf7e27eaa3c45e752047c63e48bee588b2"
-          },
-          "PkgID": "libexpat1@2.9.0-1~deb13u1",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libexpat1@2.9.0-1~deb13u1?arch=amd64\u0026distro=debian-13.7",
-            "UID": "e303fe8e0766825b"
-          },
-          "PkgName": "libexpat1",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-77214",
-          "PublishedDate": "2026-10-07T15:17:53.327Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-77214",
-            "https://github.com/libexpat/libexpat/commit/13c5f63a7f1c52c2feee3b16a1134d4fb68e9ea0",
-            "https://github.com/libexpat/libexpat/pull/1393",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-77214",
-            "https://www.cve.org/CVERecord?id=CVE-2026-77214",
-            "https://www.vulncheck.com/advisories/libexpat-heap-buffer-over-read-in-xmlparse-c-via-xml-parsebuffer"
-          ],
-          "Severity": "HIGH",
-          "Status": "affected",
-          "Title": "expat: expat: Information disclosure via heap buffer over-read in XML_ParseBuffer",
-          "VendorSeverity": {
-            "azure": 3,
-            "redhat": 3
-          },
-          "VulnerabilityID": "CVE-2026-77214"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 7.5,
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
-            }
-          },
-          "CweIDs": [
-            "CWE-176"
-          ],
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Description": "Expat before 2.8.5 fails to validate that a high surrogate in UTF-16 input is followed by a low surrogate, allowing malformed UTF-16 sequences to be accepted. Attackers can supply UTF-16 encoded XML containing lone high surrogates that consume the following code unit, causing Expat to pass unpaired surrogates to applications built with XML_UNICODE and to silently replace input characters in other builds.",
-          "Fingerprint": "sha256:7bd5911ab5b28b3537cc8e1a6efccac59bbca995dbc4e035dc05cbd4a493f24c",
-          "InstalledVersion": "2.9.0-1~deb13u1",
-          "LastModifiedDate": "2026-09-28T17:17:53.037Z",
-          "Layer": {
-            "DiffID": "sha256:44642b899dfe8ae5ae0d1015db49246d9f9b1e747499fb112b6407ed91925e71",
-            "Digest": "sha256:f6930d04243d4f33a32af97924235fbf7e27eaa3c45e752047c63e48bee588b2"
-          },
-          "PkgID": "libexpat1@2.9.0-1~deb13u1",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libexpat1@2.9.0-1~deb13u1?arch=amd64\u0026distro=debian-13.7",
-            "UID": "e303fe8e0766825b"
-          },
-          "PkgName": "libexpat1",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-93990",
-          "PublishedDate": "2026-09-19T23:17:10.203Z",
-          "References": [
-            "https://access.redhat.com/errata/RHSA-2026:72663",
-            "https://access.redhat.com/security/cve/CVE-2026-93990",
-            "https://blog.hartwork.org/posts/expat-2-8-5-released/",
-            "https://bugzilla.redhat.com/2538967",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2517901",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2538967",
-            "https://creativecommons.org/licenses/by/4.0/",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-66046",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-93990",
-            "https://errata.almalinux.org/9/ALSA-2026-72663.html",
-            "https://errata.rockylinux.org/RLSA-2026:72663",
-            "https://github.com/libexpat/libexpat",
-            "https://github.com/libexpat/libexpat/commit/ff6e1d7e750bbe245178f51a47a965dc8342861a",
-            "https://github.com/libexpat/libexpat/pull/1282",
-            "https://github.com/libexpat/libexpat/releases/tag/R_2_8_5",
-            "https://linux.oracle.com/cve/CVE-2026-93990.html",
-            "https://linux.oracle.com/errata/ELSA-2026-74001.html",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-93990",
-            "https://www.cve.org/CVERecord?id=CVE-2026-93990",
-            "https://www.vulncheck.com/advisories/expat-through-2.8.4-malformed-utf-16-acceptance-via-unchecked-surrogate"
-          ],
-          "Severity": "HIGH",
-          "Status": "affected",
-          "Title": "expat: Expat: XML Injection via Malformed UTF-16 Input",
-          "VendorSeverity": {
-            "alma": 3,
-            "amazon": 3,
-            "azure": 3,
-            "oracle-oval": 3,
-            "redhat": 3,
-            "rocky": 3
-          },
-          "VulnerabilityID": "CVE-2026-93990"
-        },
-        {
-          "CVSS": {
             "julia": {
               "V3Score": 5.5,
               "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
@@ -39633,57 +39537,6 @@
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2025-66382"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 5.9,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
-            }
-          },
-          "CweIDs": [
-            "CWE-190"
-          ],
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Description": "libexpat versions 2.7.2 through 2.8.5 contain an integer overflow vulnerability in expat_realloc() function on 32-bit platforms when computing allocation sizes. Attackers supplying malicious XML to applications parsing with vulnerable libexpat can cause heap buffer overflow, memory corruption, or denial of service.",
-          "Fingerprint": "sha256:4479b47670673c117c3e27a3ececdd7d95a8bbe28f7ad56c74da161bbefe8b5e",
-          "InstalledVersion": "2.9.0-1~deb13u1",
-          "LastModifiedDate": "2026-09-29T21:32:59.833Z",
-          "Layer": {
-            "DiffID": "sha256:44642b899dfe8ae5ae0d1015db49246d9f9b1e747499fb112b6407ed91925e71",
-            "Digest": "sha256:f6930d04243d4f33a32af97924235fbf7e27eaa3c45e752047c63e48bee588b2"
-          },
-          "PkgID": "libexpat1@2.9.0-1~deb13u1",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libexpat1@2.9.0-1~deb13u1?arch=amd64\u0026distro=debian-13.7",
-            "UID": "e303fe8e0766825b"
-          },
-          "PkgName": "libexpat1",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-102633",
-          "PublishedDate": "2026-09-29T17:17:06.98Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-102633",
-            "https://github.com/libexpat/libexpat",
-            "https://github.com/libexpat/libexpat/blob/R_2_8_5/expat/lib/xmlparse.c#L1003",
-            "https://github.com/libexpat/libexpat/commit/209801d7fbaf07ab74bae8cb32dd2ab9e5846118",
-            "https://github.com/libexpat/libexpat/pull/1392",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-102633",
-            "https://www.cve.org/CVERecord?id=CVE-2026-102633",
-            "https://www.vulncheck.com/advisories/libexpat-2.7.2-through-2.8.5-integer-overflow-in-expat-realloc"
-          ],
-          "Severity": "MEDIUM",
-          "Status": "affected",
-          "Title": "expat: expat: Denial of Service via integer overflow in expat_realloc",
-          "VendorSeverity": {
-            "amazon": 3,
-            "azure": 2,
-            "redhat": 2
-          },
-          "VulnerabilityID": "CVE-2026-102633"
         },
         {
           "CVSS": {
@@ -41260,7 +41113,7 @@
           "Description": "An issue in gnutls v.3.8.13 allows an attacker to obtain sensitive information via failing to reject end-entity X.509 certificates that contain a contradictory combination of Key Usage (KU) and Extended Key Usage (EKU)",
           "Fingerprint": "sha256:8f6cc7bb48460f1d86d0fe42a26f81a077cdfc07317917f02f487b9a7f947a9c",
           "InstalledVersion": "3.8.9-3+deb13u4",
-          "LastModifiedDate": "2026-10-09T12:17:11.35Z",
+          "LastModifiedDate": "2026-10-16T18:18:00.667Z",
           "Layer": {
             "DiffID": "sha256:44642b899dfe8ae5ae0d1015db49246d9f9b1e747499fb112b6407ed91925e71",
             "Digest": "sha256:f6930d04243d4f33a32af97924235fbf7e27eaa3c45e752047c63e48bee588b2"
@@ -41278,6 +41131,7 @@
             "https://access.redhat.com/security/cve/CVE-2026-67693",
             "https://gist.github.com/lkloliver/6fbfc191bc6163942c8017551ac3f238",
             "https://gitlab.com/gnutls/gnutls/-/blob/3.8.13/lib/x509/verify.c#L1119-1178",
+            "https://gitlab.com/gnutls/gnutls/-/work_items/1642",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-67693",
             "https://www.cve.org/CVERecord?id=CVE-2026-67693"
           ],
@@ -41399,7 +41253,7 @@
           "Description": "Improper certificate validation in gnutls v3.8.13 causes the application to reject legitimate certificates for valid users, leading to a Denial of Service (DoS).",
           "Fingerprint": "sha256:a62989ff9cd77791447f3945c27ed7f1b9c9254d7e0082f2d8dcba9f017aa689",
           "InstalledVersion": "3.8.9-3+deb13u4",
-          "LastModifiedDate": "2026-10-08T21:33:42.423Z",
+          "LastModifiedDate": "2026-10-16T18:19:45.397Z",
           "Layer": {
             "DiffID": "sha256:44642b899dfe8ae5ae0d1015db49246d9f9b1e747499fb112b6407ed91925e71",
             "Digest": "sha256:f6930d04243d4f33a32af97924235fbf7e27eaa3c45e752047c63e48bee588b2"
@@ -41416,7 +41270,8 @@
             "http://gnutls.com",
             "https://evil.com",
             "https://gist.github.com/lkloliver/0c8b47fa75a0958fa88587665b82ae15",
-            "https://www.cve.org/CVERecord?id=CVE-2026-95184"
+            "https://www.cve.org/CVERecord?id=CVE-2026-95184",
+            "https://www.gnutls.org"
           ],
           "Severity": "LOW",
           "SeveritySource": "debian",
@@ -41440,7 +41295,7 @@
           "Description": "An issue in gnutls v3.8.13 causes legitimate CA certificates to be rejected, leading to a Denial of Service (DoS).",
           "Fingerprint": "sha256:16c0ed428aea22b25827caaf131eb5c874c51fb3e71502399bc5ce64e718cf03",
           "InstalledVersion": "3.8.9-3+deb13u4",
-          "LastModifiedDate": "2026-10-08T21:33:42.423Z",
+          "LastModifiedDate": "2026-10-16T18:19:45.56Z",
           "Layer": {
             "DiffID": "sha256:44642b899dfe8ae5ae0d1015db49246d9f9b1e747499fb112b6407ed91925e71",
             "Digest": "sha256:f6930d04243d4f33a32af97924235fbf7e27eaa3c45e752047c63e48bee588b2"
@@ -41457,7 +41312,8 @@
             "http://gnutls.com",
             "https://evil.com",
             "https://gist.github.com/lkloliver/8e4498311aff18e2077010e412043e18",
-            "https://www.cve.org/CVERecord?id=CVE-2026-95209"
+            "https://www.cve.org/CVERecord?id=CVE-2026-95209",
+            "https://www.gnutls.org"
           ],
           "Severity": "LOW",
           "SeveritySource": "debian",
@@ -42015,52 +41871,6 @@
             "ubuntu": 1
           },
           "VulnerabilityID": "CVE-2017-9937"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 5,
-              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:H/I:N/A:N"
-            }
-          },
-          "CweIDs": [
-            "CWE-121"
-          ],
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Description": "Buffer Overflow vulnerability in libjxl v.0.11.2 and before allows a local attacker to obtain sensitive information via the DecodeImageAPNG function",
-          "Fingerprint": "sha256:eec6f3630a6817f897d5c3d1c17ff65fe6710902f0f5aea815a52d579d39e0fc",
-          "InstalledVersion": "0.11.2-0.1~deb13u3",
-          "LastModifiedDate": "2026-07-23T18:28:35.28Z",
-          "Layer": {
-            "DiffID": "sha256:44642b899dfe8ae5ae0d1015db49246d9f9b1e747499fb112b6407ed91925e71",
-            "Digest": "sha256:f6930d04243d4f33a32af97924235fbf7e27eaa3c45e752047c63e48bee588b2"
-          },
-          "PkgID": "libjxl0.11@0.11.2-0.1~deb13u3",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libjxl0.11@0.11.2-0.1~deb13u3?arch=amd64\u0026distro=debian-13.7",
-            "UID": "4a6e397226249630"
-          },
-          "PkgName": "libjxl0.11",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-52584",
-          "PublishedDate": "2026-07-17T21:17:07.723Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-52584",
-            "https://github.com/libjxl/libjxl/issues/4803",
-            "https://github.com/libjxl/libjxl/pull/4804",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-52584",
-            "https://www.cve.org/CVERecord?id=CVE-2026-52584"
-          ],
-          "Severity": "MEDIUM",
-          "Status": "affected",
-          "Title": "libjxl: libjxl: Information disclosure via Buffer Overflow in DecodeImageAPNG function",
-          "VendorSeverity": {
-            "redhat": 2
-          },
-          "VulnerabilityID": "CVE-2026-52584"
         },
         {
           "CVSS": {
@@ -44282,7 +44092,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "[Unknown description]",
+          "Description": "Description Not Available",
           "Fingerprint": "sha256:369f7e4de7f00b9dea5ed1aaad15f0479c8783c7d7fdc95e3408f80f5c401c89",
           "InstalledVersion": "3.6.6-0.1~deb13u1",
           "Layer": {
@@ -44298,7 +44108,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-35336",
           "Severity": "UNKNOWN",
           "Status": "affected",
-          "Title": "[Unknown description]",
+          "Title": "Title Not Available",
           "VulnerabilityID": "CVE-2026-35336"
         },
         {
@@ -44382,7 +44192,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "Description Not Available",
+          "Description": "[Unknown description]",
           "Fingerprint": "sha256:b0b3502aec56bcb0c059bfbeb2a328ca22ba30047abe19ef178667185349ae97",
           "InstalledVersion": "3.6.6-0.1~deb13u1",
           "Layer": {
@@ -44398,7 +44208,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-50581",
           "Severity": "UNKNOWN",
           "Status": "affected",
-          "Title": "Title Not Available",
+          "Title": "[Unknown description]",
           "VulnerabilityID": "CVE-2026-50581"
         },
         {
@@ -44457,7 +44267,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "Description Not Available",
+          "Description": "[Unknown description]",
           "Fingerprint": "sha256:dccf93a93f4e64538bb1f5e8b98c6e233bf83d6815ac035eb3cfa4f8f4ccd0aa",
           "InstalledVersion": "3.6.6-0.1~deb13u1",
           "Layer": {
@@ -44473,7 +44283,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-50585",
           "Severity": "UNKNOWN",
           "Status": "affected",
-          "Title": "Title Not Available",
+          "Title": "[Unknown description]",
           "VulnerabilityID": "CVE-2026-50585"
         },
         {
@@ -44482,7 +44292,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "[Unknown description]",
+          "Description": "Description Not Available",
           "Fingerprint": "sha256:b6a56b566269cf029000d088663345ce9f72ae8845fbc268ee55f532dde7798a",
           "InstalledVersion": "3.6.6-0.1~deb13u1",
           "Layer": {
@@ -44498,7 +44308,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-50586",
           "Severity": "UNKNOWN",
           "Status": "affected",
-          "Title": "[Unknown description]",
+          "Title": "Title Not Available",
           "VulnerabilityID": "CVE-2026-50586"
         },
         {
@@ -44557,7 +44367,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "[Unknown description]",
+          "Description": "Description Not Available",
           "Fingerprint": "sha256:424a6d78812583533a5b4d5c1b2aede155a779b9190669ead34bfdf1c2feb4ea",
           "InstalledVersion": "3.6.6-0.1~deb13u1",
           "Layer": {
@@ -44573,7 +44383,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-50640",
           "Severity": "UNKNOWN",
           "Status": "affected",
-          "Title": "[Unknown description]",
+          "Title": "Title Not Available",
           "VulnerabilityID": "CVE-2026-50640"
         },
         {
@@ -44607,7 +44417,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "[Unknown description]",
+          "Description": "Description Not Available",
           "Fingerprint": "sha256:ada5b6523fb962bea3a5e119bcddc0b0a4047da04083f2fa4fedd7e0bb47fb1d",
           "InstalledVersion": "3.6.6-0.1~deb13u1",
           "Layer": {
@@ -44623,7 +44433,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-54435",
           "Severity": "UNKNOWN",
           "Status": "affected",
-          "Title": "[Unknown description]",
+          "Title": "Title Not Available",
           "VulnerabilityID": "CVE-2026-54435"
         },
         {
@@ -48700,7 +48510,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-107161"
           ],
           "Severity": "MEDIUM",
-          "Status": "fix_deferred",
+          "Status": "affected",
           "Title": "cyrus-sasl: Heap buffer overflow in cyrus-sasl add_to_challenge() allows malicious server to crash or compromise DIGEST-MD5 clients",
           "VendorSeverity": {
             "redhat": 2,
@@ -48748,7 +48558,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-107161"
           ],
           "Severity": "MEDIUM",
-          "Status": "fix_deferred",
+          "Status": "affected",
           "Title": "cyrus-sasl: Heap buffer overflow in cyrus-sasl add_to_challenge() allows malicious server to crash or compromise DIGEST-MD5 clients",
           "VendorSeverity": {
             "redhat": 2,
@@ -56903,6 +56713,7 @@
           "Title": "libX11: libX11: Heap-based buffer overflow via malicious X server",
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 3,
             "redhat": 3,
             "ubuntu": 2
           },
@@ -56951,6 +56762,7 @@
           "Status": "affected",
           "Title": "libX11: libX11: Denial of Service via out-of-bounds read in XIM attribute parser",
           "VendorSeverity": {
+            "azure": 2,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -56999,6 +56811,7 @@
           "Status": "affected",
           "Title": "libX11: libX11: Denial of Service via out-of-bounds read in XIM trigger-key registration parser",
           "VendorSeverity": {
+            "azure": 2,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -57047,6 +56860,7 @@
           "Status": "affected",
           "Title": "libX11: libX11: Denial of Service via out-of-bounds read in byte-oriented codeset parser",
           "VendorSeverity": {
+            "azure": 2,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -57095,6 +56909,7 @@
           "Title": "libX11: libX11: Heap-based buffer overflow via malicious X server",
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 3,
             "redhat": 3,
             "ubuntu": 2
           },
@@ -57143,6 +56958,7 @@
           "Status": "affected",
           "Title": "libX11: libX11: Denial of Service via out-of-bounds read in XIM attribute parser",
           "VendorSeverity": {
+            "azure": 2,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -57191,6 +57007,7 @@
           "Status": "affected",
           "Title": "libX11: libX11: Denial of Service via out-of-bounds read in XIM trigger-key registration parser",
           "VendorSeverity": {
+            "azure": 2,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -57239,6 +57056,7 @@
           "Status": "affected",
           "Title": "libX11: libX11: Denial of Service via out-of-bounds read in byte-oriented codeset parser",
           "VendorSeverity": {
+            "azure": 2,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -57287,6 +57105,7 @@
           "Title": "libX11: libX11: Heap-based buffer overflow via malicious X server",
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 3,
             "redhat": 3,
             "ubuntu": 2
           },
@@ -57335,6 +57154,7 @@
           "Status": "affected",
           "Title": "libX11: libX11: Denial of Service via out-of-bounds read in XIM attribute parser",
           "VendorSeverity": {
+            "azure": 2,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -57383,6 +57203,7 @@
           "Status": "affected",
           "Title": "libX11: libX11: Denial of Service via out-of-bounds read in XIM trigger-key registration parser",
           "VendorSeverity": {
+            "azure": 2,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -57431,6 +57252,7 @@
           "Status": "affected",
           "Title": "libX11: libX11: Denial of Service via out-of-bounds read in byte-oriented codeset parser",
           "VendorSeverity": {
+            "azure": 2,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -57784,7 +57606,7 @@
           ],
           "Severity": "MEDIUM",
           "Status": "affected",
-          "Title": "libXi: OOB read in XI2 enter/leave/focus cookie conversion (`wireToEnterLeave`)",
+          "Title": "libXi: libXi: Denial of Service via out-of-bounds read in XI2 event processing",
           "VendorSeverity": {
             "redhat": 2
           },
@@ -62765,6 +62587,10 @@
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
             "redhat": {
               "V3Score": 7.5,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
@@ -62815,12 +62641,20 @@
             "GO-2026-6611"
           ],
           "VendorSeverity": {
+            "azure": 3,
+            "bitnami": 3,
             "redhat": 3,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-78669"
         },
         {
+          "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
           "CweIDs": [
             "CWE-405"
           ],
@@ -62853,6 +62687,7 @@
             "https://go.dev/issue/81857",
             "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
             "https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-78659",
             "https://pkg.go.dev/vuln/GO-2026-6603",
             "https://www.cve.org/CVERecord?id=CVE-2026-78659",
             "https://www.openwall.com/lists/oss-security/2026/10/08/9"
@@ -62864,11 +62699,19 @@
             "GO-2026-6603"
           ],
           "VendorSeverity": {
+            "azure": 2,
+            "bitnami": 3,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-78659"
         },
         {
+          "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+            }
+          },
           "CweIDs": [
             "CWE-444"
           ],
@@ -62900,6 +62743,7 @@
             "https://go.dev/cl/836385",
             "https://go.dev/issue/81115",
             "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-78660",
             "https://pkg.go.dev/vuln/GO-2026-6610",
             "https://www.cve.org/CVERecord?id=CVE-2026-78660",
             "https://www.openwall.com/lists/oss-security/2026/10/08/9"
@@ -62911,12 +62755,18 @@
             "GO-2026-6610"
           ],
           "VendorSeverity": {
+            "azure": 3,
+            "bitnami": 3,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-78660"
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 9.1,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H"
+            },
             "redhat": {
               "V3Score": 5.3,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
@@ -62967,6 +62817,8 @@
             "GO-2026-6612"
           ],
           "VendorSeverity": {
+            "azure": 3,
+            "bitnami": 4,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -62974,6 +62826,10 @@
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
             "redhat": {
               "V3Score": 5.9,
               "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
@@ -63022,12 +62878,18 @@
             "GO-2026-6617"
           ],
           "VendorSeverity": {
+            "azure": 2,
+            "bitnami": 3,
             "redhat": 2
           },
           "VulnerabilityID": "CVE-2026-97032"
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
             "redhat": {
               "V3Score": 7.5,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
@@ -63076,6 +62938,7 @@
             "GO-2026-6609"
           ],
           "VendorSeverity": {
+            "bitnami": 3,
             "redhat": 3,
             "ubuntu": 2
           },
@@ -63083,6 +62946,10 @@
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
             "redhat": {
               "V3Score": 7.5,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
@@ -63133,6 +63000,8 @@
             "GO-2026-6611"
           ],
           "VendorSeverity": {
+            "azure": 3,
+            "bitnami": 3,
             "redhat": 3,
             "ubuntu": 2
           },
@@ -63140,6 +63009,10 @@
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
             "redhat": {
               "V3Score": 7.5,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
@@ -63186,12 +63059,17 @@
             "GO-2026-6607"
           ],
           "VendorSeverity": {
+            "bitnami": 3,
             "redhat": 3
           },
           "VulnerabilityID": "CVE-2026-97031"
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+            },
             "redhat": {
               "V3Score": 6.5,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N"
@@ -63240,12 +63118,19 @@
             "GO-2026-6605"
           ],
           "VendorSeverity": {
+            "bitnami": 3,
             "redhat": 2,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-56866"
         },
         {
+          "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
           "CweIDs": [
             "CWE-405"
           ],
@@ -63278,6 +63163,7 @@
             "https://go.dev/issue/81857",
             "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
             "https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-78659",
             "https://pkg.go.dev/vuln/GO-2026-6603",
             "https://www.cve.org/CVERecord?id=CVE-2026-78659",
             "https://www.openwall.com/lists/oss-security/2026/10/08/9"
@@ -63289,11 +63175,19 @@
             "GO-2026-6603"
           ],
           "VendorSeverity": {
+            "azure": 2,
+            "bitnami": 3,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-78659"
         },
         {
+          "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+            }
+          },
           "CweIDs": [
             "CWE-444"
           ],
@@ -63325,6 +63219,7 @@
             "https://go.dev/cl/836385",
             "https://go.dev/issue/81115",
             "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-78660",
             "https://pkg.go.dev/vuln/GO-2026-6610",
             "https://www.cve.org/CVERecord?id=CVE-2026-78660",
             "https://www.openwall.com/lists/oss-security/2026/10/08/9"
@@ -63336,12 +63231,18 @@
             "GO-2026-6610"
           ],
           "VendorSeverity": {
+            "azure": 3,
+            "bitnami": 3,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-78660"
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 9.1,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H"
+            },
             "redhat": {
               "V3Score": 5.3,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
@@ -63392,6 +63293,8 @@
             "GO-2026-6612"
           ],
           "VendorSeverity": {
+            "azure": 3,
+            "bitnami": 4,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -63399,6 +63302,10 @@
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+            },
             "redhat": {
               "V3Score": 6.5,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N"
@@ -63447,12 +63354,19 @@
             "GO-2026-6613"
           ],
           "VendorSeverity": {
+            "bitnami": 3,
             "redhat": 2,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-94439"
         },
         {
+          "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
           "CweIDs": [
             "CWE-770"
           ],
@@ -63483,6 +63397,7 @@
             "https://go.dev/cl/847307",
             "https://go.dev/issue/81741",
             "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-94440",
             "https://pkg.go.dev/vuln/GO-2026-6608",
             "https://www.cve.org/CVERecord?id=CVE-2026-94440",
             "https://www.openwall.com/lists/oss-security/2026/10/08/9"
@@ -63494,12 +63409,17 @@
             "GO-2026-6608"
           ],
           "VendorSeverity": {
+            "bitnami": 3,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-94440"
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 6.1,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+            },
             "redhat": {
               "V3Score": 6.1,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
@@ -63546,12 +63466,67 @@
             "GO-2026-6599"
           ],
           "VendorSeverity": {
+            "bitnami": 2,
             "redhat": 2
           },
           "VulnerabilityID": "CVE-2026-94448"
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 6.1,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-79"
+          ],
+          "DataSource": {
+            "ID": "govulndb",
+            "Name": "The Go Vulnerability Database",
+            "URL": "https://pkg.go.dev/vuln/"
+          },
+          "Description": "A trusted template author may have previously written a valid template wherein the use of the 'yield' keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.",
+          "Fingerprint": "sha256:82927aa8ec5ec2fc5ed37c9b0499d7f6a5b1e9458ac82641c0a309d2b5645027",
+          "FixedVersion": "1.26.9, 1.27.2",
+          "InstalledVersion": "v1.25.14",
+          "LastModifiedDate": "2026-10-15T16:18:24.817Z",
+          "Layer": {
+            "DiffID": "sha256:9e2cbb51cda6b2684ee63fc8165b8e8ee793e8a419ec4c8ad7ba00bdff263123",
+            "Digest": "sha256:2a1f76c7a6bd9f6b0b115612f83da84d37273732e736b3245769da6ade6234fa"
+          },
+          "PkgID": "stdlib@v1.25.14",
+          "PkgIdentifier": {
+            "PURL": "pkg:golang/stdlib@v1.25.14",
+            "UID": "1afa4a636c4ba0a6"
+          },
+          "PkgName": "stdlib",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-97030",
+          "PublishedDate": "2026-10-08T23:17:05.91Z",
+          "References": [
+            "https://go.dev/cl/840925",
+            "https://go.dev/issue/81823",
+            "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-97030",
+            "https://pkg.go.dev/vuln/GO-2026-6600"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "A trusted template author may have previously written a valid template ...",
+          "VendorIDs": [
+            "GO-2026-6600"
+          ],
+          "VendorSeverity": {
+            "bitnami": 2
+          },
+          "VulnerabilityID": "CVE-2026-97030"
+        },
+        {
+          "CVSS": {
+            "bitnami": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
             "redhat": {
               "V3Score": 5.9,
               "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
@@ -63600,12 +63575,18 @@
             "GO-2026-6617"
           ],
           "VendorSeverity": {
+            "azure": 2,
+            "bitnami": 3,
             "redhat": 2
           },
           "VulnerabilityID": "CVE-2026-97032"
         },
         {
           "CVSS": {
+            "bitnami": {
+              "V3Score": 9.8,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+            },
             "redhat": {
               "V3Score": 3.3,
               "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N"
@@ -63652,49 +63633,10 @@
             "GO-2026-6604"
           ],
           "VendorSeverity": {
+            "bitnami": 4,
             "redhat": 1
           },
           "VulnerabilityID": "CVE-2026-56857"
-        },
-        {
-          "CweIDs": [
-            "CWE-79"
-          ],
-          "DataSource": {
-            "ID": "govulndb",
-            "Name": "The Go Vulnerability Database",
-            "URL": "https://pkg.go.dev/vuln/"
-          },
-          "Description": "A trusted template author may have previously written a valid template wherein the use of the 'yield' keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.",
-          "Fingerprint": "sha256:82927aa8ec5ec2fc5ed37c9b0499d7f6a5b1e9458ac82641c0a309d2b5645027",
-          "FixedVersion": "1.26.9, 1.27.2",
-          "InstalledVersion": "v1.25.14",
-          "LastModifiedDate": "2026-10-15T16:18:24.817Z",
-          "Layer": {
-            "DiffID": "sha256:9e2cbb51cda6b2684ee63fc8165b8e8ee793e8a419ec4c8ad7ba00bdff263123",
-            "Digest": "sha256:2a1f76c7a6bd9f6b0b115612f83da84d37273732e736b3245769da6ade6234fa"
-          },
-          "PkgID": "stdlib@v1.25.14",
-          "PkgIdentifier": {
-            "PURL": "pkg:golang/stdlib@v1.25.14",
-            "UID": "1afa4a636c4ba0a6"
-          },
-          "PkgName": "stdlib",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-97030",
-          "PublishedDate": "2026-10-08T23:17:05.91Z",
-          "References": [
-            "https://go.dev/cl/840925",
-            "https://go.dev/issue/81823",
-            "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
-            "https://pkg.go.dev/vuln/GO-2026-6600"
-          ],
-          "Severity": "UNKNOWN",
-          "Status": "fixed",
-          "Title": "A trusted template author may have previously written a valid template ...",
-          "VendorIDs": [
-            "GO-2026-6600"
-          ],
-          "VulnerabilityID": "CVE-2026-97030"
         }
       ]
     }
