@@ -1,6 +1,6 @@
 # hub-pipeline-dominantcolors SBOM quality
 
-Collection status: `collected`; collected at `2026-10-17T02:35:19Z`.
+Collection status: `collected`; collected at `2026-10-18T02:35:21Z`.
 
 Overall quality: **Needs work**, **68/100** across **76 packages**.
 
