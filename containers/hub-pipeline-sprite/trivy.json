@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:71ca0985d5772b94b7dce227f956516504f226ad548ebdc84eb1e7b7db5f3b89",
   "ArtifactName": "ghcr.io/uug-ai/hub-pipeline-sprite@sha256:ae0cbb34449a41eb0cc122ba7eeac2a2ad9836747ef0dae0e97ba9b065b0b4ae",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-10-18T03:53:56.944200966Z",
+  "CreatedAt": "2026-10-19T03:57:58.639551952Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:1073f425247ed24670458429c13a67afbd36f83d2004dade046ddbd6519b1839",
@@ -166,7 +166,7 @@
     ],
     "Size": 228345344
   },
-  "ReportID": "01a14d25-0fd0-730c-b089-a7fcf34549c8",
+  "ReportID": "01a1524f-1bef-7866-b941-da81f2ea816c",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -5361,6 +5361,1263 @@
       "Vulnerabilities": [
         {
           "CVSS": {
+            "julia": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+            },
+            "nvd": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+            },
+            "redhat": {
+              "V3Score": 6.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-488",
+            "CWE-918"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "libcurl might in some circumstances reuse the wrong connection for SMB(S)\ntransfers.\n\nlibcurl features a pool of recent connections so that subsequent requests can\nreuse an existing connection to avoid overhead.\n\nWhen reusing a connection a range of criteria must be met. Due to a logical\nerror in the code, a network transfer operation that was requested by an\napplication could wrongfully reuse an existing SMB connection to the same\nserver that was using a different \"share\" than the new subsequent transfer\nshould.\n\nThis could in unlucky situations lead to the download of the wrong file or the\nupload of a file to the wrong place. When this happens, the same credentials\nare used and the server name is the same.",
+          "Fingerprint": "sha256:2596a5dc3c32afb5b1f555fc84fc80b8d35d16488b576a5008dca7e44730306f",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "LastModifiedDate": "2026-09-15T07:16:28.82Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "curl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/curl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "f08ca80c9c91db6b"
+          },
+          "PkgName": "curl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-5773",
+          "PublishedDate": "2026-05-13T13:01:56.307Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/04/29/9",
+            "https://access.redhat.com/security/cve/CVE-2026-5773",
+            "https://curl.se/docs/CVE-2026-5773.html",
+            "https://curl.se/docs/CVE-2026-5773.json",
+            "https://github.com/advisories/GHSA-rp9q-8q5w-ch44",
+            "https://hackerone.com/reports/3650689",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-5773",
+            "https://ubuntu.com/security/notices/USN-8227-1",
+            "https://ubuntu.com/security/notices/USN-8525-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-5773"
+          ],
+          "Severity": "HIGH",
+          "SeveritySource": "nvd",
+          "Status": "fixed",
+          "Title": "curl: libcurl: Wrong file transfer due to incorrect SMB connection reuse",
+          "VendorSeverity": {
+            "julia": 3,
+            "nvd": 3,
+            "photon": 3,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-5773"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
+            "nvd": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
+            "redhat": {
+              "V3Score": 3.7,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-346",
+            "CWE-319"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "Using libcurl, when a custom `Host:` header is first set for an HTTP request\nand a second request is subsequently done using the same *easy handle* but\nwithout the custom `Host:` header set, the second request would use stale\ninformation and pass on cookies meant for the first host in the second\nrequest. Leak them.",
+          "Fingerprint": "sha256:1b4f740efe1aaf1f83d7c66589faf50e240dccb4f951881f8e6d844c043b3ef0",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "LastModifiedDate": "2026-09-15T07:16:29.343Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "curl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/curl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "f08ca80c9c91db6b"
+          },
+          "PkgName": "curl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-6276",
+          "PublishedDate": "2026-05-13T13:01:56.8Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/04/29/13",
+            "https://access.redhat.com/security/cve/CVE-2026-6276",
+            "https://curl.se/docs/CVE-2026-6276.html",
+            "https://curl.se/docs/CVE-2026-6276.json",
+            "https://github.com/advisories/GHSA-2jc6-hc33-hv48",
+            "https://hackerone.com/reports/3671818",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-6276",
+            "https://ubuntu.com/security/notices/USN-8227-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-6276"
+          ],
+          "Severity": "HIGH",
+          "SeveritySource": "nvd",
+          "Status": "fixed",
+          "Title": "curl: libcurl: Information disclosure due to cookie leak when reusing connections with custom Host headers",
+          "VendorSeverity": {
+            "azure": 2,
+            "julia": 3,
+            "nvd": 3,
+            "photon": 3,
+            "redhat": 1,
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-6276"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 8.1,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N"
+            },
+            "redhat": {
+              "V3Score": 8.1,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-295"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "A vulnerability exists where a new transfer that uses STARTTLS to upgrade the\nconnection might reuse an existing live connection even though the TLS\nconfiguration mismatches so it should not.",
+          "Fingerprint": "sha256:8fe1cda09328a277df21035cc45c612c02a194caccc12cd089bc5544c3b7a943",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "LastModifiedDate": "2026-09-15T07:16:31.617Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "curl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/curl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "f08ca80c9c91db6b"
+          },
+          "PkgName": "curl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-8286",
+          "PublishedDate": "2026-07-03T07:16:24.453Z",
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:55439",
+            "https://access.redhat.com/errata/RHSA-2026:57462",
+            "https://access.redhat.com/security/cve/CVE-2026-8286",
+            "https://bugzilla.redhat.com/2496763",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2446448",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2446450",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2496758",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2496763",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://curl.se/L7HzKXisfJ/CVE-2026-8286.md",
+            "https://curl.se/docs/CVE-2026-8286.html",
+            "https://curl.se/docs/CVE-2026-8286.json",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-1965",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-3783",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-8286",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-9547",
+            "https://errata.almalinux.org/8/ALSA-2026-57462.html",
+            "https://errata.rockylinux.org/RLSA-2026:55439",
+            "https://github.com/advisories/GHSA-32xh-3x3c-6g6h",
+            "https://hackerone.com/reports/3718195",
+            "https://linux.oracle.com/cve/CVE-2026-8286.html",
+            "https://linux.oracle.com/errata/ELSA-2026-57462.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-8286",
+            "https://ubuntu.com/security/notices/USN-8487-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-8286"
+          ],
+          "Severity": "HIGH",
+          "Status": "fixed",
+          "Title": "curl: curl: Insecure connection establishment due to TLS configuration mismatch",
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "azure": 3,
+            "julia": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-8286"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 9.1,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N"
+            },
+            "redhat": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-294"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "When reusing a libcurl handle for sequential transfers driven by\nenvironment-variable proxy configuration, libcurl fails to clear the proxy\nauthentication state between requests. Specifically, if the initial transfer\nauthenticates against `proxyA` using Digest auth, a subsequent transfer routed\nthrough `proxyB` erroneously leaks the `Proxy-Authorization:` header intended\nsolely for `proxyA`.",
+          "Fingerprint": "sha256:eb6601ba5fab4c4e219fa0260bb5a372004889a9b09569b5e7ec83789fe72889",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "LastModifiedDate": "2026-09-15T07:16:33.157Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "curl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/curl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "f08ca80c9c91db6b"
+          },
+          "PkgName": "curl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-8927",
+          "PublishedDate": "2026-07-03T07:16:25.123Z",
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:55432",
+            "https://access.redhat.com/security/cve/CVE-2026-8927",
+            "https://bugzilla.redhat.com/2496769",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2496769",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://curl.se/L7HzKXisfJ/CVE-2026-8927.md",
+            "https://curl.se/docs/CVE-2026-8927.html",
+            "https://curl.se/docs/CVE-2026-8927.json",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-8927",
+            "https://errata.almalinux.org/10/ALSA-2026-55432.html",
+            "https://errata.rockylinux.org/RLSA-2026:55432",
+            "https://github.com/advisories/GHSA-jr4f-4564-w3mr",
+            "https://hackerone.com/reports/3744543",
+            "https://linux.oracle.com/cve/CVE-2026-8927.html",
+            "https://linux.oracle.com/errata/ELSA-2026-69126.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-8927",
+            "https://ubuntu.com/security/notices/USN-8487-1",
+            "https://ubuntu.com/security/notices/USN-8820-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-8927"
+          ],
+          "Severity": "HIGH",
+          "Status": "fixed",
+          "Title": "curl: Information disclosure due to uncleared proxy authentication state",
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 2,
+            "azure": 2,
+            "julia": 4,
+            "oracle-oval": 3,
+            "photon": 4,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-8927"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 8.1,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "During an upload, curl mishandles HTTP/2 `RST_STREAM` received from the server\n(with reason `HTTP_1_1_REQUIRED` or `REFUSED_STREAM`) leading to a use after\nfree of a `struct Curl_easy` object.",
+          "Fingerprint": "sha256:3270ad8b9590629fdf727ac0d7f75ed73da1328046cf851f140c0e5cb1a0f830",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "LastModifiedDate": "2026-10-18T23:16:57.163Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "curl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/curl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "f08ca80c9c91db6b"
+          },
+          "PkgName": "curl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-92392",
+          "PublishedDate": "2026-10-14T08:17:05.997Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/10/18/5",
+            "http://www.openwall.com/lists/oss-security/2026/10/18/6",
+            "https://access.redhat.com/security/cve/CVE-2026-92392",
+            "https://curl.se/docs/CVE-2026-92392.html",
+            "https://curl.se/docs/CVE-2026-92392.json",
+            "https://hackerone.com/reports/4030333",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-92392",
+            "https://ubuntu.com/security/notices/USN-8927-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-92392"
+          ],
+          "Severity": "HIGH",
+          "Status": "fixed",
+          "Title": "curl: curl: HTTP/2 upload Use-After-Free",
+          "VendorSeverity": {
+            "redhat": 3,
+            "ubuntu": 3
+          },
+          "VulnerabilityID": "CVE-2026-92392"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 5.9,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N"
+            },
+            "redhat": {
+              "V3Score": 6.8,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-295"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "When using `CURLOPT_PINNEDPUBLICKEY` option with libcurl or `--pinnedpubkey`\nwith the curl tool, curl should check the public key of the server certificate\nto verify the peer.\n\nThis check was skipped in a certain condition that would then make curl allow\nthe connection without performing the proper check, thus not noticing a\npossible impostor. To skip this check, the connection had to be done with QUIC\nwith ngtcp2 built to use GnuTLS and the user had to explicitly disable the\nstandard certificate verification.",
+          "Fingerprint": "sha256:1e3a8594243834ed000ab57d0059c0decde86b6c0ed2600bdfd9d6b0938dc771",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "LastModifiedDate": "2026-09-15T07:16:23.55Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "curl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/curl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "f08ca80c9c91db6b"
+          },
+          "PkgName": "curl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-13034",
+          "PublishedDate": "2026-01-08T10:15:45.407Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2025-13034",
+            "https://curl.se/docs/CVE-2025-13034.html",
+            "https://curl.se/docs/CVE-2025-13034.json",
+            "https://github.com/advisories/GHSA-9r76-qj98-jfhc",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-13034",
+            "https://ubuntu.com/security/notices/USN-8062-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-13034"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "curl: Public key pinning bypass via QUIC and GnuTLS allows server impersonation",
+          "VendorSeverity": {
+            "amazon": 2,
+            "julia": 2,
+            "photon": 2,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2025-13034"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 5.3,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+            },
+            "redhat": {
+              "V3Score": 5.7,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:N/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-522"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "When an OAuth2 bearer token is used for an HTTP(S) transfer, and that transfer\nperforms a redirect to a second URL, curl could leak that token to the second\nhostname under some circumstances.\n\nIf the hostname that the first request is redirected to has information in the\nused .netrc file, with either of the `machine` or `default` keywords, curl\nwould pass on the bearer token set for the first host also to the second one.",
+          "Fingerprint": "sha256:a4d49bb07ede93795ac3ad7d3aebcaea9f1e3f33bac75a2cc8b2d99b14008b18",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "LastModifiedDate": "2026-09-15T07:16:27.72Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "curl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/curl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "f08ca80c9c91db6b"
+          },
+          "PkgName": "curl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-3783",
+          "PublishedDate": "2026-03-11T11:16:00.08Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/03/11/2",
+            "https://access.redhat.com/errata/RHSA-2026:55439",
+            "https://access.redhat.com/security/cve/CVE-2026-3783",
+            "https://bugzilla.redhat.com/2446448",
+            "https://bugzilla.redhat.com/2446450",
+            "https://bugzilla.redhat.com/2496758",
+            "https://bugzilla.redhat.com/2496763",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2446448",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2446450",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2496758",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2496763",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://curl.se/docs/CVE-2026-3783.html",
+            "https://curl.se/docs/CVE-2026-3783.json",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-1965",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-3783",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-8286",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-9547",
+            "https://errata.almalinux.org/9/ALSA-2026-55439.html",
+            "https://errata.rockylinux.org/RLSA-2026:55439",
+            "https://github.com/advisories/GHSA-8whr-249c-vfjp",
+            "https://hackerone.com/reports/3583983",
+            "https://linux.oracle.com/cve/CVE-2026-3783.html",
+            "https://linux.oracle.com/errata/ELSA-2026-55450.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-3783",
+            "https://ubuntu.com/security/notices/USN-8084-1",
+            "https://ubuntu.com/security/notices/USN-8099-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-3783"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "curl: curl: Information disclosure via OAuth2 bearer token leakage during HTTP(S) redirect",
+          "VendorSeverity": {
+            "alma": 3,
+            "azure": 2,
+            "julia": 2,
+            "oracle-oval": 3,
+            "photon": 2,
+            "redhat": 2,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-3783"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 6.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N"
+            },
+            "redhat": {
+              "V3Score": 6.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-305"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "curl would wrongly reuse an existing HTTP proxy connection doing CONNECT to a\nserver, even if the new request uses different credentials for the HTTP proxy.\nThe proper behavior is to create or use a separate connection.",
+          "Fingerprint": "sha256:1e19ccd4364330039ca52f32f9c7f698de208e8361a9786672b504554ba6864d",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "LastModifiedDate": "2026-09-15T07:16:27.963Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "curl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/curl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "f08ca80c9c91db6b"
+          },
+          "PkgName": "curl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-3784",
+          "PublishedDate": "2026-03-11T11:16:00.437Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/03/11/3",
+            "https://access.redhat.com/security/cve/CVE-2026-3784",
+            "https://cert-portal.siemens.com/productcert/html/ssa-253495.html",
+            "https://curl.se/docs/CVE-2026-3784.html",
+            "https://curl.se/docs/CVE-2026-3784.json",
+            "https://github.com/advisories/GHSA-5q3w-6p3j-mw6p",
+            "https://hackerone.com/reports/3584903",
+            "https://linux.oracle.com/cve/CVE-2026-3784.html",
+            "https://linux.oracle.com/errata/ELSA-2026-55450.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-3784",
+            "https://ubuntu.com/security/notices/USN-8084-1",
+            "https://ubuntu.com/security/notices/USN-8099-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-3784"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "curl: curl: Unauthorized access due to improper HTTP proxy connection reuse",
+          "VendorSeverity": {
+            "azure": 2,
+            "julia": 2,
+            "oracle-oval": 3,
+            "photon": 2,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-3784"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
+            "redhat": {
+              "V3Score": 6.3,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:L"
+            }
+          },
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "When doing a second SMB request to the same host again, curl would wrongly use\na data pointer pointing into already freed memory.",
+          "Fingerprint": "sha256:f527ad4c98185ab1684cf8b4d38de989e455701b3052398d62b410bd2f7e4123",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "LastModifiedDate": "2026-09-14T21:17:06.383Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "curl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/curl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "f08ca80c9c91db6b"
+          },
+          "PkgName": "curl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-3805",
+          "PublishedDate": "2026-03-11T11:16:00.967Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/03/11/4",
+            "https://access.redhat.com/security/cve/CVE-2026-3805",
+            "https://curl.se/docs/CVE-2026-3805.html",
+            "https://curl.se/docs/CVE-2026-3805.json",
+            "https://github.com/advisories/GHSA-2289-hhfc-p684",
+            "https://hackerone.com/reports/3591944",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-3805",
+            "https://ubuntu.com/security/notices/USN-8084-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-3805"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "curl: curl: Arbitrary code execution or Denial of Service via use-after-free in SMB request handling",
+          "VendorSeverity": {
+            "amazon": 2,
+            "julia": 3,
+            "photon": 3,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-3805"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 5.9,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+            },
+            "redhat": {
+              "V3Score": 5.3,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-319",
+            "CWE-295"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "A vulnerability exists where a connection requiring TLS incorrectly reuses an\nexisting unencrypted connection from the same connection pool. If an initial\ntransfer is made in clear-text (via IMAP, SMTP, or POP3), a subsequent request\nto that same host bypasses the TLS requirement and instead transmit data\nunencrypted.",
+          "Fingerprint": "sha256:0c3da04a24ce3f5db8c23cb95710612686e59308a605929851cabcb8acfb121d",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "LastModifiedDate": "2026-09-15T07:16:28.367Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "curl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/curl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "f08ca80c9c91db6b"
+          },
+          "PkgName": "curl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-4873",
+          "PublishedDate": "2026-05-13T13:01:55.893Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/04/29/7",
+            "https://access.redhat.com/security/cve/CVE-2026-4873",
+            "https://curl.se/docs/CVE-2026-4873.html",
+            "https://curl.se/docs/CVE-2026-4873.json",
+            "https://github.com/advisories/GHSA-5fgw-rv54-prjx",
+            "https://hackerone.com/reports/3621851",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-4873",
+            "https://ubuntu.com/security/notices/USN-8227-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-4873"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "curl: curl: Information disclosure due to incorrect TLS connection reuse",
+          "VendorSeverity": {
+            "azure": 2,
+            "julia": 2,
+            "photon": 2,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-4873"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 6.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:H/A:N"
+            },
+            "nvd": {
+              "V3Score": 6.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:H/A:N"
+            },
+            "redhat": {
+              "V3Score": 6.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-305",
+            "CWE-613"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "libcurl might in some circumstances reuse the wrong connection when asked to\ndo an authenticated HTTP(S) request after a Negotiate-authenticated one, when\nboth use the same host.\n\nlibcurl features a pool of recent connections so that subsequent requests can\nreuse an existing connection to avoid overhead.\n\nWhen reusing a connection a range of criteria must be met. Due to a logical\nerror in the code, a request that was issued by an application could\nwrongfully reuse an existing connection to the same server that was\nauthenticated using different credentials.\n\nAn application that first uses Negotiate authentication to a server with\n`user1:password1` and then does another operation to the same server asking\nfor any authentication method but for `user2:password2` (while the previous\nconnection is still alive) - the second request gets confused and wrongly\nreuses the same connection and sends the new request over that connection\nthinking it uses a mix of user1's and user2's credentials when it is in fact\nstill using the connection authenticated for user1...",
+          "Fingerprint": "sha256:18ada5d608fbda696ef69e6d0cfca9230dd80af05274774bf1cc84bc91fb0d9f",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "LastModifiedDate": "2026-09-15T07:16:28.633Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "curl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/curl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "f08ca80c9c91db6b"
+          },
+          "PkgName": "curl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-5545",
+          "PublishedDate": "2026-05-13T13:01:56.19Z",
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:80512",
+            "https://access.redhat.com/security/cve/CVE-2026-5545",
+            "https://bugzilla.redhat.com/2461202",
+            "https://bugzilla.redhat.com/2461204",
+            "https://bugzilla.redhat.com/2461205",
+            "https://bugzilla.redhat.com/2476979",
+            "https://bugzilla.redhat.com/2496766",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2461202",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2461204",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2461205",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2476979",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2496766",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://curl.se/docs/CVE-2026-5545.html",
+            "https://curl.se/docs/CVE-2026-5545.json",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-10536",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-5545",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-6253",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-6429",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-7168",
+            "https://errata.almalinux.org/10/ALSA-2026-80512.html",
+            "https://errata.rockylinux.org/RLSA-2026:80512",
+            "https://github.com/advisories/GHSA-6g7g-56fm-f8mp",
+            "https://hackerone.com/reports/3642555",
+            "https://linux.oracle.com/cve/CVE-2026-5545.html",
+            "https://linux.oracle.com/errata/ELSA-2026-80512.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-5545",
+            "https://ubuntu.com/security/notices/USN-8227-1",
+            "https://ubuntu.com/security/notices/USN-8525-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-5545"
+          ],
+          "Severity": "MEDIUM",
+          "SeveritySource": "nvd",
+          "Status": "fixed",
+          "Title": "curl: libcurl: Authentication bypass due to incorrect HTTP Negotiate connection reuse",
+          "VendorSeverity": {
+            "alma": 2,
+            "azure": 2,
+            "julia": 2,
+            "nvd": 2,
+            "oracle-oval": 2,
+            "photon": 2,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-5545"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 5.9,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
+            "redhat": {
+              "V3Score": 5.3,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-522"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "curl might erroneously pass on credentials for a first proxy to a second\nproxy.\n\nThis can happen when the following conditions are true:\n\n1. curl is setup to use specific different proxies for different URL schemes\n2. the first proxy needs credentials\n3. the second proxy uses no credentials\n4. while using the first proxy (using say `http://`), curl is asked to follow\n   a redirect to a URL using another scheme (say `https://`), accessed using a\n   second, different, proxy",
+          "Fingerprint": "sha256:c470145e147edd4d9e5ed8b46f552ef5f9d1fd1c96c4cc68796b39efc34a98d1",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "LastModifiedDate": "2026-09-15T07:16:29.073Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "curl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/curl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "f08ca80c9c91db6b"
+          },
+          "PkgName": "curl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-6253",
+          "PublishedDate": "2026-05-13T13:01:56.57Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/04/29/11",
+            "https://access.redhat.com/errata/RHSA-2026:80512",
+            "https://access.redhat.com/security/cve/CVE-2026-6253",
+            "https://bugzilla.redhat.com/2461202",
+            "https://bugzilla.redhat.com/2461204",
+            "https://bugzilla.redhat.com/2461205",
+            "https://bugzilla.redhat.com/2476979",
+            "https://bugzilla.redhat.com/2496766",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2461202",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2461204",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2461205",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2476979",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2496766",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://curl.se/docs/CVE-2026-6253.html",
+            "https://curl.se/docs/CVE-2026-6253.json",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-10536",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-5545",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-6253",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-6429",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-7168",
+            "https://errata.almalinux.org/10/ALSA-2026-80512.html",
+            "https://errata.rockylinux.org/RLSA-2026:80512",
+            "https://hackerone.com/reports/3669637",
+            "https://linux.oracle.com/cve/CVE-2026-6253.html",
+            "https://linux.oracle.com/errata/ELSA-2026-80512.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-6253",
+            "https://ubuntu.com/security/notices/USN-8227-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-6253"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "curl: curl: Proxy credential disclosure via redirects to unauthenticated proxies",
+          "VendorSeverity": {
+            "alma": 2,
+            "azure": 2,
+            "julia": 2,
+            "oracle-oval": 2,
+            "photon": 2,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-6253"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 5.3,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N"
+            },
+            "redhat": {
+              "V3Score": 6.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-200"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "When asked to both use a `.netrc` file for credentials and to follow HTTP\nredirects, libcurl could leak the password used for the first host to the\nfollowed-to host under certain circumstances.",
+          "Fingerprint": "sha256:da36fa365b5549c60e2b68a35d539a2d9b6fb5393c750d8acfb1c5fa59739b88",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "LastModifiedDate": "2026-09-15T07:16:29.557Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "curl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/curl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "f08ca80c9c91db6b"
+          },
+          "PkgName": "curl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-6429",
+          "PublishedDate": "2026-05-13T13:01:56.93Z",
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:80512",
+            "https://access.redhat.com/security/cve/CVE-2026-6429",
+            "https://bugzilla.redhat.com/2461202",
+            "https://bugzilla.redhat.com/2461204",
+            "https://bugzilla.redhat.com/2461205",
+            "https://bugzilla.redhat.com/2476979",
+            "https://bugzilla.redhat.com/2496766",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2461202",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2461204",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2461205",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2476979",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2496766",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://curl.se/docs/CVE-2026-6429.html",
+            "https://curl.se/docs/CVE-2026-6429.json",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-10536",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-5545",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-6253",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-6429",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-7168",
+            "https://errata.almalinux.org/10/ALSA-2026-80512.html",
+            "https://errata.rockylinux.org/RLSA-2026:80512",
+            "https://github.com/advisories/GHSA-2pvc-5qw9-h3ph",
+            "https://hackerone.com/reports/3677759",
+            "https://linux.oracle.com/cve/CVE-2026-6429.html",
+            "https://linux.oracle.com/errata/ELSA-2026-80512.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-6429",
+            "https://ubuntu.com/security/notices/USN-8227-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-6429"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "curl: libcurl: Credential leak via reused proxy connection during HTTP redirects",
+          "VendorSeverity": {
+            "alma": 2,
+            "azure": 2,
+            "julia": 2,
+            "oracle-oval": 2,
+            "photon": 2,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-6429"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 5.3,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+            },
+            "nvd": {
+              "V3Score": 5.3,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+            },
+            "redhat": {
+              "V3Score": 5.3,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-294"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "Successfully using libcurl to do a transfer over a specific HTTP proxy\n(`proxyA`) with **Digest** authentication and then changing the proxy host to\na second one (`proxyB`) for a second transfer, reusing the same handle, makes\nlibcurl wrongly pass on the `Proxy-Authorization:` header field meant for\n`proxyA`, to `proxyB`.",
+          "Fingerprint": "sha256:9cacef23acf1457654f9a976fb36b8867e78dd939a2599fa5703bc005f11fd61",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "LastModifiedDate": "2026-09-15T07:16:29.89Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "curl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/curl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "f08ca80c9c91db6b"
+          },
+          "PkgName": "curl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-7168",
+          "PublishedDate": "2026-05-13T13:01:57.2Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/04/29/14",
+            "https://access.redhat.com/errata/RHSA-2026:80512",
+            "https://access.redhat.com/security/cve/CVE-2026-7168",
+            "https://bugzilla.redhat.com/2461202",
+            "https://bugzilla.redhat.com/2461204",
+            "https://bugzilla.redhat.com/2461205",
+            "https://bugzilla.redhat.com/2476979",
+            "https://bugzilla.redhat.com/2496766",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2461202",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2461204",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2461205",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2476979",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2496766",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://curl.se/docs/CVE-2026-7168.html",
+            "https://curl.se/docs/CVE-2026-7168.json",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-10536",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-5545",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-6253",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-6429",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-7168",
+            "https://errata.almalinux.org/10/ALSA-2026-80512.html",
+            "https://errata.rockylinux.org/RLSA-2026:80512",
+            "https://github.com/advisories/GHSA-v92m-hrhj-gw54",
+            "https://hackerone.com/reports/3697719",
+            "https://linux.oracle.com/cve/CVE-2026-7168.html",
+            "https://linux.oracle.com/errata/ELSA-2026-80512.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-7168",
+            "https://ubuntu.com/security/notices/USN-8227-1",
+            "https://ubuntu.com/security/notices/USN-8525-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-7168"
+          ],
+          "Severity": "MEDIUM",
+          "SeveritySource": "nvd",
+          "Status": "fixed",
+          "Title": "curl: libcurl: Information disclosure via incorrect Proxy-Authorization header reuse",
+          "VendorSeverity": {
+            "alma": 2,
+            "azure": 2,
+            "julia": 2,
+            "nvd": 2,
+            "oracle-oval": 2,
+            "photon": 2,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-7168"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 9.1,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N"
+            },
+            "redhat": {
+              "V3Score": 6.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-201"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "A flaw in curl’s cookie parsing logic allows a malicious HTTP server to set\n\"super cookies\" that bypass the Public Suffix List check. This enables an\nattacker-controlled origin to inject cookies that curl subsequently scopes and\ntransmits to unrelated third-party domains.",
+          "Fingerprint": "sha256:7f1b5e1f400af090861151f58e3abd1a288be678f11c0cc54828c18ee3008166",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "LastModifiedDate": "2026-09-15T07:16:32.573Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "curl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/curl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "f08ca80c9c91db6b"
+          },
+          "PkgName": "curl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-8924",
+          "PublishedDate": "2026-07-03T07:16:24.793Z",
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:69125",
+            "https://access.redhat.com/security/cve/CVE-2026-8924",
+            "https://bugzilla.redhat.com/2496759",
+            "https://bugzilla.redhat.com/2496760",
+            "https://bugzilla.redhat.com/2496764",
+            "https://bugzilla.redhat.com/2496765",
+            "https://bugzilla.redhat.com/2496767",
+            "https://bugzilla.redhat.com/2496771",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2496759",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2496760",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2496764",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2496765",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2496767",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2496771",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://curl.se/L7HzKXisfJ/CVE-2026-8924.md",
+            "https://curl.se/docs/CVE-2026-8924.html",
+            "https://curl.se/docs/CVE-2026-8924.json",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-11856",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-8458",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-8924",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-8926",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-8932",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-9079",
+            "https://errata.almalinux.org/10/ALSA-2026-69125.html",
+            "https://errata.rockylinux.org/RLSA-2026:69125",
+            "https://github.com/advisories/GHSA-hm6c-rc5h-32m9",
+            "https://hackerone.com/reports/3733905",
+            "https://linux.oracle.com/cve/CVE-2026-8924.html",
+            "https://linux.oracle.com/errata/ELSA-2026-80511.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-8924",
+            "https://ubuntu.com/security/notices/USN-8487-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-8924"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "curl: curl: Cookie injection via malicious HTTP server using super cookies",
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "azure": 3,
+            "julia": 4,
+            "oracle-oval": 2,
+            "photon": 4,
+            "redhat": 2,
+            "rocky": 3,
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-8924"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 5.3,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N"
+            },
+            "redhat": {
+              "V3Score": 6.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-522",
+            "CWE-601"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "When an OAuth2 bearer token is used for an HTTP(S) transfer, and that transfer\nperforms a cross-protocol redirect to a second URL that uses an IMAP, LDAP,\nPOP3 or SMTP scheme, curl might wrongly pass on the bearer token to the new\ntarget host.",
+          "Fingerprint": "sha256:410c54f87850423ee8db4eef811b31544b53c47cc5caf585f9db11c7ca65cce6",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "LastModifiedDate": "2026-09-15T07:16:24.02Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "curl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/curl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "f08ca80c9c91db6b"
+          },
+          "PkgName": "curl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-14524",
+          "PublishedDate": "2026-01-08T10:15:46.607Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/01/07/4",
+            "https://access.redhat.com/security/cve/CVE-2025-14524",
+            "https://curl.se/docs/CVE-2025-14524.html",
+            "https://curl.se/docs/CVE-2025-14524.json",
+            "https://github.com/advisories/GHSA-g897-jvjx-78vg",
+            "https://hackerone.com/reports/3459417",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-14524",
+            "https://ubuntu.com/security/notices/USN-8062-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-14524"
+          ],
+          "Severity": "LOW",
+          "Status": "fixed",
+          "Title": "curl: Information disclosure via cross-protocol redirect with OAuth2 bearer token",
+          "VendorSeverity": {
+            "amazon": 2,
+            "azure": 2,
+            "cbl-mariner": 2,
+            "julia": 2,
+            "photon": 2,
+            "redhat": 1,
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2025-14524"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 5.3,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N"
+            },
+            "redhat": {
+              "V3Score": 6.8,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-295"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "When doing TLS related transfers with reused easy or multi handles and\naltering the `CURLSSLOPT_NO_PARTIALCHAIN` option, libcurl could accidentally\nreuse a CA store cached in memory for which the partial chain option was\nreversed. Contrary to the user's wishes and expectations. This could make\nlibcurl find and accept a trust chain that it otherwise would not.",
+          "Fingerprint": "sha256:81664a4ef99f00414055b91aac87f3cbb2159f1abc9f965a2bf0df7c14107d22",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "LastModifiedDate": "2026-10-14T19:10:00.297Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "curl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/curl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "f08ca80c9c91db6b"
+          },
+          "PkgName": "curl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-14819",
+          "PublishedDate": "2026-01-08T10:15:46.73Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/01/07/5",
+            "https://access.redhat.com/security/cve/CVE-2025-14819",
+            "https://curl.se/docs/CVE-2025-14819.html",
+            "https://curl.se/docs/CVE-2025-14819.json",
+            "https://github.com/advisories/GHSA-vqhr-m87q-9jqh",
+            "https://linux.oracle.com/cve/CVE-2025-14819.html",
+            "https://linux.oracle.com/errata/ELSA-2026-55450.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-14819",
+            "https://ubuntu.com/security/notices/USN-8062-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-14819"
+          ],
+          "Severity": "LOW",
+          "Status": "fixed",
+          "Title": "curl: libcurl: Improper certificate validation due to cached TLS settings reuse",
+          "VendorSeverity": {
+            "amazon": 2,
+            "julia": 2,
+            "oracle-oval": 3,
+            "photon": 2,
+            "redhat": 1,
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2025-14819"
+        },
+        {
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:0744bf3f723a94758bb9ce0df22e94b607f0aa94b176405fe281813c3ce8532e",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "curl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/curl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "f08ca80c9c91db6b"
+          },
+          "PkgName": "curl",
+          "Severity": "UNKNOWN",
+          "Status": "fixed",
+          "VulnerabilityID": "CVE-2026-1965_1"
+        },
+        {
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:ec76a82e91b00b2edb28710ab8cce7937322cf86130e5665487dc7612c5ac912",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "curl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/curl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "f08ca80c9c91db6b"
+          },
+          "PkgName": "curl",
+          "Severity": "UNKNOWN",
+          "Status": "fixed",
+          "VulnerabilityID": "CVE-2026-1965_2"
+        },
+        {
+          "CVSS": {
             "redhat": {
               "V3Score": 7.4,
               "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:H"
@@ -5392,16 +6649,15 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-84782",
           "PublishedDate": "2026-09-29T16:17:12.5Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:77396",
-            "https://access.redhat.com/errata/RHSA-2026:80514",
+            "https://access.redhat.com/errata/RHSA-2026:76918",
+            "https://access.redhat.com/errata/RHSA-2026:80510",
             "https://access.redhat.com/security/cve/CVE-2026-84782",
-            "https://bugzilla.redhat.com/2517560",
             "https://bugzilla.redhat.com/2537080",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2537080",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-84782",
-            "https://errata.almalinux.org/9/ALSA-2026-80514.html",
-            "https://errata.rockylinux.org/RLSA-2026:77396",
+            "https://errata.almalinux.org/8/ALSA-2026-80510.html",
+            "https://errata.rockylinux.org/RLSA-2026:76918",
             "https://github.com/openssl/openssl/commit/906cf0ef1c85ca40ce69163e9086d6d3fe292943",
             "https://github.com/openssl/openssl/commit/9f6b34422af7eb5dac61322e33dac1ae989fa628",
             "https://github.com/openssl/openssl/commit/a383dafdd754eb5b22bf45e37e1bff9d07277a58",
@@ -5419,7 +6675,7 @@
           "Status": "fixed",
           "Title": "openssl: compat-openssl: openssl: Information disclosure via DTLS handshake retransmission",
           "VendorSeverity": {
-            "alma": 2,
+            "alma": 3,
             "amazon": 3,
             "azure": 3,
             "oracle-oval": 2,
@@ -5920,6 +7176,1431 @@
         },
         {
           "CVSS": {
+            "julia": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+            },
+            "nvd": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+            },
+            "redhat": {
+              "V3Score": 6.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-488",
+            "CWE-918"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "libcurl might in some circumstances reuse the wrong connection for SMB(S)\ntransfers.\n\nlibcurl features a pool of recent connections so that subsequent requests can\nreuse an existing connection to avoid overhead.\n\nWhen reusing a connection a range of criteria must be met. Due to a logical\nerror in the code, a network transfer operation that was requested by an\napplication could wrongfully reuse an existing SMB connection to the same\nserver that was using a different \"share\" than the new subsequent transfer\nshould.\n\nThis could in unlucky situations lead to the download of the wrong file or the\nupload of a file to the wrong place. When this happens, the same credentials\nare used and the server name is the same.",
+          "Fingerprint": "sha256:324b2e5261c19951ca34e88921c3650da92fdcd68ec2e378365da67cce821353",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "LastModifiedDate": "2026-09-15T07:16:28.82Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "libcurl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcurl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "61e5f415e1e5d48d"
+          },
+          "PkgName": "libcurl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-5773",
+          "PublishedDate": "2026-05-13T13:01:56.307Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/04/29/9",
+            "https://access.redhat.com/security/cve/CVE-2026-5773",
+            "https://curl.se/docs/CVE-2026-5773.html",
+            "https://curl.se/docs/CVE-2026-5773.json",
+            "https://github.com/advisories/GHSA-rp9q-8q5w-ch44",
+            "https://hackerone.com/reports/3650689",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-5773",
+            "https://ubuntu.com/security/notices/USN-8227-1",
+            "https://ubuntu.com/security/notices/USN-8525-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-5773"
+          ],
+          "Severity": "HIGH",
+          "SeveritySource": "nvd",
+          "Status": "fixed",
+          "Title": "curl: libcurl: Wrong file transfer due to incorrect SMB connection reuse",
+          "VendorSeverity": {
+            "julia": 3,
+            "nvd": 3,
+            "photon": 3,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-5773"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
+            "nvd": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
+            "redhat": {
+              "V3Score": 3.7,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-346",
+            "CWE-319"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "Using libcurl, when a custom `Host:` header is first set for an HTTP request\nand a second request is subsequently done using the same *easy handle* but\nwithout the custom `Host:` header set, the second request would use stale\ninformation and pass on cookies meant for the first host in the second\nrequest. Leak them.",
+          "Fingerprint": "sha256:e1a761f95a994019505f947aa206dcccd67ae6401d1d6f4d7e48a798d088c68d",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "LastModifiedDate": "2026-09-15T07:16:29.343Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "libcurl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcurl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "61e5f415e1e5d48d"
+          },
+          "PkgName": "libcurl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-6276",
+          "PublishedDate": "2026-05-13T13:01:56.8Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/04/29/13",
+            "https://access.redhat.com/security/cve/CVE-2026-6276",
+            "https://curl.se/docs/CVE-2026-6276.html",
+            "https://curl.se/docs/CVE-2026-6276.json",
+            "https://github.com/advisories/GHSA-2jc6-hc33-hv48",
+            "https://hackerone.com/reports/3671818",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-6276",
+            "https://ubuntu.com/security/notices/USN-8227-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-6276"
+          ],
+          "Severity": "HIGH",
+          "SeveritySource": "nvd",
+          "Status": "fixed",
+          "Title": "curl: libcurl: Information disclosure due to cookie leak when reusing connections with custom Host headers",
+          "VendorSeverity": {
+            "azure": 2,
+            "julia": 3,
+            "nvd": 3,
+            "photon": 3,
+            "redhat": 1,
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-6276"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 8.1,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N"
+            },
+            "redhat": {
+              "V3Score": 8.1,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-295"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "A vulnerability exists where a new transfer that uses STARTTLS to upgrade the\nconnection might reuse an existing live connection even though the TLS\nconfiguration mismatches so it should not.",
+          "Fingerprint": "sha256:1877f8cede38f48894dff4e7e4d5fdcb307394c35381e7818a5f9f2b81b11852",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "LastModifiedDate": "2026-09-15T07:16:31.617Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "libcurl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcurl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "61e5f415e1e5d48d"
+          },
+          "PkgName": "libcurl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-8286",
+          "PublishedDate": "2026-07-03T07:16:24.453Z",
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:55439",
+            "https://access.redhat.com/errata/RHSA-2026:57462",
+            "https://access.redhat.com/security/cve/CVE-2026-8286",
+            "https://bugzilla.redhat.com/2496763",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2446448",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2446450",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2496758",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2496763",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://curl.se/L7HzKXisfJ/CVE-2026-8286.md",
+            "https://curl.se/docs/CVE-2026-8286.html",
+            "https://curl.se/docs/CVE-2026-8286.json",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-1965",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-3783",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-8286",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-9547",
+            "https://errata.almalinux.org/8/ALSA-2026-57462.html",
+            "https://errata.rockylinux.org/RLSA-2026:55439",
+            "https://github.com/advisories/GHSA-32xh-3x3c-6g6h",
+            "https://hackerone.com/reports/3718195",
+            "https://linux.oracle.com/cve/CVE-2026-8286.html",
+            "https://linux.oracle.com/errata/ELSA-2026-57462.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-8286",
+            "https://ubuntu.com/security/notices/USN-8487-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-8286"
+          ],
+          "Severity": "HIGH",
+          "Status": "fixed",
+          "Title": "curl: curl: Insecure connection establishment due to TLS configuration mismatch",
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "azure": 3,
+            "julia": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-8286"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 9.1,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N"
+            },
+            "redhat": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-294"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "When reusing a libcurl handle for sequential transfers driven by\nenvironment-variable proxy configuration, libcurl fails to clear the proxy\nauthentication state between requests. Specifically, if the initial transfer\nauthenticates against `proxyA` using Digest auth, a subsequent transfer routed\nthrough `proxyB` erroneously leaks the `Proxy-Authorization:` header intended\nsolely for `proxyA`.",
+          "Fingerprint": "sha256:e1fd7fe6db4b3c3f96cff605bdc09e45f7bdd1cea1170df7c0bb7e86ff347e41",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "LastModifiedDate": "2026-09-15T07:16:33.157Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "libcurl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcurl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "61e5f415e1e5d48d"
+          },
+          "PkgName": "libcurl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-8927",
+          "PublishedDate": "2026-07-03T07:16:25.123Z",
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:55432",
+            "https://access.redhat.com/security/cve/CVE-2026-8927",
+            "https://bugzilla.redhat.com/2496769",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2496769",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://curl.se/L7HzKXisfJ/CVE-2026-8927.md",
+            "https://curl.se/docs/CVE-2026-8927.html",
+            "https://curl.se/docs/CVE-2026-8927.json",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-8927",
+            "https://errata.almalinux.org/10/ALSA-2026-55432.html",
+            "https://errata.rockylinux.org/RLSA-2026:55432",
+            "https://github.com/advisories/GHSA-jr4f-4564-w3mr",
+            "https://hackerone.com/reports/3744543",
+            "https://linux.oracle.com/cve/CVE-2026-8927.html",
+            "https://linux.oracle.com/errata/ELSA-2026-69126.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-8927",
+            "https://ubuntu.com/security/notices/USN-8487-1",
+            "https://ubuntu.com/security/notices/USN-8820-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-8927"
+          ],
+          "Severity": "HIGH",
+          "Status": "fixed",
+          "Title": "curl: Information disclosure due to uncleared proxy authentication state",
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 2,
+            "azure": 2,
+            "julia": 4,
+            "oracle-oval": 3,
+            "photon": 4,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-8927"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 8.1,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "During an upload, curl mishandles HTTP/2 `RST_STREAM` received from the server\n(with reason `HTTP_1_1_REQUIRED` or `REFUSED_STREAM`) leading to a use after\nfree of a `struct Curl_easy` object.",
+          "Fingerprint": "sha256:cc58d5f81db25c1f3b2ebecd49d4e22949095ad3bc2b908b175715b15b76bf19",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "LastModifiedDate": "2026-10-18T23:16:57.163Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "libcurl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcurl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "61e5f415e1e5d48d"
+          },
+          "PkgName": "libcurl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-92392",
+          "PublishedDate": "2026-10-14T08:17:05.997Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/10/18/5",
+            "http://www.openwall.com/lists/oss-security/2026/10/18/6",
+            "https://access.redhat.com/security/cve/CVE-2026-92392",
+            "https://curl.se/docs/CVE-2026-92392.html",
+            "https://curl.se/docs/CVE-2026-92392.json",
+            "https://hackerone.com/reports/4030333",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-92392",
+            "https://ubuntu.com/security/notices/USN-8927-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-92392"
+          ],
+          "Severity": "HIGH",
+          "Status": "fixed",
+          "Title": "curl: curl: HTTP/2 upload Use-After-Free",
+          "VendorSeverity": {
+            "redhat": 3,
+            "ubuntu": 3
+          },
+          "VulnerabilityID": "CVE-2026-92392"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 5.9,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N"
+            },
+            "redhat": {
+              "V3Score": 6.8,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-295"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "When using `CURLOPT_PINNEDPUBLICKEY` option with libcurl or `--pinnedpubkey`\nwith the curl tool, curl should check the public key of the server certificate\nto verify the peer.\n\nThis check was skipped in a certain condition that would then make curl allow\nthe connection without performing the proper check, thus not noticing a\npossible impostor. To skip this check, the connection had to be done with QUIC\nwith ngtcp2 built to use GnuTLS and the user had to explicitly disable the\nstandard certificate verification.",
+          "Fingerprint": "sha256:ce343468a9e45d0caa80943d66d4712bba7b8e16b2fbe00959868318ca56c30e",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "LastModifiedDate": "2026-09-15T07:16:23.55Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "libcurl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcurl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "61e5f415e1e5d48d"
+          },
+          "PkgName": "libcurl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-13034",
+          "PublishedDate": "2026-01-08T10:15:45.407Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2025-13034",
+            "https://curl.se/docs/CVE-2025-13034.html",
+            "https://curl.se/docs/CVE-2025-13034.json",
+            "https://github.com/advisories/GHSA-9r76-qj98-jfhc",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-13034",
+            "https://ubuntu.com/security/notices/USN-8062-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-13034"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "curl: Public key pinning bypass via QUIC and GnuTLS allows server impersonation",
+          "VendorSeverity": {
+            "amazon": 2,
+            "julia": 2,
+            "photon": 2,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2025-13034"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 5.3,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+            },
+            "redhat": {
+              "V3Score": 5.7,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:N/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-522"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "When an OAuth2 bearer token is used for an HTTP(S) transfer, and that transfer\nperforms a redirect to a second URL, curl could leak that token to the second\nhostname under some circumstances.\n\nIf the hostname that the first request is redirected to has information in the\nused .netrc file, with either of the `machine` or `default` keywords, curl\nwould pass on the bearer token set for the first host also to the second one.",
+          "Fingerprint": "sha256:8cf63f2fc0db8ac2ab49480c30b78554394add7e4ce7da4da95efd3b28c4f48f",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "LastModifiedDate": "2026-09-15T07:16:27.72Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "libcurl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcurl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "61e5f415e1e5d48d"
+          },
+          "PkgName": "libcurl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-3783",
+          "PublishedDate": "2026-03-11T11:16:00.08Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/03/11/2",
+            "https://access.redhat.com/errata/RHSA-2026:55439",
+            "https://access.redhat.com/security/cve/CVE-2026-3783",
+            "https://bugzilla.redhat.com/2446448",
+            "https://bugzilla.redhat.com/2446450",
+            "https://bugzilla.redhat.com/2496758",
+            "https://bugzilla.redhat.com/2496763",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2446448",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2446450",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2496758",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2496763",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://curl.se/docs/CVE-2026-3783.html",
+            "https://curl.se/docs/CVE-2026-3783.json",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-1965",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-3783",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-8286",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-9547",
+            "https://errata.almalinux.org/9/ALSA-2026-55439.html",
+            "https://errata.rockylinux.org/RLSA-2026:55439",
+            "https://github.com/advisories/GHSA-8whr-249c-vfjp",
+            "https://hackerone.com/reports/3583983",
+            "https://linux.oracle.com/cve/CVE-2026-3783.html",
+            "https://linux.oracle.com/errata/ELSA-2026-55450.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-3783",
+            "https://ubuntu.com/security/notices/USN-8084-1",
+            "https://ubuntu.com/security/notices/USN-8099-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-3783"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "curl: curl: Information disclosure via OAuth2 bearer token leakage during HTTP(S) redirect",
+          "VendorSeverity": {
+            "alma": 3,
+            "azure": 2,
+            "julia": 2,
+            "oracle-oval": 3,
+            "photon": 2,
+            "redhat": 2,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-3783"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 6.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N"
+            },
+            "redhat": {
+              "V3Score": 6.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-305"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "curl would wrongly reuse an existing HTTP proxy connection doing CONNECT to a\nserver, even if the new request uses different credentials for the HTTP proxy.\nThe proper behavior is to create or use a separate connection.",
+          "Fingerprint": "sha256:b5f64a9aba788832e48574392600a2f85316032b8e4d3d1e6c3451eb843e8a27",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "LastModifiedDate": "2026-09-15T07:16:27.963Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "libcurl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcurl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "61e5f415e1e5d48d"
+          },
+          "PkgName": "libcurl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-3784",
+          "PublishedDate": "2026-03-11T11:16:00.437Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/03/11/3",
+            "https://access.redhat.com/security/cve/CVE-2026-3784",
+            "https://cert-portal.siemens.com/productcert/html/ssa-253495.html",
+            "https://curl.se/docs/CVE-2026-3784.html",
+            "https://curl.se/docs/CVE-2026-3784.json",
+            "https://github.com/advisories/GHSA-5q3w-6p3j-mw6p",
+            "https://hackerone.com/reports/3584903",
+            "https://linux.oracle.com/cve/CVE-2026-3784.html",
+            "https://linux.oracle.com/errata/ELSA-2026-55450.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-3784",
+            "https://ubuntu.com/security/notices/USN-8084-1",
+            "https://ubuntu.com/security/notices/USN-8099-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-3784"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "curl: curl: Unauthorized access due to improper HTTP proxy connection reuse",
+          "VendorSeverity": {
+            "azure": 2,
+            "julia": 2,
+            "oracle-oval": 3,
+            "photon": 2,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-3784"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
+            "redhat": {
+              "V3Score": 6.3,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:L"
+            }
+          },
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "When doing a second SMB request to the same host again, curl would wrongly use\na data pointer pointing into already freed memory.",
+          "Fingerprint": "sha256:2f548e9a7cfcdb9f94c59944d6764eef593c53d566a27869a838b213a0f3315a",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "LastModifiedDate": "2026-09-14T21:17:06.383Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "libcurl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcurl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "61e5f415e1e5d48d"
+          },
+          "PkgName": "libcurl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-3805",
+          "PublishedDate": "2026-03-11T11:16:00.967Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/03/11/4",
+            "https://access.redhat.com/security/cve/CVE-2026-3805",
+            "https://curl.se/docs/CVE-2026-3805.html",
+            "https://curl.se/docs/CVE-2026-3805.json",
+            "https://github.com/advisories/GHSA-2289-hhfc-p684",
+            "https://hackerone.com/reports/3591944",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-3805",
+            "https://ubuntu.com/security/notices/USN-8084-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-3805"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "curl: curl: Arbitrary code execution or Denial of Service via use-after-free in SMB request handling",
+          "VendorSeverity": {
+            "amazon": 2,
+            "julia": 3,
+            "photon": 3,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-3805"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 5.9,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+            },
+            "redhat": {
+              "V3Score": 5.3,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-319",
+            "CWE-295"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "A vulnerability exists where a connection requiring TLS incorrectly reuses an\nexisting unencrypted connection from the same connection pool. If an initial\ntransfer is made in clear-text (via IMAP, SMTP, or POP3), a subsequent request\nto that same host bypasses the TLS requirement and instead transmit data\nunencrypted.",
+          "Fingerprint": "sha256:1a0e570e8a9c1850593229f37cfb00e374d662619cc99f96fc6ee1b127617741",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "LastModifiedDate": "2026-09-15T07:16:28.367Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "libcurl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcurl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "61e5f415e1e5d48d"
+          },
+          "PkgName": "libcurl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-4873",
+          "PublishedDate": "2026-05-13T13:01:55.893Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/04/29/7",
+            "https://access.redhat.com/security/cve/CVE-2026-4873",
+            "https://curl.se/docs/CVE-2026-4873.html",
+            "https://curl.se/docs/CVE-2026-4873.json",
+            "https://github.com/advisories/GHSA-5fgw-rv54-prjx",
+            "https://hackerone.com/reports/3621851",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-4873",
+            "https://ubuntu.com/security/notices/USN-8227-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-4873"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "curl: curl: Information disclosure due to incorrect TLS connection reuse",
+          "VendorSeverity": {
+            "azure": 2,
+            "julia": 2,
+            "photon": 2,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-4873"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 6.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:H/A:N"
+            },
+            "nvd": {
+              "V3Score": 6.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:H/A:N"
+            },
+            "redhat": {
+              "V3Score": 6.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-305",
+            "CWE-613"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "libcurl might in some circumstances reuse the wrong connection when asked to\ndo an authenticated HTTP(S) request after a Negotiate-authenticated one, when\nboth use the same host.\n\nlibcurl features a pool of recent connections so that subsequent requests can\nreuse an existing connection to avoid overhead.\n\nWhen reusing a connection a range of criteria must be met. Due to a logical\nerror in the code, a request that was issued by an application could\nwrongfully reuse an existing connection to the same server that was\nauthenticated using different credentials.\n\nAn application that first uses Negotiate authentication to a server with\n`user1:password1` and then does another operation to the same server asking\nfor any authentication method but for `user2:password2` (while the previous\nconnection is still alive) - the second request gets confused and wrongly\nreuses the same connection and sends the new request over that connection\nthinking it uses a mix of user1's and user2's credentials when it is in fact\nstill using the connection authenticated for user1...",
+          "Fingerprint": "sha256:e957595b65380de9610cfeefaa3d23fbcdde1d17ff68dfcd87c124ca88152450",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "LastModifiedDate": "2026-09-15T07:16:28.633Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "libcurl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcurl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "61e5f415e1e5d48d"
+          },
+          "PkgName": "libcurl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-5545",
+          "PublishedDate": "2026-05-13T13:01:56.19Z",
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:80512",
+            "https://access.redhat.com/security/cve/CVE-2026-5545",
+            "https://bugzilla.redhat.com/2461202",
+            "https://bugzilla.redhat.com/2461204",
+            "https://bugzilla.redhat.com/2461205",
+            "https://bugzilla.redhat.com/2476979",
+            "https://bugzilla.redhat.com/2496766",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2461202",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2461204",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2461205",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2476979",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2496766",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://curl.se/docs/CVE-2026-5545.html",
+            "https://curl.se/docs/CVE-2026-5545.json",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-10536",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-5545",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-6253",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-6429",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-7168",
+            "https://errata.almalinux.org/10/ALSA-2026-80512.html",
+            "https://errata.rockylinux.org/RLSA-2026:80512",
+            "https://github.com/advisories/GHSA-6g7g-56fm-f8mp",
+            "https://hackerone.com/reports/3642555",
+            "https://linux.oracle.com/cve/CVE-2026-5545.html",
+            "https://linux.oracle.com/errata/ELSA-2026-80512.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-5545",
+            "https://ubuntu.com/security/notices/USN-8227-1",
+            "https://ubuntu.com/security/notices/USN-8525-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-5545"
+          ],
+          "Severity": "MEDIUM",
+          "SeveritySource": "nvd",
+          "Status": "fixed",
+          "Title": "curl: libcurl: Authentication bypass due to incorrect HTTP Negotiate connection reuse",
+          "VendorSeverity": {
+            "alma": 2,
+            "azure": 2,
+            "julia": 2,
+            "nvd": 2,
+            "oracle-oval": 2,
+            "photon": 2,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-5545"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 5.9,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
+            "redhat": {
+              "V3Score": 5.3,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-522"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "curl might erroneously pass on credentials for a first proxy to a second\nproxy.\n\nThis can happen when the following conditions are true:\n\n1. curl is setup to use specific different proxies for different URL schemes\n2. the first proxy needs credentials\n3. the second proxy uses no credentials\n4. while using the first proxy (using say `http://`), curl is asked to follow\n   a redirect to a URL using another scheme (say `https://`), accessed using a\n   second, different, proxy",
+          "Fingerprint": "sha256:6547a3cf4441cd580aeb650c14c263a8ebca5b59dfaa7bd917c3451c4d55a8f2",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "LastModifiedDate": "2026-09-15T07:16:29.073Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "libcurl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcurl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "61e5f415e1e5d48d"
+          },
+          "PkgName": "libcurl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-6253",
+          "PublishedDate": "2026-05-13T13:01:56.57Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/04/29/11",
+            "https://access.redhat.com/errata/RHSA-2026:80512",
+            "https://access.redhat.com/security/cve/CVE-2026-6253",
+            "https://bugzilla.redhat.com/2461202",
+            "https://bugzilla.redhat.com/2461204",
+            "https://bugzilla.redhat.com/2461205",
+            "https://bugzilla.redhat.com/2476979",
+            "https://bugzilla.redhat.com/2496766",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2461202",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2461204",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2461205",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2476979",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2496766",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://curl.se/docs/CVE-2026-6253.html",
+            "https://curl.se/docs/CVE-2026-6253.json",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-10536",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-5545",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-6253",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-6429",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-7168",
+            "https://errata.almalinux.org/10/ALSA-2026-80512.html",
+            "https://errata.rockylinux.org/RLSA-2026:80512",
+            "https://hackerone.com/reports/3669637",
+            "https://linux.oracle.com/cve/CVE-2026-6253.html",
+            "https://linux.oracle.com/errata/ELSA-2026-80512.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-6253",
+            "https://ubuntu.com/security/notices/USN-8227-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-6253"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "curl: curl: Proxy credential disclosure via redirects to unauthenticated proxies",
+          "VendorSeverity": {
+            "alma": 2,
+            "azure": 2,
+            "julia": 2,
+            "oracle-oval": 2,
+            "photon": 2,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-6253"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 5.3,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N"
+            },
+            "redhat": {
+              "V3Score": 6.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-200"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "When asked to both use a `.netrc` file for credentials and to follow HTTP\nredirects, libcurl could leak the password used for the first host to the\nfollowed-to host under certain circumstances.",
+          "Fingerprint": "sha256:e8b43d57dac15dab14cafab60417c8cf57ef3cccd304d5c17c60e1ee143a4b1c",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "LastModifiedDate": "2026-09-15T07:16:29.557Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "libcurl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcurl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "61e5f415e1e5d48d"
+          },
+          "PkgName": "libcurl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-6429",
+          "PublishedDate": "2026-05-13T13:01:56.93Z",
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:80512",
+            "https://access.redhat.com/security/cve/CVE-2026-6429",
+            "https://bugzilla.redhat.com/2461202",
+            "https://bugzilla.redhat.com/2461204",
+            "https://bugzilla.redhat.com/2461205",
+            "https://bugzilla.redhat.com/2476979",
+            "https://bugzilla.redhat.com/2496766",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2461202",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2461204",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2461205",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2476979",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2496766",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://curl.se/docs/CVE-2026-6429.html",
+            "https://curl.se/docs/CVE-2026-6429.json",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-10536",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-5545",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-6253",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-6429",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-7168",
+            "https://errata.almalinux.org/10/ALSA-2026-80512.html",
+            "https://errata.rockylinux.org/RLSA-2026:80512",
+            "https://github.com/advisories/GHSA-2pvc-5qw9-h3ph",
+            "https://hackerone.com/reports/3677759",
+            "https://linux.oracle.com/cve/CVE-2026-6429.html",
+            "https://linux.oracle.com/errata/ELSA-2026-80512.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-6429",
+            "https://ubuntu.com/security/notices/USN-8227-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-6429"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "curl: libcurl: Credential leak via reused proxy connection during HTTP redirects",
+          "VendorSeverity": {
+            "alma": 2,
+            "azure": 2,
+            "julia": 2,
+            "oracle-oval": 2,
+            "photon": 2,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-6429"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 5.3,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+            },
+            "nvd": {
+              "V3Score": 5.3,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+            },
+            "redhat": {
+              "V3Score": 5.3,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-294"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "Successfully using libcurl to do a transfer over a specific HTTP proxy\n(`proxyA`) with **Digest** authentication and then changing the proxy host to\na second one (`proxyB`) for a second transfer, reusing the same handle, makes\nlibcurl wrongly pass on the `Proxy-Authorization:` header field meant for\n`proxyA`, to `proxyB`.",
+          "Fingerprint": "sha256:298eef4318fb97ce837a12ff5a944d5446c36624cf9568de95aea6be94d72e34",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "LastModifiedDate": "2026-09-15T07:16:29.89Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "libcurl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcurl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "61e5f415e1e5d48d"
+          },
+          "PkgName": "libcurl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-7168",
+          "PublishedDate": "2026-05-13T13:01:57.2Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/04/29/14",
+            "https://access.redhat.com/errata/RHSA-2026:80512",
+            "https://access.redhat.com/security/cve/CVE-2026-7168",
+            "https://bugzilla.redhat.com/2461202",
+            "https://bugzilla.redhat.com/2461204",
+            "https://bugzilla.redhat.com/2461205",
+            "https://bugzilla.redhat.com/2476979",
+            "https://bugzilla.redhat.com/2496766",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2461202",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2461204",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2461205",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2476979",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2496766",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://curl.se/docs/CVE-2026-7168.html",
+            "https://curl.se/docs/CVE-2026-7168.json",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-10536",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-5545",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-6253",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-6429",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-7168",
+            "https://errata.almalinux.org/10/ALSA-2026-80512.html",
+            "https://errata.rockylinux.org/RLSA-2026:80512",
+            "https://github.com/advisories/GHSA-v92m-hrhj-gw54",
+            "https://hackerone.com/reports/3697719",
+            "https://linux.oracle.com/cve/CVE-2026-7168.html",
+            "https://linux.oracle.com/errata/ELSA-2026-80512.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-7168",
+            "https://ubuntu.com/security/notices/USN-8227-1",
+            "https://ubuntu.com/security/notices/USN-8525-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-7168"
+          ],
+          "Severity": "MEDIUM",
+          "SeveritySource": "nvd",
+          "Status": "fixed",
+          "Title": "curl: libcurl: Information disclosure via incorrect Proxy-Authorization header reuse",
+          "VendorSeverity": {
+            "alma": 2,
+            "azure": 2,
+            "julia": 2,
+            "nvd": 2,
+            "oracle-oval": 2,
+            "photon": 2,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-7168"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 9.1,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N"
+            },
+            "redhat": {
+              "V3Score": 6.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-201"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "A flaw in curl’s cookie parsing logic allows a malicious HTTP server to set\n\"super cookies\" that bypass the Public Suffix List check. This enables an\nattacker-controlled origin to inject cookies that curl subsequently scopes and\ntransmits to unrelated third-party domains.",
+          "Fingerprint": "sha256:919e45071021c11ec857c6df825ffc58fa7eecebc745ed3a9a7930d440b7a3f9",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "LastModifiedDate": "2026-09-15T07:16:32.573Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "libcurl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcurl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "61e5f415e1e5d48d"
+          },
+          "PkgName": "libcurl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-8924",
+          "PublishedDate": "2026-07-03T07:16:24.793Z",
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:69125",
+            "https://access.redhat.com/security/cve/CVE-2026-8924",
+            "https://bugzilla.redhat.com/2496759",
+            "https://bugzilla.redhat.com/2496760",
+            "https://bugzilla.redhat.com/2496764",
+            "https://bugzilla.redhat.com/2496765",
+            "https://bugzilla.redhat.com/2496767",
+            "https://bugzilla.redhat.com/2496771",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2496759",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2496760",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2496764",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2496765",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2496767",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2496771",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://curl.se/L7HzKXisfJ/CVE-2026-8924.md",
+            "https://curl.se/docs/CVE-2026-8924.html",
+            "https://curl.se/docs/CVE-2026-8924.json",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-11856",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-8458",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-8924",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-8926",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-8932",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-9079",
+            "https://errata.almalinux.org/10/ALSA-2026-69125.html",
+            "https://errata.rockylinux.org/RLSA-2026:69125",
+            "https://github.com/advisories/GHSA-hm6c-rc5h-32m9",
+            "https://hackerone.com/reports/3733905",
+            "https://linux.oracle.com/cve/CVE-2026-8924.html",
+            "https://linux.oracle.com/errata/ELSA-2026-80511.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-8924",
+            "https://ubuntu.com/security/notices/USN-8487-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-8924"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "curl: curl: Cookie injection via malicious HTTP server using super cookies",
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "azure": 3,
+            "julia": 4,
+            "oracle-oval": 2,
+            "photon": 4,
+            "redhat": 2,
+            "rocky": 3,
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2026-8924"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 5.3,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N"
+            },
+            "redhat": {
+              "V3Score": 6.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-522",
+            "CWE-601"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "When an OAuth2 bearer token is used for an HTTP(S) transfer, and that transfer\nperforms a cross-protocol redirect to a second URL that uses an IMAP, LDAP,\nPOP3 or SMTP scheme, curl might wrongly pass on the bearer token to the new\ntarget host.",
+          "Fingerprint": "sha256:fed0a7a0f302d10921aab17794f64a2a1360407c573f5de00adbffd676ad5745",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "LastModifiedDate": "2026-09-15T07:16:24.02Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "libcurl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcurl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "61e5f415e1e5d48d"
+          },
+          "PkgName": "libcurl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-14524",
+          "PublishedDate": "2026-01-08T10:15:46.607Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/01/07/4",
+            "https://access.redhat.com/security/cve/CVE-2025-14524",
+            "https://curl.se/docs/CVE-2025-14524.html",
+            "https://curl.se/docs/CVE-2025-14524.json",
+            "https://github.com/advisories/GHSA-g897-jvjx-78vg",
+            "https://hackerone.com/reports/3459417",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-14524",
+            "https://ubuntu.com/security/notices/USN-8062-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-14524"
+          ],
+          "Severity": "LOW",
+          "Status": "fixed",
+          "Title": "curl: Information disclosure via cross-protocol redirect with OAuth2 bearer token",
+          "VendorSeverity": {
+            "amazon": 2,
+            "azure": 2,
+            "cbl-mariner": 2,
+            "julia": 2,
+            "photon": 2,
+            "redhat": 1,
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2025-14524"
+        },
+        {
+          "CVSS": {
+            "julia": {
+              "V3Score": 5.3,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N"
+            },
+            "redhat": {
+              "V3Score": 6.8,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-295"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "When doing TLS related transfers with reused easy or multi handles and\naltering the `CURLSSLOPT_NO_PARTIALCHAIN` option, libcurl could accidentally\nreuse a CA store cached in memory for which the partial chain option was\nreversed. Contrary to the user's wishes and expectations. This could make\nlibcurl find and accept a trust chain that it otherwise would not.",
+          "Fingerprint": "sha256:4bf2834f07f889621c571cd127afb3f99703b7981e60a5f9f97dc6a85387ee42",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "LastModifiedDate": "2026-10-14T19:10:00.297Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "libcurl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcurl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "61e5f415e1e5d48d"
+          },
+          "PkgName": "libcurl",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-14819",
+          "PublishedDate": "2026-01-08T10:15:46.73Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/01/07/5",
+            "https://access.redhat.com/security/cve/CVE-2025-14819",
+            "https://curl.se/docs/CVE-2025-14819.html",
+            "https://curl.se/docs/CVE-2025-14819.json",
+            "https://github.com/advisories/GHSA-vqhr-m87q-9jqh",
+            "https://linux.oracle.com/cve/CVE-2025-14819.html",
+            "https://linux.oracle.com/errata/ELSA-2026-55450.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-14819",
+            "https://ubuntu.com/security/notices/USN-8062-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-14819"
+          ],
+          "Severity": "LOW",
+          "Status": "fixed",
+          "Title": "curl: libcurl: Improper certificate validation due to cached TLS settings reuse",
+          "VendorSeverity": {
+            "amazon": 2,
+            "julia": 2,
+            "oracle-oval": 3,
+            "photon": 2,
+            "redhat": 1,
+            "ubuntu": 1
+          },
+          "VulnerabilityID": "CVE-2025-14819"
+        },
+        {
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:72f7c2d1b3bdde64e7616c1009152832faa3cfb47a6cb657ff29b13168e4cc69",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "libcurl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcurl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "61e5f415e1e5d48d"
+          },
+          "PkgName": "libcurl",
+          "Severity": "UNKNOWN",
+          "Status": "fixed",
+          "VulnerabilityID": "CVE-2026-1965_1"
+        },
+        {
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:4faa0628cf28d5b1aa25fce947e2ad3fb3aac63b56e394418b2c2fb7cd64a528",
+          "FixedVersion": "8.14.1-r3",
+          "InstalledVersion": "8.14.1-r2",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "libcurl@8.14.1-r2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcurl@8.14.1-r2?arch=x86_64\u0026distro=3.21.8",
+            "UID": "61e5f415e1e5d48d"
+          },
+          "PkgName": "libcurl",
+          "Severity": "UNKNOWN",
+          "Status": "fixed",
+          "VulnerabilityID": "CVE-2026-1965_2"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 8.2,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:L"
+            }
+          },
+          "CweIDs": [
+            "CWE-125"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "libexpat before commit 13c5f63 contains a heap buffer over-read vulnerability in xmlparse.c. XML_ParseBuffer advances the parse buffer end with parser-\u003em_bufferEnd += len using a caller-supplied length that is not validated against the allocated buffer size, so repeated XML_ParseBuffer calls move m_bufferEnd past the end of the heap allocation and subsequent parsing reads out of bounds. Reaching this path requires a parse buffer to already be present; otherwise XML_ParseBuffer returns XML_ERROR_NO_BUFFER. A buffer is present after a prior call to XML_GetBuffer, either directly (the common case) or indirectly through a prior XML_Parse call that allocates the buffer internally. The over-read discloses adjacent heap memory to the calling application, recovering heap pointers, libc function pointers, and code pointers sufficient to defeat ASLR and build further exploitation primitives.",
+          "Fingerprint": "sha256:6dd36293a0287767a1b2505ac1e0ab47600ee98eb68655f0a8a96174115d64fb",
+          "FixedVersion": "2.9.0-r0",
+          "InstalledVersion": "2.8.4-r0",
+          "LastModifiedDate": "2026-10-10T03:17:08.487Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "libexpat@2.8.4-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libexpat@2.8.4-r0?arch=x86_64\u0026distro=3.21.8",
+            "UID": "8e28e044fe60d4a6"
+          },
+          "PkgName": "libexpat",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-77214",
+          "PublishedDate": "2026-10-07T15:17:53.327Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-77214",
+            "https://github.com/libexpat/libexpat/commit/13c5f63a7f1c52c2feee3b16a1134d4fb68e9ea0",
+            "https://github.com/libexpat/libexpat/pull/1393",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-77214",
+            "https://www.cve.org/CVERecord?id=CVE-2026-77214",
+            "https://www.vulncheck.com/advisories/libexpat-heap-buffer-over-read-in-xmlparse-c-via-xml-parsebuffer"
+          ],
+          "Severity": "HIGH",
+          "Status": "fixed",
+          "Title": "expat: expat: Information disclosure via heap buffer over-read in XML_ParseBuffer",
+          "VendorSeverity": {
+            "azure": 3,
+            "redhat": 3
+          },
+          "VulnerabilityID": "CVE-2026-77214"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+            }
+          },
+          "CweIDs": [
+            "CWE-176"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "Expat before 2.8.5 fails to validate that a high surrogate in UTF-16 input is followed by a low surrogate, allowing malformed UTF-16 sequences to be accepted. Attackers can supply UTF-16 encoded XML containing lone high surrogates that consume the following code unit, causing Expat to pass unpaired surrogates to applications built with XML_UNICODE and to silently replace input characters in other builds.",
+          "Fingerprint": "sha256:d6c0802723deaa765a29db727620b370b8343640420239454e2a50ab27feec3e",
+          "FixedVersion": "2.8.5-r0",
+          "InstalledVersion": "2.8.4-r0",
+          "LastModifiedDate": "2026-09-28T17:17:53.037Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "libexpat@2.8.4-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libexpat@2.8.4-r0?arch=x86_64\u0026distro=3.21.8",
+            "UID": "8e28e044fe60d4a6"
+          },
+          "PkgName": "libexpat",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-93990",
+          "PublishedDate": "2026-09-19T23:17:10.203Z",
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:72448",
+            "https://access.redhat.com/errata/RHSA-2026:74001",
+            "https://access.redhat.com/security/cve/CVE-2026-93990",
+            "https://blog.hartwork.org/posts/expat-2-8-5-released/",
+            "https://bugzilla.redhat.com/2538967",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2517901",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2538967",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-66046",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-93990",
+            "https://errata.almalinux.org/8/ALSA-2026-72448.html",
+            "https://errata.rockylinux.org/RLSA-2026:74001",
+            "https://github.com/libexpat/libexpat",
+            "https://github.com/libexpat/libexpat/commit/ff6e1d7e750bbe245178f51a47a965dc8342861a",
+            "https://github.com/libexpat/libexpat/pull/1282",
+            "https://github.com/libexpat/libexpat/releases/tag/R_2_8_5",
+            "https://linux.oracle.com/cve/CVE-2026-93990.html",
+            "https://linux.oracle.com/errata/ELSA-2026-74001.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-93990",
+            "https://www.cve.org/CVERecord?id=CVE-2026-93990",
+            "https://www.vulncheck.com/advisories/expat-through-2.8.4-malformed-utf-16-acceptance-via-unchecked-surrogate"
+          ],
+          "Severity": "HIGH",
+          "Status": "fixed",
+          "Title": "expat: Expat: XML Injection via Malformed UTF-16 Input",
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "azure": 3,
+            "oracle-oval": 3,
+            "redhat": 3,
+            "rocky": 3
+          },
+          "VulnerabilityID": "CVE-2026-93990"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 5.9,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-190"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "libexpat versions 2.7.2 through 2.8.5 contain an integer overflow vulnerability in expat_realloc() function on 32-bit platforms when computing allocation sizes. Attackers supplying malicious XML to applications parsing with vulnerable libexpat can cause heap buffer overflow, memory corruption, or denial of service.",
+          "Fingerprint": "sha256:e7338abd3805d10d9deef53694d2a895002d82521e8c1ebdb614f9c673efa63e",
+          "FixedVersion": "2.9.0-r0",
+          "InstalledVersion": "2.8.4-r0",
+          "LastModifiedDate": "2026-09-29T21:32:59.833Z",
+          "Layer": {
+            "DiffID": "sha256:b8104482a06a0bc18ce04b3d6dc52044c42a83051046b220471ce343936bd5e9",
+            "Digest": "sha256:ce570850505ad4068d838e3b30d72a33ecd6e65af1c4ab4079ad7e189d5c2267"
+          },
+          "PkgID": "libexpat@2.8.4-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libexpat@2.8.4-r0?arch=x86_64\u0026distro=3.21.8",
+            "UID": "8e28e044fe60d4a6"
+          },
+          "PkgName": "libexpat",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-102633",
+          "PublishedDate": "2026-09-29T17:17:06.98Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-102633",
+            "https://github.com/libexpat/libexpat",
+            "https://github.com/libexpat/libexpat/blob/R_2_8_5/expat/lib/xmlparse.c#L1003",
+            "https://github.com/libexpat/libexpat/commit/209801d7fbaf07ab74bae8cb32dd2ab9e5846118",
+            "https://github.com/libexpat/libexpat/pull/1392",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-102633",
+            "https://www.cve.org/CVERecord?id=CVE-2026-102633",
+            "https://www.vulncheck.com/advisories/libexpat-2.7.2-through-2.8.5-integer-overflow-in-expat-realloc"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "expat: expat: Denial of Service via integer overflow in expat_realloc",
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2026-102633"
+        },
+        {
+          "CVSS": {
             "redhat": {
               "V3Score": 7.4,
               "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:H"
@@ -5951,16 +8632,15 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-84782",
           "PublishedDate": "2026-09-29T16:17:12.5Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:77396",
-            "https://access.redhat.com/errata/RHSA-2026:80514",
+            "https://access.redhat.com/errata/RHSA-2026:76918",
+            "https://access.redhat.com/errata/RHSA-2026:80510",
             "https://access.redhat.com/security/cve/CVE-2026-84782",
-            "https://bugzilla.redhat.com/2517560",
             "https://bugzilla.redhat.com/2537080",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2537080",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-84782",
-            "https://errata.almalinux.org/9/ALSA-2026-80514.html",
-            "https://errata.rockylinux.org/RLSA-2026:77396",
+            "https://errata.almalinux.org/8/ALSA-2026-80510.html",
+            "https://errata.rockylinux.org/RLSA-2026:76918",
             "https://github.com/openssl/openssl/commit/906cf0ef1c85ca40ce69163e9086d6d3fe292943",
             "https://github.com/openssl/openssl/commit/9f6b34422af7eb5dac61322e33dac1ae989fa628",
             "https://github.com/openssl/openssl/commit/a383dafdd754eb5b22bf45e37e1bff9d07277a58",
@@ -5978,7 +8658,7 @@
           "Status": "fixed",
           "Title": "openssl: compat-openssl: openssl: Information disclosure via DTLS handshake retransmission",
           "VendorSeverity": {
-            "alma": 2,
+            "alma": 3,
             "amazon": 3,
             "azure": 3,
             "oracle-oval": 2,
@@ -7853,15 +10533,14 @@
             "https://access.redhat.com/errata/RHSA-2026:66022",
             "https://access.redhat.com/errata/RHSA-2026:67450",
             "https://access.redhat.com/security/cve/CVE-2026-39829",
-            "https://bugzilla.redhat.com/2480680",
+            "https://bugzilla.redhat.com/2455470",
             "https://bugzilla.redhat.com/2480681",
+            "https://bugzilla.redhat.com/2480684",
             "https://bugzilla.redhat.com/2480685",
             "https://bugzilla.redhat.com/2480688",
-            "https://bugzilla.redhat.com/2480757",
-            "https://bugzilla.redhat.com/2480761",
-            "https://bugzilla.redhat.com/2493620",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480680",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480681",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480684",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480688",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480757",
@@ -7871,12 +10550,13 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-25681",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27136",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39829",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39830",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39832",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39835",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42508",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-57231",
-            "https://errata.almalinux.org/9/ALSA-2026-37123.html",
-            "https://errata.rockylinux.org/RLSA-2026:37123",
+            "https://errata.almalinux.org/8/ALSA-2026-35833.html",
+            "https://errata.rockylinux.org/RLSA-2026:37072",
             "https://go.dev/cl/781641",
             "https://go.dev/cl/781661",
             "https://go.dev/issue/79565",
@@ -7990,37 +10670,31 @@
             "https://access.redhat.com/errata/RHSA-2026:66022",
             "https://access.redhat.com/errata/RHSA-2026:66521",
             "https://access.redhat.com/errata/RHSA-2026:67450",
-            "https://access.redhat.com/errata/RHSA-2026:69961",
             "https://access.redhat.com/security/cve/CVE-2026-39830",
+            "https://bugzilla.redhat.com/2455470",
+            "https://bugzilla.redhat.com/2480681",
             "https://bugzilla.redhat.com/2480684",
-            "https://bugzilla.redhat.com/2508234",
-            "https://bugzilla.redhat.com/2515815",
-            "https://bugzilla.redhat.com/2515820",
-            "https://bugzilla.redhat.com/2515827",
-            "https://bugzilla.redhat.com/2515838",
-            "https://bugzilla.redhat.com/2515839",
-            "https://bugzilla.redhat.com/2515840",
+            "https://bugzilla.redhat.com/2480685",
+            "https://bugzilla.redhat.com/2480688",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480680",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480681",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480684",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2508234",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2515815",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2515820",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2515827",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2515838",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2515839",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2515840",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2518147",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480688",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480757",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480761",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2493620",
             "https://creativecommons.org/licenses/by/4.0/",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-17106",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-19730",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-33818",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-25681",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27136",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39829",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39830",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56853",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56858",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56859",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56860",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56862",
-            "https://errata.almalinux.org/9/ALSA-2026-69961.html",
-            "https://errata.rockylinux.org/RLSA-2026:69961",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39832",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39835",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42508",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-57231",
+            "https://errata.almalinux.org/8/ALSA-2026-35833.html",
+            "https://errata.rockylinux.org/RLSA-2026:37072",
             "https://github.com/golang/crypto/commit/4e7a7384ecbc8d519f6f4c11b36fa9d761fc8946",
             "https://go.dev/cl/781640",
             "https://go.dev/cl/781664",
@@ -8178,15 +10852,30 @@
             "https://access.redhat.com/errata/RHSA-2026:66521",
             "https://access.redhat.com/errata/RHSA-2026:67450",
             "https://access.redhat.com/security/cve/CVE-2026-39832",
-            "https://bugzilla.redhat.com/2480680",
+            "https://bugzilla.redhat.com/2455470",
+            "https://bugzilla.redhat.com/2480681",
+            "https://bugzilla.redhat.com/2480684",
             "https://bugzilla.redhat.com/2480685",
+            "https://bugzilla.redhat.com/2480688",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480680",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480681",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480684",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480688",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480757",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480761",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2493620",
             "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-25681",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27136",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39829",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39830",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39832",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39835",
-            "https://errata.almalinux.org/9/ALSA-2026-37410.html",
-            "https://errata.rockylinux.org/RLSA-2026:37410",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42508",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-57231",
+            "https://errata.almalinux.org/8/ALSA-2026-35833.html",
+            "https://errata.rockylinux.org/RLSA-2026:37072",
             "https://github.com/golang/crypto/commit/e3d1254f1e7e60baa086142c46174bf6d8d0fe50",
             "https://go.dev/cl/778640",
             "https://go.dev/cl/778641",
@@ -8306,15 +10995,28 @@
             "https://access.redhat.com/errata/RHSA-2026:66022",
             "https://access.redhat.com/errata/RHSA-2026:66521",
             "https://access.redhat.com/security/cve/CVE-2026-39835",
+            "https://bugzilla.redhat.com/2467822",
             "https://bugzilla.redhat.com/2480680",
-            "https://bugzilla.redhat.com/2480685",
+            "https://bugzilla.redhat.com/2493620",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480680",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480681",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480684",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480688",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480757",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480761",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2493620",
             "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-25681",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27136",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39829",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39830",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39832",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39835",
-            "https://errata.almalinux.org/9/ALSA-2026-37410.html",
-            "https://errata.rockylinux.org/RLSA-2026:37410",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42508",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-57231",
+            "https://errata.almalinux.org/8/ALSA-2026-38504.html",
+            "https://errata.rockylinux.org/RLSA-2026:37072",
             "https://go.dev/cl/781660",
             "https://go.dev/issue/79563",
             "https://groups.google.com/g/golang-announce/c/a082jnz-LvI",
@@ -8417,15 +11119,14 @@
             "https://access.redhat.com/errata/RHSA-2026:66521",
             "https://access.redhat.com/errata/RHSA-2026:67450",
             "https://access.redhat.com/security/cve/CVE-2026-42508",
-            "https://bugzilla.redhat.com/2480680",
+            "https://bugzilla.redhat.com/2455470",
             "https://bugzilla.redhat.com/2480681",
+            "https://bugzilla.redhat.com/2480684",
             "https://bugzilla.redhat.com/2480685",
             "https://bugzilla.redhat.com/2480688",
-            "https://bugzilla.redhat.com/2480757",
-            "https://bugzilla.redhat.com/2480761",
-            "https://bugzilla.redhat.com/2493620",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480680",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480681",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480684",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480685",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480688",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480757",
@@ -8435,12 +11136,13 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-25681",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27136",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39829",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39830",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39832",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39835",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42508",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-57231",
-            "https://errata.almalinux.org/9/ALSA-2026-37123.html",
-            "https://errata.rockylinux.org/RLSA-2026:37123",
+            "https://errata.almalinux.org/8/ALSA-2026-35833.html",
+            "https://errata.rockylinux.org/RLSA-2026:37072",
             "https://github.com/golang/crypto/commit/f717e29698a271c548239ed56bf5dd9516d6f7e8",
             "https://go.dev/cl/781220",
             "https://go.dev/issue/79568",
@@ -9098,13 +11800,15 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-25681",
           "PublishedDate": "2026-05-22T16:16:19.863Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:69293",
+            "https://access.redhat.com/errata/RHSA-2026:66432",
             "https://access.redhat.com/security/cve/CVE-2026-25681",
+            "https://bugzilla.redhat.com/2480756",
             "https://bugzilla.redhat.com/2480757",
             "https://bugzilla.redhat.com/2480761",
             "https://bugzilla.redhat.com/2480762",
             "https://bugzilla.redhat.com/2484830",
             "https://bugzilla.redhat.com/2493622",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480756",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480757",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480761",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480762",
@@ -9113,11 +11817,12 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-25681",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27136",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39821",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-41178",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42502",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-55677",
-            "https://errata.almalinux.org/9/ALSA-2026-69293.html",
-            "https://errata.rockylinux.org/RLSA-2026:69293",
+            "https://errata.almalinux.org/10/ALSA-2026-66432.html",
+            "https://errata.rockylinux.org/RLSA-2026:66432",
             "https://go.dev/cl/781703",
             "https://go.dev/issue/79574",
             "https://groups.google.com/g/golang-announce/c/iI-mYSI0lu8",
@@ -9176,13 +11881,15 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-27136",
           "PublishedDate": "2026-05-22T16:16:20.087Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:69293",
+            "https://access.redhat.com/errata/RHSA-2026:66432",
             "https://access.redhat.com/security/cve/CVE-2026-27136",
+            "https://bugzilla.redhat.com/2480756",
             "https://bugzilla.redhat.com/2480757",
             "https://bugzilla.redhat.com/2480761",
             "https://bugzilla.redhat.com/2480762",
             "https://bugzilla.redhat.com/2484830",
             "https://bugzilla.redhat.com/2493622",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480756",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480757",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480761",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480762",
@@ -9191,11 +11898,12 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-25681",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27136",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39821",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-41178",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42502",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-55677",
-            "https://errata.almalinux.org/9/ALSA-2026-69293.html",
-            "https://errata.rockylinux.org/RLSA-2026:69293",
+            "https://errata.almalinux.org/10/ALSA-2026-66432.html",
+            "https://errata.rockylinux.org/RLSA-2026:66432",
             "https://go.dev/cl/781685",
             "https://go.dev/issue/79575",
             "https://groups.google.com/g/golang-announce/c/iI-mYSI0lu8",
@@ -9406,45 +12114,31 @@
             "https://access.redhat.com/errata/RHSA-2026:67517",
             "https://access.redhat.com/errata/RHSA-2026:68504",
             "https://access.redhat.com/security/cve/CVE-2026-39821",
-            "https://bugzilla.redhat.com/2467809",
+            "https://bugzilla.redhat.com/2315719",
+            "https://bugzilla.redhat.com/2341751",
             "https://bugzilla.redhat.com/2467820",
             "https://bugzilla.redhat.com/2480756",
-            "https://bugzilla.redhat.com/2484204",
             "https://bugzilla.redhat.com/2515815",
             "https://bugzilla.redhat.com/2515820",
             "https://bugzilla.redhat.com/2515827",
             "https://bugzilla.redhat.com/2515838",
             "https://bugzilla.redhat.com/2515839",
             "https://bugzilla.redhat.com/2515840",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2456333",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2456339",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2467809",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2467820",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2467822",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480756",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2484204",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2515815",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2515820",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2515827",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2515838",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2515839",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2515840",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480757",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480761",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480762",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2484830",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2493622",
             "https://creativecommons.org/licenses/by/4.0/",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32280",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32281",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-33811",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-33818",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39820",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-25681",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27136",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39821",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42499",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42504",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56853",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56858",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56859",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56860",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56862",
-            "https://errata.almalinux.org/9/ALSA-2026-65153.html",
-            "https://errata.rockylinux.org/RLSA-2026:65886",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-41178",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42502",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-55677",
+            "https://errata.almalinux.org/8/ALSA-2026-66016.html",
+            "https://errata.rockylinux.org/RLSA-2026:66432",
             "https://go.dev/cl/767220",
             "https://go.dev/issue/78760",
             "https://groups.google.com/g/golang-announce/c/94pEornpRlI",
@@ -9686,13 +12380,15 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-42502",
           "PublishedDate": "2026-05-22T16:16:20.587Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:69293",
+            "https://access.redhat.com/errata/RHSA-2026:66432",
             "https://access.redhat.com/security/cve/CVE-2026-42502",
+            "https://bugzilla.redhat.com/2480756",
             "https://bugzilla.redhat.com/2480757",
             "https://bugzilla.redhat.com/2480761",
             "https://bugzilla.redhat.com/2480762",
             "https://bugzilla.redhat.com/2484830",
             "https://bugzilla.redhat.com/2493622",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2480756",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480757",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480761",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2480762",
@@ -9701,11 +12397,12 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-25681",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27136",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39821",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-41178",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42502",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-55677",
-            "https://errata.almalinux.org/9/ALSA-2026-69293.html",
-            "https://errata.rockylinux.org/RLSA-2026:69293",
+            "https://errata.almalinux.org/10/ALSA-2026-66432.html",
+            "https://errata.rockylinux.org/RLSA-2026:66432",
             "https://go.dev/cl/781701",
             "https://go.dev/issue/79572",
             "https://groups.google.com/g/golang-announce/c/iI-mYSI0lu8",
@@ -10258,14 +12955,14 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-84445",
           "PublishedDate": "2026-09-14T17:17:51.743Z",
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:76744",
+            "https://access.redhat.com/errata/RHSA-2026:76743",
             "https://access.redhat.com/security/cve/CVE-2026-84445",
             "https://bugzilla.redhat.com/2533175",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2533175",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-84445",
-            "https://errata.almalinux.org/9/ALSA-2026-76744.html",
-            "https://errata.rockylinux.org/RLSA-2026:76744",
+            "https://errata.almalinux.org/10/ALSA-2026-76743.html",
+            "https://errata.rockylinux.org/RLSA-2026:76743",
             "https://github.com/grpc/grpc-go",
             "https://github.com/grpc/grpc-go/commit/3822494d8ea03b992c089fd2a195f041762fffb7",
             "https://github.com/grpc/grpc-go/commit/8668b69c167df908b6b3666dcbf40992b9e932a4",
