@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:c34dc18bff5bfa3c5e0674c4ff77e6c397610423404f35b08d4eaea21f8eba95",
   "ArtifactName": "ghcr.io/uug-ai/hub-cleanup@sha256:8156a452c03c1a4c05ed39378806378b2d305ede88153457ea9da8044498c426",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-10-20T03:54:10.023878Z",
+  "CreatedAt": "2026-10-21T03:53:51.874301962Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:74d97c428c51a828f9051a7a40a53ff1fc99e54fc30323ce36760701b0b7f711",
@@ -199,7 +199,7 @@
     ],
     "Size": 71125504
   },
-  "ReportID": "01a15771-fae7-7d5e-8059-516a9fc3cf38",
+  "ReportID": "01a15c98-1002-7496-884e-fd8c4c0ea198",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -2057,6 +2057,67 @@
       "Vulnerabilities": [
         {
           "CVSS": {
+            "ghsa": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
+            "redhat": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-190",
+            "CWE-787"
+          ],
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Go",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago"
+          },
+          "Description": "compress provides various compression algorithms. Prior to version 1.18.7, a signed integer overflow vulnerability in s2.NewDict() allows an attacker to bypass repeat index validation by supplying a dictionary with a uvarint-encoded repeat value exceeding MaxInt64. When Dict.Encode() is subsequently called, the overflowed negative repeat value causes an out-of-bounds memory access via unsafe.Pointer arithmetic, crashing the process with SIGSEGV. This issue has been patched in version 1.18.7.",
+          "Fingerprint": "sha256:977ed77c51328934a77c195bee89621fad15c24550c8718f81152f62cf378a8d",
+          "FixedVersion": "1.18.7",
+          "InstalledVersion": "v1.18.5",
+          "LastModifiedDate": "2026-09-30T19:57:08.043Z",
+          "Layer": {
+            "DiffID": "sha256:4c474e6a994de70ccd4884d8b3260e87756ca12178de7de66d4ced61502fbc60",
+            "Digest": "sha256:f8284df6c088c32a3bd5b49433ecae01f8e2a8dd019a5ff5dcd06307ad68b405"
+          },
+          "PkgID": "github.com/klauspost/compress@v1.18.5",
+          "PkgIdentifier": {
+            "PURL": "pkg:golang/github.com/klauspost/compress@v1.18.5",
+            "UID": "41e637e19917f04"
+          },
+          "PkgName": "github.com/klauspost/compress",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-63209",
+          "PublishedDate": "2026-09-29T15:17:27.13Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-63209",
+            "https://github.com/klauspost/compress",
+            "https://github.com/klauspost/compress/commit/539243b8823ee8f03e49969823d57c348c917536",
+            "https://github.com/klauspost/compress/commit/8668e357e776d5152ed62f33c17f21b8690664fa",
+            "https://github.com/klauspost/compress/pull/1163",
+            "https://github.com/klauspost/compress/releases/tag/v1.18.7",
+            "https://github.com/klauspost/compress/security/advisories/GHSA-259r-337f-4rfw",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-63209",
+            "https://www.cve.org/CVERecord?id=CVE-2026-63209"
+          ],
+          "Severity": "HIGH",
+          "SeveritySource": "ghsa",
+          "Status": "fixed",
+          "Title": "github.com/klauspost/compress: klauspost/compress: Denial of Service via integer overflow in dictionary processing",
+          "VendorIDs": [
+            "GHSA-259r-337f-4rfw"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "redhat": 3
+          },
+          "VulnerabilityID": "CVE-2026-63209"
+        },
+        {
+          "CVSS": {
             "redhat": {
               "V3Score": 6.8,
               "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:N"
@@ -2274,6 +2335,12 @@
           "VulnerabilityID": "GO-2026-5932"
         },
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
           "CweIDs": [
             "CWE-787"
           ],
@@ -2300,19 +2367,22 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56851",
           "PublishedDate": "2026-10-07T18:17:20.903Z",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-56851",
             "https://go.dev/cl/793360",
             "https://go.dev/issue/80112",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-56851",
-            "https://pkg.go.dev/vuln/GO-2026-6629"
+            "https://pkg.go.dev/vuln/GO-2026-6629",
+            "https://www.cve.org/CVERecord?id=CVE-2026-56851"
           ],
           "Severity": "HIGH",
           "Status": "fixed",
-          "Title": "The Nickname profile can panic with an out-of-bounds slice error when  ...",
+          "Title": "golang.org/x/text: golang.org/x/text: Denial of Service via out-of-bounds slice error in Nickname profile",
           "VendorIDs": [
             "GO-2026-6629"
           ],
           "VendorSeverity": {
-            "azure": 3
+            "azure": 3,
+            "redhat": 3
           },
           "VulnerabilityID": "CVE-2026-56851"
         },
