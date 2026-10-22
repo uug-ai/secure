@@ -1,6 +1,6 @@
 # hub-loitering SBOM quality
 
-Collection status: `collected`; collected at `2026-10-21T02:38:16Z`.
+Collection status: `collected`; collected at `2026-10-22T02:38:34Z`.
 
 Overall quality: **Needs work**, **68/100** across **65 packages**.
 
