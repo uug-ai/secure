@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:b618f5c2e7f22a2deda2128eed08dd1b4aa504036943f150914a3b813a14fb56",
   "ArtifactName": "ghcr.io/uug-ai/hub-anpr@sha256:00184c1c218401c857b364ad35f020633e55c6ac3eabb87b450205cb1e4a8a0e",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-10-21T03:53:43.883325551Z",
+  "CreatedAt": "2026-10-22T03:53:58.313491396Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:15f1c8eb1ab18eae260c7fb6296434cbe1ff0e1e30fd814ae92a80dd54005e62",
@@ -207,7 +207,7 @@
     ],
     "Size": 741571072
   },
-  "ReportID": "01a15c97-f0cb-74ec-82df-19162ee7ad9f",
+  "ReportID": "01a161be-8529-7776-9401-3f7953984fae",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -18222,7 +18222,7 @@
           "Description": "The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credentials from the original open, a program run in an attacker-controlled target can inherit root's ability to move host processes between cgroups. After a privileged operator uses --join-cgroup against that target, an unprivileged user can migrate and terminate unrelated root processes.",
           "Fingerprint": "sha256:e4314e36ccafc1c3f20baca4d310ceb5809583d2f95f7ebb4775626a7ccbd55d",
           "InstalledVersion": "1:2.41.5-0+deb13u1",
-          "LastModifiedDate": "2026-09-05T14:17:23.727Z",
+          "LastModifiedDate": "2026-10-21T18:17:28.793Z",
           "Layer": {
             "DiffID": "sha256:15f1c8eb1ab18eae260c7fb6296434cbe1ff0e1e30fd814ae92a80dd54005e62",
             "Digest": "sha256:304074f06047f3dee0c586de265e0e27b577930bc80dc7f97f3829b188bc4fb0"
@@ -18271,7 +18271,7 @@
           "Description": "The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newly mounted filesystem. A local unprivileged user with an fstab-authorized X-mount.subdir entry can attach a host path at the intended mountpoint.",
           "Fingerprint": "sha256:b1785f0b8a97973a485c57fb5a8cce576c194f94a307ebd2e15ff7d76bc94f02",
           "InstalledVersion": "1:2.41.5-0+deb13u1",
-          "LastModifiedDate": "2026-09-03T18:12:56.407Z",
+          "LastModifiedDate": "2026-10-21T18:17:28.967Z",
           "Layer": {
             "DiffID": "sha256:15f1c8eb1ab18eae260c7fb6296434cbe1ff0e1e30fd814ae92a80dd54005e62",
             "Digest": "sha256:304074f06047f3dee0c586de265e0e27b577930bc80dc7f97f3829b188bc4fb0"
@@ -18318,7 +18318,7 @@
           "Description": "A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mount(8) to bind another host directory. If the fstab entry also sets X-mount.owner, X-mount.group, or X-mount.mode, root then changes ownership or mode on that redirected inode.",
           "Fingerprint": "sha256:1ad9b38bc6c0010450e1f38f2c74de3c1741ff53c1581d3c51e8732af7f4a32e",
           "InstalledVersion": "1:2.41.5-0+deb13u1",
-          "LastModifiedDate": "2026-09-04T19:17:27.567Z",
+          "LastModifiedDate": "2026-10-21T18:17:29.12Z",
           "Layer": {
             "DiffID": "sha256:15f1c8eb1ab18eae260c7fb6296434cbe1ff0e1e30fd814ae92a80dd54005e62",
             "Digest": "sha256:304074f06047f3dee0c586de265e0e27b577930bc80dc7f97f3829b188bc4fb0"
@@ -18479,6 +18479,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
+          "Description": "Description Not Available",
           "Fingerprint": "sha256:fe43417e66da281dc014cfe80d1c2ce7bd7e5247e6313f60b27c9fb60b759d30",
           "FixedVersion": "20250419+deb13u1",
           "InstalledVersion": "20250419",
@@ -19875,6 +19876,53 @@
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-75146"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 5.5,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-400"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "A NULL pointer dereference in the avpriv_h264_has_num_reorder_frames function of Ffmpeg version N-119856-gbe46370941 allows attackers to cause a Denial of Service (DoS) via processing a crafted media file.",
+          "Fingerprint": "sha256:0cde79043d603443c811ff2fb93ef5d1cba503c8c886cd6b2fe4586b9d10ca4b",
+          "InstalledVersion": "7:7.1.5-0+deb13u1",
+          "LastModifiedDate": "2026-10-20T19:17:10.323Z",
+          "Layer": {
+            "DiffID": "sha256:44642b899dfe8ae5ae0d1015db49246d9f9b1e747499fb112b6407ed91925e71",
+            "Digest": "sha256:f6930d04243d4f33a32af97924235fbf7e27eaa3c45e752047c63e48bee588b2"
+          },
+          "PkgID": "ffmpeg@7:7.1.5-0+deb13u1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/ffmpeg@7.1.5-0%2Bdeb13u1?arch=amd64\u0026distro=debian-13.7\u0026epoch=7",
+            "UID": "7ea1064ff918f341"
+          },
+          "PkgName": "ffmpeg",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-52290",
+          "PublishedDate": "2026-10-19T18:16:58.04Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/10/20/6",
+            "https://access.redhat.com/security/cve/CVE-2025-52290",
+            "https://ffmpeg.org",
+            "https://infosec.exchange/@sigdevel/116733488628458667",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-52290",
+            "https://www.cve.org/CVERecord?id=CVE-2025-52290"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "affected",
+          "Title": "ffmpeg: ffmpeg: Denial of Service via crafted media file",
+          "VendorSeverity": {
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2025-52290"
         },
         {
           "CVSS": {
@@ -23466,6 +23514,53 @@
         {
           "CVSS": {
             "redhat": {
+              "V3Score": 5.5,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-400"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "A NULL pointer dereference in the avpriv_h264_has_num_reorder_frames function of Ffmpeg version N-119856-gbe46370941 allows attackers to cause a Denial of Service (DoS) via processing a crafted media file.",
+          "Fingerprint": "sha256:557454190ffca2d5204246af0905ce4fbf7b15348901e05d3e6eff8a033fd0a7",
+          "InstalledVersion": "7:7.1.5-0+deb13u1",
+          "LastModifiedDate": "2026-10-20T19:17:10.323Z",
+          "Layer": {
+            "DiffID": "sha256:44642b899dfe8ae5ae0d1015db49246d9f9b1e747499fb112b6407ed91925e71",
+            "Digest": "sha256:f6930d04243d4f33a32af97924235fbf7e27eaa3c45e752047c63e48bee588b2"
+          },
+          "PkgID": "libavcodec61@7:7.1.5-0+deb13u1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libavcodec61@7.1.5-0%2Bdeb13u1?arch=amd64\u0026distro=debian-13.7\u0026epoch=7",
+            "UID": "4a6b02ca2f18b594"
+          },
+          "PkgName": "libavcodec61",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-52290",
+          "PublishedDate": "2026-10-19T18:16:58.04Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/10/20/6",
+            "https://access.redhat.com/security/cve/CVE-2025-52290",
+            "https://ffmpeg.org",
+            "https://infosec.exchange/@sigdevel/116733488628458667",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-52290",
+            "https://www.cve.org/CVERecord?id=CVE-2025-52290"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "affected",
+          "Title": "ffmpeg: ffmpeg: Denial of Service via crafted media file",
+          "VendorSeverity": {
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2025-52290"
+        },
+        {
+          "CVSS": {
+            "redhat": {
               "V3Score": 5.9,
               "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:L/A:N"
             }
@@ -25620,6 +25715,53 @@
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-75146"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 5.5,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-400"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "A NULL pointer dereference in the avpriv_h264_has_num_reorder_frames function of Ffmpeg version N-119856-gbe46370941 allows attackers to cause a Denial of Service (DoS) via processing a crafted media file.",
+          "Fingerprint": "sha256:362b6ec78ab5ecb8d688428340a762e1dc73b7c87a7c644fdf6cbcfea60a807c",
+          "InstalledVersion": "7:7.1.5-0+deb13u1",
+          "LastModifiedDate": "2026-10-20T19:17:10.323Z",
+          "Layer": {
+            "DiffID": "sha256:44642b899dfe8ae5ae0d1015db49246d9f9b1e747499fb112b6407ed91925e71",
+            "Digest": "sha256:f6930d04243d4f33a32af97924235fbf7e27eaa3c45e752047c63e48bee588b2"
+          },
+          "PkgID": "libavdevice61@7:7.1.5-0+deb13u1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libavdevice61@7.1.5-0%2Bdeb13u1?arch=amd64\u0026distro=debian-13.7\u0026epoch=7",
+            "UID": "fd522db697bb9a96"
+          },
+          "PkgName": "libavdevice61",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-52290",
+          "PublishedDate": "2026-10-19T18:16:58.04Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/10/20/6",
+            "https://access.redhat.com/security/cve/CVE-2025-52290",
+            "https://ffmpeg.org",
+            "https://infosec.exchange/@sigdevel/116733488628458667",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-52290",
+            "https://www.cve.org/CVERecord?id=CVE-2025-52290"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "affected",
+          "Title": "ffmpeg: ffmpeg: Denial of Service via crafted media file",
+          "VendorSeverity": {
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2025-52290"
         },
         {
           "CVSS": {
@@ -27782,6 +27924,53 @@
         {
           "CVSS": {
             "redhat": {
+              "V3Score": 5.5,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-400"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "A NULL pointer dereference in the avpriv_h264_has_num_reorder_frames function of Ffmpeg version N-119856-gbe46370941 allows attackers to cause a Denial of Service (DoS) via processing a crafted media file.",
+          "Fingerprint": "sha256:5990d321b5b32c92708d9f8d035d53111603ba316806d2d96c2e4c785a942ec6",
+          "InstalledVersion": "7:7.1.5-0+deb13u1",
+          "LastModifiedDate": "2026-10-20T19:17:10.323Z",
+          "Layer": {
+            "DiffID": "sha256:44642b899dfe8ae5ae0d1015db49246d9f9b1e747499fb112b6407ed91925e71",
+            "Digest": "sha256:f6930d04243d4f33a32af97924235fbf7e27eaa3c45e752047c63e48bee588b2"
+          },
+          "PkgID": "libavfilter10@7:7.1.5-0+deb13u1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libavfilter10@7.1.5-0%2Bdeb13u1?arch=amd64\u0026distro=debian-13.7\u0026epoch=7",
+            "UID": "4de0df1f90fa8fe5"
+          },
+          "PkgName": "libavfilter10",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-52290",
+          "PublishedDate": "2026-10-19T18:16:58.04Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/10/20/6",
+            "https://access.redhat.com/security/cve/CVE-2025-52290",
+            "https://ffmpeg.org",
+            "https://infosec.exchange/@sigdevel/116733488628458667",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-52290",
+            "https://www.cve.org/CVERecord?id=CVE-2025-52290"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "affected",
+          "Title": "ffmpeg: ffmpeg: Denial of Service via crafted media file",
+          "VendorSeverity": {
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2025-52290"
+        },
+        {
+          "CVSS": {
+            "redhat": {
               "V3Score": 5.9,
               "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:L/A:N"
             }
@@ -29936,6 +30125,53 @@
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-75146"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 5.5,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-400"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "A NULL pointer dereference in the avpriv_h264_has_num_reorder_frames function of Ffmpeg version N-119856-gbe46370941 allows attackers to cause a Denial of Service (DoS) via processing a crafted media file.",
+          "Fingerprint": "sha256:7b738f3aef41db95e0b075cce8b4e4e36528ce51c6c775eb860f840e8278b36a",
+          "InstalledVersion": "7:7.1.5-0+deb13u1",
+          "LastModifiedDate": "2026-10-20T19:17:10.323Z",
+          "Layer": {
+            "DiffID": "sha256:44642b899dfe8ae5ae0d1015db49246d9f9b1e747499fb112b6407ed91925e71",
+            "Digest": "sha256:f6930d04243d4f33a32af97924235fbf7e27eaa3c45e752047c63e48bee588b2"
+          },
+          "PkgID": "libavformat61@7:7.1.5-0+deb13u1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libavformat61@7.1.5-0%2Bdeb13u1?arch=amd64\u0026distro=debian-13.7\u0026epoch=7",
+            "UID": "1a67f02ec1f77c5b"
+          },
+          "PkgName": "libavformat61",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-52290",
+          "PublishedDate": "2026-10-19T18:16:58.04Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/10/20/6",
+            "https://access.redhat.com/security/cve/CVE-2025-52290",
+            "https://ffmpeg.org",
+            "https://infosec.exchange/@sigdevel/116733488628458667",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-52290",
+            "https://www.cve.org/CVERecord?id=CVE-2025-52290"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "affected",
+          "Title": "ffmpeg: ffmpeg: Denial of Service via crafted media file",
+          "VendorSeverity": {
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2025-52290"
         },
         {
           "CVSS": {
@@ -32098,6 +32334,53 @@
         {
           "CVSS": {
             "redhat": {
+              "V3Score": 5.5,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-400"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "A NULL pointer dereference in the avpriv_h264_has_num_reorder_frames function of Ffmpeg version N-119856-gbe46370941 allows attackers to cause a Denial of Service (DoS) via processing a crafted media file.",
+          "Fingerprint": "sha256:b67f343717d748190e5560f22b7d5ed9c8235017963c83949c9b80418d4d6154",
+          "InstalledVersion": "7:7.1.5-0+deb13u1",
+          "LastModifiedDate": "2026-10-20T19:17:10.323Z",
+          "Layer": {
+            "DiffID": "sha256:44642b899dfe8ae5ae0d1015db49246d9f9b1e747499fb112b6407ed91925e71",
+            "Digest": "sha256:f6930d04243d4f33a32af97924235fbf7e27eaa3c45e752047c63e48bee588b2"
+          },
+          "PkgID": "libavutil59@7:7.1.5-0+deb13u1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libavutil59@7.1.5-0%2Bdeb13u1?arch=amd64\u0026distro=debian-13.7\u0026epoch=7",
+            "UID": "98c8fc77de6d783f"
+          },
+          "PkgName": "libavutil59",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-52290",
+          "PublishedDate": "2026-10-19T18:16:58.04Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/10/20/6",
+            "https://access.redhat.com/security/cve/CVE-2025-52290",
+            "https://ffmpeg.org",
+            "https://infosec.exchange/@sigdevel/116733488628458667",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-52290",
+            "https://www.cve.org/CVERecord?id=CVE-2025-52290"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "affected",
+          "Title": "ffmpeg: ffmpeg: Denial of Service via crafted media file",
+          "VendorSeverity": {
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2025-52290"
+        },
+        {
+          "CVSS": {
+            "redhat": {
               "V3Score": 5.9,
               "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:L/A:N"
             }
@@ -33395,7 +33678,7 @@
           "Description": "The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credentials from the original open, a program run in an attacker-controlled target can inherit root's ability to move host processes between cgroups. After a privileged operator uses --join-cgroup against that target, an unprivileged user can migrate and terminate unrelated root processes.",
           "Fingerprint": "sha256:ece90c16018fd90fdcc9c8b0df63ea4226239372e4a4dbde3ac09e8560365e06",
           "InstalledVersion": "2.41.5-0+deb13u1",
-          "LastModifiedDate": "2026-09-05T14:17:23.727Z",
+          "LastModifiedDate": "2026-10-21T18:17:28.793Z",
           "Layer": {
             "DiffID": "sha256:15f1c8eb1ab18eae260c7fb6296434cbe1ff0e1e30fd814ae92a80dd54005e62",
             "Digest": "sha256:304074f06047f3dee0c586de265e0e27b577930bc80dc7f97f3829b188bc4fb0"
@@ -33444,7 +33727,7 @@
           "Description": "The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newly mounted filesystem. A local unprivileged user with an fstab-authorized X-mount.subdir entry can attach a host path at the intended mountpoint.",
           "Fingerprint": "sha256:f610729cd4d7104198ff15fc6de9596084807b204bc25806876a6709e8956b2a",
           "InstalledVersion": "2.41.5-0+deb13u1",
-          "LastModifiedDate": "2026-09-03T18:12:56.407Z",
+          "LastModifiedDate": "2026-10-21T18:17:28.967Z",
           "Layer": {
             "DiffID": "sha256:15f1c8eb1ab18eae260c7fb6296434cbe1ff0e1e30fd814ae92a80dd54005e62",
             "Digest": "sha256:304074f06047f3dee0c586de265e0e27b577930bc80dc7f97f3829b188bc4fb0"
@@ -33491,7 +33774,7 @@
           "Description": "A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mount(8) to bind another host directory. If the fstab entry also sets X-mount.owner, X-mount.group, or X-mount.mode, root then changes ownership or mode on that redirected inode.",
           "Fingerprint": "sha256:06457ed2f146e1714dfc80a6dcee77d54a918baf2d488ac50bef54a38b5a15e2",
           "InstalledVersion": "2.41.5-0+deb13u1",
-          "LastModifiedDate": "2026-09-04T19:17:27.567Z",
+          "LastModifiedDate": "2026-10-21T18:17:29.12Z",
           "Layer": {
             "DiffID": "sha256:15f1c8eb1ab18eae260c7fb6296434cbe1ff0e1e30fd814ae92a80dd54005e62",
             "Digest": "sha256:304074f06047f3dee0c586de265e0e27b577930bc80dc7f97f3829b188bc4fb0"
@@ -34370,7 +34653,17 @@
             "https://bugzilla.redhat.com/2524870",
             "https://bugzilla.redhat.com/2525256",
             "https://bugzilla.redhat.com/2536382",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2523274",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2524870",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2525256",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2536382",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-18374",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-77117",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-80489",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-8674",
             "https://errata.almalinux.org/10/ALSA-2026-84753.html",
+            "https://errata.rockylinux.org/RLSA-2026:84753",
             "https://joshua.hu/fuzzing-glibc-libresolv",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-8674",
             "https://sourceware.org/bugzilla/show_bug.cgi?id=31026",
@@ -34383,7 +34676,8 @@
           "Title": "glibc: glibc DNS stub resolver: Denial of Service via long search domain in configuration",
           "VendorSeverity": {
             "alma": 2,
-            "redhat": 2
+            "redhat": 2,
+            "rocky": 2
           },
           "VulnerabilityID": "CVE-2026-8674"
         },
@@ -35648,7 +35942,17 @@
             "https://bugzilla.redhat.com/2524870",
             "https://bugzilla.redhat.com/2525256",
             "https://bugzilla.redhat.com/2536382",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2523274",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2524870",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2525256",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2536382",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-18374",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-77117",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-80489",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-8674",
             "https://errata.almalinux.org/10/ALSA-2026-84753.html",
+            "https://errata.rockylinux.org/RLSA-2026:84753",
             "https://joshua.hu/fuzzing-glibc-libresolv",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-8674",
             "https://sourceware.org/bugzilla/show_bug.cgi?id=31026",
@@ -35661,7 +35965,8 @@
           "Title": "glibc: glibc DNS stub resolver: Denial of Service via long search domain in configuration",
           "VendorSeverity": {
             "alma": 2,
-            "redhat": 2
+            "redhat": 2,
+            "rocky": 2
           },
           "VulnerabilityID": "CVE-2026-8674"
         },
@@ -37033,7 +37338,7 @@
           "Status": "affected",
           "Title": "curl: curl: SSH host verification bypass when using schemeless URLs with SFTP/SCP",
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "azure": 3,
             "julia": 3,
             "oracle-oval": 3,
@@ -41386,6 +41691,12 @@
           "VulnerabilityID": "CVE-2026-88648"
         },
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 5.3,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+            }
+          },
           "CweIDs": [
             "CWE-400"
           ],
@@ -41412,17 +41723,20 @@
           "PublishedDate": "2026-10-08T18:18:33.24Z",
           "References": [
             "http://gnutls.com",
+            "https://access.redhat.com/security/cve/CVE-2026-95184",
             "https://evil.com",
             "https://gist.github.com/lkloliver/0c8b47fa75a0958fa88587665b82ae15",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-95184",
             "https://www.cve.org/CVERecord?id=CVE-2026-95184",
             "https://www.gnutls.org"
           ],
           "Severity": "LOW",
           "SeveritySource": "debian",
           "Status": "affected",
-          "Title": "Improper certificate validation in gnutls v3.8.13 causes the applicati ...",
+          "Title": "gnutls: gnutls: legitimate user certificates incorrectly rejected causing denial of service",
           "VendorSeverity": {
             "debian": 1,
+            "redhat": 2,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-95184"
@@ -41454,17 +41768,20 @@
           "PublishedDate": "2026-10-08T19:20:52.83Z",
           "References": [
             "http://gnutls.com",
+            "https://access.redhat.com/security/cve/CVE-2026-95209",
             "https://evil.com",
             "https://gist.github.com/lkloliver/8e4498311aff18e2077010e412043e18",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-95209",
             "https://www.cve.org/CVERecord?id=CVE-2026-95209",
             "https://www.gnutls.org"
           ],
           "Severity": "LOW",
           "SeveritySource": "debian",
           "Status": "affected",
-          "Title": "An issue in gnutls v3.8.13 causes legitimate CA certificates to be rej ...",
+          "Title": "gnutls: gnutls: legitimate CA certificates incorrectly rejected causing denial of service",
           "VendorSeverity": {
             "debian": 1,
+            "redhat": 2,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-95209"
@@ -41496,16 +41813,19 @@
           "PublishedDate": "2026-10-08T18:18:33.37Z",
           "References": [
             "http://gnutls.com",
+            "https://access.redhat.com/security/cve/CVE-2026-95210",
             "https://gist.github.com/lkloliver/4aad23689202720c4068f43b3c6069c7",
             "https://github.com/lkloliver/poc/tree/main/CVE-2026-95210",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-95210",
             "https://www.cve.org/CVERecord?id=CVE-2026-95210"
           ],
           "Severity": "LOW",
           "SeveritySource": "debian",
           "Status": "affected",
-          "Title": "Improper certificate validation in gnutls v3.8.13 causes the applicati ...",
+          "Title": "gnutls: gnutls: certificates with invalid extensions incorrectly accepted",
           "VendorSeverity": {
             "debian": 1,
+            "redhat": 2,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-95210"
@@ -43223,7 +43543,7 @@
           "Description": "The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credentials from the original open, a program run in an attacker-controlled target can inherit root's ability to move host processes between cgroups. After a privileged operator uses --join-cgroup against that target, an unprivileged user can migrate and terminate unrelated root processes.",
           "Fingerprint": "sha256:5a063a26bc63903f63fde288f95b922db964b40416d870cd81e3fd9b3feabbf1",
           "InstalledVersion": "2.41.5-0+deb13u1",
-          "LastModifiedDate": "2026-09-05T14:17:23.727Z",
+          "LastModifiedDate": "2026-10-21T18:17:28.793Z",
           "Layer": {
             "DiffID": "sha256:15f1c8eb1ab18eae260c7fb6296434cbe1ff0e1e30fd814ae92a80dd54005e62",
             "Digest": "sha256:304074f06047f3dee0c586de265e0e27b577930bc80dc7f97f3829b188bc4fb0"
@@ -43272,7 +43592,7 @@
           "Description": "The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newly mounted filesystem. A local unprivileged user with an fstab-authorized X-mount.subdir entry can attach a host path at the intended mountpoint.",
           "Fingerprint": "sha256:9af84bf1e0bdfe1acf3b9e4223be7aa40096b1459c9c7e4871da501d63920ba8",
           "InstalledVersion": "2.41.5-0+deb13u1",
-          "LastModifiedDate": "2026-09-03T18:12:56.407Z",
+          "LastModifiedDate": "2026-10-21T18:17:28.967Z",
           "Layer": {
             "DiffID": "sha256:15f1c8eb1ab18eae260c7fb6296434cbe1ff0e1e30fd814ae92a80dd54005e62",
             "Digest": "sha256:304074f06047f3dee0c586de265e0e27b577930bc80dc7f97f3829b188bc4fb0"
@@ -43319,7 +43639,7 @@
           "Description": "A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mount(8) to bind another host directory. If the fstab entry also sets X-mount.owner, X-mount.group, or X-mount.mode, root then changes ownership or mode on that redirected inode.",
           "Fingerprint": "sha256:492cdbd17b4c902cf329df1e2506c34043b29e1475c97a80d23cf553041af08a",
           "InstalledVersion": "2.41.5-0+deb13u1",
-          "LastModifiedDate": "2026-09-04T19:17:27.567Z",
+          "LastModifiedDate": "2026-10-21T18:17:29.12Z",
           "Layer": {
             "DiffID": "sha256:15f1c8eb1ab18eae260c7fb6296434cbe1ff0e1e30fd814ae92a80dd54005e62",
             "Digest": "sha256:304074f06047f3dee0c586de265e0e27b577930bc80dc7f97f3829b188bc4fb0"
@@ -44236,7 +44556,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "[Unknown description]",
+          "Description": "Description Not Available",
           "Fingerprint": "sha256:369f7e4de7f00b9dea5ed1aaad15f0479c8783c7d7fdc95e3408f80f5c401c89",
           "InstalledVersion": "3.6.6-0.1~deb13u1",
           "Layer": {
@@ -44252,7 +44572,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-35336",
           "Severity": "UNKNOWN",
           "Status": "affected",
-          "Title": "[Unknown description]",
+          "Title": "Title Not Available",
           "VulnerabilityID": "CVE-2026-35336"
         },
         {
@@ -44261,7 +44581,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "Description Not Available",
+          "Description": "[Unknown description]",
           "Fingerprint": "sha256:dce0daee63155de95361e35d3c249388330bfb1f917375fe0e419ec227e486d5",
           "InstalledVersion": "3.6.6-0.1~deb13u1",
           "Layer": {
@@ -44277,7 +44597,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-49300",
           "Severity": "UNKNOWN",
           "Status": "affected",
-          "Title": "Title Not Available",
+          "Title": "[Unknown description]",
           "VulnerabilityID": "CVE-2026-49300"
         },
         {
@@ -44336,7 +44656,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "Description Not Available",
+          "Description": "[Unknown description]",
           "Fingerprint": "sha256:b0b3502aec56bcb0c059bfbeb2a328ca22ba30047abe19ef178667185349ae97",
           "InstalledVersion": "3.6.6-0.1~deb13u1",
           "Layer": {
@@ -44352,7 +44672,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-50581",
           "Severity": "UNKNOWN",
           "Status": "affected",
-          "Title": "Title Not Available",
+          "Title": "[Unknown description]",
           "VulnerabilityID": "CVE-2026-50581"
         },
         {
@@ -44436,7 +44756,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "Description Not Available",
+          "Description": "[Unknown description]",
           "Fingerprint": "sha256:b6a56b566269cf029000d088663345ce9f72ae8845fbc268ee55f532dde7798a",
           "InstalledVersion": "3.6.6-0.1~deb13u1",
           "Layer": {
@@ -44452,7 +44772,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-50586",
           "Severity": "UNKNOWN",
           "Status": "affected",
-          "Title": "Title Not Available",
+          "Title": "[Unknown description]",
           "VulnerabilityID": "CVE-2026-50586"
         },
         {
@@ -44461,7 +44781,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "Description Not Available",
+          "Description": "[Unknown description]",
           "Fingerprint": "sha256:0fb93a5351c9ae91cbf11ca425e9e00379f6c20528af1b3aa82c506fe79b8e21",
           "InstalledVersion": "3.6.6-0.1~deb13u1",
           "Layer": {
@@ -44477,7 +44797,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-50587",
           "Severity": "UNKNOWN",
           "Status": "affected",
-          "Title": "Title Not Available",
+          "Title": "[Unknown description]",
           "VulnerabilityID": "CVE-2026-50587"
         },
         {
@@ -44511,7 +44831,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Description": "[Unknown description]",
+          "Description": "Description Not Available",
           "Fingerprint": "sha256:424a6d78812583533a5b4d5c1b2aede155a779b9190669ead34bfdf1c2feb4ea",
           "InstalledVersion": "3.6.6-0.1~deb13u1",
           "Layer": {
@@ -44527,7 +44847,7 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-50640",
           "Severity": "UNKNOWN",
           "Status": "affected",
-          "Title": "[Unknown description]",
+          "Title": "Title Not Available",
           "VulnerabilityID": "CVE-2026-50640"
         },
         {
@@ -44711,7 +45031,7 @@
           "Description": "The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credentials from the original open, a program run in an attacker-controlled target can inherit root's ability to move host processes between cgroups. After a privileged operator uses --join-cgroup against that target, an unprivileged user can migrate and terminate unrelated root processes.",
           "Fingerprint": "sha256:72695600c8310c2157a4090f9ccd2ea07a939f3b7abd8a5712b244f97b685626",
           "InstalledVersion": "2.41.5-0+deb13u1",
-          "LastModifiedDate": "2026-09-05T14:17:23.727Z",
+          "LastModifiedDate": "2026-10-21T18:17:28.793Z",
           "Layer": {
             "DiffID": "sha256:15f1c8eb1ab18eae260c7fb6296434cbe1ff0e1e30fd814ae92a80dd54005e62",
             "Digest": "sha256:304074f06047f3dee0c586de265e0e27b577930bc80dc7f97f3829b188bc4fb0"
@@ -44760,7 +45080,7 @@
           "Description": "The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newly mounted filesystem. A local unprivileged user with an fstab-authorized X-mount.subdir entry can attach a host path at the intended mountpoint.",
           "Fingerprint": "sha256:02412a5c6ded2fe84c7cd07af64797eb1dac6fc50a886e3ccfa435d7187bbb90",
           "InstalledVersion": "2.41.5-0+deb13u1",
-          "LastModifiedDate": "2026-09-03T18:12:56.407Z",
+          "LastModifiedDate": "2026-10-21T18:17:28.967Z",
           "Layer": {
             "DiffID": "sha256:15f1c8eb1ab18eae260c7fb6296434cbe1ff0e1e30fd814ae92a80dd54005e62",
             "Digest": "sha256:304074f06047f3dee0c586de265e0e27b577930bc80dc7f97f3829b188bc4fb0"
@@ -44807,7 +45127,7 @@
           "Description": "A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mount(8) to bind another host directory. If the fstab entry also sets X-mount.owner, X-mount.group, or X-mount.mode, root then changes ownership or mode on that redirected inode.",
           "Fingerprint": "sha256:a0b5f3470bb3989f937b755d4332764d081aedb1d0d8245dac69758b0b33792c",
           "InstalledVersion": "2.41.5-0+deb13u1",
-          "LastModifiedDate": "2026-09-04T19:17:27.567Z",
+          "LastModifiedDate": "2026-10-21T18:17:29.12Z",
           "Layer": {
             "DiffID": "sha256:15f1c8eb1ab18eae260c7fb6296434cbe1ff0e1e30fd814ae92a80dd54005e62",
             "Digest": "sha256:304074f06047f3dee0c586de265e0e27b577930bc80dc7f97f3829b188bc4fb0"
@@ -47389,6 +47709,53 @@
         {
           "CVSS": {
             "redhat": {
+              "V3Score": 5.5,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-400"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "A NULL pointer dereference in the avpriv_h264_has_num_reorder_frames function of Ffmpeg version N-119856-gbe46370941 allows attackers to cause a Denial of Service (DoS) via processing a crafted media file.",
+          "Fingerprint": "sha256:1cce6b1524f3fb15d08e80364683cff68edf7ab2164f65a976957b05201bb775",
+          "InstalledVersion": "7:7.1.5-0+deb13u1",
+          "LastModifiedDate": "2026-10-20T19:17:10.323Z",
+          "Layer": {
+            "DiffID": "sha256:44642b899dfe8ae5ae0d1015db49246d9f9b1e747499fb112b6407ed91925e71",
+            "Digest": "sha256:f6930d04243d4f33a32af97924235fbf7e27eaa3c45e752047c63e48bee588b2"
+          },
+          "PkgID": "libpostproc58@7:7.1.5-0+deb13u1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libpostproc58@7.1.5-0%2Bdeb13u1?arch=amd64\u0026distro=debian-13.7\u0026epoch=7",
+            "UID": "87e07467144e5864"
+          },
+          "PkgName": "libpostproc58",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-52290",
+          "PublishedDate": "2026-10-19T18:16:58.04Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/10/20/6",
+            "https://access.redhat.com/security/cve/CVE-2025-52290",
+            "https://ffmpeg.org",
+            "https://infosec.exchange/@sigdevel/116733488628458667",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-52290",
+            "https://www.cve.org/CVERecord?id=CVE-2025-52290"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "affected",
+          "Title": "ffmpeg: ffmpeg: Denial of Service via crafted media file",
+          "VendorSeverity": {
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2025-52290"
+        },
+        {
+          "CVSS": {
+            "redhat": {
               "V3Score": 5.9,
               "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:L/A:N"
             }
@@ -48859,7 +49226,7 @@
           "Description": "The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credentials from the original open, a program run in an attacker-controlled target can inherit root's ability to move host processes between cgroups. After a privileged operator uses --join-cgroup against that target, an unprivileged user can migrate and terminate unrelated root processes.",
           "Fingerprint": "sha256:12f8086b280f2547c6d2c252da31d9873d542470dac8b3d0b1283ef75930f176",
           "InstalledVersion": "2.41.5-0+deb13u1",
-          "LastModifiedDate": "2026-09-05T14:17:23.727Z",
+          "LastModifiedDate": "2026-10-21T18:17:28.793Z",
           "Layer": {
             "DiffID": "sha256:15f1c8eb1ab18eae260c7fb6296434cbe1ff0e1e30fd814ae92a80dd54005e62",
             "Digest": "sha256:304074f06047f3dee0c586de265e0e27b577930bc80dc7f97f3829b188bc4fb0"
@@ -48908,7 +49275,7 @@
           "Description": "The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newly mounted filesystem. A local unprivileged user with an fstab-authorized X-mount.subdir entry can attach a host path at the intended mountpoint.",
           "Fingerprint": "sha256:da2a048ae9668b41e6af04169bc4d48475f97180ecfd5d08eaa77ff2e49786f0",
           "InstalledVersion": "2.41.5-0+deb13u1",
-          "LastModifiedDate": "2026-09-03T18:12:56.407Z",
+          "LastModifiedDate": "2026-10-21T18:17:28.967Z",
           "Layer": {
             "DiffID": "sha256:15f1c8eb1ab18eae260c7fb6296434cbe1ff0e1e30fd814ae92a80dd54005e62",
             "Digest": "sha256:304074f06047f3dee0c586de265e0e27b577930bc80dc7f97f3829b188bc4fb0"
@@ -48955,7 +49322,7 @@
           "Description": "A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mount(8) to bind another host directory. If the fstab entry also sets X-mount.owner, X-mount.group, or X-mount.mode, root then changes ownership or mode on that redirected inode.",
           "Fingerprint": "sha256:119d5f267be53a5e0359c763b38a2fc8990b4816f549fdc230d3c79f9d277f0b",
           "InstalledVersion": "2.41.5-0+deb13u1",
-          "LastModifiedDate": "2026-09-04T19:17:27.567Z",
+          "LastModifiedDate": "2026-10-21T18:17:29.12Z",
           "Layer": {
             "DiffID": "sha256:15f1c8eb1ab18eae260c7fb6296434cbe1ff0e1e30fd814ae92a80dd54005e62",
             "Digest": "sha256:304074f06047f3dee0c586de265e0e27b577930bc80dc7f97f3829b188bc4fb0"
@@ -50627,6 +50994,53 @@
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-75146"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 5.5,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-400"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "A NULL pointer dereference in the avpriv_h264_has_num_reorder_frames function of Ffmpeg version N-119856-gbe46370941 allows attackers to cause a Denial of Service (DoS) via processing a crafted media file.",
+          "Fingerprint": "sha256:26980488f5f7c937720f5912486a0d5245d4acb08e6d805f29c52bb4af89af70",
+          "InstalledVersion": "7:7.1.5-0+deb13u1",
+          "LastModifiedDate": "2026-10-20T19:17:10.323Z",
+          "Layer": {
+            "DiffID": "sha256:44642b899dfe8ae5ae0d1015db49246d9f9b1e747499fb112b6407ed91925e71",
+            "Digest": "sha256:f6930d04243d4f33a32af97924235fbf7e27eaa3c45e752047c63e48bee588b2"
+          },
+          "PkgID": "libswresample5@7:7.1.5-0+deb13u1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libswresample5@7.1.5-0%2Bdeb13u1?arch=amd64\u0026distro=debian-13.7\u0026epoch=7",
+            "UID": "9444f883324515e"
+          },
+          "PkgName": "libswresample5",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-52290",
+          "PublishedDate": "2026-10-19T18:16:58.04Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/10/20/6",
+            "https://access.redhat.com/security/cve/CVE-2025-52290",
+            "https://ffmpeg.org",
+            "https://infosec.exchange/@sigdevel/116733488628458667",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-52290",
+            "https://www.cve.org/CVERecord?id=CVE-2025-52290"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "affected",
+          "Title": "ffmpeg: ffmpeg: Denial of Service via crafted media file",
+          "VendorSeverity": {
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2025-52290"
         },
         {
           "CVSS": {
@@ -52785,6 +53199,53 @@
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-75146"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 5.5,
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-400"
+          ],
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Description": "A NULL pointer dereference in the avpriv_h264_has_num_reorder_frames function of Ffmpeg version N-119856-gbe46370941 allows attackers to cause a Denial of Service (DoS) via processing a crafted media file.",
+          "Fingerprint": "sha256:20ec84ab3898f55c25dd14348506edcda3d2249077a7f63a4f5b9331d72c9d2d",
+          "InstalledVersion": "7:7.1.5-0+deb13u1",
+          "LastModifiedDate": "2026-10-20T19:17:10.323Z",
+          "Layer": {
+            "DiffID": "sha256:44642b899dfe8ae5ae0d1015db49246d9f9b1e747499fb112b6407ed91925e71",
+            "Digest": "sha256:f6930d04243d4f33a32af97924235fbf7e27eaa3c45e752047c63e48bee588b2"
+          },
+          "PkgID": "libswscale8@7:7.1.5-0+deb13u1",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libswscale8@7.1.5-0%2Bdeb13u1?arch=amd64\u0026distro=debian-13.7\u0026epoch=7",
+            "UID": "41fbe65987e2430e"
+          },
+          "PkgName": "libswscale8",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-52290",
+          "PublishedDate": "2026-10-19T18:16:58.04Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/10/20/6",
+            "https://access.redhat.com/security/cve/CVE-2025-52290",
+            "https://ffmpeg.org",
+            "https://infosec.exchange/@sigdevel/116733488628458667",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-52290",
+            "https://www.cve.org/CVERecord?id=CVE-2025-52290"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "affected",
+          "Title": "ffmpeg: ffmpeg: Denial of Service via crafted media file",
+          "VendorSeverity": {
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2025-52290"
         },
         {
           "CVSS": {
@@ -56563,7 +57024,7 @@
           "Description": "The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credentials from the original open, a program run in an attacker-controlled target can inherit root's ability to move host processes between cgroups. After a privileged operator uses --join-cgroup against that target, an unprivileged user can migrate and terminate unrelated root processes.",
           "Fingerprint": "sha256:d40b9f1f75890a8f522bd970a6c9ca58b90c4b51ffdb68d88af0540c117d658f",
           "InstalledVersion": "2.41.5-0+deb13u1",
-          "LastModifiedDate": "2026-09-05T14:17:23.727Z",
+          "LastModifiedDate": "2026-10-21T18:17:28.793Z",
           "Layer": {
             "DiffID": "sha256:15f1c8eb1ab18eae260c7fb6296434cbe1ff0e1e30fd814ae92a80dd54005e62",
             "Digest": "sha256:304074f06047f3dee0c586de265e0e27b577930bc80dc7f97f3829b188bc4fb0"
@@ -56612,7 +57073,7 @@
           "Description": "The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newly mounted filesystem. A local unprivileged user with an fstab-authorized X-mount.subdir entry can attach a host path at the intended mountpoint.",
           "Fingerprint": "sha256:ad40babd969e66146232afc6ae5d4184018fefe5b7aaf3e996c12be2a9ecaa2b",
           "InstalledVersion": "2.41.5-0+deb13u1",
-          "LastModifiedDate": "2026-09-03T18:12:56.407Z",
+          "LastModifiedDate": "2026-10-21T18:17:28.967Z",
           "Layer": {
             "DiffID": "sha256:15f1c8eb1ab18eae260c7fb6296434cbe1ff0e1e30fd814ae92a80dd54005e62",
             "Digest": "sha256:304074f06047f3dee0c586de265e0e27b577930bc80dc7f97f3829b188bc4fb0"
@@ -56659,7 +57120,7 @@
           "Description": "A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mount(8) to bind another host directory. If the fstab entry also sets X-mount.owner, X-mount.group, or X-mount.mode, root then changes ownership or mode on that redirected inode.",
           "Fingerprint": "sha256:c6f211279558e9162b731e28f7f015d450b328e8ca450a232b83ad47a87a7525",
           "InstalledVersion": "2.41.5-0+deb13u1",
-          "LastModifiedDate": "2026-09-04T19:17:27.567Z",
+          "LastModifiedDate": "2026-10-21T18:17:29.12Z",
           "Layer": {
             "DiffID": "sha256:15f1c8eb1ab18eae260c7fb6296434cbe1ff0e1e30fd814ae92a80dd54005e62",
             "Digest": "sha256:304074f06047f3dee0c586de265e0e27b577930bc80dc7f97f3829b188bc4fb0"
@@ -58743,7 +59204,7 @@
           "Description": "The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credentials from the original open, a program run in an attacker-controlled target can inherit root's ability to move host processes between cgroups. After a privileged operator uses --join-cgroup against that target, an unprivileged user can migrate and terminate unrelated root processes.",
           "Fingerprint": "sha256:3db7f4e91734a6e99484215ef217fe0295a9930b7e4795e7cde957fdc64f5df9",
           "InstalledVersion": "1:4.16.0-2+really2.41.5-0+deb13u1",
-          "LastModifiedDate": "2026-09-05T14:17:23.727Z",
+          "LastModifiedDate": "2026-10-21T18:17:28.793Z",
           "Layer": {
             "DiffID": "sha256:15f1c8eb1ab18eae260c7fb6296434cbe1ff0e1e30fd814ae92a80dd54005e62",
             "Digest": "sha256:304074f06047f3dee0c586de265e0e27b577930bc80dc7f97f3829b188bc4fb0"
@@ -58792,7 +59253,7 @@
           "Description": "The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newly mounted filesystem. A local unprivileged user with an fstab-authorized X-mount.subdir entry can attach a host path at the intended mountpoint.",
           "Fingerprint": "sha256:0f8e232be786e2bf4b0fced1f151f404289c7a368b22e3154f7bea74d2a169fb",
           "InstalledVersion": "1:4.16.0-2+really2.41.5-0+deb13u1",
-          "LastModifiedDate": "2026-09-03T18:12:56.407Z",
+          "LastModifiedDate": "2026-10-21T18:17:28.967Z",
           "Layer": {
             "DiffID": "sha256:15f1c8eb1ab18eae260c7fb6296434cbe1ff0e1e30fd814ae92a80dd54005e62",
             "Digest": "sha256:304074f06047f3dee0c586de265e0e27b577930bc80dc7f97f3829b188bc4fb0"
@@ -58839,7 +59300,7 @@
           "Description": "A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mount(8) to bind another host directory. If the fstab entry also sets X-mount.owner, X-mount.group, or X-mount.mode, root then changes ownership or mode on that redirected inode.",
           "Fingerprint": "sha256:d7ecc30ed64c7affd926fb117586b4297d8d61cf6ac3fdd35de9c7f73d860347",
           "InstalledVersion": "1:4.16.0-2+really2.41.5-0+deb13u1",
-          "LastModifiedDate": "2026-09-04T19:17:27.567Z",
+          "LastModifiedDate": "2026-10-21T18:17:29.12Z",
           "Layer": {
             "DiffID": "sha256:15f1c8eb1ab18eae260c7fb6296434cbe1ff0e1e30fd814ae92a80dd54005e62",
             "Digest": "sha256:304074f06047f3dee0c586de265e0e27b577930bc80dc7f97f3829b188bc4fb0"
@@ -59365,7 +59826,7 @@
           "Description": "The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credentials from the original open, a program run in an attacker-controlled target can inherit root's ability to move host processes between cgroups. After a privileged operator uses --join-cgroup against that target, an unprivileged user can migrate and terminate unrelated root processes.",
           "Fingerprint": "sha256:82a37a131b7f6acbc144311a81e623ea2fc40aa65372ef05951234f89b49c523",
           "InstalledVersion": "2.41.5-0+deb13u1",
-          "LastModifiedDate": "2026-09-05T14:17:23.727Z",
+          "LastModifiedDate": "2026-10-21T18:17:28.793Z",
           "Layer": {
             "DiffID": "sha256:15f1c8eb1ab18eae260c7fb6296434cbe1ff0e1e30fd814ae92a80dd54005e62",
             "Digest": "sha256:304074f06047f3dee0c586de265e0e27b577930bc80dc7f97f3829b188bc4fb0"
@@ -59414,7 +59875,7 @@
           "Description": "The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newly mounted filesystem. A local unprivileged user with an fstab-authorized X-mount.subdir entry can attach a host path at the intended mountpoint.",
           "Fingerprint": "sha256:8446236f9296f71793cad6072f29ed0e60e07b095d1ec16ab389f7506c665a29",
           "InstalledVersion": "2.41.5-0+deb13u1",
-          "LastModifiedDate": "2026-09-03T18:12:56.407Z",
+          "LastModifiedDate": "2026-10-21T18:17:28.967Z",
           "Layer": {
             "DiffID": "sha256:15f1c8eb1ab18eae260c7fb6296434cbe1ff0e1e30fd814ae92a80dd54005e62",
             "Digest": "sha256:304074f06047f3dee0c586de265e0e27b577930bc80dc7f97f3829b188bc4fb0"
@@ -59461,7 +59922,7 @@
           "Description": "A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mount(8) to bind another host directory. If the fstab entry also sets X-mount.owner, X-mount.group, or X-mount.mode, root then changes ownership or mode on that redirected inode.",
           "Fingerprint": "sha256:6525c302e6c0d51e91fc0d92afbdceec2f26976d2faea4c9a8a4d0a4a3b6da28",
           "InstalledVersion": "2.41.5-0+deb13u1",
-          "LastModifiedDate": "2026-09-04T19:17:27.567Z",
+          "LastModifiedDate": "2026-10-21T18:17:29.12Z",
           "Layer": {
             "DiffID": "sha256:15f1c8eb1ab18eae260c7fb6296434cbe1ff0e1e30fd814ae92a80dd54005e62",
             "Digest": "sha256:304074f06047f3dee0c586de265e0e27b577930bc80dc7f97f3829b188bc4fb0"
@@ -61217,7 +61678,7 @@
           "Description": "The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credentials from the original open, a program run in an attacker-controlled target can inherit root's ability to move host processes between cgroups. After a privileged operator uses --join-cgroup against that target, an unprivileged user can migrate and terminate unrelated root processes.",
           "Fingerprint": "sha256:928c20b373003953fcb92b8c0634e12a24794e59886e57854f32a9b255c8c8ea",
           "InstalledVersion": "2.41.5-0+deb13u1",
-          "LastModifiedDate": "2026-09-05T14:17:23.727Z",
+          "LastModifiedDate": "2026-10-21T18:17:28.793Z",
           "Layer": {
             "DiffID": "sha256:15f1c8eb1ab18eae260c7fb6296434cbe1ff0e1e30fd814ae92a80dd54005e62",
             "Digest": "sha256:304074f06047f3dee0c586de265e0e27b577930bc80dc7f97f3829b188bc4fb0"
@@ -61266,7 +61727,7 @@
           "Description": "The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newly mounted filesystem. A local unprivileged user with an fstab-authorized X-mount.subdir entry can attach a host path at the intended mountpoint.",
           "Fingerprint": "sha256:f6b66cf4c912263a77584c9f69217cd349ed8f4de891eff490b759237212ec43",
           "InstalledVersion": "2.41.5-0+deb13u1",
-          "LastModifiedDate": "2026-09-03T18:12:56.407Z",
+          "LastModifiedDate": "2026-10-21T18:17:28.967Z",
           "Layer": {
             "DiffID": "sha256:15f1c8eb1ab18eae260c7fb6296434cbe1ff0e1e30fd814ae92a80dd54005e62",
             "Digest": "sha256:304074f06047f3dee0c586de265e0e27b577930bc80dc7f97f3829b188bc4fb0"
@@ -61313,7 +61774,7 @@
           "Description": "A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mount(8) to bind another host directory. If the fstab entry also sets X-mount.owner, X-mount.group, or X-mount.mode, root then changes ownership or mode on that redirected inode.",
           "Fingerprint": "sha256:c11ee3730b1d09eb02f58996fbe34fcdd6d761d538c6f7960f2b125de97be774",
           "InstalledVersion": "2.41.5-0+deb13u1",
-          "LastModifiedDate": "2026-09-04T19:17:27.567Z",
+          "LastModifiedDate": "2026-10-21T18:17:29.12Z",
           "Layer": {
             "DiffID": "sha256:15f1c8eb1ab18eae260c7fb6296434cbe1ff0e1e30fd814ae92a80dd54005e62",
             "Digest": "sha256:304074f06047f3dee0c586de265e0e27b577930bc80dc7f97f3829b188bc4fb0"
@@ -62766,13 +63227,32 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78669",
           "PublishedDate": "2026-10-08T23:17:04.01Z",
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:86196",
+            "https://access.redhat.com/errata/RHSA-2026:86203",
             "https://access.redhat.com/security/cve/CVE-2026-78669",
+            "https://bugzilla.redhat.com/2548334",
+            "https://bugzilla.redhat.com/2548336",
+            "https://bugzilla.redhat.com/2548344",
+            "https://bugzilla.redhat.com/2556068",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548334",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548336",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548344",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2556068",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-111943",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78667",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78669",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-97031",
+            "https://errata.almalinux.org/9/ALSA-2026-86196.html",
+            "https://errata.rockylinux.org/RLSA-2026:86203",
             "https://github.com/golang/go/issues/81742",
             "https://go.dev/cl/847186",
             "https://go.dev/cl/847308",
             "https://go.dev/issue/81742",
             "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
             "https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs",
+            "https://linux.oracle.com/cve/CVE-2026-78669.html",
+            "https://linux.oracle.com/errata/ELSA-2026-86196.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-78669",
             "https://pkg.go.dev/vuln/GO-2026-6611",
             "https://ubuntu.com/security/notices/USN-8935-1",
@@ -62786,9 +63266,12 @@
             "GO-2026-6611"
           ],
           "VendorSeverity": {
+            "alma": 3,
             "azure": 3,
             "bitnami": 3,
+            "oracle-oval": 3,
             "redhat": 3,
+            "rocky": 3,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-78669"
@@ -63034,6 +63517,81 @@
         },
         {
           "CVSS": {
+            "redhat": {
+              "V3Score": 6.8,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:N"
+            }
+          },
+          "DataSource": {
+            "ID": "govulndb",
+            "Name": "The Go Vulnerability Database",
+            "URL": "https://pkg.go.dev/vuln/"
+          },
+          "Description": "On most platforms, Go uses the given system root certificates. However, in some narrower cases, the system trust stores may not be updated without further action. To defend against the narrower set of cases that may remain affected, a denylist was added in crypto/x509 to return an error when calling Verify with any of the known intermediate certificates that are no longer considered to be trustworthy.",
+          "Fingerprint": "sha256:32bc60f82df11a3f31bfa768f626ada15475cc3b6b6dcf2b47cc4603cf28fdd1",
+          "FixedVersion": "1.26.10, 1.27.3",
+          "InstalledVersion": "v1.25.14",
+          "LastModifiedDate": "2026-10-21T02:17:06.71Z",
+          "Layer": {
+            "DiffID": "sha256:9e2cbb51cda6b2684ee63fc8165b8e8ee793e8a419ec4c8ad7ba00bdff263123",
+            "Digest": "sha256:2a1f76c7a6bd9f6b0b115612f83da84d37273732e736b3245769da6ade6234fa"
+          },
+          "PkgID": "stdlib@v1.25.14",
+          "PkgIdentifier": {
+            "PURL": "pkg:golang/stdlib@v1.25.14",
+            "UID": "1afa4a636c4ba0a6"
+          },
+          "PkgName": "stdlib",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-111943",
+          "PublishedDate": "2026-10-21T01:17:20.797Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/10/20/29",
+            "https://access.redhat.com/errata/RHSA-2026:86196",
+            "https://access.redhat.com/errata/RHSA-2026:86203",
+            "https://access.redhat.com/security/cve/CVE-2026-111943",
+            "https://access.redhat.com/security/vulnerabilities/RHSB-2026-012",
+            "https://bugzilla.redhat.com/2548334",
+            "https://bugzilla.redhat.com/2548336",
+            "https://bugzilla.redhat.com/2548344",
+            "https://bugzilla.redhat.com/2556068",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548334",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548336",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548344",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2556068",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-111943",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78667",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78669",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-97031",
+            "https://errata.almalinux.org/9/ALSA-2026-86196.html",
+            "https://errata.rockylinux.org/RLSA-2026:86203",
+            "https://github.com/golang/go/issues/82345",
+            "https://go.dev/cl/851047",
+            "https://go.dev/issue/82345",
+            "https://groups.google.com/g/golang-announce/c/66pojueaQek",
+            "https://groups.google.com/g/golang-nuts/c/K22sG2AYnKU",
+            "https://linux.oracle.com/cve/CVE-2026-111943.html",
+            "https://linux.oracle.com/errata/ELSA-2026-86196.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-111943",
+            "https://pkg.go.dev/vuln/GO-2026-6809",
+            "https://www.cve.org/CVERecord?id=CVE-2026-111943"
+          ],
+          "Severity": "HIGH",
+          "Status": "fixed",
+          "Title": "crypto/x509: golang: crypto/x509: Man-in-the-middle attacks via untrusted intermediate certificates",
+          "VendorIDs": [
+            "GO-2026-6809"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "oracle-oval": 3,
+            "redhat": 3,
+            "rocky": 3
+          },
+          "VulnerabilityID": "CVE-2026-111943"
+        },
+        {
+          "CVSS": {
             "bitnami": {
               "V3Score": 7.5,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
@@ -63069,11 +63627,30 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78667",
           "PublishedDate": "2026-10-08T23:17:03.88Z",
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:86196",
+            "https://access.redhat.com/errata/RHSA-2026:86203",
             "https://access.redhat.com/security/cve/CVE-2026-78667",
+            "https://bugzilla.redhat.com/2548334",
+            "https://bugzilla.redhat.com/2548336",
+            "https://bugzilla.redhat.com/2548344",
+            "https://bugzilla.redhat.com/2556068",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548334",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548336",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548344",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2556068",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-111943",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78667",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78669",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-97031",
+            "https://errata.almalinux.org/9/ALSA-2026-86196.html",
+            "https://errata.rockylinux.org/RLSA-2026:86203",
             "https://github.com/golang/go/issues/81858",
             "https://go.dev/cl/847309",
             "https://go.dev/issue/81858",
             "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
+            "https://linux.oracle.com/cve/CVE-2026-78667.html",
+            "https://linux.oracle.com/errata/ELSA-2026-86196.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-78667",
             "https://pkg.go.dev/vuln/GO-2026-6609",
             "https://ubuntu.com/security/notices/USN-8935-1",
@@ -63087,8 +63664,11 @@
             "GO-2026-6609"
           ],
           "VendorSeverity": {
+            "alma": 3,
             "bitnami": 3,
+            "oracle-oval": 3,
             "redhat": 3,
+            "rocky": 3,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-78667"
@@ -63130,13 +63710,32 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78669",
           "PublishedDate": "2026-10-08T23:17:04.01Z",
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:86196",
+            "https://access.redhat.com/errata/RHSA-2026:86203",
             "https://access.redhat.com/security/cve/CVE-2026-78669",
+            "https://bugzilla.redhat.com/2548334",
+            "https://bugzilla.redhat.com/2548336",
+            "https://bugzilla.redhat.com/2548344",
+            "https://bugzilla.redhat.com/2556068",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548334",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548336",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548344",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2556068",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-111943",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78667",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78669",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-97031",
+            "https://errata.almalinux.org/9/ALSA-2026-86196.html",
+            "https://errata.rockylinux.org/RLSA-2026:86203",
             "https://github.com/golang/go/issues/81742",
             "https://go.dev/cl/847186",
             "https://go.dev/cl/847308",
             "https://go.dev/issue/81742",
             "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
             "https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs",
+            "https://linux.oracle.com/cve/CVE-2026-78669.html",
+            "https://linux.oracle.com/errata/ELSA-2026-86196.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-78669",
             "https://pkg.go.dev/vuln/GO-2026-6611",
             "https://ubuntu.com/security/notices/USN-8935-1",
@@ -63150,9 +63749,12 @@
             "GO-2026-6611"
           ],
           "VendorSeverity": {
+            "alma": 3,
             "azure": 3,
             "bitnami": 3,
+            "oracle-oval": 3,
             "redhat": 3,
+            "rocky": 3,
             "ubuntu": 2
           },
           "VulnerabilityID": "CVE-2026-78669"
@@ -63194,10 +63796,29 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-97031",
           "PublishedDate": "2026-10-08T23:17:06.037Z",
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:86196",
+            "https://access.redhat.com/errata/RHSA-2026:86203",
             "https://access.redhat.com/security/cve/CVE-2026-97031",
+            "https://bugzilla.redhat.com/2548334",
+            "https://bugzilla.redhat.com/2548336",
+            "https://bugzilla.redhat.com/2548344",
+            "https://bugzilla.redhat.com/2556068",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548334",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548336",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548344",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2556068",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-111943",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78667",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78669",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-97031",
+            "https://errata.almalinux.org/9/ALSA-2026-86196.html",
+            "https://errata.rockylinux.org/RLSA-2026:86203",
             "https://go.dev/cl/847312",
             "https://go.dev/issue/81855",
             "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
+            "https://linux.oracle.com/cve/CVE-2026-97031.html",
+            "https://linux.oracle.com/errata/ELSA-2026-86196.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-97031",
             "https://pkg.go.dev/vuln/GO-2026-6607",
             "https://www.cve.org/CVERecord?id=CVE-2026-97031"
@@ -63209,8 +63830,11 @@
             "GO-2026-6607"
           ],
           "VendorSeverity": {
+            "alma": 3,
             "bitnami": 3,
-            "redhat": 3
+            "oracle-oval": 3,
+            "redhat": 3,
+            "rocky": 3
           },
           "VulnerabilityID": "CVE-2026-97031"
         },

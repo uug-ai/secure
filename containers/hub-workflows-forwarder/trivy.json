@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:12ce6305bf6e8c239d7f47f6dcbb9787f3c6bfae65b44e8cb997614838c1a116",
   "ArtifactName": "ghcr.io/uug-ai/hub-workflows-forwarder@sha256:332be3a1cc2a1450d55114b259fd9049aae32ce7e07994fa7b38cf976ebd900a",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-10-21T03:56:39.277066859Z",
+  "CreatedAt": "2026-10-22T03:58:26.490011458Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:e477571b896b8d18635f33e4efb8851e6c4929111b0a4fe9b17b34a16fd9c37f",
@@ -120,7 +120,7 @@
     ],
     "Size": 27093504
   },
-  "ReportID": "01a15c9a-9ded-70ff-8e3f-620aa14e44b6",
+  "ReportID": "01a161c2-9cba-7027-ae00-ce7b9733b0cf",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -833,6 +833,52 @@
       "Target": "ghcr.io/uug-ai/hub-workflows-forwarder@sha256:332be3a1cc2a1450d55114b259fd9049aae32ce7e07994fa7b38cf976ebd900a (alpine 3.22.6)",
       "Type": "alpine",
       "Vulnerabilities": [
+        {
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:9c823a474ccea172b289c1c01b53f09bb5bd30eae0842b62695e17810906cebf",
+          "FixedVersion": "1.2.5-r13",
+          "InstalledVersion": "1.2.5-r12",
+          "Layer": {
+            "DiffID": "sha256:e477571b896b8d18635f33e4efb8851e6c4929111b0a4fe9b17b34a16fd9c37f",
+            "Digest": "sha256:53f8f5e03afd86ade91b7aa57a749f5a3d1419c113be5d8c10e7ee61bb5ab887"
+          },
+          "PkgID": "musl@1.2.5-r12",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/musl@1.2.5-r12?arch=x86_64\u0026distro=3.22.6",
+            "UID": "b5a02196ba9bc411"
+          },
+          "PkgName": "musl",
+          "Severity": "UNKNOWN",
+          "Status": "fixed",
+          "VulnerabilityID": "CVE-2026-107891"
+        },
+        {
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:e20e73125bfc52f7ea6052808b7f452b9e67e4e74fad357f765880147ed0a657",
+          "FixedVersion": "1.2.5-r13",
+          "InstalledVersion": "1.2.5-r12",
+          "Layer": {
+            "DiffID": "sha256:e477571b896b8d18635f33e4efb8851e6c4929111b0a4fe9b17b34a16fd9c37f",
+            "Digest": "sha256:53f8f5e03afd86ade91b7aa57a749f5a3d1419c113be5d8c10e7ee61bb5ab887"
+          },
+          "PkgID": "musl-utils@1.2.5-r12",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/musl-utils@1.2.5-r12?arch=x86_64\u0026distro=3.22.6",
+            "UID": "df612045786a2676"
+          },
+          "PkgName": "musl-utils",
+          "Severity": "UNKNOWN",
+          "Status": "fixed",
+          "VulnerabilityID": "CVE-2026-107891"
+        },
         {
           "CweIDs": [
             "CWE-787"
@@ -1557,6 +1603,81 @@
           "Status": "affected",
           "Title": "The golang.org/x/crypto/openpgp package is unmaintained, unsafe by design, and has known security issues",
           "VulnerabilityID": "GO-2026-5932"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 6.8,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:N"
+            }
+          },
+          "DataSource": {
+            "ID": "govulndb",
+            "Name": "The Go Vulnerability Database",
+            "URL": "https://pkg.go.dev/vuln/"
+          },
+          "Description": "On most platforms, Go uses the given system root certificates. However, in some narrower cases, the system trust stores may not be updated without further action. To defend against the narrower set of cases that may remain affected, a denylist was added in crypto/x509 to return an error when calling Verify with any of the known intermediate certificates that are no longer considered to be trustworthy.",
+          "Fingerprint": "sha256:48b67b40e709fc991232280fafdec2516a828126a61b7feeb976b6d394c5e725",
+          "FixedVersion": "1.26.10, 1.27.3",
+          "InstalledVersion": "v1.26.9",
+          "LastModifiedDate": "2026-10-21T02:17:06.71Z",
+          "Layer": {
+            "DiffID": "sha256:fd29efb36e50e228ed13cde956fce4c9a974c4286868d7c8b03d6e0f119cfeb3",
+            "Digest": "sha256:e5b4125ef2f8d7700c68902df6b21cd38c473f822e57d20832b30b3685e0a071"
+          },
+          "PkgID": "stdlib@v1.26.9",
+          "PkgIdentifier": {
+            "PURL": "pkg:golang/stdlib@v1.26.9",
+            "UID": "ff0994103b716a63"
+          },
+          "PkgName": "stdlib",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-111943",
+          "PublishedDate": "2026-10-21T01:17:20.797Z",
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/10/20/29",
+            "https://access.redhat.com/errata/RHSA-2026:86196",
+            "https://access.redhat.com/errata/RHSA-2026:86203",
+            "https://access.redhat.com/security/cve/CVE-2026-111943",
+            "https://access.redhat.com/security/vulnerabilities/RHSB-2026-012",
+            "https://bugzilla.redhat.com/2548334",
+            "https://bugzilla.redhat.com/2548336",
+            "https://bugzilla.redhat.com/2548344",
+            "https://bugzilla.redhat.com/2556068",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548334",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548336",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548344",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2556068",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-111943",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78667",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78669",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-97031",
+            "https://errata.almalinux.org/9/ALSA-2026-86196.html",
+            "https://errata.rockylinux.org/RLSA-2026:86203",
+            "https://github.com/golang/go/issues/82345",
+            "https://go.dev/cl/851047",
+            "https://go.dev/issue/82345",
+            "https://groups.google.com/g/golang-announce/c/66pojueaQek",
+            "https://groups.google.com/g/golang-nuts/c/K22sG2AYnKU",
+            "https://linux.oracle.com/cve/CVE-2026-111943.html",
+            "https://linux.oracle.com/errata/ELSA-2026-86196.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-111943",
+            "https://pkg.go.dev/vuln/GO-2026-6809",
+            "https://www.cve.org/CVERecord?id=CVE-2026-111943"
+          ],
+          "Severity": "HIGH",
+          "Status": "fixed",
+          "Title": "crypto/x509: golang: crypto/x509: Man-in-the-middle attacks via untrusted intermediate certificates",
+          "VendorIDs": [
+            "GO-2026-6809"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "oracle-oval": 3,
+            "redhat": 3,
+            "rocky": 3
+          },
+          "VulnerabilityID": "CVE-2026-111943"
         }
       ]
     }
