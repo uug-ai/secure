@@ -1,6 +1,6 @@
 # hub-frontend SBOM quality
 
-Collection status: `collected`; collected at `2026-10-22T02:38:34Z`.
+Collection status: `collected`; collected at `2026-10-23T02:39:11Z`.
 
 Overall quality: **Needs work**, **69/100** across **1355 packages**.
 
