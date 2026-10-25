@@ -27,12 +27,12 @@ external disclosure.
 <!-- CONTAINER_SCAN_START -->
 ## Container image security overview
 
-Generated at `2026-10-24T03:51:49Z` from the newest tagged GHCR image available for each approved project. Scores use the highest detected severity: 100 clean, 80 low, 60 medium, 30 high, and 0 critical. An unavailable image is a coverage gap, not a clean result.
+Generated at `2026-10-25T03:54:41Z` from the newest tagged GHCR image available for each approved project. Scores use the highest detected severity: 100 clean, 80 low, 60 medium, 30 high, and 0 critical. An unavailable image is a coverage gap, not a clean result.
 
 | Repository | Scan | Risk | Score | Tag | Critical | High | Medium | Low | Fixable C/H | Report |
 | --- | --- | --- | ---: | --- | ---: | ---: | ---: | ---: | ---: | --- |
 | [factory](https://github.com/uug-ai/factory) | scanned | High | 30/100 | latest | 0 | 27 | 24 | 1 | 0/26 | [Trivy](containers/factory/trivy.json) |
-| [hub-anpr](https://github.com/uug-ai/hub-anpr) | scanned | Critical | 0/100 | latest | 1 | 227 | 335 | 238 | 0/6 | [Trivy](containers/hub-anpr/trivy.json) |
+| [hub-anpr](https://github.com/uug-ai/hub-anpr) | scanned | Critical | 0/100 | latest | 1 | 227 | 333 | 238 | 0/6 | [Trivy](containers/hub-anpr/trivy.json) |
 | [hub-api](https://github.com/uug-ai/hub-api) | scanned | High | 30/100 | latest | 0 | 30 | 28 | 4 | 0/29 | [Trivy](containers/hub-api/trivy.json) |
 | [hub-audit](https://github.com/uug-ai/hub-audit) | scanned | High | 30/100 | latest | 0 | 1 | 1 | 0 | 0/1 | [Trivy](containers/hub-audit/trivy.json) |
 | [hub-cleanup](https://github.com/uug-ai/hub-cleanup) | scanned | High | 30/100 | latest | 0 | 9 | 12 | 1 | 0/9 | [Trivy](containers/hub-cleanup/trivy.json) |
@@ -41,7 +41,7 @@ Generated at `2026-10-24T03:51:49Z` from the newest tagged GHCR image available 
 | [hub-monitor-device](https://github.com/uug-ai/hub-monitor-device) | scanned | High | 30/100 | latest | 0 | 1 | 0 | 0 | 0/1 | [Trivy](containers/hub-monitor-device/trivy.json) |
 | [hub-objecttracking](https://github.com/uug-ai/hub-objecttracking) | scanned | High | 30/100 | latest-gpu | 0 | 58 | 928 | 130 | 0/58 | [Trivy](containers/hub-objecttracking/trivy.json) |
 | [hub-pipeline-analysis](https://github.com/uug-ai/hub-pipeline-analysis) | scanned | High | 30/100 | latest | 0 | 25 | 24 | 4 | 0/25 | [Trivy](containers/hub-pipeline-analysis/trivy.json) |
-| [hub-pipeline-classifier](https://github.com/uug-ai/hub-pipeline-classifier) | scanned | Critical | 0/100 | latest | 32 | 668 | 2704 | 1506 | 20/174 | [Trivy](containers/hub-pipeline-classifier/trivy.json) |
+| [hub-pipeline-classifier](https://github.com/uug-ai/hub-pipeline-classifier) | scanned | Critical | 0/100 | latest | 31 | 654 | 2740 | 1489 | 20/173 | [Trivy](containers/hub-pipeline-classifier/trivy.json) |
 | [hub-pipeline-counting](https://github.com/uug-ai/hub-pipeline-counting) | scanned | High | 30/100 | latest | 0 | 26 | 41 | 6 | 0/26 | [Trivy](containers/hub-pipeline-counting/trivy.json) |
 | [hub-pipeline-dominantcolors](https://github.com/uug-ai/hub-pipeline-dominantcolors) | scanned | High | 30/100 | latest | 0 | 25 | 25 | 4 | 0/25 | [Trivy](containers/hub-pipeline-dominantcolors/trivy.json) |
 | [hub-pipeline-event](https://github.com/uug-ai/hub-pipeline-event) | scanned | Unknown | 40/100 | latest | 0 | 0 | 1 | 0 | 0/0 | [Trivy](containers/hub-pipeline-event/trivy.json) |
@@ -50,17 +50,17 @@ Generated at `2026-10-24T03:51:49Z` from the newest tagged GHCR image available 
 | [hub-pipeline-notification](https://github.com/uug-ai/hub-pipeline-notification) | scanned | Unknown | 40/100 | latest | 0 | 0 | 0 | 0 | 0/0 | [Trivy](containers/hub-pipeline-notification/trivy.json) |
 | [hub-pipeline-notification-test](https://github.com/uug-ai/hub-pipeline-notification-test) | scanned | Critical | 0/100 | latest | 3 | 54 | 80 | 21 | 3/53 | [Trivy](containers/hub-pipeline-notification-test/trivy.json) |
 | [hub-pipeline-redaction](https://github.com/uug-ai/hub-pipeline-redaction) | scanned | High | 30/100 | latest | 0 | 42 | 729 | 48 | 0/42 | [Trivy](containers/hub-pipeline-redaction/trivy.json) |
-| [hub-pipeline-sequence](https://github.com/uug-ai/hub-pipeline-sequence) | scanned | High | 30/100 | latest | 0 | 25 | 24 | 4 | 0/25 | [Trivy](containers/hub-pipeline-sequence/trivy.json) |
-| [hub-pipeline-sprite](https://github.com/uug-ai/hub-pipeline-sprite) | scanned | High | 30/100 | latest | 0 | 27 | 41 | 6 | 0/27 | [Trivy](containers/hub-pipeline-sprite/trivy.json) |
-| [hub-pipeline-throttler](https://github.com/uug-ai/hub-pipeline-throttler) | scanned | High | 30/100 | latest | 0 | 28 | 41 | 6 | 0/28 | [Trivy](containers/hub-pipeline-throttler/trivy.json) |
-| [hub-pipeline-thumbnail](https://github.com/uug-ai/hub-pipeline-thumbnail) | scanned | High | 30/100 | latest | 0 | 25 | 25 | 4 | 0/25 | [Trivy](containers/hub-pipeline-thumbnail/trivy.json) |
+| [hub-pipeline-sequence](https://github.com/uug-ai/hub-pipeline-sequence) | scanned | Unknown | 40/100 | latest | 0 | 0 | 0 | 0 | 0/0 | [Trivy](containers/hub-pipeline-sequence/trivy.json) |
+| [hub-pipeline-sprite](https://github.com/uug-ai/hub-pipeline-sprite) | scanned | Unknown | 40/100 | latest | 0 | 0 | 0 | 0 | 0/0 | [Trivy](containers/hub-pipeline-sprite/trivy.json) |
+| [hub-pipeline-throttler](https://github.com/uug-ai/hub-pipeline-throttler) | scanned | Unknown | 40/100 | latest | 0 | 0 | 0 | 0 | 0/0 | [Trivy](containers/hub-pipeline-throttler/trivy.json) |
+| [hub-pipeline-thumbnail](https://github.com/uug-ai/hub-pipeline-thumbnail) | scanned | Unknown | 40/100 | latest | 0 | 0 | 0 | 0 | 0/0 | [Trivy](containers/hub-pipeline-thumbnail/trivy.json) |
 | [hub-proxy](https://github.com/uug-ai/hub-proxy) | unavailable | Unavailable | - | - | 0 | 0 | 0 | 0 | 0/0 | - |
 | [hub-reactivatesubscriptions](https://github.com/uug-ai/hub-reactivatesubscriptions) | unavailable | Unavailable | - | - | 0 | 0 | 0 | 0 | 0/0 | - |
 | [hub-vault-forwarder](https://github.com/uug-ai/hub-vault-forwarder) | unavailable | Unavailable | - | - | 0 | 0 | 0 | 0 | 0/0 | - |
-| [hub-vlm](https://github.com/uug-ai/hub-vlm) | scanned | Critical | 0/100 | latest | 3 | 31 | 24 | 4 | 3/31 | [Trivy](containers/hub-vlm/trivy.json) |
+| [hub-vlm](https://github.com/uug-ai/hub-vlm) | scanned | Unknown | 40/100 | latest | 0 | 0 | 0 | 0 | 0/0 | [Trivy](containers/hub-vlm/trivy.json) |
 | [hub-workflows](https://github.com/uug-ai/hub-workflows) | scanned | High | 30/100 | latest | 0 | 2 | 5 | 0 | 0/2 | [Trivy](containers/hub-workflows/trivy.json) |
 | [hub-workflows-forwarder](https://github.com/uug-ai/hub-workflows-forwarder) | scanned | High | 30/100 | latest | 0 | 1 | 1 | 0 | 0/1 | [Trivy](containers/hub-workflows-forwarder/trivy.json) |
-| [vault](https://github.com/uug-ai/vault) | scanned | High | 30/100 | latest | 0 | 27 | 25 | 4 | 0/27 | [Trivy](containers/vault/trivy.json) |
+| [vault](https://github.com/uug-ai/vault) | scanned | Unknown | 40/100 | latest | 0 | 0 | 0 | 0 | 0/0 | [Trivy](containers/vault/trivy.json) |
 <!-- CONTAINER_SCAN_END -->
 
 <!-- SBOM_QUALITY_START -->

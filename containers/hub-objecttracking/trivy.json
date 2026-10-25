@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:fb3dadc1f92504167b26c4bf5ca792bf72125f802736cc5aa05343559c1a7e28",
   "ArtifactName": "ghcr.io/uug-ai/hub-objecttracking@sha256:530ebcdf9c8747a2b6b5b3cd989e9e965203d4211834f21226187cd4e1b70099",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-10-24T03:53:02.354338792Z",
+  "CreatedAt": "2026-10-25T03:55:59.441390266Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
@@ -492,7 +492,7 @@
     ],
     "Size": 3843035136
   },
-  "ReportID": "01a16c0a-6292-7527-9d21-ae043d88eab5",
+  "ReportID": "01a17133-7251-75ed-990c-ba66f3495822",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -17993,7 +17993,7 @@
           "Fingerprint": "sha256:da1ff952e58674c987d4839ee673819334204156700c34758cbddb5967a2b0c4",
           "FixedVersion": "1:3.8-0ubuntu2.1",
           "InstalledVersion": "1:3.8-0ubuntu2",
-          "LastModifiedDate": "2026-07-27T12:16:45.25Z",
+          "LastModifiedDate": "2026-10-24T13:10:00.147Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -20653,7 +20653,7 @@
           "Description": "FFmpeg versions 2.1 through 8.1.2 contains a heap buffer overflow vulnerability in the VobSub subtitle demuxer that allows attackers to corrupt adjacent heap memory by supplying a malicious .sub/.idx subtitle file declaring more distinct stream IDs than the fixed-size array bounds in libavformat/mpeg.c. Attackers can craft a subtitle file with excessive distinct stream IDs to trigger unbounded writes beyond the vobsub-\u003eq[] array boundary via ff_subtitles_queue_insert(), potentially achieving arbitrary code execution in any application using FFmpeg's VobSub demuxer.",
           "Fingerprint": "sha256:5d2ad54eb0060d6eb78566f18cb7d7d57f009d82b1aac6f2bf49235ce35df0b4",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-07-28T17:00:32.043Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -20712,7 +20712,7 @@
           "Description": "FFmpeg versions 4.4 through 8.1.2 contain a double-free vulnerability in the NVIDIA NVDEC hardware decoder within libavcodec/nvdec.c that allows attackers to trigger memory corruption by supplying a crafted video file. When no decoder surfaces remain, the ff_nvdec_start_frame_sep_ref error path frees memory via nvdec_fdd_priv_free while the calling layer subsequently frees the same frame description data, resulting in a double-free of the underlying decoder context in any FFmpeg-based application using NVDEC hardware-accelerated decoding.",
           "Fingerprint": "sha256:aa75698a551e3a7d2c5cd1d3752256b848d5c86c90085bd08af42f001818750f",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-07-28T17:01:21.17Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -20771,7 +20771,7 @@
           "Description": "FFmpeg versions 0.7.1 through 8.1.2 contain an out-of-bounds read vulnerability in the S/PDIF muxer that allows attackers to access memory beyond buffer boundaries by supplying a crafted DTS stream with a core_size value larger than the actual packet length. Attackers can exploit the missing bounds check in the spdif_header_dts4 function by providing a malicious DTS-HD audio stream during S/PDIF re-muxing to trigger unauthorized memory reads beyond the packet buffer.",
           "Fingerprint": "sha256:158fb0d80b95e3b91e2e69646c730599427511a75473b896b086bc103c4d83a3",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-12T20:17:48.187Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -20830,7 +20830,7 @@
           "Description": "FFmpeg versions 0.6.3 through 8.1.2 contain an infinite loop vulnerability in the RTP/ASF demuxer within libavformat/rtpdec_asf.c that allows remote attackers to cause denial of service by sending a crafted RTP/ASF stream. The rtp_asf_fix_header function fails to validate a minimum chunksize when iterating over ASF objects, causing the loop pointer to never advance when a chunksize is smaller than the 24-byte minimum ASF object header size, resulting in CPU exhaustion that denies service to legitimate users.",
           "Fingerprint": "sha256:0a791bc453ff7d092209c144222c9fda001a9b84955cbdb670173b7bca87004f",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-07-28T17:01:56.72Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -20889,7 +20889,7 @@
           "Description": "FFmpeg versions 4.4 through 8.1.2 contain an out-of-bounds memory access vulnerability in the ADX audio decoder within libavcodec/adxdec.c that allows attackers to trigger both out-of-bounds reads and writes by supplying a crafted ADX or AAX audio file with a mid-stream channel layout change. When AV_PKT_DATA_NEW_EXTRADATA side data is received mid-stream, the adx_decode_frame function re-parses the stream header but fails to update the internal channel state, causing subsequent decoding operations to access the prev[] state array using a stale channel count.",
           "Fingerprint": "sha256:fdfa7766096b90c4e383315adc94f5b47533b3d72042aead798c62dd5f9c1028",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-07-28T17:02:06.783Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -20948,7 +20948,7 @@
           "Description": "FFmpeg versions 2.7 through 8.1.2 contain an out-of-bounds write vulnerability in the TDSC video decoder that allows remote attackers to cause heap corruption by supplying a crafted AVI file that changes frame dimensions across TDSF frames. The tdsc_parse_tdsf() function fails to unreference the existing reference frame before calling av_frame_get_buffer(), causing tdsc_blit() and tdsc_yuv2rgb() to write attacker-controlled pixel data beyond the end of the undersized reference frame buffer, resulting in a process crash and potential code execution.",
           "Fingerprint": "sha256:83a0789667d3092bee19bd9b8fc738d6a48892f5e9bbcfa821df7602a84d1aa5",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-07T00:19:03.283Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -21068,7 +21068,7 @@
           "Description": "FFmpeg versions 3.4 through 8.1.2 contain an out-of-bounds write vulnerability in the vf_floodfill video filter that allows attackers to corrupt heap memory by supplying a dynamically sized video stream with filtergraph reinitialization disabled via -reinit_filter 0. When config_input() allocates the points traversal stack based on initial frame dimensions and a subsequent larger frame is processed, filter_frame() performs flood-fill neighbor pushes beyond the original allocation boundary, resulting in heap corruption and process crash with potential for code execution depending on heap layout and process hardening.",
           "Fingerprint": "sha256:9b598a2b120e3900a9215543b24594574b50defa91377359121e6ff07aa479e1",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-07T00:20:32.65Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -21128,7 +21128,7 @@
           "Description": "FFmpeg versions 3.0 through 8.1.2 contain an out-of-bounds write vulnerability in the vf_swaprect video filter that allows attackers to corrupt heap memory by supplying a crafted NV12 video frame with odd width dimensions. The filter_frame() function reuses a temporary row buffer sized for plane 0's single-byte pixel step across all planes, causing an 18-byte memcpy into a 17-byte heap allocation when processing the two-byte-per-sample interleaved chroma plane of a 17x16 NV12 frame, resulting in heap corruption and process crash with potential for code execution.",
           "Fingerprint": "sha256:dbb50b3744d9269a3c3e068a65f4bfc3a72070f447d5e7b11f64380a450729b1",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-07T00:21:44.37Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -26973,7 +26973,7 @@
           "Description": "FFmpeg versions 2.1 through 8.1.2 contains a heap buffer overflow vulnerability in the VobSub subtitle demuxer that allows attackers to corrupt adjacent heap memory by supplying a malicious .sub/.idx subtitle file declaring more distinct stream IDs than the fixed-size array bounds in libavformat/mpeg.c. Attackers can craft a subtitle file with excessive distinct stream IDs to trigger unbounded writes beyond the vobsub-\u003eq[] array boundary via ff_subtitles_queue_insert(), potentially achieving arbitrary code execution in any application using FFmpeg's VobSub demuxer.",
           "Fingerprint": "sha256:9c9d6c92a5155dada8d18e651377867e1e9949b57c6b361962781097038dcb77",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-07-28T17:00:32.043Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -27032,7 +27032,7 @@
           "Description": "FFmpeg versions 4.4 through 8.1.2 contain a double-free vulnerability in the NVIDIA NVDEC hardware decoder within libavcodec/nvdec.c that allows attackers to trigger memory corruption by supplying a crafted video file. When no decoder surfaces remain, the ff_nvdec_start_frame_sep_ref error path frees memory via nvdec_fdd_priv_free while the calling layer subsequently frees the same frame description data, resulting in a double-free of the underlying decoder context in any FFmpeg-based application using NVDEC hardware-accelerated decoding.",
           "Fingerprint": "sha256:7fceff3124480eab1fbedff146b95561022305440d35d47eebe9ea588ef43f22",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-07-28T17:01:21.17Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -27091,7 +27091,7 @@
           "Description": "FFmpeg versions 0.7.1 through 8.1.2 contain an out-of-bounds read vulnerability in the S/PDIF muxer that allows attackers to access memory beyond buffer boundaries by supplying a crafted DTS stream with a core_size value larger than the actual packet length. Attackers can exploit the missing bounds check in the spdif_header_dts4 function by providing a malicious DTS-HD audio stream during S/PDIF re-muxing to trigger unauthorized memory reads beyond the packet buffer.",
           "Fingerprint": "sha256:fb5ddcb6dbea5fe852a97839d5892e61605d08f2f750c9d2c451765f5e927bdd",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-12T20:17:48.187Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -27150,7 +27150,7 @@
           "Description": "FFmpeg versions 0.6.3 through 8.1.2 contain an infinite loop vulnerability in the RTP/ASF demuxer within libavformat/rtpdec_asf.c that allows remote attackers to cause denial of service by sending a crafted RTP/ASF stream. The rtp_asf_fix_header function fails to validate a minimum chunksize when iterating over ASF objects, causing the loop pointer to never advance when a chunksize is smaller than the 24-byte minimum ASF object header size, resulting in CPU exhaustion that denies service to legitimate users.",
           "Fingerprint": "sha256:d69c348b5301144fd32db0f859e10927167536a4f37fc993398e38901eee8552",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-07-28T17:01:56.72Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -27209,7 +27209,7 @@
           "Description": "FFmpeg versions 4.4 through 8.1.2 contain an out-of-bounds memory access vulnerability in the ADX audio decoder within libavcodec/adxdec.c that allows attackers to trigger both out-of-bounds reads and writes by supplying a crafted ADX or AAX audio file with a mid-stream channel layout change. When AV_PKT_DATA_NEW_EXTRADATA side data is received mid-stream, the adx_decode_frame function re-parses the stream header but fails to update the internal channel state, causing subsequent decoding operations to access the prev[] state array using a stale channel count.",
           "Fingerprint": "sha256:16bd0f1e482c3d3e3061cc264ee4aa63f2e82b9eaa2a04f2887fbf959ddefeb7",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-07-28T17:02:06.783Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -27268,7 +27268,7 @@
           "Description": "FFmpeg versions 2.7 through 8.1.2 contain an out-of-bounds write vulnerability in the TDSC video decoder that allows remote attackers to cause heap corruption by supplying a crafted AVI file that changes frame dimensions across TDSF frames. The tdsc_parse_tdsf() function fails to unreference the existing reference frame before calling av_frame_get_buffer(), causing tdsc_blit() and tdsc_yuv2rgb() to write attacker-controlled pixel data beyond the end of the undersized reference frame buffer, resulting in a process crash and potential code execution.",
           "Fingerprint": "sha256:0444dbe3698566f29165e94ca7c4a625e34b7c772c70a691e40de07bd4760f09",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-07T00:19:03.283Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -27388,7 +27388,7 @@
           "Description": "FFmpeg versions 3.4 through 8.1.2 contain an out-of-bounds write vulnerability in the vf_floodfill video filter that allows attackers to corrupt heap memory by supplying a dynamically sized video stream with filtergraph reinitialization disabled via -reinit_filter 0. When config_input() allocates the points traversal stack based on initial frame dimensions and a subsequent larger frame is processed, filter_frame() performs flood-fill neighbor pushes beyond the original allocation boundary, resulting in heap corruption and process crash with potential for code execution depending on heap layout and process hardening.",
           "Fingerprint": "sha256:c7cb6b255e79ed9ad6b495627424f3cc1eec8a87499e65a511e6782983deb5a4",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-07T00:20:32.65Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -27448,7 +27448,7 @@
           "Description": "FFmpeg versions 3.0 through 8.1.2 contain an out-of-bounds write vulnerability in the vf_swaprect video filter that allows attackers to corrupt heap memory by supplying a crafted NV12 video frame with odd width dimensions. The filter_frame() function reuses a temporary row buffer sized for plane 0's single-byte pixel step across all planes, causing an 18-byte memcpy into a 17-byte heap allocation when processing the two-byte-per-sample interleaved chroma plane of a 17x16 NV12 frame, resulting in heap corruption and process crash with potential for code execution.",
           "Fingerprint": "sha256:a251d33c367c653242be69a93a50e52931b982abf1c00a2d9e98f3b4c73816a3",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-07T00:21:44.37Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -30763,7 +30763,7 @@
           "Description": "FFmpeg versions 2.1 through 8.1.2 contains a heap buffer overflow vulnerability in the VobSub subtitle demuxer that allows attackers to corrupt adjacent heap memory by supplying a malicious .sub/.idx subtitle file declaring more distinct stream IDs than the fixed-size array bounds in libavformat/mpeg.c. Attackers can craft a subtitle file with excessive distinct stream IDs to trigger unbounded writes beyond the vobsub-\u003eq[] array boundary via ff_subtitles_queue_insert(), potentially achieving arbitrary code execution in any application using FFmpeg's VobSub demuxer.",
           "Fingerprint": "sha256:4d7ec0d9bd225e849693c4ec01e4a47945dfd15fef6411a5109d062999c60947",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-07-28T17:00:32.043Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -30822,7 +30822,7 @@
           "Description": "FFmpeg versions 4.4 through 8.1.2 contain a double-free vulnerability in the NVIDIA NVDEC hardware decoder within libavcodec/nvdec.c that allows attackers to trigger memory corruption by supplying a crafted video file. When no decoder surfaces remain, the ff_nvdec_start_frame_sep_ref error path frees memory via nvdec_fdd_priv_free while the calling layer subsequently frees the same frame description data, resulting in a double-free of the underlying decoder context in any FFmpeg-based application using NVDEC hardware-accelerated decoding.",
           "Fingerprint": "sha256:a4b3cd236c0e85f6ac9bbd64e32c8347a273c56e4edc2fbbe161e4d1a1b56ca9",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-07-28T17:01:21.17Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -30881,7 +30881,7 @@
           "Description": "FFmpeg versions 0.7.1 through 8.1.2 contain an out-of-bounds read vulnerability in the S/PDIF muxer that allows attackers to access memory beyond buffer boundaries by supplying a crafted DTS stream with a core_size value larger than the actual packet length. Attackers can exploit the missing bounds check in the spdif_header_dts4 function by providing a malicious DTS-HD audio stream during S/PDIF re-muxing to trigger unauthorized memory reads beyond the packet buffer.",
           "Fingerprint": "sha256:cce1567db6f6e437ba9616d5cc7e9a54718e8ef04e0a13d02e8b941ed21f7e9c",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-12T20:17:48.187Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -30940,7 +30940,7 @@
           "Description": "FFmpeg versions 0.6.3 through 8.1.2 contain an infinite loop vulnerability in the RTP/ASF demuxer within libavformat/rtpdec_asf.c that allows remote attackers to cause denial of service by sending a crafted RTP/ASF stream. The rtp_asf_fix_header function fails to validate a minimum chunksize when iterating over ASF objects, causing the loop pointer to never advance when a chunksize is smaller than the 24-byte minimum ASF object header size, resulting in CPU exhaustion that denies service to legitimate users.",
           "Fingerprint": "sha256:430c9770dcb90b3cd3d958e61aa71eba6e5c8f5981d5d5553e5fc9a5009af1a7",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-07-28T17:01:56.72Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -30999,7 +30999,7 @@
           "Description": "FFmpeg versions 4.4 through 8.1.2 contain an out-of-bounds memory access vulnerability in the ADX audio decoder within libavcodec/adxdec.c that allows attackers to trigger both out-of-bounds reads and writes by supplying a crafted ADX or AAX audio file with a mid-stream channel layout change. When AV_PKT_DATA_NEW_EXTRADATA side data is received mid-stream, the adx_decode_frame function re-parses the stream header but fails to update the internal channel state, causing subsequent decoding operations to access the prev[] state array using a stale channel count.",
           "Fingerprint": "sha256:2e3ddf72ad82efae7ec32c1361ad6276813b22b8779a5fee74d1034793aa2d2b",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-07-28T17:02:06.783Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -31058,7 +31058,7 @@
           "Description": "FFmpeg versions 2.7 through 8.1.2 contain an out-of-bounds write vulnerability in the TDSC video decoder that allows remote attackers to cause heap corruption by supplying a crafted AVI file that changes frame dimensions across TDSF frames. The tdsc_parse_tdsf() function fails to unreference the existing reference frame before calling av_frame_get_buffer(), causing tdsc_blit() and tdsc_yuv2rgb() to write attacker-controlled pixel data beyond the end of the undersized reference frame buffer, resulting in a process crash and potential code execution.",
           "Fingerprint": "sha256:eb4f6de9e810cdea9113b9bb0418a243054b55a6ae6537c9bba97fbad29adf14",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-07T00:19:03.283Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -31178,7 +31178,7 @@
           "Description": "FFmpeg versions 3.4 through 8.1.2 contain an out-of-bounds write vulnerability in the vf_floodfill video filter that allows attackers to corrupt heap memory by supplying a dynamically sized video stream with filtergraph reinitialization disabled via -reinit_filter 0. When config_input() allocates the points traversal stack based on initial frame dimensions and a subsequent larger frame is processed, filter_frame() performs flood-fill neighbor pushes beyond the original allocation boundary, resulting in heap corruption and process crash with potential for code execution depending on heap layout and process hardening.",
           "Fingerprint": "sha256:e086b5ce210e5c3fe20524ace08b6f5b792a00c899d8c040da0a4ea0c5098cfd",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-07T00:20:32.65Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -31238,7 +31238,7 @@
           "Description": "FFmpeg versions 3.0 through 8.1.2 contain an out-of-bounds write vulnerability in the vf_swaprect video filter that allows attackers to corrupt heap memory by supplying a crafted NV12 video frame with odd width dimensions. The filter_frame() function reuses a temporary row buffer sized for plane 0's single-byte pixel step across all planes, causing an 18-byte memcpy into a 17-byte heap allocation when processing the two-byte-per-sample interleaved chroma plane of a 17x16 NV12 frame, resulting in heap corruption and process crash with potential for code execution.",
           "Fingerprint": "sha256:823eb687070a863b8b602b6d31dc464beb4d0002889a333f8a84535dd1c8990a",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-07T00:21:44.37Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -34553,7 +34553,7 @@
           "Description": "FFmpeg versions 2.1 through 8.1.2 contains a heap buffer overflow vulnerability in the VobSub subtitle demuxer that allows attackers to corrupt adjacent heap memory by supplying a malicious .sub/.idx subtitle file declaring more distinct stream IDs than the fixed-size array bounds in libavformat/mpeg.c. Attackers can craft a subtitle file with excessive distinct stream IDs to trigger unbounded writes beyond the vobsub-\u003eq[] array boundary via ff_subtitles_queue_insert(), potentially achieving arbitrary code execution in any application using FFmpeg's VobSub demuxer.",
           "Fingerprint": "sha256:574a3434b6649853dc0a9199bbea0c028a3c264f448083b2014a0275682165d2",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-07-28T17:00:32.043Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -34612,7 +34612,7 @@
           "Description": "FFmpeg versions 4.4 through 8.1.2 contain a double-free vulnerability in the NVIDIA NVDEC hardware decoder within libavcodec/nvdec.c that allows attackers to trigger memory corruption by supplying a crafted video file. When no decoder surfaces remain, the ff_nvdec_start_frame_sep_ref error path frees memory via nvdec_fdd_priv_free while the calling layer subsequently frees the same frame description data, resulting in a double-free of the underlying decoder context in any FFmpeg-based application using NVDEC hardware-accelerated decoding.",
           "Fingerprint": "sha256:4c8f4401e389a90b6d934609e283c67707103225f4442e1d99e1c5a02c98da56",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-07-28T17:01:21.17Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -34671,7 +34671,7 @@
           "Description": "FFmpeg versions 0.7.1 through 8.1.2 contain an out-of-bounds read vulnerability in the S/PDIF muxer that allows attackers to access memory beyond buffer boundaries by supplying a crafted DTS stream with a core_size value larger than the actual packet length. Attackers can exploit the missing bounds check in the spdif_header_dts4 function by providing a malicious DTS-HD audio stream during S/PDIF re-muxing to trigger unauthorized memory reads beyond the packet buffer.",
           "Fingerprint": "sha256:301594b389c4853e1ac58ca66e71df47a317d6e00ed7005e8d5543c0e94f3ff6",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-12T20:17:48.187Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -34730,7 +34730,7 @@
           "Description": "FFmpeg versions 0.6.3 through 8.1.2 contain an infinite loop vulnerability in the RTP/ASF demuxer within libavformat/rtpdec_asf.c that allows remote attackers to cause denial of service by sending a crafted RTP/ASF stream. The rtp_asf_fix_header function fails to validate a minimum chunksize when iterating over ASF objects, causing the loop pointer to never advance when a chunksize is smaller than the 24-byte minimum ASF object header size, resulting in CPU exhaustion that denies service to legitimate users.",
           "Fingerprint": "sha256:ed551030bcbf70f68a47895ecef586f5a12481352d2b815338220b426e2c45c4",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-07-28T17:01:56.72Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -34789,7 +34789,7 @@
           "Description": "FFmpeg versions 4.4 through 8.1.2 contain an out-of-bounds memory access vulnerability in the ADX audio decoder within libavcodec/adxdec.c that allows attackers to trigger both out-of-bounds reads and writes by supplying a crafted ADX or AAX audio file with a mid-stream channel layout change. When AV_PKT_DATA_NEW_EXTRADATA side data is received mid-stream, the adx_decode_frame function re-parses the stream header but fails to update the internal channel state, causing subsequent decoding operations to access the prev[] state array using a stale channel count.",
           "Fingerprint": "sha256:3ed1dd98ce143619019bed4538e622187437fc8960c5d123d20ad453200f07c5",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-07-28T17:02:06.783Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -34848,7 +34848,7 @@
           "Description": "FFmpeg versions 2.7 through 8.1.2 contain an out-of-bounds write vulnerability in the TDSC video decoder that allows remote attackers to cause heap corruption by supplying a crafted AVI file that changes frame dimensions across TDSF frames. The tdsc_parse_tdsf() function fails to unreference the existing reference frame before calling av_frame_get_buffer(), causing tdsc_blit() and tdsc_yuv2rgb() to write attacker-controlled pixel data beyond the end of the undersized reference frame buffer, resulting in a process crash and potential code execution.",
           "Fingerprint": "sha256:fa633fa00183ea628320d0a4d7a586b0f538ec59cd576f21b193908178c8645a",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-07T00:19:03.283Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -34968,7 +34968,7 @@
           "Description": "FFmpeg versions 3.4 through 8.1.2 contain an out-of-bounds write vulnerability in the vf_floodfill video filter that allows attackers to corrupt heap memory by supplying a dynamically sized video stream with filtergraph reinitialization disabled via -reinit_filter 0. When config_input() allocates the points traversal stack based on initial frame dimensions and a subsequent larger frame is processed, filter_frame() performs flood-fill neighbor pushes beyond the original allocation boundary, resulting in heap corruption and process crash with potential for code execution depending on heap layout and process hardening.",
           "Fingerprint": "sha256:3a528a05725d56b392c8d1858960347862ffb9ee384a9ed84750c8a1a349b953",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-07T00:20:32.65Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -35028,7 +35028,7 @@
           "Description": "FFmpeg versions 3.0 through 8.1.2 contain an out-of-bounds write vulnerability in the vf_swaprect video filter that allows attackers to corrupt heap memory by supplying a crafted NV12 video frame with odd width dimensions. The filter_frame() function reuses a temporary row buffer sized for plane 0's single-byte pixel step across all planes, causing an 18-byte memcpy into a 17-byte heap allocation when processing the two-byte-per-sample interleaved chroma plane of a 17x16 NV12 frame, resulting in heap corruption and process crash with potential for code execution.",
           "Fingerprint": "sha256:932b19d5705aac59384e550da3456e359f72d9c8b68487be219a06569c866b9f",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-07T00:21:44.37Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -38343,7 +38343,7 @@
           "Description": "FFmpeg versions 2.1 through 8.1.2 contains a heap buffer overflow vulnerability in the VobSub subtitle demuxer that allows attackers to corrupt adjacent heap memory by supplying a malicious .sub/.idx subtitle file declaring more distinct stream IDs than the fixed-size array bounds in libavformat/mpeg.c. Attackers can craft a subtitle file with excessive distinct stream IDs to trigger unbounded writes beyond the vobsub-\u003eq[] array boundary via ff_subtitles_queue_insert(), potentially achieving arbitrary code execution in any application using FFmpeg's VobSub demuxer.",
           "Fingerprint": "sha256:082ce10821f81484cc457de93201c65bd20b7d5e2638cbe885c45b97215eca80",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-07-28T17:00:32.043Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -38402,7 +38402,7 @@
           "Description": "FFmpeg versions 4.4 through 8.1.2 contain a double-free vulnerability in the NVIDIA NVDEC hardware decoder within libavcodec/nvdec.c that allows attackers to trigger memory corruption by supplying a crafted video file. When no decoder surfaces remain, the ff_nvdec_start_frame_sep_ref error path frees memory via nvdec_fdd_priv_free while the calling layer subsequently frees the same frame description data, resulting in a double-free of the underlying decoder context in any FFmpeg-based application using NVDEC hardware-accelerated decoding.",
           "Fingerprint": "sha256:e145318ea52e8cd1e9cf3bb7e6c2900c5276685f5aaab36860ecb8a664e379ac",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-07-28T17:01:21.17Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -38461,7 +38461,7 @@
           "Description": "FFmpeg versions 0.7.1 through 8.1.2 contain an out-of-bounds read vulnerability in the S/PDIF muxer that allows attackers to access memory beyond buffer boundaries by supplying a crafted DTS stream with a core_size value larger than the actual packet length. Attackers can exploit the missing bounds check in the spdif_header_dts4 function by providing a malicious DTS-HD audio stream during S/PDIF re-muxing to trigger unauthorized memory reads beyond the packet buffer.",
           "Fingerprint": "sha256:032853189cfd95cb836fc156eb9c5a759bf1675777c665dd314d631b544a242a",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-12T20:17:48.187Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -38520,7 +38520,7 @@
           "Description": "FFmpeg versions 0.6.3 through 8.1.2 contain an infinite loop vulnerability in the RTP/ASF demuxer within libavformat/rtpdec_asf.c that allows remote attackers to cause denial of service by sending a crafted RTP/ASF stream. The rtp_asf_fix_header function fails to validate a minimum chunksize when iterating over ASF objects, causing the loop pointer to never advance when a chunksize is smaller than the 24-byte minimum ASF object header size, resulting in CPU exhaustion that denies service to legitimate users.",
           "Fingerprint": "sha256:40d65d435817ef126a4511ba57f3a33597f97eb1554000066fe912b98bbf6116",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-07-28T17:01:56.72Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -38579,7 +38579,7 @@
           "Description": "FFmpeg versions 4.4 through 8.1.2 contain an out-of-bounds memory access vulnerability in the ADX audio decoder within libavcodec/adxdec.c that allows attackers to trigger both out-of-bounds reads and writes by supplying a crafted ADX or AAX audio file with a mid-stream channel layout change. When AV_PKT_DATA_NEW_EXTRADATA side data is received mid-stream, the adx_decode_frame function re-parses the stream header but fails to update the internal channel state, causing subsequent decoding operations to access the prev[] state array using a stale channel count.",
           "Fingerprint": "sha256:b731f0771858948420ecea9f81572c057128b5713b8fc71b696132abf1743f50",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-07-28T17:02:06.783Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -38638,7 +38638,7 @@
           "Description": "FFmpeg versions 2.7 through 8.1.2 contain an out-of-bounds write vulnerability in the TDSC video decoder that allows remote attackers to cause heap corruption by supplying a crafted AVI file that changes frame dimensions across TDSF frames. The tdsc_parse_tdsf() function fails to unreference the existing reference frame before calling av_frame_get_buffer(), causing tdsc_blit() and tdsc_yuv2rgb() to write attacker-controlled pixel data beyond the end of the undersized reference frame buffer, resulting in a process crash and potential code execution.",
           "Fingerprint": "sha256:0b2cbe3cdcc258672ab951b50c0e960d41ca883fd69fd4550ffd0e3d92273e0f",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-07T00:19:03.283Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -38758,7 +38758,7 @@
           "Description": "FFmpeg versions 3.4 through 8.1.2 contain an out-of-bounds write vulnerability in the vf_floodfill video filter that allows attackers to corrupt heap memory by supplying a dynamically sized video stream with filtergraph reinitialization disabled via -reinit_filter 0. When config_input() allocates the points traversal stack based on initial frame dimensions and a subsequent larger frame is processed, filter_frame() performs flood-fill neighbor pushes beyond the original allocation boundary, resulting in heap corruption and process crash with potential for code execution depending on heap layout and process hardening.",
           "Fingerprint": "sha256:14468a115ecd3dab412ad15dcdc2725df786bacc9d10ff957778c3d63a6fb707",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-07T00:20:32.65Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -38818,7 +38818,7 @@
           "Description": "FFmpeg versions 3.0 through 8.1.2 contain an out-of-bounds write vulnerability in the vf_swaprect video filter that allows attackers to corrupt heap memory by supplying a crafted NV12 video frame with odd width dimensions. The filter_frame() function reuses a temporary row buffer sized for plane 0's single-byte pixel step across all planes, causing an 18-byte memcpy into a 17-byte heap allocation when processing the two-byte-per-sample interleaved chroma plane of a 17x16 NV12 frame, resulting in heap corruption and process crash with potential for code execution.",
           "Fingerprint": "sha256:2b949f451b9edd10e3e72f7c2ad80705f69112e0e6f007258899f8714c310d7c",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-07T00:21:44.37Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -42133,7 +42133,7 @@
           "Description": "FFmpeg versions 2.1 through 8.1.2 contains a heap buffer overflow vulnerability in the VobSub subtitle demuxer that allows attackers to corrupt adjacent heap memory by supplying a malicious .sub/.idx subtitle file declaring more distinct stream IDs than the fixed-size array bounds in libavformat/mpeg.c. Attackers can craft a subtitle file with excessive distinct stream IDs to trigger unbounded writes beyond the vobsub-\u003eq[] array boundary via ff_subtitles_queue_insert(), potentially achieving arbitrary code execution in any application using FFmpeg's VobSub demuxer.",
           "Fingerprint": "sha256:3e6c33e976f6e873f6dbda5dfb716cbac8a0af4bbb26aedf64c18e462ce3a8d7",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-07-28T17:00:32.043Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -42192,7 +42192,7 @@
           "Description": "FFmpeg versions 4.4 through 8.1.2 contain a double-free vulnerability in the NVIDIA NVDEC hardware decoder within libavcodec/nvdec.c that allows attackers to trigger memory corruption by supplying a crafted video file. When no decoder surfaces remain, the ff_nvdec_start_frame_sep_ref error path frees memory via nvdec_fdd_priv_free while the calling layer subsequently frees the same frame description data, resulting in a double-free of the underlying decoder context in any FFmpeg-based application using NVDEC hardware-accelerated decoding.",
           "Fingerprint": "sha256:6cf2c394f64c4506cdb09c2c79611a222f23200d4e45aa287405578efa0a087b",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-07-28T17:01:21.17Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -42251,7 +42251,7 @@
           "Description": "FFmpeg versions 0.7.1 through 8.1.2 contain an out-of-bounds read vulnerability in the S/PDIF muxer that allows attackers to access memory beyond buffer boundaries by supplying a crafted DTS stream with a core_size value larger than the actual packet length. Attackers can exploit the missing bounds check in the spdif_header_dts4 function by providing a malicious DTS-HD audio stream during S/PDIF re-muxing to trigger unauthorized memory reads beyond the packet buffer.",
           "Fingerprint": "sha256:0b9bb8dffc473084bdf241f56359dfe566c5d47c849e78ab675a2bcb78a42fac",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-12T20:17:48.187Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -42310,7 +42310,7 @@
           "Description": "FFmpeg versions 0.6.3 through 8.1.2 contain an infinite loop vulnerability in the RTP/ASF demuxer within libavformat/rtpdec_asf.c that allows remote attackers to cause denial of service by sending a crafted RTP/ASF stream. The rtp_asf_fix_header function fails to validate a minimum chunksize when iterating over ASF objects, causing the loop pointer to never advance when a chunksize is smaller than the 24-byte minimum ASF object header size, resulting in CPU exhaustion that denies service to legitimate users.",
           "Fingerprint": "sha256:389d1fa2695b4c761c1717ecd1e9f5f3bfb9ebf51df5c323a3fa61aa8a06e39a",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-07-28T17:01:56.72Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -42369,7 +42369,7 @@
           "Description": "FFmpeg versions 4.4 through 8.1.2 contain an out-of-bounds memory access vulnerability in the ADX audio decoder within libavcodec/adxdec.c that allows attackers to trigger both out-of-bounds reads and writes by supplying a crafted ADX or AAX audio file with a mid-stream channel layout change. When AV_PKT_DATA_NEW_EXTRADATA side data is received mid-stream, the adx_decode_frame function re-parses the stream header but fails to update the internal channel state, causing subsequent decoding operations to access the prev[] state array using a stale channel count.",
           "Fingerprint": "sha256:1bdd161eb1c3b28757cfec1d553aaf98859dc891e42a789b5a52a78d6843d5c4",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-07-28T17:02:06.783Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -42428,7 +42428,7 @@
           "Description": "FFmpeg versions 2.7 through 8.1.2 contain an out-of-bounds write vulnerability in the TDSC video decoder that allows remote attackers to cause heap corruption by supplying a crafted AVI file that changes frame dimensions across TDSF frames. The tdsc_parse_tdsf() function fails to unreference the existing reference frame before calling av_frame_get_buffer(), causing tdsc_blit() and tdsc_yuv2rgb() to write attacker-controlled pixel data beyond the end of the undersized reference frame buffer, resulting in a process crash and potential code execution.",
           "Fingerprint": "sha256:74fef8e5d8ac4b8c5a49d38acab3d37aa80712dc1fdffbd446e388e21de2af59",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-07T00:19:03.283Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -42548,7 +42548,7 @@
           "Description": "FFmpeg versions 3.4 through 8.1.2 contain an out-of-bounds write vulnerability in the vf_floodfill video filter that allows attackers to corrupt heap memory by supplying a dynamically sized video stream with filtergraph reinitialization disabled via -reinit_filter 0. When config_input() allocates the points traversal stack based on initial frame dimensions and a subsequent larger frame is processed, filter_frame() performs flood-fill neighbor pushes beyond the original allocation boundary, resulting in heap corruption and process crash with potential for code execution depending on heap layout and process hardening.",
           "Fingerprint": "sha256:20d627ac95f04d5bae87eca248134803964037417cbbf17ee15deb110d5ddbd0",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-07T00:20:32.65Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -42608,7 +42608,7 @@
           "Description": "FFmpeg versions 3.0 through 8.1.2 contain an out-of-bounds write vulnerability in the vf_swaprect video filter that allows attackers to corrupt heap memory by supplying a crafted NV12 video frame with odd width dimensions. The filter_frame() function reuses a temporary row buffer sized for plane 0's single-byte pixel step across all planes, causing an 18-byte memcpy into a 17-byte heap allocation when processing the two-byte-per-sample interleaved chroma plane of a 17x16 NV12 frame, resulting in heap corruption and process crash with potential for code execution.",
           "Fingerprint": "sha256:e6b554f0f7c7004e507306996621a21ce131787bb709b09e058cb471d0def3a1",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-07T00:21:44.37Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -45252,7 +45252,7 @@
           "Fingerprint": "sha256:483fd476f5300cf720ccdb77f9e409ba0e727335f7f1ac5bed8fe0b89371e3ed",
           "FixedVersion": "2.35-0ubuntu3.15",
           "InstalledVersion": "2.35-0ubuntu3.6",
-          "LastModifiedDate": "2026-10-23T19:10:00.167Z",
+          "LastModifiedDate": "2026-10-24T16:10:00.153Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -46970,7 +46970,7 @@
           "Fingerprint": "sha256:0e7e3a3cb89955a8532a546ddca456e94e4605b8dfec203a2031b15893aca3c3",
           "FixedVersion": "2.35-0ubuntu3.15",
           "InstalledVersion": "2.35-0ubuntu3.6",
-          "LastModifiedDate": "2026-10-23T19:10:00.167Z",
+          "LastModifiedDate": "2026-10-24T16:10:00.153Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -59652,7 +59652,7 @@
           "Description": "FFmpeg versions 2.1 through 8.1.2 contains a heap buffer overflow vulnerability in the VobSub subtitle demuxer that allows attackers to corrupt adjacent heap memory by supplying a malicious .sub/.idx subtitle file declaring more distinct stream IDs than the fixed-size array bounds in libavformat/mpeg.c. Attackers can craft a subtitle file with excessive distinct stream IDs to trigger unbounded writes beyond the vobsub-\u003eq[] array boundary via ff_subtitles_queue_insert(), potentially achieving arbitrary code execution in any application using FFmpeg's VobSub demuxer.",
           "Fingerprint": "sha256:d44c104a2594fcc4afd9e9c47df100d995ff54dddbf16ee5e797f5aea974ff03",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-07-28T17:00:32.043Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -59711,7 +59711,7 @@
           "Description": "FFmpeg versions 4.4 through 8.1.2 contain a double-free vulnerability in the NVIDIA NVDEC hardware decoder within libavcodec/nvdec.c that allows attackers to trigger memory corruption by supplying a crafted video file. When no decoder surfaces remain, the ff_nvdec_start_frame_sep_ref error path frees memory via nvdec_fdd_priv_free while the calling layer subsequently frees the same frame description data, resulting in a double-free of the underlying decoder context in any FFmpeg-based application using NVDEC hardware-accelerated decoding.",
           "Fingerprint": "sha256:78550dc5f59031c5d6d540020798915fd3a3767e4cb792a8fb0ba9fdddf55473",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-07-28T17:01:21.17Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -59770,7 +59770,7 @@
           "Description": "FFmpeg versions 0.7.1 through 8.1.2 contain an out-of-bounds read vulnerability in the S/PDIF muxer that allows attackers to access memory beyond buffer boundaries by supplying a crafted DTS stream with a core_size value larger than the actual packet length. Attackers can exploit the missing bounds check in the spdif_header_dts4 function by providing a malicious DTS-HD audio stream during S/PDIF re-muxing to trigger unauthorized memory reads beyond the packet buffer.",
           "Fingerprint": "sha256:1b8638c4d67126f7ad38492cbbbcffd4f61b0af86ff526c3af1bb5e0e933d141",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-12T20:17:48.187Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -59829,7 +59829,7 @@
           "Description": "FFmpeg versions 0.6.3 through 8.1.2 contain an infinite loop vulnerability in the RTP/ASF demuxer within libavformat/rtpdec_asf.c that allows remote attackers to cause denial of service by sending a crafted RTP/ASF stream. The rtp_asf_fix_header function fails to validate a minimum chunksize when iterating over ASF objects, causing the loop pointer to never advance when a chunksize is smaller than the 24-byte minimum ASF object header size, resulting in CPU exhaustion that denies service to legitimate users.",
           "Fingerprint": "sha256:cd172dfee2d218a4a74b0d636136ab48b3172d180590ed0805c6d247965749ff",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-07-28T17:01:56.72Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -59888,7 +59888,7 @@
           "Description": "FFmpeg versions 4.4 through 8.1.2 contain an out-of-bounds memory access vulnerability in the ADX audio decoder within libavcodec/adxdec.c that allows attackers to trigger both out-of-bounds reads and writes by supplying a crafted ADX or AAX audio file with a mid-stream channel layout change. When AV_PKT_DATA_NEW_EXTRADATA side data is received mid-stream, the adx_decode_frame function re-parses the stream header but fails to update the internal channel state, causing subsequent decoding operations to access the prev[] state array using a stale channel count.",
           "Fingerprint": "sha256:f8c55801439a42733d714699e158417f99ec6c9ad96dad463e039d369b0fdae6",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-07-28T17:02:06.783Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -59947,7 +59947,7 @@
           "Description": "FFmpeg versions 2.7 through 8.1.2 contain an out-of-bounds write vulnerability in the TDSC video decoder that allows remote attackers to cause heap corruption by supplying a crafted AVI file that changes frame dimensions across TDSF frames. The tdsc_parse_tdsf() function fails to unreference the existing reference frame before calling av_frame_get_buffer(), causing tdsc_blit() and tdsc_yuv2rgb() to write attacker-controlled pixel data beyond the end of the undersized reference frame buffer, resulting in a process crash and potential code execution.",
           "Fingerprint": "sha256:3195422d4c6c503577234702c3326a5c039cd721d67ee4a978bede1e6a84348a",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-07T00:19:03.283Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -60067,7 +60067,7 @@
           "Description": "FFmpeg versions 3.4 through 8.1.2 contain an out-of-bounds write vulnerability in the vf_floodfill video filter that allows attackers to corrupt heap memory by supplying a dynamically sized video stream with filtergraph reinitialization disabled via -reinit_filter 0. When config_input() allocates the points traversal stack based on initial frame dimensions and a subsequent larger frame is processed, filter_frame() performs flood-fill neighbor pushes beyond the original allocation boundary, resulting in heap corruption and process crash with potential for code execution depending on heap layout and process hardening.",
           "Fingerprint": "sha256:a61603fa915fb149f4fb4d49ed5daab5992a3d80bf2d2cca38578517ac3f8c35",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-07T00:20:32.65Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -60127,7 +60127,7 @@
           "Description": "FFmpeg versions 3.0 through 8.1.2 contain an out-of-bounds write vulnerability in the vf_swaprect video filter that allows attackers to corrupt heap memory by supplying a crafted NV12 video frame with odd width dimensions. The filter_frame() function reuses a temporary row buffer sized for plane 0's single-byte pixel step across all planes, causing an 18-byte memcpy into a 17-byte heap allocation when processing the two-byte-per-sample interleaved chroma plane of a 17x16 NV12 frame, resulting in heap corruption and process crash with potential for code execution.",
           "Fingerprint": "sha256:6e7a8ebdd42c54f934fa5abe8dd4ceb64fbd6b1de98ca9205e14e6df0aa53320",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-07T00:21:44.37Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -69087,7 +69087,7 @@
           "Description": "FFmpeg versions 2.1 through 8.1.2 contains a heap buffer overflow vulnerability in the VobSub subtitle demuxer that allows attackers to corrupt adjacent heap memory by supplying a malicious .sub/.idx subtitle file declaring more distinct stream IDs than the fixed-size array bounds in libavformat/mpeg.c. Attackers can craft a subtitle file with excessive distinct stream IDs to trigger unbounded writes beyond the vobsub-\u003eq[] array boundary via ff_subtitles_queue_insert(), potentially achieving arbitrary code execution in any application using FFmpeg's VobSub demuxer.",
           "Fingerprint": "sha256:f8eda809ffbf073bbc9262ff0b9339c58e9b4b9205222f252f391f7f004c2dfb",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-07-28T17:00:32.043Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -69146,7 +69146,7 @@
           "Description": "FFmpeg versions 4.4 through 8.1.2 contain a double-free vulnerability in the NVIDIA NVDEC hardware decoder within libavcodec/nvdec.c that allows attackers to trigger memory corruption by supplying a crafted video file. When no decoder surfaces remain, the ff_nvdec_start_frame_sep_ref error path frees memory via nvdec_fdd_priv_free while the calling layer subsequently frees the same frame description data, resulting in a double-free of the underlying decoder context in any FFmpeg-based application using NVDEC hardware-accelerated decoding.",
           "Fingerprint": "sha256:98ea4ae6ad9e4a0613fa0dee0245499c61dc0edf27a1a635047b5a099a9ba06e",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-07-28T17:01:21.17Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -69205,7 +69205,7 @@
           "Description": "FFmpeg versions 0.7.1 through 8.1.2 contain an out-of-bounds read vulnerability in the S/PDIF muxer that allows attackers to access memory beyond buffer boundaries by supplying a crafted DTS stream with a core_size value larger than the actual packet length. Attackers can exploit the missing bounds check in the spdif_header_dts4 function by providing a malicious DTS-HD audio stream during S/PDIF re-muxing to trigger unauthorized memory reads beyond the packet buffer.",
           "Fingerprint": "sha256:6be6ae55e3e6511e19bf63abd0e1850d2771bfddf19bf2a9a1fb01384771fa38",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-12T20:17:48.187Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -69264,7 +69264,7 @@
           "Description": "FFmpeg versions 0.6.3 through 8.1.2 contain an infinite loop vulnerability in the RTP/ASF demuxer within libavformat/rtpdec_asf.c that allows remote attackers to cause denial of service by sending a crafted RTP/ASF stream. The rtp_asf_fix_header function fails to validate a minimum chunksize when iterating over ASF objects, causing the loop pointer to never advance when a chunksize is smaller than the 24-byte minimum ASF object header size, resulting in CPU exhaustion that denies service to legitimate users.",
           "Fingerprint": "sha256:2eedb8d69b263cf52268509bf93e67cae44233c78f231024fffa1ecddff7b197",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-07-28T17:01:56.72Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -69323,7 +69323,7 @@
           "Description": "FFmpeg versions 4.4 through 8.1.2 contain an out-of-bounds memory access vulnerability in the ADX audio decoder within libavcodec/adxdec.c that allows attackers to trigger both out-of-bounds reads and writes by supplying a crafted ADX or AAX audio file with a mid-stream channel layout change. When AV_PKT_DATA_NEW_EXTRADATA side data is received mid-stream, the adx_decode_frame function re-parses the stream header but fails to update the internal channel state, causing subsequent decoding operations to access the prev[] state array using a stale channel count.",
           "Fingerprint": "sha256:acd05d18ab87bba96d889801de0ff43d62a35ee9915c5a2c9ab99ead972b8e83",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-07-28T17:02:06.783Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -69382,7 +69382,7 @@
           "Description": "FFmpeg versions 2.7 through 8.1.2 contain an out-of-bounds write vulnerability in the TDSC video decoder that allows remote attackers to cause heap corruption by supplying a crafted AVI file that changes frame dimensions across TDSF frames. The tdsc_parse_tdsf() function fails to unreference the existing reference frame before calling av_frame_get_buffer(), causing tdsc_blit() and tdsc_yuv2rgb() to write attacker-controlled pixel data beyond the end of the undersized reference frame buffer, resulting in a process crash and potential code execution.",
           "Fingerprint": "sha256:be8cf0cb773d41eafd4b395138d5990d82354d665a774c014b2e1b1db57578de",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-07T00:19:03.283Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -69502,7 +69502,7 @@
           "Description": "FFmpeg versions 3.4 through 8.1.2 contain an out-of-bounds write vulnerability in the vf_floodfill video filter that allows attackers to corrupt heap memory by supplying a dynamically sized video stream with filtergraph reinitialization disabled via -reinit_filter 0. When config_input() allocates the points traversal stack based on initial frame dimensions and a subsequent larger frame is processed, filter_frame() performs flood-fill neighbor pushes beyond the original allocation boundary, resulting in heap corruption and process crash with potential for code execution depending on heap layout and process hardening.",
           "Fingerprint": "sha256:f41220c5f76d4405a76d18453e3f667cec1ecf62c5e990a902d2cb2e4d35f123",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-07T00:20:32.65Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -69562,7 +69562,7 @@
           "Description": "FFmpeg versions 3.0 through 8.1.2 contain an out-of-bounds write vulnerability in the vf_swaprect video filter that allows attackers to corrupt heap memory by supplying a crafted NV12 video frame with odd width dimensions. The filter_frame() function reuses a temporary row buffer sized for plane 0's single-byte pixel step across all planes, causing an 18-byte memcpy into a 17-byte heap allocation when processing the two-byte-per-sample interleaved chroma plane of a 17x16 NV12 frame, resulting in heap corruption and process crash with potential for code execution.",
           "Fingerprint": "sha256:d42ac94cce3e872dcf839d68e020075a506fb0a5b80f49feb2e9143863e93f27",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-07T00:21:44.37Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -72877,7 +72877,7 @@
           "Description": "FFmpeg versions 2.1 through 8.1.2 contains a heap buffer overflow vulnerability in the VobSub subtitle demuxer that allows attackers to corrupt adjacent heap memory by supplying a malicious .sub/.idx subtitle file declaring more distinct stream IDs than the fixed-size array bounds in libavformat/mpeg.c. Attackers can craft a subtitle file with excessive distinct stream IDs to trigger unbounded writes beyond the vobsub-\u003eq[] array boundary via ff_subtitles_queue_insert(), potentially achieving arbitrary code execution in any application using FFmpeg's VobSub demuxer.",
           "Fingerprint": "sha256:06664eeec7fd208b7322c6e397acf463fa3766e283f9f95b185c86bf62671df1",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-07-28T17:00:32.043Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -72936,7 +72936,7 @@
           "Description": "FFmpeg versions 4.4 through 8.1.2 contain a double-free vulnerability in the NVIDIA NVDEC hardware decoder within libavcodec/nvdec.c that allows attackers to trigger memory corruption by supplying a crafted video file. When no decoder surfaces remain, the ff_nvdec_start_frame_sep_ref error path frees memory via nvdec_fdd_priv_free while the calling layer subsequently frees the same frame description data, resulting in a double-free of the underlying decoder context in any FFmpeg-based application using NVDEC hardware-accelerated decoding.",
           "Fingerprint": "sha256:009b63b1c1e08fa2e0ec64894ba4a8b2dfb46291872febd301748b47549a4fd6",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-07-28T17:01:21.17Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -72995,7 +72995,7 @@
           "Description": "FFmpeg versions 0.7.1 through 8.1.2 contain an out-of-bounds read vulnerability in the S/PDIF muxer that allows attackers to access memory beyond buffer boundaries by supplying a crafted DTS stream with a core_size value larger than the actual packet length. Attackers can exploit the missing bounds check in the spdif_header_dts4 function by providing a malicious DTS-HD audio stream during S/PDIF re-muxing to trigger unauthorized memory reads beyond the packet buffer.",
           "Fingerprint": "sha256:3fa7ef2b1670dc64d5c03881bc313e9fbda3837a0e7965bd843cc69d28973a80",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-12T20:17:48.187Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -73054,7 +73054,7 @@
           "Description": "FFmpeg versions 0.6.3 through 8.1.2 contain an infinite loop vulnerability in the RTP/ASF demuxer within libavformat/rtpdec_asf.c that allows remote attackers to cause denial of service by sending a crafted RTP/ASF stream. The rtp_asf_fix_header function fails to validate a minimum chunksize when iterating over ASF objects, causing the loop pointer to never advance when a chunksize is smaller than the 24-byte minimum ASF object header size, resulting in CPU exhaustion that denies service to legitimate users.",
           "Fingerprint": "sha256:512788c7fa1985acd9a99a874ba5097063a568b8ef76828bf553d6cfd549f92e",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-07-28T17:01:56.72Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -73113,7 +73113,7 @@
           "Description": "FFmpeg versions 4.4 through 8.1.2 contain an out-of-bounds memory access vulnerability in the ADX audio decoder within libavcodec/adxdec.c that allows attackers to trigger both out-of-bounds reads and writes by supplying a crafted ADX or AAX audio file with a mid-stream channel layout change. When AV_PKT_DATA_NEW_EXTRADATA side data is received mid-stream, the adx_decode_frame function re-parses the stream header but fails to update the internal channel state, causing subsequent decoding operations to access the prev[] state array using a stale channel count.",
           "Fingerprint": "sha256:1d61ceb86b3c9b904a1451ff38e67707e0b87a3955d22a7369c9c872fe3b5866",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-07-28T17:02:06.783Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -73172,7 +73172,7 @@
           "Description": "FFmpeg versions 2.7 through 8.1.2 contain an out-of-bounds write vulnerability in the TDSC video decoder that allows remote attackers to cause heap corruption by supplying a crafted AVI file that changes frame dimensions across TDSF frames. The tdsc_parse_tdsf() function fails to unreference the existing reference frame before calling av_frame_get_buffer(), causing tdsc_blit() and tdsc_yuv2rgb() to write attacker-controlled pixel data beyond the end of the undersized reference frame buffer, resulting in a process crash and potential code execution.",
           "Fingerprint": "sha256:598a2049997016e282a3728ea10427b612ebdc7ff8553ec46bcaa92f34eb0e3b",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-07T00:19:03.283Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -73292,7 +73292,7 @@
           "Description": "FFmpeg versions 3.4 through 8.1.2 contain an out-of-bounds write vulnerability in the vf_floodfill video filter that allows attackers to corrupt heap memory by supplying a dynamically sized video stream with filtergraph reinitialization disabled via -reinit_filter 0. When config_input() allocates the points traversal stack based on initial frame dimensions and a subsequent larger frame is processed, filter_frame() performs flood-fill neighbor pushes beyond the original allocation boundary, resulting in heap corruption and process crash with potential for code execution depending on heap layout and process hardening.",
           "Fingerprint": "sha256:b36d942949134aa50d20cbd12f113fd253b2bdb220148ba47e8acbe7c76e2575",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-07T00:20:32.65Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -73352,7 +73352,7 @@
           "Description": "FFmpeg versions 3.0 through 8.1.2 contain an out-of-bounds write vulnerability in the vf_swaprect video filter that allows attackers to corrupt heap memory by supplying a crafted NV12 video frame with odd width dimensions. The filter_frame() function reuses a temporary row buffer sized for plane 0's single-byte pixel step across all planes, causing an 18-byte memcpy into a 17-byte heap allocation when processing the two-byte-per-sample interleaved chroma plane of a 17x16 NV12 frame, resulting in heap corruption and process crash with potential for code execution.",
           "Fingerprint": "sha256:1fca4ab6e489c959c0f77865c41ba07f00ab45921f63f8c474a25c0fec080189",
           "InstalledVersion": "7:4.4.2-0ubuntu0.22.04.1",
-          "LastModifiedDate": "2026-08-07T00:21:44.37Z",
+          "LastModifiedDate": "2026-10-24T15:10:00.19Z",
           "Layer": {
             "DiffID": "sha256:a31978ebf91850ea7659faa5b02bd7526d473736722f3fafe024d257ffc7e4f4",
             "Digest": "sha256:ceedb7a7dadffb9b9dd83262af9237ed76d327aa8c2affd4a30bcc131ed46570"
@@ -82361,7 +82361,7 @@
           "Fingerprint": "sha256:08b6b0952ed497f33ddf36a85077ff8c47456deaddb2d9c862a4d159fc772f1e",
           "FixedVersion": "5.34.0-3ubuntu1.8",
           "InstalledVersion": "5.34.0-3ubuntu1.3",
-          "LastModifiedDate": "2026-09-08T22:17:37.217Z",
+          "LastModifiedDate": "2026-10-24T22:10:00.21Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -82623,7 +82623,7 @@
           "Fingerprint": "sha256:b0ea00079aaa8ec24afa0fb0a19e7ac752f8c791065b03e3690eb32d9f3b3046",
           "FixedVersion": "5.34.0-3ubuntu1.8",
           "InstalledVersion": "5.34.0-3ubuntu1.3",
-          "LastModifiedDate": "2026-09-08T22:18:30.64Z",
+          "LastModifiedDate": "2026-10-24T22:10:00.21Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -82681,7 +82681,7 @@
           "Fingerprint": "sha256:c00df5082fa0a4094381a61b11bc72abb583fe6ccbc1549d92c49d282a531352",
           "FixedVersion": "5.34.0-3ubuntu1.8",
           "InstalledVersion": "5.34.0-3ubuntu1.3",
-          "LastModifiedDate": "2026-07-14T17:47:20.473Z",
+          "LastModifiedDate": "2026-10-24T22:10:00.21Z",
           "Layer": {
             "DiffID": "sha256:e0a9f5911802534ba097660206feabeb0247a81e409029167b30e2e1f2803b57",
             "Digest": "sha256:7021d1b70935851c95c45ed18156980b5024eda29b99564429025ea04f5ec109"
@@ -86386,7 +86386,7 @@
           "Fingerprint": "sha256:10a72f74308653e5aea3bf7dee9403ab709f298502cde9b4c393ddd748e6827e",
           "FixedVersion": "0.56.0",
           "InstalledVersion": "v0.54.0",
-          "LastModifiedDate": "2026-08-14T16:16:55.673Z",
+          "LastModifiedDate": "2026-10-24T19:10:00.127Z",
           "Layer": {
             "DiffID": "sha256:a683247fc5cc6babb6472383964200d9ddd0d91200d68e3f61c7dffbdf6c2609",
             "Digest": "sha256:e799d6481a5fc7e3dbf70f1fb7411b9a124eedb9cd1cdf28aa9803f8c9722edd"
@@ -87178,7 +87178,7 @@
           "Fingerprint": "sha256:db47faad3f5fc8e51742701de9931ce14828e0e94d1d56f8a3741267307c171b",
           "FixedVersion": "0.39.0",
           "InstalledVersion": "v0.38.0",
-          "LastModifiedDate": "2026-07-23T18:27:48.877Z",
+          "LastModifiedDate": "2026-10-24T19:10:00.127Z",
           "Layer": {
             "DiffID": "sha256:a683247fc5cc6babb6472383964200d9ddd0d91200d68e3f61c7dffbdf6c2609",
             "Digest": "sha256:e799d6481a5fc7e3dbf70f1fb7411b9a124eedb9cd1cdf28aa9803f8c9722edd"
@@ -90138,7 +90138,7 @@
           "Fingerprint": "sha256:4d458d65f42d6fb7b4805cd427efed16aee00549e0747d0dcfc2384263a9f9eb",
           "FixedVersion": "1.25.13, 1.26.6, 1.27.0-rc.3",
           "InstalledVersion": "v1.25.8",
-          "LastModifiedDate": "2026-09-03T16:37:52.17Z",
+          "LastModifiedDate": "2026-10-24T16:10:00.153Z",
           "Layer": {
             "DiffID": "sha256:a683247fc5cc6babb6472383964200d9ddd0d91200d68e3f61c7dffbdf6c2609",
             "Digest": "sha256:e799d6481a5fc7e3dbf70f1fb7411b9a124eedb9cd1cdf28aa9803f8c9722edd"
@@ -91648,45 +91648,23 @@
           "PublishedDate": "2026-10-08T23:17:04.917Z",
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:86196",
-            "https://access.redhat.com/errata/RHSA-2026:86203",
+            "https://access.redhat.com/errata/RHSA-2026:88189",
             "https://access.redhat.com/security/cve/CVE-2026-94440",
             "https://bugzilla.redhat.com/2548334",
             "https://bugzilla.redhat.com/2548336",
             "https://bugzilla.redhat.com/2548344",
             "https://bugzilla.redhat.com/2556068",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2548334",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2548335",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2548336",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2548337",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2548338",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2548339",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2548340",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2548341",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2548342",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2548343",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2548344",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2548345",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2548346",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2548347",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2556068",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-111943",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56866",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78659",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78660",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78663",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78667",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78669",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-94439",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-94440",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-94444",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-94447",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-94448",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-97030",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-97031",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-97032",
             "https://errata.almalinux.org/9/ALSA-2026-86196.html",
-            "https://errata.rockylinux.org/RLSA-2026:86203",
+            "https://errata.rockylinux.org/RLSA-2026:88189",
             "https://github.com/golang/go/issues/81741",
             "https://go.dev/cl/847307",
             "https://go.dev/issue/81741",
