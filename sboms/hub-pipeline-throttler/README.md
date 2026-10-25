@@ -1,8 +1,8 @@
 # hub-pipeline-throttler SBOM quality
 
-Collection status: `collected`; collected at `2026-10-24T02:35:51Z`.
+Collection status: `collected`; collected at `2026-10-25T02:37:47Z`.
 
-Overall quality: **Needs work**, **68/100** across **59 packages**.
+Overall quality: **Needs work**, **67/100** across **64 packages**.
 
 | Category | Field | Coverage | Points | Gap |
 | --- | --- | ---: | ---: | ---: |
@@ -12,7 +12,7 @@ Overall quality: **Needs work**, **68/100** across **59 packages**.
 | Identity | Versions | 100% | 10/10 | +0 |
 | Identity | PURLs | 100% | 10/10 | +0 |
 | Licensing | Declared licenses | 0% | 0/10 | +10 |
-| Licensing | Concluded licenses | 83% | 8/10 | +2 |
+| Licensing | Concluded licenses | 78% | 7/10 | +3 |
 | Provenance | Suppliers | 0% | 0/7 | +7 |
 | Provenance | Download locations | 2% | 0/8 | +8 |
 | Relationships | Document describes | 0% | 0/5 | +5 |
