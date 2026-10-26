@@ -1,8 +1,8 @@
 # hub-pipeline-redaction SBOM quality
 
-Collection status: `collected`; collected at `2026-10-25T02:37:47Z`.
+Collection status: `collected`; collected at `2026-10-26T02:43:31Z`.
 
-Overall quality: **Needs work**, **68/100** across **65 packages**.
+Overall quality: **Needs work**, **68/100** across **72 packages**.
 
 | Category | Field | Coverage | Points | Gap |
 | --- | --- | ---: | ---: | ---: |
@@ -11,10 +11,10 @@ Overall quality: **Needs work**, **68/100** across **65 packages**.
 | Identity | Package SPDX IDs | 100% | 5/5 | +0 |
 | Identity | Versions | 100% | 10/10 | +0 |
 | Identity | PURLs | 100% | 10/10 | +0 |
-| Licensing | Declared licenses | 2% | 0/10 | +10 |
-| Licensing | Concluded licenses | 88% | 8/10 | +2 |
+| Licensing | Declared licenses | 1% | 0/10 | +10 |
+| Licensing | Concluded licenses | 81% | 8/10 | +2 |
 | Provenance | Suppliers | 0% | 0/7 | +7 |
-| Provenance | Download locations | 2% | 0/8 | +8 |
+| Provenance | Download locations | 1% | 0/8 | +8 |
 | Relationships | Document describes | 0% | 0/5 | +5 |
 | Relationships | SPDX relationships | 100% | 10/10 | +0 |
 

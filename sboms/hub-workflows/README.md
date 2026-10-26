@@ -1,8 +1,8 @@
 # hub-workflows SBOM quality
 
-Collection status: `collected`; collected at `2026-10-25T02:37:47Z`.
+Collection status: `collected`; collected at `2026-10-26T02:43:31Z`.
 
-Overall quality: **Needs work**, **69/100** across **135 packages**.
+Overall quality: **Needs work**, **69/100** across **140 packages**.
 
 | Category | Field | Coverage | Points | Gap |
 | --- | --- | ---: | ---: | ---: |
