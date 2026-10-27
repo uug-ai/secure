@@ -1,16 +1,16 @@
 {
-  "ArtifactID": "sha256:29593ff7101594c3cb6e8aed50bb5acf060675da667f918f58bc21c74e4d535b",
-  "ArtifactName": "ghcr.io/uug-ai/hub-pipeline-throttler@sha256:401f5d57831691f416a4ad0d7c80c294e6de1d2bedf3a23dda7d1dc944e87db2",
+  "ArtifactID": "sha256:5b3a437fb3626a6913c34e6274acd20a1f2df3fc7e82bf9be60a81b5a8006361",
+  "ArtifactName": "ghcr.io/uug-ai/hub-pipeline-throttler@sha256:1687c0c2cb5644d87b8f9714af50536ca872d9330889d8656ccd19295595b161",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-10-26T04:01:08.745340506Z",
+  "CreatedAt": "2026-10-27T03:58:04.380056507Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:bc5a3fe779ad9e705b6c5d7fb7a482d1bf8b633e4e3e72152ea3f8953460cda9",
-      "sha256:d6de5ea1ed7db304fc0dae034a78bf975241488cb7dc5179286a1a3be62d363e",
-      "sha256:6c6ac862288dedfe1f4c53cb0650bbbb74df4fcf4df1b2c1c428a4521c0e5091",
-      "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-      "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-      "sha256:645e71ecb9c592bcd862a32227778ca4bafcb16036fe8a8e18f329ef4905335c",
+      "sha256:cca9e4aed4f083edc533364234bc011230be2f9cff828e51542eda3d17a1beea",
+      "sha256:dcd63562d541ebbc8bbb36951c40e7b6355dc48a34ee7cc76cfdc2b024f752d2",
+      "sha256:d915acef7482688b27ae668e425bcdb5f33d2a6f108a937ffaf2adedb678a3be",
+      "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+      "sha256:8f2fe194db0b5cd9167d1ad807a3f9fd3a9ac1bd709fe66b639387d9b9008745",
       "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
     ],
     "ImageConfig": {
@@ -32,7 +32,7 @@
         "User": "hub-pipeline-throttler",
         "WorkingDir": "/home/hub-pipeline-throttler"
       },
-      "created": "2026-10-24T21:52:14.37360535Z",
+      "created": "2026-10-26T09:20:20.806581975Z",
       "history": [
         {
           "comment": "buildkit.dockerfile.v0",
@@ -47,55 +47,55 @@
         },
         {
           "comment": "buildkit.dockerfile.v0",
-          "created": "2026-10-24T21:50:34.800313461Z",
+          "created": "2026-10-26T09:19:05.226072942Z",
           "created_by": "LABEL org.opencontainers.image.source=https://github.com/uug-ai/hub-pipeline-throttler org.opencontainers.image.title=Hub Pipeline Throttler org.opencontainers.image.description=Suppresses stale media events before notification processing org.opencontainers.image.authors=UUG.AI",
           "empty_layer": true
         },
         {
           "comment": "buildkit.dockerfile.v0",
-          "created": "2026-10-24T21:50:34.800313461Z",
+          "created": "2026-10-26T09:19:05.226072942Z",
           "created_by": "ARG project=hub-pipeline-throttler",
           "empty_layer": true
         },
         {
           "comment": "buildkit.dockerfile.v0",
-          "created": "2026-10-24T21:50:34.800313461Z",
+          "created": "2026-10-26T09:19:05.226072942Z",
           "created_by": "RUN |1 project=hub-pipeline-throttler /bin/sh -c addgroup -S ${project} \u0026\u0026 adduser -S ${project} -G ${project} # buildkit"
         },
         {
           "comment": "buildkit.dockerfile.v0",
-          "created": "2026-10-24T21:52:11.153571679Z",
+          "created": "2026-10-26T09:20:17.244024988Z",
           "created_by": "COPY --chown=0:0 /dist / # buildkit"
         },
         {
           "comment": "buildkit.dockerfile.v0",
-          "created": "2026-10-24T21:52:13.434649013Z",
-          "created_by": "RUN |1 project=hub-pipeline-throttler /bin/sh -c apk upgrade --no-cache \u0026\u0026 apk add ca-certificates curl libstdc++ libc6-compat --no-cache \u0026\u0026 rm -rf /var/cache/apk/* # buildkit"
+          "created": "2026-10-26T09:20:19.049201229Z",
+          "created_by": "RUN |1 project=hub-pipeline-throttler /bin/sh -c apk upgrade --no-cache \u0026\u0026 apk add ca-certificates 'curl\u003e=8.23.0-r0' 'libcurl\u003e=8.23.0-r0' libstdc++ libc6-compat --no-cache \u0026\u0026 rm -rf /var/cache/apk/* # buildkit"
         },
         {
           "comment": "buildkit.dockerfile.v0",
-          "created": "2026-10-24T21:52:13.629287129Z",
+          "created": "2026-10-26T09:20:19.669080949Z",
           "created_by": "RUN |1 project=hub-pipeline-throttler /bin/sh -c mv /${project}/* /home/${project}/ # buildkit"
         },
         {
           "comment": "buildkit.dockerfile.v0",
-          "created": "2026-10-24T21:52:14.356406127Z",
+          "created": "2026-10-26T09:20:20.764987674Z",
           "created_by": "RUN |1 project=hub-pipeline-throttler /bin/sh -c apk add libcap \u0026\u0026 setcap 'cap_net_bind_service=+ep' /home/${project}/main # buildkit"
         },
         {
           "comment": "buildkit.dockerfile.v0",
-          "created": "2026-10-24T21:52:14.356406127Z",
+          "created": "2026-10-26T09:20:20.764987674Z",
           "created_by": "USER hub-pipeline-throttler",
           "empty_layer": true
         },
         {
           "comment": "buildkit.dockerfile.v0",
-          "created": "2026-10-24T21:52:14.37360535Z",
+          "created": "2026-10-26T09:20:20.806581975Z",
           "created_by": "WORKDIR /home/hub-pipeline-throttler"
         },
         {
           "comment": "buildkit.dockerfile.v0",
-          "created": "2026-10-24T21:52:14.37360535Z",
+          "created": "2026-10-26T09:20:20.806581975Z",
           "created_by": "CMD [\"./main\"]",
           "empty_layer": true
         }
@@ -104,17 +104,17 @@
       "rootfs": {
         "diff_ids": [
           "sha256:bc5a3fe779ad9e705b6c5d7fb7a482d1bf8b633e4e3e72152ea3f8953460cda9",
-          "sha256:d6de5ea1ed7db304fc0dae034a78bf975241488cb7dc5179286a1a3be62d363e",
-          "sha256:6c6ac862288dedfe1f4c53cb0650bbbb74df4fcf4df1b2c1c428a4521c0e5091",
-          "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-          "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-          "sha256:645e71ecb9c592bcd862a32227778ca4bafcb16036fe8a8e18f329ef4905335c",
+          "sha256:cca9e4aed4f083edc533364234bc011230be2f9cff828e51542eda3d17a1beea",
+          "sha256:dcd63562d541ebbc8bbb36951c40e7b6355dc48a34ee7cc76cfdc2b024f752d2",
+          "sha256:d915acef7482688b27ae668e425bcdb5f33d2a6f108a937ffaf2adedb678a3be",
+          "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+          "sha256:8f2fe194db0b5cd9167d1ad807a3f9fd3a9ac1bd709fe66b639387d9b9008745",
           "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
         ],
         "type": "layers"
       }
     },
-    "ImageID": "sha256:96ab121ac0c4dcdcedc94f78719df20aa95a1cee1b7c7440f25c06336228f2bb",
+    "ImageID": "sha256:c52923a07ae6ac6c67c288946340805591c96b320b6f4ea2c2b6d25b136dede2",
     "Layers": [
       {
         "DiffID": "sha256:bc5a3fe779ad9e705b6c5d7fb7a482d1bf8b633e4e3e72152ea3f8953460cda9",
@@ -122,29 +122,29 @@
         "Size": 8736256
       },
       {
-        "DiffID": "sha256:d6de5ea1ed7db304fc0dae034a78bf975241488cb7dc5179286a1a3be62d363e",
-        "Digest": "sha256:06375d2087fd0019ce954de57cd37732a764bf49f5a3b45034e68b65fcf1e43d",
+        "DiffID": "sha256:cca9e4aed4f083edc533364234bc011230be2f9cff828e51542eda3d17a1beea",
+        "Digest": "sha256:1cc11374a5b5246480ad75bd0805b77a2cedb8b41d9c45cc1631887cd6caa31e",
         "Size": 10752
       },
       {
-        "DiffID": "sha256:6c6ac862288dedfe1f4c53cb0650bbbb74df4fcf4df1b2c1c428a4521c0e5091",
-        "Digest": "sha256:9dfad7475eca94b016519331f9d06ae078a517cc3bbee3a34c545c612386e394",
+        "DiffID": "sha256:dcd63562d541ebbc8bbb36951c40e7b6355dc48a34ee7cc76cfdc2b024f752d2",
+        "Digest": "sha256:e63e5e42c586123c538d324176da709bb37aaee13b0debff0bef4ea5e1dd1d86",
         "Size": 47487488
       },
       {
-        "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-        "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81",
-        "Size": 16409088
+        "DiffID": "sha256:d915acef7482688b27ae668e425bcdb5f33d2a6f108a937ffaf2adedb678a3be",
+        "Digest": "sha256:e2605927ede0eb3dd05d95452d73d53f38bb0294eb977c12227f4bec960e0d40",
+        "Size": 16417792
       },
       {
-        "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-        "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448",
+        "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+        "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8",
         "Size": 47489024
       },
       {
-        "DiffID": "sha256:645e71ecb9c592bcd862a32227778ca4bafcb16036fe8a8e18f329ef4905335c",
-        "Digest": "sha256:1c0c0adc7513b82e600cabf1527c0a117cd1c028d42b3f95b856d438afcffc49",
-        "Size": 50730496
+        "DiffID": "sha256:8f2fe194db0b5cd9167d1ad807a3f9fd3a9ac1bd709fe66b639387d9b9008745",
+        "Digest": "sha256:9b88abec30afe7b7c43dac96967c3f0c7ef788c739c95fdc51021e3f9fdcc32f",
+        "Size": 50731008
       },
       {
         "DiffID": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
@@ -156,13 +156,13 @@
       "Family": "alpine",
       "Name": "3.24.0"
     },
-    "Reference": "ghcr.io/uug-ai/hub-pipeline-throttler@sha256:401f5d57831691f416a4ad0d7c80c294e6de1d2bedf3a23dda7d1dc944e87db2",
+    "Reference": "ghcr.io/uug-ai/hub-pipeline-throttler@sha256:1687c0c2cb5644d87b8f9714af50536ca872d9330889d8656ccd19295595b161",
     "RepoDigests": [
-      "ghcr.io/uug-ai/hub-pipeline-throttler@sha256:401f5d57831691f416a4ad0d7c80c294e6de1d2bedf3a23dda7d1dc944e87db2"
+      "ghcr.io/uug-ai/hub-pipeline-throttler@sha256:1687c0c2cb5644d87b8f9714af50536ca872d9330889d8656ccd19295595b161"
     ],
-    "Size": 170864128
+    "Size": 170873344
   },
-  "ReportID": "01a1765e-8689-752d-9d7b-30c9d4aa0b7c",
+  "ReportID": "01a17b82-125c-70d9-aaf4-5ab9bf84551f",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -332,8 +332,8 @@
             "usr/lib/os-release"
           ],
           "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
+            "DiffID": "sha256:d915acef7482688b27ae668e425bcdb5f33d2a6f108a937ffaf2adedb678a3be",
+            "Digest": "sha256:e2605927ede0eb3dd05d95452d73d53f38bb0294eb977c12227f4bec960e0d40"
           },
           "Licenses": [
             "MIT"
@@ -364,8 +364,8 @@
             "sbin/apk"
           ],
           "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
+            "DiffID": "sha256:d915acef7482688b27ae668e425bcdb5f33d2a6f108a937ffaf2adedb678a3be",
+            "Digest": "sha256:e2605927ede0eb3dd05d95452d73d53f38bb0294eb977c12227f4bec960e0d40"
           },
           "Licenses": [
             "GPL-2.0-only"
@@ -397,8 +397,8 @@
             "usr/lib/libbrotlienc.so.1.2.1"
           ],
           "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
+            "DiffID": "sha256:d915acef7482688b27ae668e425bcdb5f33d2a6f108a937ffaf2adedb678a3be",
+            "Digest": "sha256:e2605927ede0eb3dd05d95452d73d53f38bb0294eb977c12227f4bec960e0d40"
           },
           "Licenses": [
             "MIT"
@@ -488,8 +488,8 @@
             "usr/lib/libcares.so.2.19.8"
           ],
           "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
+            "DiffID": "sha256:d915acef7482688b27ae668e425bcdb5f33d2a6f108a937ffaf2adedb678a3be",
+            "Digest": "sha256:e2605927ede0eb3dd05d95452d73d53f38bb0294eb977c12227f4bec960e0d40"
           },
           "Licenses": [
             "MIT"
@@ -640,8 +640,8 @@
             "usr/share/ca-certificates/mozilla/vTrus_Root_CA.crt"
           ],
           "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
+            "DiffID": "sha256:d915acef7482688b27ae668e425bcdb5f33d2a6f108a937ffaf2adedb678a3be",
+            "Digest": "sha256:e2605927ede0eb3dd05d95452d73d53f38bb0294eb977c12227f4bec960e0d40"
           },
           "Licenses": [
             "MPL-2.0",
@@ -669,8 +669,8 @@
             "etc/ssl1.1/certs"
           ],
           "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
+            "DiffID": "sha256:d915acef7482688b27ae668e425bcdb5f33d2a6f108a937ffaf2adedb678a3be",
+            "Digest": "sha256:e2605927ede0eb3dd05d95452d73d53f38bb0294eb977c12227f4bec960e0d40"
           },
           "Licenses": [
             "MPL-2.0",
@@ -686,23 +686,23 @@
           "AnalyzedBy": "apk",
           "Arch": "x86_64",
           "DependsOn": [
-            "libcurl@8.22.0-r0",
+            "libcurl@8.23.0-r0",
             "musl@1.2.6-r3",
             "zlib@1.3.2-r1"
           ],
-          "Digest": "sha1:cfbb78b38d8f69e33129b7e98863f1759878010d",
-          "ID": "curl@8.22.0-r0",
+          "Digest": "sha1:9379b89d9475ec26adbf463deff410d01a5a7d80",
+          "ID": "curl@8.23.0-r0",
           "Identifier": {
-            "PURL": "pkg:apk/alpine/curl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "2e5ee87a6ee5b0d7"
+            "PURL": "pkg:apk/alpine/curl@8.23.0-r0?arch=x86_64\u0026distro=3.24.0",
+            "UID": "d7992d26398ad8b4"
           },
           "InstalledFiles": [
             "usr/bin/curl",
             "usr/bin/wcurl"
           ],
           "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
+            "DiffID": "sha256:d915acef7482688b27ae668e425bcdb5f33d2a6f108a937ffaf2adedb678a3be",
+            "Digest": "sha256:e2605927ede0eb3dd05d95452d73d53f38bb0294eb977c12227f4bec960e0d40"
           },
           "Licenses": [
             "curl"
@@ -710,8 +710,8 @@
           "Maintainer": "Achill Gilgenast \u003cachill@achill.org\u003e",
           "Name": "curl",
           "SrcName": "curl",
-          "SrcVersion": "8.22.0-r0",
-          "Version": "8.22.0-r0"
+          "SrcVersion": "8.23.0-r0",
+          "Version": "8.23.0-r0"
         },
         {
           "AnalyzedBy": "apk",
@@ -740,8 +740,8 @@
             "lib64/ld-linux-x86-64.so.2"
           ],
           "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
+            "DiffID": "sha256:d915acef7482688b27ae668e425bcdb5f33d2a6f108a937ffaf2adedb678a3be",
+            "Digest": "sha256:e2605927ede0eb3dd05d95452d73d53f38bb0294eb977c12227f4bec960e0d40"
           },
           "Licenses": [
             "NCSA"
@@ -771,8 +771,8 @@
             "usr/lib/libapk.so.3.0.0"
           ],
           "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
+            "DiffID": "sha256:d915acef7482688b27ae668e425bcdb5f33d2a6f108a937ffaf2adedb678a3be",
+            "Digest": "sha256:e2605927ede0eb3dd05d95452d73d53f38bb0294eb977c12227f4bec960e0d40"
           },
           "Licenses": [
             "GPL-2.0-only"
@@ -797,8 +797,8 @@
             "UID": "6edc9f5878d2e7c"
           },
           "Layer": {
-            "DiffID": "sha256:645e71ecb9c592bcd862a32227778ca4bafcb16036fe8a8e18f329ef4905335c",
-            "Digest": "sha256:1c0c0adc7513b82e600cabf1527c0a117cd1c028d42b3f95b856d438afcffc49"
+            "DiffID": "sha256:8f2fe194db0b5cd9167d1ad807a3f9fd3a9ac1bd709fe66b639387d9b9008745",
+            "Digest": "sha256:9b88abec30afe7b7c43dac96967c3f0c7ef788c739c95fdc51021e3f9fdcc32f"
           },
           "Licenses": [
             "BSD-3-Clause",
@@ -827,8 +827,8 @@
             "usr/sbin/getcap"
           ],
           "Layer": {
-            "DiffID": "sha256:645e71ecb9c592bcd862a32227778ca4bafcb16036fe8a8e18f329ef4905335c",
-            "Digest": "sha256:1c0c0adc7513b82e600cabf1527c0a117cd1c028d42b3f95b856d438afcffc49"
+            "DiffID": "sha256:8f2fe194db0b5cd9167d1ad807a3f9fd3a9ac1bd709fe66b639387d9b9008745",
+            "Digest": "sha256:9b88abec30afe7b7c43dac96967c3f0c7ef788c739c95fdc51021e3f9fdcc32f"
           },
           "Licenses": [
             "BSD-3-Clause",
@@ -857,8 +857,8 @@
             "usr/sbin/setcap"
           ],
           "Layer": {
-            "DiffID": "sha256:645e71ecb9c592bcd862a32227778ca4bafcb16036fe8a8e18f329ef4905335c",
-            "Digest": "sha256:1c0c0adc7513b82e600cabf1527c0a117cd1c028d42b3f95b856d438afcffc49"
+            "DiffID": "sha256:8f2fe194db0b5cd9167d1ad807a3f9fd3a9ac1bd709fe66b639387d9b9008745",
+            "Digest": "sha256:9b88abec30afe7b7c43dac96967c3f0c7ef788c739c95fdc51021e3f9fdcc32f"
           },
           "Licenses": [
             "BSD-3-Clause",
@@ -890,8 +890,8 @@
             "usr/sbin/getpcaps"
           ],
           "Layer": {
-            "DiffID": "sha256:645e71ecb9c592bcd862a32227778ca4bafcb16036fe8a8e18f329ef4905335c",
-            "Digest": "sha256:1c0c0adc7513b82e600cabf1527c0a117cd1c028d42b3f95b856d438afcffc49"
+            "DiffID": "sha256:8f2fe194db0b5cd9167d1ad807a3f9fd3a9ac1bd709fe66b639387d9b9008745",
+            "Digest": "sha256:9b88abec30afe7b7c43dac96967c3f0c7ef788c739c95fdc51021e3f9fdcc32f"
           },
           "Licenses": [
             "BSD-3-Clause",
@@ -922,8 +922,8 @@
             "usr/lib/libpsx.so.2.78"
           ],
           "Layer": {
-            "DiffID": "sha256:645e71ecb9c592bcd862a32227778ca4bafcb16036fe8a8e18f329ef4905335c",
-            "Digest": "sha256:1c0c0adc7513b82e600cabf1527c0a117cd1c028d42b3f95b856d438afcffc49"
+            "DiffID": "sha256:8f2fe194db0b5cd9167d1ad807a3f9fd3a9ac1bd709fe66b639387d9b9008745",
+            "Digest": "sha256:9b88abec30afe7b7c43dac96967c3f0c7ef788c739c95fdc51021e3f9fdcc32f"
           },
           "Licenses": [
             "BSD-3-Clause",
@@ -960,8 +960,8 @@
             "usr/lib/ossl-modules/legacy.so"
           ],
           "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
+            "DiffID": "sha256:d915acef7482688b27ae668e425bcdb5f33d2a6f108a937ffaf2adedb678a3be",
+            "Digest": "sha256:e2605927ede0eb3dd05d95452d73d53f38bb0294eb977c12227f4bec960e0d40"
           },
           "Licenses": [
             "Apache-2.0"
@@ -988,19 +988,19 @@
             "zlib@1.3.2-r1",
             "zstd-libs@1.5.7-r2"
           ],
-          "Digest": "sha1:7816006b6af2270ab6e7e85f74adb94c16bdc48b",
-          "ID": "libcurl@8.22.0-r0",
+          "Digest": "sha1:7adaabffb7d1facb5cd3de9a522b43bc63373bd4",
+          "ID": "libcurl@8.23.0-r0",
           "Identifier": {
-            "PURL": "pkg:apk/alpine/libcurl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "5459458448472038"
+            "PURL": "pkg:apk/alpine/libcurl@8.23.0-r0?arch=x86_64\u0026distro=3.24.0",
+            "UID": "a59da8bbde6fe2d1"
           },
           "InstalledFiles": [
             "usr/lib/libcurl.so.4",
             "usr/lib/libcurl.so.4.8.0"
           ],
           "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
+            "DiffID": "sha256:d915acef7482688b27ae668e425bcdb5f33d2a6f108a937ffaf2adedb678a3be",
+            "Digest": "sha256:e2605927ede0eb3dd05d95452d73d53f38bb0294eb977c12227f4bec960e0d40"
           },
           "Licenses": [
             "curl"
@@ -1008,8 +1008,8 @@
           "Maintainer": "Achill Gilgenast \u003cachill@achill.org\u003e",
           "Name": "libcurl",
           "SrcName": "curl",
-          "SrcVersion": "8.22.0-r0",
-          "Version": "8.22.0-r0"
+          "SrcVersion": "8.23.0-r0",
+          "Version": "8.23.0-r0"
         },
         {
           "AnalyzedBy": "apk",
@@ -1027,8 +1027,8 @@
             "usr/lib/libgcc_s.so.1"
           ],
           "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
+            "DiffID": "sha256:d915acef7482688b27ae668e425bcdb5f33d2a6f108a937ffaf2adedb678a3be",
+            "Digest": "sha256:e2605927ede0eb3dd05d95452d73d53f38bb0294eb977c12227f4bec960e0d40"
           },
           "Licenses": [
             "GPL-2.0-or-later",
@@ -1058,8 +1058,8 @@
             "usr/lib/libidn2.so.0.4.0"
           ],
           "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
+            "DiffID": "sha256:d915acef7482688b27ae668e425bcdb5f33d2a6f108a937ffaf2adedb678a3be",
+            "Digest": "sha256:e2605927ede0eb3dd05d95452d73d53f38bb0294eb977c12227f4bec960e0d40"
           },
           "Licenses": [
             "GPL-2.0-or-later",
@@ -1090,8 +1090,8 @@
             "usr/lib/libpsl.so.5.3.5"
           ],
           "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
+            "DiffID": "sha256:d915acef7482688b27ae668e425bcdb5f33d2a6f108a937ffaf2adedb678a3be",
+            "Digest": "sha256:e2605927ede0eb3dd05d95452d73d53f38bb0294eb977c12227f4bec960e0d40"
           },
           "Licenses": [
             "MIT"
@@ -1119,8 +1119,8 @@
             "usr/lib/libssl.so.3"
           ],
           "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
+            "DiffID": "sha256:d915acef7482688b27ae668e425bcdb5f33d2a6f108a937ffaf2adedb678a3be",
+            "Digest": "sha256:e2605927ede0eb3dd05d95452d73d53f38bb0294eb977c12227f4bec960e0d40"
           },
           "Licenses": [
             "Apache-2.0"
@@ -1149,8 +1149,8 @@
             "usr/lib/libstdc++.so.6.0.34"
           ],
           "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
+            "DiffID": "sha256:d915acef7482688b27ae668e425bcdb5f33d2a6f108a937ffaf2adedb678a3be",
+            "Digest": "sha256:e2605927ede0eb3dd05d95452d73d53f38bb0294eb977c12227f4bec960e0d40"
           },
           "Licenses": [
             "GPL-2.0-or-later",
@@ -1179,8 +1179,8 @@
             "usr/lib/libucontext_posix.so.1"
           ],
           "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
+            "DiffID": "sha256:d915acef7482688b27ae668e425bcdb5f33d2a6f108a937ffaf2adedb678a3be",
+            "Digest": "sha256:e2605927ede0eb3dd05d95452d73d53f38bb0294eb977c12227f4bec960e0d40"
           },
           "Licenses": [
             "ISC"
@@ -1208,8 +1208,8 @@
             "usr/lib/libunistring.so.5.2.1"
           ],
           "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
+            "DiffID": "sha256:d915acef7482688b27ae668e425bcdb5f33d2a6f108a937ffaf2adedb678a3be",
+            "Digest": "sha256:e2605927ede0eb3dd05d95452d73d53f38bb0294eb977c12227f4bec960e0d40"
           },
           "Licenses": [
             "GPL-2.0-or-later",
@@ -1235,8 +1235,8 @@
             "lib/libc.musl-x86_64.so.1"
           ],
           "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
+            "DiffID": "sha256:d915acef7482688b27ae668e425bcdb5f33d2a6f108a937ffaf2adedb678a3be",
+            "Digest": "sha256:e2605927ede0eb3dd05d95452d73d53f38bb0294eb977c12227f4bec960e0d40"
           },
           "Licenses": [
             "MIT"
@@ -1264,8 +1264,8 @@
             "usr/lib/libobstack.so.1.0.0"
           ],
           "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
+            "DiffID": "sha256:d915acef7482688b27ae668e425bcdb5f33d2a6f108a937ffaf2adedb678a3be",
+            "Digest": "sha256:e2605927ede0eb3dd05d95452d73d53f38bb0294eb977c12227f4bec960e0d40"
           },
           "Licenses": [
             "GPL-2.0-or-later"
@@ -1297,8 +1297,8 @@
             "usr/bin/ldd"
           ],
           "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
+            "DiffID": "sha256:d915acef7482688b27ae668e425bcdb5f33d2a6f108a937ffaf2adedb678a3be",
+            "Digest": "sha256:e2605927ede0eb3dd05d95452d73d53f38bb0294eb977c12227f4bec960e0d40"
           },
           "Licenses": [
             "MIT",
@@ -1328,8 +1328,8 @@
             "usr/lib/libnghttp2.so.14.29.5"
           ],
           "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
+            "DiffID": "sha256:d915acef7482688b27ae668e425bcdb5f33d2a6f108a937ffaf2adedb678a3be",
+            "Digest": "sha256:e2605927ede0eb3dd05d95452d73d53f38bb0294eb977c12227f4bec960e0d40"
           },
           "Licenses": [
             "MIT"
@@ -1415,8 +1415,8 @@
             "usr/lib/libz.so.1.3.2"
           ],
           "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
+            "DiffID": "sha256:d915acef7482688b27ae668e425bcdb5f33d2a6f108a937ffaf2adedb678a3be",
+            "Digest": "sha256:e2605927ede0eb3dd05d95452d73d53f38bb0294eb977c12227f4bec960e0d40"
           },
           "Licenses": [
             "Zlib"
@@ -1444,8 +1444,8 @@
             "usr/lib/libzstd.so.1.5.7"
           ],
           "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
+            "DiffID": "sha256:d915acef7482688b27ae668e425bcdb5f33d2a6f108a937ffaf2adedb678a3be",
+            "Digest": "sha256:e2605927ede0eb3dd05d95452d73d53f38bb0294eb977c12227f4bec960e0d40"
           },
           "Licenses": [
             "BSD-3-Clause",
@@ -1458,2308 +1458,8 @@
           "Version": "1.5.7-r2"
         }
       ],
-      "Target": "ghcr.io/uug-ai/hub-pipeline-throttler@sha256:401f5d57831691f416a4ad0d7c80c294e6de1d2bedf3a23dda7d1dc944e87db2 (alpine 3.24.0)",
-      "Type": "alpine",
-      "Vulnerabilities": [
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 8.1,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
-            }
-          },
-          "CweIDs": [
-            "CWE-416"
-          ],
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "During an upload, curl mishandles HTTP/2 `RST_STREAM` received from the server\n(with reason `HTTP_1_1_REQUIRED` or `REFUSED_STREAM`) leading to a use after\nfree of a `struct Curl_easy` object.",
-          "Fingerprint": "sha256:97f8b0b1dd7f6c52095a91da5f5d339fd0474e6bf2a3bb514f5c828c7c09bded",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-18T23:16:57.163Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "curl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/curl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "2e5ee87a6ee5b0d7"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-92392",
-          "PublishedDate": "2026-10-14T08:17:05.997Z",
-          "References": [
-            "http://www.openwall.com/lists/oss-security/2026/10/18/5",
-            "http://www.openwall.com/lists/oss-security/2026/10/18/6",
-            "https://access.redhat.com/security/cve/CVE-2026-92392",
-            "https://curl.se/docs/CVE-2026-92392.html",
-            "https://curl.se/docs/CVE-2026-92392.json",
-            "https://hackerone.com/reports/4030333",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-92392",
-            "https://ubuntu.com/security/notices/USN-8927-1",
-            "https://ubuntu.com/security/notices/USN-8927-2",
-            "https://www.cve.org/CVERecord?id=CVE-2026-92392"
-          ],
-          "Severity": "HIGH",
-          "Status": "fixed",
-          "Title": "curl: curl: HTTP/2 upload Use-After-Free",
-          "VendorSeverity": {
-            "amazon": 3,
-            "redhat": 3,
-            "ubuntu": 3
-          },
-          "VulnerabilityID": "CVE-2026-92392"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 6.5,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:H"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "When an FTP wildcard `LIST` operation fails, libcurl omits the restoration\npath meant for successful listings, leaving the write callback set to the\ninternal listing parser and the write callback data pointing directly to the\neasy handle. Subsequent reuse of this handle triggers an immediate crash, and\ncloning it via `curl_easy_duphandle()` copies this corrupted state into the\nduplicate. If the original handle is subsequently freed, executing a transfer\non the cloned handle causes a heap use-after-free read against the dangling\nhandle reference; alternatively, reusing the original or cloned handle while\nchanging only  `CURLOPT_WRITEDATA` (and omitting `CURLOPT_WRITEFUNCTION`)\nresults in type confusion, forcing the internal parser to interpret incoming\nserver response bytes into memory at the application-supplied write data\npointer.",
-          "Fingerprint": "sha256:b680a14ce5e1e5e57527bfd61932398c3a8c8ff565f72686aabb1e909dfaf1f3",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T16:57:53.407Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "curl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/curl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "2e5ee87a6ee5b0d7"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-92388",
-          "PublishedDate": "2026-10-20T21:17:21.243Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-92388",
-            "https://curl.se/docs/CVE-2026-92388.html",
-            "https://curl.se/docs/CVE-2026-92388.json",
-            "https://hackerone.com/reports/4022070",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-92388",
-            "https://ubuntu.com/security/notices/USN-8927-1",
-            "https://ubuntu.com/security/notices/USN-8927-2",
-            "https://ubuntu.com/security/notices/USN-8932-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-92388"
-          ],
-          "Severity": "MEDIUM",
-          "Status": "fixed",
-          "Title": "curl: curl: FTP wildcard write callback mixup",
-          "VendorSeverity": {
-            "redhat": 2,
-            "ubuntu": 1
-          },
-          "VulnerabilityID": "CVE-2026-92388"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 4.8,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:L"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "When curl is built with GnuTLS, a malicious WebSocket server can make curl\nsend memory past its send buffer. This is due to an out of bounds read\nfollowing when `gnutls_record_send()` returns a number of bytes sent **greater\nthan the number of bytes it was given to send**. GnuTLS does that after a\nblocked send.",
-          "Fingerprint": "sha256:f1991c36843120e36f442e6aed4849d03c135b8e8b27dde9cba960dfdf1dcaa2",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T16:57:53.407Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "curl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/curl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "2e5ee87a6ee5b0d7"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-107928",
-          "PublishedDate": "2026-10-20T21:17:15.47Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-107928",
-            "https://curl.se/docs/CVE-2026-107928.html",
-            "https://curl.se/docs/CVE-2026-107928.json",
-            "https://hackerone.com/reports/4099194",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-107928",
-            "https://ubuntu.com/security/notices/USN-8927-1",
-            "https://ubuntu.com/security/notices/USN-8927-2",
-            "https://www.cve.org/CVERecord?id=CVE-2026-107928"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: info leak uploading over WebSockets with GnuTLS",
-          "VendorSeverity": {
-            "redhat": 1,
-            "ubuntu": 1
-          },
-          "VulnerabilityID": "CVE-2026-107928"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 3.7,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "When `CURLOPT_INTERFACE` (or the command line tool's `--interface` option) is\nset with one of the documented prefixes (`if!`, `host!`, `ifhost!`), that\nbinding is not part of the connection reuse key, so a later transfer asking\nfor a different source can silently reuse an existing connection and go out\nfrom the earlier transfer's source address",
-          "Fingerprint": "sha256:8e6e420ed9ad2fa99e85e3f23456bcbaecb53964f557bb29fb0f3d91dd44367c",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T17:21:57.293Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "curl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/curl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "2e5ee87a6ee5b0d7"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-107929",
-          "PublishedDate": "2026-10-20T21:17:15.593Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-107929",
-            "https://curl.se/docs/CVE-2026-107929.html",
-            "https://curl.se/docs/CVE-2026-107929.json",
-            "https://hackerone.com/reports/4099618",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-107929",
-            "https://ubuntu.com/security/notices/USN-8927-1",
-            "https://ubuntu.com/security/notices/USN-8927-2",
-            "https://www.cve.org/CVERecord?id=CVE-2026-107929"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: local interface connection reuse mixup",
-          "VendorSeverity": {
-            "redhat": 1,
-            "ubuntu": 1
-          },
-          "VulnerabilityID": "CVE-2026-107929"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 5.3,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "Setting `CURLOPT_AWS_SIGV4` to NULL but does not disable SigV4 authentication,\ncontrary to expectations and documentation. A subsequent transfer on the same\nhandle still sends an `Authorization: AWS4-HMAC-SHA256` header to whatever URL\nisset next, leaking state information.",
-          "Fingerprint": "sha256:b2d51da60395a119a90b0118685b57382ccf1be8fd0e050b260268ddc8c28901",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T17:21:57.293Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "curl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/curl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "2e5ee87a6ee5b0d7"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86409",
-          "PublishedDate": "2026-10-20T20:17:25.223Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-86409",
-            "https://curl.se/docs/CVE-2026-86409.html",
-            "https://curl.se/docs/CVE-2026-86409.json",
-            "https://hackerone.com/reports/3973135",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-86409",
-            "https://ubuntu.com/security/notices/USN-8927-1",
-            "https://ubuntu.com/security/notices/USN-8927-2",
-            "https://ubuntu.com/security/notices/USN-8932-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-86409"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: stale SigV4 headers sent unintended",
-          "VendorSeverity": {
-            "redhat": 1,
-            "ubuntu": 1
-          },
-          "VulnerabilityID": "CVE-2026-86409"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 6.8,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:N"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "A flaw in the curl command line tool's logic makes it only set SSH host\nverification options when interacting directly using SFTP or SCP, and not as a\nresult of following a redirect.",
-          "Fingerprint": "sha256:b87c00892ed862c4832f707ddf2da0b50d6c4d26b4f09f1c728e463d0940e459",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T17:21:57.293Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "curl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/curl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "2e5ee87a6ee5b0d7"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86410",
-          "PublishedDate": "2026-10-20T20:17:25.38Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-86410",
-            "https://curl.se/docs/CVE-2026-86410.html",
-            "https://curl.se/docs/CVE-2026-86410.json",
-            "https://hackerone.com/reports/3973176",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-86410",
-            "https://ubuntu.com/security/notices/USN-8927-1",
-            "https://ubuntu.com/security/notices/USN-8927-2",
-            "https://www.cve.org/CVERecord?id=CVE-2026-86410"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: redirect to SFTP or SCP bypasses host verification",
-          "VendorSeverity": {
-            "redhat": 1,
-            "ubuntu": 1
-          },
-          "VulnerabilityID": "CVE-2026-86410"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 5.9,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "An `ftp://` transfer configured with `CURLUSESSL_NONE` can reuse a pooled FTP\ncontrol connection that a previous easy handle upgraded with `STARTTLS` and\nauthenticated using a client certificate. The second handle performs neither a\nnew TLS handshake nor a new FTP login, so the server continues to authorize it\nunder the first handle's certificate identity.",
-          "Fingerprint": "sha256:be05a32345156620c82a6479d7d56c57e11cab3cc2b6048d9025bf86ed174a2d",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T17:21:57.293Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "curl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/curl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "2e5ee87a6ee5b0d7"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86411",
-          "PublishedDate": "2026-10-20T20:17:25.533Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-86411",
-            "https://curl.se/docs/CVE-2026-86411.html",
-            "https://curl.se/docs/CVE-2026-86411.json",
-            "https://hackerone.com/reports/3973190",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-86411",
-            "https://www.cve.org/CVERecord?id=CVE-2026-86411"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: FTP connection reuse inherits client-certificate",
-          "VendorSeverity": {
-            "redhat": 1
-          },
-          "VulnerabilityID": "CVE-2026-86411"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 5.3,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:H/A:N"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "A remote HTTP server can set a cookie that curl accepts and writes to a\nNetscape cookie jar but cannot reload. On the next invocation using the same\npath for `--cookie` and `--cookie-jar`, curl fails before connecting, then the\ncleanup procedure replaces the jar with an empty file, deleting cookies for\nunrelated domains.",
-          "Fingerprint": "sha256:952d1ebd6e10f9900c8565fcb17b4c6369fe69aa581220db1b66cc4c77d84568",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T17:21:57.293Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "curl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/curl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "2e5ee87a6ee5b0d7"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86412",
-          "PublishedDate": "2026-10-20T20:17:25.667Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-86412",
-            "https://curl.se/docs/CVE-2026-86412.html",
-            "https://curl.se/docs/CVE-2026-86412.json",
-            "https://hackerone.com/reports/3973201",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-86412",
-            "https://ubuntu.com/security/notices/USN-8927-1",
-            "https://ubuntu.com/security/notices/USN-8927-2",
-            "https://www.cve.org/CVERecord?id=CVE-2026-86412"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: server-set cookie erases cookie jar",
-          "VendorSeverity": {
-            "redhat": 1,
-            "ubuntu": 1
-          },
-          "VulnerabilityID": "CVE-2026-86412"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 5.3,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "When using an *ambient user* in a first transfer doing Negotiate\nauthentication and asked to follow redirects, curl could pass on its\ncredential details to an unrelated second origin when asked to redirect there.",
-          "Fingerprint": "sha256:c8fc308a4cb81a4bb0b2408d208c3dfa69224cb31d450a529fbe7d1b46c1c512",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T17:21:57.293Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "curl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/curl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "2e5ee87a6ee5b0d7"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86413",
-          "PublishedDate": "2026-10-20T20:17:25.787Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-86413",
-            "https://curl.se/docs/CVE-2026-86413.html",
-            "https://curl.se/docs/CVE-2026-86413.json",
-            "https://hackerone.com/reports/3993549",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-86413",
-            "https://www.cve.org/CVERecord?id=CVE-2026-86413"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: Negotiate credentials sent to redirected origin",
-          "VendorSeverity": {
-            "redhat": 1
-          },
-          "VulnerabilityID": "CVE-2026-86413"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 6.5,
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "An HTTP proxy can trick libcurl into sending the origin's credentials (Basic\npassword, or a Negotiate/Kerberos ticket) to the proxy itself, by answering\nthe `CONNECT` tunnel request with 401 `WWW-Authenticate:` instead of the\nexpected 407 `Proxy-Authenticate:`.",
-          "Fingerprint": "sha256:54c4d2b0590b3311e79055825680974ed784781fb22c2ed8c44e51ee39ab427f",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T16:57:53.407Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "curl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/curl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "2e5ee87a6ee5b0d7"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86414",
-          "PublishedDate": "2026-10-20T21:17:19.947Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-86414",
-            "https://curl.se/docs/CVE-2026-86414.html",
-            "https://curl.se/docs/CVE-2026-86414.json",
-            "https://hackerone.com/reports/3993566",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-86414",
-            "https://ubuntu.com/security/notices/USN-8927-1",
-            "https://ubuntu.com/security/notices/USN-8927-2",
-            "https://ubuntu.com/security/notices/USN-8932-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-86414"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: leaking host credentials to HTTP proxy",
-          "VendorSeverity": {
-            "redhat": 1,
-            "ubuntu": 1
-          },
-          "VulnerabilityID": "CVE-2026-86414"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 3.7,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "libcurl's connection cache match function never considers the automatic client\ncertificate option, so a cached, already authenticated Schannel connection can\nbe handed to a transfer that got redirected to a different origin, even though\nthe code explicitly switched off the auto client cert option for that transfer\nto prevent exactly this.",
-          "Fingerprint": "sha256:afe23a1511ce1df7581b13abec07e1dedb2f3ce68bf73f850eeafb90e22f401b",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T16:57:53.407Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "curl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/curl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "2e5ee87a6ee5b0d7"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86415",
-          "PublishedDate": "2026-10-20T21:17:20.067Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-86415",
-            "https://curl.se/docs/CVE-2026-86415.html",
-            "https://curl.se/docs/CVE-2026-86415.json",
-            "https://hackerone.com/reports/3993870",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-86415",
-            "https://www.cve.org/CVERecord?id=CVE-2026-86415"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: auto client cert connection reuse mixup",
-          "VendorSeverity": {
-            "redhat": 1
-          },
-          "VulnerabilityID": "CVE-2026-86415"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 3.7,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "When using ambient user credentials, an HTTP request directed to one origin\nmay be dispatched over a connection previously authenticated via Negotiate for\na different origin, leaving the request's intended credentials unused.",
-          "Fingerprint": "sha256:866f9974590d7d114728e748a95cb30b45294f946cf5e0abe53e85dc39473c2e",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T17:21:57.293Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "curl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/curl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "2e5ee87a6ee5b0d7"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-87861",
-          "PublishedDate": "2026-10-20T21:17:20.167Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-87861",
-            "https://curl.se/docs/CVE-2026-87861.html",
-            "https://curl.se/docs/CVE-2026-87861.json",
-            "https://hackerone.com/reports/3972094",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-87861",
-            "https://www.cve.org/CVERecord?id=CVE-2026-87861"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: cross-origin reuse of a Negotiate connection",
-          "VendorSeverity": {
-            "redhat": 1
-          },
-          "VulnerabilityID": "CVE-2026-87861"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 3.7,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "Importing a `includeSubDomains` parent HSTS entry before a longer-lived child\nentry, silently drops the child. Consequently, when the parent expires, the\nchild's valid HSTS policy is lost, causing curl to issue unencrypted HTTP\nrequests rather than upgrading to HTTPS.",
-          "Fingerprint": "sha256:6966610a192c1368f66b51e312e2bb13e60a0968447a34017f88486118ee55e7",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T17:21:57.293Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "curl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/curl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "2e5ee87a6ee5b0d7"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-87862",
-          "PublishedDate": "2026-10-20T21:17:20.27Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-87862",
-            "https://curl.se/docs/CVE-2026-87862.html",
-            "https://curl.se/docs/CVE-2026-87862.json",
-            "https://hackerone.com/reports/3972357",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-87862",
-            "https://ubuntu.com/security/notices/USN-8927-1",
-            "https://ubuntu.com/security/notices/USN-8927-2",
-            "https://ubuntu.com/security/notices/USN-8932-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-87862"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: HSTS cache import drops longer-lived child",
-          "VendorSeverity": {
-            "redhat": 1,
-            "ubuntu": 1
-          },
-          "VulnerabilityID": "CVE-2026-87862"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 3.7,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "An authenticated HTTPS origin can supply an HSTS `max-age` value that the\nparser accepts, but time serialization later fails to process. On 64-bit\nsystems, extreme max-age values compute an absolute expiry within standard\ntime integer limits that exceeds calendar time structure bounds. During cache\nsaves, the original HSTS file is truncated before writing a temporary\nreplacement; when serialization fails, the temporary file is deleted, leaving\nan empty or partial cache. Because the save error is silently ignored during\ncleanup, curl exits successfully despite the data loss.",
-          "Fingerprint": "sha256:8ab980c87321950b95670e09ad43f5d82e246341b4ac9b7bedd0354f276aa215",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T17:21:57.293Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "curl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/curl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "2e5ee87a6ee5b0d7"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-87863",
-          "PublishedDate": "2026-10-20T21:17:20.38Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-87863",
-            "https://curl.se/docs/CVE-2026-87863.html",
-            "https://curl.se/docs/CVE-2026-87863.json",
-            "https://hackerone.com/reports/3972373",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-87863",
-            "https://ubuntu.com/security/notices/USN-8927-1",
-            "https://ubuntu.com/security/notices/USN-8927-2",
-            "https://ubuntu.com/security/notices/USN-8932-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-87863"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: Hsts Response Erases Persisted Entries",
-          "VendorSeverity": {
-            "redhat": 1,
-            "ubuntu": 1
-          },
-          "VulnerabilityID": "CVE-2026-87863"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 3.7,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:L/I:L/A:N"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "Enabling `CURLOPT_CRLF` causes curl to advertise the raw input byte count in\nthe `IMAP APPEND {N}` literal while transmitting line-ending expanded data.\nThe server reads only $N$ bytes for the payload, causing the remaining\noverflow bytes to be interpreted and executed as pipelined IMAP commands\nwithin the authenticated session.",
-          "Fingerprint": "sha256:324aafc6f661ec700eeea7ed24610a4043f88c6359e45b9b142d7f1e6bc179e0",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T17:21:57.293Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "curl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/curl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "2e5ee87a6ee5b0d7"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-87864",
-          "PublishedDate": "2026-10-20T21:17:20.497Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-87864",
-            "https://curl.se/docs/CVE-2026-87864.html",
-            "https://curl.se/docs/CVE-2026-87864.json",
-            "https://hackerone.com/reports/3972403",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-87864",
-            "https://ubuntu.com/security/notices/USN-8927-1",
-            "https://ubuntu.com/security/notices/USN-8927-2",
-            "https://ubuntu.com/security/notices/USN-8932-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-87864"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: IMAP APPEND plus CRLF conversion command injection",
-          "VendorSeverity": {
-            "redhat": 1,
-            "ubuntu": 1
-          },
-          "VulnerabilityID": "CVE-2026-87864"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 3.7,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "When libcurl uses libssh2 with a hashed `known_hosts` file, an unrelated\ninitial entry can cause host key validation to report a key *mismatch* as a\n*missing* key to the `CURLOPT_SSH_KEYFUNCTION` callback.",
-          "Fingerprint": "sha256:90d8f2eccd2158a9d04ba24796751692cfaeb49219a9209862d0570c73b5cab0",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T16:57:53.407Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "curl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/curl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "2e5ee87a6ee5b0d7"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-87865",
-          "PublishedDate": "2026-10-20T21:17:20.693Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-87865",
-            "https://curl.se/docs/CVE-2026-87865.html",
-            "https://curl.se/docs/CVE-2026-87865.json",
-            "https://hackerone.com/reports/3975408",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-87865",
-            "https://ubuntu.com/security/notices/USN-8927-1",
-            "https://ubuntu.com/security/notices/USN-8927-2",
-            "https://www.cve.org/CVERecord?id=CVE-2026-87865"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: knownhost callback mismatches key as missing",
-          "VendorSeverity": {
-            "redhat": 1,
-            "ubuntu": 1
-          },
-          "VulnerabilityID": "CVE-2026-87865"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 3.7,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "When built with wolfSSL, curl can successfully validate a pinned public key\nhash against a key the TLS peer does not possess. During the TLS handshake,\nwolfSSL validates the connection, but curl's subsequent re-parsing of the same\ncertificate - tricked by a manipulated validity length field - extracts and\nmatches a different embedded key, incorrectly authorizing the pinned public\nkey.",
-          "Fingerprint": "sha256:07494076748eb63dedbd9af3a7ec1c632c8b3202464fb2ee35b4d1537c678f65",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T17:21:57.293Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "curl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/curl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "2e5ee87a6ee5b0d7"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-87866",
-          "PublishedDate": "2026-10-20T21:17:20.833Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-87866",
-            "https://curl.se/docs/CVE-2026-87866.html",
-            "https://curl.se/docs/CVE-2026-87866.json",
-            "https://hackerone.com/reports/3989514",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-87866",
-            "https://www.cve.org/CVERecord?id=CVE-2026-87866"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: wolfSSL public-key pinning bypass",
-          "VendorSeverity": {
-            "redhat": 1
-          },
-          "VulnerabilityID": "CVE-2026-87866"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 4.3,
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "When writing a long cookie name and value to a Netscape cookie jar, a remote\nHTTP server can make `curl` write a record that exceeds its line-length\nparsing limit. Consequently, any subsequent `curl` invocation reading from\nthat same cookie jar using `--cookie` silently aborts parsing prematurely upon\nencountering the too long line, ignoring all subsequent valid cookies in the\nfile.",
-          "Fingerprint": "sha256:45ca6e900685b3d0dd4d77be6cf027dc9d9514f23944595572d078c9883e31ad",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T17:21:57.293Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "curl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/curl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "2e5ee87a6ee5b0d7"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-92386",
-          "PublishedDate": "2026-10-20T21:17:21.017Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-92386",
-            "https://curl.se/docs/CVE-2026-92386.html",
-            "https://curl.se/docs/CVE-2026-92386.json",
-            "https://hackerone.com/reports/4021979",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-92386",
-            "https://ubuntu.com/security/notices/USN-8927-1",
-            "https://ubuntu.com/security/notices/USN-8927-2",
-            "https://www.cve.org/CVERecord?id=CVE-2026-92386"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: server-set cookie aborts cookie jar load",
-          "VendorSeverity": {
-            "redhat": 1,
-            "ubuntu": 1
-          },
-          "VulnerabilityID": "CVE-2026-92386"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 3.7,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "By permanently omitting the final control-response line, a malicious FTP,\nIMAP, POP3, or SMTP server can exploit libcurl and completely bypass its\nconfigured transfer timeout mechanism, indefinitely blocking all concurrent\ntransfers bound to the same multi-handle.",
-          "Fingerprint": "sha256:cb118ad398acc3990e3b6083b3f039f07d2a00532f10d996c216dff183bbde47",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T17:21:57.293Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "curl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/curl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "2e5ee87a6ee5b0d7"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-92387",
-          "PublishedDate": "2026-10-20T21:17:21.133Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-92387",
-            "https://curl.se/docs/CVE-2026-92387.html",
-            "https://curl.se/docs/CVE-2026-92387.json",
-            "https://hackerone.com/reports/4022003",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-92387",
-            "https://ubuntu.com/security/notices/USN-8927-1",
-            "https://ubuntu.com/security/notices/USN-8927-2",
-            "https://www.cve.org/CVERecord?id=CVE-2026-92387"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: never-ending loop via server response omission",
-          "VendorSeverity": {
-            "redhat": 1,
-            "ubuntu": 1
-          },
-          "VulnerabilityID": "CVE-2026-92387"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 3.7,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "libcurl's TFTP state machine fails to validate state transitions against the\nrequested transfer direction, accepting opening server responses for both\nreads and writes interchangeably. A malicious TFTP server can respond to a\ndownload request in a way that forces the client into transmit mode, prompting\nlibcurl to consume and transmit data from the handle's persistent\n`CURLOPT_READDATA` pointer - including data remaining from unrelated prior\noperations, such as an HTTP POST request executed on a reused handle.",
-          "Fingerprint": "sha256:d2377e225c2afab9264479fcb06a4c265dd39926df93a42c8982b57d03a834d7",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T16:57:53.407Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "curl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/curl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "2e5ee87a6ee5b0d7"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-92389",
-          "PublishedDate": "2026-10-20T21:17:21.457Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-92389",
-            "https://curl.se/docs/CVE-2026-92389.html",
-            "https://curl.se/docs/CVE-2026-92389.json",
-            "https://hackerone.com/reports/4022568",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-92389",
-            "https://ubuntu.com/security/notices/USN-8927-1",
-            "https://ubuntu.com/security/notices/USN-8927-2",
-            "https://ubuntu.com/security/notices/USN-8932-2",
-            "https://www.cve.org/CVERecord?id=CVE-2026-92389"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: TFTP direction confusion",
-          "VendorSeverity": {
-            "redhat": 1,
-            "ubuntu": 1
-          },
-          "VulnerabilityID": "CVE-2026-92389"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 6.5,
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "When invoked with `--remote-header-name` (`-J`), curl fails to preserve its\ndocumented anti-clobbering protection if an intermediate 103 Early Hints\nresponse precedes the final HTTP response, or if an `ETag` header is processed\nbefore `Content-Disposition` under `--etag-save`. This flaw allows an HTTP(S)\nserver to overwrite an existing local file specified in the\n`Content-Disposition` header despite the presence of the `-J` non-overwrite\nconstraint.",
-          "Fingerprint": "sha256:186da72581bfdefbb6058ba31a3adf54688aeba62202e8a34dff4764165bb27a",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T17:21:57.293Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "curl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/curl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "2e5ee87a6ee5b0d7"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-92390",
-          "PublishedDate": "2026-10-20T21:17:21.703Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-92390",
-            "https://curl.se/docs/CVE-2026-92390.html",
-            "https://curl.se/docs/CVE-2026-92390.json",
-            "https://hackerone.com/reports/4023192",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-92390",
-            "https://ubuntu.com/security/notices/USN-8927-1",
-            "https://ubuntu.com/security/notices/USN-8927-2",
-            "https://www.cve.org/CVERecord?id=CVE-2026-92390"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: -J no-clobber guarantee bypassed with 103 early hints",
-          "VendorSeverity": {
-            "redhat": 1,
-            "ubuntu": 1
-          },
-          "VulnerabilityID": "CVE-2026-92390"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 3.7,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "A deeply nested multipart MIME structure constructed via the public API causes\na stack overflow in libcurl during normal cleanup operations. An excessive\nrecursion depth within `curl_mime_free` leads to unbounded stack frame\nallocation during structure traversal, ultimately crashing the host process.",
-          "Fingerprint": "sha256:e8c832ccdecdb4f9505c50a3db348e98793bc5e608d5f75b116fd809dfbccc6f",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T17:21:57.293Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "curl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/curl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "2e5ee87a6ee5b0d7"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-92391",
-          "PublishedDate": "2026-10-20T21:17:21.92Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-92391",
-            "https://curl.se/docs/CVE-2026-92391.html",
-            "https://curl.se/docs/CVE-2026-92391.json",
-            "https://hackerone.com/reports/4024222",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-92391",
-            "https://ubuntu.com/security/notices/USN-8927-1",
-            "https://ubuntu.com/security/notices/USN-8927-2",
-            "https://ubuntu.com/security/notices/USN-8932-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-92391"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: curl_mime_free stack overflow by recursion",
-          "VendorSeverity": {
-            "redhat": 1,
-            "ubuntu": 1
-          },
-          "VulnerabilityID": "CVE-2026-92391"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 3.1,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:N/A:N"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "When processing an HTTP redirect to a URL containing userinfo (a\n`username:password` component), curl might erroneously retain and re-transmit\nthe original host's HTTP Negotiate authentication state. Consequently, a\nmalicious server can trigger a redirect containing arbitrary userinfo to force\ncurl to send a freshly minted Kerberos ticket—generated using the ambient\nidentity of the client process to an untrusted third-party host, effectively\nbypassing the domain-scoping restrictions normally enforced by the absence of\n`--location-trusted`.",
-          "Fingerprint": "sha256:d486d86061089bd9d15d5acc4c38edc83f581e8974f1ea621f0d0c615ccd59d9",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T17:21:57.293Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "curl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/curl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "2e5ee87a6ee5b0d7"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-94265",
-          "PublishedDate": "2026-10-20T21:17:22.183Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-94265",
-            "https://curl.se/docs/CVE-2026-94265.html",
-            "https://curl.se/docs/CVE-2026-94265.json",
-            "https://hackerone.com/reports/4040551",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-94265",
-            "https://www.cve.org/CVERecord?id=CVE-2026-94265"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: Authorization: Negotiate sent to foreign origin",
-          "VendorSeverity": {
-            "redhat": 1
-          },
-          "VulnerabilityID": "CVE-2026-94265"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 3.3,
-              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "libcurl could accidentally return a URL for `curl_easy_getinfo()`'s\n`CURLINFO_EFFECTIVE_URL` option containing credentials, even though neither\nthe URL provided to libcurl nor the redirected URL did.",
-          "Fingerprint": "sha256:d1a283bc4815625c5113db4403b462fd5f949bbb7ccd160adf52e1147f23bf3b",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T16:57:53.407Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "curl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/curl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "2e5ee87a6ee5b0d7"
-          },
-          "PkgName": "curl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-94266",
-          "PublishedDate": "2026-10-20T21:17:22.29Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-94266",
-            "https://curl.se/docs/CVE-2026-94266.html",
-            "https://curl.se/docs/CVE-2026-94266.json",
-            "https://hackerone.com/reports/4041053",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-94266",
-            "https://ubuntu.com/security/notices/USN-8927-1",
-            "https://ubuntu.com/security/notices/USN-8927-2",
-            "https://ubuntu.com/security/notices/USN-8932-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-94266"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: password leak in CURLINFO_EFFECTIVE_URL",
-          "VendorSeverity": {
-            "redhat": 1,
-            "ubuntu": 1
-          },
-          "VulnerabilityID": "CVE-2026-94266"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 8.1,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
-            }
-          },
-          "CweIDs": [
-            "CWE-416"
-          ],
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "During an upload, curl mishandles HTTP/2 `RST_STREAM` received from the server\n(with reason `HTTP_1_1_REQUIRED` or `REFUSED_STREAM`) leading to a use after\nfree of a `struct Curl_easy` object.",
-          "Fingerprint": "sha256:143fa37b652b325673c034f12f07257f7695f8ec2548d9469e54269e1d0318da",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-18T23:16:57.163Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "libcurl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libcurl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "5459458448472038"
-          },
-          "PkgName": "libcurl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-92392",
-          "PublishedDate": "2026-10-14T08:17:05.997Z",
-          "References": [
-            "http://www.openwall.com/lists/oss-security/2026/10/18/5",
-            "http://www.openwall.com/lists/oss-security/2026/10/18/6",
-            "https://access.redhat.com/security/cve/CVE-2026-92392",
-            "https://curl.se/docs/CVE-2026-92392.html",
-            "https://curl.se/docs/CVE-2026-92392.json",
-            "https://hackerone.com/reports/4030333",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-92392",
-            "https://ubuntu.com/security/notices/USN-8927-1",
-            "https://ubuntu.com/security/notices/USN-8927-2",
-            "https://www.cve.org/CVERecord?id=CVE-2026-92392"
-          ],
-          "Severity": "HIGH",
-          "Status": "fixed",
-          "Title": "curl: curl: HTTP/2 upload Use-After-Free",
-          "VendorSeverity": {
-            "amazon": 3,
-            "redhat": 3,
-            "ubuntu": 3
-          },
-          "VulnerabilityID": "CVE-2026-92392"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 6.5,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:H"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "When an FTP wildcard `LIST` operation fails, libcurl omits the restoration\npath meant for successful listings, leaving the write callback set to the\ninternal listing parser and the write callback data pointing directly to the\neasy handle. Subsequent reuse of this handle triggers an immediate crash, and\ncloning it via `curl_easy_duphandle()` copies this corrupted state into the\nduplicate. If the original handle is subsequently freed, executing a transfer\non the cloned handle causes a heap use-after-free read against the dangling\nhandle reference; alternatively, reusing the original or cloned handle while\nchanging only  `CURLOPT_WRITEDATA` (and omitting `CURLOPT_WRITEFUNCTION`)\nresults in type confusion, forcing the internal parser to interpret incoming\nserver response bytes into memory at the application-supplied write data\npointer.",
-          "Fingerprint": "sha256:4106ca6ff6b40f3f0a35bbd426f324a1635933ebce5dcdfef54250791e931c24",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T16:57:53.407Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "libcurl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libcurl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "5459458448472038"
-          },
-          "PkgName": "libcurl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-92388",
-          "PublishedDate": "2026-10-20T21:17:21.243Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-92388",
-            "https://curl.se/docs/CVE-2026-92388.html",
-            "https://curl.se/docs/CVE-2026-92388.json",
-            "https://hackerone.com/reports/4022070",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-92388",
-            "https://ubuntu.com/security/notices/USN-8927-1",
-            "https://ubuntu.com/security/notices/USN-8927-2",
-            "https://ubuntu.com/security/notices/USN-8932-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-92388"
-          ],
-          "Severity": "MEDIUM",
-          "Status": "fixed",
-          "Title": "curl: curl: FTP wildcard write callback mixup",
-          "VendorSeverity": {
-            "redhat": 2,
-            "ubuntu": 1
-          },
-          "VulnerabilityID": "CVE-2026-92388"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 4.8,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:L"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "When curl is built with GnuTLS, a malicious WebSocket server can make curl\nsend memory past its send buffer. This is due to an out of bounds read\nfollowing when `gnutls_record_send()` returns a number of bytes sent **greater\nthan the number of bytes it was given to send**. GnuTLS does that after a\nblocked send.",
-          "Fingerprint": "sha256:3d6e51644c653295dd2e719f431e6e2e33efbb446c6996a471ad53c4c1a42423",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T16:57:53.407Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "libcurl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libcurl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "5459458448472038"
-          },
-          "PkgName": "libcurl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-107928",
-          "PublishedDate": "2026-10-20T21:17:15.47Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-107928",
-            "https://curl.se/docs/CVE-2026-107928.html",
-            "https://curl.se/docs/CVE-2026-107928.json",
-            "https://hackerone.com/reports/4099194",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-107928",
-            "https://ubuntu.com/security/notices/USN-8927-1",
-            "https://ubuntu.com/security/notices/USN-8927-2",
-            "https://www.cve.org/CVERecord?id=CVE-2026-107928"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: info leak uploading over WebSockets with GnuTLS",
-          "VendorSeverity": {
-            "redhat": 1,
-            "ubuntu": 1
-          },
-          "VulnerabilityID": "CVE-2026-107928"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 3.7,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "When `CURLOPT_INTERFACE` (or the command line tool's `--interface` option) is\nset with one of the documented prefixes (`if!`, `host!`, `ifhost!`), that\nbinding is not part of the connection reuse key, so a later transfer asking\nfor a different source can silently reuse an existing connection and go out\nfrom the earlier transfer's source address",
-          "Fingerprint": "sha256:540945274b5a103cf0893599fd932c7670b85899ff3b6af6c4f63d9529839119",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T17:21:57.293Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "libcurl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libcurl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "5459458448472038"
-          },
-          "PkgName": "libcurl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-107929",
-          "PublishedDate": "2026-10-20T21:17:15.593Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-107929",
-            "https://curl.se/docs/CVE-2026-107929.html",
-            "https://curl.se/docs/CVE-2026-107929.json",
-            "https://hackerone.com/reports/4099618",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-107929",
-            "https://ubuntu.com/security/notices/USN-8927-1",
-            "https://ubuntu.com/security/notices/USN-8927-2",
-            "https://www.cve.org/CVERecord?id=CVE-2026-107929"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: local interface connection reuse mixup",
-          "VendorSeverity": {
-            "redhat": 1,
-            "ubuntu": 1
-          },
-          "VulnerabilityID": "CVE-2026-107929"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 5.3,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "Setting `CURLOPT_AWS_SIGV4` to NULL but does not disable SigV4 authentication,\ncontrary to expectations and documentation. A subsequent transfer on the same\nhandle still sends an `Authorization: AWS4-HMAC-SHA256` header to whatever URL\nisset next, leaking state information.",
-          "Fingerprint": "sha256:800bed25f62ffea8b421a93cb2a7ea2c3ddd6119d42699f475ff364dfb163fa5",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T17:21:57.293Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "libcurl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libcurl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "5459458448472038"
-          },
-          "PkgName": "libcurl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86409",
-          "PublishedDate": "2026-10-20T20:17:25.223Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-86409",
-            "https://curl.se/docs/CVE-2026-86409.html",
-            "https://curl.se/docs/CVE-2026-86409.json",
-            "https://hackerone.com/reports/3973135",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-86409",
-            "https://ubuntu.com/security/notices/USN-8927-1",
-            "https://ubuntu.com/security/notices/USN-8927-2",
-            "https://ubuntu.com/security/notices/USN-8932-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-86409"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: stale SigV4 headers sent unintended",
-          "VendorSeverity": {
-            "redhat": 1,
-            "ubuntu": 1
-          },
-          "VulnerabilityID": "CVE-2026-86409"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 6.8,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:N"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "A flaw in the curl command line tool's logic makes it only set SSH host\nverification options when interacting directly using SFTP or SCP, and not as a\nresult of following a redirect.",
-          "Fingerprint": "sha256:9d7bc7cb62947d6d00d8620a6fa3b5e077cd0610a699ca78519cc31ee479f021",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T17:21:57.293Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "libcurl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libcurl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "5459458448472038"
-          },
-          "PkgName": "libcurl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86410",
-          "PublishedDate": "2026-10-20T20:17:25.38Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-86410",
-            "https://curl.se/docs/CVE-2026-86410.html",
-            "https://curl.se/docs/CVE-2026-86410.json",
-            "https://hackerone.com/reports/3973176",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-86410",
-            "https://ubuntu.com/security/notices/USN-8927-1",
-            "https://ubuntu.com/security/notices/USN-8927-2",
-            "https://www.cve.org/CVERecord?id=CVE-2026-86410"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: redirect to SFTP or SCP bypasses host verification",
-          "VendorSeverity": {
-            "redhat": 1,
-            "ubuntu": 1
-          },
-          "VulnerabilityID": "CVE-2026-86410"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 5.9,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "An `ftp://` transfer configured with `CURLUSESSL_NONE` can reuse a pooled FTP\ncontrol connection that a previous easy handle upgraded with `STARTTLS` and\nauthenticated using a client certificate. The second handle performs neither a\nnew TLS handshake nor a new FTP login, so the server continues to authorize it\nunder the first handle's certificate identity.",
-          "Fingerprint": "sha256:104fe4a28cb35ebfd28f4bf58afbad11ebe49f381a4261a8c0d7e20b74665f71",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T17:21:57.293Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "libcurl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libcurl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "5459458448472038"
-          },
-          "PkgName": "libcurl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86411",
-          "PublishedDate": "2026-10-20T20:17:25.533Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-86411",
-            "https://curl.se/docs/CVE-2026-86411.html",
-            "https://curl.se/docs/CVE-2026-86411.json",
-            "https://hackerone.com/reports/3973190",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-86411",
-            "https://www.cve.org/CVERecord?id=CVE-2026-86411"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: FTP connection reuse inherits client-certificate",
-          "VendorSeverity": {
-            "redhat": 1
-          },
-          "VulnerabilityID": "CVE-2026-86411"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 5.3,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:H/A:N"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "A remote HTTP server can set a cookie that curl accepts and writes to a\nNetscape cookie jar but cannot reload. On the next invocation using the same\npath for `--cookie` and `--cookie-jar`, curl fails before connecting, then the\ncleanup procedure replaces the jar with an empty file, deleting cookies for\nunrelated domains.",
-          "Fingerprint": "sha256:f51d7aa02a943a6c2e8dfc8e2502180663e7f75e098b615e01d3d438d047216f",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T17:21:57.293Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "libcurl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libcurl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "5459458448472038"
-          },
-          "PkgName": "libcurl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86412",
-          "PublishedDate": "2026-10-20T20:17:25.667Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-86412",
-            "https://curl.se/docs/CVE-2026-86412.html",
-            "https://curl.se/docs/CVE-2026-86412.json",
-            "https://hackerone.com/reports/3973201",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-86412",
-            "https://ubuntu.com/security/notices/USN-8927-1",
-            "https://ubuntu.com/security/notices/USN-8927-2",
-            "https://www.cve.org/CVERecord?id=CVE-2026-86412"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: server-set cookie erases cookie jar",
-          "VendorSeverity": {
-            "redhat": 1,
-            "ubuntu": 1
-          },
-          "VulnerabilityID": "CVE-2026-86412"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 5.3,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "When using an *ambient user* in a first transfer doing Negotiate\nauthentication and asked to follow redirects, curl could pass on its\ncredential details to an unrelated second origin when asked to redirect there.",
-          "Fingerprint": "sha256:63a8d8a05af03b51943ee5c2d8722dd5689e1f334c796da9ad1eaf9bdad89b4e",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T17:21:57.293Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "libcurl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libcurl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "5459458448472038"
-          },
-          "PkgName": "libcurl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86413",
-          "PublishedDate": "2026-10-20T20:17:25.787Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-86413",
-            "https://curl.se/docs/CVE-2026-86413.html",
-            "https://curl.se/docs/CVE-2026-86413.json",
-            "https://hackerone.com/reports/3993549",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-86413",
-            "https://www.cve.org/CVERecord?id=CVE-2026-86413"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: Negotiate credentials sent to redirected origin",
-          "VendorSeverity": {
-            "redhat": 1
-          },
-          "VulnerabilityID": "CVE-2026-86413"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 6.5,
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "An HTTP proxy can trick libcurl into sending the origin's credentials (Basic\npassword, or a Negotiate/Kerberos ticket) to the proxy itself, by answering\nthe `CONNECT` tunnel request with 401 `WWW-Authenticate:` instead of the\nexpected 407 `Proxy-Authenticate:`.",
-          "Fingerprint": "sha256:1be985fd771522225a75ea7c4f2d5c23c01013d2465e41148c8b65b36ab08771",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T16:57:53.407Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "libcurl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libcurl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "5459458448472038"
-          },
-          "PkgName": "libcurl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86414",
-          "PublishedDate": "2026-10-20T21:17:19.947Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-86414",
-            "https://curl.se/docs/CVE-2026-86414.html",
-            "https://curl.se/docs/CVE-2026-86414.json",
-            "https://hackerone.com/reports/3993566",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-86414",
-            "https://ubuntu.com/security/notices/USN-8927-1",
-            "https://ubuntu.com/security/notices/USN-8927-2",
-            "https://ubuntu.com/security/notices/USN-8932-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-86414"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: leaking host credentials to HTTP proxy",
-          "VendorSeverity": {
-            "redhat": 1,
-            "ubuntu": 1
-          },
-          "VulnerabilityID": "CVE-2026-86414"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 3.7,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "libcurl's connection cache match function never considers the automatic client\ncertificate option, so a cached, already authenticated Schannel connection can\nbe handed to a transfer that got redirected to a different origin, even though\nthe code explicitly switched off the auto client cert option for that transfer\nto prevent exactly this.",
-          "Fingerprint": "sha256:da08cad0b7110d89b8b60966652cb4c1615c4e432abf75b9f9a380b72c25587a",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T16:57:53.407Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "libcurl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libcurl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "5459458448472038"
-          },
-          "PkgName": "libcurl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86415",
-          "PublishedDate": "2026-10-20T21:17:20.067Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-86415",
-            "https://curl.se/docs/CVE-2026-86415.html",
-            "https://curl.se/docs/CVE-2026-86415.json",
-            "https://hackerone.com/reports/3993870",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-86415",
-            "https://www.cve.org/CVERecord?id=CVE-2026-86415"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: auto client cert connection reuse mixup",
-          "VendorSeverity": {
-            "redhat": 1
-          },
-          "VulnerabilityID": "CVE-2026-86415"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 3.7,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "When using ambient user credentials, an HTTP request directed to one origin\nmay be dispatched over a connection previously authenticated via Negotiate for\na different origin, leaving the request's intended credentials unused.",
-          "Fingerprint": "sha256:65e68703abb00fec56676a37a77d8bd15f8d47c5565fc525806850d6d8da2386",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T17:21:57.293Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "libcurl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libcurl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "5459458448472038"
-          },
-          "PkgName": "libcurl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-87861",
-          "PublishedDate": "2026-10-20T21:17:20.167Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-87861",
-            "https://curl.se/docs/CVE-2026-87861.html",
-            "https://curl.se/docs/CVE-2026-87861.json",
-            "https://hackerone.com/reports/3972094",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-87861",
-            "https://www.cve.org/CVERecord?id=CVE-2026-87861"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: cross-origin reuse of a Negotiate connection",
-          "VendorSeverity": {
-            "redhat": 1
-          },
-          "VulnerabilityID": "CVE-2026-87861"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 3.7,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "Importing a `includeSubDomains` parent HSTS entry before a longer-lived child\nentry, silently drops the child. Consequently, when the parent expires, the\nchild's valid HSTS policy is lost, causing curl to issue unencrypted HTTP\nrequests rather than upgrading to HTTPS.",
-          "Fingerprint": "sha256:5e19504fe435e0c56881e1d1c8c1ab9bf535870578fe28cdce2beb5788274886",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T17:21:57.293Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "libcurl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libcurl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "5459458448472038"
-          },
-          "PkgName": "libcurl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-87862",
-          "PublishedDate": "2026-10-20T21:17:20.27Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-87862",
-            "https://curl.se/docs/CVE-2026-87862.html",
-            "https://curl.se/docs/CVE-2026-87862.json",
-            "https://hackerone.com/reports/3972357",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-87862",
-            "https://ubuntu.com/security/notices/USN-8927-1",
-            "https://ubuntu.com/security/notices/USN-8927-2",
-            "https://ubuntu.com/security/notices/USN-8932-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-87862"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: HSTS cache import drops longer-lived child",
-          "VendorSeverity": {
-            "redhat": 1,
-            "ubuntu": 1
-          },
-          "VulnerabilityID": "CVE-2026-87862"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 3.7,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "An authenticated HTTPS origin can supply an HSTS `max-age` value that the\nparser accepts, but time serialization later fails to process. On 64-bit\nsystems, extreme max-age values compute an absolute expiry within standard\ntime integer limits that exceeds calendar time structure bounds. During cache\nsaves, the original HSTS file is truncated before writing a temporary\nreplacement; when serialization fails, the temporary file is deleted, leaving\nan empty or partial cache. Because the save error is silently ignored during\ncleanup, curl exits successfully despite the data loss.",
-          "Fingerprint": "sha256:2ffadeb6ede17a707268cf1fe5a4e3189fcf55b86ae9f738f8ee58853051ace7",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T17:21:57.293Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "libcurl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libcurl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "5459458448472038"
-          },
-          "PkgName": "libcurl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-87863",
-          "PublishedDate": "2026-10-20T21:17:20.38Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-87863",
-            "https://curl.se/docs/CVE-2026-87863.html",
-            "https://curl.se/docs/CVE-2026-87863.json",
-            "https://hackerone.com/reports/3972373",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-87863",
-            "https://ubuntu.com/security/notices/USN-8927-1",
-            "https://ubuntu.com/security/notices/USN-8927-2",
-            "https://ubuntu.com/security/notices/USN-8932-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-87863"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: Hsts Response Erases Persisted Entries",
-          "VendorSeverity": {
-            "redhat": 1,
-            "ubuntu": 1
-          },
-          "VulnerabilityID": "CVE-2026-87863"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 3.7,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:L/I:L/A:N"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "Enabling `CURLOPT_CRLF` causes curl to advertise the raw input byte count in\nthe `IMAP APPEND {N}` literal while transmitting line-ending expanded data.\nThe server reads only $N$ bytes for the payload, causing the remaining\noverflow bytes to be interpreted and executed as pipelined IMAP commands\nwithin the authenticated session.",
-          "Fingerprint": "sha256:f6a0e1bd1600f5d85a9e32d443467547014eda127cd5f6f4d9ce256273526787",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T17:21:57.293Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "libcurl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libcurl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "5459458448472038"
-          },
-          "PkgName": "libcurl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-87864",
-          "PublishedDate": "2026-10-20T21:17:20.497Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-87864",
-            "https://curl.se/docs/CVE-2026-87864.html",
-            "https://curl.se/docs/CVE-2026-87864.json",
-            "https://hackerone.com/reports/3972403",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-87864",
-            "https://ubuntu.com/security/notices/USN-8927-1",
-            "https://ubuntu.com/security/notices/USN-8927-2",
-            "https://ubuntu.com/security/notices/USN-8932-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-87864"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: IMAP APPEND plus CRLF conversion command injection",
-          "VendorSeverity": {
-            "redhat": 1,
-            "ubuntu": 1
-          },
-          "VulnerabilityID": "CVE-2026-87864"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 3.7,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "When libcurl uses libssh2 with a hashed `known_hosts` file, an unrelated\ninitial entry can cause host key validation to report a key *mismatch* as a\n*missing* key to the `CURLOPT_SSH_KEYFUNCTION` callback.",
-          "Fingerprint": "sha256:ff122a56a72222880a5bb87734ff9e502382abf372dffc55fc06e61d24c77be0",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T16:57:53.407Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "libcurl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libcurl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "5459458448472038"
-          },
-          "PkgName": "libcurl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-87865",
-          "PublishedDate": "2026-10-20T21:17:20.693Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-87865",
-            "https://curl.se/docs/CVE-2026-87865.html",
-            "https://curl.se/docs/CVE-2026-87865.json",
-            "https://hackerone.com/reports/3975408",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-87865",
-            "https://ubuntu.com/security/notices/USN-8927-1",
-            "https://ubuntu.com/security/notices/USN-8927-2",
-            "https://www.cve.org/CVERecord?id=CVE-2026-87865"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: knownhost callback mismatches key as missing",
-          "VendorSeverity": {
-            "redhat": 1,
-            "ubuntu": 1
-          },
-          "VulnerabilityID": "CVE-2026-87865"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 3.7,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "When built with wolfSSL, curl can successfully validate a pinned public key\nhash against a key the TLS peer does not possess. During the TLS handshake,\nwolfSSL validates the connection, but curl's subsequent re-parsing of the same\ncertificate - tricked by a manipulated validity length field - extracts and\nmatches a different embedded key, incorrectly authorizing the pinned public\nkey.",
-          "Fingerprint": "sha256:741d4b5d9a80d6986fb707e17f01fd6485c3c4085b3861427be89e3afa6ff3fb",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T17:21:57.293Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "libcurl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libcurl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "5459458448472038"
-          },
-          "PkgName": "libcurl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-87866",
-          "PublishedDate": "2026-10-20T21:17:20.833Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-87866",
-            "https://curl.se/docs/CVE-2026-87866.html",
-            "https://curl.se/docs/CVE-2026-87866.json",
-            "https://hackerone.com/reports/3989514",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-87866",
-            "https://www.cve.org/CVERecord?id=CVE-2026-87866"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: wolfSSL public-key pinning bypass",
-          "VendorSeverity": {
-            "redhat": 1
-          },
-          "VulnerabilityID": "CVE-2026-87866"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 4.3,
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "When writing a long cookie name and value to a Netscape cookie jar, a remote\nHTTP server can make `curl` write a record that exceeds its line-length\nparsing limit. Consequently, any subsequent `curl` invocation reading from\nthat same cookie jar using `--cookie` silently aborts parsing prematurely upon\nencountering the too long line, ignoring all subsequent valid cookies in the\nfile.",
-          "Fingerprint": "sha256:0a9ad4050cdd5cb5801b4437de8a2e39cc55a4010edb45715e088c3976c66abd",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T17:21:57.293Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "libcurl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libcurl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "5459458448472038"
-          },
-          "PkgName": "libcurl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-92386",
-          "PublishedDate": "2026-10-20T21:17:21.017Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-92386",
-            "https://curl.se/docs/CVE-2026-92386.html",
-            "https://curl.se/docs/CVE-2026-92386.json",
-            "https://hackerone.com/reports/4021979",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-92386",
-            "https://ubuntu.com/security/notices/USN-8927-1",
-            "https://ubuntu.com/security/notices/USN-8927-2",
-            "https://www.cve.org/CVERecord?id=CVE-2026-92386"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: server-set cookie aborts cookie jar load",
-          "VendorSeverity": {
-            "redhat": 1,
-            "ubuntu": 1
-          },
-          "VulnerabilityID": "CVE-2026-92386"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 3.7,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "By permanently omitting the final control-response line, a malicious FTP,\nIMAP, POP3, or SMTP server can exploit libcurl and completely bypass its\nconfigured transfer timeout mechanism, indefinitely blocking all concurrent\ntransfers bound to the same multi-handle.",
-          "Fingerprint": "sha256:d9112a24313a4e6aba453d07d4423e3dc14dd613000fcc286b45828ef30c967a",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T17:21:57.293Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "libcurl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libcurl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "5459458448472038"
-          },
-          "PkgName": "libcurl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-92387",
-          "PublishedDate": "2026-10-20T21:17:21.133Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-92387",
-            "https://curl.se/docs/CVE-2026-92387.html",
-            "https://curl.se/docs/CVE-2026-92387.json",
-            "https://hackerone.com/reports/4022003",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-92387",
-            "https://ubuntu.com/security/notices/USN-8927-1",
-            "https://ubuntu.com/security/notices/USN-8927-2",
-            "https://www.cve.org/CVERecord?id=CVE-2026-92387"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: never-ending loop via server response omission",
-          "VendorSeverity": {
-            "redhat": 1,
-            "ubuntu": 1
-          },
-          "VulnerabilityID": "CVE-2026-92387"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 3.7,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "libcurl's TFTP state machine fails to validate state transitions against the\nrequested transfer direction, accepting opening server responses for both\nreads and writes interchangeably. A malicious TFTP server can respond to a\ndownload request in a way that forces the client into transmit mode, prompting\nlibcurl to consume and transmit data from the handle's persistent\n`CURLOPT_READDATA` pointer - including data remaining from unrelated prior\noperations, such as an HTTP POST request executed on a reused handle.",
-          "Fingerprint": "sha256:d46d2c1563c8eae1297a78d9a591e9c657304690dd6828a56a5cd1e26d99d13f",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T16:57:53.407Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "libcurl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libcurl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "5459458448472038"
-          },
-          "PkgName": "libcurl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-92389",
-          "PublishedDate": "2026-10-20T21:17:21.457Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-92389",
-            "https://curl.se/docs/CVE-2026-92389.html",
-            "https://curl.se/docs/CVE-2026-92389.json",
-            "https://hackerone.com/reports/4022568",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-92389",
-            "https://ubuntu.com/security/notices/USN-8927-1",
-            "https://ubuntu.com/security/notices/USN-8927-2",
-            "https://ubuntu.com/security/notices/USN-8932-2",
-            "https://www.cve.org/CVERecord?id=CVE-2026-92389"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: TFTP direction confusion",
-          "VendorSeverity": {
-            "redhat": 1,
-            "ubuntu": 1
-          },
-          "VulnerabilityID": "CVE-2026-92389"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 6.5,
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "When invoked with `--remote-header-name` (`-J`), curl fails to preserve its\ndocumented anti-clobbering protection if an intermediate 103 Early Hints\nresponse precedes the final HTTP response, or if an `ETag` header is processed\nbefore `Content-Disposition` under `--etag-save`. This flaw allows an HTTP(S)\nserver to overwrite an existing local file specified in the\n`Content-Disposition` header despite the presence of the `-J` non-overwrite\nconstraint.",
-          "Fingerprint": "sha256:55b72101479fedf024b770bbb87b38804ae154a6b361be9f1f6f47de4f5f234a",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T17:21:57.293Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "libcurl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libcurl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "5459458448472038"
-          },
-          "PkgName": "libcurl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-92390",
-          "PublishedDate": "2026-10-20T21:17:21.703Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-92390",
-            "https://curl.se/docs/CVE-2026-92390.html",
-            "https://curl.se/docs/CVE-2026-92390.json",
-            "https://hackerone.com/reports/4023192",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-92390",
-            "https://ubuntu.com/security/notices/USN-8927-1",
-            "https://ubuntu.com/security/notices/USN-8927-2",
-            "https://www.cve.org/CVERecord?id=CVE-2026-92390"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: -J no-clobber guarantee bypassed with 103 early hints",
-          "VendorSeverity": {
-            "redhat": 1,
-            "ubuntu": 1
-          },
-          "VulnerabilityID": "CVE-2026-92390"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 3.7,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "A deeply nested multipart MIME structure constructed via the public API causes\na stack overflow in libcurl during normal cleanup operations. An excessive\nrecursion depth within `curl_mime_free` leads to unbounded stack frame\nallocation during structure traversal, ultimately crashing the host process.",
-          "Fingerprint": "sha256:992b5644d396eb680fd5f66703f5737b50a7131d6cd325c641e703d41efcc320",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T17:21:57.293Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "libcurl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libcurl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "5459458448472038"
-          },
-          "PkgName": "libcurl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-92391",
-          "PublishedDate": "2026-10-20T21:17:21.92Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-92391",
-            "https://curl.se/docs/CVE-2026-92391.html",
-            "https://curl.se/docs/CVE-2026-92391.json",
-            "https://hackerone.com/reports/4024222",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-92391",
-            "https://ubuntu.com/security/notices/USN-8927-1",
-            "https://ubuntu.com/security/notices/USN-8927-2",
-            "https://ubuntu.com/security/notices/USN-8932-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-92391"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: curl_mime_free stack overflow by recursion",
-          "VendorSeverity": {
-            "redhat": 1,
-            "ubuntu": 1
-          },
-          "VulnerabilityID": "CVE-2026-92391"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 3.1,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:N/A:N"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "When processing an HTTP redirect to a URL containing userinfo (a\n`username:password` component), curl might erroneously retain and re-transmit\nthe original host's HTTP Negotiate authentication state. Consequently, a\nmalicious server can trigger a redirect containing arbitrary userinfo to force\ncurl to send a freshly minted Kerberos ticket—generated using the ambient\nidentity of the client process to an untrusted third-party host, effectively\nbypassing the domain-scoping restrictions normally enforced by the absence of\n`--location-trusted`.",
-          "Fingerprint": "sha256:2fa4f4804411cb14a918f43d30dbad8045e1a8dc59c7bae592ae161708ab3ef2",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T17:21:57.293Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "libcurl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libcurl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "5459458448472038"
-          },
-          "PkgName": "libcurl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-94265",
-          "PublishedDate": "2026-10-20T21:17:22.183Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-94265",
-            "https://curl.se/docs/CVE-2026-94265.html",
-            "https://curl.se/docs/CVE-2026-94265.json",
-            "https://hackerone.com/reports/4040551",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-94265",
-            "https://www.cve.org/CVERecord?id=CVE-2026-94265"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: Authorization: Negotiate sent to foreign origin",
-          "VendorSeverity": {
-            "redhat": 1
-          },
-          "VulnerabilityID": "CVE-2026-94265"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 3.3,
-              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
-            }
-          },
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "libcurl could accidentally return a URL for `curl_easy_getinfo()`'s\n`CURLINFO_EFFECTIVE_URL` option containing credentials, even though neither\nthe URL provided to libcurl nor the redirected URL did.",
-          "Fingerprint": "sha256:fbe2c13375d32e5c1c186eccd6c754b23bddd4bf93136cc74019d3e29e47ee17",
-          "FixedVersion": "8.23.0-r0",
-          "InstalledVersion": "8.22.0-r0",
-          "LastModifiedDate": "2026-10-22T16:57:53.407Z",
-          "Layer": {
-            "DiffID": "sha256:1992cb81671cbd4383246f64b148b122ce8f3abe969142a009bbacef3f502c6b",
-            "Digest": "sha256:9846b1344d69cbd5b96e1139a0f193e2535c6bbbcf78f17e3eda826b7d22be81"
-          },
-          "PkgID": "libcurl@8.22.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libcurl@8.22.0-r0?arch=x86_64\u0026distro=3.24.0",
-            "UID": "5459458448472038"
-          },
-          "PkgName": "libcurl",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-94266",
-          "PublishedDate": "2026-10-20T21:17:22.29Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-94266",
-            "https://curl.se/docs/CVE-2026-94266.html",
-            "https://curl.se/docs/CVE-2026-94266.json",
-            "https://hackerone.com/reports/4041053",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-94266",
-            "https://ubuntu.com/security/notices/USN-8927-1",
-            "https://ubuntu.com/security/notices/USN-8927-2",
-            "https://ubuntu.com/security/notices/USN-8932-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-94266"
-          ],
-          "Severity": "LOW",
-          "Status": "fixed",
-          "Title": "curl: curl: password leak in CURLINFO_EFFECTIVE_URL",
-          "VendorSeverity": {
-            "redhat": 1,
-            "ubuntu": 1
-          },
-          "VulnerabilityID": "CVE-2026-94266"
-        }
-      ]
+      "Target": "ghcr.io/uug-ai/hub-pipeline-throttler@sha256:1687c0c2cb5644d87b8f9714af50536ca872d9330889d8656ccd19295595b161 (alpine 3.24.0)",
+      "Type": "alpine"
     },
     {
       "Class": "lang-pkgs",
@@ -3820,18 +1520,18 @@
             "google.golang.org/protobuf@v1.36.11",
             "stdlib@v1.26.10"
           ],
-          "ID": "github.com/uug-ai/hub-pipeline-throttler@v0.0.0-20261024215008-7f161fbe5d5e",
+          "ID": "github.com/uug-ai/hub-pipeline-throttler@v0.0.0-20261026091407-27e914cfebcd",
           "Identifier": {
-            "PURL": "pkg:golang/github.com/uug-ai/hub-pipeline-throttler@v0.0.0-20261024215008-7f161fbe5d5e",
-            "UID": "3d8166c70cf4d77c"
+            "PURL": "pkg:golang/github.com/uug-ai/hub-pipeline-throttler@v0.0.0-20261026091407-27e914cfebcd",
+            "UID": "ad7d996f9f841739"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "github.com/uug-ai/hub-pipeline-throttler",
           "Relationship": "root",
-          "Version": "v0.0.0-20261024215008-7f161fbe5d5e"
+          "Version": "v0.0.0-20261026091407-27e914cfebcd"
         },
         {
           "AnalyzedBy": "gobinary",
@@ -3841,8 +1541,8 @@
             "UID": "197f693dd2a4f49d"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "stdlib",
           "Relationship": "direct",
@@ -3856,8 +1556,8 @@
             "UID": "caf85d6f715ee949"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "github.com/aws/aws-sdk-go",
           "Version": "v1.55.8"
@@ -3870,8 +1570,8 @@
             "UID": "f9ea2063c9f4f5fc"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "github.com/beorn7/perks",
           "Version": "v1.0.1"
@@ -3884,8 +1584,8 @@
             "UID": "e534173e0a05f327"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "github.com/cenkalti/backoff/v5",
           "Version": "v5.0.3"
@@ -3898,8 +1598,8 @@
             "UID": "6591732bd064f95d"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "github.com/cespare/xxhash/v2",
           "Version": "v2.3.0"
@@ -3912,8 +1612,8 @@
             "UID": "a6d781994a874972"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "github.com/confluentinc/confluent-kafka-go/v2",
           "Version": "v2.12.0"
@@ -3926,8 +1626,8 @@
             "UID": "3c7e7bf667d8cffa"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "github.com/gabriel-vasile/mimetype",
           "Version": "v1.4.13"
@@ -3940,8 +1640,8 @@
             "UID": "cf5fb3b321a5fc12"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "github.com/go-logr/logr",
           "Version": "v1.4.4"
@@ -3954,8 +1654,8 @@
             "UID": "5d41c4645f1714f8"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "github.com/go-logr/stdr",
           "Version": "v1.2.2"
@@ -3968,8 +1668,8 @@
             "UID": "6a7d998e10c7ef8f"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "github.com/go-playground/locales",
           "Version": "v0.14.1"
@@ -3982,8 +1682,8 @@
             "UID": "9dad66404034bec5"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "github.com/go-playground/universal-translator",
           "Version": "v0.18.1"
@@ -3996,8 +1696,8 @@
             "UID": "14fcefdfc0ba4f0"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "github.com/go-playground/validator/v10",
           "Version": "v10.30.2"
@@ -4010,8 +1710,8 @@
             "UID": "85cda7919379c23b"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "github.com/golang/snappy",
           "Version": "v1.0.0"
@@ -4024,8 +1724,8 @@
             "UID": "380d3a7810407006"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "github.com/google/uuid",
           "Version": "v1.6.0"
@@ -4038,8 +1738,8 @@
             "UID": "6390f4be1254e0ae"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "github.com/grpc-ecosystem/grpc-gateway/v2",
           "Version": "v2.29.0"
@@ -4052,8 +1752,8 @@
             "UID": "6e0406d04c675e5"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "github.com/jmespath/go-jmespath",
           "Version": "v0.4.0"
@@ -4066,8 +1766,8 @@
             "UID": "2981b817110f7d26"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "github.com/klauspost/compress",
           "Version": "v1.18.7"
@@ -4080,8 +1780,8 @@
             "UID": "6704385bc65503e1"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "github.com/leodido/go-urn",
           "Version": "v1.4.0"
@@ -4094,8 +1794,8 @@
             "UID": "a4b7e6191fed6edb"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "github.com/montanaflynn/stats",
           "Version": "v0.7.1"
@@ -4108,8 +1808,8 @@
             "UID": "fc327466ae30e780"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "github.com/munnerz/goautoneg",
           "Version": "v0.0.0-20191010083416-a7dc8b61c822"
@@ -4122,8 +1822,8 @@
             "UID": "2acfde98a1794208"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "github.com/prometheus/client_golang",
           "Version": "v1.23.0"
@@ -4136,8 +1836,8 @@
             "UID": "f279b14f5011fab8"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "github.com/prometheus/client_model",
           "Version": "v0.6.2"
@@ -4150,8 +1850,8 @@
             "UID": "fe8bc00e1b6d1eec"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "github.com/prometheus/common",
           "Version": "v0.65.0"
@@ -4164,8 +1864,8 @@
             "UID": "5af4b403d4f0c45b"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "github.com/prometheus/procfs",
           "Version": "v0.16.1"
@@ -4178,8 +1878,8 @@
             "UID": "a486a259a76ad131"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "github.com/rabbitmq/amqp091-go",
           "Version": "v1.14.0"
@@ -4192,8 +1892,8 @@
             "UID": "2bf74c8d75adb466"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "github.com/sirupsen/logrus",
           "Version": "v1.9.4"
@@ -4206,8 +1906,8 @@
             "UID": "df59819815feb536"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "github.com/uug-ai/hub-pipeline",
           "Version": "v1.10.1"
@@ -4220,8 +1920,8 @@
             "UID": "1bcb151039e279af"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "github.com/uug-ai/models",
           "Version": "v1.7.21"
@@ -4234,8 +1934,8 @@
             "UID": "1eb02bbbee029cb9"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "github.com/uug-ai/trace",
           "Version": "v1.2.2"
@@ -4248,8 +1948,8 @@
             "UID": "ef1512bcd9631646"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "github.com/xdg-go/pbkdf2",
           "Version": "v1.0.0"
@@ -4262,8 +1962,8 @@
             "UID": "f6b457c5ec7b0f94"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "github.com/xdg-go/scram",
           "Version": "v1.1.2"
@@ -4276,8 +1976,8 @@
             "UID": "90d8b41c9bcb4d15"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "github.com/xdg-go/stringprep",
           "Version": "v1.0.4"
@@ -4290,8 +1990,8 @@
             "UID": "f78e3f3b435355dc"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "github.com/youmark/pkcs8",
           "Version": "v0.0.0-20240726163527-a2c0da244d78"
@@ -4304,8 +2004,8 @@
             "UID": "499428b3a659f297"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "go.mongodb.org/mongo-driver",
           "Version": "v1.17.9"
@@ -4318,8 +2018,8 @@
             "UID": "a33bf51d0e828004"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "go.opentelemetry.io/auto/sdk",
           "Version": "v1.2.1"
@@ -4332,8 +2032,8 @@
             "UID": "5ff65b1f52c1f8ac"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "go.opentelemetry.io/contrib/instrumentation/go.mongodb.org/mongo-driver/mongo/otelmongo",
           "Version": "v0.63.0"
@@ -4346,8 +2046,8 @@
             "UID": "a31f1aff7203c2cd"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "go.opentelemetry.io/otel",
           "Version": "v1.45.0"
@@ -4360,8 +2060,8 @@
             "UID": "a8f913c9970259f8"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "go.opentelemetry.io/otel/exporters/otlp/otlptrace",
           "Version": "v1.45.0"
@@ -4374,8 +2074,8 @@
             "UID": "230a90f5a39d0453"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp",
           "Version": "v1.45.0"
@@ -4388,8 +2088,8 @@
             "UID": "f18d2c20fb1bf29f"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "go.opentelemetry.io/otel/metric",
           "Version": "v1.45.0"
@@ -4402,8 +2102,8 @@
             "UID": "73f8bd3109ec3beb"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "go.opentelemetry.io/otel/sdk",
           "Version": "v1.45.0"
@@ -4416,8 +2116,8 @@
             "UID": "79caa50080262dd1"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "go.opentelemetry.io/otel/trace",
           "Version": "v1.45.0"
@@ -4430,8 +2130,8 @@
             "UID": "113b10cd8be82744"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "go.opentelemetry.io/proto/otlp",
           "Version": "v1.11.0"
@@ -4444,8 +2144,8 @@
             "UID": "e9228301c11e1d57"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "golang.org/x/crypto",
           "Version": "v0.57.0"
@@ -4458,8 +2158,8 @@
             "UID": "7dbfcf723919bb9a"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "golang.org/x/net",
           "Version": "v0.60.0"
@@ -4472,8 +2172,8 @@
             "UID": "59938773a9a1d8b3"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "golang.org/x/sync",
           "Version": "v0.23.0"
@@ -4486,8 +2186,8 @@
             "UID": "246d153b08159ad7"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "golang.org/x/sys",
           "Version": "v0.48.0"
@@ -4500,8 +2200,8 @@
             "UID": "be48fab80b480b42"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "golang.org/x/text",
           "Version": "v0.42.0"
@@ -4514,8 +2214,8 @@
             "UID": "a936549e57e72c72"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "google.golang.org/genproto/googleapis/api",
           "Version": "v0.0.0-20260803160001-6ac0973c030d"
@@ -4528,8 +2228,8 @@
             "UID": "f3be84efdbb108e8"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "google.golang.org/genproto/googleapis/rpc",
           "Version": "v0.0.0-20260803160001-6ac0973c030d"
@@ -4542,8 +2242,8 @@
             "UID": "72df2bc7d0e6bf12"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "google.golang.org/grpc",
           "Version": "v1.83.2"
@@ -4556,8 +2256,8 @@
             "UID": "5161cb0f101b8c44"
           },
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "Name": "google.golang.org/protobuf",
           "Version": "v1.36.11"
@@ -4573,11 +2273,11 @@
             "URL": "https://pkg.go.dev/vuln/"
           },
           "Description": "The golang.org/x/crypto/openpgp package is unsafe by design, has numerous known security issues, is not maintained, and should not be used.\n\nIf you are required to interoperate with OpenPGP systems and need a maintained package, consider github.com/ProtonMail/go-crypto/openpgp which is a maintained fork that aims to be a drop-in replacement for this package.",
-          "Fingerprint": "sha256:6155cd788edeac5e3feb966cf9cf133510ae83ee734ddc9be5f16a57618e0ac2",
+          "Fingerprint": "sha256:a217abf6e1489d42ec7d1f7cae311b5b3a1490b2ebdba6810576fb22ab105b51",
           "InstalledVersion": "v0.57.0",
           "Layer": {
-            "DiffID": "sha256:5e8b935b6d75e51f35604196169068be2d3ef08409876992432665b56349cf44",
-            "Digest": "sha256:32d78b7229d5221ff1997c92e812e2c52fd3a0ff63fea3a575420f16619b8448"
+            "DiffID": "sha256:7cda2d649c6ff00981919a2cc7e15ebe0e6c19734b2a7d17901585b28d4e0bb7",
+            "Digest": "sha256:f7a31aced91aa0b4c9f92104ecde1e6cf2caed4063cf327001af8477772072c8"
           },
           "PkgID": "golang.org/x/crypto@v0.57.0",
           "PkgIdentifier": {
