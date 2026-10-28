@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:4aec13c979cbecfb37a8473530c495da23d3d94a846f59af4639461eb72074f2",
   "ArtifactName": "ghcr.io/uug-ai/hub-pipeline-redaction@sha256:f3b2bc7a9ab5de5db45e5d6c9c7fa776598d7333a683eb89ff5ef1b12b375bc4",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-10-27T03:57:57.346197246Z",
+  "CreatedAt": "2026-10-28T03:50:25.106296341Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:c86e4445c72addddcaa6610aa97ebdc38a274bb3ac5eb0679ebdc42317388971",
@@ -299,7 +299,7 @@
     ],
     "Size": 371551232
   },
-  "ReportID": "01a17b81-f6e2-72fe-9f89-37c8d33434b6",
+  "ReportID": "01a180a1-6c52-7480-bada-d7f7a9e053b9",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -6197,6 +6197,80 @@
           "Status": "affected",
           "Title": "The golang.org/x/crypto/openpgp package is unmaintained, unsafe by design, and has known security issues",
           "VulnerabilityID": "GO-2026-5932"
+        },
+        {
+          "DataSource": {
+            "ID": "govulndb",
+            "Name": "The Go Vulnerability Database",
+            "URL": "https://pkg.go.dev/vuln/"
+          },
+          "Description": "When coalescing adjacent text nodes in addText and fosterParent, appending to an existing TextNode's Data via string concatenation (n.Data += text) reallocated and copied the accumulated string on every token. Inputs containing many short text runs separated by ignored end tags (such as \"a\u003c/x\u003e\") caused O(n^2) allocations and byte copies. Accumulate coalesced text in per-node byte slices during parsing and materialize Data strings once at the end of parse.",
+          "Fingerprint": "sha256:200b8be92b7227ad821a04a00419d430121fd8a898fd976f6b3fffe68e5b5f9d",
+          "FixedVersion": "0.62.0",
+          "InstalledVersion": "v0.60.0",
+          "LastModifiedDate": "2026-10-27T22:18:05.93Z",
+          "Layer": {
+            "DiffID": "sha256:47999acc741b11dddfd06bb20b29968ea045f91e9df036da48ab9965f4f91c32",
+            "Digest": "sha256:9c71263c75fa91be79c256dce1cc9919d5ef813e5764d052956107d7eaa0f0d2"
+          },
+          "PkgID": "golang.org/x/net@v0.60.0",
+          "PkgIdentifier": {
+            "PURL": "pkg:golang/golang.org/x/net@v0.60.0",
+            "UID": "5cd457446f49aeeb"
+          },
+          "PkgName": "golang.org/x/net",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78661",
+          "PublishedDate": "2026-10-27T22:18:05.93Z",
+          "References": [
+            "https://go.dev/cl/849365",
+            "https://go.dev/issue/82224",
+            "https://groups.google.com/g/golang-announce/c/sqrs2vTx_Xs",
+            "https://pkg.go.dev/vuln/GO-2026-6860"
+          ],
+          "Severity": "UNKNOWN",
+          "Status": "fixed",
+          "Title": "Avoid quadratic complexity when coalescing text nodes in html in golang.org/x/net",
+          "VendorIDs": [
+            "GO-2026-6860"
+          ],
+          "VulnerabilityID": "CVE-2026-78661"
+        },
+        {
+          "DataSource": {
+            "ID": "govulndb",
+            "Name": "The Go Vulnerability Database",
+            "URL": "https://pkg.go.dev/vuln/"
+          },
+          "Description": "In childTextNodesAreLiteral, walking up the tree previously stopped at the nearest foreign ancestor once an HTML integration point was found. However, that integration point may itself be a descendant of an element that was foster-parented into a foreign namespace (such as \u003cmglyph\u003e or \u003cmalignmark\u003e fostered under \u003cmtext\u003e), causing a parser to resolve the subtree in a different foreign namespace upon re-parsing the rendered output. Continue walking the full ancestor chain and verify that every transition from a non-empty namespace occurs at an HTML integration point before emitting literal text.",
+          "Fingerprint": "sha256:a8d9b136c1b82cf6b04e83af4c138b4a5a00bc7d943d3b05014149537eb4d6ed",
+          "FixedVersion": "0.62.0",
+          "InstalledVersion": "v0.60.0",
+          "LastModifiedDate": "2026-10-27T22:19:22.613Z",
+          "Layer": {
+            "DiffID": "sha256:47999acc741b11dddfd06bb20b29968ea045f91e9df036da48ab9965f4f91c32",
+            "Digest": "sha256:9c71263c75fa91be79c256dce1cc9919d5ef813e5764d052956107d7eaa0f0d2"
+          },
+          "PkgID": "golang.org/x/net@v0.60.0",
+          "PkgIdentifier": {
+            "PURL": "pkg:golang/golang.org/x/net@v0.60.0",
+            "UID": "5cd457446f49aeeb"
+          },
+          "PkgName": "golang.org/x/net",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-97045",
+          "PublishedDate": "2026-10-27T22:19:22.613Z",
+          "References": [
+            "https://go.dev/cl/855121",
+            "https://go.dev/issue/82622",
+            "https://groups.google.com/g/golang-announce/c/sqrs2vTx_Xs",
+            "https://pkg.go.dev/vuln/GO-2026-6866"
+          ],
+          "Severity": "UNKNOWN",
+          "Status": "fixed",
+          "Title": "Check all ancestor namespace transitions when rendering raw text in html in golang.org/x/net",
+          "VendorIDs": [
+            "GO-2026-6866"
+          ],
+          "VulnerabilityID": "CVE-2026-97045"
         }
       ]
     }
