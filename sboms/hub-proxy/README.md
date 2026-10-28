@@ -1,8 +1,8 @@
 # hub-proxy SBOM quality
 
-Collection status: `collected`; collected at `2026-10-27T02:40:06Z`.
+Collection status: `collected`; collected at `2026-10-28T02:28:07Z`.
 
-Overall quality: **Needs work**, **66/100** across **23 packages**.
+Overall quality: **Needs work**, **67/100** across **27 packages**.
 
 | Category | Field | Coverage | Points | Gap |
 | --- | --- | ---: | ---: | ---: |
@@ -12,7 +12,7 @@ Overall quality: **Needs work**, **66/100** across **23 packages**.
 | Identity | Versions | 100% | 10/10 | +0 |
 | Identity | PURLs | 100% | 10/10 | +0 |
 | Licensing | Declared licenses | 0% | 0/10 | +10 |
-| Licensing | Concluded licenses | 65% | 6/10 | +4 |
+| Licensing | Concluded licenses | 74% | 7/10 | +3 |
 | Provenance | Suppliers | 0% | 0/7 | +7 |
 | Provenance | Download locations | 4% | 0/8 | +8 |
 | Relationships | Document describes | 0% | 0/5 | +5 |
