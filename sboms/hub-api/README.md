@@ -1,6 +1,6 @@
 # hub-api SBOM quality
 
-Collection status: `collected`; collected at `2026-10-28T02:28:07Z`.
+Collection status: `collected`; collected at `2026-10-29T02:28:23Z`.
 
 Overall quality: **Needs work**, **69/100** across **185 packages**.
 
