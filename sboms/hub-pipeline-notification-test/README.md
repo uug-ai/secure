@@ -1,8 +1,8 @@
 # hub-pipeline-notification-test SBOM quality
 
-Collection status: `collected`; collected at `2026-10-29T02:28:23Z`.
+Collection status: `collected`; collected at `2026-10-30T02:28:34Z`.
 
-Overall quality: **Needs work**, **68/100** across **65 packages**.
+Overall quality: **Needs work**, **68/100** across **71 packages**.
 
 | Category | Field | Coverage | Points | Gap |
 | --- | --- | ---: | ---: | ---: |
@@ -12,9 +12,9 @@ Overall quality: **Needs work**, **68/100** across **65 packages**.
 | Identity | Versions | 100% | 10/10 | +0 |
 | Identity | PURLs | 100% | 10/10 | +0 |
 | Licensing | Declared licenses | 0% | 0/10 | +10 |
-| Licensing | Concluded licenses | 83% | 8/10 | +2 |
+| Licensing | Concluded licenses | 85% | 8/10 | +2 |
 | Provenance | Suppliers | 0% | 0/7 | +7 |
-| Provenance | Download locations | 2% | 0/8 | +8 |
+| Provenance | Download locations | 1% | 0/8 | +8 |
 | Relationships | Document describes | 0% | 0/5 | +5 |
 | Relationships | SPDX relationships | 100% | 10/10 | +0 |
 
