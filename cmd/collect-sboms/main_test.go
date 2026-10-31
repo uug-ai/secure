@@ -61,7 +61,7 @@ func TestCollectsOnlyTargetRepositories(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	index, err := collectSBOMs(client, "uug-ai", output, defaultExcludedRepositories(), "2026-08-13T10:00:00Z")
+	index, err := collectSBOMs(client, nil, "uug-ai", output, defaultExcludedRepositories(), "2026-08-13T10:00:00Z")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -137,7 +137,7 @@ func TestPreservesPreviousSBOMWhenRefreshFails(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	index, err := collectSBOMs(client, "uug-ai", output, stringSet{"secure": true}, "2026-08-13T10:00:00Z")
+	index, err := collectSBOMs(client, nil, "uug-ai", output, stringSet{"secure": true}, "2026-08-13T10:00:00Z")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -158,7 +158,7 @@ func TestMarksFirstCollectionFailureAsUnavailable(t *testing.T) {
 	}
 	output := t.TempDir()
 
-	index, err := collectSBOMs(client, "uug-ai", output, stringSet{"secure": true}, "2026-08-13T10:00:00Z")
+	index, err := collectSBOMs(client, nil, "uug-ai", output, stringSet{"secure": true}, "2026-08-13T10:00:00Z")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -249,6 +249,60 @@ func TestAssessSBOMRecordsQualityChecks(t *testing.T) {
 		check := checks[field]
 		if check.CoveragePercent != 0 || check.MaximumPoints-check.Points != expectedGap {
 			t.Errorf("unexpected %s check: %+v", field, check)
+		}
+	}
+}
+
+func TestAssessSBOMAcceptsDescribesRelationship(t *testing.T) {
+	tests := map[string]struct {
+		relationships string
+		expected      int
+	}{
+		"document describes package": {
+			relationships: `[{"spdxElementId":"SPDXRef-DOCUMENT","relationshipType":"DESCRIBES","relatedSpdxElement":"SPDXRef-root"}]`,
+			expected:      5,
+		},
+		"package described by document": {
+			relationships: `[{"spdxElementId":"SPDXRef-root","relationshipType":"DESCRIBED_BY","relatedSpdxElement":"SPDXRef-DOCUMENT"}]`,
+			expected:      5,
+		},
+		"package describes another package": {
+			relationships: `[{"spdxElementId":"SPDXRef-root","relationshipType":"DESCRIBES","relatedSpdxElement":"SPDXRef-other"}]`,
+			expected:      0,
+		},
+	}
+	for name, test := range tests {
+		document := []byte(`{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","packages":[],"relationships":` + test.relationships + `}`)
+		quality, err := assessSBOM(document)
+		if err != nil {
+			t.Fatal(err)
+		}
+		for _, check := range quality.Checks {
+			if check.Field == "Document describes" && check.Points != test.expected {
+				t.Errorf("%s: document describes scored %d, want %d", name, check.Points, test.expected)
+			}
+		}
+	}
+}
+
+func TestValidDownloadLocation(t *testing.T) {
+	tests := map[string]bool{
+		"https://proxy.golang.org/github.com/aws/aws-sdk-go/@v/v1.55.8.zip":           true,
+		"git+https://github.com/uug-ai/hub-api":                                       true,
+		"git+https://github.com/uug-ai/workflows@main#.github/workflows/pr-build.yml": true,
+		"git+ssh://git@github.com/uug-ai/hub-api.git":                                 true,
+		"ftp://ftp.example.com/package.tar.gz":                                        true,
+		"":                                                                            false,
+		"NOASSERTION":                                                                 false,
+		"NONE":                                                                        false,
+		"git+hub-api":                                                                 false,
+		"file:///home/runner/work/hub-api":                                            false,
+		"cvs+https://example.com/repository":                                          false,
+		"github.com/uug-ai/hub-api":                                                   false,
+	}
+	for location, expected := range tests {
+		if actual := validDownloadLocation(location); actual != expected {
+			t.Errorf("validDownloadLocation(%q) = %t, want %t", location, actual, expected)
 		}
 	}
 }
