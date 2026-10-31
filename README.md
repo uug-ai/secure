@@ -114,7 +114,10 @@ runs daily at 02:17 UTC and can also be started manually. It:
    except repositories explicitly excluded after retirement.
 2. Downloads each selected repository's SPDX SBOM from GitHub's Dependency
    Graph API.
-3. Writes collection metadata to `sboms/<repository>/status.json` and, when
+3. Fills download locations and declared licenses that GitHub leaves
+   unasserted, using package URLs, deps.dev, and the PyPI JSON API, as
+   described in [`sboms/README.md`](sboms/README.md#enrichment). Then writes
+   collection metadata to `sboms/<repository>/status.json` and, when
    available, the document to `sboms/<repository>/sbom.spdx.json`.
 4. Scores document metadata, package identity, licensing, provenance, and SPDX
    relationships, then updates the quality table above.
