@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:aff32d0d4c97c4435cc1a5470a67e0422af574e5903fc6ad54fbcf9b16bdc73a",
   "ArtifactName": "ghcr.io/uug-ai/hub-pipeline-dominantcolors@sha256:979968519134d8a578d3ed3cbdd274b8c78f4c6d67f83380701a0dd09e047e7f",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-11-02T03:50:53.033469684Z",
+  "CreatedAt": "2026-11-03T03:50:07.375829207Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:75c137aedfb2760f88629236cb7b797630aed0c3d91d626d1d1bb694878fc2ba",
@@ -166,7 +166,7 @@
     ],
     "Size": 238043648
   },
-  "ReportID": "01a19a61-a569-7724-86fb-2a27810489c0",
+  "ReportID": "01a19f87-4f0f-7ca1-9c3a-930b527c0f87",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -5264,7 +5264,194 @@
         }
       ],
       "Target": "ghcr.io/uug-ai/hub-pipeline-dominantcolors@sha256:979968519134d8a578d3ed3cbdd274b8c78f4c6d67f83380701a0dd09e047e7f (alpine 3.24.3)",
-      "Type": "alpine"
+      "Type": "alpine",
+      "Vulnerabilities": [
+        {
+          "CVSS": {
+            "nvd": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-476"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "libexpat through 2.9.0 contains a NULL pointer dereference vulnerability in externalEntityInitProcessor2() in lib/xmlparse.c that mishandles the XML_TOK_NONE token from empty input. Attackers who control stream chunking can force an empty non-final first parse on an external entity subparser, causing a later parse to crash the application.",
+          "Fingerprint": "sha256:67e01b6893bff17978d04560809beeb31d51fd6d4dfc28bc8125925fd2b2d413",
+          "FixedVersion": "2.10.0-r0",
+          "InstalledVersion": "2.9.0-r0",
+          "LastModifiedDate": "2026-11-02T15:37:20.433Z",
+          "Layer": {
+            "DiffID": "sha256:cb18058fe4e3d0ddcf0707e82101577a02c047300792f1b7c02c40fc2cf31690",
+            "Digest": "sha256:ae89df140f9c4b3943174665cb47cbf6b5067f8bd5d0bded4f160e052ab26f7e"
+          },
+          "PkgID": "libexpat@2.9.0-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libexpat@2.9.0-r0?arch=x86_64\u0026distro=3.24.3",
+            "UID": "de4b08b485b70dec"
+          },
+          "PkgName": "libexpat",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-117610",
+          "PublishedDate": "2026-10-28T03:17:12.777Z",
+          "References": [
+            "https://github.com/libexpat/libexpat",
+            "https://github.com/libexpat/libexpat/blob/a76b1174c1ea52abb639a4c69d52b630a8a106a2/expat/lib/xmlparse.c#L3468-L3510",
+            "https://github.com/libexpat/libexpat/commit/7b0d50e4b1d16fafd55876260701e04279a7489d",
+            "https://github.com/libexpat/libexpat/pull/1444",
+            "https://www.vulncheck.com/advisories/libexpat-through-2.9.0-null-pointer-dereference-via-external-entity-subparser"
+          ],
+          "Severity": "HIGH",
+          "SeveritySource": "nvd",
+          "Status": "fixed",
+          "Title": "libexpat through 2.9.0 contains a NULL pointer dereference vulnerabili ...",
+          "VendorSeverity": {
+            "nvd": 3
+          },
+          "VulnerabilityID": "CVE-2026-117610"
+        },
+        {
+          "CVSS": {
+            "nvd": {
+              "V3Score": 8.2,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-190"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "libexpat through 2.9.0 contains a signed integer overflow vulnerability in storeAtts() in lib/xmlparse.c that allows attackers to trigger out-of-bounds writes via oversized attribute counts. Attackers can supply a multi-gigabyte document with a start tag carrying over 2^30 attributes to overflow attIndex and nPrefixes, crashing applications or corrupting heap memory.",
+          "Fingerprint": "sha256:a18e672d674ac8ba6229a2f29a0abd833a9eca74d83059756c7828e065488863",
+          "FixedVersion": "2.10.0-r0",
+          "InstalledVersion": "2.9.0-r0",
+          "LastModifiedDate": "2026-11-02T20:17:37.377Z",
+          "Layer": {
+            "DiffID": "sha256:cb18058fe4e3d0ddcf0707e82101577a02c047300792f1b7c02c40fc2cf31690",
+            "Digest": "sha256:ae89df140f9c4b3943174665cb47cbf6b5067f8bd5d0bded4f160e052ab26f7e"
+          },
+          "PkgID": "libexpat@2.9.0-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libexpat@2.9.0-r0?arch=x86_64\u0026distro=3.24.3",
+            "UID": "de4b08b485b70dec"
+          },
+          "PkgName": "libexpat",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-118370",
+          "PublishedDate": "2026-10-28T03:17:13.293Z",
+          "References": [
+            "https://github.com/libexpat/libexpat",
+            "https://github.com/libexpat/libexpat/blob/a76b1174c1ea52abb639a4c69d52b630a8a106a2/expat/lib/xmlparse.c#L4138-L4140",
+            "https://github.com/libexpat/libexpat/commit/1bac53c4fc460a03cd9860f39501c7979f6750ae",
+            "https://github.com/libexpat/libexpat/commit/621cb2c78b253ee023a86bc91d6ddb048481c04c",
+            "https://github.com/libexpat/libexpat/pull/1450",
+            "https://www.vulncheck.com/advisories/libexpat-through-2.9.0-integer-overflow-in-storeatts-via-attindex-and-nprefixes"
+          ],
+          "Severity": "HIGH",
+          "SeveritySource": "nvd",
+          "Status": "fixed",
+          "Title": "libexpat through 2.9.0 contains a signed integer overflow vulnerabilit ...",
+          "VendorSeverity": {
+            "nvd": 3
+          },
+          "VulnerabilityID": "CVE-2026-118370"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 5.9,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-909"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "libexpat 2.7.2 through 2.9.0 contains a denial of service vulnerability because XML_ParserReset zeroes the direct byte count but never offsets tracked heap allocations. Attackers can submit a large XML document so later documents on the same reset parser fail with XML_ERROR_NO_MEMORY until it is recreated.",
+          "Fingerprint": "sha256:21464c54e31ba40596b8daa13b2ee76f1a5cd94197bea7f5cfc2d46fb3190c0c",
+          "FixedVersion": "2.10.0-r0",
+          "InstalledVersion": "2.9.0-r0",
+          "LastModifiedDate": "2026-10-20T20:06:37.15Z",
+          "Layer": {
+            "DiffID": "sha256:cb18058fe4e3d0ddcf0707e82101577a02c047300792f1b7c02c40fc2cf31690",
+            "Digest": "sha256:ae89df140f9c4b3943174665cb47cbf6b5067f8bd5d0bded4f160e052ab26f7e"
+          },
+          "PkgID": "libexpat@2.9.0-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libexpat@2.9.0-r0?arch=x86_64\u0026distro=3.24.3",
+            "UID": "de4b08b485b70dec"
+          },
+          "PkgName": "libexpat",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-113351",
+          "PublishedDate": "2026-10-20T11:17:19.363Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-113351",
+            "https://github.com/libexpat/libexpat",
+            "https://github.com/libexpat/libexpat/blob/a76b1174c1ea52abb639a4c69d52b630a8a106a2/expat/lib/xmlparse.c#L1560",
+            "https://github.com/libexpat/libexpat/blob/a76b1174c1ea52abb639a4c69d52b630a8a106a2/expat/lib/xmlparse.c#L860-L884",
+            "https://github.com/libexpat/libexpat/pull/1431",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-113351",
+            "https://www.cve.org/CVERecord?id=CVE-2026-113351",
+            "https://www.vulncheck.com/advisories/libexpat-2.7.2-through-2.9.0-denial-of-service-via-xml-parserreset"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "expat: expat: Denial of Service via improper memory tracking in XML_ParserReset",
+          "VendorSeverity": {
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2026-113351"
+        },
+        {
+          "CweIDs": [
+            "CWE-776"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "libexpat through 2.9.0 contains a denial of service vulnerability because billion laughs protection in accountingDiffTolerated() in xmlparse.c detects entity amplification too late. Attackers can supply a moderately sized XML document with a large DTD and nested entity expansions to consume tens of seconds of CPU per parse.",
+          "Fingerprint": "sha256:8a88b9f32ed3f5bc94d89c201b56b5ba39a126bbd5c157e5f3968e0a16e6c540",
+          "FixedVersion": "2.10.0-r0",
+          "InstalledVersion": "2.9.0-r0",
+          "LastModifiedDate": "2026-11-02T18:27:06.127Z",
+          "Layer": {
+            "DiffID": "sha256:cb18058fe4e3d0ddcf0707e82101577a02c047300792f1b7c02c40fc2cf31690",
+            "Digest": "sha256:ae89df140f9c4b3943174665cb47cbf6b5067f8bd5d0bded4f160e052ab26f7e"
+          },
+          "PkgID": "libexpat@2.9.0-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libexpat@2.9.0-r0?arch=x86_64\u0026distro=3.24.3",
+            "UID": "de4b08b485b70dec"
+          },
+          "PkgName": "libexpat",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-115506",
+          "PublishedDate": "2026-10-22T20:17:06.62Z",
+          "References": [
+            "https://github.com/hannob/lololol",
+            "https://github.com/libexpat/libexpat",
+            "https://github.com/libexpat/libexpat/issues/1160",
+            "https://github.com/libexpat/libexpat/pull/1433",
+            "https://www.vulncheck.com/advisories/libexpat-through-2.9.0-denial-of-service-via-billion-laughs-detection-delay"
+          ],
+          "Severity": "UNKNOWN",
+          "Status": "fixed",
+          "Title": "libexpat through 2.9.0 contains a denial of service vulnerability beca ...",
+          "VulnerabilityID": "CVE-2026-115506"
+        }
+      ]
     },
     {
       "Class": "lang-pkgs",
@@ -6199,6 +6386,7 @@
           },
           "Description": "The golang.org/x/crypto/openpgp package is unsafe by design, has numerous known security issues, is not maintained, and should not be used.\n\nIf you are required to interoperate with OpenPGP systems and need a maintained package, consider github.com/ProtonMail/go-crypto/openpgp which is a maintained fork that aims to be a drop-in replacement for this package.",
           "Fingerprint": "sha256:f2452557775d05b79d277398a98c95aa21f999ed8cb7268c58906ebfe48bef79",
+          "FixedVersion": "0.58.1-0.20261009181718-2f1f834330b2",
           "InstalledVersion": "v0.57.0",
           "Layer": {
             "DiffID": "sha256:2701a2524242da5f8e076bba22fb4958e0ded857a5b92acfc46282d1160b7035",
@@ -6212,10 +6400,11 @@
           "PkgName": "golang.org/x/crypto",
           "References": [
             "https://go.dev/issue/44226",
+            "https://go.dev/issue/81227",
             "https://pkg.go.dev/vuln/GO-2026-5932"
           ],
           "Severity": "UNKNOWN",
-          "Status": "affected",
+          "Status": "fixed",
           "Title": "The golang.org/x/crypto/openpgp package is unmaintained, unsafe by design, and has known security issues",
           "VulnerabilityID": "GO-2026-5932"
         },

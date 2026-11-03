@@ -1,8 +1,8 @@
 # Critical and high vulnerability findings
 
-Generated at `2026-11-02T03:48:37Z` from the latest available Trivy container reports. Occurrences count every affected package record across scanned images; one advisory can therefore occur more than once in one or more repositories.
+Generated at `2026-11-03T03:48:20Z` from the latest available Trivy container reports. Occurrences count every affected package record across scanned images; one advisory can therefore occur more than once in one or more repositories.
 
-**423 unique findings**: 20 critical and 403 high, with 684 total occurrences.
+**427 unique findings**: 20 critical and 407 high, with 700 total occurrences.
 
 | Severity | Advisory | Occurrences | Fixable | Repositories | Packages |
 | --- | --- | ---: | ---: | --- | --- |
@@ -47,6 +47,8 @@ Generated at `2026-11-02T03:48:37Z` from the latest available Trivy container re
 | HIGH | [CVE-2026-53613](https://avd.aquasec.com/nvd/cve-2026-53613) | 8 | 0 | hub-pipeline-classifier | bsdutils@1:2.38.1-5+deb12u3, libblkid1@2.38.1-5+deb12u3, libmount1@2.38.1-5+deb12u3, libsmartcols1@2.38.1-5+deb12u3, libuuid1@2.38.1-5+deb12u3, mount@2.38.1-5+deb12u3, util-linux-extra@2.38.1-5+deb12u3, util-linux@2.38.1-5+deb12u3 |
 | HIGH | [CVE-2026-53615](https://avd.aquasec.com/nvd/cve-2026-53615) | 8 | 0 | hub-pipeline-classifier | bsdutils@1:2.38.1-5+deb12u3, libblkid1@2.38.1-5+deb12u3, libmount1@2.38.1-5+deb12u3, libsmartcols1@2.38.1-5+deb12u3, libuuid1@2.38.1-5+deb12u3, mount@2.38.1-5+deb12u3, util-linux-extra@2.38.1-5+deb12u3, util-linux@2.38.1-5+deb12u3 |
 | HIGH | [CVE-2026-78410](https://avd.aquasec.com/nvd/cve-2026-78410) | 8 | 0 | hub-pipeline-classifier | bsdutils@1:2.38.1-5+deb12u3, libblkid1@2.38.1-5+deb12u3, libmount1@2.38.1-5+deb12u3, libsmartcols1@2.38.1-5+deb12u3, libuuid1@2.38.1-5+deb12u3, mount@2.38.1-5+deb12u3, util-linux-extra@2.38.1-5+deb12u3, util-linux@2.38.1-5+deb12u3 |
+| HIGH | [CVE-2026-117610](https://avd.aquasec.com/nvd/cve-2026-117610) | 7 | 5 | hub-pipeline-classifier, hub-pipeline-dominantcolors, hub-pipeline-notification, hub-pipeline-sprite, hub-pipeline-thumbnail, hub-vlm | libexpat1-dev@2.5.0-1+deb12u3, libexpat1@2.5.0-1+deb12u3, libexpat@2.9.0-r0 |
+| HIGH | [CVE-2026-118370](https://avd.aquasec.com/nvd/cve-2026-118370) | 7 | 5 | hub-pipeline-classifier, hub-pipeline-dominantcolors, hub-pipeline-notification, hub-pipeline-sprite, hub-pipeline-thumbnail, hub-vlm | libexpat1-dev@2.5.0-1+deb12u3, libexpat1@2.5.0-1+deb12u3, libexpat@2.9.0-r0 |
 | HIGH | [CVE-2025-69534](https://avd.aquasec.com/nvd/cve-2025-69534) | 6 | 6 | hub-pipeline-classifier | libpython3.11-dev@3.11.2-6+deb12u8, libpython3.11-minimal@3.11.2-6+deb12u8, libpython3.11-stdlib@3.11.2-6+deb12u8, libpython3.11@3.11.2-6+deb12u8, python3.11-minimal@3.11.2-6+deb12u8, python3.11@3.11.2-6+deb12u8 |
 | HIGH | [CVE-2026-11940](https://avd.aquasec.com/nvd/cve-2026-11940) | 6 | 0 | hub-pipeline-classifier | libpython3.11-dev@3.11.2-6+deb12u8, libpython3.11-minimal@3.11.2-6+deb12u8, libpython3.11-stdlib@3.11.2-6+deb12u8, libpython3.11@3.11.2-6+deb12u8, python3.11-minimal@3.11.2-6+deb12u8, python3.11@3.11.2-6+deb12u8 |
 | HIGH | [CVE-2026-15308](https://avd.aquasec.com/nvd/cve-2026-15308) | 6 | 6 | hub-pipeline-classifier | libpython3.11-dev@3.11.2-6+deb12u8, libpython3.11-minimal@3.11.2-6+deb12u8, libpython3.11-stdlib@3.11.2-6+deb12u8, libpython3.11@3.11.2-6+deb12u8, python3.11-minimal@3.11.2-6+deb12u8, python3.11@3.11.2-6+deb12u8 |
@@ -174,6 +176,8 @@ Generated at `2026-11-02T03:48:37Z` from the latest available Trivy container re
 | HIGH | [CVE-2026-100072](https://avd.aquasec.com/nvd/cve-2026-100072) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
 | HIGH | [CVE-2026-103111](https://avd.aquasec.com/nvd/cve-2026-103111) | 1 | 1 | hub-pipeline-classifier | libpcre2-8-0@10.42-1 |
 | HIGH | [CVE-2026-104851](https://avd.aquasec.com/nvd/cve-2026-104851) | 1 | 1 | hub-pipeline-classifier | fsspec@2024.5.0 |
+| HIGH | [CVE-2026-109089](https://avd.aquasec.com/nvd/cve-2026-109089) | 1 | 0 | hub-pipeline-classifier | libxi6@2:1.8-1+b1 |
+| HIGH | [CVE-2026-109090](https://avd.aquasec.com/nvd/cve-2026-109090) | 1 | 0 | hub-pipeline-classifier | libxi6@2:1.8-1+b1 |
 | HIGH | [CVE-2026-111064](https://avd.aquasec.com/nvd/cve-2026-111064) | 1 | 1 | hub-pipeline-classifier | aiohttp@3.14.3 |
 | HIGH | [CVE-2026-111066](https://avd.aquasec.com/nvd/cve-2026-111066) | 1 | 1 | hub-pipeline-classifier | aiohttp@3.14.3 |
 | HIGH | [CVE-2026-111943](https://avd.aquasec.com/nvd/cve-2026-111943) | 1 | 1 | hub-pipeline-monitor | stdlib@v1.26.9 |

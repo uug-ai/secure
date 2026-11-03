@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:fa3c5e16695f725911f30f46589a53db4b00f763dc18c483c0323a61e091cd5d",
   "ArtifactName": "ghcr.io/uug-ai/hub-anpr@sha256:8e6563e15136957f707ea6a8d8de685f1e7a92310c3a316c2a0bfdf1cb6fe829",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-11-02T03:48:48.987023787Z",
+  "CreatedAt": "2026-11-03T03:48:31.596096563Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:c86e4445c72addddcaa6610aa97ebdc38a274bb3ac5eb0679ebdc42317388971",
@@ -444,7 +444,7 @@
     ],
     "Size": 422480896
   },
-  "ReportID": "01a19a5f-c0db-7057-a2a1-47f2c5ccb9f2",
+  "ReportID": "01a19f85-d8ec-7174-8c2a-3f112b202b0b",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -5724,7 +5724,97 @@
         }
       ],
       "Target": "ghcr.io/uug-ai/hub-anpr@sha256:8e6563e15136957f707ea6a8d8de685f1e7a92310c3a316c2a0bfdf1cb6fe829 (wolfi 20230201)",
-      "Type": "wolfi"
+      "Type": "wolfi",
+      "Vulnerabilities": [
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 5.9,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-909"
+          ],
+          "DataSource": {
+            "ID": "wolfi",
+            "Name": "Wolfi Secdb",
+            "URL": "https://packages.wolfi.dev/os/security.json"
+          },
+          "Description": "libexpat 2.7.2 through 2.9.0 contains a denial of service vulnerability because XML_ParserReset zeroes the direct byte count but never offsets tracked heap allocations. Attackers can submit a large XML document so later documents on the same reset parser fail with XML_ERROR_NO_MEMORY until it is recreated.",
+          "Fingerprint": "sha256:9afa69c97e68cf39229bd6d9591a76a4b47750a3d9a0b35c98bba911b822141d",
+          "FixedVersion": "2.10.0-r0",
+          "InstalledVersion": "2.9.0-r0",
+          "LastModifiedDate": "2026-10-20T20:06:37.15Z",
+          "Layer": {
+            "DiffID": "sha256:478fdc3e693076aff09a589987d3c226b2c4228e1f156726068d10aec40b83f6",
+            "Digest": "sha256:ca8cc188901c7eb0f647001a0502d3146bf4fc6afca28aad0ded61c2e5b57459"
+          },
+          "PkgID": "libexpat1@2.9.0-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/wolfi/libexpat1@2.9.0-r0?arch=x86_64\u0026distro=20230201",
+            "UID": "5bf1a2ccc241a190"
+          },
+          "PkgName": "libexpat1",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-113351",
+          "PublishedDate": "2026-10-20T11:17:19.363Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-113351",
+            "https://github.com/libexpat/libexpat",
+            "https://github.com/libexpat/libexpat/blob/a76b1174c1ea52abb639a4c69d52b630a8a106a2/expat/lib/xmlparse.c#L1560",
+            "https://github.com/libexpat/libexpat/blob/a76b1174c1ea52abb639a4c69d52b630a8a106a2/expat/lib/xmlparse.c#L860-L884",
+            "https://github.com/libexpat/libexpat/pull/1431",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-113351",
+            "https://www.cve.org/CVERecord?id=CVE-2026-113351",
+            "https://www.vulncheck.com/advisories/libexpat-2.7.2-through-2.9.0-denial-of-service-via-xml-parserreset"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "expat: expat: Denial of Service via improper memory tracking in XML_ParserReset",
+          "VendorSeverity": {
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2026-113351"
+        },
+        {
+          "CweIDs": [
+            "CWE-776"
+          ],
+          "DataSource": {
+            "ID": "wolfi",
+            "Name": "Wolfi Secdb",
+            "URL": "https://packages.wolfi.dev/os/security.json"
+          },
+          "Description": "libexpat through 2.9.0 contains a denial of service vulnerability because billion laughs protection in accountingDiffTolerated() in xmlparse.c detects entity amplification too late. Attackers can supply a moderately sized XML document with a large DTD and nested entity expansions to consume tens of seconds of CPU per parse.",
+          "Fingerprint": "sha256:efc76ae6040d85b9476d86db26ff90c4e549858800ebcd2f16cb3972e3d6e996",
+          "FixedVersion": "2.10.0-r0",
+          "InstalledVersion": "2.9.0-r0",
+          "LastModifiedDate": "2026-11-02T18:27:06.127Z",
+          "Layer": {
+            "DiffID": "sha256:478fdc3e693076aff09a589987d3c226b2c4228e1f156726068d10aec40b83f6",
+            "Digest": "sha256:ca8cc188901c7eb0f647001a0502d3146bf4fc6afca28aad0ded61c2e5b57459"
+          },
+          "PkgID": "libexpat1@2.9.0-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/wolfi/libexpat1@2.9.0-r0?arch=x86_64\u0026distro=20230201",
+            "UID": "5bf1a2ccc241a190"
+          },
+          "PkgName": "libexpat1",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-115506",
+          "PublishedDate": "2026-10-22T20:17:06.62Z",
+          "References": [
+            "https://github.com/hannob/lololol",
+            "https://github.com/libexpat/libexpat",
+            "https://github.com/libexpat/libexpat/issues/1160",
+            "https://github.com/libexpat/libexpat/pull/1433",
+            "https://www.vulncheck.com/advisories/libexpat-through-2.9.0-denial-of-service-via-billion-laughs-detection-delay"
+          ],
+          "Severity": "UNKNOWN",
+          "Status": "fixed",
+          "Title": "libexpat through 2.9.0 contains a denial of service vulnerability beca ...",
+          "VulnerabilityID": "CVE-2026-115506"
+        }
+      ]
     },
     {
       "Class": "lang-pkgs",
@@ -6659,6 +6749,7 @@
           },
           "Description": "The golang.org/x/crypto/openpgp package is unsafe by design, has numerous known security issues, is not maintained, and should not be used.\n\nIf you are required to interoperate with OpenPGP systems and need a maintained package, consider github.com/ProtonMail/go-crypto/openpgp which is a maintained fork that aims to be a drop-in replacement for this package.",
           "Fingerprint": "sha256:ada89a596d1e606bba67a07872b320a69ad2928fe1b421072e47974302fb8ea7",
+          "FixedVersion": "0.58.1-0.20261009181718-2f1f834330b2",
           "InstalledVersion": "v0.57.0",
           "Layer": {
             "DiffID": "sha256:e8d51bf3e2efd33d4c545f7efb28853fa3fedcd94321b7739bdf5bace3b5d7ff",
@@ -6672,10 +6763,11 @@
           "PkgName": "golang.org/x/crypto",
           "References": [
             "https://go.dev/issue/44226",
+            "https://go.dev/issue/81227",
             "https://pkg.go.dev/vuln/GO-2026-5932"
           ],
           "Severity": "UNKNOWN",
-          "Status": "affected",
+          "Status": "fixed",
           "Title": "The golang.org/x/crypto/openpgp package is unmaintained, unsafe by design, and has known security issues",
           "VulnerabilityID": "GO-2026-5932"
         },
