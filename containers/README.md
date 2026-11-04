@@ -4,6 +4,11 @@ This directory contains Trivy vulnerability reports for the newest tagged
 `ghcr.io/uug-ai/<repository>` image available for each project in
 [`../sboms/index.json`](../sboms/index.json).
 
+For image build, release, and customer runtime requirements, see the
+[container image hardening guide](image-hardening.md). That guidance is maintained
+separately from these generated vulnerability reports: neither the guidance nor
+a clean scan establishes hardening compliance.
+
 ```text
 containers/
   index.json
