@@ -11,6 +11,14 @@ record is a coverage gap, not proof that a project has no vulnerabilities.
 Everything committed here is public information and must be approved for
 external disclosure.
 
+## Security guidance
+
+The [container image hardening guide](containers/image-hardening.md) documents
+image build, release, and customer runtime expectations, imported from
+[UUG Learn](https://learn.uug.ai/guides/security/image-hardening/) for further
+development here. This guidance describes required practices; it is not evidence
+that a particular image implements them or a claim of CIS compliance.
+
 ## Evidence inventory
 
 | Area | Location | State |
