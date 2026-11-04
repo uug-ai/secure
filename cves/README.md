@@ -1,8 +1,8 @@
 # Critical and high vulnerability findings
 
-Generated at `2026-11-03T03:48:20Z` from the latest available Trivy container reports. Occurrences count every affected package record across scanned images; one advisory can therefore occur more than once in one or more repositories.
+Generated at `2026-11-04T03:48:38Z` from the latest available Trivy container reports. Occurrences count every affected package record across scanned images; one advisory can therefore occur more than once in one or more repositories.
 
-**427 unique findings**: 20 critical and 407 high, with 700 total occurrences.
+**432 unique findings**: 20 critical and 412 high, with 713 total occurrences.
 
 | Severity | Advisory | Occurrences | Fixable | Repositories | Packages |
 | --- | --- | ---: | ---: | --- | --- |
@@ -27,6 +27,7 @@ Generated at `2026-11-03T03:48:20Z` from the latest available Trivy container re
 | CRITICAL | [CVE-2026-98432](https://avd.aquasec.com/nvd/cve-2026-98432) | 1 | 1 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
 | CRITICAL | [CVE-2026-99083](https://avd.aquasec.com/nvd/cve-2026-99083) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
 | HIGH | [CVE-2025-68973](https://avd.aquasec.com/nvd/cve-2025-68973) | 12 | 12 | hub-objecttracking | dirmngr@2.2.27-3ubuntu2.1, gnupg-l10n@2.2.27-3ubuntu2.1, gnupg-utils@2.2.27-3ubuntu2.1, gnupg2@2.2.27-3ubuntu2.1, gnupg@2.2.27-3ubuntu2.1, gpg-agent@2.2.27-3ubuntu2.1, gpg-wks-client@2.2.27-3ubuntu2.1, gpg-wks-server@2.2.27-3ubuntu2.1, gpg@2.2.27-3ubuntu2.1, gpgconf@2.2.27-3ubuntu2.1, gpgsm@2.2.27-3ubuntu2.1, gpgv@2.2.27-3ubuntu2.1 |
+| HIGH | [CVE-2026-113351](https://avd.aquasec.com/nvd/cve-2026-113351) | 9 | 7 | hub-anpr, hub-pipeline-classifier, hub-pipeline-dominantcolors, hub-pipeline-notification, hub-pipeline-redaction, hub-pipeline-sprite, hub-pipeline-thumbnail, hub-vlm | libexpat1-dev@2.5.0-1+deb12u3, libexpat1@2.5.0-1+deb12u3, libexpat1@2.9.0-r0, libexpat@2.9.0-r0 |
 | HIGH | [CVE-2026-52296](https://avd.aquasec.com/nvd/cve-2026-52296) | 9 | 0 | hub-pipeline-classifier | ffmpeg@7:5.1.9-0+deb12u1, libavcodec59@7:5.1.9-0+deb12u1, libavdevice59@7:5.1.9-0+deb12u1, libavfilter8@7:5.1.9-0+deb12u1, libavformat59@7:5.1.9-0+deb12u1, libavutil57@7:5.1.9-0+deb12u1, libpostproc56@7:5.1.9-0+deb12u1, libswresample4@7:5.1.9-0+deb12u1, libswscale6@7:5.1.9-0+deb12u1 |
 | HIGH | [CVE-2026-58049](https://avd.aquasec.com/nvd/cve-2026-58049) | 9 | 0 | hub-pipeline-classifier | ffmpeg@7:5.1.9-0+deb12u1, libavcodec59@7:5.1.9-0+deb12u1, libavdevice59@7:5.1.9-0+deb12u1, libavfilter8@7:5.1.9-0+deb12u1, libavformat59@7:5.1.9-0+deb12u1, libavutil57@7:5.1.9-0+deb12u1, libpostproc56@7:5.1.9-0+deb12u1, libswresample4@7:5.1.9-0+deb12u1, libswscale6@7:5.1.9-0+deb12u1 |
 | HIGH | [CVE-2026-64830](https://avd.aquasec.com/nvd/cve-2026-64830) | 9 | 0 | hub-pipeline-classifier | ffmpeg@7:5.1.9-0+deb12u1, libavcodec59@7:5.1.9-0+deb12u1, libavdevice59@7:5.1.9-0+deb12u1, libavfilter8@7:5.1.9-0+deb12u1, libavformat59@7:5.1.9-0+deb12u1, libavutil57@7:5.1.9-0+deb12u1, libpostproc56@7:5.1.9-0+deb12u1, libswresample4@7:5.1.9-0+deb12u1, libswscale6@7:5.1.9-0+deb12u1 |
@@ -403,7 +404,7 @@ Generated at `2026-11-03T03:48:20Z` from the latest available Trivy container re
 | HIGH | [CVE-2026-98171](https://avd.aquasec.com/nvd/cve-2026-98171) | 1 | 1 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
 | HIGH | [CVE-2026-98222](https://avd.aquasec.com/nvd/cve-2026-98222) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
 | HIGH | [CVE-2026-98260](https://avd.aquasec.com/nvd/cve-2026-98260) | 1 | 1 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
-| HIGH | [CVE-2026-98320](https://avd.aquasec.com/nvd/cve-2026-98320) | 1 | 1 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
+| HIGH | [CVE-2026-98275](https://avd.aquasec.com/nvd/cve-2026-98275) | 1 | 1 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
 | HIGH | [CVE-2026-98323](https://avd.aquasec.com/nvd/cve-2026-98323) | 1 | 1 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
 | HIGH | [CVE-2026-98364](https://avd.aquasec.com/nvd/cve-2026-98364) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
 | HIGH | [CVE-2026-98378](https://avd.aquasec.com/nvd/cve-2026-98378) | 1 | 1 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
@@ -413,7 +414,6 @@ Generated at `2026-11-03T03:48:20Z` from the latest available Trivy container re
 | HIGH | [CVE-2026-98524](https://avd.aquasec.com/nvd/cve-2026-98524) | 1 | 1 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
 | HIGH | [CVE-2026-98532](https://avd.aquasec.com/nvd/cve-2026-98532) | 1 | 1 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
 | HIGH | [CVE-2026-98548](https://avd.aquasec.com/nvd/cve-2026-98548) | 1 | 1 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
-| HIGH | [CVE-2026-98550](https://avd.aquasec.com/nvd/cve-2026-98550) | 1 | 1 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
 | HIGH | [CVE-2026-98573](https://avd.aquasec.com/nvd/cve-2026-98573) | 1 | 1 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
 | HIGH | [CVE-2026-98614](https://avd.aquasec.com/nvd/cve-2026-98614) | 1 | 1 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
 | HIGH | [CVE-2026-98621](https://avd.aquasec.com/nvd/cve-2026-98621) | 1 | 1 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
@@ -428,7 +428,12 @@ Generated at `2026-11-03T03:48:20Z` from the latest available Trivy container re
 | HIGH | [CVE-2026-98857](https://avd.aquasec.com/nvd/cve-2026-98857) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
 | HIGH | [CVE-2026-99056](https://avd.aquasec.com/nvd/cve-2026-99056) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
 | HIGH | [CVE-2026-99109](https://avd.aquasec.com/nvd/cve-2026-99109) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
+| HIGH | [CVE-2026-99152](https://avd.aquasec.com/nvd/cve-2026-99152) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
+| HIGH | [CVE-2026-99153](https://avd.aquasec.com/nvd/cve-2026-99153) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
 | HIGH | [CVE-2026-99167](https://avd.aquasec.com/nvd/cve-2026-99167) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
+| HIGH | [CVE-2026-99233](https://avd.aquasec.com/nvd/cve-2026-99233) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
+| HIGH | [CVE-2026-99235](https://avd.aquasec.com/nvd/cve-2026-99235) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
+| HIGH | [CVE-2026-99239](https://avd.aquasec.com/nvd/cve-2026-99239) | 1 | 0 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
 | HIGH | [CVE-2026-99999](https://avd.aquasec.com/nvd/cve-2026-99999) | 1 | 1 | hub-pipeline-classifier | linux-libc-dev@6.1.187-1 |
 | HIGH | [GHSA-2g87-pp6c-29x5](https://github.com/advisories/GHSA-2g87-pp6c-29x5) | 1 | 1 | hub-pipeline-classifier | aiohttp@3.14.3 |
 | HIGH | [GHSA-6v7p-g79w-8964](https://github.com/advisories/GHSA-6v7p-g79w-8964) | 1 | 1 | hub-pipeline-classifier | msgpack@1.1.2 |

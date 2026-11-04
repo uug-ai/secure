@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:02eaf5c4478d1674f7c248de1be0e9356b36ebbddd5f3a44fa801799e9962c84",
   "ArtifactName": "ghcr.io/uug-ai/hub-pipeline-thumbnail@sha256:3a2d4e4ec564d0ab39eb7adedefd30893987ca92acb2bfd561151cd95a749c32",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-11-03T03:50:24.365490551Z",
+  "CreatedAt": "2026-11-04T03:51:09.430385339Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:74d97c428c51a828f9051a7a40a53ff1fc99e54fc30323ce36760701b0b7f711",
@@ -166,7 +166,7 @@
     ],
     "Size": 271965184
   },
-  "ReportID": "01a19f87-916d-7776-96a6-5ba744cb7c23",
+  "ReportID": "01a1a4ae-9d76-75da-afc1-39a838e81281",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -5271,6 +5271,62 @@
             "nvd": {
               "V3Score": 7.5,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
+            "redhat": {
+              "V3Score": 5.9,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-909"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "libexpat 2.7.2 through 2.9.0 contains a denial of service vulnerability because XML_ParserReset zeroes the direct byte count but never offsets tracked heap allocations. Attackers can submit a large XML document so later documents on the same reset parser fail with XML_ERROR_NO_MEMORY until it is recreated.",
+          "Fingerprint": "sha256:7db0e8fe5d6a05951a5ff272614e7a24b642b3505e881774e3b64220087af8ed",
+          "FixedVersion": "2.10.0-r0",
+          "InstalledVersion": "2.9.0-r0",
+          "LastModifiedDate": "2026-11-03T21:26:47.25Z",
+          "Layer": {
+            "DiffID": "sha256:f02cf06c714e238dcf1d6cd940abc437427dad67e455b17fba518c2f127d9cdb",
+            "Digest": "sha256:4605d8537f1d662c1b06a92df7d31d5409bdbf53bb2dfc69913a5969aaf7fa00"
+          },
+          "PkgID": "libexpat@2.9.0-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libexpat@2.9.0-r0?arch=x86_64\u0026distro=3.24.2",
+            "UID": "de4b08b485b70dec"
+          },
+          "PkgName": "libexpat",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-113351",
+          "PublishedDate": "2026-10-20T11:17:19.363Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-113351",
+            "https://github.com/libexpat/libexpat",
+            "https://github.com/libexpat/libexpat/blob/a76b1174c1ea52abb639a4c69d52b630a8a106a2/expat/lib/xmlparse.c#L1560",
+            "https://github.com/libexpat/libexpat/blob/a76b1174c1ea52abb639a4c69d52b630a8a106a2/expat/lib/xmlparse.c#L860-L884",
+            "https://github.com/libexpat/libexpat/pull/1431",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-113351",
+            "https://www.cve.org/CVERecord?id=CVE-2026-113351",
+            "https://www.vulncheck.com/advisories/libexpat-2.7.2-through-2.9.0-denial-of-service-via-xml-parserreset"
+          ],
+          "Severity": "HIGH",
+          "SeveritySource": "nvd",
+          "Status": "fixed",
+          "Title": "expat: expat: Denial of Service via improper memory tracking in XML_ParserReset",
+          "VendorSeverity": {
+            "nvd": 3,
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2026-113351"
+        },
+        {
+          "CVSS": {
+            "nvd": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
             }
           },
           "CweIDs": [
@@ -5362,56 +5418,6 @@
             "nvd": 3
           },
           "VulnerabilityID": "CVE-2026-118370"
-        },
-        {
-          "CVSS": {
-            "redhat": {
-              "V3Score": 5.9,
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
-            }
-          },
-          "CweIDs": [
-            "CWE-909"
-          ],
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Description": "libexpat 2.7.2 through 2.9.0 contains a denial of service vulnerability because XML_ParserReset zeroes the direct byte count but never offsets tracked heap allocations. Attackers can submit a large XML document so later documents on the same reset parser fail with XML_ERROR_NO_MEMORY until it is recreated.",
-          "Fingerprint": "sha256:7db0e8fe5d6a05951a5ff272614e7a24b642b3505e881774e3b64220087af8ed",
-          "FixedVersion": "2.10.0-r0",
-          "InstalledVersion": "2.9.0-r0",
-          "LastModifiedDate": "2026-10-20T20:06:37.15Z",
-          "Layer": {
-            "DiffID": "sha256:f02cf06c714e238dcf1d6cd940abc437427dad67e455b17fba518c2f127d9cdb",
-            "Digest": "sha256:4605d8537f1d662c1b06a92df7d31d5409bdbf53bb2dfc69913a5969aaf7fa00"
-          },
-          "PkgID": "libexpat@2.9.0-r0",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libexpat@2.9.0-r0?arch=x86_64\u0026distro=3.24.2",
-            "UID": "de4b08b485b70dec"
-          },
-          "PkgName": "libexpat",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-113351",
-          "PublishedDate": "2026-10-20T11:17:19.363Z",
-          "References": [
-            "https://access.redhat.com/security/cve/CVE-2026-113351",
-            "https://github.com/libexpat/libexpat",
-            "https://github.com/libexpat/libexpat/blob/a76b1174c1ea52abb639a4c69d52b630a8a106a2/expat/lib/xmlparse.c#L1560",
-            "https://github.com/libexpat/libexpat/blob/a76b1174c1ea52abb639a4c69d52b630a8a106a2/expat/lib/xmlparse.c#L860-L884",
-            "https://github.com/libexpat/libexpat/pull/1431",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-113351",
-            "https://www.cve.org/CVERecord?id=CVE-2026-113351",
-            "https://www.vulncheck.com/advisories/libexpat-2.7.2-through-2.9.0-denial-of-service-via-xml-parserreset"
-          ],
-          "Severity": "MEDIUM",
-          "Status": "fixed",
-          "Title": "expat: expat: Denial of Service via improper memory tracking in XML_ParserReset",
-          "VendorSeverity": {
-            "redhat": 2
-          },
-          "VulnerabilityID": "CVE-2026-113351"
         },
         {
           "CweIDs": [
