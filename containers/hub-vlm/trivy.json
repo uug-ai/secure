@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:83d09e1fc02aed1e031488ce6da4e01a943ddcfc15bd4c438085c711c2cda379",
   "ArtifactName": "ghcr.io/uug-ai/hub-vlm@sha256:168d22b2b329065c9f283326d5ef53cb51ee553fe005ed97b37c57e7e2ff2330",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-11-06T03:51:38.149956568Z",
+  "CreatedAt": "2026-11-07T03:50:09.3574554Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:75c137aedfb2760f88629236cb7b797630aed0c3d91d626d1d1bb694878fc2ba",
@@ -166,7 +166,7 @@
     ],
     "Size": 207067136
   },
-  "ReportID": "01a1aefb-c5a5-7e94-85be-ac2c09d928ce",
+  "ReportID": "01a1b420-c6cd-76ed-864c-a237742d34c8",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -5324,6 +5324,57 @@
         },
         {
           "CVSS": {
+            "redhat": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-776"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "libexpat through 2.9.0 contains a denial of service vulnerability because billion laughs protection in accountingDiffTolerated() in xmlparse.c detects entity amplification too late. Attackers can supply a moderately sized XML document with a large DTD and nested entity expansions to consume tens of seconds of CPU per parse.",
+          "Fingerprint": "sha256:64bdb4a4b4115a47aeb387a8c6a7df0a410ace5306b7bcf7cbbcc6e3149b4425",
+          "FixedVersion": "2.10.0-r0",
+          "InstalledVersion": "2.9.0-r0",
+          "LastModifiedDate": "2026-11-02T18:27:06.127Z",
+          "Layer": {
+            "DiffID": "sha256:91c101b2fff597a76771c6baadad85b5cef24b30ca9ffaf83d0d5e18e841f6c2",
+            "Digest": "sha256:e1a1f44e4ebda4cf13f915fa3aa30a794c2ae8cea49f06beb9edf23ea54bab9f"
+          },
+          "PkgID": "libexpat@2.9.0-r0",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libexpat@2.9.0-r0?arch=x86_64\u0026distro=3.24.3",
+            "UID": "de4b08b485b70dec"
+          },
+          "PkgName": "libexpat",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-115506",
+          "PublishedDate": "2026-10-22T20:17:06.62Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-115506",
+            "https://github.com/hannob/lololol",
+            "https://github.com/libexpat/libexpat",
+            "https://github.com/libexpat/libexpat/issues/1160",
+            "https://github.com/libexpat/libexpat/pull/1433",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-115506",
+            "https://www.cve.org/CVERecord?id=CVE-2026-115506",
+            "https://www.vulncheck.com/advisories/libexpat-through-2.9.0-denial-of-service-via-billion-laughs-detection-delay"
+          ],
+          "Severity": "HIGH",
+          "Status": "fixed",
+          "Title": "expat: expat: Denial of Service via delayed entity amplification detection",
+          "VendorSeverity": {
+            "photon": 3,
+            "redhat": 3
+          },
+          "VulnerabilityID": "CVE-2026-115506"
+        },
+        {
+          "CVSS": {
             "nvd": {
               "V3Score": 7.5,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
@@ -5436,42 +5487,56 @@
           "VulnerabilityID": "CVE-2026-118370"
         },
         {
+          "CVSS": {
+            "bitnami": {
+              "V40Score": 9.4,
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/E:A/S:P/AU:Y/R:U/V:C/RE:L/U:Amber"
+            },
+            "julia": {
+              "V40Score": 9.4,
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/E:A/S:P/AU:Y/R:U/V:C/RE:L/U:Amber"
+            }
+          },
           "CweIDs": [
-            "CWE-776"
+            "CWE-119"
           ],
           "DataSource": {
             "ID": "alpine",
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Description": "libexpat through 2.9.0 contains a denial of service vulnerability because billion laughs protection in accountingDiffTolerated() in xmlparse.c detects entity amplification too late. Attackers can supply a moderately sized XML document with a large DTD and nested entity expansions to consume tens of seconds of CPU per parse.",
-          "Fingerprint": "sha256:64bdb4a4b4115a47aeb387a8c6a7df0a410ace5306b7bcf7cbbcc6e3149b4425",
-          "FixedVersion": "2.10.0-r0",
-          "InstalledVersion": "2.9.0-r0",
-          "LastModifiedDate": "2026-11-02T18:27:06.127Z",
+          "Description": "Improper Restriction of Operations within the Bounds of a Memory Buffer vulnerability in OSGeo gdal (frmts/zlib/contrib/infback9 modules). This vulnerability is associated with program files inftree9.C‎.\n\nThis issue affects gdal: before 3.11.0.",
+          "Fingerprint": "sha256:8d0fb4f81405a6499f915c5d0709a6e0470d1bab5593d655813f0605e3c776aa",
+          "FixedVersion": "1.4-r0",
+          "InstalledVersion": "1.3.2-r1",
+          "LastModifiedDate": "2026-06-17T10:57:09.03Z",
           "Layer": {
-            "DiffID": "sha256:91c101b2fff597a76771c6baadad85b5cef24b30ca9ffaf83d0d5e18e841f6c2",
-            "Digest": "sha256:e1a1f44e4ebda4cf13f915fa3aa30a794c2ae8cea49f06beb9edf23ea54bab9f"
+            "DiffID": "sha256:75c137aedfb2760f88629236cb7b797630aed0c3d91d626d1d1bb694878fc2ba",
+            "Digest": "sha256:7b229517ed222597277036d94892173207d01a731ab3a88eeb1de2e963a2c788"
           },
-          "PkgID": "libexpat@2.9.0-r0",
+          "PkgID": "zlib@1.3.2-r1",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libexpat@2.9.0-r0?arch=x86_64\u0026distro=3.24.3",
-            "UID": "de4b08b485b70dec"
+            "PURL": "pkg:apk/alpine/zlib@1.3.2-r1?arch=x86_64\u0026distro=3.24.3",
+            "UID": "926381dc853769fb"
           },
-          "PkgName": "libexpat",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-115506",
-          "PublishedDate": "2026-10-22T20:17:06.62Z",
+          "PkgName": "zlib",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-4738",
+          "PublishedDate": "2026-03-24T04:17:29Z",
           "References": [
-            "https://github.com/hannob/lololol",
-            "https://github.com/libexpat/libexpat",
-            "https://github.com/libexpat/libexpat/issues/1160",
-            "https://github.com/libexpat/libexpat/pull/1433",
-            "https://www.vulncheck.com/advisories/libexpat-through-2.9.0-denial-of-service-via-billion-laughs-detection-delay"
+            "https://github.com/OSGeo/gdal/pull/12244",
+            "https://github.com/advisories/GHSA-hp6p-5qh5-w9fj",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-4738",
+            "https://www.cve.org/CVERecord?id=CVE-2026-4738"
           ],
-          "Severity": "UNKNOWN",
+          "Severity": "MEDIUM",
           "Status": "fixed",
-          "Title": "libexpat through 2.9.0 contains a denial of service vulnerability beca ...",
-          "VulnerabilityID": "CVE-2026-115506"
+          "Title": "Improper Restriction of Operations within the Bounds of a Memory Buffe ...",
+          "VendorSeverity": {
+            "bitnami": 4,
+            "julia": 4,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-4738"
         }
       ]
     },
@@ -6161,6 +6226,12 @@
           "VulnerabilityID": "GO-2026-5932"
         },
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 7.5,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            }
+          },
           "CweIDs": [
             "CWE-407"
           ],
@@ -6187,20 +6258,32 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78661",
           "PublishedDate": "2026-10-27T22:18:05.93Z",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-78661",
             "https://go.dev/cl/849365",
             "https://go.dev/issue/82224",
             "https://groups.google.com/g/golang-announce/c/sqrs2vTx_Xs",
-            "https://pkg.go.dev/vuln/GO-2026-6860"
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-78661",
+            "https://pkg.go.dev/vuln/GO-2026-6860",
+            "https://www.cve.org/CVERecord?id=CVE-2026-78661"
           ],
-          "Severity": "UNKNOWN",
+          "Severity": "HIGH",
           "Status": "fixed",
-          "Title": "When coalescing adjacent text nodes in addText and fosterParent, appen ...",
+          "Title": "golang.org/x/net/html: golang.org/x/net/html: Denial of Service via crafted HTML input",
           "VendorIDs": [
             "GO-2026-6860"
           ],
+          "VendorSeverity": {
+            "redhat": 3
+          },
           "VulnerabilityID": "CVE-2026-78661"
         },
         {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 6.1,
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+            }
+          },
           "CweIDs": [
             "CWE-79"
           ],
@@ -6227,17 +6310,23 @@
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-97045",
           "PublishedDate": "2026-10-27T22:19:22.613Z",
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-97045",
             "https://go.dev/cl/855121",
             "https://go.dev/issue/82622",
             "https://groups.google.com/g/golang-announce/c/sqrs2vTx_Xs",
-            "https://pkg.go.dev/vuln/GO-2026-6866"
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-97045",
+            "https://pkg.go.dev/vuln/GO-2026-6866",
+            "https://www.cve.org/CVERecord?id=CVE-2026-97045"
           ],
-          "Severity": "UNKNOWN",
+          "Severity": "MEDIUM",
           "Status": "fixed",
-          "Title": "In childTextNodesAreLiteral, walking up the tree previously stopped at ...",
+          "Title": "golang.org/x/net/html: golang.org/x/net/html: Cross-Site Scripting via improper namespace handling during HTML rendering",
           "VendorIDs": [
             "GO-2026-6866"
           ],
+          "VendorSeverity": {
+            "redhat": 2
+          },
           "VulnerabilityID": "CVE-2026-97045"
         }
       ]
