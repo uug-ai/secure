@@ -78,14 +78,20 @@ type spdxDocument struct {
 		Created  string   `json:"created"`
 		Creators []string `json:"creators"`
 	} `json:"creationInfo"`
-	DataLicense       string        `json:"dataLicense"`
-	DocumentDescribes []string      `json:"documentDescribes"`
-	DocumentNamespace string        `json:"documentNamespace"`
-	Name              string        `json:"name"`
-	Packages          []spdxPackage `json:"packages"`
-	Relationships     []any         `json:"relationships"`
-	SPDXID            string        `json:"SPDXID"`
-	SPDXVersion       string        `json:"spdxVersion"`
+	DataLicense       string             `json:"dataLicense"`
+	DocumentDescribes []string           `json:"documentDescribes"`
+	DocumentNamespace string             `json:"documentNamespace"`
+	Name              string             `json:"name"`
+	Packages          []spdxPackage      `json:"packages"`
+	Relationships     []spdxRelationship `json:"relationships"`
+	SPDXID            string             `json:"SPDXID"`
+	SPDXVersion       string             `json:"spdxVersion"`
+}
+
+type spdxRelationship struct {
+	RelatedSPDXElement string `json:"relatedSpdxElement"`
+	RelationshipType   string `json:"relationshipType"`
+	SPDXElementID      string `json:"spdxElementId"`
 }
 
 type spdxPackage struct {
@@ -259,6 +265,55 @@ func asserted(value string) bool {
 	return value != "" && value != "NOASSERTION" && value != "NONE"
 }
 
+// validDownloadLocation accepts the URL and VCS forms that SPDX 2.3 allows
+// for PackageDownloadLocation, so placeholders such as a scanned directory
+// name do not count as provenance.
+func validDownloadLocation(value string) bool {
+	location, err := url.Parse(value)
+	if err != nil || location.Host == "" {
+		return false
+	}
+	if tool, transport, found := strings.Cut(location.Scheme, "+"); found {
+		switch tool {
+		case "bzr", "git", "hg", "svn":
+		default:
+			return false
+		}
+		switch transport {
+		case "git", "http", "https", "ssh", "svn":
+			return true
+		}
+		return false
+	}
+	switch location.Scheme {
+	case "ftp", "git", "http", "https", "sftp", "svn":
+		return true
+	}
+	return false
+}
+
+// describesPackage accepts both SPDX forms for naming the described
+// package: the documentDescribes field and a DESCRIBES relationship from the
+// document, which is the form GitHub's Dependency Graph emits.
+func describesPackage(document spdxDocument) bool {
+	if len(document.DocumentDescribes) > 0 {
+		return true
+	}
+	documentID := document.SPDXID
+	if documentID == "" {
+		documentID = "SPDXRef-DOCUMENT"
+	}
+	for _, relationship := range document.Relationships {
+		switch {
+		case relationship.RelationshipType == "DESCRIBES" && relationship.SPDXElementID == documentID:
+			return true
+		case relationship.RelationshipType == "DESCRIBED_BY" && relationship.RelatedSPDXElement == documentID:
+			return true
+		}
+	}
+	return false
+}
+
 func percentage(count, total int) int {
 	if total == 0 {
 		return 0
@@ -347,7 +402,7 @@ func assessSBOM(data []byte) (sbomQuality, error) {
 		if asserted(pkg.Supplier) {
 			suppliers++
 		}
-		if asserted(pkg.DownloadLocation) {
+		if validDownloadLocation(pkg.DownloadLocation) {
 			downloads++
 		}
 		for _, reference := range pkg.ExternalRefs {
@@ -375,7 +430,7 @@ func assessSBOM(data []byte) (sbomQuality, error) {
 	supplierScore := supplierPercent * 7 / 100
 	downloadScore := downloadPercent * 8 / 100
 	describesScore := 0
-	if len(document.DocumentDescribes) > 0 {
+	if describesPackage(document) {
 		describesScore = 5
 	}
 	relationshipScore := 0
@@ -608,7 +663,7 @@ func refreshExistingSBOMs(outputDirectory string, excluded stringSet) (sbomIndex
 	return index, nil
 }
 
-func collectSBOMs(client githubAPI, organization, outputDirectory string, excluded stringSet, collectedAt string) (sbomIndex, error) {
+func collectSBOMs(client githubAPI, registry packageRegistry, organization, outputDirectory string, excluded stringSet, collectedAt string) (sbomIndex, error) {
 	previous := loadPreviousIndex(filepath.Join(outputDirectory, "index.json"))
 	repositories, err := client.ListOrganizationRepositories(organization)
 	if err != nil {
@@ -653,11 +708,18 @@ func collectSBOMs(client githubAPI, organization, outputDirectory string, exclud
 
 		sbom, collectionErr := client.GetRepositorySBOM(organization, repository.Name)
 		if collectionErr == nil {
-			var document any
+			var document map[string]any
 			if err := json.Unmarshal(sbom, &document); err != nil {
 				return sbomIndex{}, fmt.Errorf("decode %s SBOM: %w", repository.Name, err)
 			}
-			quality, err := assessSBOM(sbom)
+			if _, err := enrichSBOM(document, organization, registry); err != nil {
+				fmt.Fprintf(os.Stderr, "warning: %s SBOM enrichment incomplete: %v\n", repository.Name, err)
+			}
+			enriched, err := json.Marshal(document)
+			if err != nil {
+				return sbomIndex{}, fmt.Errorf("encode %s SBOM: %w", repository.Name, err)
+			}
+			quality, err := assessSBOM(enriched)
 			if err != nil {
 				return sbomIndex{}, fmt.Errorf("assess %s SBOM: %w", repository.Name, err)
 			}
@@ -765,8 +827,14 @@ func main() {
 		token:      token,
 		httpClient: &http.Client{Timeout: 60 * time.Second},
 	}
+	registry := &registryClient{
+		depsDevURL: "https://api.deps.dev/v3",
+		pypiURL:    "https://pypi.org/pypi",
+		httpClient: &http.Client{Timeout: 15 * time.Second},
+		cache:      map[string]string{},
+	}
 	collectedAt := time.Now().UTC().Format(time.RFC3339)
-	index, err := collectSBOMs(client, *organization, *output, excluded, collectedAt)
+	index, err := collectSBOMs(client, registry, *organization, *output, excluded, collectedAt)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "SBOM collection failed: %v\n", err)
 		os.Exit(1)
