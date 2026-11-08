@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:3226195d689643f59ebb552ed36773c673d89313c728bc0384dd84fcd589d6c2",
   "ArtifactName": "ghcr.io/uug-ai/hub-pipeline-notification@sha256:bdb9a3ce705bb9a6411bfde509f212d6fefe97c94169a83dd9276e8a5d56e709",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-11-07T03:49:55.965682553Z",
+  "CreatedAt": "2026-11-08T03:50:45.896987966Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:42cc7504d9d5f918d6ca52d96706e7b602c8ffca5b80b1cad44e004e1c69fb70",
@@ -166,7 +166,7 @@
     ],
     "Size": 258909696
   },
-  "ReportID": "01a1b420-927d-7a66-8f26-f28fd4039ff7",
+  "ReportID": "01a1b947-b188-7f0e-99d0-4573cc89ec31",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -5104,7 +5104,61 @@
         }
       ],
       "Target": "ghcr.io/uug-ai/hub-pipeline-notification@sha256:bdb9a3ce705bb9a6411bfde509f212d6fefe97c94169a83dd9276e8a5d56e709 (alpine 3.21.10)",
-      "Type": "alpine"
+      "Type": "alpine",
+      "Vulnerabilities": [
+        {
+          "CVSS": {
+            "bitnami": {
+              "V40Score": 9.4,
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/E:A/S:P/AU:Y/R:U/V:C/RE:L/U:Amber"
+            },
+            "julia": {
+              "V40Score": 9.4,
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/E:A/S:P/AU:Y/R:U/V:C/RE:L/U:Amber"
+            }
+          },
+          "CweIDs": [
+            "CWE-119"
+          ],
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "Improper Restriction of Operations within the Bounds of a Memory Buffer vulnerability in OSGeo gdal (frmts/zlib/contrib/infback9 modules). This vulnerability is associated with program files inftree9.C‎.\n\nThis issue affects gdal: before 3.11.0.",
+          "Fingerprint": "sha256:56a93151a44d993ce19121b04be3c6a8c94fbbf2390156907e46aeabd024fabb",
+          "FixedVersion": "1.4-r0",
+          "InstalledVersion": "1.3.2-r1",
+          "LastModifiedDate": "2026-06-17T10:57:09.03Z",
+          "Layer": {
+            "DiffID": "sha256:42cc7504d9d5f918d6ca52d96706e7b602c8ffca5b80b1cad44e004e1c69fb70",
+            "Digest": "sha256:871d48e9bf6b789a439a4a19c1e152009924d818e60f7c51e498573223cd7cda"
+          },
+          "PkgID": "zlib@1.3.2-r1",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/zlib@1.3.2-r1?arch=x86_64\u0026distro=3.21.10",
+            "UID": "e15e95ad2d0cb7e2"
+          },
+          "PkgName": "zlib",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-4738",
+          "PublishedDate": "2026-03-24T04:17:29Z",
+          "References": [
+            "https://github.com/OSGeo/gdal/pull/12244",
+            "https://github.com/advisories/GHSA-hp6p-5qh5-w9fj",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-4738",
+            "https://www.cve.org/CVERecord?id=CVE-2026-4738"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "Improper Restriction of Operations within the Bounds of a Memory Buffe ...",
+          "VendorSeverity": {
+            "bitnami": 4,
+            "julia": 4,
+            "ubuntu": 2
+          },
+          "VulnerabilityID": "CVE-2026-4738"
+        }
+      ]
     },
     {
       "Class": "lang-pkgs",
