@@ -1,6 +1,6 @@
 # hub-reactivatesubscriptions SBOM quality
 
-Collection status: `collected`; collected at `2026-11-07T02:23:22Z`.
+Collection status: `collected`; collected at `2026-11-08T02:24:18Z`.
 
 Overall quality: **Needs work**, **68/100** across **60 packages**.
 
