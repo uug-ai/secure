@@ -1,8 +1,8 @@
 # hub-monitor-device SBOM quality
 
-Collection status: `collected`; collected at `2026-11-09T02:25:48Z`.
+Collection status: `collected`; collected at `2026-11-10T02:24:36Z`.
 
-Overall quality: **Needs work**, **69/100** across **107 packages**.
+Overall quality: **Needs work**, **68/100** across **75 packages**.
 
 | Category | Field | Coverage | Points | Gap |
 | --- | --- | ---: | ---: | ---: |
@@ -12,7 +12,7 @@ Overall quality: **Needs work**, **69/100** across **107 packages**.
 | Identity | Versions | 100% | 10/10 | +0 |
 | Identity | PURLs | 100% | 10/10 | +0 |
 | Licensing | Declared licenses | 0% | 0/10 | +10 |
-| Licensing | Concluded licenses | 91% | 9/10 | +1 |
+| Licensing | Concluded licenses | 89% | 8/10 | +2 |
 | Provenance | Suppliers | 0% | 0/7 | +7 |
 | Provenance | Download locations | 1% | 0/8 | +8 |
 | Relationships | Document describes | 0% | 0/5 | +5 |

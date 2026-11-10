@@ -1,6 +1,6 @@
 # hub-pipeline-redaction SBOM quality
 
-Collection status: `collected`; collected at `2026-11-09T02:25:48Z`.
+Collection status: `collected`; collected at `2026-11-10T02:24:36Z`.
 
 Overall quality: **Needs work**, **68/100** across **72 packages**.
 
