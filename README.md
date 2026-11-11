@@ -35,7 +35,7 @@ that a particular image implements them or a claim of CIS compliance.
 <!-- CONTAINER_SCAN_START -->
 ## Container image security overview
 
-Generated at `2026-11-10T03:48:21Z` from the newest tagged GHCR image available for each approved project. Scores use the highest detected severity: 100 clean, 80 low, 60 medium, 30 high, and 0 critical. An unavailable image is a coverage gap, not a clean result.
+Generated at `2026-11-11T03:48:26Z` from the newest tagged GHCR image available for each approved project. Scores use the highest detected severity: 100 clean, 80 low, 60 medium, 30 high, and 0 critical. An unavailable image is a coverage gap, not a clean result.
 
 | Repository | Scan | Risk | Score | Tag | Critical | High | Medium | Low | Fixable C/H | Report |
 | --- | --- | --- | ---: | --- | ---: | ---: | ---: | ---: | ---: | --- |
@@ -47,9 +47,9 @@ Generated at `2026-11-10T03:48:21Z` from the newest tagged GHCR image available 
 | [hub-frontend](https://github.com/uug-ai/hub-frontend) | stale | Clean | 100/100 | latest | 0 | 0 | 0 | 0 | 0/0 | [Trivy](containers/hub-frontend/trivy.json) |
 | [hub-loitering](https://github.com/uug-ai/hub-loitering) | stale | Unknown | 40/100 | latest | 0 | 0 | 0 | 0 | 0/0 | [Trivy](containers/hub-loitering/trivy.json) |
 | [hub-monitor-device](https://github.com/uug-ai/hub-monitor-device) | stale | Unknown | 40/100 | latest | 0 | 0 | 0 | 0 | 0/0 | [Trivy](containers/hub-monitor-device/trivy.json) |
-| [hub-objecttracking](https://github.com/uug-ai/hub-objecttracking) | scanned | High | 30/100 | latest-gpu | 0 | 20 | 896 | 125 | 0/20 | [Trivy](containers/hub-objecttracking/trivy.json) |
+| [hub-objecttracking](https://github.com/uug-ai/hub-objecttracking) | scanned | High | 30/100 | latest-gpu | 0 | 20 | 901 | 126 | 0/20 | [Trivy](containers/hub-objecttracking/trivy.json) |
 | [hub-pipeline-analysis](https://github.com/uug-ai/hub-pipeline-analysis) | stale | Unknown | 40/100 | latest | 0 | 0 | 0 | 0 | 0/0 | [Trivy](containers/hub-pipeline-analysis/trivy.json) |
-| [hub-pipeline-classifier](https://github.com/uug-ai/hub-pipeline-classifier) | scanned | Critical | 0/100 | latest | 32 | 646 | 3050 | 1534 | 22/175 | [Trivy](containers/hub-pipeline-classifier/trivy.json) |
+| [hub-pipeline-classifier](https://github.com/uug-ai/hub-pipeline-classifier) | scanned | Critical | 0/100 | latest | 32 | 701 | 3068 | 1529 | 22/176 | [Trivy](containers/hub-pipeline-classifier/trivy.json) |
 | [hub-pipeline-counting](https://github.com/uug-ai/hub-pipeline-counting) | stale | Unknown | 40/100 | latest | 0 | 0 | 0 | 0 | 0/0 | [Trivy](containers/hub-pipeline-counting/trivy.json) |
 | [hub-pipeline-dominantcolors](https://github.com/uug-ai/hub-pipeline-dominantcolors) | scanned | High | 30/100 | latest | 0 | 5 | 2 | 0 | 0/5 | [Trivy](containers/hub-pipeline-dominantcolors/trivy.json) |
 | [hub-pipeline-event](https://github.com/uug-ai/hub-pipeline-event) | scanned | Unknown | 40/100 | latest | 0 | 0 | 0 | 0 | 0/0 | [Trivy](containers/hub-pipeline-event/trivy.json) |
@@ -61,7 +61,7 @@ Generated at `2026-11-10T03:48:21Z` from the newest tagged GHCR image available 
 | [hub-pipeline-sequence](https://github.com/uug-ai/hub-pipeline-sequence) | stale | Unknown | 40/100 | latest | 0 | 0 | 0 | 0 | 0/0 | [Trivy](containers/hub-pipeline-sequence/trivy.json) |
 | [hub-pipeline-sprite](https://github.com/uug-ai/hub-pipeline-sprite) | scanned | High | 30/100 | latest | 0 | 5 | 2 | 0 | 0/5 | [Trivy](containers/hub-pipeline-sprite/trivy.json) |
 | [hub-pipeline-throttler](https://github.com/uug-ai/hub-pipeline-throttler) | stale | Unknown | 40/100 | latest | 0 | 0 | 0 | 0 | 0/0 | [Trivy](containers/hub-pipeline-throttler/trivy.json) |
-| [hub-pipeline-thumbnail](https://github.com/uug-ai/hub-pipeline-thumbnail) | scanned | High | 30/100 | latest | 0 | 5 | 2 | 0 | 0/5 | [Trivy](containers/hub-pipeline-thumbnail/trivy.json) |
+| [hub-pipeline-thumbnail](https://github.com/uug-ai/hub-pipeline-thumbnail) | scanned | Unknown | 40/100 | latest | 0 | 0 | 0 | 0 | 0/0 | [Trivy](containers/hub-pipeline-thumbnail/trivy.json) |
 | [hub-proxy](https://github.com/uug-ai/hub-proxy) | unavailable | Unavailable | - | - | 0 | 0 | 0 | 0 | 0/0 | - |
 | [hub-reactivatesubscriptions](https://github.com/uug-ai/hub-reactivatesubscriptions) | unavailable | Unavailable | - | - | 0 | 0 | 0 | 0 | 0/0 | - |
 | [hub-vault-forwarder](https://github.com/uug-ai/hub-vault-forwarder) | unavailable | Unavailable | - | - | 0 | 0 | 0 | 0 | 0/0 | - |
