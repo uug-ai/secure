@@ -1,8 +1,8 @@
 # hub-proxy SBOM quality
 
-Collection status: `collected`; collected at `2026-11-10T02:24:36Z`.
+Collection status: `collected`; collected at `2026-11-11T02:22:43Z`.
 
-Overall quality: **Needs work**, **67/100** across **27 packages**.
+Overall quality: **Excellent**, **87/100** across **27 packages**.
 
 | Category | Field | Coverage | Points | Gap |
 | --- | --- | ---: | ---: | ---: |
@@ -11,11 +11,11 @@ Overall quality: **Needs work**, **67/100** across **27 packages**.
 | Identity | Package SPDX IDs | 100% | 5/5 | +0 |
 | Identity | Versions | 100% | 10/10 | +0 |
 | Identity | PURLs | 100% | 10/10 | +0 |
-| Licensing | Declared licenses | 0% | 0/10 | +10 |
+| Licensing | Declared licenses | 74% | 7/10 | +3 |
 | Licensing | Concluded licenses | 74% | 7/10 | +3 |
 | Provenance | Suppliers | 0% | 0/7 | +7 |
-| Provenance | Download locations | 4% | 0/8 | +8 |
-| Relationships | Document describes | 0% | 0/5 | +5 |
+| Provenance | Download locations | 100% | 8/8 | +0 |
+| Relationships | Document describes | 100% | 5/5 | +0 |
 | Relationships | SPDX relationships | 100% | 10/10 | +0 |
 
 [View the SPDX document](sbom.spdx.json)
