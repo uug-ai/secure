@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:4aec13c979cbecfb37a8473530c495da23d3d94a846f59af4639461eb72074f2",
   "ArtifactName": "ghcr.io/uug-ai/hub-pipeline-redaction@sha256:f3b2bc7a9ab5de5db45e5d6c9c7fa776598d7333a683eb89ff5ef1b12b375bc4",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-11-11T03:50:45.358382551Z",
+  "CreatedAt": "2026-11-12T03:50:13.153332992Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:c86e4445c72addddcaa6610aa97ebdc38a274bb3ac5eb0679ebdc42317388971",
@@ -299,7 +299,7 @@
     ],
     "Size": 371551232
   },
-  "ReportID": "01a1c8ba-c36e-75cf-86a5-aa1128486a6a",
+  "ReportID": "01a1cde0-a1a1-750f-b21d-7027cedd7a7b",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -5278,6 +5278,198 @@
       "Vulnerabilities": [
         {
           "CVSS": {
+            "redhat": {
+              "V3Score": 7,
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-22"
+          ],
+          "DataSource": {
+            "ID": "wolfi",
+            "Name": "Wolfi Secdb",
+            "URL": "https://packages.wolfi.dev/os/security.json"
+          },
+          "Description": "The gettext family of functions in the GNU C Library version 2.0 and later accept LANGUAGE environment variable entries that contain '/' or that are equal to \"..\", unless the program is setuid or setgid (AT_SECURE).  An attacker who can set LANGUAGE in the environment of a program that uses gettext can make it load a message catalog (.mo file) from an arbitrary location in the file system.  A crafted .mo file can crash the program through out-of-range offsets, or supply translations whose format directives do not match the arguments passed by the program.  That causes undefined behaviour in the printf family of functions and may allow arbitrary code execution with the privileges of the program.  The safety of message catalogs relies on them being installed in trusted, read-only locations, and the directory traversal bypasses this.\n\nThe fix for CVE-2014-0475 rejects \"..\" path components in locale names passed to setlocale or taken from the LC_ALL, LC_* and LANG environment variables.  gettext reads LANGUAGE directly and appends each colon-separated entry to the message catalog directory, so that fix did not cover LANGUAGE.\n\nLANGUAGE is only used when the LC_MESSAGES locale is not \"C\", \"C.\u003cencoding\u003e\" or \"POSIX\", so the attacker must also be able to select another installed locale, for example through LANG or LC_ALL.  Exploitation also requires that the attacker can place the crafted file in a location readable by the target program, and that the environment crosses a trust boundary without the program running as AT_SECURE.  An example is an SSH server that accepts LANGUAGE and LANG from clients through the AcceptEnv directive and restricts an account to a forced command; the attacker may use this to escape the restriction.",
+          "Fingerprint": "sha256:c186e7fcdf0f90f2fe994dd461c8c3a47d2360de04910825dd0f02640fd90c5b",
+          "FixedVersion": "2.44-r16",
+          "InstalledVersion": "2.44-r9",
+          "LastModifiedDate": "2026-10-31T04:18:21.89Z",
+          "Layer": {
+            "DiffID": "sha256:c86e4445c72addddcaa6610aa97ebdc38a274bb3ac5eb0679ebdc42317388971",
+            "Digest": "sha256:40149fd66345f2898ad61ec86d31db7a526822061cb948d73e84d2217ba4cf16"
+          },
+          "PkgID": "glibc-2.44@2.44-r9",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/wolfi/glibc-2.44@2.44-r9?arch=x86_64\u0026distro=20230201",
+            "UID": "fef668d792cb9a9f"
+          },
+          "PkgName": "glibc-2.44",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-84243",
+          "PublishedDate": "2026-10-30T18:18:13.65Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-84243",
+            "https://inbox.sourceware.org/libc-alpha/20261012112453.47383-1-avinal.xlvii@gmail.com",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-84243",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=17142",
+            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0025",
+            "https://www.cve.org/CVERecord?id=CVE-2026-84243"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "glibc: glibc: Arbitrary code execution via directory traversal in LANGUAGE environment variable",
+          "VendorSeverity": {
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2026-84243"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 7,
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-22"
+          ],
+          "DataSource": {
+            "ID": "wolfi",
+            "Name": "Wolfi Secdb",
+            "URL": "https://packages.wolfi.dev/os/security.json"
+          },
+          "Description": "The gettext family of functions in the GNU C Library version 2.0 and later accept LANGUAGE environment variable entries that contain '/' or that are equal to \"..\", unless the program is setuid or setgid (AT_SECURE).  An attacker who can set LANGUAGE in the environment of a program that uses gettext can make it load a message catalog (.mo file) from an arbitrary location in the file system.  A crafted .mo file can crash the program through out-of-range offsets, or supply translations whose format directives do not match the arguments passed by the program.  That causes undefined behaviour in the printf family of functions and may allow arbitrary code execution with the privileges of the program.  The safety of message catalogs relies on them being installed in trusted, read-only locations, and the directory traversal bypasses this.\n\nThe fix for CVE-2014-0475 rejects \"..\" path components in locale names passed to setlocale or taken from the LC_ALL, LC_* and LANG environment variables.  gettext reads LANGUAGE directly and appends each colon-separated entry to the message catalog directory, so that fix did not cover LANGUAGE.\n\nLANGUAGE is only used when the LC_MESSAGES locale is not \"C\", \"C.\u003cencoding\u003e\" or \"POSIX\", so the attacker must also be able to select another installed locale, for example through LANG or LC_ALL.  Exploitation also requires that the attacker can place the crafted file in a location readable by the target program, and that the environment crosses a trust boundary without the program running as AT_SECURE.  An example is an SSH server that accepts LANGUAGE and LANG from clients through the AcceptEnv directive and restricts an account to a forced command; the attacker may use this to escape the restriction.",
+          "Fingerprint": "sha256:28335b4394ef5b3e24fcb16b3cefdb77e2e739e7c103295b36632156ef36b9da",
+          "FixedVersion": "2.44-r16",
+          "InstalledVersion": "2.44-r9",
+          "LastModifiedDate": "2026-10-31T04:18:21.89Z",
+          "Layer": {
+            "DiffID": "sha256:c86e4445c72addddcaa6610aa97ebdc38a274bb3ac5eb0679ebdc42317388971",
+            "Digest": "sha256:40149fd66345f2898ad61ec86d31db7a526822061cb948d73e84d2217ba4cf16"
+          },
+          "PkgID": "glibc-2.44-locale-posix@2.44-r9",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/wolfi/glibc-2.44-locale-posix@2.44-r9?arch=x86_64\u0026distro=20230201",
+            "UID": "da69c177c8d2a217"
+          },
+          "PkgName": "glibc-2.44-locale-posix",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-84243",
+          "PublishedDate": "2026-10-30T18:18:13.65Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-84243",
+            "https://inbox.sourceware.org/libc-alpha/20261012112453.47383-1-avinal.xlvii@gmail.com",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-84243",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=17142",
+            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0025",
+            "https://www.cve.org/CVERecord?id=CVE-2026-84243"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "glibc: glibc: Arbitrary code execution via directory traversal in LANGUAGE environment variable",
+          "VendorSeverity": {
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2026-84243"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 7,
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-22"
+          ],
+          "DataSource": {
+            "ID": "wolfi",
+            "Name": "Wolfi Secdb",
+            "URL": "https://packages.wolfi.dev/os/security.json"
+          },
+          "Description": "The gettext family of functions in the GNU C Library version 2.0 and later accept LANGUAGE environment variable entries that contain '/' or that are equal to \"..\", unless the program is setuid or setgid (AT_SECURE).  An attacker who can set LANGUAGE in the environment of a program that uses gettext can make it load a message catalog (.mo file) from an arbitrary location in the file system.  A crafted .mo file can crash the program through out-of-range offsets, or supply translations whose format directives do not match the arguments passed by the program.  That causes undefined behaviour in the printf family of functions and may allow arbitrary code execution with the privileges of the program.  The safety of message catalogs relies on them being installed in trusted, read-only locations, and the directory traversal bypasses this.\n\nThe fix for CVE-2014-0475 rejects \"..\" path components in locale names passed to setlocale or taken from the LC_ALL, LC_* and LANG environment variables.  gettext reads LANGUAGE directly and appends each colon-separated entry to the message catalog directory, so that fix did not cover LANGUAGE.\n\nLANGUAGE is only used when the LC_MESSAGES locale is not \"C\", \"C.\u003cencoding\u003e\" or \"POSIX\", so the attacker must also be able to select another installed locale, for example through LANG or LC_ALL.  Exploitation also requires that the attacker can place the crafted file in a location readable by the target program, and that the environment crosses a trust boundary without the program running as AT_SECURE.  An example is an SSH server that accepts LANGUAGE and LANG from clients through the AcceptEnv directive and restricts an account to a forced command; the attacker may use this to escape the restriction.",
+          "Fingerprint": "sha256:8ca8f436e29f7ac656867a2875310dfc58c7832c3eea938b429980c1503d10f3",
+          "FixedVersion": "2.44-r16",
+          "InstalledVersion": "2.44-r9",
+          "LastModifiedDate": "2026-10-31T04:18:21.89Z",
+          "Layer": {
+            "DiffID": "sha256:c86e4445c72addddcaa6610aa97ebdc38a274bb3ac5eb0679ebdc42317388971",
+            "Digest": "sha256:40149fd66345f2898ad61ec86d31db7a526822061cb948d73e84d2217ba4cf16"
+          },
+          "PkgID": "ld-linux-2.44@2.44-r9",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/wolfi/ld-linux-2.44@2.44-r9?arch=x86_64\u0026distro=20230201",
+            "UID": "d7d75465e52a3129"
+          },
+          "PkgName": "ld-linux-2.44",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-84243",
+          "PublishedDate": "2026-10-30T18:18:13.65Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-84243",
+            "https://inbox.sourceware.org/libc-alpha/20261012112453.47383-1-avinal.xlvii@gmail.com",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-84243",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=17142",
+            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0025",
+            "https://www.cve.org/CVERecord?id=CVE-2026-84243"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "glibc: glibc: Arbitrary code execution via directory traversal in LANGUAGE environment variable",
+          "VendorSeverity": {
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2026-84243"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 7,
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
+            }
+          },
+          "CweIDs": [
+            "CWE-22"
+          ],
+          "DataSource": {
+            "ID": "wolfi",
+            "Name": "Wolfi Secdb",
+            "URL": "https://packages.wolfi.dev/os/security.json"
+          },
+          "Description": "The gettext family of functions in the GNU C Library version 2.0 and later accept LANGUAGE environment variable entries that contain '/' or that are equal to \"..\", unless the program is setuid or setgid (AT_SECURE).  An attacker who can set LANGUAGE in the environment of a program that uses gettext can make it load a message catalog (.mo file) from an arbitrary location in the file system.  A crafted .mo file can crash the program through out-of-range offsets, or supply translations whose format directives do not match the arguments passed by the program.  That causes undefined behaviour in the printf family of functions and may allow arbitrary code execution with the privileges of the program.  The safety of message catalogs relies on them being installed in trusted, read-only locations, and the directory traversal bypasses this.\n\nThe fix for CVE-2014-0475 rejects \"..\" path components in locale names passed to setlocale or taken from the LC_ALL, LC_* and LANG environment variables.  gettext reads LANGUAGE directly and appends each colon-separated entry to the message catalog directory, so that fix did not cover LANGUAGE.\n\nLANGUAGE is only used when the LC_MESSAGES locale is not \"C\", \"C.\u003cencoding\u003e\" or \"POSIX\", so the attacker must also be able to select another installed locale, for example through LANG or LC_ALL.  Exploitation also requires that the attacker can place the crafted file in a location readable by the target program, and that the environment crosses a trust boundary without the program running as AT_SECURE.  An example is an SSH server that accepts LANGUAGE and LANG from clients through the AcceptEnv directive and restricts an account to a forced command; the attacker may use this to escape the restriction.",
+          "Fingerprint": "sha256:799e4769ea075da26735122df2369181387eed0f228f4fd3d7de1b0c586214ae",
+          "FixedVersion": "2.44-r16",
+          "InstalledVersion": "2.44-r9",
+          "LastModifiedDate": "2026-10-31T04:18:21.89Z",
+          "Layer": {
+            "DiffID": "sha256:c86e4445c72addddcaa6610aa97ebdc38a274bb3ac5eb0679ebdc42317388971",
+            "Digest": "sha256:40149fd66345f2898ad61ec86d31db7a526822061cb948d73e84d2217ba4cf16"
+          },
+          "PkgID": "libcrypt1-2.44@2.44-r9",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/wolfi/libcrypt1-2.44@2.44-r9?arch=x86_64\u0026distro=20230201",
+            "UID": "9d830b1b59adda4a"
+          },
+          "PkgName": "libcrypt1-2.44",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-84243",
+          "PublishedDate": "2026-10-30T18:18:13.65Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-84243",
+            "https://inbox.sourceware.org/libc-alpha/20261012112453.47383-1-avinal.xlvii@gmail.com",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-84243",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=17142",
+            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0025",
+            "https://www.cve.org/CVERecord?id=CVE-2026-84243"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "glibc: glibc: Arbitrary code execution via directory traversal in LANGUAGE environment variable",
+          "VendorSeverity": {
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2026-84243"
+        },
+        {
+          "CVSS": {
             "nvd": {
               "V3Score": 7.5,
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
@@ -6414,6 +6606,43 @@
             "redhat": 2
           },
           "VulnerabilityID": "CVE-2026-97045"
+        },
+        {
+          "DataSource": {
+            "ID": "govulndb",
+            "Name": "The Go Vulnerability Database",
+            "URL": "https://pkg.go.dev/vuln/"
+          },
+          "Description": "For HTTP/1 servers, when MaxBytesReader's limit is exceeded, \"Connection: close\" header is automatically set without synchronization, which might race with another header being set explicitly in the server handler. As a result, an HTTP/1 server that utilizes MaxBytesReader or MaxBytesHandler can crash due to runtime panic if its handler reads the request body concurrently with writing the response header.",
+          "Fingerprint": "sha256:6dad78068951d2212e64b89b0701258573bce7b5935e803f51175e7ce3f8b59d",
+          "FixedVersion": "1.26.11, 1.27.4",
+          "InstalledVersion": "v1.26.10",
+          "LastModifiedDate": "2026-11-11T05:19:58.943Z",
+          "Layer": {
+            "DiffID": "sha256:47999acc741b11dddfd06bb20b29968ea045f91e9df036da48ab9965f4f91c32",
+            "Digest": "sha256:9c71263c75fa91be79c256dce1cc9919d5ef813e5764d052956107d7eaa0f0d2"
+          },
+          "PkgID": "stdlib@v1.26.10",
+          "PkgIdentifier": {
+            "PURL": "pkg:golang/stdlib@v1.26.10",
+            "UID": "163c325a140b7ba8"
+          },
+          "PkgName": "stdlib",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-97054",
+          "PublishedDate": "2026-11-11T05:19:58.943Z",
+          "References": [
+            "https://go.dev/cl/862185",
+            "https://go.dev/issue/82563",
+            "https://groups.google.com/g/golang-announce/c/iY8TY0wWgbM",
+            "https://pkg.go.dev/vuln/GO-2026-6859"
+          ],
+          "Severity": "UNKNOWN",
+          "Status": "fixed",
+          "Title": "For HTTP/1 servers, when MaxBytesReader's limit is exceeded, \"Connecti ...",
+          "VendorIDs": [
+            "GO-2026-6859"
+          ],
+          "VulnerabilityID": "CVE-2026-97054"
         }
       ]
     }
