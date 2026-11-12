@@ -74,7 +74,7 @@ Generated at `2026-11-11T03:48:26Z` from the newest tagged GHCR image available 
 <!-- SBOM_QUALITY_START -->
 ## SBOM quality overview
 
-Generated at `2026-11-11T02:22:43Z`. Quality combines document metadata (20%), package identity (30%), licensing (20%), provenance (15%), and relationships (15%).
+Generated at `2026-11-12T02:24:37Z`. Quality combines document metadata (20%), package identity (30%), licensing (20%), provenance (15%), and relationships (15%).
 
 Legend: 🟢 85-100, 🟡 70-84, 🟠 50-69, 🔴 0-49 or unavailable. This measures SBOM completeness, not vulnerability severity.
 
