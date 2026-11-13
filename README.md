@@ -74,7 +74,7 @@ Generated at `2026-11-12T03:48:08Z` from the newest tagged GHCR image available 
 <!-- SBOM_QUALITY_START -->
 ## SBOM quality overview
 
-Generated at `2026-11-12T02:24:37Z`. Quality combines document metadata (20%), package identity (30%), licensing (20%), provenance (15%), and relationships (15%).
+Generated at `2026-11-13T02:22:40Z`. Quality combines document metadata (20%), package identity (30%), licensing (20%), provenance (15%), and relationships (15%).
 
 Legend: 🟢 85-100, 🟡 70-84, 🟠 50-69, 🔴 0-49 or unavailable. This measures SBOM completeness, not vulnerability severity.
 
@@ -85,29 +85,29 @@ Legend: 🟢 85-100, 🟡 70-84, 🟠 50-69, 🔴 0-49 or unavailable. This meas
 | [hub-api](https://github.com/uug-ai/hub-api) | collected | 🟢 Excellent | 91/100 | 192 | 100% | 93% | 100% | [Breakdown](sboms/hub-api/README.md) · [SPDX](sboms/hub-api/sbom.spdx.json) |
 | [hub-audit](https://github.com/uug-ai/hub-audit) | unavailable | 🔴 Unavailable | 0/100 | 0 | 0% | 0% | 0% | [Breakdown](sboms/hub-audit/README.md) |
 | [hub-cleanup](https://github.com/uug-ai/hub-cleanup) | collected | 🟢 Excellent | 89/100 | 46 | 100% | 85% | 100% | [Breakdown](sboms/hub-cleanup/README.md) · [SPDX](sboms/hub-cleanup/sbom.spdx.json) |
-| [hub-frontend](https://github.com/uug-ai/hub-frontend) | collected | 🟢 Excellent | 91/100 | 1330 | 100% | 99% | 100% | [Breakdown](sboms/hub-frontend/README.md) · [SPDX](sboms/hub-frontend/sbom.spdx.json) |
-| [hub-loitering](https://github.com/uug-ai/hub-loitering) | collected | 🟢 Excellent | 89/100 | 67 | 100% | 85% | 100% | [Breakdown](sboms/hub-loitering/README.md) · [SPDX](sboms/hub-loitering/sbom.spdx.json) |
+| [hub-frontend](https://github.com/uug-ai/hub-frontend) | collected | 🟢 Excellent | 91/100 | 1331 | 100% | 99% | 100% | [Breakdown](sboms/hub-frontend/README.md) · [SPDX](sboms/hub-frontend/sbom.spdx.json) |
+| [hub-loitering](https://github.com/uug-ai/hub-loitering) | collected | 🟢 Excellent | 89/100 | 64 | 100% | 89% | 100% | [Breakdown](sboms/hub-loitering/README.md) · [SPDX](sboms/hub-loitering/sbom.spdx.json) |
 | [hub-monitor-device](https://github.com/uug-ai/hub-monitor-device) | collected | 🟢 Excellent | 90/100 | 75 | 100% | 91% | 100% | [Breakdown](sboms/hub-monitor-device/README.md) · [SPDX](sboms/hub-monitor-device/sbom.spdx.json) |
-| [hub-objecttracking](https://github.com/uug-ai/hub-objecttracking) | collected | 🟢 Excellent | 89/100 | 68 | 100% | 85% | 100% | [Breakdown](sboms/hub-objecttracking/README.md) · [SPDX](sboms/hub-objecttracking/sbom.spdx.json) |
-| [hub-pipeline-analysis](https://github.com/uug-ai/hub-pipeline-analysis) | collected | 🟢 Excellent | 89/100 | 80 | 100% | 85% | 100% | [Breakdown](sboms/hub-pipeline-analysis/README.md) · [SPDX](sboms/hub-pipeline-analysis/sbom.spdx.json) |
+| [hub-objecttracking](https://github.com/uug-ai/hub-objecttracking) | collected | 🟢 Excellent | 89/100 | 69 | 100% | 86% | 100% | [Breakdown](sboms/hub-objecttracking/README.md) · [SPDX](sboms/hub-objecttracking/sbom.spdx.json) |
+| [hub-pipeline-analysis](https://github.com/uug-ai/hub-pipeline-analysis) | collected | 🟢 Excellent | 89/100 | 78 | 100% | 87% | 100% | [Breakdown](sboms/hub-pipeline-analysis/README.md) · [SPDX](sboms/hub-pipeline-analysis/sbom.spdx.json) |
 | [hub-pipeline-classifier](https://github.com/uug-ai/hub-pipeline-classifier) | collected | 🟢 Excellent | 86/100 | 62 | 100% | 89% | 100% | [Breakdown](sboms/hub-pipeline-classifier/README.md) · [SPDX](sboms/hub-pipeline-classifier/sbom.spdx.json) |
-| [hub-pipeline-counting](https://github.com/uug-ai/hub-pipeline-counting) | collected | 🟢 Excellent | 89/100 | 66 | 100% | 83% | 100% | [Breakdown](sboms/hub-pipeline-counting/README.md) · [SPDX](sboms/hub-pipeline-counting/sbom.spdx.json) |
+| [hub-pipeline-counting](https://github.com/uug-ai/hub-pipeline-counting) | collected | 🟢 Excellent | 89/100 | 63 | 100% | 87% | 100% | [Breakdown](sboms/hub-pipeline-counting/README.md) · [SPDX](sboms/hub-pipeline-counting/sbom.spdx.json) |
 | [hub-pipeline-dominantcolors](https://github.com/uug-ai/hub-pipeline-dominantcolors) | collected | 🟢 Excellent | 90/100 | 76 | 100% | 91% | 100% | [Breakdown](sboms/hub-pipeline-dominantcolors/README.md) · [SPDX](sboms/hub-pipeline-dominantcolors/sbom.spdx.json) |
-| [hub-pipeline-event](https://github.com/uug-ai/hub-pipeline-event) | collected | 🟢 Excellent | 89/100 | 47 | 100% | 85% | 100% | [Breakdown](sboms/hub-pipeline-event/README.md) · [SPDX](sboms/hub-pipeline-event/sbom.spdx.json) |
+| [hub-pipeline-event](https://github.com/uug-ai/hub-pipeline-event) | collected | 🟢 Excellent | 89/100 | 48 | 100% | 85% | 100% | [Breakdown](sboms/hub-pipeline-event/README.md) · [SPDX](sboms/hub-pipeline-event/sbom.spdx.json) |
 | [hub-pipeline-export](https://github.com/uug-ai/hub-pipeline-export) | collected | 🟢 Excellent | 89/100 | 75 | 100% | 88% | 100% | [Breakdown](sboms/hub-pipeline-export/README.md) · [SPDX](sboms/hub-pipeline-export/sbom.spdx.json) |
 | [hub-pipeline-monitor](https://github.com/uug-ai/hub-pipeline-monitor) | collected | 🟢 Excellent | 91/100 | 79 | 100% | 90% | 100% | [Breakdown](sboms/hub-pipeline-monitor/README.md) · [SPDX](sboms/hub-pipeline-monitor/sbom.spdx.json) |
-| [hub-pipeline-notification](https://github.com/uug-ai/hub-pipeline-notification) | collected | 🟢 Excellent | 90/100 | 108 | 100% | 90% | 100% | [Breakdown](sboms/hub-pipeline-notification/README.md) · [SPDX](sboms/hub-pipeline-notification/sbom.spdx.json) |
-| [hub-pipeline-notification-test](https://github.com/uug-ai/hub-pipeline-notification-test) | collected | 🟢 Excellent | 89/100 | 71 | 100% | 86% | 100% | [Breakdown](sboms/hub-pipeline-notification-test/README.md) · [SPDX](sboms/hub-pipeline-notification-test/sbom.spdx.json) |
+| [hub-pipeline-notification](https://github.com/uug-ai/hub-pipeline-notification) | collected | 🟢 Excellent | 91/100 | 107 | 100% | 91% | 100% | [Breakdown](sboms/hub-pipeline-notification/README.md) · [SPDX](sboms/hub-pipeline-notification/sbom.spdx.json) |
+| [hub-pipeline-notification-test](https://github.com/uug-ai/hub-pipeline-notification-test) | collected | 🟢 Excellent | 89/100 | 84 | 100% | 89% | 100% | [Breakdown](sboms/hub-pipeline-notification-test/README.md) · [SPDX](sboms/hub-pipeline-notification-test/sbom.spdx.json) |
 | [hub-pipeline-redaction](https://github.com/uug-ai/hub-pipeline-redaction) | collected | 🟢 Excellent | 89/100 | 72 | 100% | 82% | 100% | [Breakdown](sboms/hub-pipeline-redaction/README.md) · [SPDX](sboms/hub-pipeline-redaction/sbom.spdx.json) |
 | [hub-pipeline-sequence](https://github.com/uug-ai/hub-pipeline-sequence) | collected | 🟢 Excellent | 89/100 | 84 | 100% | 83% | 100% | [Breakdown](sboms/hub-pipeline-sequence/README.md) · [SPDX](sboms/hub-pipeline-sequence/sbom.spdx.json) |
-| [hub-pipeline-sprite](https://github.com/uug-ai/hub-pipeline-sprite) | collected | 🟢 Excellent | 89/100 | 79 | 100% | 82% | 100% | [Breakdown](sboms/hub-pipeline-sprite/README.md) · [SPDX](sboms/hub-pipeline-sprite/sbom.spdx.json) |
-| [hub-pipeline-throttler](https://github.com/uug-ai/hub-pipeline-throttler) | collected | 🟢 Excellent | 89/100 | 59 | 100% | 85% | 100% | [Breakdown](sboms/hub-pipeline-throttler/README.md) · [SPDX](sboms/hub-pipeline-throttler/sbom.spdx.json) |
-| [hub-pipeline-thumbnail](https://github.com/uug-ai/hub-pipeline-thumbnail) | collected | 🟢 Excellent | 89/100 | 83 | 100% | 84% | 100% | [Breakdown](sboms/hub-pipeline-thumbnail/README.md) · [SPDX](sboms/hub-pipeline-thumbnail/sbom.spdx.json) |
+| [hub-pipeline-sprite](https://github.com/uug-ai/hub-pipeline-sprite) | collected | 🟢 Excellent | 89/100 | 74 | 100% | 88% | 100% | [Breakdown](sboms/hub-pipeline-sprite/README.md) · [SPDX](sboms/hub-pipeline-sprite/sbom.spdx.json) |
+| [hub-pipeline-throttler](https://github.com/uug-ai/hub-pipeline-throttler) | collected | 🟢 Excellent | 89/100 | 72 | 100% | 89% | 100% | [Breakdown](sboms/hub-pipeline-throttler/README.md) · [SPDX](sboms/hub-pipeline-throttler/sbom.spdx.json) |
+| [hub-pipeline-thumbnail](https://github.com/uug-ai/hub-pipeline-thumbnail) | collected | 🟢 Excellent | 91/100 | 78 | 100% | 90% | 100% | [Breakdown](sboms/hub-pipeline-thumbnail/README.md) · [SPDX](sboms/hub-pipeline-thumbnail/sbom.spdx.json) |
 | [hub-proxy](https://github.com/uug-ai/hub-proxy) | collected | 🟢 Excellent | 87/100 | 27 | 100% | 74% | 100% | [Breakdown](sboms/hub-proxy/README.md) · [SPDX](sboms/hub-proxy/sbom.spdx.json) |
-| [hub-reactivatesubscriptions](https://github.com/uug-ai/hub-reactivatesubscriptions) | collected | 🟢 Excellent | 89/100 | 60 | 100% | 83% | 100% | [Breakdown](sboms/hub-reactivatesubscriptions/README.md) · [SPDX](sboms/hub-reactivatesubscriptions/sbom.spdx.json) |
+| [hub-reactivatesubscriptions](https://github.com/uug-ai/hub-reactivatesubscriptions) | collected | 🟢 Excellent | 89/100 | 60 | 100% | 87% | 100% | [Breakdown](sboms/hub-reactivatesubscriptions/README.md) · [SPDX](sboms/hub-reactivatesubscriptions/sbom.spdx.json) |
 | [hub-vault-forwarder](https://github.com/uug-ai/hub-vault-forwarder) | collected | 🟢 Excellent | 88/100 | 8 | 100% | 88% | 100% | [Breakdown](sboms/hub-vault-forwarder/README.md) · [SPDX](sboms/hub-vault-forwarder/sbom.spdx.json) |
 | [hub-vlm](https://github.com/uug-ai/hub-vlm) | unavailable | 🔴 Unavailable | 0/100 | 0 | 0% | 0% | 0% | [Breakdown](sboms/hub-vlm/README.md) |
-| [hub-workflows](https://github.com/uug-ai/hub-workflows) | collected | 🟢 Excellent | 91/100 | 142 | 100% | 91% | 100% | [Breakdown](sboms/hub-workflows/README.md) · [SPDX](sboms/hub-workflows/sbom.spdx.json) |
+| [hub-workflows](https://github.com/uug-ai/hub-workflows) | collected | 🟢 Excellent | 91/100 | 141 | 100% | 91% | 100% | [Breakdown](sboms/hub-workflows/README.md) · [SPDX](sboms/hub-workflows/sbom.spdx.json) |
 | [hub-workflows-forwarder](https://github.com/uug-ai/hub-workflows-forwarder) | unavailable | 🔴 Unavailable | 0/100 | 0 | 0% | 0% | 0% | [Breakdown](sboms/hub-workflows-forwarder/README.md) |
 | [vault](https://github.com/uug-ai/vault) | collected | 🟢 Excellent | 91/100 | 1221 | 100% | 99% | 100% | [Breakdown](sboms/vault/README.md) · [SPDX](sboms/vault/sbom.spdx.json) |
 <!-- SBOM_QUALITY_END -->

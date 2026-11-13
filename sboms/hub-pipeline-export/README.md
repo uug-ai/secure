@@ -1,6 +1,6 @@
 # hub-pipeline-export SBOM quality
 
-Collection status: `collected`; collected at `2026-11-12T02:24:37Z`.
+Collection status: `collected`; collected at `2026-11-13T02:22:40Z`.
 
 Overall quality: **Excellent**, **89/100** across **75 packages**.
 

@@ -1,8 +1,8 @@
 # hub-objecttracking SBOM quality
 
-Collection status: `collected`; collected at `2026-11-12T02:24:37Z`.
+Collection status: `collected`; collected at `2026-11-13T02:22:40Z`.
 
-Overall quality: **Excellent**, **89/100** across **68 packages**.
+Overall quality: **Excellent**, **89/100** across **69 packages**.
 
 | Category | Field | Coverage | Points | Gap |
 | --- | --- | ---: | ---: | ---: |
@@ -11,7 +11,7 @@ Overall quality: **Excellent**, **89/100** across **68 packages**.
 | Identity | Package SPDX IDs | 100% | 5/5 | +0 |
 | Identity | Versions | 100% | 10/10 | +0 |
 | Identity | PURLs | 100% | 10/10 | +0 |
-| Licensing | Declared licenses | 85% | 8/10 | +2 |
+| Licensing | Declared licenses | 86% | 8/10 | +2 |
 | Licensing | Concluded licenses | 84% | 8/10 | +2 |
 | Provenance | Suppliers | 0% | 0/7 | +7 |
 | Provenance | Download locations | 100% | 8/8 | +0 |

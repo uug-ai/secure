@@ -1,8 +1,8 @@
 # hub-pipeline-thumbnail SBOM quality
 
-Collection status: `collected`; collected at `2026-11-12T02:24:37Z`.
+Collection status: `collected`; collected at `2026-11-13T02:22:40Z`.
 
-Overall quality: **Excellent**, **89/100** across **83 packages**.
+Overall quality: **Excellent**, **91/100** across **78 packages**.
 
 | Category | Field | Coverage | Points | Gap |
 | --- | --- | ---: | ---: | ---: |
@@ -11,8 +11,8 @@ Overall quality: **Excellent**, **89/100** across **83 packages**.
 | Identity | Package SPDX IDs | 100% | 5/5 | +0 |
 | Identity | Versions | 100% | 10/10 | +0 |
 | Identity | PURLs | 100% | 10/10 | +0 |
-| Licensing | Declared licenses | 84% | 8/10 | +2 |
-| Licensing | Concluded licenses | 84% | 8/10 | +2 |
+| Licensing | Declared licenses | 90% | 9/10 | +1 |
+| Licensing | Concluded licenses | 90% | 9/10 | +1 |
 | Provenance | Suppliers | 0% | 0/7 | +7 |
 | Provenance | Download locations | 100% | 8/8 | +0 |
 | Relationships | Document describes | 100% | 5/5 | +0 |
