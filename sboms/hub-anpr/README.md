@@ -1,8 +1,8 @@
 # hub-anpr SBOM quality
 
-Collection status: `collected`; collected at `2026-11-15T02:25:24Z`.
+Collection status: `collected`; collected at `2026-11-16T02:27:06Z`.
 
-Overall quality: **Excellent**, **89/100** across **73 packages**.
+Overall quality: **Excellent**, **89/100** across **75 packages**.
 
 | Category | Field | Coverage | Points | Gap |
 | --- | --- | ---: | ---: | ---: |
@@ -11,7 +11,7 @@ Overall quality: **Excellent**, **89/100** across **73 packages**.
 | Identity | Package SPDX IDs | 100% | 5/5 | +0 |
 | Identity | Versions | 100% | 10/10 | +0 |
 | Identity | PURLs | 100% | 10/10 | +0 |
-| Licensing | Declared licenses | 82% | 8/10 | +2 |
+| Licensing | Declared licenses | 83% | 8/10 | +2 |
 | Licensing | Concluded licenses | 81% | 8/10 | +2 |
 | Provenance | Suppliers | 0% | 0/7 | +7 |
 | Provenance | Download locations | 100% | 8/8 | +0 |
