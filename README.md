@@ -74,7 +74,7 @@ Generated at `2026-11-17T03:48:01Z` from the newest tagged GHCR image available 
 <!-- SBOM_QUALITY_START -->
 ## SBOM quality overview
 
-Generated at `2026-11-17T02:25:54Z`. Quality combines document metadata (20%), package identity (30%), licensing (20%), provenance (15%), and relationships (15%).
+Generated at `2026-11-18T02:25:46Z`. Quality combines document metadata (20%), package identity (30%), licensing (20%), provenance (15%), and relationships (15%).
 
 Legend: 🟢 85-100, 🟡 70-84, 🟠 50-69, 🔴 0-49 or unavailable. This measures SBOM completeness, not vulnerability severity.
 
@@ -94,7 +94,7 @@ Legend: 🟢 85-100, 🟡 70-84, 🟠 50-69, 🔴 0-49 or unavailable. This meas
 | [hub-pipeline-counting](https://github.com/uug-ai/hub-pipeline-counting) | collected | 🟢 Excellent | 89/100 | 63 | 100% | 87% | 100% | [Breakdown](sboms/hub-pipeline-counting/README.md) · [SPDX](sboms/hub-pipeline-counting/sbom.spdx.json) |
 | [hub-pipeline-dominantcolors](https://github.com/uug-ai/hub-pipeline-dominantcolors) | collected | 🟢 Excellent | 90/100 | 76 | 100% | 91% | 100% | [Breakdown](sboms/hub-pipeline-dominantcolors/README.md) · [SPDX](sboms/hub-pipeline-dominantcolors/sbom.spdx.json) |
 | [hub-pipeline-event](https://github.com/uug-ai/hub-pipeline-event) | collected | 🟢 Excellent | 89/100 | 48 | 100% | 85% | 100% | [Breakdown](sboms/hub-pipeline-event/README.md) · [SPDX](sboms/hub-pipeline-event/sbom.spdx.json) |
-| [hub-pipeline-export](https://github.com/uug-ai/hub-pipeline-export) | collected | 🟢 Excellent | 89/100 | 75 | 100% | 88% | 100% | [Breakdown](sboms/hub-pipeline-export/README.md) · [SPDX](sboms/hub-pipeline-export/sbom.spdx.json) |
+| [hub-pipeline-export](https://github.com/uug-ai/hub-pipeline-export) | collected | 🟢 Excellent | 89/100 | 77 | 100% | 88% | 100% | [Breakdown](sboms/hub-pipeline-export/README.md) · [SPDX](sboms/hub-pipeline-export/sbom.spdx.json) |
 | [hub-pipeline-monitor](https://github.com/uug-ai/hub-pipeline-monitor) | collected | 🟢 Excellent | 91/100 | 79 | 100% | 90% | 100% | [Breakdown](sboms/hub-pipeline-monitor/README.md) · [SPDX](sboms/hub-pipeline-monitor/sbom.spdx.json) |
 | [hub-pipeline-notification](https://github.com/uug-ai/hub-pipeline-notification) | collected | 🟢 Excellent | 91/100 | 107 | 100% | 91% | 100% | [Breakdown](sboms/hub-pipeline-notification/README.md) · [SPDX](sboms/hub-pipeline-notification/sbom.spdx.json) |
 | [hub-pipeline-notification-test](https://github.com/uug-ai/hub-pipeline-notification-test) | collected | 🟢 Excellent | 89/100 | 84 | 100% | 89% | 100% | [Breakdown](sboms/hub-pipeline-notification-test/README.md) · [SPDX](sboms/hub-pipeline-notification-test/sbom.spdx.json) |
@@ -109,7 +109,7 @@ Legend: 🟢 85-100, 🟡 70-84, 🟠 50-69, 🔴 0-49 or unavailable. This meas
 | [hub-vlm](https://github.com/uug-ai/hub-vlm) | unavailable | 🔴 Unavailable | 0/100 | 0 | 0% | 0% | 0% | [Breakdown](sboms/hub-vlm/README.md) |
 | [hub-workflows](https://github.com/uug-ai/hub-workflows) | collected | 🟢 Excellent | 91/100 | 141 | 100% | 91% | 100% | [Breakdown](sboms/hub-workflows/README.md) · [SPDX](sboms/hub-workflows/sbom.spdx.json) |
 | [hub-workflows-forwarder](https://github.com/uug-ai/hub-workflows-forwarder) | unavailable | 🔴 Unavailable | 0/100 | 0 | 0% | 0% | 0% | [Breakdown](sboms/hub-workflows-forwarder/README.md) |
-| [vault](https://github.com/uug-ai/vault) | collected | 🟢 Excellent | 91/100 | 1221 | 100% | 99% | 100% | [Breakdown](sboms/vault/README.md) · [SPDX](sboms/vault/sbom.spdx.json) |
+| [vault](https://github.com/uug-ai/vault) | collected | 🟢 Excellent | 91/100 | 1222 | 100% | 99% | 100% | [Breakdown](sboms/vault/README.md) · [SPDX](sboms/vault/sbom.spdx.json) |
 <!-- SBOM_QUALITY_END -->
 
 ## SBOM collection

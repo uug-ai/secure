@@ -1,6 +1,6 @@
 # hub-pipeline-classifier SBOM quality
 
-Collection status: `collected`; collected at `2026-11-17T02:25:54Z`.
+Collection status: `collected`; collected at `2026-11-18T02:25:46Z`.
 
 Overall quality: **Excellent**, **86/100** across **62 packages**.
 
@@ -14,7 +14,7 @@ Overall quality: **Excellent**, **86/100** across **62 packages**.
 | Licensing | Declared licenses | 69% | 6/10 | +4 |
 | Licensing | Concluded licenses | 89% | 8/10 | +2 |
 | Provenance | Suppliers | 0% | 0/7 | +7 |
-| Provenance | Download locations | 95% | 7/8 | +1 |
+| Provenance | Download locations | 92% | 7/8 | +1 |
 | Relationships | Document describes | 100% | 5/5 | +0 |
 | Relationships | SPDX relationships | 100% | 10/10 | +0 |
 
