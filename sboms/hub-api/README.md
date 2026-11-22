@@ -1,8 +1,8 @@
 # hub-api SBOM quality
 
-Collection status: `collected`; collected at `2026-11-21T02:24:49Z`.
+Collection status: `collected`; collected at `2026-11-22T02:25:50Z`.
 
-Overall quality: **Excellent**, **91/100** across **197 packages**.
+Overall quality: **Excellent**, **91/100** across **198 packages**.
 
 | Category | Field | Coverage | Points | Gap |
 | --- | --- | ---: | ---: | ---: |
@@ -12,7 +12,7 @@ Overall quality: **Excellent**, **91/100** across **197 packages**.
 | Identity | Versions | 100% | 10/10 | +0 |
 | Identity | PURLs | 100% | 10/10 | +0 |
 | Licensing | Declared licenses | 92% | 9/10 | +1 |
-| Licensing | Concluded licenses | 92% | 9/10 | +1 |
+| Licensing | Concluded licenses | 91% | 9/10 | +1 |
 | Provenance | Suppliers | 0% | 0/7 | +7 |
 | Provenance | Download locations | 100% | 8/8 | +0 |
 | Relationships | Document describes | 100% | 5/5 | +0 |

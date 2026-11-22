@@ -1,8 +1,8 @@
 # factory SBOM quality
 
-Collection status: `collected`; collected at `2026-11-21T02:24:49Z`.
+Collection status: `collected`; collected at `2026-11-22T02:25:50Z`.
 
-Overall quality: **Excellent**, **91/100** across **1536 packages**.
+Overall quality: **Excellent**, **91/100** across **1008 packages**.
 
 | Category | Field | Coverage | Points | Gap |
 | --- | --- | ---: | ---: | ---: |
