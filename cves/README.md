@@ -1,8 +1,8 @@
 # Critical and high vulnerability findings
 
-Generated at `2026-11-23T03:48:11Z` from the latest available Trivy container reports. Occurrences count every affected package record across scanned images; one advisory can therefore occur more than once in one or more repositories.
+Generated at `2026-11-24T03:48:18Z` from the latest available Trivy container reports. Occurrences count every affected package record across scanned images; one advisory can therefore occur more than once in one or more repositories.
 
-**520 unique findings**: 21 critical and 499 high, with 913 total occurrences.
+**521 unique findings**: 21 critical and 500 high, with 915 total occurrences.
 
 | Severity | Advisory | Occurrences | Fixable | Repositories | Packages |
 | --- | --- | ---: | ---: | --- | --- |
@@ -100,6 +100,7 @@ Generated at `2026-11-23T03:48:11Z` from the latest available Trivy container re
 | HIGH | [CVE-2025-47273](https://avd.aquasec.com/nvd/cve-2025-47273) | 2 | 2 | hub-pipeline-classifier | setuptools@70.0.0, setuptools@70.3.0 |
 | HIGH | [CVE-2025-59375](https://avd.aquasec.com/nvd/cve-2025-59375) | 2 | 2 | hub-pipeline-classifier | libexpat1-dev@2.5.0-1+deb12u3, libexpat1@2.5.0-1+deb12u3 |
 | HIGH | [CVE-2026-105437](https://avd.aquasec.com/nvd/cve-2026-105437) | 2 | 0 | hub-pipeline-classifier | git-man@1:2.39.5-0+deb12u3, git@1:2.39.5-0+deb12u3 |
+| HIGH | [CVE-2026-107494](https://avd.aquasec.com/nvd/cve-2026-107494) | 2 | 0 | hub-pipeline-classifier | libssl3@3.0.20-1~deb12u2, openssl@3.0.20-1~deb12u2 |
 | HIGH | [CVE-2026-111760](https://avd.aquasec.com/nvd/cve-2026-111760) | 2 | 0 | hub-pipeline-classifier | git-man@1:2.39.5-0+deb12u3, git@1:2.39.5-0+deb12u3 |
 | HIGH | [CVE-2026-114466](https://avd.aquasec.com/nvd/cve-2026-114466) | 2 | 0 | hub-pipeline-classifier | git-man@1:2.39.5-0+deb12u3, git@1:2.39.5-0+deb12u3 |
 | HIGH | [CVE-2026-16742](https://avd.aquasec.com/nvd/cve-2026-16742) | 2 | 0 | hub-pipeline-classifier | libsystemd0@252.39-1~deb12u2, libudev1@252.39-1~deb12u2 |
