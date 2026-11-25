@@ -1,8 +1,8 @@
 # hub-pipeline-redaction SBOM quality
 
-Collection status: `collected`; collected at `2026-11-24T02:26:37Z`.
+Collection status: `collected`; collected at `2026-11-25T02:26:48Z`.
 
-Overall quality: **Excellent**, **89/100** across **72 packages**.
+Overall quality: **Excellent**, **89/100** across **74 packages**.
 
 | Category | Field | Coverage | Points | Gap |
 | --- | --- | ---: | ---: | ---: |
