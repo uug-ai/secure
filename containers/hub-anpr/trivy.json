@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:1c16d6be77f3b40efe84eef8c22e1e5aab1b866810a7d7d98c80fe40b0fef6f3",
   "ArtifactName": "ghcr.io/uug-ai/hub-anpr@sha256:21c6bbbd8832e1b6d13ec824ec700ad4259c29b26d8d6cd7a49bac728373f63a",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-11-24T03:48:29.675137252Z",
+  "CreatedAt": "2026-11-25T03:48:31.215127263Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:e56ec1aa98375033e9b733039a6f99a3b4d084d15b396b32505e0b10cc48a96e",
@@ -444,7 +444,7 @@
     ],
     "Size": 420648960
   },
-  "ReportID": "01a20bab-5d6b-7211-bab0-1f8d6cafed9f",
+  "ReportID": "01a210d1-bf6f-71eb-ac79-48b5ac87c297",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -5756,7 +5756,84 @@
         }
       ],
       "Target": "ghcr.io/uug-ai/hub-anpr@sha256:21c6bbbd8832e1b6d13ec824ec700ad4259c29b26d8d6cd7a49bac728373f63a (wolfi 20230201)",
-      "Type": "wolfi"
+      "Type": "wolfi",
+      "Vulnerabilities": [
+        {
+          "CweIDs": [
+            "CWE-126"
+          ],
+          "DataSource": {
+            "ID": "wolfi",
+            "Name": "Wolfi Secdb",
+            "URL": "https://packages.wolfi.dev/os/security.json"
+          },
+          "Description": "libexpat through 2.10.0 contains an out-of-bounds read vulnerability in unknown_toUtf8() and unknown_toUtf16() in xmltok.c when handling application-registered unknown encodings. Attackers can supply a document ending in a truncated multibyte sequence so the convert callback reads past the parse buffer, leaking adjacent memory or crashing applications.",
+          "Fingerprint": "sha256:4162ca287a31fe6fe1ae4b21af46ebe84e553c8fda312f0499005b31abc75c05",
+          "FixedVersion": "2.11.0-r0",
+          "InstalledVersion": "2.10.0-r1",
+          "LastModifiedDate": "2026-11-11T05:19:36.56Z",
+          "Layer": {
+            "DiffID": "sha256:5cdd78760468e1ee1d872b23123b9792651510bd1522243a23d0d86f8ee29c6c",
+            "Digest": "sha256:9a385d56e25fafc916106b67c1f65abf1dd0c5d99bf35d7d50e41c5e99befa3f"
+          },
+          "PkgID": "libexpat1@2.10.0-r1",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/wolfi/libexpat1@2.10.0-r1?arch=x86_64\u0026distro=20230201",
+            "UID": "ff6b1f372b182112"
+          },
+          "PkgName": "libexpat1",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-124317",
+          "PublishedDate": "2026-11-07T15:17:16.08Z",
+          "References": [
+            "https://github.com/libexpat/libexpat",
+            "https://github.com/libexpat/libexpat/blob/a70841d9ffa64ddde29ab824ed6305035ebe4c47/expat/lib/xmltok.c#L1274-L1322",
+            "https://github.com/libexpat/libexpat/pull/1492",
+            "https://www.vulncheck.com/advisories/libexpat-through-2.10.0-out-of-bounds-read-via-unknown-toutf8-and-unknown-toutf16"
+          ],
+          "Severity": "UNKNOWN",
+          "Status": "fixed",
+          "Title": "libexpat through 2.10.0 contains an out-of-bounds read vulnerability i ...",
+          "VulnerabilityID": "CVE-2026-124317"
+        },
+        {
+          "CweIDs": [
+            "CWE-59"
+          ],
+          "DataSource": {
+            "ID": "wolfi",
+            "Name": "Wolfi Secdb",
+            "URL": "https://packages.wolfi.dev/os/security.json"
+          },
+          "Description": "The xmlwf tool in libexpat through 2.10.0 contains a symlink following vulnerability because -d output mode opens files with fopen(\"wb\"), which follows symbolic links. Local attackers with write access to the output directory can plant a symlink at the expected output name to truncate or overwrite files writable by the xmlwf user.",
+          "Fingerprint": "sha256:7a4954c1dbe871e263ee35f53cce45c1691c4306be34124913f7d131db565618",
+          "FixedVersion": "2.11.0-r0",
+          "InstalledVersion": "2.10.0-r1",
+          "LastModifiedDate": "2026-11-17T14:17:38.427Z",
+          "Layer": {
+            "DiffID": "sha256:5cdd78760468e1ee1d872b23123b9792651510bd1522243a23d0d86f8ee29c6c",
+            "Digest": "sha256:9a385d56e25fafc916106b67c1f65abf1dd0c5d99bf35d7d50e41c5e99befa3f"
+          },
+          "PkgID": "libexpat1@2.10.0-r1",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/wolfi/libexpat1@2.10.0-r1?arch=x86_64\u0026distro=20230201",
+            "UID": "ff6b1f372b182112"
+          },
+          "PkgName": "libexpat1",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-128241",
+          "PublishedDate": "2026-11-13T10:18:12.01Z",
+          "References": [
+            "https://github.com/libexpat/libexpat",
+            "https://github.com/libexpat/libexpat/blob/R_2_10_0/expat/xmlwf/xmlwf.c#L1272-L1275",
+            "https://github.com/libexpat/libexpat/blob/R_2_10_0/expat/xmlwf/xmlwf.c#L1338-L1347",
+            "https://github.com/libexpat/libexpat/pull/1502",
+            "https://www.vulncheck.com/advisories/libexpat-xmlwf-through-2.10.0-symlink-following-via-d-output-directory"
+          ],
+          "Severity": "UNKNOWN",
+          "Status": "fixed",
+          "Title": "The xmlwf tool in libexpat through 2.10.0 contains a symlink following ...",
+          "VulnerabilityID": "CVE-2026-128241"
+        }
+      ]
     },
     {
       "Class": "lang-pkgs",
