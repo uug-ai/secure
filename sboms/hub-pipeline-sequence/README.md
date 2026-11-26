@@ -1,8 +1,8 @@
 # hub-pipeline-sequence SBOM quality
 
-Collection status: `collected`; collected at `2026-11-25T02:26:48Z`.
+Collection status: `collected`; collected at `2026-11-26T02:25:42Z`.
 
-Overall quality: **Excellent**, **89/100** across **84 packages**.
+Overall quality: **Excellent**, **89/100** across **85 packages**.
 
 | Category | Field | Coverage | Points | Gap |
 | --- | --- | ---: | ---: | ---: |
@@ -11,8 +11,8 @@ Overall quality: **Excellent**, **89/100** across **84 packages**.
 | Identity | Package SPDX IDs | 100% | 5/5 | +0 |
 | Identity | Versions | 100% | 10/10 | +0 |
 | Identity | PURLs | 100% | 10/10 | +0 |
-| Licensing | Declared licenses | 83% | 8/10 | +2 |
-| Licensing | Concluded licenses | 83% | 8/10 | +2 |
+| Licensing | Declared licenses | 84% | 8/10 | +2 |
+| Licensing | Concluded licenses | 84% | 8/10 | +2 |
 | Provenance | Suppliers | 0% | 0/7 | +7 |
 | Provenance | Download locations | 100% | 8/8 | +0 |
 | Relationships | Document describes | 100% | 5/5 | +0 |

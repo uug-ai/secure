@@ -1,8 +1,8 @@
 # hub-pipeline-dominantcolors SBOM quality
 
-Collection status: `collected`; collected at `2026-11-25T02:26:48Z`.
+Collection status: `collected`; collected at `2026-11-26T02:25:42Z`.
 
-Overall quality: **Excellent**, **91/100** across **79 packages**.
+Overall quality: **Excellent**, **91/100** across **80 packages**.
 
 | Category | Field | Coverage | Points | Gap |
 | --- | --- | ---: | ---: | ---: |
@@ -11,7 +11,7 @@ Overall quality: **Excellent**, **91/100** across **79 packages**.
 | Identity | Package SPDX IDs | 100% | 5/5 | +0 |
 | Identity | Versions | 100% | 10/10 | +0 |
 | Identity | PURLs | 100% | 10/10 | +0 |
-| Licensing | Declared licenses | 91% | 9/10 | +1 |
+| Licensing | Declared licenses | 90% | 9/10 | +1 |
 | Licensing | Concluded licenses | 90% | 9/10 | +1 |
 | Provenance | Suppliers | 0% | 0/7 | +7 |
 | Provenance | Download locations | 100% | 8/8 | +0 |
