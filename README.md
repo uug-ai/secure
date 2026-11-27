@@ -35,7 +35,7 @@ that a particular image implements them or a claim of CIS compliance.
 <!-- CONTAINER_SCAN_START -->
 ## Container image security overview
 
-Generated at `2026-11-26T03:47:43Z` from the newest tagged GHCR image available for each approved project. Scores use the highest detected severity: 100 clean, 80 low, 60 medium, 30 high, and 0 critical. An unavailable image is a coverage gap, not a clean result.
+Generated at `2026-11-27T03:47:57Z` from the newest tagged GHCR image available for each approved project. Scores use the highest detected severity: 100 clean, 80 low, 60 medium, 30 high, and 0 critical. An unavailable image is a coverage gap, not a clean result.
 
 | Repository | Scan | Risk | Score | Tag | Critical | High | Medium | Low | Fixable C/H | Report |
 | --- | --- | --- | ---: | --- | ---: | ---: | ---: | ---: | ---: | --- |
@@ -49,7 +49,7 @@ Generated at `2026-11-26T03:47:43Z` from the newest tagged GHCR image available 
 | [hub-monitor-device](https://github.com/uug-ai/hub-monitor-device) | stale | Clean | 100/100 | staging-45420744253-1 | 0 | 0 | 0 | 0 | 0/0 | [Trivy](containers/hub-monitor-device/trivy.json) |
 | [hub-objecttracking](https://github.com/uug-ai/hub-objecttracking) | stale | High | 30/100 | latest-gpu | 0 | 19 | 901 | 126 | 0/19 | [Trivy](containers/hub-objecttracking/trivy.json) |
 | [hub-pipeline-analysis](https://github.com/uug-ai/hub-pipeline-analysis) | stale | Unknown | 40/100 | latest | 0 | 0 | 0 | 0 | 0/0 | [Trivy](containers/hub-pipeline-analysis/trivy.json) |
-| [hub-pipeline-classifier](https://github.com/uug-ai/hub-pipeline-classifier) | scanned | Critical | 0/100 | latest | 42 | 868 | 4278 | 1911 | 23/313 | [Trivy](containers/hub-pipeline-classifier/trivy.json) |
+| [hub-pipeline-classifier](https://github.com/uug-ai/hub-pipeline-classifier) | scanned | Critical | 0/100 | latest | 42 | 869 | 4276 | 1912 | 23/316 | [Trivy](containers/hub-pipeline-classifier/trivy.json) |
 | [hub-pipeline-counting](https://github.com/uug-ai/hub-pipeline-counting) | stale | Unknown | 40/100 | latest | 0 | 0 | 0 | 0 | 0/0 | [Trivy](containers/hub-pipeline-counting/trivy.json) |
 | [hub-pipeline-dominantcolors](https://github.com/uug-ai/hub-pipeline-dominantcolors) | stale | High | 30/100 | latest | 0 | 5 | 2 | 0 | 0/5 | [Trivy](containers/hub-pipeline-dominantcolors/trivy.json) |
 | [hub-pipeline-event](https://github.com/uug-ai/hub-pipeline-event) | stale | Unknown | 40/100 | latest | 0 | 0 | 0 | 0 | 0/0 | [Trivy](containers/hub-pipeline-event/trivy.json) |
