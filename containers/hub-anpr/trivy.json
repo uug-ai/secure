@@ -2,7 +2,7 @@
   "ArtifactID": "sha256:1c16d6be77f3b40efe84eef8c22e1e5aab1b866810a7d7d98c80fe40b0fef6f3",
   "ArtifactName": "ghcr.io/uug-ai/hub-anpr@sha256:21c6bbbd8832e1b6d13ec824ec700ad4259c29b26d8d6cd7a49bac728373f63a",
   "ArtifactType": "container_image",
-  "CreatedAt": "2026-11-27T03:48:06.326165762Z",
+  "CreatedAt": "2026-11-28T03:48:20.969996314Z",
   "Metadata": {
     "DiffIDs": [
       "sha256:e56ec1aa98375033e9b733039a6f99a3b4d084d15b396b32505e0b10cc48a96e",
@@ -444,7 +444,7 @@
     ],
     "Size": 420648960
   },
-  "ReportID": "01a21b1e-1636-7281-aee2-a9c72b498041",
+  "ReportID": "01a22044-ab69-7f2d-969f-080029181549",
   "Results": [
     {
       "Class": "os-pkgs",
@@ -5758,6 +5758,386 @@
       "Target": "ghcr.io/uug-ai/hub-anpr@sha256:21c6bbbd8832e1b6d13ec824ec700ad4259c29b26d8d6cd7a49bac728373f63a (wolfi 20230201)",
       "Type": "wolfi",
       "Vulnerabilities": [
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 4.8,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:L"
+            }
+          },
+          "CweIDs": [
+            "CWE-193"
+          ],
+          "DataSource": {
+            "ID": "wolfi",
+            "Name": "Wolfi Secdb",
+            "URL": "https://packages.wolfi.dev/os/security.json"
+          },
+          "Description": "Calling the wide scanf family of functions (swscanf, fwscanf, wscanf, vswscanf, vfwscanf and vwscanf) with a %s or %[ conversion without the 'l' length modifier in the GNU C Library version 2.2 to version 2.44 writes an extra null byte one past the end of the destination array when the converted multibyte string and its terminating null byte exactly fill that array.\n\nThese conversions store each wide input character into the caller's char array as a multibyte sequence.  The conversion ends with the sequence that returns to the initial shift state, which also stores the terminating null byte, and the functions then append a second null byte.  A destination sized for the converted string and one terminator, as the C standard requires the caller to provide, is therefore written one byte past its end.  The out-of-bounds byte is always a null byte, which may corrupt adjacent data or crash the process.  An attacker who supplies the input can trigger the overflow with a string whose converted length exactly fills the destination.\n\nThe narrow scanf functions, the %ls and %l[ conversions into a wchar_t array, and the 'a' and 'm' allocation modifiers are not affected, and storing a wide scanf conversion into a narrow char array is uncommon.  This issue affects all architectures and ABIs supported by the GNU C Library.",
+          "Fingerprint": "sha256:6bf3e2cea7a38f56fd9fdff52464a30a2c4ff9d6e05b7d9a675450a5f8bf324f",
+          "FixedVersion": "2.44-r25",
+          "InstalledVersion": "2.44-r17",
+          "LastModifiedDate": "2026-11-17T15:17:31.913Z",
+          "Layer": {
+            "DiffID": "sha256:e56ec1aa98375033e9b733039a6f99a3b4d084d15b396b32505e0b10cc48a96e",
+            "Digest": "sha256:b64ad6cd9dbcd9a05badf6ce9174c53128541faff6a1cc21fabe0f4e54a59c26"
+          },
+          "PkgID": "glibc-2.44@2.44-r17",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/wolfi/glibc-2.44@2.44-r17?arch=x86_64\u0026distro=20230201",
+            "UID": "7208ec75b167f4c1"
+          },
+          "PkgName": "glibc-2.44",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-115819",
+          "PublishedDate": "2026-11-11T16:17:24.98Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-115819",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-115819",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=34989",
+            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0027",
+            "https://www.cve.org/CVERecord?id=CVE-2026-115819"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "glibc: glibc: Memory corruption via out-of-bounds write in wide scanf functions",
+          "VendorSeverity": {
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2026-115819"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 3.7,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L"
+            }
+          },
+          "CweIDs": [
+            "CWE-415"
+          ],
+          "DataSource": {
+            "ID": "wolfi",
+            "Name": "Wolfi Secdb",
+            "URL": "https://packages.wolfi.dev/os/security.json"
+          },
+          "Description": "The regcomp and regexec functions in the GNU C Library version 2.3 to version 2.44 may read freed memory and free the same heap block twice when a memory allocation fails while a regular expression is compiled or matched.  The re_dfa_add_node (the NFA node table) and build_range_exp (bracket ranges) grow several arrays with consecutive realloc calls and store the new pointers only after all of them succeed.  When a later call fails, the pattern buffer keeps pointers to blocks that were already freed, and the error cleanup frees them again.  In regexec, the back-reference cache (match_ctx_add_entry) frees its array when a realloc fails but keeps the pointer, which is freed again on the error path.\n\nAn attacker does not need to supply a crafted regular expression: patterns large enough to grow these arrays are common.  The failure has to hit a specific allocation, though, so the issue can only be reached when the system is already under memory pressure.  An attacker who supplies the pattern or the subject string has little control over which allocation fails, so the expected impact is a crash of the process.  This issue affects all architectures and ABIs supported by the GNU C Library.",
+          "Fingerprint": "sha256:f417ae1e02353d9ac49ce5b72bae95a431c0d938cbddd68420413ceb39f856f5",
+          "FixedVersion": "2.44-r25",
+          "InstalledVersion": "2.44-r17",
+          "LastModifiedDate": "2026-11-17T15:17:27.667Z",
+          "Layer": {
+            "DiffID": "sha256:e56ec1aa98375033e9b733039a6f99a3b4d084d15b396b32505e0b10cc48a96e",
+            "Digest": "sha256:b64ad6cd9dbcd9a05badf6ce9174c53128541faff6a1cc21fabe0f4e54a59c26"
+          },
+          "PkgID": "glibc-2.44@2.44-r17",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/wolfi/glibc-2.44@2.44-r17?arch=x86_64\u0026distro=20230201",
+            "UID": "7208ec75b167f4c1"
+          },
+          "PkgName": "glibc-2.44",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-100290",
+          "PublishedDate": "2026-11-11T16:17:24.667Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-100290",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-100290",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=31935",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=34991",
+            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0028",
+            "https://www.cve.org/CVERecord?id=CVE-2026-100290"
+          ],
+          "Severity": "LOW",
+          "Status": "fixed",
+          "Title": "glibc: glibc: Denial of Service via memory allocation failure during regular expression processing",
+          "VendorSeverity": {
+            "redhat": 1
+          },
+          "VulnerabilityID": "CVE-2026-100290"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 4.8,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:L"
+            }
+          },
+          "CweIDs": [
+            "CWE-193"
+          ],
+          "DataSource": {
+            "ID": "wolfi",
+            "Name": "Wolfi Secdb",
+            "URL": "https://packages.wolfi.dev/os/security.json"
+          },
+          "Description": "Calling the wide scanf family of functions (swscanf, fwscanf, wscanf, vswscanf, vfwscanf and vwscanf) with a %s or %[ conversion without the 'l' length modifier in the GNU C Library version 2.2 to version 2.44 writes an extra null byte one past the end of the destination array when the converted multibyte string and its terminating null byte exactly fill that array.\n\nThese conversions store each wide input character into the caller's char array as a multibyte sequence.  The conversion ends with the sequence that returns to the initial shift state, which also stores the terminating null byte, and the functions then append a second null byte.  A destination sized for the converted string and one terminator, as the C standard requires the caller to provide, is therefore written one byte past its end.  The out-of-bounds byte is always a null byte, which may corrupt adjacent data or crash the process.  An attacker who supplies the input can trigger the overflow with a string whose converted length exactly fills the destination.\n\nThe narrow scanf functions, the %ls and %l[ conversions into a wchar_t array, and the 'a' and 'm' allocation modifiers are not affected, and storing a wide scanf conversion into a narrow char array is uncommon.  This issue affects all architectures and ABIs supported by the GNU C Library.",
+          "Fingerprint": "sha256:3c167bc2ae73f79e5c87c52b4d439f4a19e7f632ff98fc56295c116cf4e77af0",
+          "FixedVersion": "2.44-r25",
+          "InstalledVersion": "2.44-r17",
+          "LastModifiedDate": "2026-11-17T15:17:31.913Z",
+          "Layer": {
+            "DiffID": "sha256:e56ec1aa98375033e9b733039a6f99a3b4d084d15b396b32505e0b10cc48a96e",
+            "Digest": "sha256:b64ad6cd9dbcd9a05badf6ce9174c53128541faff6a1cc21fabe0f4e54a59c26"
+          },
+          "PkgID": "glibc-2.44-locale-posix@2.44-r17",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/wolfi/glibc-2.44-locale-posix@2.44-r17?arch=x86_64\u0026distro=20230201",
+            "UID": "86c647aebcc8ba8f"
+          },
+          "PkgName": "glibc-2.44-locale-posix",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-115819",
+          "PublishedDate": "2026-11-11T16:17:24.98Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-115819",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-115819",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=34989",
+            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0027",
+            "https://www.cve.org/CVERecord?id=CVE-2026-115819"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "glibc: glibc: Memory corruption via out-of-bounds write in wide scanf functions",
+          "VendorSeverity": {
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2026-115819"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 3.7,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L"
+            }
+          },
+          "CweIDs": [
+            "CWE-415"
+          ],
+          "DataSource": {
+            "ID": "wolfi",
+            "Name": "Wolfi Secdb",
+            "URL": "https://packages.wolfi.dev/os/security.json"
+          },
+          "Description": "The regcomp and regexec functions in the GNU C Library version 2.3 to version 2.44 may read freed memory and free the same heap block twice when a memory allocation fails while a regular expression is compiled or matched.  The re_dfa_add_node (the NFA node table) and build_range_exp (bracket ranges) grow several arrays with consecutive realloc calls and store the new pointers only after all of them succeed.  When a later call fails, the pattern buffer keeps pointers to blocks that were already freed, and the error cleanup frees them again.  In regexec, the back-reference cache (match_ctx_add_entry) frees its array when a realloc fails but keeps the pointer, which is freed again on the error path.\n\nAn attacker does not need to supply a crafted regular expression: patterns large enough to grow these arrays are common.  The failure has to hit a specific allocation, though, so the issue can only be reached when the system is already under memory pressure.  An attacker who supplies the pattern or the subject string has little control over which allocation fails, so the expected impact is a crash of the process.  This issue affects all architectures and ABIs supported by the GNU C Library.",
+          "Fingerprint": "sha256:2f759b64b5946a14a2ec076aa827c8456e849b86088fdf314b0bbb4d9c63937b",
+          "FixedVersion": "2.44-r25",
+          "InstalledVersion": "2.44-r17",
+          "LastModifiedDate": "2026-11-17T15:17:27.667Z",
+          "Layer": {
+            "DiffID": "sha256:e56ec1aa98375033e9b733039a6f99a3b4d084d15b396b32505e0b10cc48a96e",
+            "Digest": "sha256:b64ad6cd9dbcd9a05badf6ce9174c53128541faff6a1cc21fabe0f4e54a59c26"
+          },
+          "PkgID": "glibc-2.44-locale-posix@2.44-r17",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/wolfi/glibc-2.44-locale-posix@2.44-r17?arch=x86_64\u0026distro=20230201",
+            "UID": "86c647aebcc8ba8f"
+          },
+          "PkgName": "glibc-2.44-locale-posix",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-100290",
+          "PublishedDate": "2026-11-11T16:17:24.667Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-100290",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-100290",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=31935",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=34991",
+            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0028",
+            "https://www.cve.org/CVERecord?id=CVE-2026-100290"
+          ],
+          "Severity": "LOW",
+          "Status": "fixed",
+          "Title": "glibc: glibc: Denial of Service via memory allocation failure during regular expression processing",
+          "VendorSeverity": {
+            "redhat": 1
+          },
+          "VulnerabilityID": "CVE-2026-100290"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 4.8,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:L"
+            }
+          },
+          "CweIDs": [
+            "CWE-193"
+          ],
+          "DataSource": {
+            "ID": "wolfi",
+            "Name": "Wolfi Secdb",
+            "URL": "https://packages.wolfi.dev/os/security.json"
+          },
+          "Description": "Calling the wide scanf family of functions (swscanf, fwscanf, wscanf, vswscanf, vfwscanf and vwscanf) with a %s or %[ conversion without the 'l' length modifier in the GNU C Library version 2.2 to version 2.44 writes an extra null byte one past the end of the destination array when the converted multibyte string and its terminating null byte exactly fill that array.\n\nThese conversions store each wide input character into the caller's char array as a multibyte sequence.  The conversion ends with the sequence that returns to the initial shift state, which also stores the terminating null byte, and the functions then append a second null byte.  A destination sized for the converted string and one terminator, as the C standard requires the caller to provide, is therefore written one byte past its end.  The out-of-bounds byte is always a null byte, which may corrupt adjacent data or crash the process.  An attacker who supplies the input can trigger the overflow with a string whose converted length exactly fills the destination.\n\nThe narrow scanf functions, the %ls and %l[ conversions into a wchar_t array, and the 'a' and 'm' allocation modifiers are not affected, and storing a wide scanf conversion into a narrow char array is uncommon.  This issue affects all architectures and ABIs supported by the GNU C Library.",
+          "Fingerprint": "sha256:c0abd8a3fe8dcafa1385a379d1579087fd98680012c60059a9fee64f57499f33",
+          "FixedVersion": "2.44-r25",
+          "InstalledVersion": "2.44-r17",
+          "LastModifiedDate": "2026-11-17T15:17:31.913Z",
+          "Layer": {
+            "DiffID": "sha256:e56ec1aa98375033e9b733039a6f99a3b4d084d15b396b32505e0b10cc48a96e",
+            "Digest": "sha256:b64ad6cd9dbcd9a05badf6ce9174c53128541faff6a1cc21fabe0f4e54a59c26"
+          },
+          "PkgID": "ld-linux-2.44@2.44-r17",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/wolfi/ld-linux-2.44@2.44-r17?arch=x86_64\u0026distro=20230201",
+            "UID": "956953156878619a"
+          },
+          "PkgName": "ld-linux-2.44",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-115819",
+          "PublishedDate": "2026-11-11T16:17:24.98Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-115819",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-115819",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=34989",
+            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0027",
+            "https://www.cve.org/CVERecord?id=CVE-2026-115819"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "glibc: glibc: Memory corruption via out-of-bounds write in wide scanf functions",
+          "VendorSeverity": {
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2026-115819"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 3.7,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L"
+            }
+          },
+          "CweIDs": [
+            "CWE-415"
+          ],
+          "DataSource": {
+            "ID": "wolfi",
+            "Name": "Wolfi Secdb",
+            "URL": "https://packages.wolfi.dev/os/security.json"
+          },
+          "Description": "The regcomp and regexec functions in the GNU C Library version 2.3 to version 2.44 may read freed memory and free the same heap block twice when a memory allocation fails while a regular expression is compiled or matched.  The re_dfa_add_node (the NFA node table) and build_range_exp (bracket ranges) grow several arrays with consecutive realloc calls and store the new pointers only after all of them succeed.  When a later call fails, the pattern buffer keeps pointers to blocks that were already freed, and the error cleanup frees them again.  In regexec, the back-reference cache (match_ctx_add_entry) frees its array when a realloc fails but keeps the pointer, which is freed again on the error path.\n\nAn attacker does not need to supply a crafted regular expression: patterns large enough to grow these arrays are common.  The failure has to hit a specific allocation, though, so the issue can only be reached when the system is already under memory pressure.  An attacker who supplies the pattern or the subject string has little control over which allocation fails, so the expected impact is a crash of the process.  This issue affects all architectures and ABIs supported by the GNU C Library.",
+          "Fingerprint": "sha256:19a28f08fbcad4f33d8551cb3bcd06f1ec5c9e33df129497234d6ab1e32b6c94",
+          "FixedVersion": "2.44-r25",
+          "InstalledVersion": "2.44-r17",
+          "LastModifiedDate": "2026-11-17T15:17:27.667Z",
+          "Layer": {
+            "DiffID": "sha256:e56ec1aa98375033e9b733039a6f99a3b4d084d15b396b32505e0b10cc48a96e",
+            "Digest": "sha256:b64ad6cd9dbcd9a05badf6ce9174c53128541faff6a1cc21fabe0f4e54a59c26"
+          },
+          "PkgID": "ld-linux-2.44@2.44-r17",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/wolfi/ld-linux-2.44@2.44-r17?arch=x86_64\u0026distro=20230201",
+            "UID": "956953156878619a"
+          },
+          "PkgName": "ld-linux-2.44",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-100290",
+          "PublishedDate": "2026-11-11T16:17:24.667Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-100290",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-100290",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=31935",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=34991",
+            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0028",
+            "https://www.cve.org/CVERecord?id=CVE-2026-100290"
+          ],
+          "Severity": "LOW",
+          "Status": "fixed",
+          "Title": "glibc: glibc: Denial of Service via memory allocation failure during regular expression processing",
+          "VendorSeverity": {
+            "redhat": 1
+          },
+          "VulnerabilityID": "CVE-2026-100290"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 4.8,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:L"
+            }
+          },
+          "CweIDs": [
+            "CWE-193"
+          ],
+          "DataSource": {
+            "ID": "wolfi",
+            "Name": "Wolfi Secdb",
+            "URL": "https://packages.wolfi.dev/os/security.json"
+          },
+          "Description": "Calling the wide scanf family of functions (swscanf, fwscanf, wscanf, vswscanf, vfwscanf and vwscanf) with a %s or %[ conversion without the 'l' length modifier in the GNU C Library version 2.2 to version 2.44 writes an extra null byte one past the end of the destination array when the converted multibyte string and its terminating null byte exactly fill that array.\n\nThese conversions store each wide input character into the caller's char array as a multibyte sequence.  The conversion ends with the sequence that returns to the initial shift state, which also stores the terminating null byte, and the functions then append a second null byte.  A destination sized for the converted string and one terminator, as the C standard requires the caller to provide, is therefore written one byte past its end.  The out-of-bounds byte is always a null byte, which may corrupt adjacent data or crash the process.  An attacker who supplies the input can trigger the overflow with a string whose converted length exactly fills the destination.\n\nThe narrow scanf functions, the %ls and %l[ conversions into a wchar_t array, and the 'a' and 'm' allocation modifiers are not affected, and storing a wide scanf conversion into a narrow char array is uncommon.  This issue affects all architectures and ABIs supported by the GNU C Library.",
+          "Fingerprint": "sha256:615944c31c8925479d489b268f2d0708fde31676d0ce8a401965670b1195e3c2",
+          "FixedVersion": "2.44-r25",
+          "InstalledVersion": "2.44-r17",
+          "LastModifiedDate": "2026-11-17T15:17:31.913Z",
+          "Layer": {
+            "DiffID": "sha256:e56ec1aa98375033e9b733039a6f99a3b4d084d15b396b32505e0b10cc48a96e",
+            "Digest": "sha256:b64ad6cd9dbcd9a05badf6ce9174c53128541faff6a1cc21fabe0f4e54a59c26"
+          },
+          "PkgID": "libcrypt1-2.44@2.44-r17",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/wolfi/libcrypt1-2.44@2.44-r17?arch=x86_64\u0026distro=20230201",
+            "UID": "f83402344f52f9e0"
+          },
+          "PkgName": "libcrypt1-2.44",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-115819",
+          "PublishedDate": "2026-11-11T16:17:24.98Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-115819",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-115819",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=34989",
+            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0027",
+            "https://www.cve.org/CVERecord?id=CVE-2026-115819"
+          ],
+          "Severity": "MEDIUM",
+          "Status": "fixed",
+          "Title": "glibc: glibc: Memory corruption via out-of-bounds write in wide scanf functions",
+          "VendorSeverity": {
+            "redhat": 2
+          },
+          "VulnerabilityID": "CVE-2026-115819"
+        },
+        {
+          "CVSS": {
+            "redhat": {
+              "V3Score": 3.7,
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L"
+            }
+          },
+          "CweIDs": [
+            "CWE-415"
+          ],
+          "DataSource": {
+            "ID": "wolfi",
+            "Name": "Wolfi Secdb",
+            "URL": "https://packages.wolfi.dev/os/security.json"
+          },
+          "Description": "The regcomp and regexec functions in the GNU C Library version 2.3 to version 2.44 may read freed memory and free the same heap block twice when a memory allocation fails while a regular expression is compiled or matched.  The re_dfa_add_node (the NFA node table) and build_range_exp (bracket ranges) grow several arrays with consecutive realloc calls and store the new pointers only after all of them succeed.  When a later call fails, the pattern buffer keeps pointers to blocks that were already freed, and the error cleanup frees them again.  In regexec, the back-reference cache (match_ctx_add_entry) frees its array when a realloc fails but keeps the pointer, which is freed again on the error path.\n\nAn attacker does not need to supply a crafted regular expression: patterns large enough to grow these arrays are common.  The failure has to hit a specific allocation, though, so the issue can only be reached when the system is already under memory pressure.  An attacker who supplies the pattern or the subject string has little control over which allocation fails, so the expected impact is a crash of the process.  This issue affects all architectures and ABIs supported by the GNU C Library.",
+          "Fingerprint": "sha256:5991adfb74269c30b9f9831ec46cf37dad0ed2928944bec6dcf56703ee8cf094",
+          "FixedVersion": "2.44-r25",
+          "InstalledVersion": "2.44-r17",
+          "LastModifiedDate": "2026-11-17T15:17:27.667Z",
+          "Layer": {
+            "DiffID": "sha256:e56ec1aa98375033e9b733039a6f99a3b4d084d15b396b32505e0b10cc48a96e",
+            "Digest": "sha256:b64ad6cd9dbcd9a05badf6ce9174c53128541faff6a1cc21fabe0f4e54a59c26"
+          },
+          "PkgID": "libcrypt1-2.44@2.44-r17",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/wolfi/libcrypt1-2.44@2.44-r17?arch=x86_64\u0026distro=20230201",
+            "UID": "f83402344f52f9e0"
+          },
+          "PkgName": "libcrypt1-2.44",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-100290",
+          "PublishedDate": "2026-11-11T16:17:24.667Z",
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-100290",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-100290",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=31935",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=34991",
+            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0028",
+            "https://www.cve.org/CVERecord?id=CVE-2026-100290"
+          ],
+          "Severity": "LOW",
+          "Status": "fixed",
+          "Title": "glibc: glibc: Denial of Service via memory allocation failure during regular expression processing",
+          "VendorSeverity": {
+            "redhat": 1
+          },
+          "VulnerabilityID": "CVE-2026-100290"
+        },
         {
           "CweIDs": [
             "CWE-126"
